@@ -109,7 +109,9 @@ Semantics:
   previous one and must be rendered as a `colspan`**.
 * Chapter XII tables add a `Расстояние км` column after the station column.
 * **Times** use a dot as the h.m separator and a comma for the half minute:
-  `5.44,5` = 05:44:30. `24.00` is midnight at the end of the day. `—` means the
+  `5.44,5` = 05:44:30. `24.00` is midnight at the end of the day. On output the
+  hour is zero-padded to `HH.MM`, keeping the optional `,5` (`5.44,5` → `05.44,5`);
+  only a bare time is rewritten, so station names and train numbers pass through. `—` means the
   train passes without stopping; a blank cell means it does not serve the station.
 * Cell text may also be prose spanning the pair, e.g. `Следует до` / `Вецаки`
   ("runs as far as Vecāki").
@@ -149,6 +151,10 @@ Semantics:
   of facing sheets side by side, glued at the gutter, and must stay side by side
   (they are one flex row that does not wrap on wide screens; below ~900 px the
   two halves stack so the content stays readable on a phone).
-* **All tables use one and the same font** throughout the book.
+* **All tables use one and the same font** throughout the book — a monospace
+  stack for every cell, station names included, so the columns align.
+* Inside a table, data cells (station names and times) are left-aligned; the
+  header rows (`№ поездов`, train numbers, `приб.`/`отпр.`) stay centred.
+* Facing pages sit side by side with a small gap so their drop shadows do not overlap.
 * Content is scaled to the sheet with a page-local font size so a full 45-station
   timetable fits one sheet without overflow.
