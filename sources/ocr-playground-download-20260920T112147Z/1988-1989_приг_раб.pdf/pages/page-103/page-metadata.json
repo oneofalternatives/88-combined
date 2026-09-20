@@ -1,0 +1,31 @@
+{
+  "index": 102,
+  "dimensions": {
+    "dpi": 159,
+    "height": 1019,
+    "width": 683
+  },
+  "confidenceScores": {
+    "wordConfidenceScores": [
+      {
+        "text": "Бесплатно",
+        "confidence": 0.9933461713781778,
+        "logprob": 0,
+        "startIndex": 0
+      }
+    ],
+    "averagePageConfidenceScore": 0.9933461713781778,
+    "minimumPageConfidenceScore": 0.9933461713781778
+  },
+  "blocks": [
+    {
+      "topLeftX": 113,
+      "topLeftY": 80,
+      "bottomRightX": 211,
+      "bottomRightY": 106,
+      "content": "Бесплатно",
+      "confidenceScores": null,
+      "type": "text"
+    }
+  ]
+}

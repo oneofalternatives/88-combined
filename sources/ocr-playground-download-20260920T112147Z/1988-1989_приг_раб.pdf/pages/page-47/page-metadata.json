@@ -1,0 +1,118 @@
+{
+  "index": 46,
+  "dimensions": {
+    "dpi": 128,
+    "height": 821,
+    "width": 1019
+  },
+  "confidenceScores": {
+    "wordConfidenceScores": [
+      {
+        "text": "#",
+        "confidence": 0.9968273290569476,
+        "logprob": 0,
+        "startIndex": 0
+      },
+      {
+        "text": " ГЛАВА",
+        "confidence": 0.986088991698862,
+        "logprob": 0,
+        "startIndex": 1
+      },
+      {
+        "text": " III",
+        "confidence": 0.9971873224712035,
+        "logprob": 0,
+        "startIndex": 7
+      },
+      {
+        "text": " И",
+        "confidence": 0.9840812807475736,
+        "logprob": 0,
+        "startIndex": 11
+      },
+      {
+        "text": " IV",
+        "confidence": 0.9992216927441213,
+        "logprob": 0,
+        "startIndex": 13
+      },
+      {
+        "text": " ",
+        "confidence": 0.49839602351072343,
+        "logprob": 0,
+        "startIndex": 16
+      },
+      {
+        "text": " ",
+        "confidence": 0.9999983310727032,
+        "logprob": 0,
+        "startIndex": 17
+      },
+      {
+        "text": "\n",
+        "confidence": 0.9999983310727032,
+        "logprob": 0,
+        "startIndex": 18
+      },
+      {
+        "text": "ЛИЕЛВАРДЕ—АЙЗКРАУКЛЕ",
+        "confidence": 0.9480929814626607,
+        "logprob": 0,
+        "startIndex": 19
+      },
+      {
+        "text": " ",
+        "confidence": 0.9993541838031262,
+        "logprob": 0,
+        "startIndex": 39
+      },
+      {
+        "text": " ",
+        "confidence": 0.9999992847447459,
+        "logprob": 0,
+        "startIndex": 40
+      },
+      {
+        "text": "\n",
+        "confidence": 0.9999992847447459,
+        "logprob": 0,
+        "startIndex": 41
+      },
+      {
+        "text": "АЙЗКРАУКЛЕ—ЛИЕЛВАРДЕ",
+        "confidence": 0.9996695547839286,
+        "logprob": 0,
+        "startIndex": 42
+      },
+      {
+        "text": "91",
+        "confidence": 0.9995281539481159,
+        "logprob": 0,
+        "startIndex": 64
+      }
+    ],
+    "averagePageConfidenceScore": 0.9577459104187257,
+    "minimumPageConfidenceScore": 0.49839602351072343
+  },
+  "blocks": [
+    {
+      "topLeftX": 654,
+      "topLeftY": 303,
+      "bottomRightX": 896,
+      "bottomRightY": 380,
+      "content": "# ГЛАВА III И IV  \nЛИЕЛВАРДЕ—АЙЗКРАУКЛЕ  \nАЙЗКРАУКЛЕ—ЛИЕЛВАРДЕ",
+      "confidenceScores": null,
+      "type": "title"
+    },
+    {
+      "topLeftX": 974,
+      "topLeftY": 754,
+      "bottomRightX": 999,
+      "bottomRightY": 774,
+      "content": "91",
+      "confidenceScores": null,
+      "type": "footer"
+    }
+  ]
+}

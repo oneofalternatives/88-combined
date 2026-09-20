@@ -1,0 +1,163 @@
+{
+  "index": 91,
+  "dimensions": {
+    "dpi": 128,
+    "height": 821,
+    "width": 1019
+  },
+  "confidenceScores": {
+    "wordConfidenceScores": [
+      {
+        "text": "#",
+        "confidence": 0.8670353726857032,
+        "logprob": 0,
+        "startIndex": 0
+      },
+      {
+        "text": " ГЛАВА",
+        "confidence": 0.97139158644872,
+        "logprob": 0,
+        "startIndex": 1
+      },
+      {
+        "text": " XII",
+        "confidence": 0.9984760893698383,
+        "logprob": 0,
+        "startIndex": 7
+      },
+      {
+        "text": "РИГА—СЕБЕЖ",
+        "confidence": 0.9990131592844705,
+        "logprob": 0,
+        "startIndex": 13
+      },
+      {
+        "text": "РИГА—ДАУГАВПИЛС",
+        "confidence": 0.9989722970269271,
+        "logprob": 0,
+        "startIndex": 25
+      },
+      {
+        "text": "РИГА—БИГОСОВО",
+        "confidence": 0.99801402831337,
+        "logprob": 0,
+        "startIndex": 42
+      },
+      {
+        "text": "РИГА—ПЫТАЛОВО",
+        "confidence": 0.998224963557378,
+        "logprob": 0,
+        "startIndex": 57
+      },
+      {
+        "text": "РИГА—ЛИЕПАЯ",
+        "confidence": 0.9786011740598307,
+        "logprob": 0,
+        "startIndex": 72
+      },
+      {
+        "text": "РИГА—ВЕНТСПИЛС",
+        "confidence": 0.9987602338537623,
+        "logprob": 0,
+        "startIndex": 85
+      },
+      {
+        "text": "РИГА—ВАЛГА",
+        "confidence": 0.9994346692697174,
+        "logprob": 0,
+        "startIndex": 101
+      },
+      {
+        "text": "РИГА—ПЯРНУ",
+        "confidence": 0.9993050476613984,
+        "logprob": 0,
+        "startIndex": 113
+      }
+    ],
+    "averagePageConfidenceScore": 0.9824753292301015,
+    "minimumPageConfidenceScore": 0.8670353726857032
+  },
+  "blocks": [
+    {
+      "topLeftX": 696,
+      "topLeftY": 262,
+      "bottomRightX": 808,
+      "bottomRightY": 284,
+      "content": "# ГЛАВА XII",
+      "confidenceScores": null,
+      "type": "title"
+    },
+    {
+      "topLeftX": 689,
+      "topLeftY": 293,
+      "bottomRightX": 817,
+      "bottomRightY": 314,
+      "content": "РИГА—СЕБЕЖ",
+      "confidenceScores": null,
+      "type": "text"
+    },
+    {
+      "topLeftX": 662,
+      "topLeftY": 316,
+      "bottomRightX": 845,
+      "bottomRightY": 337,
+      "content": "РИГА—ДАУГАВПИЛС",
+      "confidenceScores": null,
+      "type": "text"
+    },
+    {
+      "topLeftX": 673,
+      "topLeftY": 339,
+      "bottomRightX": 832,
+      "bottomRightY": 360,
+      "content": "РИГА—БИГОСОВО",
+      "confidenceScores": null,
+      "type": "text"
+    },
+    {
+      "topLeftX": 671,
+      "topLeftY": 362,
+      "bottomRightX": 834,
+      "bottomRightY": 383,
+      "content": "РИГА—ПЫТАЛОВО",
+      "confidenceScores": null,
+      "type": "text"
+    },
+    {
+      "topLeftX": 683,
+      "topLeftY": 385,
+      "bottomRightX": 822,
+      "bottomRightY": 406,
+      "content": "РИГА—ЛИЕПАЯ",
+      "confidenceScores": null,
+      "type": "text"
+    },
+    {
+      "topLeftX": 668,
+      "topLeftY": 408,
+      "bottomRightX": 839,
+      "bottomRightY": 429,
+      "content": "РИГА—ВЕНТСПИЛС",
+      "confidenceScores": null,
+      "type": "text"
+    },
+    {
+      "topLeftX": 692,
+      "topLeftY": 431,
+      "bottomRightX": 815,
+      "bottomRightY": 452,
+      "content": "РИГА—ВАЛГА",
+      "confidenceScores": null,
+      "type": "text"
+    },
+    {
+      "topLeftX": 692,
+      "topLeftY": 454,
+      "bottomRightX": 817,
+      "bottomRightY": 475,
+      "content": "РИГА—ПЯРНУ",
+      "confidenceScores": null,
+      "type": "text"
+    }
+  ]
+}

@@ -1,0 +1,2340 @@
+{
+  "index": 35,
+  "dimensions": {
+    "dpi": 128,
+    "height": 821,
+    "width": 1019
+  },
+  "confidenceScores": {
+    "wordConfidenceScores": [
+      {
+        "text": "№",
+        "confidence": 0.9341615659158048,
+        "logprob": 0,
+        "startIndex": 3
+      },
+      {
+        "text": " поездов",
+        "confidence": 0.9984205236312808,
+        "logprob": 0,
+        "startIndex": 4
+      },
+      {
+        "text": "6534",
+        "confidence": 0.9937738454549878,
+        "logprob": 0,
+        "startIndex": 15
+      },
+      {
+        "text": " Д",
+        "confidence": 0.9998510788353338,
+        "logprob": 0,
+        "startIndex": 19
+      },
+      {
+        "text": "6634",
+        "confidence": 0.9994848445478982,
+        "logprob": 0,
+        "startIndex": 28
+      },
+      {
+        "text": "6442",
+        "confidence": 0.9998304760852724,
+        "logprob": 0,
+        "startIndex": 39
+      },
+      {
+        "text": " Д",
+        "confidence": 0.9996768572529178,
+        "logprob": 0,
+        "startIndex": 43
+      },
+      {
+        "text": "Разд.",
+        "confidence": 0.9996768572529178,
+        "logprob": 0,
+        "startIndex": 100
+      },
+      {
+        "text": " пункты",
+        "confidence": 0.9942624894890219,
+        "logprob": 0,
+        "startIndex": 105
+      },
+      {
+        "text": "приб.",
+        "confidence": 0.9942624894890219,
+        "logprob": 0,
+        "startIndex": 115
+      },
+      {
+        "text": "отпр.",
+        "confidence": 0.9942624894890219,
+        "logprob": 0,
+        "startIndex": 123
+      },
+      {
+        "text": "приб.",
+        "confidence": 0.9942624894890219,
+        "logprob": 0,
+        "startIndex": 131
+      },
+      {
+        "text": "отпр.",
+        "confidence": 0.9942624894890219,
+        "logprob": 0,
+        "startIndex": 139
+      },
+      {
+        "text": "приб.",
+        "confidence": 0.9942624894890219,
+        "logprob": 0,
+        "startIndex": 147
+      },
+      {
+        "text": "отпр.",
+        "confidence": 0.9942624894890219,
+        "logprob": 0,
+        "startIndex": 155
+      },
+      {
+        "text": "Тукумс-II",
+        "confidence": 0.9942624894890219,
+        "logprob": 0,
+        "startIndex": 167
+      },
+      {
+        "text": "Тукумс-I",
+        "confidence": 0.9942624894890219,
+        "logprob": 0,
+        "startIndex": 201
+      },
+      {
+        "text": "Милзкалие",
+        "confidence": 0.9942624894890219,
+        "logprob": 0,
+        "startIndex": 234
+      },
+      {
+        "text": "О/п.",
+        "confidence": 0.9942624894890219,
+        "logprob": 0,
+        "startIndex": 268
+      },
+      {
+        "text": " 56",
+        "confidence": 0.9999039681369183,
+        "logprob": 0,
+        "startIndex": 272
+      },
+      {
+        "text": " км",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 275
+      },
+      {
+        "text": "Смарде",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 303
+      },
+      {
+        "text": "Кемери",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 334
+      },
+      {
+        "text": "—",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 343
+      },
+      {
+        "text": "12.54",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 347
+      },
+      {
+        "text": "Кудра",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 371
+      },
+      {
+        "text": "12.57,5",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 379
+      },
+      {
+        "text": "12.58",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 389
+      },
+      {
+        "text": "Слока",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 413
+      },
+      {
+        "text": "13.02,5",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 421
+      },
+      {
+        "text": "13.03,5",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 431
+      },
+      {
+        "text": "—",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 447
+      },
+      {
+        "text": "13.15",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 451
+      },
+      {
+        "text": "Вайвари",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 463
+      },
+      {
+        "text": "13.06",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 473
+      },
+      {
+        "text": "13.06,5",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 481
+      },
+      {
+        "text": "13.18",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 497
+      },
+      {
+        "text": "13.18,5",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 505
+      },
+      {
+        "text": "Асари",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 519
+      },
+      {
+        "text": "13.08",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 527
+      },
+      {
+        "text": "13.09",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 535
+      },
+      {
+        "text": "13.20",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 549
+      },
+      {
+        "text": "13.20,5",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 557
+      },
+      {
+        "text": "Меллужи",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 571
+      },
+      {
+        "text": "13.10,5",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 581
+      },
+      {
+        "text": "13.11",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 591
+      },
+      {
+        "text": "13.22",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 605
+      },
+      {
+        "text": "13.22,5",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 613
+      },
+      {
+        "text": "Пумпури",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 627
+      },
+      {
+        "text": "13.12,5",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 637
+      },
+      {
+        "text": "13.13",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 647
+      },
+      {
+        "text": "13.24",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 661
+      },
+      {
+        "text": "13.24,5",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 669
+      },
+      {
+        "text": "Яундубулты",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 683
+      },
+      {
+        "text": "13.14,5",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 696
+      },
+      {
+        "text": "13.15",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 706
+      },
+      {
+        "text": "13.26",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 720
+      },
+      {
+        "text": "13.26,5",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 728
+      },
+      {
+        "text": "Дубулты",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 742
+      },
+      {
+        "text": "13.17",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 752
+      },
+      {
+        "text": "13.19",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 760
+      },
+      {
+        "text": "13.28,5",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 774
+      },
+      {
+        "text": "13.30",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 784
+      },
+      {
+        "text": "Майори",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 796
+      },
+      {
+        "text": "13.21",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 805
+      },
+      {
+        "text": "13.22",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 813
+      },
+      {
+        "text": "13.32",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 827
+      },
+      {
+        "text": "13.33",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 835
+      },
+      {
+        "text": "Дзинтари",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 847
+      },
+      {
+        "text": "13.23,5",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 858
+      },
+      {
+        "text": "13.25",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 868
+      },
+      {
+        "text": "13.34,5",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 882
+      },
+      {
+        "text": "13.35,5",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 892
+      },
+      {
+        "text": "Булдури",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 906
+      },
+      {
+        "text": "13.27",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 916
+      },
+      {
+        "text": "13.28",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 924
+      },
+      {
+        "text": "13.37",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 938
+      },
+      {
+        "text": "13.38,5",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 946
+      },
+      {
+        "text": "Лиелупе",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 960
+      },
+      {
+        "text": "13.29,5",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 970
+      },
+      {
+        "text": "13.30",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 980
+      },
+      {
+        "text": "13.40",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 994
+      },
+      {
+        "text": "13.41",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 1002
+      },
+      {
+        "text": "Приедайне",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 1014
+      },
+      {
+        "text": "13.31,5",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 1026
+      },
+      {
+        "text": "13.32",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 1036
+      },
+      {
+        "text": "13.42,5",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 1050
+      },
+      {
+        "text": "13.43,5",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 1060
+      },
+      {
+        "text": "Бабите",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 1074
+      },
+      {
+        "text": "13.35,5",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 1083
+      },
+      {
+        "text": "13.36",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 1093
+      },
+      {
+        "text": "13.47",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 1107
+      },
+      {
+        "text": "13.47,5",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 1115
+      },
+      {
+        "text": "Иманта",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 1129
+      },
+      {
+        "text": "13.38,5",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 1138
+      },
+      {
+        "text": "13.39",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 1148
+      },
+      {
+        "text": "13.50",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 1162
+      },
+      {
+        "text": "13.51",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 1170
+      },
+      {
+        "text": "Золитуда",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 1182
+      },
+      {
+        "text": "—",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 1193
+      },
+      {
+        "text": "—",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 1197
+      },
+      {
+        "text": "—",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 1207
+      },
+      {
+        "text": "—",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 1211
+      },
+      {
+        "text": "Депо",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 1219
+      },
+      {
+        "text": "13.41",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 1226
+      },
+      {
+        "text": "13.42",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 1234
+      },
+      {
+        "text": "13.53",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 1248
+      },
+      {
+        "text": "13.53,5",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 1256
+      },
+      {
+        "text": "Засулаукс",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 1270
+      },
+      {
+        "text": "13.45",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 1282
+      },
+      {
+        "text": "13.46",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 1290
+      },
+      {
+        "text": "13.57",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 1304
+      },
+      {
+        "text": "13.58",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 1312
+      },
+      {
+        "text": "Торнякалис",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 1324
+      },
+      {
+        "text": "13.49",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 1337
+      },
+      {
+        "text": "13.49,5",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 1345
+      },
+      {
+        "text": "14.01",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 1361
+      },
+      {
+        "text": "14.02",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 1369
+      },
+      {
+        "text": "Рига-пасс.",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 1381
+      },
+      {
+        "text": "13.53",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 1394
+      },
+      {
+        "text": "13.58",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 1402
+      },
+      {
+        "text": "—",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 1410
+      },
+      {
+        "text": "13.53",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 1414
+      },
+      {
+        "text": "14.06",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 1422
+      },
+      {
+        "text": "14.17",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 1430
+      },
+      {
+        "text": "Вагонный",
+        "confidence": 0.9985151552681185,
+        "logprob": 0,
+        "startIndex": 1442
+      },
+      {
+        "text": " парк",
+        "confidence": 0.9982537174067024,
+        "logprob": 0,
+        "startIndex": 1450
+      },
+      {
+        "text": "13.57",
+        "confidence": 0.9982537174067024,
+        "logprob": 0,
+        "startIndex": 1464
+      },
+      {
+        "text": "13.58",
+        "confidence": 0.9982537174067024,
+        "logprob": 0,
+        "startIndex": 1472
+      },
+      {
+        "text": "Яняварты",
+        "confidence": 0.9982537174067024,
+        "logprob": 0,
+        "startIndex": 1490
+      },
+      {
+        "text": "14.01",
+        "confidence": 0.9982537174067024,
+        "logprob": 0,
+        "startIndex": 1507
+      },
+      {
+        "text": "14.02",
+        "confidence": 0.9982537174067024,
+        "logprob": 0,
+        "startIndex": 1515
+      },
+      {
+        "text": "Даугмале",
+        "confidence": 0.9982537174067024,
+        "logprob": 0,
+        "startIndex": 1533
+      },
+      {
+        "text": "14.03,5",
+        "confidence": 0.9982537174067024,
+        "logprob": 0,
+        "startIndex": 1550
+      },
+      {
+        "text": "14.04",
+        "confidence": 0.9982537174067024,
+        "logprob": 0,
+        "startIndex": 1560
+      },
+      {
+        "text": "Шкиротава",
+        "confidence": 0.9982537174067024,
+        "logprob": 0,
+        "startIndex": 1578
+      },
+      {
+        "text": "14.05,5",
+        "confidence": 0.9982537174067024,
+        "logprob": 0,
+        "startIndex": 1596
+      },
+      {
+        "text": "14.06,5",
+        "confidence": 0.9982537174067024,
+        "logprob": 0,
+        "startIndex": 1606
+      },
+      {
+        "text": "Гайсма",
+        "confidence": 0.9982537174067024,
+        "logprob": 0,
+        "startIndex": 1626
+      },
+      {
+        "text": "14.08,5",
+        "confidence": 0.9982537174067024,
+        "logprob": 0,
+        "startIndex": 1641
+      },
+      {
+        "text": "14.09,5",
+        "confidence": 0.9982537174067024,
+        "logprob": 0,
+        "startIndex": 1651
+      },
+      {
+        "text": "Румбула",
+        "confidence": 0.9982537174067024,
+        "logprob": 0,
+        "startIndex": 1671
+      },
+      {
+        "text": "14.11,5",
+        "confidence": 0.9982537174067024,
+        "logprob": 0,
+        "startIndex": 1687
+      },
+      {
+        "text": "14.12",
+        "confidence": 0.9982537174067024,
+        "logprob": 0,
+        "startIndex": 1697
+      },
+      {
+        "text": "Дарзини",
+        "confidence": 0.9982537174067024,
+        "logprob": 0,
+        "startIndex": 1715
+      },
+      {
+        "text": "14.14",
+        "confidence": 0.9982537174067024,
+        "logprob": 0,
+        "startIndex": 1731
+      },
+      {
+        "text": "14.15,5",
+        "confidence": 0.9982537174067024,
+        "logprob": 0,
+        "startIndex": 1739
+      },
+      {
+        "text": "Доле",
+        "confidence": 0.9982537174067024,
+        "logprob": 0,
+        "startIndex": 1759
+      },
+      {
+        "text": "14.18,5",
+        "confidence": 0.9982537174067024,
+        "logprob": 0,
+        "startIndex": 1772
+      },
+      {
+        "text": "14.19",
+        "confidence": 0.9982537174067024,
+        "logprob": 0,
+        "startIndex": 1782
+      },
+      {
+        "text": "Саласпилс",
+        "confidence": 0.9982537174067024,
+        "logprob": 0,
+        "startIndex": 1800
+      },
+      {
+        "text": "14.20,5",
+        "confidence": 0.9982537174067024,
+        "logprob": 0,
+        "startIndex": 1818
+      },
+      {
+        "text": "14.21,5",
+        "confidence": 0.9982537174067024,
+        "logprob": 0,
+        "startIndex": 1828
+      },
+      {
+        "text": "Саулкалие",
+        "confidence": 0.9982537174067024,
+        "logprob": 0,
+        "startIndex": 1848
+      },
+      {
+        "text": "14.25",
+        "confidence": 0.9982537174067024,
+        "logprob": 0,
+        "startIndex": 1866
+      },
+      {
+        "text": "14.25,5",
+        "confidence": 0.9982537174067024,
+        "logprob": 0,
+        "startIndex": 1874
+      },
+      {
+        "text": "Икшкиле",
+        "confidence": 0.9982537174067024,
+        "logprob": 0,
+        "startIndex": 1894
+      },
+      {
+        "text": "14.29",
+        "confidence": 0.9982537174067024,
+        "logprob": 0,
+        "startIndex": 1910
+      },
+      {
+        "text": "14.30",
+        "confidence": 0.9982537174067024,
+        "logprob": 0,
+        "startIndex": 1918
+      },
+      {
+        "text": "Яуногре",
+        "confidence": 0.9982537174067024,
+        "logprob": 0,
+        "startIndex": 1936
+      },
+      {
+        "text": "14.33,5",
+        "confidence": 0.9982537174067024,
+        "logprob": 0,
+        "startIndex": 1952
+      },
+      {
+        "text": "14.34,5",
+        "confidence": 0.9982537174067024,
+        "logprob": 0,
+        "startIndex": 1962
+      },
+      {
+        "text": "Огре",
+        "confidence": 0.9982537174067024,
+        "logprob": 0,
+        "startIndex": 1982
+      },
+      {
+        "text": "14.37",
+        "confidence": 0.9982537174067024,
+        "logprob": 0,
+        "startIndex": 1995
+      },
+      {
+        "text": "—",
+        "confidence": 0.9982537174067024,
+        "logprob": 0,
+        "startIndex": 2003
+      },
+      {
+        "text": "Парогре",
+        "confidence": 0.9982537174067024,
+        "logprob": 0,
+        "startIndex": 2017
+      },
+      {
+        "text": "Циемупе",
+        "confidence": 0.9982537174067024,
+        "logprob": 0,
+        "startIndex": 2049
+      },
+      {
+        "text": "Кегумс",
+        "confidence": 0.9982537174067024,
+        "logprob": 0,
+        "startIndex": 2081
+      },
+      {
+        "text": "Лиелварде",
+        "confidence": 0.9982537174067024,
+        "logprob": 0,
+        "startIndex": 2112
+      },
+      {
+        "text": "68",
+        "confidence": 0.9995206509127686,
+        "logprob": 0,
+        "startIndex": 2144
+      },
+      {
+        "text": "№",
+        "confidence": 0.9984561813881504,
+        "logprob": 0,
+        "startIndex": 2151
+      },
+      {
+        "text": " поездов",
+        "confidence": 0.9999315673953175,
+        "logprob": 0,
+        "startIndex": 2152
+      },
+      {
+        "text": "6322*",
+        "confidence": 0.9983286825332951,
+        "logprob": 0,
+        "startIndex": 2163
+      },
+      {
+        "text": "6444",
+        "confidence": 0.9990882583552071,
+        "logprob": 0,
+        "startIndex": 2175
+      },
+      {
+        "text": "6536",
+        "confidence": 0.9997553628326207,
+        "logprob": 0,
+        "startIndex": 2186
+      },
+      {
+        "text": " Д/",
+        "confidence": 0.9890042447074493,
+        "logprob": 0,
+        "startIndex": 2190
+      },
+      {
+        "text": "Разд.",
+        "confidence": 0.9890042447074493,
+        "logprob": 0,
+        "startIndex": 2248
+      },
+      {
+        "text": " пункты",
+        "confidence": 0.9997936949777351,
+        "logprob": 0,
+        "startIndex": 2253
+      },
+      {
+        "text": "приб.",
+        "confidence": 0.9997936949777351,
+        "logprob": 0,
+        "startIndex": 2263
+      },
+      {
+        "text": "отпр.",
+        "confidence": 0.9997936949777351,
+        "logprob": 0,
+        "startIndex": 2271
+      },
+      {
+        "text": "приб.",
+        "confidence": 0.9997936949777351,
+        "logprob": 0,
+        "startIndex": 2279
+      },
+      {
+        "text": "отпр.",
+        "confidence": 0.9997936949777351,
+        "logprob": 0,
+        "startIndex": 2287
+      },
+      {
+        "text": "приб.",
+        "confidence": 0.9997936949777351,
+        "logprob": 0,
+        "startIndex": 2295
+      },
+      {
+        "text": "отпр.",
+        "confidence": 0.9997936949777351,
+        "logprob": 0,
+        "startIndex": 2303
+      },
+      {
+        "text": "Тукумс-II",
+        "confidence": 0.9997936949777351,
+        "logprob": 0,
+        "startIndex": 2315
+      },
+      {
+        "text": "—",
+        "confidence": 0.9997936949777351,
+        "logprob": 0,
+        "startIndex": 2339
+      },
+      {
+        "text": "13.02",
+        "confidence": 0.9997936949777351,
+        "logprob": 0,
+        "startIndex": 2343
+      },
+      {
+        "text": "Тукумс-I",
+        "confidence": 0.9997936949777351,
+        "logprob": 0,
+        "startIndex": 2355
+      },
+      {
+        "text": "13.06",
+        "confidence": 0.9997936949777351,
+        "logprob": 0,
+        "startIndex": 2378
+      },
+      {
+        "text": "13.07",
+        "confidence": 0.9997936949777351,
+        "logprob": 0,
+        "startIndex": 2386
+      },
+      {
+        "text": "Милзкалие",
+        "confidence": 0.9997936949777351,
+        "logprob": 0,
+        "startIndex": 2398
+      },
+      {
+        "text": "13.11",
+        "confidence": 0.9997936949777351,
+        "logprob": 0,
+        "startIndex": 2422
+      },
+      {
+        "text": "13.12",
+        "confidence": 0.9997936949777351,
+        "logprob": 0,
+        "startIndex": 2430
+      },
+      {
+        "text": "О/п.",
+        "confidence": 0.9997936949777351,
+        "logprob": 0,
+        "startIndex": 2442
+      },
+      {
+        "text": " 56",
+        "confidence": 0.9999952316558922,
+        "logprob": 0,
+        "startIndex": 2446
+      },
+      {
+        "text": " км",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 2449
+      },
+      {
+        "text": "—",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 2467
+      },
+      {
+        "text": "—",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 2471
+      },
+      {
+        "text": "Смарде",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 2479
+      },
+      {
+        "text": "13.17",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 2500
+      },
+      {
+        "text": "13.18",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 2508
+      },
+      {
+        "text": "Кемери",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 2520
+      },
+      {
+        "text": "13.25",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 2541
+      },
+      {
+        "text": "13.33",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 2549
+      },
+      {
+        "text": "Кудра",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 2561
+      },
+      {
+        "text": "13.36",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 2581
+      },
+      {
+        "text": "13.36,5",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 2589
+      },
+      {
+        "text": "Слока",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 2603
+      },
+      {
+        "text": "—",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 2617
+      },
+      {
+        "text": "13.37",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 2621
+      },
+      {
+        "text": "13.41",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 2629
+      },
+      {
+        "text": "13.42",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 2637
+      },
+      {
+        "text": "Вайвари",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 2649
+      },
+      {
+        "text": "13.40",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 2665
+      },
+      {
+        "text": "13.40,5",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 2673
+      },
+      {
+        "text": "13.44,5",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 2683
+      },
+      {
+        "text": "13.45",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 2693
+      },
+      {
+        "text": "Асари",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 2705
+      },
+      {
+        "text": "13.42",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 2719
+      },
+      {
+        "text": "13.42,5",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 2727
+      },
+      {
+        "text": "13.46,5",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 2737
+      },
+      {
+        "text": "13.47",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 2747
+      },
+      {
+        "text": "Меллужи",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 2759
+      },
+      {
+        "text": "13.44",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 2775
+      },
+      {
+        "text": "13.44,5",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 2783
+      },
+      {
+        "text": "13.48,5",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 2793
+      },
+      {
+        "text": "13.49",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 2803
+      },
+      {
+        "text": "Пумпури",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 2815
+      },
+      {
+        "text": "13.46",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 2831
+      },
+      {
+        "text": "13.46,5",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 2839
+      },
+      {
+        "text": "13.50,5",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 2849
+      },
+      {
+        "text": "13.51",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 2859
+      },
+      {
+        "text": "Яундубулты",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 2871
+      },
+      {
+        "text": "13.48",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 2890
+      },
+      {
+        "text": "13.48,5",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 2898
+      },
+      {
+        "text": "13.52,5",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 2908
+      },
+      {
+        "text": "13.53",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 2918
+      },
+      {
+        "text": "Дубулты",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 2930
+      },
+      {
+        "text": "—",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 2940
+      },
+      {
+        "text": "13.35",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 2944
+      },
+      {
+        "text": "13.50,5",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 2952
+      },
+      {
+        "text": "13.52",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 2962
+      },
+      {
+        "text": "13.55",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 2970
+      },
+      {
+        "text": "13.57",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 2978
+      },
+      {
+        "text": "Майори",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 2990
+      },
+      {
+        "text": "13.37,5",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 2999
+      },
+      {
+        "text": "13.39",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3009
+      },
+      {
+        "text": "13.54",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3017
+      },
+      {
+        "text": "13.55",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3025
+      },
+      {
+        "text": "13.59",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3033
+      },
+      {
+        "text": "14.00",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3041
+      },
+      {
+        "text": "Дзинтари",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3053
+      },
+      {
+        "text": "13.40,5",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3064
+      },
+      {
+        "text": "13.41,5",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3074
+      },
+      {
+        "text": "13.56,5",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3084
+      },
+      {
+        "text": "13.58",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3094
+      },
+      {
+        "text": "14.01,5",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3102
+      },
+      {
+        "text": "14.02,5",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3112
+      },
+      {
+        "text": "Булдури",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3126
+      },
+      {
+        "text": "13.43,5",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3136
+      },
+      {
+        "text": "13.45",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3146
+      },
+      {
+        "text": "14.00",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3154
+      },
+      {
+        "text": "14.01",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3162
+      },
+      {
+        "text": "14.04,5",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3170
+      },
+      {
+        "text": "14.05,5",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3180
+      },
+      {
+        "text": "Лиелупе",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3194
+      },
+      {
+        "text": "13.46,5",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3204
+      },
+      {
+        "text": "13.47",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3214
+      },
+      {
+        "text": "14.02,5",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3222
+      },
+      {
+        "text": "14.03",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3232
+      },
+      {
+        "text": "14.07",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3240
+      },
+      {
+        "text": "14.08",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3248
+      },
+      {
+        "text": "Приедайне",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3260
+      },
+      {
+        "text": "13.48,5",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3272
+      },
+      {
+        "text": "13.49",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3282
+      },
+      {
+        "text": "14.04,5",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3290
+      },
+      {
+        "text": "14.06",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3300
+      },
+      {
+        "text": "14.09,5",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3308
+      },
+      {
+        "text": "14.10,5",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3318
+      },
+      {
+        "text": "Бабите",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3332
+      },
+      {
+        "text": "13.52,5",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3341
+      },
+      {
+        "text": "13.53",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3351
+      },
+      {
+        "text": "14.09,5",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3359
+      },
+      {
+        "text": "14.10",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3369
+      },
+      {
+        "text": "14.14",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3377
+      },
+      {
+        "text": "14.14,5",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3385
+      },
+      {
+        "text": "Иманта",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3399
+      },
+      {
+        "text": "13.55,5",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3408
+      },
+      {
+        "text": "13.56",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3418
+      },
+      {
+        "text": "14.12,5",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3426
+      },
+      {
+        "text": "14.13,5",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3436
+      },
+      {
+        "text": "14.17",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3446
+      },
+      {
+        "text": "14.18",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3454
+      },
+      {
+        "text": "Золитуде",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3466
+      },
+      {
+        "text": "13.57,5",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3477
+      },
+      {
+        "text": "13.58,5",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3487
+      },
+      {
+        "text": "14.15",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3497
+      },
+      {
+        "text": "14.16",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3505
+      },
+      {
+        "text": "—",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3513
+      },
+      {
+        "text": "—",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3517
+      },
+      {
+        "text": "Депо",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3525
+      },
+      {
+        "text": "—",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3532
+      },
+      {
+        "text": "—",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3536
+      },
+      {
+        "text": "—",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3540
+      },
+      {
+        "text": "—",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3544
+      },
+      {
+        "text": "14.20",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3548
+      },
+      {
+        "text": "14.21",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3556
+      },
+      {
+        "text": "Засулаукс",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3568
+      },
+      {
+        "text": "14.03,5",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3580
+      },
+      {
+        "text": "14.04,5",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3590
+      },
+      {
+        "text": "14.21",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3600
+      },
+      {
+        "text": "14.22",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3608
+      },
+      {
+        "text": "14.25",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3616
+      },
+      {
+        "text": "14.27",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3624
+      },
+      {
+        "text": "Торнякалис",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3636
+      },
+      {
+        "text": "14.07,5",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3649
+      },
+      {
+        "text": "14.08,5",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3659
+      },
+      {
+        "text": "14.25",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3669
+      },
+      {
+        "text": "14.28",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3677
+      },
+      {
+        "text": "14.30",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3685
+      },
+      {
+        "text": "14.31",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3693
+      },
+      {
+        "text": "Рига-пасс.",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3705
+      },
+      {
+        "text": "14.12",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3718
+      },
+      {
+        "text": "14.28",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3726
+      },
+      {
+        "text": "14.32",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3734
+      },
+      {
+        "text": "—",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3742
+      },
+      {
+        "text": "14.36",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3746
+      },
+      {
+        "text": "14.51",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3754
+      },
+      {
+        "text": "Вагонный",
+        "confidence": 0.9999261261517975,
+        "logprob": 0,
+        "startIndex": 3766
+      },
+      {
+        "text": " парк",
+        "confidence": 0.9999795216906842,
+        "logprob": 0,
+        "startIndex": 3774
+      },
+      {
+        "text": "14.32",
+        "confidence": 0.9999795216906842,
+        "logprob": 0,
+        "startIndex": 3782
+      },
+      {
+        "text": "14.33",
+        "confidence": 0.9999795216906842,
+        "logprob": 0,
+        "startIndex": 3790
+      },
+      {
+        "text": "Яняварты",
+        "confidence": 0.9999795216906842,
+        "logprob": 0,
+        "startIndex": 3814
+      },
+      {
+        "text": "14.36",
+        "confidence": 0.9999795216906842,
+        "logprob": 0,
+        "startIndex": 3825
+      },
+      {
+        "text": "14.37",
+        "confidence": 0.9999795216906842,
+        "logprob": 0,
+        "startIndex": 3833
+      },
+      {
+        "text": "Даугмале",
+        "confidence": 0.9999795216906842,
+        "logprob": 0,
+        "startIndex": 3857
+      },
+      {
+        "text": "14.38,5",
+        "confidence": 0.9999795216906842,
+        "logprob": 0,
+        "startIndex": 3868
+      },
+      {
+        "text": "14.39,5",
+        "confidence": 0.9999795216906842,
+        "logprob": 0,
+        "startIndex": 3878
+      },
+      {
+        "text": "Шкиротава",
+        "confidence": 0.9999795216906842,
+        "logprob": 0,
+        "startIndex": 3904
+      },
+      {
+        "text": "14.41",
+        "confidence": 0.9999795216906842,
+        "logprob": 0,
+        "startIndex": 3916
+      },
+      {
+        "text": "14.42",
+        "confidence": 0.9999795216906842,
+        "logprob": 0,
+        "startIndex": 3924
+      },
+      {
+        "text": "Гайсма",
+        "confidence": 0.9999795216906842,
+        "logprob": 0,
+        "startIndex": 3948
+      },
+      {
+        "text": "—",
+        "confidence": 0.9999795216906842,
+        "logprob": 0,
+        "startIndex": 3957
+      },
+      {
+        "text": "—",
+        "confidence": 0.9999795216906842,
+        "logprob": 0,
+        "startIndex": 3961
+      },
+      {
+        "text": "Румбула",
+        "confidence": 0.9999795216906842,
+        "logprob": 0,
+        "startIndex": 3981
+      },
+      {
+        "text": "14.45",
+        "confidence": 0.9999795216906842,
+        "logprob": 0,
+        "startIndex": 3991
+      },
+      {
+        "text": "14.45,5",
+        "confidence": 0.9999795216906842,
+        "logprob": 0,
+        "startIndex": 3999
+      },
+      {
+        "text": "Дарзини",
+        "confidence": 0.9999795216906842,
+        "logprob": 0,
+        "startIndex": 4025
+      },
+      {
+        "text": "14.47,5",
+        "confidence": 0.9999795216906842,
+        "logprob": 0,
+        "startIndex": 4035
+      },
+      {
+        "text": "14.49",
+        "confidence": 0.9999795216906842,
+        "logprob": 0,
+        "startIndex": 4045
+      },
+      {
+        "text": "Доле",
+        "confidence": 0.9999795216906842,
+        "logprob": 0,
+        "startIndex": 4069
+      },
+      {
+        "text": "14.52",
+        "confidence": 0.9999795216906842,
+        "logprob": 0,
+        "startIndex": 4076
+      },
+      {
+        "text": "14.52,5",
+        "confidence": 0.9999795216906842,
+        "logprob": 0,
+        "startIndex": 4084
+      },
+      {
+        "text": "Саласпилс",
+        "confidence": 0.9999795216906842,
+        "logprob": 0,
+        "startIndex": 4110
+      },
+      {
+        "text": "14.54",
+        "confidence": 0.9999795216906842,
+        "logprob": 0,
+        "startIndex": 4122
+      },
+      {
+        "text": "14.55",
+        "confidence": 0.9999795216906842,
+        "logprob": 0,
+        "startIndex": 4130
+      },
+      {
+        "text": "Саулкалие",
+        "confidence": 0.9999795216906842,
+        "logprob": 0,
+        "startIndex": 4154
+      },
+      {
+        "text": "14.58,5",
+        "confidence": 0.9999795216906842,
+        "logprob": 0,
+        "startIndex": 4166
+      },
+      {
+        "text": "14.59",
+        "confidence": 0.9999795216906842,
+        "logprob": 0,
+        "startIndex": 4176
+      },
+      {
+        "text": "Икшкиле",
+        "confidence": 0.9999795216906842,
+        "logprob": 0,
+        "startIndex": 4200
+      },
+      {
+        "text": "15.02,5",
+        "confidence": 0.9999795216906842,
+        "logprob": 0,
+        "startIndex": 4210
+      },
+      {
+        "text": "15.03,5",
+        "confidence": 0.9999795216906842,
+        "logprob": 0,
+        "startIndex": 4220
+      },
+      {
+        "text": "Яуногре",
+        "confidence": 0.9999795216906842,
+        "logprob": 0,
+        "startIndex": 4246
+      },
+      {
+        "text": "15.07,5",
+        "confidence": 0.9999795216906842,
+        "logprob": 0,
+        "startIndex": 4256
+      },
+      {
+        "text": "15.08",
+        "confidence": 0.9999795216906842,
+        "logprob": 0,
+        "startIndex": 4266
+      },
+      {
+        "text": "Огре",
+        "confidence": 0.9999795216906842,
+        "logprob": 0,
+        "startIndex": 4290
+      },
+      {
+        "text": "15.09,5",
+        "confidence": 0.9999795216906842,
+        "logprob": 0,
+        "startIndex": 4297
+      },
+      {
+        "text": "15.11",
+        "confidence": 0.9999795216906842,
+        "logprob": 0,
+        "startIndex": 4307
+      },
+      {
+        "text": "Парогре",
+        "confidence": 0.9999795216906842,
+        "logprob": 0,
+        "startIndex": 4331
+      },
+      {
+        "text": "15.12,5",
+        "confidence": 0.9999795216906842,
+        "logprob": 0,
+        "startIndex": 4341
+      },
+      {
+        "text": "15.13,5",
+        "confidence": 0.9999795216906842,
+        "logprob": 0,
+        "startIndex": 4351
+      },
+      {
+        "text": "Циемупе",
+        "confidence": 0.9999795216906842,
+        "logprob": 0,
+        "startIndex": 4377
+      },
+      {
+        "text": "15.17",
+        "confidence": 0.9999795216906842,
+        "logprob": 0,
+        "startIndex": 4387
+      },
+      {
+        "text": "15.17,5",
+        "confidence": 0.9999795216906842,
+        "logprob": 0,
+        "startIndex": 4395
+      },
+      {
+        "text": "Кегумс",
+        "confidence": 0.9999795216906842,
+        "logprob": 0,
+        "startIndex": 4421
+      },
+      {
+        "text": "15.22,5",
+        "confidence": 0.9999795216906842,
+        "logprob": 0,
+        "startIndex": 4430
+      },
+      {
+        "text": "15.23,5",
+        "confidence": 0.9999795216906842,
+        "logprob": 0,
+        "startIndex": 4440
+      },
+      {
+        "text": "Лиелварде",
+        "confidence": 0.9999795216906842,
+        "logprob": 0,
+        "startIndex": 4466
+      },
+      {
+        "text": "15.28",
+        "confidence": 0.9999795216906842,
+        "logprob": 0,
+        "startIndex": 4478
+      },
+      {
+        "text": "15.29",
+        "confidence": 0.9999795216906842,
+        "logprob": 0,
+        "startIndex": 4486
+      },
+      {
+        "text": "69",
+        "confidence": 0.9998446944204133,
+        "logprob": 0,
+        "startIndex": 4508
+      }
+    ],
+    "averagePageConfidenceScore": 0.9989177484317511,
+    "minimumPageConfidenceScore": 0.9341615659158048
+  },
+  "blocks": [
+    {
+      "topLeftX": 57,
+      "topLeftY": 29,
+      "bottomRightX": 497,
+      "bottomRightY": 747,
+      "content": "|  № поездов | 6534 Д |   | 6634 |   | 6442 Д  |   |\n| --- | --- | --- | --- | --- | --- | --- |\n|  Разд. пункты | приб. | отпр. | приб. | отпр. | приб. | отпр.  |\n|  Тукумс-II |  |  |  |  |  |   |\n|  Тукумс-I |  |  |  |  |  |   |\n|  Милзкалие |  |  |  |  |  |   |\n|  О/п. 56 км |  |  |  |  |  |   |\n|  Смарде |  |  |  |  |  |   |\n|  Кемери | — | 12.54 |  |  |  |   |\n|  Кудра | 12.57,5 | 12.58 |  |  |  |   |\n|  Слока | 13.02,5 | 13.03,5 |  |  | — | 13.15  |\n|  Вайвари | 13.06 | 13.06,5 |  |  | 13.18 | 13.18,5  |\n|  Асари | 13.08 | 13.09 |  |  | 13.20 | 13.20,5  |\n|  Меллужи | 13.10,5 | 13.11 |  |  | 13.22 | 13.22,5  |\n|  Пумпури | 13.12,5 | 13.13 |  |  | 13.24 | 13.24,5  |\n|  Яундубулты | 13.14,5 | 13.15 |  |  | 13.26 | 13.26,5  |\n|  Дубулты | 13.17 | 13.19 |  |  | 13.28,5 | 13.30  |\n|  Майори | 13.21 | 13.22 |  |  | 13.32 | 13.33  |\n|  Дзинтари | 13.23,5 | 13.25 |  |  | 13.34,5 | 13.35,5  |\n|  Булдури | 13.27 | 13.28 |  |  | 13.37 | 13.38,5  |\n|  Лиелупе | 13.29,5 | 13.30 |  |  | 13.40 | 13.41  |\n|  Приедайне | 13.31,5 | 13.32 |  |  | 13.42,5 | 13.43,5  |\n|  Бабите | 13.35,5 | 13.36 |  |  | 13.47 | 13.47,5  |\n|  Иманта | 13.38,5 | 13.39 |  |  | 13.50 | 13.51  |\n|  Золитуда | — | — |  |  | — | —  |\n|  Депо | 13.41 | 13.42 |  |  | 13.53 | 13.53,5  |\n|  Засулаукс | 13.45 | 13.46 |  |  | 13.57 | 13.58  |\n|  Торнякалис | 13.49 | 13.49,5 |  |  | 14.01 | 14.02  |\n|  Рига-пасс. | 13.53 | 13.58 | — | 13.53 | 14.06 | 14.17  |\n|  Вагонный парк |  |  | 13.57 | 13.58 |  |   |\n|  Яняварты |  |  | 14.01 | 14.02 |  |   |\n|  Даугмале |  |  | 14.03,5 | 14.04 |  |   |\n|  Шкиротава |  |  | 14.05,5 | 14.06,5 |  |   |\n|  Гайсма |  |  | 14.08,5 | 14.09,5 |  |   |\n|  Румбула |  |  | 14.11,5 | 14.12 |  |   |\n|  Дарзини |  |  | 14.14 | 14.15,5 |  |   |\n|  Доле |  |  | 14.18,5 | 14.19 |  |   |\n|  Саласпилс |  |  | 14.20,5 | 14.21,5 |  |   |\n|  Саулкалие |  |  | 14.25 | 14.25,5 |  |   |\n|  Икшкиле |  |  | 14.29 | 14.30 |  |   |\n|  Яуногре |  |  | 14.33,5 | 14.34,5 |  |   |\n|  Огре |  |  | 14.37 | — |  |   |\n|  Парогре |  |  |  |  |  |   |\n|  Циемупе |  |  |  |  |  |   |\n|  Кегумс |  |  |  |  |  |   |\n|  Лиелварде |  |  |  |  |  |   |",
+      "confidenceScores": null,
+      "type": "table",
+      "tableId": null
+    },
+    {
+      "topLeftX": 48,
+      "topLeftY": 750,
+      "bottomRightX": 66,
+      "bottomRightY": 765,
+      "content": "68",
+      "confidenceScores": null,
+      "type": "header"
+    },
+    {
+      "topLeftX": 529,
+      "topLeftY": 33,
+      "bottomRightX": 971,
+      "bottomRightY": 751,
+      "content": "|  № поездов | 6322* |   | 6444 |   | 6536 Д/  |   |\n| --- | --- | --- | --- | --- | --- | --- |\n|  Разд. пункты | приб. | отпр. | приб. | отпр. | приб. | отпр.  |\n|  Тукумс-II |  |  |  |  | — | 13.02  |\n|  Тукумс-I |  |  |  |  | 13.06 | 13.07  |\n|  Милзкалие |  |  |  |  | 13.11 | 13.12  |\n|  О/п. 56 км |  |  |  |  | — | —  |\n|  Смарде |  |  |  |  | 13.17 | 13.18  |\n|  Кемери |  |  |  |  | 13.25 | 13.33  |\n|  Кудра |  |  |  |  | 13.36 | 13.36,5  |\n|  Слока |  |  | — | 13.37 | 13.41 | 13.42  |\n|  Вайвари |  |  | 13.40 | 13.40,5 | 13.44,5 | 13.45  |\n|  Асари |  |  | 13.42 | 13.42,5 | 13.46,5 | 13.47  |\n|  Меллужи |  |  | 13.44 | 13.44,5 | 13.48,5 | 13.49  |\n|  Пумпури |  |  | 13.46 | 13.46,5 | 13.50,5 | 13.51  |\n|  Яундубулты |  |  | 13.48 | 13.48,5 | 13.52,5 | 13.53  |\n|  Дубулты | — | 13.35 | 13.50,5 | 13.52 | 13.55 | 13.57  |\n|  Майори | 13.37,5 | 13.39 | 13.54 | 13.55 | 13.59 | 14.00  |\n|  Дзинтари | 13.40,5 | 13.41,5 | 13.56,5 | 13.58 | 14.01,5 | 14.02,5  |\n|  Булдури | 13.43,5 | 13.45 | 14.00 | 14.01 | 14.04,5 | 14.05,5  |\n|  Лиелупе | 13.46,5 | 13.47 | 14.02,5 | 14.03 | 14.07 | 14.08  |\n|  Приедайне | 13.48,5 | 13.49 | 14.04,5 | 14.06 | 14.09,5 | 14.10,5  |\n|  Бабите | 13.52,5 | 13.53 | 14.09,5 | 14.10 | 14.14 | 14.14,5  |\n|  Иманта | 13.55,5 | 13.56 | 14.12,5 | 14.13,5 | 14.17 | 14.18  |\n|  Золитуде | 13.57,5 | 13.58,5 | 14.15 | 14.16 | — | —  |\n|  Депо | — | — | — | — | 14.20 | 14.21  |\n|  Засулаукс | 14.03,5 | 14.04,5 | 14.21 | 14.22 | 14.25 | 14.27  |\n|  Торнякалис | 14.07,5 | 14.08,5 | 14.25 | 14.28 | 14.30 | 14.31  |\n|  Рига-пасс. | 14.12 | 14.28 | 14.32 | — | 14.36 | 14.51  |\n|  Вагонный парк | 14.32 | 14.33 |  |  |  |   |\n|  Яняварты | 14.36 | 14.37 |  |  |  |   |\n|  Даугмале | 14.38,5 | 14.39,5 |  |  |  |   |\n|  Шкиротава | 14.41 | 14.42 |  |  |  |   |\n|  Гайсма | — | — |  |  |  |   |\n|  Румбула | 14.45 | 14.45,5 |  |  |  |   |\n|  Дарзини | 14.47,5 | 14.49 |  |  |  |   |\n|  Доле | 14.52 | 14.52,5 |  |  |  |   |\n|  Саласпилс | 14.54 | 14.55 |  |  |  |   |\n|  Саулкалие | 14.58,5 | 14.59 |  |  |  |   |\n|  Икшкиле | 15.02,5 | 15.03,5 |  |  |  |   |\n|  Яуногре | 15.07,5 | 15.08 |  |  |  |   |\n|  Огре | 15.09,5 | 15.11 |  |  |  |   |\n|  Парогре | 15.12,5 | 15.13,5 |  |  |  |   |\n|  Циемупе | 15.17 | 15.17,5 |  |  |  |   |\n|  Кегумс | 15.22,5 | 15.23,5 |  |  |  |   |\n|  Лиелварде | 15.28 | 15.29 |  |  |  |   |",
+      "confidenceScores": null,
+      "type": "table",
+      "tableId": null
+    },
+    {
+      "topLeftX": 956,
+      "topLeftY": 757,
+      "bottomRightX": 974,
+      "bottomRightY": 773,
+      "content": "69",
+      "confidenceScores": null,
+      "type": "footer"
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "index": 49,
+  "dimensions": {
+    "dpi": 128,
+    "height": 821,
+    "width": 1019
+  },
+  "confidenceScores": {
+    "wordConfidenceScores": [
+      {
+        "text": "#",
+        "confidence": 0.9971990580965346,
+        "logprob": 0,
+        "startIndex": 0
+      },
+      {
+        "text": " ГЛАВА",
+        "confidence": 0.9929753807703633,
+        "logprob": 0,
+        "startIndex": 1
+      },
+      {
+        "text": " V",
+        "confidence": 0.9998493421585343,
+        "logprob": 0,
+        "startIndex": 7
+      },
+      {
+        "text": " ",
+        "confidence": 0.6489635422545468,
+        "logprob": 0,
+        "startIndex": 9
+      },
+      {
+        "text": " ",
+        "confidence": 0.9999994039539004,
+        "logprob": 0,
+        "startIndex": 10
+      },
+      {
+        "text": "\n",
+        "confidence": 0.9999994039539004,
+        "logprob": 0,
+        "startIndex": 11
+      },
+      {
+        "text": "РИГА—КРУСТПИЛС",
+        "confidence": 0.9568719067917965,
+        "logprob": 0,
+        "startIndex": 12
+      },
+      {
+        "text": " ",
+        "confidence": 0.9991638504997901,
+        "logprob": 0,
+        "startIndex": 26
+      },
+      {
+        "text": " ",
+        "confidence": 0.9999994039539004,
+        "logprob": 0,
+        "startIndex": 27
+      },
+      {
+        "text": "\n",
+        "confidence": 0.9999994039539004,
+        "logprob": 0,
+        "startIndex": 28
+      },
+      {
+        "text": "КРУСТПИЛС—РИГА",
+        "confidence": 0.9998938480375765,
+        "logprob": 0,
+        "startIndex": 29
+      },
+      {
+        "text": "7",
+        "confidence": 0.9995039778964617,
+        "logprob": 0,
+        "startIndex": 45
+      },
+      {
+        "text": " —",
+        "confidence": 0.9988067101975585,
+        "logprob": 0,
+        "startIndex": 46
+      },
+      {
+        "text": " 1055",
+        "confidence": 0.943656822337747,
+        "logprob": 0,
+        "startIndex": 48
+      },
+      {
+        "text": "97",
+        "confidence": 0.9999868871505255,
+        "logprob": 0,
+        "startIndex": 55
+      }
+    ],
+    "averagePageConfidenceScore": 0.9691245961338024,
+    "minimumPageConfidenceScore": 0.6489635422545468
+  },
+  "blocks": [
+    {
+      "topLeftX": 700,
+      "topLeftY": 292,
+      "bottomRightX": 872,
+      "bottomRightY": 370,
+      "content": "# ГЛАВА V  \nРИГА—КРУСТПИЛС  \nКРУСТПИЛС—РИГА",
+      "confidenceScores": null,
+      "type": "title"
+    },
+    {
+      "topLeftX": 566,
+      "topLeftY": 744,
+      "bottomRightX": 628,
+      "bottomRightY": 763,
+      "content": "7 — 1055",
+      "confidenceScores": null,
+      "type": "header"
+    },
+    {
+      "topLeftX": 984,
+      "topLeftY": 737,
+      "bottomRightX": 1011,
+      "bottomRightY": 758,
+      "content": "97",
+      "confidenceScores": null,
+      "type": "footer"
+    }
+  ]
+}

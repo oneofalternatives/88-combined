@@ -1,0 +1,58 @@
+{
+  "index": 99,
+  "dimensions": {
+    "dpi": 128,
+    "height": 821,
+    "width": 1019
+  },
+  "confidenceScores": {
+    "wordConfidenceScores": [
+      {
+        "text": "ДЛЯ",
+        "confidence": 0.9971126756703611,
+        "logprob": 0,
+        "startIndex": 0
+      },
+      {
+        "text": " ЗАМЕТОК",
+        "confidence": 0.9997037033058862,
+        "logprob": 0,
+        "startIndex": 3
+      },
+      {
+        "text": "ДЛЯ",
+        "confidence": 0.9996913972970842,
+        "logprob": 0,
+        "startIndex": 13
+      },
+      {
+        "text": " ЗАМЕТОК",
+        "confidence": 0.9999225265102111,
+        "logprob": 0,
+        "startIndex": 16
+      }
+    ],
+    "averagePageConfidenceScore": 0.9991075756958856,
+    "minimumPageConfidenceScore": 0.9971126756703611
+  },
+  "blocks": [
+    {
+      "topLeftX": 203,
+      "topLeftY": 23,
+      "bottomRightX": 337,
+      "bottomRightY": 46,
+      "content": "ДЛЯ ЗАМЕТОК",
+      "confidenceScores": null,
+      "type": "header"
+    },
+    {
+      "topLeftX": 676,
+      "topLeftY": 51,
+      "bottomRightX": 811,
+      "bottomRightY": 74,
+      "content": "ДЛЯ ЗАМЕТОК",
+      "confidenceScores": null,
+      "type": "footer"
+    }
+  ]
+}

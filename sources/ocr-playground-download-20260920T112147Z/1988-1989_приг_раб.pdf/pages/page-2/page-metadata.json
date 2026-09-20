@@ -1,0 +1,262 @@
+{
+  "index": 1,
+  "dimensions": {
+    "dpi": 128,
+    "height": 821,
+    "width": 1019
+  },
+  "confidenceScores": {
+    "wordConfidenceScores": [
+      {
+        "text": "МПС",
+        "confidence": 0.9976295293144546,
+        "logprob": 0,
+        "startIndex": 0
+      },
+      {
+        "text": " —",
+        "confidence": 0.9997585402974957,
+        "logprob": 0,
+        "startIndex": 3
+      },
+      {
+        "text": " СССР",
+        "confidence": 0.9999666225125773,
+        "logprob": 0,
+        "startIndex": 5
+      },
+      {
+        "text": "\n",
+        "confidence": 0.97065564655578,
+        "logprob": 0,
+        "startIndex": 10
+      },
+      {
+        "text": "ПРИБАЛТИЙСКАЯ",
+        "confidence": 0.9996199341820026,
+        "logprob": 0,
+        "startIndex": 11
+      },
+      {
+        "text": "\n",
+        "confidence": 0.9999797348316635,
+        "logprob": 0,
+        "startIndex": 24
+      },
+      {
+        "text": "ОРДЕНА",
+        "confidence": 0.9997487747512754,
+        "logprob": 0,
+        "startIndex": 25
+      },
+      {
+        "text": " ОКТЯБРЬСКОЙ",
+        "confidence": 0.9988033183775971,
+        "logprob": 0,
+        "startIndex": 31
+      },
+      {
+        "text": " РЕВОЛЮЦИИ",
+        "confidence": 0.9997244729944688,
+        "logprob": 0,
+        "startIndex": 43
+      },
+      {
+        "text": "\n",
+        "confidence": 0.9999967813595916,
+        "logprob": 0,
+        "startIndex": 53
+      },
+      {
+        "text": "ЖЕЛЕЗНАЯ",
+        "confidence": 0.9998727739983988,
+        "logprob": 0,
+        "startIndex": 54
+      },
+      {
+        "text": " ДОРОГА",
+        "confidence": 0.9993810399585652,
+        "logprob": 0,
+        "startIndex": 62
+      },
+      {
+        "text": "\n",
+        "confidence": 0.999997854237364,
+        "logprob": 0,
+        "startIndex": 69
+      },
+      {
+        "text": "РИЖСКОЕ",
+        "confidence": 0.999568282687154,
+        "logprob": 0,
+        "startIndex": 70
+      },
+      {
+        "text": " ОТДЕЛЕНИЕ",
+        "confidence": 0.9999720223845795,
+        "logprob": 0,
+        "startIndex": 77
+      },
+      {
+        "text": "#",
+        "confidence": 0.9399131152684121,
+        "logprob": 0,
+        "startIndex": 89
+      },
+      {
+        "text": " СЛУЖЕБНОЕ",
+        "confidence": 0.9997289932771458,
+        "logprob": 0,
+        "startIndex": 90
+      },
+      {
+        "text": "\n",
+        "confidence": 0.8661029461377772,
+        "logprob": 0,
+        "startIndex": 100
+      },
+      {
+        "text": "РАСПИСАНИЕ",
+        "confidence": 0.9947108731766803,
+        "logprob": 0,
+        "startIndex": 101
+      },
+      {
+        "text": "ДВИЖЕНИЯ",
+        "confidence": 0.9997736076583431,
+        "logprob": 0,
+        "startIndex": 113
+      },
+      {
+        "text": " ПРИГОРОДНЫХ",
+        "confidence": 0.9996624094274852,
+        "logprob": 0,
+        "startIndex": 121
+      },
+      {
+        "text": "\n",
+        "confidence": 0.9999595896822684,
+        "logprob": 0,
+        "startIndex": 133
+      },
+      {
+        "text": "ПОЕЗДОВ",
+        "confidence": 0.9995692598087047,
+        "logprob": 0,
+        "startIndex": 134
+      },
+      {
+        "text": "(1988/1989",
+        "confidence": 0.9997944092733655,
+        "logprob": 0,
+        "startIndex": 143
+      },
+      {
+        "text": " г.)",
+        "confidence": 0.9998893902170464,
+        "logprob": 0,
+        "startIndex": 153
+      },
+      {
+        "text": "(рабочие",
+        "confidence": 0.9998363029128718,
+        "logprob": 0,
+        "startIndex": 159
+      },
+      {
+        "text": " дни)",
+        "confidence": 0.9999815229014445,
+        "logprob": 0,
+        "startIndex": 167
+      },
+      {
+        "text": "РИГА",
+        "confidence": 0.9996876681348162,
+        "logprob": 0,
+        "startIndex": 174
+      },
+      {
+        "text": " «ТРАНСПОРТ»",
+        "confidence": 0.9999852481112276,
+        "logprob": 0,
+        "startIndex": 178
+      },
+      {
+        "text": " —",
+        "confidence": 0.9999848606494245,
+        "logprob": 0,
+        "startIndex": 190
+      },
+      {
+        "text": " 1988",
+        "confidence": 0.999892917625062,
+        "logprob": 0,
+        "startIndex": 192
+      },
+      {
+        "text": " г.",
+        "confidence": 0.9999871255929881,
+        "logprob": 0,
+        "startIndex": 197
+      }
+    ],
+    "averagePageConfidenceScore": 0.9925979865093135,
+    "minimumPageConfidenceScore": 0.8661029461377772
+  },
+  "blocks": [
+    {
+      "topLeftX": 572,
+      "topLeftY": 29,
+      "bottomRightX": 896,
+      "bottomRightY": 123,
+      "content": "МПС — СССР\nПРИБАЛТИЙСКАЯ\nОРДЕНА ОКТЯБРЬСКОЙ РЕВОЛЮЦИИ\nЖЕЛЕЗНАЯ ДОРОГА\nРИЖСКОЕ ОТДЕЛЕНИЕ",
+      "confidenceScores": null,
+      "type": "header"
+    },
+    {
+      "topLeftX": 603,
+      "topLeftY": 288,
+      "bottomRightX": 868,
+      "bottomRightY": 370,
+      "content": "# СЛУЖЕБНОЕ\nРАСПИСАНИЕ",
+      "confidenceScores": null,
+      "type": "title"
+    },
+    {
+      "topLeftX": 589,
+      "topLeftY": 379,
+      "bottomRightX": 885,
+      "bottomRightY": 425,
+      "content": "ДВИЖЕНИЯ ПРИГОРОДНЫХ\nПОЕЗДОВ",
+      "confidenceScores": null,
+      "type": "text"
+    },
+    {
+      "topLeftX": 682,
+      "topLeftY": 433,
+      "bottomRightX": 791,
+      "bottomRightY": 452,
+      "content": "(1988/1989 г.)",
+      "confidenceScores": null,
+      "type": "text"
+    },
+    {
+      "topLeftX": 682,
+      "topLeftY": 453,
+      "bottomRightX": 791,
+      "bottomRightY": 472,
+      "content": "(рабочие дни)",
+      "confidenceScores": null,
+      "type": "text"
+    },
+    {
+      "topLeftX": 611,
+      "topLeftY": 726,
+      "bottomRightX": 864,
+      "bottomRightY": 744,
+      "content": "РИГА «ТРАНСПОРТ» — 1988 г.",
+      "confidenceScores": null,
+      "type": "footer"
+    }
+  ]
+}

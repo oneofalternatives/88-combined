@@ -1,0 +1,82 @@
+{
+  "index": 52,
+  "dimensions": {
+    "dpi": 128,
+    "height": 821,
+    "width": 1019
+  },
+  "confidenceScores": {
+    "wordConfidenceScores": [
+      {
+        "text": "#",
+        "confidence": 0.9796669606723944,
+        "logprob": 0,
+        "startIndex": 0
+      },
+      {
+        "text": " ГЛАВА",
+        "confidence": 0.9931348467007285,
+        "logprob": 0,
+        "startIndex": 1
+      },
+      {
+        "text": " VI",
+        "confidence": 0.9978885028705055,
+        "logprob": 0,
+        "startIndex": 7
+      },
+      {
+        "text": " ",
+        "confidence": 0.7260137990642896,
+        "logprob": 0,
+        "startIndex": 10
+      },
+      {
+        "text": " ",
+        "confidence": 0.9999988079084972,
+        "logprob": 0,
+        "startIndex": 11
+      },
+      {
+        "text": "\n",
+        "confidence": 0.9999988079084972,
+        "logprob": 0,
+        "startIndex": 12
+      },
+      {
+        "text": "РИГА—САУЛКРАСТЫ—ЛИМБАЖИ—АЛОЯ",
+        "confidence": 0.9893665496648283,
+        "logprob": 0,
+        "startIndex": 13
+      },
+      {
+        "text": "103",
+        "confidence": 0.9997849926820307,
+        "logprob": 0,
+        "startIndex": 43
+      }
+    ],
+    "averagePageConfidenceScore": 0.9607316584339715,
+    "minimumPageConfidenceScore": 0.7260137990642896
+  },
+  "blocks": [
+    {
+      "topLeftX": 581,
+      "topLeftY": 298,
+      "bottomRightX": 927,
+      "bottomRightY": 355,
+      "content": "# ГЛАВА VI  \nРИГА—САУЛКРАСТЫ—ЛИМБАЖИ—АЛОЯ",
+      "confidenceScores": null,
+      "type": "title"
+    },
+    {
+      "topLeftX": 951,
+      "topLeftY": 745,
+      "bottomRightX": 984,
+      "bottomRightY": 765,
+      "content": "103",
+      "confidenceScores": null,
+      "type": "footer"
+    }
+  ]
+}

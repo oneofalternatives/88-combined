@@ -1,0 +1,112 @@
+{
+  "index": 81,
+  "dimensions": {
+    "dpi": 128,
+    "height": 821,
+    "width": 1019
+  },
+  "confidenceScores": {
+    "wordConfidenceScores": [
+      {
+        "text": "#",
+        "confidence": 0.9971990580965346,
+        "logprob": 0,
+        "startIndex": 0
+      },
+      {
+        "text": " ГЛАВАХ",
+        "confidence": 0.9804286600852293,
+        "logprob": 0,
+        "startIndex": 1
+      },
+      {
+        "text": " ",
+        "confidence": 0.7004494024874314,
+        "logprob": 0,
+        "startIndex": 8
+      },
+      {
+        "text": " ",
+        "confidence": 0.9999972581939645,
+        "logprob": 0,
+        "startIndex": 9
+      },
+      {
+        "text": "\n",
+        "confidence": 0.9999972581939645,
+        "logprob": 0,
+        "startIndex": 10
+      },
+      {
+        "text": "РИГА—ЭРГЛИ",
+        "confidence": 0.9926159274307843,
+        "logprob": 0,
+        "startIndex": 11
+      },
+      {
+        "text": " ",
+        "confidence": 0.9998054882768016,
+        "logprob": 0,
+        "startIndex": 21
+      },
+      {
+        "text": " ",
+        "confidence": 0.9999990463265931,
+        "logprob": 0,
+        "startIndex": 22
+      },
+      {
+        "text": "\n",
+        "confidence": 0.9999990463265931,
+        "logprob": 0,
+        "startIndex": 23
+      },
+      {
+        "text": "ЭРГЛИ—РИГА",
+        "confidence": 0.999886635660738,
+        "logprob": 0,
+        "startIndex": 24
+      },
+      {
+        "text": "11",
+        "confidence": 0.960220473260559,
+        "logprob": 0,
+        "startIndex": 36
+      },
+      {
+        "text": " —",
+        "confidence": 0.996930276203311,
+        "logprob": 0,
+        "startIndex": 38
+      },
+      {
+        "text": " 1055",
+        "confidence": 0.9981061113323623,
+        "logprob": 0,
+        "startIndex": 40
+      }
+    ],
+    "averagePageConfidenceScore": 0.971202664759605,
+    "minimumPageConfidenceScore": 0.7004494024874314
+  },
+  "blocks": [
+    {
+      "topLeftX": 671,
+      "topLeftY": 300,
+      "bottomRightX": 799,
+      "bottomRightY": 378,
+      "content": "# ГЛАВАХ  \nРИГА—ЭРГЛИ  \nЭРГЛИ—РИГА",
+      "confidenceScores": null,
+      "type": "title"
+    },
+    {
+      "topLeftX": 515,
+      "topLeftY": 747,
+      "bottomRightX": 584,
+      "bottomRightY": 766,
+      "content": "11 — 1055",
+      "confidenceScores": null,
+      "type": "footer"
+    }
+  ]
+}

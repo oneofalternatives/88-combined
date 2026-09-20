@@ -1,0 +1,1479 @@
+{
+  "index": 90,
+  "dimensions": {
+    "dpi": 128,
+    "height": 821,
+    "width": 1019
+  },
+  "confidenceScores": {
+    "wordConfidenceScores": [
+      {
+        "text": "№",
+        "confidence": 0.9282543193312491,
+        "logprob": 0,
+        "startIndex": 3
+      },
+      {
+        "text": " поездов",
+        "confidence": 0.9744741522391942,
+        "logprob": 0,
+        "startIndex": 4
+      },
+      {
+        "text": "6853",
+        "confidence": 0.9331978842792085,
+        "logprob": 0,
+        "startIndex": 15
+      },
+      {
+        "text": " ДР",
+        "confidence": 0.9998924828343168,
+        "logprob": 0,
+        "startIndex": 19
+      },
+      {
+        "text": "По",
+        "confidence": 0.9995979053674139,
+        "logprob": 0,
+        "startIndex": 29
+      },
+      {
+        "text": " выходным",
+        "confidence": 0.9997505721503348,
+        "logprob": 0,
+        "startIndex": 31
+      },
+      {
+        "text": " дням",
+        "confidence": 0.8444196360152447,
+        "logprob": 0,
+        "startIndex": 40
+      },
+      {
+        "text": " 6855",
+        "confidence": 0.8849809630605032,
+        "logprob": 0,
+        "startIndex": 45
+      },
+      {
+        "text": " ДР",
+        "confidence": 0.9814053710653317,
+        "logprob": 0,
+        "startIndex": 50
+      },
+      {
+        "text": "6857",
+        "confidence": 0.9997575124009321,
+        "logprob": 0,
+        "startIndex": 60
+      },
+      {
+        "text": " ДР",
+        "confidence": 0.990418417787382,
+        "logprob": 0,
+        "startIndex": 64
+      },
+      {
+        "text": "приб.",
+        "confidence": 0.990418417787382,
+        "logprob": 0,
+        "startIndex": 126
+      },
+      {
+        "text": "отпр.",
+        "confidence": 0.990418417787382,
+        "logprob": 0,
+        "startIndex": 134
+      },
+      {
+        "text": "приб.",
+        "confidence": 0.990418417787382,
+        "logprob": 0,
+        "startIndex": 142
+      },
+      {
+        "text": "отпр.",
+        "confidence": 0.990418417787382,
+        "logprob": 0,
+        "startIndex": 150
+      },
+      {
+        "text": "приб.",
+        "confidence": 0.990418417787382,
+        "logprob": 0,
+        "startIndex": 158
+      },
+      {
+        "text": "отпр.",
+        "confidence": 0.990418417787382,
+        "logprob": 0,
+        "startIndex": 166
+      },
+      {
+        "text": "Разд.",
+        "confidence": 0.990418417787382,
+        "logprob": 0,
+        "startIndex": 178
+      },
+      {
+        "text": " пункты",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 183
+      },
+      {
+        "text": "Рига-пасс.",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 215
+      },
+      {
+        "text": "18.57",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 228
+      },
+      {
+        "text": "—",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 236
+      },
+      {
+        "text": "—",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 240
+      },
+      {
+        "text": "—",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 244
+      },
+      {
+        "text": "21.10",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 248
+      },
+      {
+        "text": "—",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 256
+      },
+      {
+        "text": "Ошкалны",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 264
+      },
+      {
+        "text": "18.47",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 274
+      },
+      {
+        "text": "18.50",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 282
+      },
+      {
+        "text": "20.02",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 290
+      },
+      {
+        "text": "—",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 298
+      },
+      {
+        "text": "21.00",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 302
+      },
+      {
+        "text": "21.03",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 310
+      },
+      {
+        "text": "Чиекуркалис",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 322
+      },
+      {
+        "text": "18.40",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 336
+      },
+      {
+        "text": "18.42",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 344
+      },
+      {
+        "text": "19.56",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 352
+      },
+      {
+        "text": "19.57",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 360
+      },
+      {
+        "text": "20.54",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 368
+      },
+      {
+        "text": "20.55",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 376
+      },
+      {
+        "text": "Югла",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 388
+      },
+      {
+        "text": "18.34",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 395
+      },
+      {
+        "text": "18.35",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 403
+      },
+      {
+        "text": "19.50",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 411
+      },
+      {
+        "text": "19.51",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 419
+      },
+      {
+        "text": "20.49",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 427
+      },
+      {
+        "text": "20.50",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 435
+      },
+      {
+        "text": "Балтэзерс",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 447
+      },
+      {
+        "text": "18.27",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 459
+      },
+      {
+        "text": "18.28",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 467
+      },
+      {
+        "text": "19.43",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 475
+      },
+      {
+        "text": "19.44",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 483
+      },
+      {
+        "text": "20.42",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 491
+      },
+      {
+        "text": "20.43",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 499
+      },
+      {
+        "text": "Ропажи",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 511
+      },
+      {
+        "text": "18.20",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 520
+      },
+      {
+        "text": "18.21",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 528
+      },
+      {
+        "text": "19.36",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 536
+      },
+      {
+        "text": "19.37",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 544
+      },
+      {
+        "text": "20.35",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 552
+      },
+      {
+        "text": "20.36",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 560
+      },
+      {
+        "text": "Криевупе",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 572
+      },
+      {
+        "text": "18.13",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 583
+      },
+      {
+        "text": "18.14",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 591
+      },
+      {
+        "text": "19.29",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 599
+      },
+      {
+        "text": "19.30",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 607
+      },
+      {
+        "text": "20.28",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 615
+      },
+      {
+        "text": "20.29",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 623
+      },
+      {
+        "text": "Вангажи",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 635
+      },
+      {
+        "text": "18.06",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 645
+      },
+      {
+        "text": "18.08",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 653
+      },
+      {
+        "text": "19.23",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 661
+      },
+      {
+        "text": "19.24",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 669
+      },
+      {
+        "text": "20.22",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 677
+      },
+      {
+        "text": "20.23",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 685
+      },
+      {
+        "text": "Инчукалис",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 697
+      },
+      {
+        "text": "17.57",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 709
+      },
+      {
+        "text": "18.00",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 717
+      },
+      {
+        "text": "19.16",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 725
+      },
+      {
+        "text": "19.17",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 733
+      },
+      {
+        "text": "20.15",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 741
+      },
+      {
+        "text": "20.16",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 749
+      },
+      {
+        "text": "Эгльупе",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 761
+      },
+      {
+        "text": "17.52",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 771
+      },
+      {
+        "text": "17.53",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 779
+      },
+      {
+        "text": "19.11",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 787
+      },
+      {
+        "text": "19.12",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 795
+      },
+      {
+        "text": "20.10,5",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 803
+      },
+      {
+        "text": "20.11",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 813
+      },
+      {
+        "text": "Силциемс",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 825
+      },
+      {
+        "text": "17.47",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 836
+      },
+      {
+        "text": "17.48",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 844
+      },
+      {
+        "text": "19.06",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 852
+      },
+      {
+        "text": "19.07",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 860
+      },
+      {
+        "text": "20.06",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 868
+      },
+      {
+        "text": "20.07",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 876
+      },
+      {
+        "text": "Сигулда",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 888
+      },
+      {
+        "text": "17.39",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 898
+      },
+      {
+        "text": "17.42",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 906
+      },
+      {
+        "text": "—",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 914
+      },
+      {
+        "text": "19.00",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 918
+      },
+      {
+        "text": "—",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 926
+      },
+      {
+        "text": "20.00",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 930
+      },
+      {
+        "text": "Лигатне",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 942
+      },
+      {
+        "text": "17.29",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 952
+      },
+      {
+        "text": "17.30",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 960
+      },
+      {
+        "text": "Иерики",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 984
+      },
+      {
+        "text": "—",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 993
+      },
+      {
+        "text": "17.20",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 997
+      },
+      {
+        "text": "78",
+        "confidence": 0.9933300009436694,
+        "logprob": 0,
+        "startIndex": 1021
+      },
+      {
+        "text": " км",
+        "confidence": 0.999379040880079,
+        "logprob": 0,
+        "startIndex": 1023
+      },
+      {
+        "text": "Арайши",
+        "confidence": 0.999379040880079,
+        "logprob": 0,
+        "startIndex": 1051
+      },
+      {
+        "text": "Цесис",
+        "confidence": 0.999379040880079,
+        "logprob": 0,
+        "startIndex": 1082
+      },
+      {
+        "text": "Раз.",
+        "confidence": 0.999379040880079,
+        "logprob": 0,
+        "startIndex": 1112
+      },
+      {
+        "text": " 98",
+        "confidence": 0.9999838275931143,
+        "logprob": 0,
+        "startIndex": 1116
+      },
+      {
+        "text": " км",
+        "confidence": 0.9987762733338117,
+        "logprob": 0,
+        "startIndex": 1119
+      },
+      {
+        "text": "Лоде",
+        "confidence": 0.9987762733338117,
+        "logprob": 0,
+        "startIndex": 1147
+      },
+      {
+        "text": "Бале",
+        "confidence": 0.9987762733338117,
+        "logprob": 0,
+        "startIndex": 1176
+      },
+      {
+        "text": "Валмиера",
+        "confidence": 0.9987762733338117,
+        "logprob": 0,
+        "startIndex": 1205
+      },
+      {
+        "text": "№",
+        "confidence": 0.9951171907845316,
+        "logprob": 0,
+        "startIndex": 1239
+      },
+      {
+        "text": " поездов",
+        "confidence": 0.999972225544517,
+        "logprob": 0,
+        "startIndex": 1240
+      },
+      {
+        "text": "6859",
+        "confidence": 0.998543588237397,
+        "logprob": 0,
+        "startIndex": 1251
+      },
+      {
+        "text": " ДР",
+        "confidence": 0.9999878843269132,
+        "logprob": 0,
+        "startIndex": 1255
+      },
+      {
+        "text": "6861",
+        "confidence": 0.9998853180609603,
+        "logprob": 0,
+        "startIndex": 1265
+      },
+      {
+        "text": " ДР",
+        "confidence": 0.9979943590973634,
+        "logprob": 0,
+        "startIndex": 1269
+      },
+      {
+        "text": "приб.",
+        "confidence": 0.9881663270595535,
+        "logprob": 0,
+        "startIndex": 1338
+      },
+      {
+        "text": "отпр.",
+        "confidence": 0.9881663270595535,
+        "logprob": 0,
+        "startIndex": 1346
+      },
+      {
+        "text": "приб.",
+        "confidence": 0.9881663270595535,
+        "logprob": 0,
+        "startIndex": 1354
+      },
+      {
+        "text": "отпр.",
+        "confidence": 0.9881663270595535,
+        "logprob": 0,
+        "startIndex": 1362
+      },
+      {
+        "text": "приб.",
+        "confidence": 0.9881663270595535,
+        "logprob": 0,
+        "startIndex": 1370
+      },
+      {
+        "text": "отпр.",
+        "confidence": 0.9881663270595535,
+        "logprob": 0,
+        "startIndex": 1378
+      },
+      {
+        "text": "Разд.",
+        "confidence": 0.9881663270595535,
+        "logprob": 0,
+        "startIndex": 1390
+      },
+      {
+        "text": " пункты",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 1395
+      },
+      {
+        "text": "Рига-пасс.",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 1427
+      },
+      {
+        "text": "23.05",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 1440
+      },
+      {
+        "text": "—",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 1448
+      },
+      {
+        "text": "23.48",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 1452
+      },
+      {
+        "text": "—",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 1460
+      },
+      {
+        "text": "Ошкалны",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 1474
+      },
+      {
+        "text": "22.56",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 1484
+      },
+      {
+        "text": "22.58",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 1492
+      },
+      {
+        "text": "23.40",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 1500
+      },
+      {
+        "text": "23.41",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 1508
+      },
+      {
+        "text": "Чиекуркалис",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 1526
+      },
+      {
+        "text": "22.50",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 1540
+      },
+      {
+        "text": "22.51",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 1548
+      },
+      {
+        "text": "23.34",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 1556
+      },
+      {
+        "text": "23.35",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 1564
+      },
+      {
+        "text": "Югла",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 1582
+      },
+      {
+        "text": "22.44",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 1589
+      },
+      {
+        "text": "22.45",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 1597
+      },
+      {
+        "text": "23.28",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 1605
+      },
+      {
+        "text": "23.29",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 1613
+      },
+      {
+        "text": "Балтэзерс",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 1631
+      },
+      {
+        "text": "22.37",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 1643
+      },
+      {
+        "text": "22.38",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 1651
+      },
+      {
+        "text": "23.21",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 1659
+      },
+      {
+        "text": "23.22",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 1667
+      },
+      {
+        "text": "Ропажи",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 1685
+      },
+      {
+        "text": "22.30",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 1694
+      },
+      {
+        "text": "22.31",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 1702
+      },
+      {
+        "text": "23.14",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 1710
+      },
+      {
+        "text": "23.15",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 1718
+      },
+      {
+        "text": "Криевупе",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 1736
+      },
+      {
+        "text": "22.23",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 1747
+      },
+      {
+        "text": "22.24",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 1755
+      },
+      {
+        "text": "23.07",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 1763
+      },
+      {
+        "text": "23.08",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 1771
+      },
+      {
+        "text": "Вангажи",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 1789
+      },
+      {
+        "text": "22.17",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 1799
+      },
+      {
+        "text": "22.18",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 1807
+      },
+      {
+        "text": "23.01",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 1815
+      },
+      {
+        "text": "23.02",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 1823
+      },
+      {
+        "text": "Инчукалис",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 1841
+      },
+      {
+        "text": "22.10",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 1853
+      },
+      {
+        "text": "22.11",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 1861
+      },
+      {
+        "text": "22.54",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 1869
+      },
+      {
+        "text": "22.55",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 1877
+      },
+      {
+        "text": "Эгльупе",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 1895
+      },
+      {
+        "text": "22.05",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 1905
+      },
+      {
+        "text": "22.06",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 1913
+      },
+      {
+        "text": "22.49",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 1921
+      },
+      {
+        "text": "22.50",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 1929
+      },
+      {
+        "text": "Силциемс",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 1947
+      },
+      {
+        "text": "—",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 1958
+      },
+      {
+        "text": "—",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 1962
+      },
+      {
+        "text": "—",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 1966
+      },
+      {
+        "text": "—",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 1970
+      },
+      {
+        "text": "Сигулда",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 1984
+      },
+      {
+        "text": "21.54",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 1994
+      },
+      {
+        "text": "21.58",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 2002
+      },
+      {
+        "text": "22.40",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 2010
+      },
+      {
+        "text": "22.42",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 2018
+      },
+      {
+        "text": "Лигатне",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 2036
+      },
+      {
+        "text": "21.40",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 2046
+      },
+      {
+        "text": "21.45",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 2054
+      },
+      {
+        "text": "22.30",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 2062
+      },
+      {
+        "text": "22.31",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 2070
+      },
+      {
+        "text": "Иерики",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 2088
+      },
+      {
+        "text": "21.31",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 2097
+      },
+      {
+        "text": "21.32",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 2105
+      },
+      {
+        "text": "22.21",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 2113
+      },
+      {
+        "text": "22.22",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 2121
+      },
+      {
+        "text": "78",
+        "confidence": 0.9999117375275561,
+        "logprob": 0,
+        "startIndex": 2139
+      },
+      {
+        "text": " км",
+        "confidence": 0.9999845325756039,
+        "logprob": 0,
+        "startIndex": 2141
+      },
+      {
+        "text": "—",
+        "confidence": 0.9999845325756039,
+        "logprob": 0,
+        "startIndex": 2147
+      },
+      {
+        "text": "21.27",
+        "confidence": 0.9999845325756039,
+        "logprob": 0,
+        "startIndex": 2151
+      },
+      {
+        "text": "—",
+        "confidence": 0.9999845325756039,
+        "logprob": 0,
+        "startIndex": 2159
+      },
+      {
+        "text": "22.17",
+        "confidence": 0.9999845325756039,
+        "logprob": 0,
+        "startIndex": 2163
+      },
+      {
+        "text": "Арайши",
+        "confidence": 0.9999845325756039,
+        "logprob": 0,
+        "startIndex": 2181
+      },
+      {
+        "text": "21.20",
+        "confidence": 0.9999845325756039,
+        "logprob": 0,
+        "startIndex": 2190
+      },
+      {
+        "text": "21.21",
+        "confidence": 0.9999845325756039,
+        "logprob": 0,
+        "startIndex": 2198
+      },
+      {
+        "text": "22.10",
+        "confidence": 0.9999845325756039,
+        "logprob": 0,
+        "startIndex": 2206
+      },
+      {
+        "text": "22.11",
+        "confidence": 0.9999845325756039,
+        "logprob": 0,
+        "startIndex": 2214
+      },
+      {
+        "text": "Цесис",
+        "confidence": 0.9999845325756039,
+        "logprob": 0,
+        "startIndex": 2232
+      },
+      {
+        "text": "—",
+        "confidence": 0.9999845325756039,
+        "logprob": 0,
+        "startIndex": 2240
+      },
+      {
+        "text": "21.10",
+        "confidence": 0.9999845325756039,
+        "logprob": 0,
+        "startIndex": 2244
+      },
+      {
+        "text": "22.00",
+        "confidence": 0.9999845325756039,
+        "logprob": 0,
+        "startIndex": 2252
+      },
+      {
+        "text": "22.01",
+        "confidence": 0.9999845325756039,
+        "logprob": 0,
+        "startIndex": 2260
+      },
+      {
+        "text": "Раз.",
+        "confidence": 0.9999845325756039,
+        "logprob": 0,
+        "startIndex": 2278
+      },
+      {
+        "text": " 98",
+        "confidence": 0.9999949137693166,
+        "logprob": 0,
+        "startIndex": 2282
+      },
+      {
+        "text": " км",
+        "confidence": 0.9993381087746956,
+        "logprob": 0,
+        "startIndex": 2285
+      },
+      {
+        "text": "—",
+        "confidence": 0.9993381087746956,
+        "logprob": 0,
+        "startIndex": 2297
+      },
+      {
+        "text": "21.54",
+        "confidence": 0.9993381087746956,
+        "logprob": 0,
+        "startIndex": 2301
+      },
+      {
+        "text": "Лоде",
+        "confidence": 0.9993381087746956,
+        "logprob": 0,
+        "startIndex": 2319
+      },
+      {
+        "text": "21.48",
+        "confidence": 0.9993381087746956,
+        "logprob": 0,
+        "startIndex": 2332
+      },
+      {
+        "text": "21.49",
+        "confidence": 0.9993381087746956,
+        "logprob": 0,
+        "startIndex": 2340
+      },
+      {
+        "text": "Бале",
+        "confidence": 0.9993381087746956,
+        "logprob": 0,
+        "startIndex": 2358
+      },
+      {
+        "text": "21.40",
+        "confidence": 0.9993381087746956,
+        "logprob": 0,
+        "startIndex": 2371
+      },
+      {
+        "text": "21.41",
+        "confidence": 0.9993381087746956,
+        "logprob": 0,
+        "startIndex": 2379
+      },
+      {
+        "text": "Валмиера",
+        "confidence": 0.9993381087746956,
+        "logprob": 0,
+        "startIndex": 2397
+      },
+      {
+        "text": "—",
+        "confidence": 0.9993381087746956,
+        "logprob": 0,
+        "startIndex": 2414
+      },
+      {
+        "text": "21.30",
+        "confidence": 0.9993381087746956,
+        "logprob": 0,
+        "startIndex": 2418
+      },
+      {
+        "text": "178",
+        "confidence": 0.9997882099621987,
+        "logprob": 0,
+        "startIndex": 2434
+      },
+      {
+        "text": "12\\*",
+        "confidence": 0.9523138492059052,
+        "logprob": 0,
+        "startIndex": 2439
+      },
+      {
+        "text": "179",
+        "confidence": 0.9999651921008026,
+        "logprob": 0,
+        "startIndex": 2445
+      }
+    ],
+    "averagePageConfidenceScore": 0.9944670561919741,
+    "minimumPageConfidenceScore": 0.8444196360152447
+  },
+  "blocks": [
+    {
+      "topLeftX": 55,
+      "topLeftY": 30,
+      "bottomRightX": 493,
+      "bottomRightY": 434,
+      "content": "|  № поездов | 6853 ДР |   | По выходным дням 6855 ДР |   | 6857 ДР  |   |\n| --- | --- | --- | --- | --- | --- | --- |\n|   |  приб. | отпр. | приб. | отпр. | приб. | отпр.  |\n|  Разд. пункты |  |  |  |  |  |   |\n|  Рига-пасс. | 18.57 | — | — | — | 21.10 | —  |\n|  Ошкалны | 18.47 | 18.50 | 20.02 | — | 21.00 | 21.03  |\n|  Чиекуркалис | 18.40 | 18.42 | 19.56 | 19.57 | 20.54 | 20.55  |\n|  Югла | 18.34 | 18.35 | 19.50 | 19.51 | 20.49 | 20.50  |\n|  Балтэзерс | 18.27 | 18.28 | 19.43 | 19.44 | 20.42 | 20.43  |\n|  Ропажи | 18.20 | 18.21 | 19.36 | 19.37 | 20.35 | 20.36  |\n|  Криевупе | 18.13 | 18.14 | 19.29 | 19.30 | 20.28 | 20.29  |\n|  Вангажи | 18.06 | 18.08 | 19.23 | 19.24 | 20.22 | 20.23  |\n|  Инчукалис | 17.57 | 18.00 | 19.16 | 19.17 | 20.15 | 20.16  |\n|  Эгльупе | 17.52 | 17.53 | 19.11 | 19.12 | 20.10,5 | 20.11  |\n|  Силциемс | 17.47 | 17.48 | 19.06 | 19.07 | 20.06 | 20.07  |\n|  Сигулда | 17.39 | 17.42 | — | 19.00 | — | 20.00  |\n|  Лигатне | 17.29 | 17.30 |  |  |  |   |\n|  Иерики | — | 17.20 |  |  |  |   |\n|  78 км |  |  |  |  |  |   |\n|  Арайши |  |  |  |  |  |   |\n|  Цесис |  |  |  |  |  |   |\n|  Раз. 98 км |  |  |  |  |  |   |\n|  Лоде |  |  |  |  |  |   |\n|  Бале |  |  |  |  |  |   |\n|  Валмиера |  |  |  |  |  |   |",
+      "confidenceScores": null,
+      "type": "table",
+      "tableId": null
+    },
+    {
+      "topLeftX": 517,
+      "topLeftY": 33,
+      "bottomRightX": 956,
+      "bottomRightY": 413,
+      "content": "|  № поездов | 6859 ДР |   | 6861 ДР |   |   |   |\n| --- | --- | --- | --- | --- | --- | --- |\n|   |  приб. | отпр. | приб. | отпр. | приб. | отпр.  |\n|  Разд. пункты |  |  |  |  |  |   |\n|  Рига-пасс. | 23.05 | — | 23.48 | — |  |   |\n|  Ошкалны | 22.56 | 22.58 | 23.40 | 23.41 |  |   |\n|  Чиекуркалис | 22.50 | 22.51 | 23.34 | 23.35 |  |   |\n|  Югла | 22.44 | 22.45 | 23.28 | 23.29 |  |   |\n|  Балтэзерс | 22.37 | 22.38 | 23.21 | 23.22 |  |   |\n|  Ропажи | 22.30 | 22.31 | 23.14 | 23.15 |  |   |\n|  Криевупе | 22.23 | 22.24 | 23.07 | 23.08 |  |   |\n|  Вангажи | 22.17 | 22.18 | 23.01 | 23.02 |  |   |\n|  Инчукалис | 22.10 | 22.11 | 22.54 | 22.55 |  |   |\n|  Эгльупе | 22.05 | 22.06 | 22.49 | 22.50 |  |   |\n|  Силциемс | — | — | — | — |  |   |\n|  Сигулда | 21.54 | 21.58 | 22.40 | 22.42 |  |   |\n|  Лигатне | 21.40 | 21.45 | 22.30 | 22.31 |  |   |\n|  Иерики | 21.31 | 21.32 | 22.21 | 22.22 |  |   |\n|  78 км | — | 21.27 | — | 22.17 |  |   |\n|  Арайши | 21.20 | 21.21 | 22.10 | 22.11 |  |   |\n|  Цесис | — | 21.10 | 22.00 | 22.01 |  |   |\n|  Раз. 98 км |  |  | — | 21.54 |  |   |\n|  Лоде |  |  | 21.48 | 21.49 |  |   |\n|  Бале |  |  | 21.40 | 21.41 |  |   |\n|  Валмиера |  |  | — | 21.30 |  |   |",
+      "confidenceScores": null,
+      "type": "table",
+      "tableId": null
+    },
+    {
+      "topLeftX": 55,
+      "topLeftY": 750,
+      "bottomRightX": 87,
+      "bottomRightY": 768,
+      "content": "178",
+      "confidenceScores": null,
+      "type": "header"
+    },
+    {
+      "topLeftX": 520,
+      "topLeftY": 750,
+      "bottomRightX": 545,
+      "bottomRightY": 767,
+      "content": "12\\*",
+      "confidenceScores": null,
+      "type": "footer"
+    },
+    {
+      "topLeftX": 931,
+      "topLeftY": 750,
+      "bottomRightX": 963,
+      "bottomRightY": 770,
+      "content": "179",
+      "confidenceScores": null,
+      "type": "footer"
+    }
+  ]
+}
