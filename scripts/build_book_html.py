@@ -15,6 +15,7 @@ SRC = Path("sources/ocr-playground-download-20260920T112147Z/1988-1989_приг_
 OUT = Path("build/1988-1989-prigorodnye-rabochie.html")
 
 SIGNATURE_RE = re.compile(r"^\d+\s*(—\s*\d+|\\?\*)$")
+TIME_RE = re.compile(r"^(\d{1,2})\.(\d{2})(,\d)?$")
 FOLIO_RE = re.compile(r"^\d{1,3}$")
 
 
@@ -127,6 +128,8 @@ def render_table(md: str) -> str:
             if head:  # empty header cells continue the previous train column
                 while j + span < width and not cells[j + span]:
                     span += 1
+            # TIME_RE only matches a bare time, so station names pass through
+            text = normalise_time(text)
             cls = " class='st'" if j == 0 else ""
             attr = f" colspan='{span}'" if span > 1 else ""
             out.append(f"<{tag}{cls}{attr}>{inline(text)}</{tag}>")
@@ -134,6 +137,14 @@ def render_table(md: str) -> str:
         out.append("</tr>")
     out.append("</tbody></table>")
     return "".join(out)
+
+
+def normalise_time(cell: str) -> str:
+    """5.44,5 -> 05.44,5 — pad the hour to two digits, keep the half-minute."""
+    m = TIME_RE.match(cell.strip())
+    if not m:
+        return cell
+    return f"{int(m.group(1)):02d}.{m.group(2)}{m.group(3) or ''}"
 
 
 def inline(text: str) -> str:
@@ -194,6 +205,8 @@ CSS = """
   --ink:#1c1a17; --paper:#fbf8f1; --rule:#b9ae9a; --ground:#d8d3c8;
   --book: "PT Sans Narrow","Liberation Sans Narrow","DejaVu Sans Condensed",
           "Arial Narrow","Noto Sans",system-ui,sans-serif;
+  --mono: "DejaVu Sans Mono","Liberation Mono","Noto Sans Mono",
+          ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
 }
 :root:not([data-theme="light"]) { }
 @media (prefers-color-scheme: dark){
@@ -203,17 +216,16 @@ CSS = """
 body{ background:var(--ground); color:var(--ink); font-family:var(--book);
       padding-block:24px; padding-left:16px; padding-right:16px; }
 .book{ display:flex; flex-direction:column; align-items:center; gap:28px; max-width:1600px; margin:0 auto; }
-.sheet{ display:flex; flex-direction:row; justify-content:center; gap:0;
+.sheet{ display:flex; flex-direction:row; justify-content:center; gap:10px;
         width:100%; max-width:1180px; }
 .sheet.single{ max-width:590px; }
 .page{ position:relative; background:var(--paper); color:var(--ink);
        flex:1 1 0; min-width:0; aspect-ratio:509/821;
        box-shadow:0 2px 10px rgba(0,0,0,.35); overflow:hidden;
        container-type:inline-size; }
-.page.left{ border-right:1px solid var(--rule); }
 .page.portrait{ aspect-ratio:683/1019; }
 .content{ position:absolute; inset:3.2% 4% 6% 4%; overflow:hidden;
-          font-size:2.2cqw; line-height:1.28; }
+          font-size:2.1cqw; line-height:1.28; }
 .blk{ margin:0 0 .45em 0; }
 .row{ display:flex; gap:.6em; align-items:flex-start; justify-content:space-between; }
 .row > .blk{ flex:0 1 auto; margin-bottom:.35em; }
@@ -224,19 +236,19 @@ p{ margin:0 0 .4em; text-align:justify; hyphens:auto; }
 .runhead{ font-size:1.05em; letter-spacing:.06em; text-transform:uppercase; }
 ul.stations{ list-style:none; margin:0; padding:0; }
 ul.stations li{ line-height:1.22; }
-table.tt{ font-family:var(--book); width:100%; border-collapse:collapse;
+table.tt{ font-family:var(--mono); width:100%; border-collapse:collapse;
           table-layout:fixed; font-variant-numeric:tabular-nums; }
-table.tt th, table.tt td{ border:1px solid var(--rule); padding:.03em .18em;
+table.tt th, table.tt td{ border:1px solid var(--rule); padding:.03em .12em;
           text-align:center; line-height:1.15; white-space:nowrap;
           overflow:hidden; text-overflow:ellipsis; }
-table.tt th{ font-weight:600; }
-table.tt .st{ text-align:left; width:27%; }
-.folio{ position:absolute; bottom:2%; font-size:2.2cqw; }
+table.tt th{ font-weight:600; text-align:center; }
+table.tt td{ text-align:left; }
+table.tt .st{ text-align:left; width:29%; }
+.folio{ position:absolute; bottom:2%; font-size:2.1cqw; }
 .page.left .folio{ left:4%; } .page.right .folio,.page.portrait .folio{ right:4%; }
 @media (max-width:900px){
   .sheet{ flex-direction:column; align-items:center; gap:18px; }
   .page{ width:100%; }
-  .page.left{ border-right:none; }
 }
 """
 
