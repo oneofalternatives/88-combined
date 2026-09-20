@@ -120,11 +120,27 @@ Semantics:
   exceptionally (path reserved for engineering work).
 * Rows are usually but **not always** of equal width; a renderer must pad ragged
   rows to the widest row of the table.
+* **Not every pipe table is a timetable.** A timetable is wide — a station
+  column plus `приб.`/`отпр.` pairs, so 6 columns at least. A table of **3
+  columns or fewer is prose** (the contents list on folio 3) and must be
+  rendered with wrapping cells and automatic column widths; timetable cells
+  instead stay on one line, since a wrapped time column would misalign.
 * OCR occasionally breaks one printed table into several `table` blocks separated
   by `text`/`list` blocks holding the station names (e.g. scan page 6). These are
   rendered in document order; no attempt is made to re-join them.
 
-## 5. Reconstruction rules
+## 5. Code map
+
+| file | role |
+| ---- | ---- |
+| `scripts/book_model.py` | Everything in §§2–5: loading, gutter split, noise filter, row grouping, table parsing, time normalisation, `align_of`, `estimate_rows`/`fit_scale`, and block→HTML rendering. Both builders import it, so the two outputs cannot drift apart. |
+| `scripts/build_book_html.py` | Screen stylesheet only (container queries, `cqw` sizing, page shadows) + file assembly. |
+| `scripts/build_book_pdf.py` | Print stylesheet only (absolute mm/pt, named `@page` rules) + WeasyPrint call. `--dump-html` writes the print HTML without needing WeasyPrint installed. |
+
+A change to layout *semantics* belongs in `book_model.py` and reaches both
+outputs; a change to how a medium *looks* belongs in that medium's builder.
+
+## 6. Reconstruction rules
 
 1. For each scan page, split blocks into halves by bbox centre (§2); portrait
    pages have a single half.
@@ -133,15 +149,19 @@ Semantics:
 3. Within a half, group blocks into **rows**: sort by `topLeftY`, then merge
    consecutive blocks whose vertical spans overlap by more than half the shorter
    span *and* which do not overlap horizontally. Each row is laid out
-   horizontally, each block aligned left/centre/right by where its centre falls in
-   the half's width. This reproduces running heads such as
-   `п. № 606 | ДИЗЕЛЬНЫЙ | п. № 605`.
+   horizontally, each block aligned left/centre/right by where its centre falls
+   **within its own half** — for a right-hand block the gutter offset (half the
+   scan width) must be subtracted from the centre first, or everything centred
+   on a right-hand page drifts to the outer margin. This reproduces running
+   heads such as `п. № 606 | ДИЗЕЛЬНЫЙ | п. № 605`.
 4. Render blocks by type: `title` → `<h2>`/`<h3>` (strip `#` prefix), `header` →
    small caps running head, `text` → `<p>` (blank line = paragraph break),
    `list` → station column list, `table` → `<table>` per §4.
 5. Emit the computed folio in the bottom outer corner of each book page.
 
-## 6. HTML output requirements
+## 7. Output requirements
+
+### Shared
 
 * One self-contained HTML file, no external assets, no network fonts.
 * Every book page is a visually distinct sheet with a white ground, border and
@@ -151,10 +171,45 @@ Semantics:
   of facing sheets side by side, glued at the gutter, and must stay side by side
   (they are one flex row that does not wrap on wide screens; below ~900 px the
   two halves stack so the content stays readable on a phone).
+### Screen (HTML)
+
 * **All tables use one and the same font** throughout the book — a monospace
   stack for every cell, station names included, so the columns align.
 * Inside a table, data cells (station names and times) are left-aligned; the
   header rows (`№ поездов`, train numbers, `приб.`/`отпр.`) stay centred.
 * Facing pages sit side by side with a small gap so their drop shadows do not overlap.
-* Content is scaled to the sheet with a page-local font size so a full 45-station
-  timetable fits one sheet without overflow.
+* Content is scaled to the sheet with a page-local font size so the densest
+  timetable — 46 rows, chapter I — fits one sheet without overflow. A half page
+  is measured in
+  "table rows" (`estimate_rows`); a half holding more than ~47 rows — which
+  happens where the OCR emitted a fragmented table *and* a duplicate station
+  list — gets a per-page shrink factor so nothing is clipped. 13 of the 202
+  half pages are scaled this way.
+
+## 8. PDF output
+
+`scripts/build_book_pdf.py` renders the same model through WeasyPrint. One PDF
+page per physical sheet, sized from the scan geometry: spread
+202 × 162.9 mm, cover 109.1 × 162.9 mm, zero margins, via named `@page` rules.
+Base text 6.1 pt. It shares every layout decision with the HTML build through
+`book_model.py`, so the two cannot drift.
+
+Install (no system package needed beyond pango/cairo, which are present):
+
+```
+python3 -m venv --without-pip .venv
+# bootstrap pip, then:
+.venv/bin/pip install weasyprint
+PYTHONPATH=scripts .venv/bin/python scripts/build_book_pdf.py
+```
+
+### Verifying the PDF
+
+Unlike the HTML, the PDF can be checked mechanically and visually:
+
+* `pdfinfo -f 1 -l 103` — 103 pages, two distinct page sizes.
+* Text-loss sweep: for each sheet compare `pdftotext` output against the text of
+  the rendered half pages; any ratio below ~1.0 means content was clipped by an
+  overflowing page. Must report zero sheets.
+* `pdftoppm -r 110 -png` a sample and look at it — the only way to catch
+  alignment and column-width faults.
