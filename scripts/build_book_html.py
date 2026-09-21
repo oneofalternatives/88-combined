@@ -9,7 +9,8 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
-from book_model import SRC, fit_scale, render_half, sheets
+from book_model import (BOOK, SRC, book_fit_scale, book_sheets, fit_scale,
+                        render_book_half, render_half, sheets)
 
 OUT = Path("build/1988-1989-prigorodnye-rabochie.html")
 
@@ -50,6 +51,8 @@ p{ margin:0 0 .4em; text-align:justify; hyphens:auto; }
 .a-c p{ text-align:center; }
 .a-r p{ text-align:right; }
 
+table.tt tr.ruled > *{ border-top:2px solid var(--ink); }
+table.tt tr.band > td{ text-align:center; font-weight:600; letter-spacing:.04em; }
 .runhead{ font-size:1.05em; letter-spacing:.06em; text-transform:uppercase; }
 ul.stations{ list-style:none; margin:0; padding:0; }
 ul.stations li{ line-height:1.22; }
@@ -74,20 +77,33 @@ table.tt.prose .st{ width:auto; }
 """
 
 
-def with_fit(markup: str, blocks) -> str:
+def source(a):
+    """(sheets, half renderer, fit estimator) for the chosen input.
+
+    book/ is the default: it is the hand-corrected source of truth. --from-ocr
+    renders the raw OCR export instead, which is what makes a correction
+    visible -- build both and compare the same sheet.
+    """
+    if a.from_ocr:
+        return sheets(a.src), render_half, fit_scale
+    return book_sheets(a.book), render_book_half, book_fit_scale
+
+
+def with_fit(markup: str, content, fit) -> str:
     """Shrink a half page whose content would otherwise overflow the sheet."""
-    scale = fit_scale(blocks)
+    scale = fit(content)
     if scale >= 1.0:
         return markup
     return markup.replace("<div class='content'>",
                           f"<div class='content' style='--fit:{scale:.3f}'>", 1)
 
 
-def build(src: Path, out: Path):
+def build(a, out: Path):
     body = []
-    for sheet in sheets(src):
+    pages, render, fit = source(a)
+    for sheet in pages:
         cls = "sheet single" if sheet["kind"] == "cover" else "sheet"
-        halves = "".join(with_fit(render_half(*h), h[0]) for h in sheet["halves"])
+        halves = "".join(with_fit(render(*h), h[0], fit) for h in sheet["halves"])
         body.append(f"<div class='{cls}'>{halves}</div>")
     doc = (
         "<title>Служебное расписание 1988/1989</title>\n"
@@ -101,8 +117,11 @@ def build(src: Path, out: Path):
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
+    ap.add_argument("--book", type=Path, default=BOOK)
     ap.add_argument("--src", type=Path, default=SRC)
+    ap.add_argument("--from-ocr", action="store_true",
+                    help="render the raw OCR export instead of book/")
     ap.add_argument("--out", type=Path, default=OUT)
     a = ap.parse_args()
-    n, size = build(a.src, a.out)
+    n, size = build(a, a.out)
     print(f"{n} sheets -> {a.out} ({size/1024:.0f} KiB)")
