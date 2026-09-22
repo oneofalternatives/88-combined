@@ -9,16 +9,24 @@ rendered back to a PDF.
     sources/<ocr-export>/    Mistral OCR of the scans
       -> scripts/extract.py
     book/page-NN.md          one file per sheet, corrected by hand
-      -> scripts/build_book_pdf.py
-    build/                   PDF
+      -> scripts/validate.py
+    findings                 ranked "look here", judged against the scans
+
+Correcting `book/` and running the validator again is the loop. Rendering sits
+outside it, a final production step once the sheets are good:
+
+    book/ -> scripts/build_book_pdf.py -> build/   PDF
 
 ## Use
 
     python3 scripts/extract.py             # OCR -> book/, skips existing files
     python3 scripts/extract.py 93 --force  # redo one sheet
-    python3 scripts/build_book_pdf.py      # needs weasyprint
+    python3 scripts/validate.py            # check book/ against itself
+    python3 scripts/build_book_pdf.py      # final render; needs weasyprint
 
 extract.py prints every repair it made and exits nonzero if there were any.
+validate.py repairs nothing: it prints a ranked list of places to look and
+exits nonzero if it found any. See `validator.md`.
 
 The builder reads `book/` only. Nothing renders the OCR export directly.
 
