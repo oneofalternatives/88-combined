@@ -13,20 +13,32 @@ import json
 import re
 from pathlib import Path
 
-SRC = Path("sources/ocr-playground-download-20260920T112147Z/1988-1989_приг_раб.pdf")
+SRC = Path("attempts/ocr-00")
 
 SIGNATURE_RE = re.compile(r"^\d+\s*(—\s*\d+|\\?\*)$")
 FOLIO_RE = re.compile(r"^\d{1,3}$")
 
 
 # ---------------------------------------------------------------- input model
+def _camel(x):
+    """API responses use top_left_x; the playground export, topLeftX."""
+    if isinstance(x, dict):
+        return {re.sub(r"_(\w)", lambda m: m.group(1).upper(), k): _camel(v) for k, v in x.items()}
+    return [_camel(v) for v in x] if isinstance(x, list) else x
+
+
 def load_pages(src: Path):
+    """Pages of an OCR attempt: a playground export, or ocr.py's page-NN.json."""
     pages = []
     n = 1
-    while (src / f"pages/page-{n}" / "page-metadata.json").exists():
-        pages.append(json.loads((src / f"pages/page-{n}" / "page-metadata.json").read_text()))
+    while True:
+        if (f := src / f"pages/page-{n}" / "page-metadata.json").exists():
+            pages.append(json.loads(f.read_text()))
+        elif (f := src / f"page-{n:02d}.json").exists():
+            pages.append(_camel(json.loads(f.read_text())["pages"][0]))
+        else:
+            return pages
         n += 1
-    return pages
 
 
 def is_noise(block) -> bool:

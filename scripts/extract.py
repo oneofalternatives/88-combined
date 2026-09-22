@@ -19,6 +19,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 
+import attempts
 from book_model import (SRC, header_width, is_station_block, load_pages,
                         parse_table, split_halves, station_span)
 
@@ -371,10 +372,18 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("pages", nargs="*", type=int, help="sheet numbers (default: all)")
     ap.add_argument("--force", action="store_true", help="overwrite existing files")
+    ap.add_argument("--src", type=Path, default=SRC, help="OCR output directory")
     ap.add_argument("--out", type=Path, default=OUT)
     args = ap.parse_args()
+    # Output into attempts/medium-NN makes a medium: a finished input, a fresh
+    # dir, and a manifest plus index entry once done.
+    medium = args.out.parent == attempts.ROOT and args.out.name.startswith("medium-")
+    if medium:
+        attempts.require_finished(args.src)
+        if (args.out / "manifest.json").exists():
+            sys.exit(f"{args.out}: already finished")
 
-    pages = load_pages(SRC)
+    pages = load_pages(args.src)
     args.out.mkdir(exist_ok=True)
     wanted = args.pages or range(1, len(pages) + 1)
     report: list[str] = []
@@ -391,6 +400,10 @@ def main():
                 for name in line[8:].strip("[] ").split(","):
                     tally[name.strip()] = tally.get(name.strip(), 0) + 1
     print("halves by shape: " + ", ".join(f"{k}={v}" for k, v in sorted(tally.items())))
+    if medium:
+        attempts.finish(args.out, {"ocr": str(args.src), "pages": len(wanted),
+                                   "problems": len(report)})
+        attempts.set_medium(args.src.name, args.out.name)
     if report:
         print(f"\n{len(report)} PROBLEM(S) -- not guessed at, fix these:")
         for line in report:

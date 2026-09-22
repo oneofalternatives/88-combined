@@ -1,6 +1,6 @@
 # Spec: OCR output of «Служебное расписание движения пригородных поездов (1988/1989 г.)»
 
-Source: `sources/ocr-playground-download-20260920T112147Z/1988-1989_приг_раб.pdf/`
+Source: `attempts/ocr-00/`
 (Mistral OCR export of a scanned Soviet-era working timetable of suburban trains,
 Riga division of the Baltic Railway, published Riga «Транспорт», 1988.)
 

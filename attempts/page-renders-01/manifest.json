@@ -1,0 +1,11 @@
+{
+  "made": "2026-09-22T22:16:09",
+  "source": "sources/1988-1989_приг_раб.djvu",
+  "source_md5": "d5a46a69642d88048fe75f28d35ee882",
+  "pages": 103,
+  "command": "ddjvu -page=N -format=pbm -mode=black -> PNG, 1-bit, no scaling",
+  "sizes": {
+    "1287x1922": 2,
+    "2387x1923": 101
+  }
+}
