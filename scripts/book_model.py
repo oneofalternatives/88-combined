@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Shared model for the 1988/1989 suburban working timetable.
 
-Parses the Mistral OCR export into book pages and renders each block to HTML
-per spec/ocr-book-format.md. Consumed by build_book_html.py (screen) and
-build_book_pdf.py (print); both share this layout logic so the two outputs
-never drift apart.
+Two halves, one per stage of the pipeline: the OCR export is parsed and
+repaired for scripts/extract.py, and book/ — the hand-corrected result — is
+parsed and rendered to HTML for scripts/build_book_pdf.py. Nothing renders the
+OCR directly; see spec/ocr-book-format.md.
 """
 from __future__ import annotations
 
@@ -145,30 +145,6 @@ def pad_table(md: str, width: int) -> str:
     return "\n".join(lines)
 
 
-def group_rows(blocks):
-    """Group blocks that sit on the same visual line (spec §5.3)."""
-    blocks = sorted(blocks, key=lambda b: (b["topLeftY"], b["topLeftX"]))
-    rows: list[list[dict]] = []
-    for b in blocks:
-        if rows:
-            row = rows[-1]
-            top, bot = b["topLeftY"], b["bottomRightY"]
-            rtop = min(x["topLeftY"] for x in row)
-            rbot = max(x["bottomRightY"] for x in row)
-            overlap = min(bot, rbot) - max(top, rtop)
-            shorter = min(bot - top, rbot - rtop) or 1
-            same_line = overlap > 0.5 * shorter
-            clear_x = all(b["topLeftX"] >= x["bottomRightX"] or b["bottomRightX"] <= x["topLeftX"]
-                          for x in row)
-            if same_line and clear_x and b["type"] != "table" and all(x["type"] != "table" for x in row):
-                row.append(b)
-                continue
-        rows.append([b])
-    for row in rows:
-        row.sort(key=lambda b: b["topLeftX"])
-    return rows
-
-
 # ------------------------------------------------------------ markdown tables
 def parse_table(md: str):
     raw = [ln.strip() for ln in md.splitlines() if ln.strip().startswith("|")]
@@ -208,44 +184,6 @@ def parse_table(md: str):
     return body, header_count, width
 
 
-def render_table(md: str) -> str:
-    parsed = parse_table(md)
-    if not parsed:
-        return f"<pre>{html.escape(md)}</pre>"
-    rows, header_count, width = parsed
-    # Timetables are wide (a station column plus приб./отпр. pairs); a narrow
-    # table is prose — the contents list — and its cells must wrap, not clip.
-    cls = "tt" if width > 3 else "tt prose"
-    out = [f"<table class='{cls}'>"]
-    in_head = in_body = False
-    for i, cells in enumerate(rows):
-        head = i < header_count
-        tag = "th" if head else "td"
-        if head and not in_head:
-            out.append("<thead>")
-            in_head = True
-        if not head and not in_body:
-            out.append("</thead>" if in_head else "")
-            out.append("<tbody>")
-            in_body = True
-        out.append("<tr>")
-        j = 0
-        while j < width:
-            text = cells[j]
-            span = 1
-            if head:  # empty header cells continue the previous train column
-                while j + span < width and not cells[j + span]:
-                    span += 1
-            cls = " class='st'" if j == 0 else ""
-            attr = f" colspan='{span}'" if span > 1 else ""
-            out.append(f"<{tag}{cls}{attr}>{inline(text)}</{tag}>")
-            j += span
-        out.append("</tr>")
-    out.append("</tbody>" if in_body else "</thead>" if in_head else "")
-    out.append("</table>")
-    return "".join(x for x in out if x)
-
-
 def inline(text: str) -> str:
     t = html.escape(text)
     t = re.sub(r"\^\{\}\[\]", "", t)          # stray OCR superscript artefacts
@@ -254,101 +192,9 @@ def inline(text: str) -> str:
     return t
 
 
-# -------------------------------------------------------------- block render
-def render_block(b) -> str:
-    t = b["type"]
-    c = b["content"].strip()
-    if t == "table":
-        return render_table(c)
-    if t == "title" or c.startswith("#"):
-        level = len(c) - len(c.lstrip("#"))
-        text = c.lstrip("# ").strip()
-        tag = "h2" if level <= 1 else "h3"
-        return f"<{tag}>{inline(text)}</{tag}>"
-    if t == "list":
-        items = "".join(f"<li>{inline(x)}</li>" for x in c.splitlines() if x.strip())
-        return f"<ul class='stations'>{items}</ul>"
-    if t == "header" or t == "footer":
-        return f"<div class='runhead'>{inline(c)}</div>"
-    paras = [p for p in re.split(r"\n\s*\n", c) if p.strip()]
-    return "".join(f"<p>{inline(p.strip())}</p>" for p in paras)
-
-
-def align_of(b, width, x_offset=0.0):
-    centre = (b["topLeftX"] + b["bottomRightX"]) / 2 - x_offset
-    if centre < width * 0.38:
-        return "l"
-    if centre > width * 0.62:
-        return "r"
-    return "c"
-
-
 # A half page holds roughly this many table rows at the nominal font size;
 # calibrated against the densest chapter-I timetable (46 rows, ~88% full).
 ROW_CAPACITY = 47.0
-
-
-def estimate_rows(blocks) -> float:
-    """Rough content height of a half page, measured in table rows."""
-    rows = 0.0
-    for b in blocks:
-        c = b["content"].strip()
-        if b["type"] == "table":
-            parsed = parse_table(c)
-            rows += len(parsed[0]) if parsed else 0
-        elif b["type"] == "list":
-            rows += 0.85 * len([x for x in c.splitlines() if x.strip()])
-        elif b["type"] == "title" or c.startswith("#"):
-            rows += 2.0
-        else:  # prose: ~60 characters to the line, plus paragraph spacing
-            lines = sum(max(1, len(p) / 60) for p in re.split(r"\n\s*\n", c) if p.strip())
-            rows += 0.9 * lines + 0.4
-    return rows
-
-
-def fit_scale(blocks) -> float:
-    """Font scale that keeps an over-full half page from clipping."""
-    needed = estimate_rows(blocks)
-    return min(1.0, ROW_CAPACITY / needed) if needed > ROW_CAPACITY else 1.0
-
-
-def render_half(blocks, half_width, folio, side, x_offset=0.0):
-    parts = []
-    for row in group_rows(blocks):
-        if len(row) == 1:
-            b = row[0]
-            parts.append(f"<div class='blk a-{align_of(b, half_width, x_offset)}'>{render_block(b)}</div>")
-        else:
-            cells = "".join(
-                f"<div class='blk a-{align_of(b, half_width, x_offset)}'>{render_block(b)}</div>" for b in row
-            )
-            parts.append(f"<div class='row'>{cells}</div>")
-    folio_html = f"<div class='folio'>{folio}</div>" if folio is not None else ""
-    return f"<div class='page {side}'><div class='content'>{''.join(parts)}</div>{folio_html}</div>"
-
-
-# ----------------------------------------------------------------- pagination
-def sheets(src: Path):
-    """Yield one dict per physical sheet of the book.
-
-    {'kind': 'cover'|'spread', 'halves': [(blocks, half_width, folio, side), ...]}
-    """
-    for n, page in enumerate(load_pages(src), start=1):
-        halves = split_halves(page)
-        w = page["dimensions"]["width"]
-        if len(halves) == 1:
-            yield {"kind": "cover", "halves": [(halves[0], w, None, "portrait", 0.0)]}
-            continue
-        left_folio, right_folio = 2 * n - 4, 2 * n - 3
-        if n == 2:  # inside front cover + title page carry no printed folio
-            left_folio = right_folio = None
-        yield {
-            "kind": "spread",
-            "halves": [
-                (halves[0], w / 2, left_folio, "left", 0.0),
-                (halves[1], w / 2, right_folio, "right", w / 2),
-            ],
-        }
 
 
 # ------------------------------------------------------------- book/ as input

@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
 """Render the 1988/1989 suburban working timetable as a print-ready PDF.
 
-Shares all layout logic with the HTML build (book_model.py); only the
-stylesheet differs — absolute print units instead of container queries, one PDF
-page per physical sheet of the book. See spec/ocr-book-format.md.
+Reads book/ — the hand-corrected source of truth — and nothing else: the OCR
+export reaches the page only through scripts/extract.py. Layout lives in
+book_model.py; this file adds the print stylesheet, one PDF page per physical
+sheet of the book. See spec/ocr-book-format.md.
 """
 from __future__ import annotations
 
 import argparse
 from pathlib import Path
 
-from book_model import (BOOK, SRC, book_fit_scale, book_sheets, fit_scale,
-                        render_book_half, render_half, sheets)
+from book_model import BOOK, book_fit_scale, book_sheets, render_book_half
 
 OUT = Path("build/1988-1989-prigorodnye-rabochie.pdf")
 
@@ -83,21 +83,9 @@ table.tt.prose .st{{ width:auto; }}
 """
 
 
-def source(a):
-    """(sheets, half renderer, fit estimator) for the chosen input.
-
-    book/ is the default: it is the hand-corrected source of truth. --from-ocr
-    renders the raw OCR export instead, which is what makes a correction
-    visible -- build both and compare the same sheet.
-    """
-    if a.from_ocr:
-        return sheets(a.src), render_half, fit_scale
-    return book_sheets(a.book), render_book_half, book_fit_scale
-
-
-def with_fit(markup: str, content, fit) -> str:
+def with_fit(markup: str, items) -> str:
     """Shrink a half page whose content would otherwise overflow the sheet."""
-    scale = fit(content)
+    scale = book_fit_scale(items)
     if scale >= 1.0:
         return markup
     return markup.replace("<div class='content'>",
@@ -106,10 +94,9 @@ def with_fit(markup: str, content, fit) -> str:
 
 def build_html(a) -> str:
     body = []
-    pages, render, fit = source(a)
-    for sheet in pages:
+    for sheet in book_sheets(a.book):
         cls = "sheet single" if sheet["kind"] == "cover" else "sheet"
-        halves = "".join(with_fit(render(*h), h[0], fit) for h in sheet["halves"])
+        halves = "".join(with_fit(render_book_half(*h), h[0]) for h in sheet["halves"])
         body.append(f"<div class='{cls}'>{halves}</div>")
     return (
         "<meta charset='utf-8'>"
@@ -129,9 +116,6 @@ def build(a, out: Path):
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--book", type=Path, default=BOOK)
-    ap.add_argument("--src", type=Path, default=SRC)
-    ap.add_argument("--from-ocr", action="store_true",
-                    help="render the raw OCR export instead of book/")
     ap.add_argument("--out", type=Path, default=OUT)
     ap.add_argument("--dump-html", type=Path, help="write the print HTML and stop")
     a = ap.parse_args()
