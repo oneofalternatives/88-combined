@@ -22,7 +22,22 @@ sys.path.insert(0, str(Path(__file__).parent))
 from attempts import add_attempt, finish, next_dir, require_finished  # noqa: E402
 
 URL = "https://api.mistral.ai/v1/ocr"
-SETTINGS = {"include_blocks": True, "confidence_scores_granularity": "word"}
+# Every optional request field, spelled out. The required two -- model
+# (--model) and document (the page PNG) -- are added in call().
+SETTINGS = {
+    "include_blocks": True,                   # block boxes and types; split_halves needs them
+    "confidence_scores_granularity": "word",  # "page" | "block" | "word"
+    "table_format": None,                     # None: tables inline in markdown; "markdown"/"html": separate
+    "extract_header": False,                  # True: running heads go to page["header"] instead
+    "extract_footer": False,                  # True: footers go to page["footer"] instead
+    "pages": None,                            # all; each call is one image anyway
+    "include_image_base64": False,
+    "image_limit": None,
+    "image_min_size": None,
+    "document_annotation_format": None,
+    "document_annotation_prompt": None,
+    "bbox_annotation_format": None,
+}
 
 
 def call(key: str, model: str, png: Path) -> dict:
