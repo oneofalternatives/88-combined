@@ -655,10 +655,13 @@ def rule3_speeds(col, speeds, out):
 
 
 def rule4_legs(col, legs):
-    """Group adjacent (station A, station B) pairs by name.
+    """Group adjacent (station A, station B) pairs by name and direction.
 
-    Both directions of a leg pool into one sample: the same track, the same
-    running time, and the return trains are half the evidence there is.
+    Each direction is its own sample. A leg can genuinely run slower one way --
+    Засулаукс—Золитуде is 2:30 up and 4:45 down -- and pooling the two makes
+    every train in the slower direction an outlier. Splitting also gives more
+    legs an opinion, not fewer: twice the keys, and more of them clear
+    `min_samples`.
     """
     order = col.travel()
     for a, b in zip(order, order[1:]):
@@ -667,7 +670,7 @@ def rule4_legs(col, legs):
             continue
         if a.suspect or b.suspect or t1 < t0:
             continue    # already reported by rule 1; not evidence about the leg
-        key = tuple(sorted((a.station, b.station)))
+        key = (a.station, b.station)
         cells = [(a.row, a.cols[1] if a.cum_dep is not None else a.cols[0]),
                  (b.row, b.cols[0] if b.cum_arr is not None else b.cols[1])]
         where = col.where(a, cells)

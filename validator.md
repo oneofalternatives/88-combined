@@ -28,9 +28,11 @@ OCR. Repairs are reported, never guessed, and the exit code carries them.
    (`speed_deviation_threshold`, quiet on this book). Never measured across a
    mileposting reset. Ties the times to the mileposts — the only rule that
    crosses the two number systems on the page.
-4. **Same leg across many trains.** Group adjacent (station A, station B) pairs by
-   name, both directions in one sample, and score each running time by modified
-   z, `0.6745*(x-med)/MAD`, over `deviation_threshold`. Median and MAD, not
+4. **Same leg across many trains.** Group adjacent (station A, station B) pairs
+   by name, each direction its own sample — a leg can genuinely run slower one
+   way, and pooling the two makes every train in the slower direction an
+   outlier — and score each running time by modified z, `0.6745*(x-med)/MAD`,
+   over `deviation_threshold`. Median and MAD, not
    mean and σ: the outliers are in the sample. MAD is often 0 here — every
    train printed the same minute — so fall back to `x/median` over
    `ratio_threshold`. Under `min_samples` a leg gets no opinion, nor does a
