@@ -44,6 +44,8 @@ CONFIG = {
     "misalign_run": 3,               # findings in a row = one column finding
     "wrap_evening_after_h": 20,      # a midnight wrap leaves after this hour
     "wrap_morning_before_h": 8,      # ...and arrives before this one
+    "wrap_max_dwell_min": 60,        # ...and, inside a stop, waits no longer:
+                                     # the book's longest real dwell is 60
 }
 
 # Mileposting, per destination as the route caption prints it.
@@ -573,8 +575,10 @@ def rule1_monotone(col, out):
             if prev is not None and v < prev:
                 at_stop = attr == "cum_dep" and s.cum_arr is not None
                 midnight = (prev % DAY >= CONFIG["wrap_evening_after_h"] * 3600
-                            and cell.sec <= CONFIG["wrap_morning_before_h"] * 3600)
-                if midnight and not at_stop and wraps == 0:
+                            and cell.sec <= CONFIG["wrap_morning_before_h"] * 3600
+                            and (not at_stop
+                                 or v + DAY - prev <= CONFIG["wrap_max_dwell_min"] * 60))
+                if midnight and wraps == 0:
                     offset += DAY
                     v += DAY
                     wraps += 1

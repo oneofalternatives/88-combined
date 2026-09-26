@@ -146,6 +146,21 @@ def test_arrival_at_24_00_then_departure_after_is_not_a_finding(write_book):
     assert run(d)[1] == []
 
 
+def test_dwell_across_midnight_is_not_a_finding(write_book):
+    # sheet 51, train 6826 at Кегумс: in at 23.59, out at 00.01
+    d = write_book(5, [("suburban", [suburban_table(
+        STATIONS, train("—", "23.50", "23.55", "23.56", "23.59", "00.01", "00.05", "—"))])])
+    assert run(d)[1] == []
+
+
+def test_long_dwell_across_midnight_is_impossible(write_book):
+    # sheet 44, train 6176 Д at Асари: 02.06,5 is a misread 20.06,5
+    d = write_book(5, [("suburban", [suburban_table(
+        STATIONS, train("—", "20.00", "20.06", "02.06,5", "20.08", "20.08,5", "20.10", "—"))])])
+    f = [f for f in run(d)[1] if f.severity == 0]
+    assert [x.message for x in f] == ["departure before its arrival: 20.06 then 02.06,5"]
+
+
 def test_wrap_after_24_00_is_the_second_one(write_book):
     # long enough that down the page is the better fit
     d = write_book(5, [("suburban", [suburban_table(

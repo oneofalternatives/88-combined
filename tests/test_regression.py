@@ -111,10 +111,10 @@ def test_validator_snapshot_on_medium_00():
     """Tuning CONFIG moves these on purpose; update them when it does."""
     columns, findings = validate.validate(MEDIUM_00)
     assert len(columns) == 521
-    assert len(findings) == 275
-    assert sum(f.severity == 0 for f in findings) == 85
+    assert len(findings) == 271
+    assert sum(f.severity == 0 for f in findings) == 80
     by_rules = Counter(tuple(sorted(f.rules)) for f in findings)
-    assert by_rules == {(0,): 6, (1,): 34, (2,): 134, (2, 3, 4): 2, (2, 4): 12,
+    assert by_rules == {(0,): 6, (1,): 34, (2,): 130, (2, 3, 4): 2, (2, 4): 12,
                         (3,): 7, (3, 4): 3, (4,): 71, (5,): 6}
     assert str(findings[0].where) == ("page-93.md folio 182 [distance] п.№ 606 — "
                                       "Стрелка № 2-а → Айзкраукле  r11c3,r12c2")
