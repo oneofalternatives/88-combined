@@ -22,9 +22,9 @@ from attempts import finish, next_dir  # noqa: E402
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--src", type=Path, help="DjVu scan (default: the one in sources/)")
+    ap.add_argument("--src", type=Path, required=True, help="DjVu scan")
     args = ap.parse_args()
-    src = args.src or next(Path("sources").glob("*.djvu"))
+    src = args.src
 
     n = int(subprocess.run(["djvused", str(src), "-e", "n"],
                            capture_output=True, text=True, check=True).stdout)

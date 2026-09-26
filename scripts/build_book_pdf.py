@@ -13,8 +13,6 @@ from pathlib import Path
 
 from book_model import book_fit_scale, book_sheets, render_book_half
 
-OUT = Path("build/1988-1989-prigorodnye-rabochie.pdf")
-
 # Sheet geometry, taken from the scan dimensions (spec §2):
 #   spread half 509x821 px @128 dpi -> 101.0 x 162.9 mm
 #   cover      683x1019 px @159 dpi -> 109.1 x 162.8 mm
@@ -116,7 +114,7 @@ def build(a, out: Path):
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--src", type=Path, required=True, help="page files directory")
-    ap.add_argument("--dest", type=Path, default=OUT, help="PDF to write")
+    ap.add_argument("--dest", type=Path, required=True, help="PDF to write")
     ap.add_argument("--dump-html", type=Path, help="write the print HTML and stop")
     a = ap.parse_args()
     if a.dump_html:

@@ -27,7 +27,7 @@ Every script takes its dirs as arguments; none are built in.
                                            # redo one sheet
     python3 scripts/validate.py --src attempts/final-00
                                            # check the pages against themselves
-    python3 scripts/build_book_pdf.py --src attempts/final-00
+    python3 scripts/build_book_pdf.py --src attempts/final-00 --dest build/1988-1989-prigorodnye-rabochie.pdf
                                            # final render; needs weasyprint
 
 extract.py prints every repair it made and exits nonzero if there were any.
@@ -44,8 +44,8 @@ report makes the script exit nonzero. New code must keep to this.
 
 ## OCR pipeline
 
-    sources/*.djvu -> scripts/render.py -> attempts/page-renders-NN
-                   -> scripts/ocr.py    -> attempts/ocr-NN
+    sources/*.djvu -> scripts/render.py --src … -> attempts/page-renders-NN
+                   -> scripts/ocr.py --src … --model … -> attempts/ocr-NN
                    -> scripts/extract.py --src … --dest … -> attempts/extracted-NN
 
 Run each step by hand. Each refuses an unfinished input. render.py and ocr.py

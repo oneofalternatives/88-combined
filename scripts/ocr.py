@@ -64,20 +64,22 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--src", type=Path, help="a finished attempts/page-renders-NN")
     ap.add_argument("--resume", type=Path, help="an unfinished attempts/ocr-NN")
-    ap.add_argument("--model", default="mistral-ocr-latest")
+    ap.add_argument("--model", help="Mistral OCR model, e.g. mistral-ocr-latest")
     args = ap.parse_args()
     key = os.environ.get("MISTRAL_API_KEY") or sys.exit("MISTRAL_API_KEY is not set")
 
     if args.resume:
+        if args.src or args.model:
+            ap.error("--resume takes neither --src nor --model")
         out = args.resume
         if (out / "manifest.json").exists():
             sys.exit(f"{out}: already finished")
         run = json.loads((out / "run.json").read_text())
-    elif args.src:
+    elif args.src and args.model:
         out = None
         run = {"renders": str(args.src), "model": args.model, "settings": SETTINGS}
     else:
-        ap.error("give --src or --resume")
+        ap.error("give --src and --model, or --resume")
     renders = Path(run["renders"])
     require_finished(renders)
     if out is None:
