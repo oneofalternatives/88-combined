@@ -25,15 +25,43 @@ Divider = extract.Divider
     ("6301**", True, "6301**"),
     ("6305\\*", True, "6305*"),         # escaped by the OCR
     ("6301* 6303*", True, "6301* 6303*"),
+    # Marks on two trains in one cell are not an emphasis pair.
+    ("6609*/6620*", True, "6609*/6620*"),
+    ("6609*,6620*", True, "6609*,6620*"),
+    ("6301** 6303**", True, "6301** 6303**"),
+    ("6301**/6303**", True, "6301**/6303**"),
+    ("6301**/6303*", True, "6301**/6303*"),   # no mark moves to the other train
+    ("6301** 6303*", True, "6301** 6303*"),
+    ("6609\\*/6620\\*", True, "6609*/6620*"),  # an escape is never emphasis
+    ("\\*\\*Огре\\*\\*", True, "**Огре**"),
+    ("**6305\\***", True, "6305*"),            # bold around a marked number
+    ("6320** Д", True, "6320** Д"),
+    ("6533 Д*", True, "6533 Д*"),
+    ("a_b_c", False, "a_b_c"),
+    ("**—**", True, "—"),
+    ("**О/п. 56 км**", False, "О/п. 56 км"),
+    (" **Огре** ", False, "Огре"),
 ])
 def test_clean_cell(raw, pad, out):
     assert extract.clean_cell(raw, pad_time=pad) == out
 
 
-@pytest.mark.xfail(strict=True, reason="known bug: two footnote markers around a "
-                   "slash read as one emphasis pair and are stripped")
-def test_clean_cell_keeps_markers_on_paired_train_numbers():
-    assert extract.clean_cell("6609*/6620*") == "6609*/6620*"
+@pytest.mark.parametrize("cell,flagged", [
+    ("6305*", False),
+    ("6301** 6303*", False),
+    ("6320** Д", False),
+    ("6533 Д*", False),
+    ("6870 ДР*", False),
+    ("**Огре** 56", True),     # emphasis on part of a cell: kept, reported
+    ("Огре*", True),
+    ("a_b", True),
+])
+def test_stray_markup_reports_all_but_footnote_marks(cell, flagged):
+    report = []
+    extract.stray_markup([cell], 7, report)
+    assert bool(report) == flagged
+    if flagged:
+        assert report[0].startswith("sheet 7:") and repr(cell) in report[0]
 
 
 # ----------------------------------------------------------------- shapes

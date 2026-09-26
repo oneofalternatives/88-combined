@@ -30,9 +30,14 @@ OUT = Path("book")
 # as a fixed-width field; the half-minute suffix ("7.16,5") rides along. The
 # leading \b keeps it off things like "О/п. 56 км", where no digit precedes.
 HOUR_RE = re.compile(r"\b(\d)\.(\d{2})\b")
-# Only PAIRED delimiters are markdown emphasis. A lone trailing asterisk is
-# data -- the book's footnote marker on train numbers such as "6305*".
-EMPHASIS_RE = re.compile(r"\*\*(.+?)\*\*|__(.+?)__|\*(\S.*?\S|\S)\*|_(\S.*?\S|\S)_")
+# OCR emphasis always wraps a whole cell ("**Огре**", "**7.45**"), and only
+# that is stripped. Any other * is data: the book's footnote mark on train
+# numbers, "6305*", "6301**", "6609*/6620*". Matching pairs inside a cell
+# would read "6609*/6620*" as emphasis and lose both marks.
+EMPHASIS_RE = re.compile(r"(\*\*|__|\*|_)(\S(?:.*\S)?)\1")
+# The footnote mark: one or two asterisks after a train number or its type
+# suffix -- "6305*", "6320** Д", "6533 Д*", "6870 ДР*".
+MARKER_RE = re.compile(r"(?<=\d)\*{1,2}|(?<=\d Д)\*{1,2}|(?<=\d ДР)\*{1,2}")
 # A wrapped station name: the book breaks a long name across two printed lines
 # and the OCR reads them as two rows. The continuation is a bare kilometre
 # marker sitting under a real stop. "856 км" also occurs as a real standalone
@@ -57,8 +62,11 @@ def clean_cell(c: str, pad_time: bool = True) -> str:
     `pad_time` is off for station and distance columns, which must never be
     reinterpreted as clock times.
     """
+    c = c.strip()
+    if m := EMPHASIS_RE.fullmatch(c):
+        c = m.group(2)
+    # Unescape after, so an escaped "\*" is never taken for emphasis.
     c = c.replace("\\*", "*").replace("\\_", "_")
-    c = EMPHASIS_RE.sub(lambda m: next(g for g in m.groups() if g is not None), c)
     if pad_time:
         c = HOUR_RE.sub(r"0\1.\2", c)
     return c.strip()
@@ -328,6 +336,17 @@ def prose(blocks) -> str:
     return "\n\n".join(p for p in parts if p)
 
 
+def stray_markup(cells, sheet, report):
+    """Report a * or _ left after cleaning that is not a footnote mark.
+
+    It is either emphasis on part of a cell or a mark the book really prints;
+    only the scan can tell, so it is kept as is and reported.
+    """
+    for c in cells:
+        if re.search(r"[*_]", MARKER_RE.sub("", c)):
+            report.append(f"sheet {sheet}: markup left in {c!r} -- check the scan")
+
+
 def render_page(page, n, report) -> str:
     halves = split_halves(page)
     page_h = page["dimensions"]["height"]
@@ -340,12 +359,15 @@ def render_page(page, n, report) -> str:
     for half, folio in zip(halves, folios):
         body.append(f"## page {folio}" if folio is not None else "## page")
         body.append("")
-        for line in caption(half, page_h):
+        lines = caption(half, page_h)
+        stray_markup(lines, n, report)
+        for line in lines:
             body.append(line)
             body.append("")
         built = half_rows(half, page_h, n, report)
         if built:
             rows, hc, width, name = built
+            stray_markup((c for r in rows for c in r), n, report)
             shapes.append(name)
             body.append(as_markdown(rows, hc, width))
         else:
