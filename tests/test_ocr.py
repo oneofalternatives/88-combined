@@ -127,7 +127,7 @@ def test_main_failed_page_then_resume(renders, monkeypatch, tmp_path):
     out = tmp_path / "attempts" / "ocr-00"
 
     # first run: one page fails, the dir stays unfinished
-    assert run_main(monkeypatch, "attempts/page-renders-00") == 1
+    assert run_main(monkeypatch, "--src", "attempts/page-renders-00") == 1
     assert (out / "page-01.json").exists() and not (out / "page-02.json").exists()
     assert not (out / "manifest.json").exists()
     run = json.loads((out / "run.json").read_text())
@@ -150,25 +150,25 @@ def test_main_refuses_unfinished_renders(renders, monkeypatch):
     (renders / "manifest.json").unlink()
     monkeypatch.setattr(ocr, "call", lambda *a: pytest.fail("no call expected"))
     with pytest.raises(SystemExit, match="no manifest.json"):
-        run_main(monkeypatch, "attempts/page-renders-00")
+        run_main(monkeypatch, "--src", "attempts/page-renders-00")
 
 
 def test_main_needs_the_key(renders, monkeypatch):
     monkeypatch.delenv("MISTRAL_API_KEY")
     with pytest.raises(SystemExit, match="MISTRAL_API_KEY"):
-        run_main(monkeypatch, "attempts/page-renders-00")
+        run_main(monkeypatch, "--src", "attempts/page-renders-00")
 
 
 # ------------------------------------------- ocr.py -> extract.py, end to end
 def test_api_output_extracts_to_an_extracted_dir(renders, monkeypatch, tmp_path, capsys):
     monkeypatch.setattr(ocr, "call", lambda key, model, png: api_response(png.name))
-    assert run_main(monkeypatch, "attempts/page-renders-00") == 0
+    assert run_main(monkeypatch, "--src", "attempts/page-renders-00") == 0
 
     pages = bm.load_pages(tmp_path / "attempts" / "ocr-00")
     assert len(pages) == 2 and "topLeftX" in pages[0]["blocks"][0]
 
     monkeypatch.setattr(sys, "argv", ["extract.py", "--src", "attempts/ocr-00",
-                                      "--out", "attempts/extracted-00"])
+                                      "--dest", "attempts/extracted-00"])
     assert extract.main() == 0
     assert "halves by shape: prose=2, suburban=2" in capsys.readouterr().out
 

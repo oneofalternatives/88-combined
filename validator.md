@@ -1,9 +1,9 @@
 # validator — notes
 
 `scripts/validate.py`. The book over-determines itself, so it is checked
-against itself. Reads the `--book` dir (`attempts/final-NN`) only, like the builder. Shapes come from the
-frontmatter, station columns from `SHAPES` in extract.py, imported rather than
-restated — see `spec/book-format.md`. `--limit 0` for all of it, `--rule N` for
+against itself. Reads the `--src` dir (`attempts/final-NN`) only, like the
+builder. Shapes come from the frontmatter, station columns from `SHAPES` in
+extract.py, imported rather than restated — see `spec/book-format.md`. `--limit 0` for all of it, `--rule N` for
 one rule, `--json` for a machine.
 
 Output is triage — ranked "look here", not a verdict. The data is unchecked

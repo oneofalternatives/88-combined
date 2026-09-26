@@ -361,12 +361,12 @@ def test_ranking_puts_impossible_first():
 def test_main_exit_codes_and_json(write_book, monkeypatch, capsys):
     d = write_book(5, [("suburban", [suburban_table(
         STATIONS, train("—", "10.00", "10.10", "10.05", "10.15", "10.16", "10.20", "—"))])])
-    monkeypatch.setattr(sys, "argv", ["validate.py", "--book", str(d), "--json"])
+    monkeypatch.setattr(sys, "argv", ["validate.py", "--src", str(d), "--json"])
     assert v.main() == 1
     (f,) = json.loads(capsys.readouterr().out)
     assert f["rules"] == [2] and f["sheet"] == 5 and f["cells"] == [[1, 2]]
 
     (d / "page-05.md").write_text((d / "page-05.md").read_text().replace("10.05", "10.12"))
-    monkeypatch.setattr(sys, "argv", ["validate.py", "--book", str(d)])
+    monkeypatch.setattr(sys, "argv", ["validate.py", "--src", str(d)])
     assert v.main() == 0
     assert "1 train columns checked; 0 findings" in capsys.readouterr().out

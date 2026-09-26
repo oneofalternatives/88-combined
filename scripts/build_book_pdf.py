@@ -94,7 +94,7 @@ def with_fit(markup: str, items) -> str:
 
 def build_html(a) -> str:
     body = []
-    for sheet in book_sheets(a.book):
+    for sheet in book_sheets(a.src):
         cls = "sheet single" if sheet["kind"] == "cover" else "sheet"
         halves = "".join(with_fit(render_book_half(*h), h[0]) for h in sheet["halves"])
         body.append(f"<div class='{cls}'>{halves}</div>")
@@ -115,13 +115,13 @@ def build(a, out: Path):
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("--book", type=Path, required=True, help="page files directory")
-    ap.add_argument("--out", type=Path, default=OUT)
+    ap.add_argument("--src", type=Path, required=True, help="page files directory")
+    ap.add_argument("--dest", type=Path, default=OUT, help="PDF to write")
     ap.add_argument("--dump-html", type=Path, help="write the print HTML and stop")
     a = ap.parse_args()
     if a.dump_html:
         a.dump_html.write_text(build_html(a), encoding="utf-8")
         print(f"print HTML -> {a.dump_html}")
     else:
-        size = build(a, a.out)
-        print(f"{a.out} ({size/1024/1024:.1f} MiB)")
+        size = build(a, a.dest)
+        print(f"{a.dest} ({size/1024/1024:.1f} MiB)")

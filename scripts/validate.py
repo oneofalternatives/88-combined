@@ -865,14 +865,14 @@ def validate(src):
 def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--book", type=Path, required=True, help="page files directory to read")
+    ap.add_argument("--src", type=Path, required=True, help="page files directory to read")
     ap.add_argument("--limit", type=int, default=40, help="findings to print (0 = all)")
     ap.add_argument("--rule", type=int, action="append", help="only these rules")
     ap.add_argument("--impossible", action="store_true", help="only the impossible ones")
     ap.add_argument("--json", action="store_true", help="findings as JSON")
     a = ap.parse_args()
 
-    columns, findings = validate(a.book)
+    columns, findings = validate(a.src)
     if a.rule:
         findings = [f for f in findings if f.rules & set(a.rule)]
     if a.impossible:

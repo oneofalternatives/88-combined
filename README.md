@@ -21,13 +21,13 @@ Rendering sits outside it, a final production step once the sheets are good:
 
 Every script takes its dirs as arguments; none are built in.
 
-    python3 scripts/extract.py --src attempts/ocr-00 --out attempts/final-00
+    python3 scripts/extract.py --src attempts/ocr-00 --dest attempts/final-00
                                            # OCR -> pages, skips existing files
-    python3 scripts/extract.py --src attempts/ocr-00 --out attempts/final-00 93 --force
+    python3 scripts/extract.py --src attempts/ocr-00 --dest attempts/final-00 93 --force
                                            # redo one sheet
-    python3 scripts/validate.py --book attempts/final-00
+    python3 scripts/validate.py --src attempts/final-00
                                            # check the pages against themselves
-    python3 scripts/build_book_pdf.py --book attempts/final-00
+    python3 scripts/build_book_pdf.py --src attempts/final-00
                                            # final render; needs weasyprint
 
 extract.py prints every repair it made and exits nonzero if there were any.
@@ -46,10 +46,10 @@ report makes the script exit nonzero. New code must keep to this.
 
     sources/*.djvu -> scripts/render.py -> attempts/page-renders-NN
                    -> scripts/ocr.py    -> attempts/ocr-NN
-                   -> scripts/extract.py --src … --out … -> attempts/extracted-NN
+                   -> scripts/extract.py --src … --dest … -> attempts/extracted-NN
 
 Run each step by hand. Each refuses an unfinished input. render.py and ocr.py
-take the next free NN; for extract.py, name the extracted-NN dir in `--out`. `ocr.py`
+take the next free NN; for extract.py, name the extracted-NN dir in `--dest`. `ocr.py`
 needs `MISTRAL_API_KEY`. See `attempts/index.md`.
 
 ## attempts/final-NN

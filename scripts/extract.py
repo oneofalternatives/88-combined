@@ -394,23 +394,23 @@ def main():
     ap.add_argument("pages", nargs="*", type=int, help="sheet numbers (default: all)")
     ap.add_argument("--force", action="store_true", help="overwrite existing files")
     ap.add_argument("--src", type=Path, required=True, help="OCR output directory")
-    ap.add_argument("--out", type=Path, required=True, help="page files directory")
+    ap.add_argument("--dest", type=Path, required=True, help="page files directory")
     args = ap.parse_args()
     # Output into attempts/extracted-NN makes an extraction: a finished input, a fresh
     # dir, and a manifest plus index entry once done.
-    extracted = args.out.parent == attempts.ROOT and args.out.name.startswith("extracted-")
+    extracted = args.dest.parent == attempts.ROOT and args.dest.name.startswith("extracted-")
     if extracted:
         attempts.require_finished(args.src)
-        if (args.out / "manifest.json").exists():
-            sys.exit(f"{args.out}: already finished")
+        if (args.dest / "manifest.json").exists():
+            sys.exit(f"{args.dest}: already finished")
 
     pages = load_pages(args.src)
-    args.out.mkdir(exist_ok=True)
+    args.dest.mkdir(exist_ok=True)
     wanted = args.pages or range(1, len(pages) + 1)
     report: list[str] = []
     tally: dict[str, int] = {}
     for n in wanted:
-        dest = args.out / f"page-{n:02d}.md"
+        dest = args.dest / f"page-{n:02d}.md"
         if dest.exists() and not args.force:
             print(f"skip {dest} (exists; --force to overwrite)")
             continue
@@ -423,8 +423,8 @@ def main():
     print("halves by shape: " + ", ".join(f"{k}={v}" for k, v in sorted(tally.items())))
     if extracted:
         # Index first: if it fails, the dir stays unfinished and can be rerun.
-        attempts.set_extracted(args.src.name, args.out.name)
-        attempts.finish(args.out, {"ocr": str(args.src), "pages": len(wanted),
+        attempts.set_extracted(args.src.name, args.dest.name)
+        attempts.finish(args.dest, {"ocr": str(args.src), "pages": len(wanted),
                                    "problems": len(report)})
     if report:
         print(f"\n{len(report)} PROBLEM(S) -- not guessed at, fix these:")

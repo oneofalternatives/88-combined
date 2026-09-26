@@ -62,7 +62,7 @@ def call(key: str, model: str, png: Path) -> dict:
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("renders", type=Path, nargs="?", help="attempts/page-renders-NN")
+    ap.add_argument("--src", type=Path, help="a finished attempts/page-renders-NN")
     ap.add_argument("--resume", type=Path, help="an unfinished attempts/ocr-NN")
     ap.add_argument("--model", default="mistral-ocr-latest")
     args = ap.parse_args()
@@ -73,11 +73,11 @@ def main():
         if (out / "manifest.json").exists():
             sys.exit(f"{out}: already finished")
         run = json.loads((out / "run.json").read_text())
-    elif args.renders:
+    elif args.src:
         out = None
-        run = {"renders": str(args.renders), "model": args.model, "settings": SETTINGS}
+        run = {"renders": str(args.src), "model": args.model, "settings": SETTINGS}
     else:
-        ap.error("give a renders dir or --resume")
+        ap.error("give --src or --resume")
     renders = Path(run["renders"])
     require_finished(renders)
     if out is None:

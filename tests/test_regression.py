@@ -86,7 +86,7 @@ def _script(name, *args, cwd=REPO):
 
 def test_extract_cli_writes_skips_and_forces(tmp_path):
     out = tmp_path / "out"
-    r = _script("extract.py", 5, 93, "--src", OCR_00, "--out", out)
+    r = _script("extract.py", 5, 93, "--src", OCR_00, "--dest", out)
     assert r.returncode == 1                      # sheet 93 has repairs to report
     assert "16 PROBLEM(S) -- not guessed at, fix these:" in r.stdout
     assert "halves by shape: distance=2, suburban=2" in r.stdout
@@ -97,11 +97,11 @@ def test_extract_cli_writes_skips_and_forces(tmp_path):
 
     # a one-way door: edited files are not overwritten without --force
     (out / "page-05.md").write_text("hand corrected")
-    r = _script("extract.py", 5, "--src", OCR_00, "--out", out)
+    r = _script("extract.py", 5, "--src", OCR_00, "--dest", out)
     assert r.returncode == 0 and "skip" in r.stdout
     assert (out / "page-05.md").read_text() == "hand corrected"
 
-    r = _script("extract.py", 5, "--force", "--src", OCR_00, "--out", out)
+    r = _script("extract.py", 5, "--force", "--src", OCR_00, "--dest", out)
     assert r.returncode == 0
     assert (out / "page-05.md").read_text() == (EXTRACTED_00 / "page-05.md").read_text()
 
@@ -126,7 +126,7 @@ def test_validator_output_is_stable_across_runs():
     for seed in ("1", "2"):
         env = {**os.environ, "PYTHONDONTWRITEBYTECODE": "1", "PYTHONHASHSEED": seed}
         r = subprocess.run([sys.executable, str(REPO / "scripts" / "validate.py"),
-                            "--book", str(EXTRACTED_00), "--json"],
+                            "--src", str(EXTRACTED_00), "--json"],
                            cwd=REPO, env=env, capture_output=True, text=True)
         assert r.returncode == 1
         outs.append(r.stdout)
@@ -135,7 +135,7 @@ def test_validator_output_is_stable_across_runs():
 
 # ---------------------------------------------------------------- builder
 def test_print_html_has_every_sheet():
-    html = build_book_pdf.build_html(Namespace(book=EXTRACTED_00))
+    html = build_book_pdf.build_html(Namespace(src=EXTRACTED_00))
     assert html.count("<div class='sheet single'>") == 2
     assert html.count("<div class='sheet'>") == SHEETS - 2
     assert html.count("<div class='page left'>") == html.count("<div class='page right'>") == 101
