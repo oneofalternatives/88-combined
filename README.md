@@ -30,6 +30,12 @@ exits nonzero if it found any. See `validator.md`.
 
 The builder reads `book/` only. Nothing renders the OCR export directly.
 
+## Rule for all scripts
+
+Repairs are reported, never guessed. If a script can't work out a value, it
+doesn't make one up: it adds a line to its report and goes on. Any line in the
+report makes the script exit nonzero. New code must keep to this.
+
 ## OCR pipeline
 
     sources/*.djvu -> scripts/render.py -> attempts/page-renders-NN
