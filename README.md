@@ -50,7 +50,8 @@ report makes the script exit nonzero. New code must keep to this.
 
 Run each step by hand. Each refuses an unfinished input. render.py and ocr.py
 take the next free NN; for extract.py, name the extracted-NN dir in `--dest`. `ocr.py`
-needs `MISTRAL_API_KEY`. See `attempts/index.md`.
+needs `MISTRAL_API_KEY`: set it in the shell, or copy `.env.example` to `.env`
+and fill it in. See `attempts/index.md`.
 
 ## attempts/final-NN
 

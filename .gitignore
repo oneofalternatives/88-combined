@@ -2,3 +2,4 @@
 __pycache__/
 attempts/page-renders-*/*.png
 !attempts/page-renders-00/*.png
+.env

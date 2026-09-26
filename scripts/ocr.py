@@ -3,7 +3,8 @@
 
 One API call per page; each raw response is saved as page-NN.json. A page that
 fails is reported and the dir stays unfinished (no manifest.json) -- run again
-with --resume to fetch only the missing pages. Needs MISTRAL_API_KEY.
+with --resume to fetch only the missing pages. Needs MISTRAL_API_KEY, from the
+environment or from .env in the repo root.
 """
 from __future__ import annotations
 
@@ -22,6 +23,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 from attempts import add_attempt, finish, next_dir, require_finished  # noqa: E402
 
 URL = "https://api.mistral.ai/v1/ocr"
+ENV_FILE = Path(__file__).parent.parent / ".env"
 # Every optional request field, spelled out. The required two -- model
 # (--model) and document (the page PNG) -- are added in call().
 SETTINGS = {
@@ -60,13 +62,24 @@ def call(key: str, model: str, png: Path) -> dict:
             time.sleep(wait)
 
 
+def load_env(path):
+    """Set KEY=value lines from path; variables already set win."""
+    if path.exists():
+        for line in path.read_text().splitlines():
+            line = line.strip()
+            if line and not line.startswith("#") and "=" in line:
+                k, v = line.split("=", 1)
+                os.environ.setdefault(k.strip(), v.strip().strip("\"'"))
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--src", type=Path, help="a finished attempts/page-renders-NN")
     ap.add_argument("--resume", type=Path, help="an unfinished attempts/ocr-NN")
     ap.add_argument("--model", help="Mistral OCR model, e.g. mistral-ocr-latest")
     args = ap.parse_args()
-    key = os.environ.get("MISTRAL_API_KEY") or sys.exit("MISTRAL_API_KEY is not set")
+    load_env(ENV_FILE)
+    key = os.environ.get("MISTRAL_API_KEY") or sys.exit("MISTRAL_API_KEY is not set (env or .env)")
 
     if args.resume:
         if args.src or args.model:

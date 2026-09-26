@@ -100,6 +100,7 @@ def renders(tmp_path, monkeypatch):
     """A finished page-renders dir and an index, in a tmp repo root."""
     monkeypatch.chdir(tmp_path)
     monkeypatch.setenv("MISTRAL_API_KEY", "KEY")
+    monkeypatch.setattr(ocr, "ENV_FILE", tmp_path / ".env")
     d = tmp_path / "attempts" / "page-renders-00"
     d.mkdir(parents=True)
     for n in (1, 2):
@@ -157,6 +158,15 @@ def test_main_needs_the_key(renders, monkeypatch):
     monkeypatch.delenv("MISTRAL_API_KEY")
     with pytest.raises(SystemExit, match="MISTRAL_API_KEY"):
         run_main(monkeypatch, "--src", "attempts/page-renders-00", "--model", "mistral-ocr-latest")
+
+
+def test_main_reads_key_from_env_file(renders, monkeypatch, tmp_path):
+    monkeypatch.delenv("MISTRAL_API_KEY")
+    (tmp_path / ".env").write_text('# comment\n\nMISTRAL_API_KEY="FROMFILE"\n')
+    keys = []
+    monkeypatch.setattr(ocr, "call", lambda key, model, png: keys.append(key) or api_response(png.name))
+    assert run_main(monkeypatch, "--src", "attempts/page-renders-00", "--model", "mistral-ocr-latest") == 0
+    assert keys == ["FROMFILE", "FROMFILE"]
 
 
 @pytest.mark.parametrize("argv", [
