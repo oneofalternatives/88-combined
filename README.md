@@ -6,29 +6,35 @@ rendered back to a PDF.
 
 ## Pipeline
 
-    attempts/ocr-NN/         Mistral OCR of the scans
+    attempts/ocr-NN/              Mistral OCR of the scans
       -> scripts/extract.py
-    book/page-NN.md          one file per sheet, corrected by hand
+    attempts/final-NN/page-NN.md  one file per sheet, corrected by hand
       -> scripts/validate.py
-    findings                 ranked "look here", judged against the scans
+    findings                      ranked "look here", judged against the scans
 
-Correcting `book/` and running the validator again is the loop. Rendering sits
-outside it, a final production step once the sheets are good:
+Correcting `attempts/final-NN` and running the validator again is the loop.
+Rendering sits outside it, a final production step once the sheets are good:
 
-    book/ -> scripts/build_book_pdf.py -> build/   PDF
+    attempts/final-NN -> scripts/build_book_pdf.py -> build/   PDF
 
 ## Use
 
-    python3 scripts/extract.py             # OCR -> book/, skips existing files
-    python3 scripts/extract.py 93 --force  # redo one sheet
-    python3 scripts/validate.py            # check book/ against itself
-    python3 scripts/build_book_pdf.py      # final render; needs weasyprint
+Every script takes its dirs as arguments; none are built in.
+
+    python3 scripts/extract.py --src attempts/ocr-00 --out attempts/final-00
+                                           # OCR -> pages, skips existing files
+    python3 scripts/extract.py --src attempts/ocr-00 --out attempts/final-00 93 --force
+                                           # redo one sheet
+    python3 scripts/validate.py --book attempts/final-00
+                                           # check the pages against themselves
+    python3 scripts/build_book_pdf.py --book attempts/final-00
+                                           # final render; needs weasyprint
 
 extract.py prints every repair it made and exits nonzero if there were any.
 validate.py repairs nothing: it prints a ranked list of places to look and
 exits nonzero if it found any. See `validator.md`.
 
-The builder reads `book/` only. Nothing renders the OCR export directly.
+The builder reads `attempts/final-NN` only. Nothing renders the OCR export directly.
 
 ## Rule for all scripts
 
@@ -40,13 +46,13 @@ report makes the script exit nonzero. New code must keep to this.
 
     sources/*.djvu -> scripts/render.py -> attempts/page-renders-NN
                    -> scripts/ocr.py    -> attempts/ocr-NN
-                   -> scripts/extract.py --src … --out … -> attempts/medium-NN
+                   -> scripts/extract.py --src … --out … -> attempts/extracted-NN
 
 Run each step by hand. Each refuses an unfinished input. render.py and ocr.py
-take the next free NN; for extract.py, name the medium in `--out`. `ocr.py`
+take the next free NN; for extract.py, name the extracted-NN dir in `--out`. `ocr.py`
 needs `MISTRAL_API_KEY`. See `attempts/index.md`.
 
-## book/
+## attempts/final-NN
 
 Medium for the book — converted from OCR output, split into pages matching the
 book, human-readable and editable, machine-readable, diffable.

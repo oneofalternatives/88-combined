@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate book/ against itself.
+"""Validate book pages (attempts/final-NN) against itself.
 
 The book over-determines itself: the same leg is timed by dozens of trains, the
 mileposts fix the distances, and arrival never follows departure. So the sheets
@@ -10,7 +10,7 @@ OCR. Nothing is repaired and nothing is guessed: every finding names the cell
 and prints the evidence that made it suspicious, so it can be judged by eye
 against the scan.
 
-Reads book/ only, like the builder.
+Reads the book pages only, like the builder.
 """
 
 import argparse
@@ -23,7 +23,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from book_model import BOOK, parse_book_page  # noqa: E402
+from book_model import parse_book_page  # noqa: E402
 from extract import SHAPES  # noqa: E402
 
 # Tuned by editing and re-running. Every threshold is a judgement about a
@@ -199,7 +199,7 @@ class Finding:
 
 
 class Where:
-    """A location in book/, down to the cells involved."""
+    """A location in the book pages, down to the cells involved."""
 
     def __init__(self, sheet, folio, shape, train, station=None, cells=()):
         self.sheet, self.folio, self.shape = sheet, folio, shape
@@ -865,7 +865,7 @@ def validate(src):
 def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--book", type=Path, default=BOOK, help="directory to read")
+    ap.add_argument("--book", type=Path, required=True, help="page files directory to read")
     ap.add_argument("--limit", type=int, default=40, help="findings to print (0 = all)")
     ap.add_argument("--rule", type=int, action="append", help="only these rules")
     ap.add_argument("--impossible", action="store_true", help="only the impossible ones")

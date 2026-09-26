@@ -2,9 +2,9 @@
 """Shared model for the 1988/1989 suburban working timetable.
 
 Two halves, one per stage of the pipeline: the OCR export is parsed and
-repaired for scripts/extract.py, and book/ — the hand-corrected result — is
-parsed and rendered to HTML for scripts/build_book_pdf.py. Nothing renders the
-OCR directly; see spec/ocr-book-format.md.
+repaired for scripts/extract.py, and attempts/final-NN — the hand-corrected
+result — is parsed and rendered to HTML for scripts/build_book_pdf.py. Nothing
+renders the OCR directly; see spec/ocr-book-format.md.
 """
 from __future__ import annotations
 
@@ -12,8 +12,6 @@ import html
 import json
 import re
 from pathlib import Path
-
-SRC = Path("attempts/ocr-00")
 
 SIGNATURE_RE = re.compile(r"^\d+\s*(—\s*\d+|\\?\*)$")
 FOLIO_RE = re.compile(r"^\d{1,3}$")
@@ -209,12 +207,11 @@ def inline(text: str) -> str:
 ROW_CAPACITY = 47.0
 
 
-# ------------------------------------------------------------- book/ as input
-# From here down the input is book/page-NN.md, not the OCR: the hand-corrected
+# ------------------------------------------------------------- book pages as input
+# From here down the input is attempts/final-NN/page-NN.md, not the OCR: the hand-corrected
 # source of truth. Its tables are markdown-LIKE (see extract.as_markdown) --
 # "=" rules the head, "-" rules the interior, a one-cell row is a full-width
 # band -- so they are read here rather than by parse_table, which speaks GFM.
-BOOK = Path("book")
 RULE_CHARS = set("-=: ")
 
 
@@ -395,8 +392,8 @@ def book_fit_scale(items) -> float:
     return min(1.0, ROW_CAPACITY / needed) if needed > ROW_CAPACITY else 1.0
 
 
-def book_sheets(src: Path = BOOK):
-    """Yield one dict per sheet, shaped like sheets() but read from book/."""
+def book_sheets(src: Path):
+    """Yield one dict per sheet, shaped like sheets() but read from book pages."""
     n = 1
     while (src / f"page-{n:02d}.md").exists():
         page = parse_book_page((src / f"page-{n:02d}.md").read_text())

@@ -1,4 +1,4 @@
-"""book_model: reading the OCR export, repairing it, and reading book/ back."""
+"""book_model: reading the OCR export, repairing it, and reading book pages back."""
 import json
 
 import pytest
@@ -135,7 +135,7 @@ def test_load_pages_stops_at_first_gap(tmp_path):
     assert len(bm.load_pages(tmp_path)) == 1
 
 
-# ------------------------------------------------------- book/ as input
+# ------------------------------------------------- book pages as input
 BOOK_TABLE = """\
 | № поездов | 6501 Д |       | 6601  |       |
 |           | приб.  | отпр. | приб. | отпр. |

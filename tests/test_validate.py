@@ -1,4 +1,4 @@
-"""validate.py: each rule on small synthetic book/ pages, plus the helpers.
+"""validate.py: each rule on small synthetic book pages, plus the helpers.
 
 Pages are written with the extractor's own as_markdown, so these tests also
 hold the validator to the format extract.py actually produces.

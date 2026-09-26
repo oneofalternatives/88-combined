@@ -1,4 +1,4 @@
-"""extract.py: OCR half sheets -> book/ tables, and the repairs on the way."""
+"""extract.py: OCR half sheets -> book page tables, and the repairs on the way."""
 import pytest
 
 import book_model as bm

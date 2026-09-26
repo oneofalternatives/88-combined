@@ -1,7 +1,7 @@
 """Shared setup: scripts/ on the import path, paths to the frozen data, and
-builders for small hand-made OCR pages and book/ pages.
+builders for small hand-made OCR pages and book pages.
 
-The scripts use paths relative to the repo root (attempts/, book/). Tests pass
+The scripts take their dirs as arguments (attempts/...). Tests pass
 absolute paths, or chdir into a tmp dir that mimics the layout.
 """
 from __future__ import annotations
@@ -15,10 +15,10 @@ REPO = Path(__file__).resolve().parent.parent
 SCRIPTS = REPO / "scripts"
 sys.path.insert(0, str(SCRIPTS))
 
-# Frozen reference data. book/ is hand-corrected over time, so regression
-# tests compare against medium-00, the untouched extractor output it came from.
+# Frozen reference data. final-00 is hand-corrected over time, so regression
+# tests compare against extracted-00, the untouched extractor output it came from.
 OCR_00 = REPO / "attempts" / "ocr-00"
-MEDIUM_00 = REPO / "attempts" / "medium-00"
+EXTRACTED_00 = REPO / "attempts" / "extracted-00"
 
 # Spread geometry of the real scans (spec/ocr-book-format.md §2).
 SPREAD = {"width": 1019, "height": 821}
@@ -26,8 +26,8 @@ COVER = {"width": 683, "height": 1019}
 
 INDEX_HEAD = """# Attempts
 
-| #   | source | renders | ocr | medium | note |
-| --- | ------ | ------- | --- | ------ | ---- |
+| #   | source | renders | ocr | extracted | note |
+| --- | ------ | ------- | --- | --------- | ---- |
 """
 
 
@@ -63,9 +63,9 @@ def suburban_spread():
     ])
 
 
-# ------------------------------------------------------------- book/ pages
+# ------------------------------------------------------------- book pages
 def book_table(rows, header_count=1):
-    """A book/ table in the extractor's own format."""
+    """A book page table in the extractor's own format."""
     import extract
     width = max(len(r) for r in rows)
     rows = [r + [""] * (width - len(r)) for r in rows]
@@ -73,7 +73,7 @@ def book_table(rows, header_count=1):
 
 
 def book_page(sheet, halves, folios=None):
-    """Text of a book/page-NN.md. halves: [(shape, [paragraph or table])]."""
+    """Text of a book page file, page-NN.md. halves: [(shape, [paragraph or table])]."""
     folios = folios or [2 * sheet - 4, 2 * sheet - 3][:len(halves)]
     out = ["---", f"sheet: {sheet}", f"kind: {'spread' if len(halves) == 2 else 'cover'}",
            f"folios: [{', '.join(map(str, folios))}]",

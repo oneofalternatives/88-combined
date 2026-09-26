@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
 """Render the 1988/1989 suburban working timetable as a print-ready PDF.
 
-Reads book/ — the hand-corrected source of truth — and nothing else: the OCR
-export reaches the page only through scripts/extract.py. Layout lives in
-book_model.py; this file adds the print stylesheet, one PDF page per physical
-sheet of the book. See spec/ocr-book-format.md.
+Reads attempts/final-NN — the hand-corrected source of truth — and nothing
+else: the OCR export reaches the page only through scripts/extract.py. Layout
+lives in book_model.py; this file adds the print stylesheet, one PDF page per
+physical sheet of the book. See spec/ocr-book-format.md.
 """
 from __future__ import annotations
 
 import argparse
 from pathlib import Path
 
-from book_model import BOOK, book_fit_scale, book_sheets, render_book_half
+from book_model import book_fit_scale, book_sheets, render_book_half
 
 OUT = Path("build/1988-1989-prigorodnye-rabochie.pdf")
 
@@ -115,7 +115,7 @@ def build(a, out: Path):
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("--book", type=Path, default=BOOK)
+    ap.add_argument("--book", type=Path, required=True, help="page files directory")
     ap.add_argument("--out", type=Path, default=OUT)
     ap.add_argument("--dump-html", type=Path, help="write the print HTML and stop")
     a = ap.parse_args()

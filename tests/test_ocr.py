@@ -160,7 +160,7 @@ def test_main_needs_the_key(renders, monkeypatch):
 
 
 # ------------------------------------------- ocr.py -> extract.py, end to end
-def test_api_output_extracts_to_a_medium(renders, monkeypatch, tmp_path, capsys):
+def test_api_output_extracts_to_an_extracted_dir(renders, monkeypatch, tmp_path, capsys):
     monkeypatch.setattr(ocr, "call", lambda key, model, png: api_response(png.name))
     assert run_main(monkeypatch, "attempts/page-renders-00") == 0
 
@@ -168,18 +168,18 @@ def test_api_output_extracts_to_a_medium(renders, monkeypatch, tmp_path, capsys)
     assert len(pages) == 2 and "topLeftX" in pages[0]["blocks"][0]
 
     monkeypatch.setattr(sys, "argv", ["extract.py", "--src", "attempts/ocr-00",
-                                      "--out", "attempts/medium-00"])
+                                      "--out", "attempts/extracted-00"])
     assert extract.main() == 0
     assert "halves by shape: prose=2, suburban=2" in capsys.readouterr().out
 
-    medium = tmp_path / "attempts" / "medium-00"
-    text = (medium / "page-02.md").read_text()
+    extracted = tmp_path / "attempts" / "extracted-00"
+    text = (extracted / "page-02.md").read_text()
     assert text.startswith("---\nsheet: 2\nkind: spread\nfolios: []\n"
                            "shapes: [suburban, prose]\n---")
     assert "п. № page-02.png" in text and "| Кегумс       | 23.37,5 |" in text
-    assert json.loads((medium / "manifest.json").read_text())["problems"] == 0
-    assert "| ocr-00 | medium-00 |" in (tmp_path / "attempts" / "index.md").read_text()
+    assert json.loads((extracted / "manifest.json").read_text())["problems"] == 0
+    assert "| ocr-00 | extracted-00 |" in (tmp_path / "attempts" / "index.md").read_text()
 
-    # a finished medium is a one-way door
+    # a finished extracted dir is a one-way door
     with pytest.raises(SystemExit, match="already finished"):
         extract.main()

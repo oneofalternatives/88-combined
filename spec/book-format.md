@@ -1,6 +1,6 @@
-# Spec: `book/` page files
+# Spec: `attempts/final-NN` page files
 
-One file per scanned sheet, `book/page-NN.md`. Frontmatter, then one `## page N`
+One file per scanned sheet, `attempts/final-NN/page-NN.md`. Frontmatter, then one `## page N`
 section per half sheet. Written by `scripts/extract.py`, read by
 `scripts/build_book_pdf.py` and the validator. See the README for the table
 syntax.
@@ -18,7 +18,7 @@ syntax.
 
 A shape is the layout of the half sheet. Each table names itself in its header
 row, so the shape is **detected, never configured** — there is no page→shape
-map to keep in step with `book/`. `SHAPES` in `scripts/extract.py` holds the
+map to keep in step with the pages. `SHAPES` in `scripts/extract.py` holds the
 header predicate, the station column and the columns that are never
 time-padded.
 
@@ -52,5 +52,5 @@ difference means nothing.
 
 No font emphasis in these files. A trailing `*` or `**` on a train number is
 the book's own footnote marker, defined on its contents page, so an asterisk
-added for emphasis cannot be told from the data. `book/` only — the repo's
+added for emphasis cannot be told from the data. Page files only — the repo's
 docs use emphasis freely.

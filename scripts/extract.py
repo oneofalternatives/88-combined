@@ -4,8 +4,9 @@
 The OCR chops a single printed timetable into several blocks and loses the
 column count wherever train times are blank. Both are repaired here, once, by
 reassembling each half sheet into ONE table whose width comes from the
-"№ поездов" header. The result under book/ is the source of truth from then
-on: it is hand-corrected against the scans, and the builders read only it.
+"№ поездов" header. The result, in attempts/final-NN, is the source of truth
+from then on: it is hand-corrected against the scans, and the builders read
+only it.
 
 This is a one-way door -- it refuses to overwrite an edited file unless asked.
 See spec/ocr-book-format.md.
@@ -20,10 +21,8 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 
 import attempts
-from book_model import (SRC, header_width, is_station_block, load_pages,
+from book_model import (header_width, is_station_block, load_pages,
                         parse_table, split_halves, station_span)
-
-OUT = Path("book")
 
 
 # A lone-hour time ("7.10") is padded to "07.10" so the column sorts and reads
@@ -394,13 +393,13 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("pages", nargs="*", type=int, help="sheet numbers (default: all)")
     ap.add_argument("--force", action="store_true", help="overwrite existing files")
-    ap.add_argument("--src", type=Path, default=SRC, help="OCR output directory")
-    ap.add_argument("--out", type=Path, default=OUT)
+    ap.add_argument("--src", type=Path, required=True, help="OCR output directory")
+    ap.add_argument("--out", type=Path, required=True, help="page files directory")
     args = ap.parse_args()
-    # Output into attempts/medium-NN makes a medium: a finished input, a fresh
+    # Output into attempts/extracted-NN makes an extraction: a finished input, a fresh
     # dir, and a manifest plus index entry once done.
-    medium = args.out.parent == attempts.ROOT and args.out.name.startswith("medium-")
-    if medium:
+    extracted = args.out.parent == attempts.ROOT and args.out.name.startswith("extracted-")
+    if extracted:
         attempts.require_finished(args.src)
         if (args.out / "manifest.json").exists():
             sys.exit(f"{args.out}: already finished")
@@ -422,9 +421,9 @@ def main():
                 for name in line[8:].strip("[] ").split(","):
                     tally[name.strip()] = tally.get(name.strip(), 0) + 1
     print("halves by shape: " + ", ".join(f"{k}={v}" for k, v in sorted(tally.items())))
-    if medium:
+    if extracted:
         # Index first: if it fails, the dir stays unfinished and can be rerun.
-        attempts.set_medium(args.src.name, args.out.name)
+        attempts.set_extracted(args.src.name, args.out.name)
         attempts.finish(args.out, {"ocr": str(args.src), "pages": len(wanted),
                                    "problems": len(report)})
     if report:
