@@ -59,9 +59,6 @@ def test_set_medium_unknown_ocr(root):
         attempts.set_medium("ocr-07", "medium-00")
 
 
-@pytest.mark.xfail(strict=True, raises=StopIteration,
-                   reason="known bug: rows are found by startswith('| 01 |'), but "
-                   "attempts/index.md pads the number column ('| 01  |')")
 def test_set_medium_on_a_column_aligned_index(root):
     (root / "index.md").write_text(
         INDEX_HEAD + "| 01  | a.djvu | r-00 | ocr-01 | –      | note |\n")

@@ -62,6 +62,8 @@ def set_medium(ocr: str, medium: str) -> None:
     if free is None:
         return add_attempt(*mine[-1][1:4], medium)
     free[4] = medium
-    i = next(i for i, ln in enumerate(lines) if ln.startswith(f"| {free[0]} |"))
+    # Match the parsed number cell: the index may pad it ('| 01  |').
+    i = next(i for i, ln in enumerate(lines)
+             if ln.startswith("| ") and ln.strip().strip("|").split("|")[0].strip() == free[0])
     lines[i] = "| " + " | ".join(free) + " |"
     INDEX.write_text("\n".join(lines) + "\n")

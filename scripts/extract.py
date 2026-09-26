@@ -401,9 +401,10 @@ def main():
                     tally[name.strip()] = tally.get(name.strip(), 0) + 1
     print("halves by shape: " + ", ".join(f"{k}={v}" for k, v in sorted(tally.items())))
     if medium:
+        # Index first: if it fails, the dir stays unfinished and can be rerun.
+        attempts.set_medium(args.src.name, args.out.name)
         attempts.finish(args.out, {"ocr": str(args.src), "pages": len(wanted),
                                    "problems": len(report)})
-        attempts.set_medium(args.src.name, args.out.name)
     if report:
         print(f"\n{len(report)} PROBLEM(S) -- not guessed at, fix these:")
         for line in report:
