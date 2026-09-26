@@ -564,6 +564,12 @@ def rule1_monotone(col, out):
             if not cell.timed:
                 continue
             v = cell.sec + offset
+            if cell.sec == DAY and wraps == 0:
+                # 24.00 is the wrap itself: it ends this day, so what
+                # follows is on the next one, even inside a stop.
+                offset += DAY
+                v = cell.sec - DAY + offset
+                wraps += 1
             if prev is not None and v < prev:
                 at_stop = attr == "cum_dep" and s.cum_arr is not None
                 midnight = (prev % DAY >= CONFIG["wrap_evening_after_h"] * 3600

@@ -132,13 +132,27 @@ def test_midnight_wrap_is_not_a_finding(write_book):
     assert run(d)[1] == []
 
 
-@pytest.mark.xfail(strict=True, reason="known bug: 24.00 is taken mod a day as "
-                   "00.00, so it never reads as 'out late' and the wrap after it "
-                   "is reported as a backwards step (sheet 5, train 6501 Д)")
 def test_wrap_after_24_00_is_not_a_finding(write_book):
+    # sheet 5, train 6501 Д: out at 24.00, in at the next stop after midnight
     d = write_book(5, [("suburban", [suburban_table(
         STATIONS, train("—", "23.50", "23.59,5", "24.00", "00.03,5", "00.04,5", "00.10", "—"))])])
     assert run(d)[1] == []
+
+
+def test_arrival_at_24_00_then_departure_after_is_not_a_finding(write_book):
+    # sheet 96, train 662 at Вецуми: in at 24.00, out at 00.01
+    d = write_book(5, [("suburban", [suburban_table(
+        STATIONS, train("—", "23.50", "24.00", "00.01", "00.05", "00.06", "00.10", "—"))])])
+    assert run(d)[1] == []
+
+
+def test_wrap_after_24_00_is_the_second_one(write_book):
+    # long enough that down the page is the better fit
+    d = write_book(5, [("suburban", [suburban_table(
+        STATIONS + ["Дзинтари", "Майори"],
+        train("23.58", "23.59", "24.00", "00.01", "00.05", "00.06",
+              "21.00", "21.01", "21.05", "21.06", "01.00", "—"))])])
+    assert any(m.endswith("a second wrap in this column") for m in messages(run(d)[1]))
 
 
 def test_morning_time_after_a_daytime_one_is_not_a_wrap(write_book):

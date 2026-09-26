@@ -15,7 +15,8 @@ OCR. Repairs are reported, never guessed, and the exit code carries them.
    fitted per column pair, both ways, better fit wins; no fit is itself a
    finding. `24.00` is midnight and night trains wrap, so compare on a
    cumulative clock — one wrap is allowed, and only where it reads like
-   midnight: out late, in early, not inside a stop. Any other backwards step is
+   midnight: out late, in early, not inside a stop. A `24.00` is the wrap
+   itself, so the times after it are on the next day. Any other backwards step is
    damage, so it does not advance the clock and the times around it stop being
    evidence for rules 3 and 4. `—` (passes without stopping) is skipped; blanks
    should run contiguously to the ends of the column.
