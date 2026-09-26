@@ -405,8 +405,10 @@ def main():
             sys.exit(f"{args.dest}: already finished")
 
     pages = load_pages(args.src)
+    if missing := [n for n in args.pages if n not in pages]:
+        sys.exit(f"{args.src}: no sheet {', '.join(map(str, missing))}")
     args.dest.mkdir(exist_ok=True)
-    wanted = args.pages or range(1, len(pages) + 1)
+    wanted = args.pages or list(pages)
     report: list[str] = []
     tally: dict[str, int] = {}
     for n in wanted:
@@ -414,7 +416,7 @@ def main():
         if dest.exists() and not args.force:
             print(f"skip {dest} (exists; --force to overwrite)")
             continue
-        text = render_page(pages[n - 1], n, report)
+        text = render_page(pages[n], n, report)
         dest.write_text(text)
         for line in text.splitlines():
             if line.startswith("shapes:"):

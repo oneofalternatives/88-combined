@@ -187,7 +187,7 @@ def test_api_output_extracts_to_an_extracted_dir(renders, monkeypatch, tmp_path,
     assert run_main(monkeypatch, "--src", "attempts/page-renders-00", "--model", "mistral-ocr-latest") == 0
 
     pages = bm.load_pages(tmp_path / "attempts" / "ocr-00")
-    assert len(pages) == 2 and "topLeftX" in pages[0]["blocks"][0]
+    assert list(pages) == [1, 2] and "topLeftX" in pages[1]["blocks"][0]
 
     monkeypatch.setattr(sys, "argv", ["extract.py", "--src", "attempts/ocr-00",
                                       "--dest", "attempts/extracted-00"])
@@ -205,3 +205,25 @@ def test_api_output_extracts_to_an_extracted_dir(renders, monkeypatch, tmp_path,
     # a finished extracted dir is a one-way door
     with pytest.raises(SystemExit, match="already finished"):
         extract.main()
+
+
+def test_a_lone_sheet_keeps_its_number_through_ocr_and_extract(renders, monkeypatch, tmp_path):
+    for png in renders.glob("page-*.png"):
+        png.unlink()
+    (renders / "page-93.png").write_bytes(b"png")
+    monkeypatch.setattr(ocr, "call", lambda key, model, png: api_response(png.name))
+    assert run_main(monkeypatch, "--src", "attempts/page-renders-00", "--model", "mistral-ocr-latest") == 0
+    assert [p.name for p in (tmp_path / "attempts" / "ocr-00").glob("page-*")] == ["page-93.json"]
+
+    monkeypatch.setattr(sys, "argv", ["extract.py", "--src", "attempts/ocr-00",
+                                      "--dest", "attempts/extracted-00", "92"])
+    with pytest.raises(SystemExit, match="no sheet 92"):
+        extract.main()
+    assert not (tmp_path / "attempts" / "extracted-00").exists()
+
+    monkeypatch.setattr(sys, "argv", ["extract.py", "--src", "attempts/ocr-00",
+                                      "--dest", "attempts/extracted-00", "93"])
+    assert extract.main() == 0
+    out = tmp_path / "attempts" / "extracted-00"
+    assert sorted(p.name for p in out.iterdir()) == ["manifest.json", "page-93.md"]
+    assert (out / "page-93.md").read_text().startswith("---\nsheet: 93\nkind: spread\nfolios: [182, 183]\n")

@@ -113,7 +113,7 @@ def test_load_pages_playground_export(tmp_path):
         d = tmp_path / "pages" / f"page-{n}"
         d.mkdir(parents=True)
         (d / "page-metadata.json").write_text(json.dumps({"index": n - 1, "blocks": []}))
-    assert [p["index"] for p in bm.load_pages(tmp_path)] == [0, 1]
+    assert {n: p["index"] for n, p in bm.load_pages(tmp_path).items()} == {1: 0, 2: 1}
 
 
 def test_load_pages_api_responses_are_camel_cased(tmp_path):
@@ -124,15 +124,15 @@ def test_load_pages_api_responses_are_camel_cased(tmp_path):
     (tmp_path / "page-01.json").write_text(json.dumps(resp))
     (tmp_path / "page-02.json").write_text(json.dumps(resp))
     pages = bm.load_pages(tmp_path)
-    assert len(pages) == 2
-    assert pages[0]["blocks"][0] == {"topLeftX": 1, "topLeftY": 2, "bottomRightX": 3,
+    assert list(pages) == [1, 2]
+    assert pages[1]["blocks"][0] == {"topLeftX": 1, "topLeftY": 2, "bottomRightX": 3,
                                      "bottomRightY": 4, "type": "text", "content": "x"}
 
 
-def test_load_pages_stops_at_first_gap(tmp_path):
-    for n in (1, 3):
-        (tmp_path / f"page-{n:02d}.json").write_text(json.dumps({"pages": [{}]}))
-    assert len(bm.load_pages(tmp_path)) == 1
+def test_load_pages_keys_sheets_by_file_name(tmp_path):
+    for n in (93, 3):
+        (tmp_path / f"page-{n:02d}.json").write_text(json.dumps({"pages": [{"index": n}]}))
+    assert bm.load_pages(tmp_path) == {3: {"index": 3}, 93: {"index": 93}}
 
 
 # ------------------------------------------------- book pages as input

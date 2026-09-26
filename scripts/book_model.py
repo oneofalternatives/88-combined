@@ -25,18 +25,15 @@ def _camel(x):
     return [_camel(v) for v in x] if isinstance(x, list) else x
 
 
-def load_pages(src: Path):
-    """Pages of an OCR attempt: a playground export, or ocr.py's page-NN.json."""
-    pages = []
-    n = 1
-    while True:
-        if (f := src / f"pages/page-{n}" / "page-metadata.json").exists():
-            pages.append(json.loads(f.read_text()))
-        elif (f := src / f"page-{n:02d}.json").exists():
-            pages.append(_camel(json.loads(f.read_text())["pages"][0]))
-        else:
-            return pages
-        n += 1
+def load_pages(src: Path) -> dict[int, dict]:
+    """Pages of an OCR attempt by sheet number, taken from the file names: a
+    playground export (pages/page-N/), or ocr.py's page-NN.json."""
+    pages = {}
+    for f in src.glob("pages/page-*/page-metadata.json"):
+        pages[int(f.parent.name.removeprefix("page-"))] = json.loads(f.read_text())
+    for f in src.glob("page-*.json"):
+        pages[int(f.stem.removeprefix("page-"))] = _camel(json.loads(f.read_text())["pages"][0])
+    return dict(sorted(pages.items()))
 
 
 def is_noise(block) -> bool:

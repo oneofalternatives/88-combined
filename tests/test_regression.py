@@ -51,9 +51,9 @@ EXPECTED_REPORT = [
 @pytest.fixture(scope="module")
 def extracted():
     pages = bm.load_pages(OCR_00)
-    assert len(pages) == SHEETS
+    assert list(pages) == list(range(1, SHEETS + 1))
     report = []
-    texts = {n: extract.render_page(pages[n - 1], n, report) for n in range(1, SHEETS + 1)}
+    texts = {n: extract.render_page(pages[n], n, report) for n in pages}
     return texts, report
 
 
