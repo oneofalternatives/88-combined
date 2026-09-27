@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """OCR pipeline, step 1: DjVu -> one PNG per scan in attempts/scans-NN.
 
-Renders the bilevel text layer (ddjvu -mode=black) at the DjVu's own pixel
-size. Lossless: every PNG is checked pixel for pixel against ddjvu's output.
+--mode bw (default) renders the bilevel text layer (ddjvu -mode=black) as
+1-bit PNGs; --mode color renders the full page (ddjvu -mode=color) as RGB
+PNGs. Both at the DjVu's own pixel size. Lossless: every PNG is checked pixel
+for pixel against ddjvu's output.
 """
 from __future__ import annotations
 
@@ -19,24 +21,31 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 from attempts import finish, next_dir  # noqa: E402
 
+# --mode -> (ddjvu -format, ddjvu -mode, PIL mode for the lossless check)
+MODES = {"bw": ("pbm", "black", "1"), "color": ("ppm", "color", "RGB")}
+DEPTH = {"bw": "1-bit", "color": "RGB"}
+
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--src", type=Path, required=True, help="DjVu scan")
+    ap.add_argument("--mode", choices=MODES, default="bw",
+                    help="bw: 1-bit text layer (default); color: full page, RGB")
     args = ap.parse_args()
     src = args.src
+    fmt, ddjvu_mode, pil_mode = MODES[args.mode]
 
     n = int(subprocess.run(["djvused", str(src), "-e", "n"],
                            capture_output=True, text=True, check=True).stdout)
     out = next_dir("scans")
     sizes: dict[str, int] = {}
     for p in range(1, n + 1):
-        pbm = subprocess.run(["ddjvu", f"-page={p}", "-format=pbm", "-mode=black", str(src), "-"],
+        raw = subprocess.run(["ddjvu", f"-page={p}", f"-format={fmt}", f"-mode={ddjvu_mode}", str(src), "-"],
                              capture_output=True, check=True).stdout
-        img = Image.open(io.BytesIO(pbm))
+        img = Image.open(io.BytesIO(raw))
         dest = out / f"scan-{p:02d}.png"
         img.save(dest, optimize=True)
-        if ImageChops.difference(Image.open(dest).convert("1"), img.convert("1")).getbbox():
+        if ImageChops.difference(Image.open(dest).convert(pil_mode), img.convert(pil_mode)).getbbox():
             sys.exit(f"{dest}: PNG differs from ddjvu output")
         size = "x".join(map(str, img.size))
         sizes[size] = sizes.get(size, 0) + 1
@@ -47,7 +56,7 @@ def main():
         "source": str(src),
         "source_md5": md5,
         "scans": n,
-        "command": "ddjvu -page=N -format=pbm -mode=black -> PNG, 1-bit, no scaling",
+        "command": f"ddjvu -page=N -format={fmt} -mode={ddjvu_mode} -> PNG, {DEPTH[args.mode]}, no scaling",
         "sizes": sizes,
     })
     print(f"{out}: {n} scans")
