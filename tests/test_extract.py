@@ -193,6 +193,20 @@ def test_realign_divider_splits_segments():
     assert out[3][0] == "Кегумс" and report == []
 
 
+def test_half_rows_railway_row_becomes_divider():
+    md = ("| Раздельные пункты | Расстояние км | приб. | отпр. |\n"
+          "| --- | --- | --- | --- |\n"
+          "| Зилупе | 643,3 | 20.30 | 20.31 |\n"
+          "|  Октябрьская ж. д.  |   |   |   |\n"
+          "| Кегумс |  |  |  |\n"
+          "| Посинь | 631,5 | 20.46 | 20.47 |")
+    report = []
+    rows, *_ = extract.half_rows([_table(md)], 1000, 93, report)
+    assert isinstance(rows[2], Divider) and rows[2][0] == "Октябрьская ж. д."
+    # any other name-only row is left to realign(), not made a divider
+    assert not any(isinstance(r, Divider) and r[0] == "Кегумс" for r in rows)
+
+
 # ---------------------------------------------------- as_markdown round trip
 def test_as_markdown_round_trips_through_parse_book_table():
     rows = [["№ поездов", "6501 Д", "", "6601", ""],

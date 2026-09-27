@@ -42,6 +42,9 @@ MARKER_RE = re.compile(r"(?<=\d)\*{1,2}|(?<=\d Д)\*{1,2}|(?<=\d ДР)\*{1,2}")
 # marker sitting under a real stop. "856 км" also occurs as a real standalone
 # stop, so every merge is reported for review.
 KM_RE = re.compile(r"^\d+\s*км$")
+# A change of railway, "Октябрьская ж. д.". The OCR gives it either as a title
+# block or as a table row with every other cell empty; both are a divider.
+RAILWAY_RE = re.compile(r"ж\.\s*д\.$")
 
 # Blank in any data cell: the book prints an em dash where a train does not call.
 BLANK = ("", "—", "-")
@@ -161,7 +164,13 @@ def half_rows(blocks, page_h, sheet, report):
         for r in body:
             r = [clean_cell(c, pad_time=i not in protected)
                  for i, c in enumerate(r[:width])]
-            rows.append(r + [""] * (width - len(r)))
+            r += [""] * (width - len(r))
+            # Only a railway name is sure to be a divider: any other name-only
+            # row may be a stop whose times the OCR lost, left to realign().
+            if RAILWAY_RE.search(r[st_col]) and not any(
+                    c for i, c in enumerate(r) if i != st_col):
+                r = Divider(r)
+            rows.append(r)
     if name == "distance" and rows:
         rows = realign(rows, max(header_count, 1), st_col, 1, sheet, report)
     return (rows, header_count, width, name) if rows else None
