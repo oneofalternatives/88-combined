@@ -1,0 +1,89 @@
+{
+ "pages": [
+  {
+   "index": 0,
+   "markdown": "# ГЛАВА VI\n\n# РИГА—САУЛКРАСТЫ—ЛИМБАЖИ—АЛОЯ\n\n103",
+   "images": [],
+   "tables": [],
+   "hyperlinks": [],
+   "header": null,
+   "footer": null,
+   "dimensions": {
+    "dpi": 200,
+    "height": 1923,
+    "width": 2387
+   },
+   "confidence_scores": {
+    "word_confidence_scores": [
+     {
+      "text": "#",
+      "confidence": 0.8807775303750808,
+      "start_index": 0
+     },
+     {
+      "text": " ГЛАВА",
+      "confidence": 0.9941285059634216,
+      "start_index": 1
+     },
+     {
+      "text": " VI",
+      "confidence": 0.9988290685399853,
+      "start_index": 7
+     },
+     {
+      "text": "#",
+      "confidence": 0.9933071486460123,
+      "start_index": 12
+     },
+     {
+      "text": " РИГА—САУЛКРАСТЫ—ЛИМБАЖИ—АЛОЯ",
+      "confidence": 0.9950522402331514,
+      "start_index": 13
+     },
+     {
+      "text": "103",
+      "confidence": 0.9999694833531786,
+      "start_index": 44
+     }
+    ],
+    "average_page_confidence_score": 0.977010662851805,
+    "minimum_page_confidence_score": 0.8807775303750808
+   },
+   "blocks": [
+    {
+     "top_left_x": 1649,
+     "top_left_y": 705,
+     "bottom_right_x": 1885,
+     "bottom_right_y": 747,
+     "content": "# ГЛАВА VI",
+     "confidence_scores": null,
+     "type": "title"
+    },
+    {
+     "top_left_x": 1369,
+     "top_left_y": 780,
+     "bottom_right_x": 2165,
+     "bottom_right_y": 824,
+     "content": "# РИГА—САУЛКРАСТЫ—ЛИМБАЖИ—АЛОЯ",
+     "confidence_scores": null,
+     "type": "title"
+    },
+    {
+     "top_left_x": 2236,
+     "top_left_y": 1750,
+     "bottom_right_x": 2296,
+     "bottom_right_y": 1786,
+     "content": "103",
+     "confidence_scores": null,
+     "type": "footer"
+    }
+   ]
+  }
+ ],
+ "model": "mistral-ocr-4-1",
+ "document_annotation": null,
+ "usage_info": {
+  "pages_processed": 1,
+  "doc_size_bytes": 4710
+ }
+}

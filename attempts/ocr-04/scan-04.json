@@ -1,0 +1,730 @@
+{
+ "pages": [
+  {
+   "index": 0,
+   "markdown": "# Drošības noteikumu teksti pasažieriem lasīšanai vilcienos un stacijās\n\n# PILSOŅI PASAŽIERI!\n\nIzmantojot dzelzceļa transportu un atrodoties dzelzceļa teritorijā, esiet uzmanīgi. Ievērojiet braukšanas un personīgās drošības noteikumus, sargiet sevi un citus no nelaimes gadījumiem.\n\nNešķērsojiet sliedes neatļautās vietās, neskrieniet pāri sliedēm, ja strauji tuvojas vilciens, neaizmirstiet, ka vilcienu uzreiz nevar apturēt.\n\nNevediet vilcienā viegli uzliesmojošas vielas un sprāgstvielas (petroleju, benzīnu, spirtu u. c.). Nestāviet vagonu koridoros, dodiet iespēju vilcienā iekāpt arī citiem pasažieriem.\n\nAizliegts traucēt citus pasažierus, piegružot vagonu un smēķēt tajā, spēlēt azarta spēles, kavēt vagonu automātisko durvju atvēršanu vai aizvēršanu.\n\nBērnu vagoni paredzēti pasažieriem ar bērniem, invalīdiem un gados vecākiem pilsoņiem.\n\nPārvadāt suņus bērnu vagonos aizliegts.\n\nBaltijas dzelzceļa Rīgas nodaļa\n\n# ГЛАВА I\n\n# ЛИЕЛВАРДЕ—РИГА—ТУКУМС\n\n4",
+   "images": [],
+   "tables": [],
+   "hyperlinks": [],
+   "header": null,
+   "footer": null,
+   "dimensions": {
+    "dpi": 200,
+    "height": 1923,
+    "width": 2387
+   },
+   "confidence_scores": {
+    "word_confidence_scores": [
+     {
+      "text": "#",
+      "confidence": 0.9770226476651187,
+      "start_index": 0
+     },
+     {
+      "text": " Drošības",
+      "confidence": 0.9964772931052066,
+      "start_index": 1
+     },
+     {
+      "text": " noteikumu",
+      "confidence": 0.9966425026044406,
+      "start_index": 10
+     },
+     {
+      "text": " teksti",
+      "confidence": 0.9985578747440054,
+      "start_index": 20
+     },
+     {
+      "text": " pasažieriem",
+      "confidence": 0.9981649375574928,
+      "start_index": 27
+     },
+     {
+      "text": " lasīšanai",
+      "confidence": 0.9748458707723003,
+      "start_index": 39
+     },
+     {
+      "text": " vilcienos",
+      "confidence": 0.8133910642525923,
+      "start_index": 49
+     },
+     {
+      "text": " un",
+      "confidence": 0.9995045733565407,
+      "start_index": 59
+     },
+     {
+      "text": " stacijās",
+      "confidence": 0.9768045602376777,
+      "start_index": 62
+     },
+     {
+      "text": "#",
+      "confidence": 0.5621764355519978,
+      "start_index": 73
+     },
+     {
+      "text": " PILSOŅI",
+      "confidence": 0.7582229457164622,
+      "start_index": 74
+     },
+     {
+      "text": " PASAŽIERI!",
+      "confidence": 0.9981309492105673,
+      "start_index": 82
+     },
+     {
+      "text": "Izmantojot",
+      "confidence": 0.9983748819010528,
+      "start_index": 95
+     },
+     {
+      "text": " dzelzceļa",
+      "confidence": 0.9991390427551803,
+      "start_index": 105
+     },
+     {
+      "text": " transportu",
+      "confidence": 0.9998423121062697,
+      "start_index": 115
+     },
+     {
+      "text": " un",
+      "confidence": 0.9999934435319415,
+      "start_index": 126
+     },
+     {
+      "text": " atrodoties",
+      "confidence": 0.9930858866382728,
+      "start_index": 129
+     },
+     {
+      "text": " dzelzceļa",
+      "confidence": 0.9990876543898103,
+      "start_index": 140
+     },
+     {
+      "text": " teritorijā,",
+      "confidence": 0.9991429294759249,
+      "start_index": 150
+     },
+     {
+      "text": " esiet",
+      "confidence": 0.999622680072761,
+      "start_index": 162
+     },
+     {
+      "text": " uzmanīgi.",
+      "confidence": 0.9996557317907646,
+      "start_index": 168
+     },
+     {
+      "text": " Ievērojiet",
+      "confidence": 0.999331089691205,
+      "start_index": 178
+     },
+     {
+      "text": " braukšanas",
+      "confidence": 0.9984896211029475,
+      "start_index": 189
+     },
+     {
+      "text": " un",
+      "confidence": 0.9999731786297104,
+      "start_index": 200
+     },
+     {
+      "text": " personīgās",
+      "confidence": 0.9999171724834732,
+      "start_index": 203
+     },
+     {
+      "text": " drošības",
+      "confidence": 0.9999935627512189,
+      "start_index": 214
+     },
+     {
+      "text": " noteikumus,",
+      "confidence": 0.9982311429583571,
+      "start_index": 223
+     },
+     {
+      "text": " sargiet",
+      "confidence": 0.999752761492707,
+      "start_index": 235
+     },
+     {
+      "text": " sevi",
+      "confidence": 0.9989162694433941,
+      "start_index": 243
+     },
+     {
+      "text": " un",
+      "confidence": 0.9999550601190241,
+      "start_index": 248
+     },
+     {
+      "text": " citus",
+      "confidence": 0.970608651944976,
+      "start_index": 251
+     },
+     {
+      "text": " no",
+      "confidence": 0.9999210896780105,
+      "start_index": 257
+     },
+     {
+      "text": " nelaimes",
+      "confidence": 0.9982496444139095,
+      "start_index": 260
+     },
+     {
+      "text": " gadījumiem.",
+      "confidence": 0.9999442251016859,
+      "start_index": 269
+     },
+     {
+      "text": "Nešķērsojiet",
+      "confidence": 0.9976729103390097,
+      "start_index": 283
+     },
+     {
+      "text": " sliedes",
+      "confidence": 0.9780975368664435,
+      "start_index": 295
+     },
+     {
+      "text": " neatļautās",
+      "confidence": 0.9955337045796264,
+      "start_index": 303
+     },
+     {
+      "text": " vietās,",
+      "confidence": 0.9998040199534051,
+      "start_index": 314
+     },
+     {
+      "text": " neskrieniet",
+      "confidence": 0.8406636691097057,
+      "start_index": 322
+     },
+     {
+      "text": " pāri",
+      "confidence": 0.9995488876242884,
+      "start_index": 334
+     },
+     {
+      "text": " sliedēm,",
+      "confidence": 0.9940458456787483,
+      "start_index": 339
+     },
+     {
+      "text": " ja",
+      "confidence": 0.9996751410491326,
+      "start_index": 348
+     },
+     {
+      "text": " strauji",
+      "confidence": 0.9984270760262202,
+      "start_index": 351
+     },
+     {
+      "text": " tuvojas",
+      "confidence": 0.9982189159292602,
+      "start_index": 359
+     },
+     {
+      "text": " vilciens,",
+      "confidence": 0.9975915314069551,
+      "start_index": 367
+     },
+     {
+      "text": " neaizmirstiet,",
+      "confidence": 0.9988494339752733,
+      "start_index": 377
+     },
+     {
+      "text": " ka",
+      "confidence": 0.9996048581996233,
+      "start_index": 392
+     },
+     {
+      "text": " vilcienu",
+      "confidence": 0.9977770405648062,
+      "start_index": 395
+     },
+     {
+      "text": " uzreiz",
+      "confidence": 0.9999245635637635,
+      "start_index": 404
+     },
+     {
+      "text": " nevar",
+      "confidence": 0.9997471783696191,
+      "start_index": 411
+     },
+     {
+      "text": " apturēt.",
+      "confidence": 0.9989648856982646,
+      "start_index": 417
+     },
+     {
+      "text": "Nevediet",
+      "confidence": 0.998432537494831,
+      "start_index": 428
+     },
+     {
+      "text": " vilcienā",
+      "confidence": 0.9947402198641669,
+      "start_index": 436
+     },
+     {
+      "text": " viegli",
+      "confidence": 0.9995660296864808,
+      "start_index": 445
+     },
+     {
+      "text": " uzliesmojošas",
+      "confidence": 0.9980336856638738,
+      "start_index": 452
+     },
+     {
+      "text": " vielas",
+      "confidence": 0.9996911458728531,
+      "start_index": 466
+     },
+     {
+      "text": " un",
+      "confidence": 0.9998750842669973,
+      "start_index": 473
+     },
+     {
+      "text": " sprāgstvielas",
+      "confidence": 0.9871300728807222,
+      "start_index": 476
+     },
+     {
+      "text": " (petroleju,",
+      "confidence": 0.997161794927709,
+      "start_index": 490
+     },
+     {
+      "text": " benzīnu,",
+      "confidence": 0.9964465630538706,
+      "start_index": 502
+     },
+     {
+      "text": " spirtu",
+      "confidence": 0.9925126287052689,
+      "start_index": 511
+     },
+     {
+      "text": " u.",
+      "confidence": 0.999904961575529,
+      "start_index": 518
+     },
+     {
+      "text": " c.).",
+      "confidence": 0.9998768960627803,
+      "start_index": 521
+     },
+     {
+      "text": " Nestāviet",
+      "confidence": 0.9492159174804233,
+      "start_index": 526
+     },
+     {
+      "text": " vagonu",
+      "confidence": 0.9997414729819656,
+      "start_index": 536
+     },
+     {
+      "text": " koridoros,",
+      "confidence": 0.9981489810701116,
+      "start_index": 543
+     },
+     {
+      "text": " dodiet",
+      "confidence": 0.9999764822834625,
+      "start_index": 554
+     },
+     {
+      "text": " iespēju",
+      "confidence": 0.9997366021742761,
+      "start_index": 561
+     },
+     {
+      "text": " vilcienā",
+      "confidence": 0.9983785738032344,
+      "start_index": 569
+     },
+     {
+      "text": " iekāpt",
+      "confidence": 0.9911571075777272,
+      "start_index": 578
+     },
+     {
+      "text": " arī",
+      "confidence": 0.9999036881743856,
+      "start_index": 585
+     },
+     {
+      "text": " citiem",
+      "confidence": 0.9997046314561523,
+      "start_index": 589
+     },
+     {
+      "text": " pasažieriem.",
+      "confidence": 0.9998507055810472,
+      "start_index": 596
+     },
+     {
+      "text": "Aizliegts",
+      "confidence": 0.9994152547994877,
+      "start_index": 611
+     },
+     {
+      "text": " traucēt",
+      "confidence": 0.9997908402283129,
+      "start_index": 620
+     },
+     {
+      "text": " citus",
+      "confidence": 0.9996239494685133,
+      "start_index": 628
+     },
+     {
+      "text": " pasažierus,",
+      "confidence": 0.9993884292539877,
+      "start_index": 634
+     },
+     {
+      "text": " piegružot",
+      "confidence": 0.814858068659149,
+      "start_index": 646
+     },
+     {
+      "text": " vagonu",
+      "confidence": 0.9999926772042674,
+      "start_index": 656
+     },
+     {
+      "text": " un",
+      "confidence": 0.9999957084838798,
+      "start_index": 663
+     },
+     {
+      "text": " smēķēt",
+      "confidence": 0.9981502219125147,
+      "start_index": 666
+     },
+     {
+      "text": " tajā,",
+      "confidence": 0.99981937206037,
+      "start_index": 673
+     },
+     {
+      "text": " spēlēt",
+      "confidence": 0.9996541590829728,
+      "start_index": 679
+     },
+     {
+      "text": " azarta",
+      "confidence": 0.9992735547969538,
+      "start_index": 686
+     },
+     {
+      "text": " spēles,",
+      "confidence": 0.9998850118442013,
+      "start_index": 693
+     },
+     {
+      "text": " kavēt",
+      "confidence": 0.8026416732069004,
+      "start_index": 701
+     },
+     {
+      "text": " vagonu",
+      "confidence": 0.9999953168025191,
+      "start_index": 707
+     },
+     {
+      "text": " automātisko",
+      "confidence": 0.9969747397726206,
+      "start_index": 714
+     },
+     {
+      "text": " durvju",
+      "confidence": 0.9993395036219304,
+      "start_index": 726
+     },
+     {
+      "text": " atvēršanu",
+      "confidence": 0.9982215243012257,
+      "start_index": 733
+     },
+     {
+      "text": " vai",
+      "confidence": 0.9999339624169533,
+      "start_index": 743
+     },
+     {
+      "text": " aizvēršanu.",
+      "confidence": 0.9995763359696991,
+      "start_index": 747
+     },
+     {
+      "text": "Bērnu",
+      "confidence": 0.9997666474622156,
+      "start_index": 761
+     },
+     {
+      "text": " vagoni",
+      "confidence": 0.9968221891328931,
+      "start_index": 766
+     },
+     {
+      "text": " paredzēti",
+      "confidence": 0.9997652980208374,
+      "start_index": 773
+     },
+     {
+      "text": " pasažieriem",
+      "confidence": 0.9999002322913333,
+      "start_index": 783
+     },
+     {
+      "text": " ar",
+      "confidence": 0.9998264613952123,
+      "start_index": 795
+     },
+     {
+      "text": " bērniem,",
+      "confidence": 0.9993854819558101,
+      "start_index": 798
+     },
+     {
+      "text": " invalīdiem",
+      "confidence": 0.9075952000938664,
+      "start_index": 807
+     },
+     {
+      "text": " un",
+      "confidence": 0.9999656689032875,
+      "start_index": 818
+     },
+     {
+      "text": " gados",
+      "confidence": 0.9992856790083261,
+      "start_index": 821
+     },
+     {
+      "text": " vecākiem",
+      "confidence": 0.9992517815928003,
+      "start_index": 827
+     },
+     {
+      "text": " pilsoņiem.",
+      "confidence": 0.9988464804688888,
+      "start_index": 836
+     },
+     {
+      "text": "Pārvadāt",
+      "confidence": 0.9981515634810837,
+      "start_index": 849
+     },
+     {
+      "text": " suņus",
+      "confidence": 0.9927146750364865,
+      "start_index": 857
+     },
+     {
+      "text": " bērnu",
+      "confidence": 0.9999122751017361,
+      "start_index": 863
+     },
+     {
+      "text": " vagonos",
+      "confidence": 0.9996957472440747,
+      "start_index": 869
+     },
+     {
+      "text": " aizliegts.",
+      "confidence": 0.9997917714982743,
+      "start_index": 877
+     },
+     {
+      "text": "Baltijas",
+      "confidence": 0.9991992704690279,
+      "start_index": 890
+     },
+     {
+      "text": " dzelzceļa",
+      "confidence": 0.999975849442444,
+      "start_index": 898
+     },
+     {
+      "text": " Rīgas",
+      "confidence": 0.999849781259567,
+      "start_index": 908
+     },
+     {
+      "text": " nodaļa",
+      "confidence": 0.9980423871155647,
+      "start_index": 914
+     },
+     {
+      "text": "#",
+      "confidence": 0.9988304957495425,
+      "start_index": 923
+     },
+     {
+      "text": " ГЛАВА",
+      "confidence": 0.9869448264085008,
+      "start_index": 924
+     },
+     {
+      "text": " I",
+      "confidence": 0.9232293770674956,
+      "start_index": 930
+     },
+     {
+      "text": "#",
+      "confidence": 0.9984987894978749,
+      "start_index": 934
+     },
+     {
+      "text": " ЛИЕЛВАРДЕ—РИГА—ТУКУМС",
+      "confidence": 0.984261447774713,
+      "start_index": 935
+     },
+     {
+      "text": "4",
+      "confidence": 0.999997854237364,
+      "start_index": 959
+     }
+    ],
+    "average_page_confidence_score": 0.9837333915628363,
+    "minimum_page_confidence_score": 0.5621764355519978
+   },
+   "blocks": [
+    {
+     "top_left_x": 112,
+     "top_left_y": 300,
+     "bottom_right_x": 1130,
+     "bottom_right_y": 412,
+     "content": "# Drošības noteikumu teksti pasažieriem lasīšanai vilcienos un stacijās",
+     "confidence_scores": null,
+     "type": "title"
+    },
+    {
+     "top_left_x": 387,
+     "top_left_y": 450,
+     "bottom_right_x": 863,
+     "bottom_right_y": 508,
+     "content": "# PILSOŅI PASAŽIERI!",
+     "confidence_scores": null,
+     "type": "title"
+    },
+    {
+     "top_left_x": 103,
+     "top_left_y": 545,
+     "bottom_right_x": 1123,
+     "bottom_right_y": 743,
+     "content": "Izmantojot dzelzceļa transportu un atrodoties dzelzceļa teritorijā, esiet uzmanīgi. Ievērojiet braukšanas un personīgās drošības noteikumus, sargiet sevi un citus no nelaimes gadījumiem.",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 103,
+     "top_left_y": 731,
+     "bottom_right_x": 1118,
+     "bottom_right_y": 876,
+     "content": "Nešķērsojiet sliedes neatļautās vietās, neskrieniet pāri sliedēm, ja strauji tuvojas vilciens, neaizmirstiet, ka vilcienu uzreiz nevar apturēt.",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 96,
+     "top_left_y": 866,
+     "bottom_right_x": 1113,
+     "bottom_right_y": 1051,
+     "content": "Nevediet vilcienā viegli uzliesmojošas vielas un sprāgstvielas (petroleju, benzīnu, spirtu u. c.). Nestāviet vagonu koridoros, dodiet iespēju vilcienā iekāpt arī citiem pasažieriem.",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 93,
+     "top_left_y": 1041,
+     "bottom_right_x": 1111,
+     "bottom_right_y": 1217,
+     "content": "Aizliegts traucēt citus pasažierus, piegružot vagonu un smēķēt tajā, spēlēt azarta spēles, kavēt vagonu automātisko durvju atvēršanu vai aizvēršanu.",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 91,
+     "top_left_y": 1220,
+     "bottom_right_x": 1104,
+     "bottom_right_y": 1322,
+     "content": "Bērnu vagoni paredzēti pasažieriem ar bērniem, invalīdiem un gados vecākiem pilsoņiem.",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 131,
+     "top_left_y": 1311,
+     "bottom_right_x": 968,
+     "bottom_right_y": 1374,
+     "content": "Pārvadāt suņus bērnu vagonos aizliegts.",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 459,
+     "top_left_y": 1396,
+     "bottom_right_x": 1102,
+     "bottom_right_y": 1461,
+     "content": "Baltijas dzelzceļa Rīgas nodaļa",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 1627,
+     "top_left_y": 687,
+     "bottom_right_x": 1835,
+     "bottom_right_y": 730,
+     "content": "# ГЛАВА I",
+     "confidence_scores": null,
+     "type": "title"
+    },
+    {
+     "top_left_x": 1443,
+     "top_left_y": 758,
+     "bottom_right_x": 2024,
+     "bottom_right_y": 801,
+     "content": "# ЛИЕЛВАРДЕ—РИГА—ТУКУМС",
+     "confidence_scores": null,
+     "type": "title"
+    },
+    {
+     "top_left_x": 74,
+     "top_left_y": 1781,
+     "bottom_right_x": 98,
+     "bottom_right_y": 1813,
+     "content": "4",
+     "confidence_scores": null,
+     "type": "footer"
+    }
+   ]
+  }
+ ],
+ "model": "mistral-ocr-4-1",
+ "document_annotation": null,
+ "usage_info": {
+  "pages_processed": 1,
+  "doc_size_bytes": 38761
+ }
+}

@@ -1,0 +1,70 @@
+{
+ "pages": [
+  {
+   "index": 0,
+   "markdown": "ДЛЯ ЗАМЕТОК\n\nДЛЯ ЗАМЕТОК",
+   "images": [],
+   "tables": [],
+   "hyperlinks": [],
+   "header": null,
+   "footer": null,
+   "dimensions": {
+    "dpi": 200,
+    "height": 1923,
+    "width": 2387
+   },
+   "confidence_scores": {
+    "word_confidence_scores": [
+     {
+      "text": "ДЛЯ",
+      "confidence": 0.9996002832084118,
+      "start_index": 0
+     },
+     {
+      "text": " ЗАМЕТОК",
+      "confidence": 0.9811027033374746,
+      "start_index": 3
+     },
+     {
+      "text": "ДЛЯ",
+      "confidence": 0.9999961058460971,
+      "start_index": 13
+     },
+     {
+      "text": " ЗАМЕТОК",
+      "confidence": 0.9997180765807379,
+      "start_index": 16
+     }
+    ],
+    "average_page_confidence_score": 0.9951042922431803,
+    "minimum_page_confidence_score": 0.9811027033374746
+   },
+   "blocks": [
+    {
+     "top_left_x": 492,
+     "top_left_y": 123,
+     "bottom_right_x": 798,
+     "bottom_right_y": 171,
+     "content": "ДЛЯ ЗАМЕТОК",
+     "confidence_scores": null,
+     "type": "header"
+    },
+    {
+     "top_left_x": 1589,
+     "top_left_y": 73,
+     "bottom_right_x": 1890,
+     "bottom_right_y": 115,
+     "content": "ДЛЯ ЗАМЕТОК",
+     "confidence_scores": null,
+     "type": "footer"
+    }
+   ]
+  }
+ ],
+ "model": "mistral-ocr-4-1",
+ "document_annotation": null,
+ "usage_info": {
+  "pages_processed": 1,
+  "doc_size_bytes": 4218
+ }
+}
