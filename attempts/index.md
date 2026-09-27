@@ -5,7 +5,7 @@ manifest.json; a dir without one is unfinished. Scripts fill rows; notes are you
 
 | #   | source                  | renders                | ocr    | extracted    | note                                          |
 | --- | ----------------------- | ---------------------- | ------ | ------------ | --------------------------------------------- |
-| 00  | 1988-1989_приг_раб.djvu | PDF, colour (not kept) | ocr-00 | extracted-00 | playground; final-00 was extracted from here  |
+| 00  | 1988-1989_приг_раб.djvu | PDF, colour (not kept) | ocr-00 | extracted-00 | playground                                    |
 | 01 | 1988-1989_приг_раб.djvu | page-renders-00 | ocr-01 | extracted-02 | playground; sheet 93 only |
 | 02 | 1988-1989_приг_раб.djvu | page-renders-00 | ocr-03 | extracted-01 | API, mistral-ocr-4-1 |
 | 03 | 1988-1989_приг_раб.djvu | PDF, colour (not kept) | ocr-00 | extracted-03 |  |

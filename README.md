@@ -21,13 +21,13 @@ Rendering sits outside it, a final production step once the sheets are good:
 
 Every script takes its dirs as arguments; none are built in.
 
-    python3 scripts/extract.py --src attempts/ocr-00 --dest attempts/final-00
+    python3 scripts/extract.py --src attempts/ocr-00 --dest attempts/final-NN
                                            # OCR -> pages, skips existing files
-    python3 scripts/extract.py --src attempts/ocr-00 --dest attempts/final-00 93 --force
+    python3 scripts/extract.py --src attempts/ocr-00 --dest attempts/final-NN 93 --force
                                            # redo one sheet
-    python3 scripts/validate.py --src attempts/final-00
+    python3 scripts/validate.py --src attempts/final-NN
                                            # check the pages against themselves
-    python3 scripts/build_book_pdf.py --src attempts/final-00 --dest build/1988-1989-prigorodnye-rabochie.pdf
+    python3 scripts/build_book_pdf.py --src attempts/final-NN --dest build/1988-1989-prigorodnye-rabochie.pdf
                                            # final render; needs weasyprint
 
 extract.py prints every repair it made and exits nonzero if there were any.

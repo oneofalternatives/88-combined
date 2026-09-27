@@ -201,7 +201,7 @@ python3 -m venv --without-pip .venv
 # bootstrap pip, then:
 .venv/bin/pip install weasyprint
 PYTHONPATH=scripts .venv/bin/python scripts/build_book_pdf.py \
-    --src attempts/final-00 --dest build/1988-1989-prigorodnye-rabochie.pdf
+    --src attempts/final-NN --dest build/1988-1989-prigorodnye-rabochie.pdf
 ```
 
 ### Verifying the PDF

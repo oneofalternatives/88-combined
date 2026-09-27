@@ -15,7 +15,7 @@ REPO = Path(__file__).resolve().parent.parent
 SCRIPTS = REPO / "scripts"
 sys.path.insert(0, str(SCRIPTS))
 
-# Frozen reference data. final-00 is hand-corrected over time, so regression
+# Frozen reference data. final-NN is hand-corrected over time, so regression
 # tests compare against the extractor's untouched output from ocr-00: the latest
 # extracted-NN made from it. Move this when a change is meant to move a sheet.
 OCR_00 = REPO / "attempts" / "ocr-00"
