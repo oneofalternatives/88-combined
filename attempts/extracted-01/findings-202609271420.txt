@@ -1,0 +1,14 @@
+[IMPOSSIBLE] scan-93.md folio 183 [distance] п.№ 687 — Крустпилс  r16c5
+    rule 2: departure before its arrival: 18.26 then 18.24
+    direction=up the page
+
+[IMPOSSIBLE] scan-93.md folio 183 [distance] п.№ 687 — Лиелварде  r5c5
+    rule 1: time steps backwards along the run: 19.39,5 then 19.36
+    direction=up the page
+
+[deviation] scan-93.md folio 183 [distance] п.№ 688 — Стрелка № 2-а → Айзкраукле  r10c3,r11c2
+    rule 3: implied 111 km/h against 65 km/h book-wide (3.7 km in 2:00, modified z 4.0)
+    n=128  median=65 km/h  MAD=7.8
+
+4 train columns checked; 3 findings (2 impossible, 1 deviations), 3 shown.
+Triage, not a verdict — check each against the scan. Nothing here has been repaired.
