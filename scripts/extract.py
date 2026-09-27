@@ -107,13 +107,23 @@ def caption(blocks, page_h):
     The OCR types these inconsistently as header or footer even when they sit
     at the top of the page, so they are selected by position, not by type.
     They carry the train identity -- dropping them would lose the semantics.
+
+    Boxes on one printed line sit a few pixels apart vertically, so a block
+    joins the line when its middle is above the line's bottom edge; each line
+    then reads left to right.
     """
     top = [b for b in blocks
            if b["type"] in ("header", "footer") and b["topLeftY"] < 0.12 * page_h]
-    rows = {}
-    for b in sorted(top, key=lambda b: (b["topLeftY"], b["topLeftX"])):
-        rows.setdefault(b["topLeftY"] // 12, []).append(clean_cell(b["content"]))
-    return [" · ".join(r) for r in rows.values()]
+    lines: list[list[dict]] = []
+    for b in sorted(top, key=lambda b: b["topLeftY"]):
+        mid = (b["topLeftY"] + b["bottomRightY"]) / 2
+        if lines and mid < max(x["bottomRightY"] for x in lines[-1]):
+            lines[-1].append(b)
+        else:
+            lines.append([b])
+    return [" · ".join(clean_cell(b["content"])
+                       for b in sorted(ln, key=lambda b: b["topLeftX"]))
+            for ln in lines]
 
 
 def half_rows(blocks, page_h, sheet, report):

@@ -94,6 +94,17 @@ def test_caption_by_position_not_type():
     assert extract.caption(blocks, 821) == ["п. № 606 · ДИЗЕЛЬНЫЙ", "Рига—Себеж"]
 
 
+def test_caption_line_by_overlap_read_left_to_right():
+    # sheet 93, left half: tops 71/71/75 straddle a fixed band; one printed line
+    blocks = [block("header", "п. № 605", 977, 75, 1137, 112),
+              block("header", "ДИЗЕЛЬНЫЙ", 464, 71, 793, 110),
+              block("header", "п. № 606", 112, 71, 272, 108),
+              block("header", "Себеж—Рига", 915, 127, 1137, 164),
+              block("header", "Рига—Себеж", 112, 125, 339, 160)]
+    assert extract.caption(blocks, 1800) == ["п. № 606 · ДИЗЕЛЬНЫЙ · п. № 605",
+                                             "Рига—Себеж · Себеж—Рига"]
+
+
 # ----------------------------------------------------------------- realign
 # Distance sheets: station col 0, milepost col 1, then приб./отпр.
 HEAD = ["Раздельные пункты", "Расстояние км", "приб.", "отпр."]
