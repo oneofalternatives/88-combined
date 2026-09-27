@@ -292,8 +292,8 @@ def test_problem_table_lines_up_columns():
         extract.Problem(3, "unrecognized table shape"),
         extract.Problem(93, "joined wrapped name", "⟨Блок пост 867 км⟩"),
     ]) == (
-        "scan  what                      detail\n"
-        "----  ------------------------  ------\n"
-        "3     unrecognized table shape\n"
-        "93    joined wrapped name       ⟨Блок пост 867 км⟩\n"
+        "| scan | what                     | detail             |\n"
+        "|======|==========================|====================|\n"
+        "| 3    | unrecognized table shape |                    |\n"
+        "| 93   | joined wrapped name      | ⟨Блок пост 867 км⟩ |\n"
     )

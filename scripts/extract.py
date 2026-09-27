@@ -40,13 +40,11 @@ def cite(text) -> str:
 
 
 def problem_table(report) -> str:
-    """The problems as a plain-text table, one per line; empty if there are none."""
+    """The problems in the scan files' table format, one per row; empty if none."""
     if not report:
         return ""
-    rows = [("scan", "what", "detail")] + [(str(p.scan), p.what, p.detail) for p in report]
-    w0, w1 = (max(len(r[i]) for r in rows) for i in (0, 1))
-    rows.insert(1, ("-" * w0, "-" * w1, "-" * len("detail")))
-    return "".join(f"{a:<{w0}}  {b:<{w1}}  {c}".rstrip() + "\n" for a, b, c in rows)
+    rows = [["scan", "what", "detail"]] + [[str(p.scan), p.what, p.detail] for p in report]
+    return as_markdown(rows, 1, 3) + "\n"
 
 
 # A lone-hour time ("7.10") is padded to "07.10" so the column sorts and reads
