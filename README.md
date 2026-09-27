@@ -8,7 +8,8 @@ rendered back to a PDF.
 
     attempts/ocr-NN/              Mistral OCR of the scans
       -> scripts/extract.py
-    attempts/extracted-NN/        one file per scan, as extracted
+    attempts/extracted-NN/        one file per scan, as extracted; problems.txt
+                                  lists the spots extract.py flagged
       -> copy
     attempts/final-NN/scan-NN.md  one file per scan, corrected by hand
       -> scripts/validate.py

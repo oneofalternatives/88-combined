@@ -200,6 +200,7 @@ def test_api_output_extracts_to_an_extracted_dir(renders, monkeypatch, tmp_path,
                            "shapes: [suburban, prose]\n---")
     assert "п. № scan-02.png" in text and "| Кегумс       | 23.37,5 |" in text
     assert json.loads((extracted / "manifest.json").read_text())["problems"] == 0
+    assert (extracted / "problems.txt").read_text() == ""
     assert "| ocr-00 | extracted-00 |" in (tmp_path / "attempts" / "index.md").read_text()
 
     # a finished extracted dir is a one-way door
@@ -225,5 +226,5 @@ def test_a_lone_scan_keeps_its_number_through_ocr_and_extract(renders, monkeypat
                                       "--dest", "attempts/extracted-00", "93"])
     assert extract.main() == 0
     out = tmp_path / "attempts" / "extracted-00"
-    assert sorted(p.name for p in out.iterdir()) == ["manifest.json", "scan-93.md"]
+    assert sorted(p.name for p in out.iterdir()) == ["manifest.json", "problems.txt", "scan-93.md"]
     assert (out / "scan-93.md").read_text().startswith("---\nscan: 93\nkind: spread\nfolios: [182, 183]\n")

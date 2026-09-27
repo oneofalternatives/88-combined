@@ -443,6 +443,7 @@ def main():
                     tally[name.strip()] = tally.get(name.strip(), 0) + 1
     print("halves by shape: " + ", ".join(f"{k}={v}" for k, v in sorted(tally.items())))
     if extracted:
+        (args.dest / "problems.txt").write_text("".join(line + "\n" for line in report))
         # Index first: if it fails, the dir stays unfinished and can be rerun.
         attempts.set_extracted(args.src.name, args.dest.name)
         attempts.finish(args.dest, {"ocr": str(args.src), "scans": len(wanted),
