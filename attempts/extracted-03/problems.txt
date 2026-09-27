@@ -1,0 +1,24 @@
+scan 3: unrecognized table shape
+scan 93: joined wrapped name 'Блок пост 867 км'
+scan 93: DROPPED cells with no distance, they contradict the row above (col 3: 16.16 vs 16.20,5)
+scan 93: joined wrapped name 'Блок пост 856 км'
+scan 93: recovered col 5 from cells with no distance of their own
+scan 93: joined wrapped name 'Блок пост 867 км'
+scan 93: joined wrapped name 'Блок пост 856 км'
+scan 93: dropped a second 'Межаре' -- the OCR read part of the station column twice
+scan 93: dropped a second 'Аташиене' -- the OCR read part of the station column twice
+scan 93: dropped a second 'Стирниене' -- the OCR read part of the station column twice
+scan 93: dropped a second 'Варакляны' -- the OCR read part of the station column twice
+scan 93: dropped a second 'Виляны' -- the OCR read part of the station column twice
+scan 93: dropped a second 'Сакстагалс' -- the OCR read part of the station column twice
+scan 93: dropped a second 'Резекне II' -- the OCR read part of the station column twice
+scan 93: dropped a second 'Таудеяни' -- the OCR read part of the station column twice
+scan 93: dropped a second 'Таудеяни' -- the OCR read part of the station column twice
+scan 93: dropped a second 'Цирма' -- the OCR read part of the station column twice
+scan 94: joined wrapped name 'Блок пост 867 км'
+scan 94: DROPPED cells with no distance, they contradict the row above (col 1: 871,5 vs 866,4)
+scan 94: joined wrapped name 'Блок пост 856 км'
+scan 94: joined wrapped name 'Блок пост 867 км'
+scan 94: joined wrapped name 'Блок пост 856 км'
+scan 96: joined wrapped name 'Блок пост 867 км'
+scan 96: joined wrapped name 'Блок пост 856 км'
