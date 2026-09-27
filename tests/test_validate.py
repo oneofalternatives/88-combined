@@ -370,3 +370,40 @@ def test_main_exit_codes_and_json(write_book, monkeypatch, capsys):
     monkeypatch.setattr(sys, "argv", ["validate.py", "--src", str(d)])
     assert v.main() == 0
     assert "1 train columns checked; 0 findings" in capsys.readouterr().out
+
+
+def test_main_shows_all_findings_by_default(monkeypatch, capsys, tmp_path):
+    monkeypatch.setattr(v, "validate", lambda src: ([], [_finding(1, [r]) for r in range(50)]))
+    monkeypatch.setattr(sys, "argv", ["validate.py", "--src", str(tmp_path)])
+    assert v.main() == 1
+    assert "50 findings (50 impossible, 0 deviations), 50 shown." in capsys.readouterr().out
+
+
+class _At1416(v.datetime):
+    @classmethod
+    def now(cls, tz=None):
+        return v.datetime(2026, 9, 27, 14, 16, 59)
+
+
+@pytest.mark.parametrize("dest, json_, written", [
+    ("out", False, "out/findings-202609271416.txt"),
+    ("out", True, "out/findings-202609271416.json"),
+    ("new/report.txt", False, "new/report-202609271416.txt"),
+])
+def test_main_dest_writes_a_stamped_file(dest, json_, written, monkeypatch, capsys, tmp_path):
+    (tmp_path / "out").mkdir()
+    monkeypatch.setattr(v, "datetime", _At1416)
+    monkeypatch.setattr(v, "validate", lambda src: ([], [_finding(1, [3])]))
+    argv = ["validate.py", "--src", str(tmp_path)] + ["--json"] * json_
+    monkeypatch.setattr(sys, "argv", argv)
+    assert v.main() == 1
+    printed = capsys.readouterr().out
+
+    monkeypatch.setattr(sys, "argv", argv + ["--dest", str(tmp_path / dest)])
+    assert v.main() == 1
+    assert (tmp_path / written).read_text() == printed
+    assert capsys.readouterr().out == f"1 findings -> {tmp_path / written}\n"
+
+    # the same minute again: an earlier file is never overwritten
+    with pytest.raises(SystemExit, match="exists"):
+        v.main()

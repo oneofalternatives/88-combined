@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate book pages (attempts/final-NN) against itself.
+"""Validate book pages (any scan files dir: extracted-NN, final-NN, ...) against itself.
 
 The book over-determines itself: the same leg is timed by dozens of trains, the
 mileposts fix the distances, and arrival never follows departure. So the pages
@@ -19,6 +19,7 @@ import re
 import sys
 from difflib import SequenceMatcher
 from collections import defaultdict
+from datetime import datetime
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -865,11 +866,15 @@ def validate(src):
 def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--src", type=Path, required=True, help="scan files directory to read")
-    ap.add_argument("--limit", type=int, default=40, help="findings to print (0 = all)")
+    ap.add_argument("--src", type=Path, required=True,
+                    help="scan files directory to read (extracted-NN, final-NN, ...)")
+    ap.add_argument("--limit", type=int, default=0, help="findings to show (default: all)")
     ap.add_argument("--rule", type=int, action="append", help="only these rules")
     ap.add_argument("--impossible", action="store_true", help="only the impossible ones")
     ap.add_argument("--json", action="store_true", help="findings as JSON")
+    ap.add_argument("--dest", type=Path,
+                    help="write to a file instead of printing: a dir gets "
+                         "findings-<time>.txt (.json), a file gets -<time> added to its name")
     a = ap.parse_args()
 
     columns, findings = validate(a.src)
@@ -879,21 +884,36 @@ def main():
         findings = [f for f in findings if f.severity == 0]
 
     if a.json:
-        json.dump([f.as_dict() for f in findings], sys.stdout,
-                  ensure_ascii=False, indent=2)
-        print()
+        out = json.dumps([f.as_dict() for f in findings], ensure_ascii=False, indent=2) + "\n"
     else:
         shown = findings if not a.limit else findings[:a.limit]
-        for f in shown:
-            print(f.render())
-            print()
         hard = sum(1 for f in findings if f.severity == 0)
-        print(f"{len(columns)} train columns checked; {len(findings)} findings "
-              f"({hard} impossible, {len(findings) - hard} deviations), "
-              f"{len(shown)} shown.")
-        print("Triage, not a verdict — check each against the scan. "
-              "Nothing here has been repaired.")
+        out = "".join(f.render() + "\n\n" for f in shown) + (
+            f"{len(columns)} train columns checked; {len(findings)} findings "
+            f"({hard} impossible, {len(findings) - hard} deviations), "
+            f"{len(shown)} shown.\n"
+            "Triage, not a verdict — check each against the scan. "
+            "Nothing here has been repaired.\n")
+    if a.dest:
+        dest = dest_path(a.dest, ".json" if a.json else ".txt")
+        dest.write_text(out)
+        print(f"{len(findings)} findings -> {dest}")
+    else:
+        sys.stdout.write(out)
     return 1 if findings else 0
+
+
+def dest_path(dest: Path, suffix: str) -> Path:
+    """The file --dest names, stamped with the time so an earlier one -- maybe
+    edited by hand -- is never overwritten."""
+    if dest.is_dir():
+        dest = dest / f"findings{suffix}"
+    stamp = datetime.now().strftime("%Y%m%d%H%M")
+    dest = dest.with_name(f"{dest.stem}-{stamp}{dest.suffix}")
+    if dest.exists():
+        sys.exit(f"{dest}: exists")
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    return dest
 
 
 if __name__ == "__main__":
