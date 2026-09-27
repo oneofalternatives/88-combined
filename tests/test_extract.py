@@ -61,7 +61,7 @@ def test_stray_markup_reports_all_but_footnote_marks(cell, flagged):
     extract.stray_markup([cell], 7, report)
     assert bool(report) == flagged
     if flagged:
-        assert report[0].startswith("scan 7:") and repr(cell) in report[0]
+        assert report == [extract.Problem(7, "markup left", f"⟨{cell}⟩ -- check the scan")]
 
 
 # ----------------------------------------------------------------- shapes
@@ -128,7 +128,7 @@ def test_realign_joins_wrapped_name_and_drops_stray_line():
                            ["Юмправа", "860,5", "—", "16.26"])
     assert out[1:] == [["Блок пост 867 км", "866,4", "—", "16.16"],
                        ["Юмправа", "860,5", "—", "16.26"]]
-    assert report == ["scan 93: joined wrapped name 'Блок пост 867 км'"]
+    assert report == [extract.Problem(93, "joined wrapped name", "⟨Блок пост 867 км⟩")]
 
 
 def test_realign_wrap_recovers_cells_into_blanks_above():
@@ -136,7 +136,8 @@ def test_realign_wrap_recovers_cells_into_blanks_above():
                            ["867 км", "", "", "16.16"],
                            ["Юмправа", "860,5", "—", "16.26"])
     assert out[1] == ["Блок пост 867 км", "866,4", "—", "16.16"]
-    assert "scan 93: recovered col 3 from cells with no distance of their own" in report
+    assert extract.Problem(93, "recovered cells",
+                           "col 3 from cells with no distance of their own") in report
 
 
 def test_realign_wrap_drops_contradicting_cells_and_reports():
@@ -144,8 +145,8 @@ def test_realign_wrap_drops_contradicting_cells_and_reports():
                            ["867 км", "", "", "16.20,5"],
                            ["Юмправа", "860,5", "—", "16.26"])
     assert out[1] == ["Блок пост 867 км", "866,4", "—", "16.16"]
-    assert any("DROPPED cells with no distance" in r and "16.16 vs 16.20,5" in r
-               for r in report)
+    assert extract.Problem(93, "DROPPED cells", "no distance, they contradict the "
+                           "row above: col 3: ⟨16.16⟩ vs ⟨16.20,5⟩") in report
 
 
 def test_realign_wrap_with_its_own_distance_and_times_keeps_its_row():
@@ -154,8 +155,8 @@ def test_realign_wrap_with_its_own_distance_and_times_keeps_its_row():
                            ["856 км", "855,9", "—", "16.31"])
     # a lone "856 км" with a distance and times is a row, but its name still
     # joins the one above -- which is why every join is reported
-    assert report[0] == "scan 93: joined wrapped name 'Блок пост 856 км'"
-    assert any("2 station name(s) against 3 row(s)" in r for r in report)
+    assert report[0] == extract.Problem(93, "joined wrapped name", "⟨Блок пост 856 км⟩")
+    assert any("2 station name(s) against 3 row(s)" in r.detail for r in report)
     assert [r[1] for r in out[1:]] == ["871,5", "866,4", "855,9"]
 
 
@@ -167,8 +168,9 @@ def test_realign_drops_reread_names_and_trailing_name_only_rows():
     assert out[1:] == [["Огре", "888,5", "15.54", "15.55"],
                        ["Кегумс", "877,2", "—", "—"]]
     assert report == [
-        "scan 93: dropped a second 'Огре' -- the OCR read part of the station column twice",
-        "scan 93: dropped a second 'Кегумс' -- the OCR read part of the station column twice",
+        extract.Problem(93, "dropped a re-read name",
+                        f"⟨{name}⟩ -- the OCR read part of the station column twice")
+        for name in ["Огре", "Кегумс"]
     ]
 
 
@@ -180,7 +182,7 @@ def test_realign_keeps_names_without_times_blank_and_reports():
     # the names are kept, blank, rather than silently shortening the route
     assert [r[0] for r in out[1:]] == ["Огре", "Кегумс", "Лиелварде"]
     assert out[2] == ["Кегумс", "", "", ""]
-    assert any("3 station name(s) against 1 row(s)" in r for r in report)
+    assert any("3 station name(s) against 1 row(s)" in r.detail for r in report)
 
 
 def test_realign_divider_splits_segments():
@@ -258,7 +260,7 @@ def test_render_scan_reports_unknown_shape_and_keeps_text():
     p = scan([block("table", "| Глава | Стр. |\n| --- | --- |\n| I | 5 |", 43, 30, 483, 300)])
     report = []
     text = extract.render_scan(p, 3, report)
-    assert report == ["scan 3: unrecognized table shape"]
+    assert report == [extract.Problem(3, "unrecognized table shape")]
     assert "shapes: [UNKNOWN, prose]" in text
     assert "| I | 5 |" in text
 
@@ -282,3 +284,16 @@ def test_render_scan_suburban_with_lost_station_column():
     assert rows[2] == ["Кегумс", "", "", "", ""]
     assert rows[4][:3] == ["23.37", "23.38", ""]
     assert report == []
+
+
+def test_problem_table_lines_up_columns():
+    assert extract.problem_table([]) == ""
+    assert extract.problem_table([
+        extract.Problem(3, "unrecognized table shape"),
+        extract.Problem(93, "joined wrapped name", "⟨Блок пост 867 км⟩"),
+    ]) == (
+        "scan  what                      detail\n"
+        "----  ------------------------  ------\n"
+        "3     unrecognized table shape\n"
+        "93    joined wrapped name       ⟨Блок пост 867 км⟩\n"
+    )

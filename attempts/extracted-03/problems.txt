@@ -1,24 +1,26 @@
-scan 3: unrecognized table shape
-scan 93: joined wrapped name 'Блок пост 867 км'
-scan 93: DROPPED cells with no distance, they contradict the row above (col 3: 16.16 vs 16.20,5)
-scan 93: joined wrapped name 'Блок пост 856 км'
-scan 93: recovered col 5 from cells with no distance of their own
-scan 93: joined wrapped name 'Блок пост 867 км'
-scan 93: joined wrapped name 'Блок пост 856 км'
-scan 93: dropped a second 'Межаре' -- the OCR read part of the station column twice
-scan 93: dropped a second 'Аташиене' -- the OCR read part of the station column twice
-scan 93: dropped a second 'Стирниене' -- the OCR read part of the station column twice
-scan 93: dropped a second 'Варакляны' -- the OCR read part of the station column twice
-scan 93: dropped a second 'Виляны' -- the OCR read part of the station column twice
-scan 93: dropped a second 'Сакстагалс' -- the OCR read part of the station column twice
-scan 93: dropped a second 'Резекне II' -- the OCR read part of the station column twice
-scan 93: dropped a second 'Таудеяни' -- the OCR read part of the station column twice
-scan 93: dropped a second 'Таудеяни' -- the OCR read part of the station column twice
-scan 93: dropped a second 'Цирма' -- the OCR read part of the station column twice
-scan 94: joined wrapped name 'Блок пост 867 км'
-scan 94: DROPPED cells with no distance, they contradict the row above (col 1: 871,5 vs 866,4)
-scan 94: joined wrapped name 'Блок пост 856 км'
-scan 94: joined wrapped name 'Блок пост 867 км'
-scan 94: joined wrapped name 'Блок пост 856 км'
-scan 96: joined wrapped name 'Блок пост 867 км'
-scan 96: joined wrapped name 'Блок пост 856 км'
+scan  what                      detail
+----  ------------------------  ------
+3     unrecognized table shape
+93    joined wrapped name       ⟨Блок пост 867 км⟩
+93    DROPPED cells             no distance, they contradict the row above: col 3: ⟨16.16⟩ vs ⟨16.20,5⟩
+93    joined wrapped name       ⟨Блок пост 856 км⟩
+93    recovered cells           col 5 from cells with no distance of their own
+93    joined wrapped name       ⟨Блок пост 867 км⟩
+93    joined wrapped name       ⟨Блок пост 856 км⟩
+93    dropped a re-read name    ⟨Межаре⟩ -- the OCR read part of the station column twice
+93    dropped a re-read name    ⟨Аташиене⟩ -- the OCR read part of the station column twice
+93    dropped a re-read name    ⟨Стирниене⟩ -- the OCR read part of the station column twice
+93    dropped a re-read name    ⟨Варакляны⟩ -- the OCR read part of the station column twice
+93    dropped a re-read name    ⟨Виляны⟩ -- the OCR read part of the station column twice
+93    dropped a re-read name    ⟨Сакстагалс⟩ -- the OCR read part of the station column twice
+93    dropped a re-read name    ⟨Резекне II⟩ -- the OCR read part of the station column twice
+93    dropped a re-read name    ⟨Таудеяни⟩ -- the OCR read part of the station column twice
+93    dropped a re-read name    ⟨Таудеяни⟩ -- the OCR read part of the station column twice
+93    dropped a re-read name    ⟨Цирма⟩ -- the OCR read part of the station column twice
+94    joined wrapped name       ⟨Блок пост 867 км⟩
+94    DROPPED cells             no distance, they contradict the row above: col 1: ⟨871,5⟩ vs ⟨866,4⟩
+94    joined wrapped name       ⟨Блок пост 856 км⟩
+94    joined wrapped name       ⟨Блок пост 867 км⟩
+94    joined wrapped name       ⟨Блок пост 856 км⟩
+96    joined wrapped name       ⟨Блок пост 867 км⟩
+96    joined wrapped name       ⟨Блок пост 856 км⟩

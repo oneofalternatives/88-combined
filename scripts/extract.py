@@ -17,12 +17,36 @@ import argparse
 import re
 import sys
 from pathlib import Path
+from typing import NamedTuple
 
 sys.path.insert(0, str(Path(__file__).parent))
 
 import attempts
 from book_model import (header_width, is_station_block, load_scans,
                         parse_table, split_halves, station_span)
+
+
+class Problem(NamedTuple):
+    """A spot extract.py repaired or could not handle: one row of problems.txt."""
+    scan: int
+    what: str
+    detail: str = ""
+
+
+def cite(text) -> str:
+    """Text quoted from the scan. ⟨⟩ never occurs in the book, so it cannot be
+    mistaken for the book's own quote marks."""
+    return f"⟨{text}⟩"
+
+
+def problem_table(report) -> str:
+    """The problems as a plain-text table, one per line; empty if there are none."""
+    if not report:
+        return ""
+    rows = [("scan", "what", "detail")] + [(str(p.scan), p.what, p.detail) for p in report]
+    w0, w1 = (max(len(r[i]) for r in rows) for i in (0, 1))
+    rows.insert(1, ("-" * w0, "-" * w1, "-" * len("detail")))
+    return "".join(f"{a:<{w0}}  {b:<{w1}}  {c}".rstrip() + "\n" for a, b, c in rows)
 
 
 # A lone-hour time ("7.10") is padded to "07.10" so the column sorts and reads
@@ -214,7 +238,7 @@ def realign(rows, header_count, st_col, dist_col, scan, report):
         wrapped = (names and KM_RE.match(r[st_col]) and not KM_RE.match(names[-1]))
         if wrapped:
             names[-1] += f" {r[st_col]}"
-            report.append(f"scan {scan}: joined wrapped name {names[-1]!r}")
+            report.append(Problem(scan, "joined wrapped name", cite(names[-1])))
             times = any(c not in BLANK for i, c in enumerate(r)
                         if i not in (st_col, dist_col))
             if r[dist_col] in BLANK or not times:
@@ -236,9 +260,10 @@ def realign(rows, header_count, st_col, dist_col, scan, report):
         # of the column, not a stop: it is the padding, so it goes first.
         data = data[:len(data) - trailing_blanks(data)]
         if len(names) != len(data):
-            report.append(f"scan {scan}: {len(names)} station name(s) against "
-                          f"{len(data)} row(s) of times; the tail of the shorter "
-                          "column is missing from the scan")
+            report.append(Problem(scan, "names and rows differ",
+                                  f"{len(names)} station name(s) against {len(data)} "
+                                  "row(s) of times; the tail of the shorter column "
+                                  "is missing from the scan"))
         for i, row in enumerate(data):
             row[st_col] = names[i] if i < len(names) else ""
             out.append(row)
@@ -268,8 +293,8 @@ def dedupe(names, seen, scan, report):
     out = []
     for name in names:
         if name in seen:
-            report.append(f"scan {scan}: dropped a second {name!r} -- the OCR "
-                          "read part of the station column twice")
+            report.append(Problem(scan, "dropped a re-read name", f"{cite(name)} -- the "
+                                  "OCR read part of the station column twice"))
             continue
         seen.add(name)
         out.append(name)
@@ -284,25 +309,25 @@ def absorb(data, r, st_col, scan, report):
     OCR smearing two rows together and is dropped.
     """
     if not data:
-        report.append(f"scan {scan}: DROPPED loose cells above the first stop: {r}")
+        report.append(Problem(scan, "DROPPED loose cells", "above the first stop: "
+                              + ", ".join(cite(c) for c in r)))
         return
     prev = data[-1]
     clash = [i for i, c in enumerate(r)
              if i != st_col and c not in BLANK
              and prev[i] not in BLANK and prev[i] != c]
     if clash:
-        report.append(f"scan {scan}: DROPPED cells with no distance, they "
-                      "contradict the row above ("
-                      + ", ".join(f"col {i}: {prev[i]} vs {r[i]}" for i in clash) + ")")
+        report.append(Problem(scan, "DROPPED cells", "no distance, they contradict the "
+                              "row above: " + ", ".join(
+                                  f"col {i}: {cite(prev[i])} vs {cite(r[i])}" for i in clash)))
         return
     filled = [i for i, c in enumerate(r)
               if i != st_col and c not in BLANK and prev[i] in BLANK]
     for i in filled:
         prev[i] = r[i]
     if filled:
-        report.append(f"scan {scan}: recovered "
-                      + ", ".join(f"col {i}" for i in filled)
-                      + " from cells with no distance of their own")
+        report.append(Problem(scan, "recovered cells", ", ".join(f"col {i}" for i in filled)
+                              + " from cells with no distance of their own"))
 
 
 def cells_at(text, col, width):
@@ -362,7 +387,7 @@ def stray_markup(cells, scan, report):
     """
     for c in cells:
         if re.search(r"[*_]", MARKER_RE.sub("", c)):
-            report.append(f"scan {scan}: markup left in {c!r} -- check the scan")
+            report.append(Problem(scan, "markup left", f"{cite(c)} -- check the scan"))
 
 
 def render_scan(scan, n, report) -> str:
@@ -390,7 +415,7 @@ def render_scan(scan, n, report) -> str:
             body.append(as_markdown(rows, hc, width))
         else:
             if any(b["type"] == "table" for b in half):
-                report.append(f"scan {n}: unrecognized table shape")
+                report.append(Problem(n, "unrecognized table shape"))
                 shapes.append("UNKNOWN")
             else:
                 shapes.append("prose")
@@ -428,7 +453,7 @@ def main():
         sys.exit(f"{args.src}: no scan {', '.join(map(str, missing))}")
     args.dest.mkdir(exist_ok=True)
     wanted = args.scans or list(scans)
-    report: list[str] = []
+    report: list[Problem] = []
     tally: dict[str, int] = {}
     for n in wanted:
         dest = args.dest / f"scan-{n:02d}.md"
@@ -443,15 +468,14 @@ def main():
                     tally[name.strip()] = tally.get(name.strip(), 0) + 1
     print("halves by shape: " + ", ".join(f"{k}={v}" for k, v in sorted(tally.items())))
     if extracted:
-        (args.dest / "problems.txt").write_text("".join(line + "\n" for line in report))
+        (args.dest / "problems.txt").write_text(problem_table(report))
         # Index first: if it fails, the dir stays unfinished and can be rerun.
         attempts.set_extracted(args.src.name, args.dest.name)
         attempts.finish(args.dest, {"ocr": str(args.src), "scans": len(wanted),
                                    "problems": len(report)})
     if report:
         print(f"\n{len(report)} PROBLEM(S) -- not guessed at, fix these:")
-        for line in report:
-            print("  " + line)
+        print(problem_table(report), end="")
         return 1
     return 0
 

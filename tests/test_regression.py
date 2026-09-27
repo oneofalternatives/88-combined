@@ -25,26 +25,28 @@ SCANS = 103
 
 # The repairs extract.py reports for ocr-00, in order. Each is a place the hand
 # pass has to look; a new one, or one gone, is a change in behaviour.
+P = extract.Problem
+JOINED, REREAD = "joined wrapped name", "dropped a re-read name"
 EXPECTED_REPORT = [
-    "scan 3: unrecognized table shape",
-    "scan 93: joined wrapped name 'Блок пост 867 км'",
-    "scan 93: DROPPED cells with no distance, they contradict the row above "
-    "(col 3: 16.16 vs 16.20,5)",
-    "scan 93: joined wrapped name 'Блок пост 856 км'",
-    "scan 93: recovered col 5 from cells with no distance of their own",
-    "scan 93: joined wrapped name 'Блок пост 867 км'",
-    "scan 93: joined wrapped name 'Блок пост 856 км'",
-    *[f"scan 93: dropped a second {n!r} -- the OCR read part of the station column twice"
+    P(3, "unrecognized table shape"),
+    P(93, JOINED, "⟨Блок пост 867 км⟩"),
+    P(93, "DROPPED cells", "no distance, they contradict the row above: "
+      "col 3: ⟨16.16⟩ vs ⟨16.20,5⟩"),
+    P(93, JOINED, "⟨Блок пост 856 км⟩"),
+    P(93, "recovered cells", "col 5 from cells with no distance of their own"),
+    P(93, JOINED, "⟨Блок пост 867 км⟩"),
+    P(93, JOINED, "⟨Блок пост 856 км⟩"),
+    *[P(93, REREAD, f"⟨{n}⟩ -- the OCR read part of the station column twice")
       for n in ["Межаре", "Аташиене", "Стирниене", "Варакляны", "Виляны", "Сакстагалс",
                 "Резекне II", "Таудеяни", "Таудеяни", "Цирма"]],
-    "scan 94: joined wrapped name 'Блок пост 867 км'",
-    "scan 94: DROPPED cells with no distance, they contradict the row above "
-    "(col 1: 871,5 vs 866,4)",
-    "scan 94: joined wrapped name 'Блок пост 856 км'",
-    "scan 94: joined wrapped name 'Блок пост 867 км'",
-    "scan 94: joined wrapped name 'Блок пост 856 км'",
-    "scan 96: joined wrapped name 'Блок пост 867 км'",
-    "scan 96: joined wrapped name 'Блок пост 856 км'",
+    P(94, JOINED, "⟨Блок пост 867 км⟩"),
+    P(94, "DROPPED cells", "no distance, they contradict the row above: "
+      "col 1: ⟨871,5⟩ vs ⟨866,4⟩"),
+    P(94, JOINED, "⟨Блок пост 856 км⟩"),
+    P(94, JOINED, "⟨Блок пост 867 км⟩"),
+    P(94, JOINED, "⟨Блок пост 856 км⟩"),
+    P(96, JOINED, "⟨Блок пост 867 км⟩"),
+    P(96, JOINED, "⟨Блок пост 856 км⟩"),
 ]
 
 
