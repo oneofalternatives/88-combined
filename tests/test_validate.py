@@ -197,7 +197,7 @@ def test_non_time_in_time_cell(write_book):
     d = write_book(5, [("suburban", [suburban_table(
         STATIONS, train("—", "10.00", "1O.05", "10.06", "10.10", "10.11", "10.15", "—"))])])
     (f,) = run(d)[1]
-    assert f.rules == {0} and f.message == "'1O.05' is not a time"
+    assert f.rules == {0} and f.message == "⟨1O.05⟩ is not a time"
 
 
 def test_blank_between_served_stations(write_book):
@@ -330,7 +330,7 @@ def test_shared_milepost_on_different_lines_is_fine(write_book):
 def test_unknown_shape_is_skipped_and_reported(write_book):
     d = write_book(3, [("UNKNOWN", ["| Глава | Стр. |"]), ("prose", ["Текст."])])
     (f,) = run(d)[1]
-    assert f.message == "shape 'UNKNOWN' — not checked, no rules apply to it"
+    assert f.message == "shape ⟨UNKNOWN⟩ — not checked, no rules apply to it"
 
 
 def _finding(rule, rows, col=1, severity=0, score=5.0):
@@ -341,7 +341,7 @@ def _finding(rule, rows, col=1, severity=0, score=5.0):
 def test_collapse_merges_findings_on_one_cell():
     (f,) = v.collapse([_finding(1, [3]), _finding(4, [3], severity=1, score=9.0)])
     assert f.rules == {1, 4} and f.severity == 0 and f.score == 9.0
-    assert "(2 rules agree)" in f.render()
+    assert f.row(1)[8] == "1, 4"
 
 
 def test_collapse_turns_a_run_into_one_misaligned_column():
@@ -376,7 +376,9 @@ def test_main_shows_all_findings_by_default(monkeypatch, capsys, tmp_path):
     monkeypatch.setattr(v, "validate", lambda src: ([], [_finding(1, [r]) for r in range(50)]))
     monkeypatch.setattr(sys, "argv", ["validate.py", "--src", str(tmp_path)])
     assert v.main() == 1
-    assert "50 findings (50 impossible, 0 deviations), 50 shown." in capsys.readouterr().out
+    out = capsys.readouterr().out
+    assert "50 findings (50 impossible, 0 deviations), 50 shown." in out
+    assert "| 50 | IMPOSSIBLE |" in out
 
 
 class _At1416(v.datetime):
@@ -407,3 +409,21 @@ def test_main_dest_writes_a_stamped_file(dest, json_, written, monkeypatch, caps
     # the same minute again: an earlier file is never overwritten
     with pytest.raises(SystemExit, match="exists"):
         v.main()
+
+
+def test_cell_ranges_join_runs_of_rows():
+    cells = [(5, 6, "X", r, c) for r, c in [(12, 2), (11, 3), (13, 5), (11, 5), (12, 5)]]
+    assert v.cell_ranges(cells) == "r11c3 r11–13c5 r12c2"
+
+
+def test_findings_table():
+    assert v.findings_table([_finding(1, [3]), _finding(4, [4, 5], severity=1)]) == (
+        "| # | level      | scan | folio | shape    | train | where | cells  | rules "
+        "| message          | evidence |\n"
+        "|===|============|======|=======|==========|=======|=======|========|=======|"
+        "==================|==========|\n"
+        "| 1 | IMPOSSIBLE | 5    | 6     | suburban | 6001  | X     | r3c1   | 1     "
+        "| rule 1 at [3]    |          |\n"
+        "| 2 | deviation  | 5    | 6     | suburban | 6001  | X     | r4–5c1 | 4     "
+        "| rule 4 at [4, 5] |          |"
+    )

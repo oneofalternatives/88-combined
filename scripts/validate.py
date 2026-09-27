@@ -25,7 +25,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from book_model import parse_scan_file  # noqa: E402
-from extract import SHAPES  # noqa: E402
+from extract import SHAPES, as_markdown, cite  # noqa: E402
 
 # Tuned by editing and re-running. Every threshold is a judgement about a
 # 1988 timetable, not a constant of nature.
@@ -182,21 +182,42 @@ class Finding:
         # Independent constraints rarely agree on an innocent cell.
         return (self.severity, -self.score * (1 + 0.5 * (len(self.rules) - 1)))
 
-    def render(self):
-        tag = "IMPOSSIBLE" if self.severity == 0 else "deviation"
-        head = f"[{tag}] {self.where}"
-        if len(self.rules) > 1:
-            head += f"  ({len(self.rules)} rules agree)"
-        named = ", ".join("structure" if r == 0 else str(r) for r in sorted(self.rules))
-        lines = [head, f"    rule {named}: {self.message}"]
-        if self.evidence:
-            lines.append("    " + "  ".join(f"{k}={v}" for k, v in self.evidence.items()))
-        return "\n".join(lines)
+    def row(self, n):
+        """One row of the findings table; see findings_table."""
+        w = self.where
+        return [str(n), "IMPOSSIBLE" if self.severity == 0 else "deviation",
+                str(w.scan), "" if w.folio is None else str(w.folio), w.shape, w.train,
+                w.station or "", cell_ranges(self.cells),
+                ", ".join("structure" if r == 0 else str(r) for r in sorted(self.rules)),
+                self.message, "  ".join(f"{k}={v}" for k, v in self.evidence.items())]
 
     def as_dict(self):
         return {"severity": self.severity, "score": round(self.score, 3),
                 "rules": sorted(self.rules), "message": self.message,
                 "evidence": self.evidence, **self.where.as_dict()}
+
+
+def cell_ranges(cells):
+    """r11c3 r12c2, with a run of rows in one column as r11–31c5."""
+    by_col = defaultdict(set)
+    for *_, r, c in cells:
+        by_col[c].add(r)
+    runs = []
+    for c, rs in by_col.items():
+        rs = sorted(rs)
+        start = rs[0]
+        for a, b in zip(rs, rs[1:] + [None]):
+            if b != a + 1:
+                runs.append((start, c, a))
+                start = b
+    return " ".join(f"r{s}c{c}" if s == e else f"r{s}–{e}c{c}" for s, c, e in sorted(runs))
+
+
+def findings_table(findings) -> str:
+    """The findings in the scan files' table format, numbered in rank order."""
+    head = ["#", "level", "scan", "folio", "shape", "train", "where", "cells", "rules",
+            "message", "evidence"]
+    return as_markdown([head] + [f.row(i) for i, f in enumerate(findings, 1)], 1, len(head))
 
 
 class Where:
@@ -506,7 +527,7 @@ def read_book(src, report):
                 # whole chapter sit unnormalized.
                 report.append(Finding(
                     0, 1.0, 0, Where(scan, folio, shape, "—"),
-                    f"shape {shape!r} — not checked, no rules apply to it"))
+                    f"shape {cite(shape)} — not checked, no rules apply to it"))
                 continue
             cols, mps = read_half(scan, folio, shape, half["items"], report)
             columns.extend(cols)
@@ -522,7 +543,7 @@ def rule0_bad_cells(col, out):
         for cell, c in ((s.arr, s.cols[0]), (s.dep, s.cols[1])):
             if cell.kind == "bad" and c is not None:
                 out.append(Finding(0, 10.0, 0, col.where(s, [(s.row, c)]),
-                                   f"{cell.text!r} is not a time"))
+                                   f"{cite(cell.text)} is not a time"))
 
 
 def fit_direction(col, out):
@@ -888,7 +909,7 @@ def main():
     else:
         shown = findings if not a.limit else findings[:a.limit]
         hard = sum(1 for f in findings if f.severity == 0)
-        out = "".join(f.render() + "\n\n" for f in shown) + (
+        out = (findings_table(shown) + "\n\n" if shown else "") + (
             f"{len(columns)} train columns checked; {len(findings)} findings "
             f"({hard} impossible, {len(findings) - hard} deviations), "
             f"{len(shown)} shown.\n"
