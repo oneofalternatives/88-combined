@@ -1,0 +1,22 @@
+{
+  "made": "2026-09-27T01:07:04",
+  "renders": "attempts/page-renders-00",
+  "model": "mistral-ocr-4-1",
+  "settings": {
+    "include_blocks": true,
+    "confidence_scores_granularity": "word",
+    "table_format": null,
+    "extract_header": false,
+    "extract_footer": false,
+    "pages": null,
+    "include_image_base64": false,
+    "image_limit": null,
+    "image_min_size": null,
+    "document_annotation_format": null,
+    "document_annotation_prompt": null,
+    "bbox_annotation_format": null
+  },
+  "models_reported": [
+    "mistral-ocr-4-1"
+  ]
+}
