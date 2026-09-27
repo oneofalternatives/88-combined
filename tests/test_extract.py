@@ -1,9 +1,9 @@
-"""extract.py: OCR half sheets -> book page tables, and the repairs on the way."""
+"""extract.py: OCR scans -> book page tables, and the repairs on the way."""
 import pytest
 
 import book_model as bm
 import extract
-from conftest import COVER, SUBURBAN_TABLE, block, page, suburban_spread
+from conftest import COVER, SUBURBAN_TABLE, block, scan, suburban_spread
 
 Divider = extract.Divider
 
@@ -61,7 +61,7 @@ def test_stray_markup_reports_all_but_footnote_marks(cell, flagged):
     extract.stray_markup([cell], 7, report)
     assert bool(report) == flagged
     if flagged:
-        assert report[0].startswith("sheet 7:") and repr(cell) in report[0]
+        assert report[0].startswith("scan 7:") and repr(cell) in report[0]
 
 
 # ----------------------------------------------------------------- shapes
@@ -95,7 +95,7 @@ def test_caption_by_position_not_type():
 
 
 def test_caption_line_by_overlap_read_left_to_right():
-    # sheet 93, left half: tops 71/71/75 straddle a fixed band; one printed line
+    # scan 93, left half: tops 71/71/75 straddle a fixed band; one printed line
     blocks = [block("header", "п. № 605", 977, 75, 1137, 112),
               block("header", "ДИЗЕЛЬНЫЙ", 464, 71, 793, 110),
               block("header", "п. № 606", 112, 71, 272, 108),
@@ -106,7 +106,7 @@ def test_caption_line_by_overlap_read_left_to_right():
 
 
 # ----------------------------------------------------------------- realign
-# Distance sheets: station col 0, milepost col 1, then приб./отпр.
+# Distance pages: station col 0, milepost col 1, then приб./отпр.
 HEAD = ["Раздельные пункты", "Расстояние км", "приб.", "отпр."]
 
 
@@ -128,7 +128,7 @@ def test_realign_joins_wrapped_name_and_drops_stray_line():
                            ["Юмправа", "860,5", "—", "16.26"])
     assert out[1:] == [["Блок пост 867 км", "866,4", "—", "16.16"],
                        ["Юмправа", "860,5", "—", "16.26"]]
-    assert report == ["sheet 93: joined wrapped name 'Блок пост 867 км'"]
+    assert report == ["scan 93: joined wrapped name 'Блок пост 867 км'"]
 
 
 def test_realign_wrap_recovers_cells_into_blanks_above():
@@ -136,7 +136,7 @@ def test_realign_wrap_recovers_cells_into_blanks_above():
                            ["867 км", "", "", "16.16"],
                            ["Юмправа", "860,5", "—", "16.26"])
     assert out[1] == ["Блок пост 867 км", "866,4", "—", "16.16"]
-    assert "sheet 93: recovered col 3 from cells with no distance of their own" in report
+    assert "scan 93: recovered col 3 from cells with no distance of their own" in report
 
 
 def test_realign_wrap_drops_contradicting_cells_and_reports():
@@ -154,7 +154,7 @@ def test_realign_wrap_with_its_own_distance_and_times_keeps_its_row():
                            ["856 км", "855,9", "—", "16.31"])
     # a lone "856 км" with a distance and times is a row, but its name still
     # joins the one above -- which is why every join is reported
-    assert report[0] == "sheet 93: joined wrapped name 'Блок пост 856 км'"
+    assert report[0] == "scan 93: joined wrapped name 'Блок пост 856 км'"
     assert any("2 station name(s) against 3 row(s)" in r for r in report)
     assert [r[1] for r in out[1:]] == ["871,5", "866,4", "855,9"]
 
@@ -167,8 +167,8 @@ def test_realign_drops_reread_names_and_trailing_name_only_rows():
     assert out[1:] == [["Огре", "888,5", "15.54", "15.55"],
                        ["Кегумс", "877,2", "—", "—"]]
     assert report == [
-        "sheet 93: dropped a second 'Огре' -- the OCR read part of the station column twice",
-        "sheet 93: dropped a second 'Кегумс' -- the OCR read part of the station column twice",
+        "scan 93: dropped a second 'Огре' -- the OCR read part of the station column twice",
+        "scan 93: dropped a second 'Кегумс' -- the OCR read part of the station column twice",
     ]
 
 
@@ -231,13 +231,13 @@ def test_as_markdown_without_header_rules_first_row():
     assert md.splitlines()[1].startswith("|===")
 
 
-# -------------------------------------------------------------- render_page
-def test_render_page_spread():
+# -------------------------------------------------------------- render_scan
+def test_render_scan_spread():
     report = []
-    text = extract.render_page(suburban_spread(), 5, report)
+    text = extract.render_scan(suburban_spread(), 5, report)
     assert report == []
     head, _, body = text.partition("---\n\n")
-    assert head == ("---\nsheet: 5\nkind: spread\nfolios: [6, 7]\n"
+    assert head == ("---\nscan: 5\nkind: spread\nfolios: [6, 7]\n"
                     "shapes: [suburban, prose]\n")
     assert "## page 6\n\nп. № 6501\n\n| № поездов" in body
     assert "| Лиелварде    | —       | 23.32 | —       | 00.16   |" in body
@@ -246,24 +246,24 @@ def test_render_page_spread():
     assert "1055" not in text
 
 
-def test_render_page_sheet_2_and_covers_have_no_folios():
-    spread = extract.render_page(suburban_spread(), 2, [])
+def test_render_scan_2_and_covers_have_no_folios():
+    spread = extract.render_scan(suburban_spread(), 2, [])
     assert "folios: []" in spread and spread.count("## page\n") == 2
-    cover = page([block("text", "СЛУЖЕБНОЕ РАСПИСАНИЕ", 100, 300, 580, 360)], COVER)
-    text = extract.render_page(cover, 1, [])
+    cover = scan([block("text", "СЛУЖЕБНОЕ РАСПИСАНИЕ", 100, 300, 580, 360)], COVER)
+    text = extract.render_scan(cover, 1, [])
     assert "kind: cover\nfolios: []\nshapes: [prose]" in text
 
 
-def test_render_page_reports_unknown_shape_and_keeps_text():
-    p = page([block("table", "| Глава | Стр. |\n| --- | --- |\n| I | 5 |", 43, 30, 483, 300)])
+def test_render_scan_reports_unknown_shape_and_keeps_text():
+    p = scan([block("table", "| Глава | Стр. |\n| --- | --- |\n| I | 5 |", 43, 30, 483, 300)])
     report = []
-    text = extract.render_page(p, 3, report)
-    assert report == ["sheet 3: unrecognized table shape"]
+    text = extract.render_scan(p, 3, report)
+    assert report == ["scan 3: unrecognized table shape"]
     assert "shapes: [UNKNOWN, prose]" in text
     assert "| I | 5 |" in text
 
 
-def test_render_page_suburban_with_lost_station_column():
+def test_render_scan_suburban_with_lost_station_column():
     """The OCR split one timetable into a table and a loose list of names.
 
     The names become rows of blank times and the narrow table is widened; the
@@ -271,12 +271,12 @@ def test_render_page_suburban_with_lost_station_column():
     Nothing is reported: the hand pass fixes it against the scan.
     """
     head = SUBURBAN_TABLE.split("\n|  Лиелварде")[0] + "\n|  Лиелварде | — | 23.32 | — | 0.16 |"
-    p = page([block("table", head, 43, 30, 483, 150),
+    p = scan([block("table", head, 43, 30, 483, 150),
               block("list", "Кегумс\nОгре", 45, 155, 120, 200),
               block("table", "| 23.37 | 23.38 |\n| 23.49 | 23.50 |", 150, 205, 483, 240)])
     report = []
-    text = extract.render_page(p, 5, report)
-    t = bm.parse_book_page(text)["halves"][0]["items"][0]["table"]
+    text = extract.render_scan(p, 5, report)
+    t = bm.parse_scan_file(text)["halves"][0]["items"][0]["table"]
     rows = [it["cells"] for it in t["items"] if it["kind"] == "row"]
     assert [r[0] for r in rows] == ["Разд. пункты", "Лиелварде", "Кегумс", "Огре", "23.37", "23.49"]
     assert rows[2] == ["Кегумс", "", "", "", ""]

@@ -10,10 +10,12 @@ Riga division of the Baltic Railway, published Riga «Транспорт», 1988
 <root>/
   markdown.md                 # concatenation of all per-page markdown, no page separators
   pages/page-<N>/             # N = 1..103, 1-based, NOT zero padded
-    markdown.md               # markdown of that scan page
-    page-metadata.json        # authoritative structured description of that scan page
+    markdown.md               # markdown of that scan
+    page-metadata.json        # authoritative structured description of that scan
 ```
 
+Mistral calls each scan a "page"; the export keeps its names. Everywhere else
+in the repo a scan is a scan, and a page is a page of the book.
 `markdown.md` at the root is a convenience dump only: it loses the
 left/right-half geometry and must NOT be used for reconstruction.
 The per-page `page-metadata.json` is the source of truth.
@@ -41,17 +43,17 @@ Block bboxes are in image pixels of that page's `dimensions`. Blocks appear in
 reading order *per half-page*: all blocks of the left half first, then the right
 half (this ordering is not guaranteed and must not be relied on — sort by geometry).
 
-## 2. Physical structure: sheets, spreads and folios
+## 2. Physical structure: scans, spreads and folios
 
-Two page geometries occur:
+Two scan geometries occur:
 
-| scan page N | dimensions (w×h) | meaning                                   |
+| scan N      | dimensions (w×h) | meaning                                   |
 | ----------- | ---------------- | ----------------------------------------- |
 | 1           | 683×1019 portrait| front cover (single page)                 |
 | 2 … 102     | 1019×821 landscape | **a spread: two facing book pages**     |
 | 103         | 683×1019 portrait| back cover (single page)                  |
 
-So the book renders as: 1 single sheet, 101 two-page spreads, 1 single sheet.
+So the book renders as: 1 single page, 101 two-page spreads, 1 single page.
 
 **Half-page split.** No block ever crosses the gutter (verified: 0 blocks with
 `topLeftX < 490 and bottomRightX > 530`). A block belongs to the **left** page if
@@ -126,7 +128,7 @@ Semantics:
   rendered with wrapping cells and automatic column widths; timetable cells
   instead stay on one line, since a wrapped time column would misalign.
 * OCR occasionally breaks one printed table into several `table` blocks separated
-  by `text`/`list` blocks holding the station names (e.g. scan page 6). These are
+  by `text`/`list` blocks holding the station names (e.g. scan 6). These are
   rendered in document order; no attempt is made to re-join them.
 
 ## 5. Code map
@@ -142,8 +144,8 @@ outputs; a change to how a medium *looks* belongs in that medium's builder.
 
 ## 6. Reconstruction rules
 
-1. For each scan page, split blocks into halves by bbox centre (§2); portrait
-   pages have a single half.
+1. For each scan, split blocks into halves by bbox centre (§2); portrait
+   scans have a single half.
 2. Drop noise blocks: content that is only digits (a printed folio), or matches
    the printer signature pattern `^\d+\s*(—\s*\d+|\\?\*)$`.
 3. Within a half, group blocks into **rows**: sort by `topLeftY`, then merge
@@ -164,11 +166,11 @@ outputs; a change to how a medium *looks* belongs in that medium's builder.
 ### Shared
 
 * One self-contained HTML file, no external assets, no network fonts.
-* Every book page is a visually distinct sheet with a white ground, border and
+* Every book page is a visually distinct card with a white ground, border and
   shadow, in a fixed aspect ratio taken from the scans (a half of 1019×821 ⇒
   ~509×821, i.e. `aspect-ratio: 509/821`).
-* Scan page 1 and 103 are single sheets, centred. Spreads 2…102 render as a pair
-  of facing sheets side by side, glued at the gutter, and must stay side by side
+* Scans 1 and 103 are single pages, centred. Spreads 2…102 render as a pair
+  of facing pages side by side, glued at the gutter, and must stay side by side
   (they are one flex row that does not wrap on wide screens; below ~900 px the
   two halves stack so the content stays readable on a phone).
 ### Screen (HTML)
@@ -178,18 +180,18 @@ outputs; a change to how a medium *looks* belongs in that medium's builder.
 * Inside a table, data cells (station names and times) are left-aligned; the
   header rows (`№ поездов`, train numbers, `приб.`/`отпр.`) stay centred.
 * Facing pages sit side by side with a small gap so their drop shadows do not overlap.
-* Content is scaled to the sheet with a page-local font size so the densest
-  timetable — 46 rows, chapter I — fits one sheet without overflow. A half page
+* Content is scaled to the page with a page-local font size so the densest
+  timetable — 46 rows, chapter I — fits one page without overflow. A book page
   is measured in
   "table rows" (`estimate_rows`); a half holding more than ~47 rows — which
   happens where the OCR emitted a fragmented table *and* a duplicate station
   list — gets a per-page shrink factor so nothing is clipped. 13 of the 202
-  half pages are scaled this way.
+  book pages are scaled this way.
 
 ## 8. PDF output
 
 `scripts/build_book_pdf.py` renders the same model through WeasyPrint. One PDF
-page per physical sheet, sized from the scan geometry: spread
+page per scan, sized from the scan geometry: spread
 202 × 162.9 mm, cover 109.1 × 162.9 mm, zero margins, via named `@page` rules.
 Base text 6.1 pt. It shares every layout decision with the HTML build through
 `book_model.py`, so the two cannot drift.
@@ -209,8 +211,8 @@ PYTHONPATH=scripts .venv/bin/python scripts/build_book_pdf.py \
 Unlike the HTML, the PDF can be checked mechanically and visually:
 
 * `pdfinfo -f 1 -l 103` — 103 pages, two distinct page sizes.
-* Text-loss sweep: for each sheet compare `pdftotext` output against the text of
+* Text-loss sweep: for each scan compare `pdftotext` output against the text of
   the rendered half pages; any ratio below ~1.0 means content was clipped by an
-  overflowing page. Must report zero sheets.
+  overflowing page. Must report zero scans.
 * `pdftoppm -r 110 -png` a sample and look at it — the only way to catch
   alignment and column-width faults.

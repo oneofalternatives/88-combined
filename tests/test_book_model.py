@@ -1,10 +1,10 @@
-"""book_model: reading the OCR export, repairing it, and reading book pages back."""
+"""book_model: reading the OCR export, repairing it, and reading scan files back."""
 import json
 
 import pytest
 
 import book_model as bm
-from conftest import COVER, SUBURBAN_TABLE, block, page, suburban_spread
+from conftest import COVER, SUBURBAN_TABLE, block, scan, suburban_spread
 
 
 # ------------------------------------------------------------- parse_table
@@ -57,7 +57,7 @@ def test_split_halves_by_centre_and_drops_noise():
 
 
 def test_split_halves_portrait_is_one_half():
-    p = page([block("text", "ГЛАВА I", 100, 100, 500, 140),
+    p = scan([block("text", "ГЛАВА I", 100, 100, 500, 140),
               block("text", "Рига", 600, 100, 660, 140)], COVER)
     halves = bm.split_halves(p)
     assert len(halves) == 1 and len(halves[0]) == 2
@@ -107,35 +107,35 @@ def test_repair_leaves_halves_without_timetable_alone():
     assert bm.repair(blocks) is blocks
 
 
-# -------------------------------------------------------------- load_pages
-def test_load_pages_playground_export(tmp_path):
+# -------------------------------------------------------------- load_scans
+def test_load_scans_playground_export(tmp_path):
     for n in (1, 2):
         d = tmp_path / "pages" / f"page-{n}"
         d.mkdir(parents=True)
         (d / "page-metadata.json").write_text(json.dumps({"index": n - 1, "blocks": []}))
-    assert {n: p["index"] for n, p in bm.load_pages(tmp_path).items()} == {1: 0, 2: 1}
+    assert {n: p["index"] for n, p in bm.load_scans(tmp_path).items()} == {1: 0, 2: 1}
 
 
-def test_load_pages_api_responses_are_camel_cased(tmp_path):
+def test_load_scans_api_responses_are_camel_cased(tmp_path):
     resp = {"model": "m", "pages": [{"index": 0,
             "dimensions": {"width": 10, "height": 20},
             "blocks": [{"top_left_x": 1, "top_left_y": 2, "bottom_right_x": 3,
                         "bottom_right_y": 4, "type": "text", "content": "x"}]}]}
-    (tmp_path / "page-01.json").write_text(json.dumps(resp))
-    (tmp_path / "page-02.json").write_text(json.dumps(resp))
-    pages = bm.load_pages(tmp_path)
-    assert list(pages) == [1, 2]
-    assert pages[1]["blocks"][0] == {"topLeftX": 1, "topLeftY": 2, "bottomRightX": 3,
+    (tmp_path / "scan-01.json").write_text(json.dumps(resp))
+    (tmp_path / "scan-02.json").write_text(json.dumps(resp))
+    scans = bm.load_scans(tmp_path)
+    assert list(scans) == [1, 2]
+    assert scans[1]["blocks"][0] == {"topLeftX": 1, "topLeftY": 2, "bottomRightX": 3,
                                      "bottomRightY": 4, "type": "text", "content": "x"}
 
 
-def test_load_pages_keys_sheets_by_file_name(tmp_path):
+def test_load_scans_keyed_by_file_name(tmp_path):
     for n in (93, 3):
-        (tmp_path / f"page-{n:02d}.json").write_text(json.dumps({"pages": [{"index": n}]}))
-    assert bm.load_pages(tmp_path) == {3: {"index": 3}, 93: {"index": 93}}
+        (tmp_path / f"scan-{n:02d}.json").write_text(json.dumps({"pages": [{"index": n}]}))
+    assert bm.load_scans(tmp_path) == {3: {"index": 3}, 93: {"index": 93}}
 
 
-# ------------------------------------------------- book pages as input
+# ------------------------------------------------- scan files as input
 BOOK_TABLE = """\
 | № поездов | 6501 Д |       | 6601  |       |
 |           | приб.  | отпр. | приб. | отпр. |
@@ -156,13 +156,13 @@ def test_parse_book_table():
     assert t["items"][6]["cells"] == ["Кегумс", "23.37", "23.38", "", ""]
 
 
-def test_parse_book_page_and_captions():
-    text = ("---\nsheet: 93\nkind: spread\nfolios: [182, 183]\n"
+def test_parse_scan_file_and_captions():
+    text = ("---\nscan: 93\nkind: spread\nfolios: [182, 183]\n"
             "shapes: [distance, prose]\n---\n\n## page 182\n\n"
             "п. № 606 · ДИЗЕЛЬНЫЙ\n\nРига—Себеж\n\n" + BOOK_TABLE +
             "\n\nПримечание внизу.\n\n## page 183\n\n# ГЛАВА XII\n\nТекст.\n")
-    p = bm.parse_book_page(text)
-    assert p["sheet"] == 93 and p["kind"] == "spread"
+    p = bm.parse_scan_file(text)
+    assert p["scan"] == 93 and p["kind"] == "spread"
     assert p["shapes"] == ["distance", "prose"]
     assert [h["folio"] for h in p["halves"]] == [182, 183]
     left = [it["kind"] for it in p["halves"][0]["items"]]
@@ -173,8 +173,8 @@ def test_parse_book_page_and_captions():
     assert right[0]["text"] == "ГЛАВА XII"
 
 
-def test_parse_book_page_unnumbered_folio():
-    p = bm.parse_book_page("---\nsheet: 2\nkind: spread\nfolios: []\n"
+def test_parse_scan_file_unnumbered_folio():
+    p = bm.parse_scan_file("---\nscan: 2\nkind: spread\nfolios: []\n"
                            "shapes: [prose, prose]\n---\n\n## page\n\nа\n\n## page\n\nб\n")
     assert [h["folio"] for h in p["halves"]] == [None, None]
 
@@ -203,12 +203,12 @@ def test_book_fit_scale():
     assert bm.book_fit_scale(big) == pytest.approx(0.5)
 
 
-def test_book_sheets_cover_and_spread(tmp_path):
-    (tmp_path / "page-01.md").write_text(
-        "---\nsheet: 1\nkind: cover\nfolios: []\nshapes: [prose]\n---\n\n## page\n\nx\n")
-    (tmp_path / "page-02.md").write_text(
-        "---\nsheet: 2\nkind: spread\nfolios: [0, 1]\nshapes: [prose, prose]\n---\n\n"
+def test_book_scans_cover_and_spread(tmp_path):
+    (tmp_path / "scan-01.md").write_text(
+        "---\nscan: 1\nkind: cover\nfolios: []\nshapes: [prose]\n---\n\n## page\n\nx\n")
+    (tmp_path / "scan-02.md").write_text(
+        "---\nscan: 2\nkind: spread\nfolios: [0, 1]\nshapes: [prose, prose]\n---\n\n"
         "## page 0\n\nа\n\n## page 1\n\nб\n")
-    sheets = list(bm.book_sheets(tmp_path))
-    assert [s["kind"] for s in sheets] == ["cover", "spread"]
-    assert [side for *_, side in sheets[1]["halves"]] == ["left", "right"]
+    scans = list(bm.book_scans(tmp_path))
+    assert [s["kind"] for s in scans] == ["cover", "spread"]
+    assert [side for *_, side in scans[1]["halves"]] == ["left", "right"]

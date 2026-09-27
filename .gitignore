@@ -1,5 +1,5 @@
 .venv/
 __pycache__/
-attempts/page-renders-*/*.png
-!attempts/page-renders-00/*.png
+attempts/scans-*/*.png
+!attempts/scans-00/*.png
 .env

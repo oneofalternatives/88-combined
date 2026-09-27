@@ -4,16 +4,16 @@
 Reads attempts/final-NN — the hand-corrected source of truth — and nothing
 else: the OCR export reaches the page only through scripts/extract.py. Layout
 lives in book_model.py; this file adds the print stylesheet, one PDF page per
-physical sheet of the book. See spec/ocr-book-format.md.
+scan. See spec/ocr-book-format.md.
 """
 from __future__ import annotations
 
 import argparse
 from pathlib import Path
 
-from book_model import book_fit_scale, book_sheets, render_book_half
+from book_model import book_fit_scale, book_scans, render_book_half
 
-# Sheet geometry, taken from the scan dimensions (spec §2):
+# PDF page geometry, taken from the scan dimensions (spec §2):
 #   spread half 509x821 px @128 dpi -> 101.0 x 162.9 mm
 #   cover      683x1019 px @159 dpi -> 109.1 x 162.8 mm
 HALF_W_MM = 101.0
@@ -33,10 +33,10 @@ CSS = f"""
 html, body {{ margin:0; padding:0; background:#fff; color:var(--ink);
               font-family:var(--book); }}
 
-.sheet{{ position:relative; width:{SPREAD_W_MM}mm; height:{PAGE_H_MM}mm;
+.scan{{ position:relative; width:{SPREAD_W_MM}mm; height:{PAGE_H_MM}mm;
         page: spread; }}
-.sheet.single{{ width:{COVER_W_MM}mm; page: cover; }}
-.sheet + .sheet{{ break-before: page; }}
+.scan.single{{ width:{COVER_W_MM}mm; page: cover; }}
+.scan + .scan{{ break-before: page; }}
 
 .page{{ position:absolute; top:0; height:{PAGE_H_MM}mm; width:{HALF_W_MM}mm;
        overflow:hidden; }}
@@ -82,7 +82,7 @@ table.tt.prose .st{{ width:auto; }}
 
 
 def with_fit(markup: str, items) -> str:
-    """Shrink a half page whose content would otherwise overflow the sheet."""
+    """Shrink a book page whose content would otherwise overflow it."""
     scale = book_fit_scale(items)
     if scale >= 1.0:
         return markup
@@ -92,9 +92,9 @@ def with_fit(markup: str, items) -> str:
 
 def build_html(a) -> str:
     body = []
-    for sheet in book_sheets(a.src):
-        cls = "sheet single" if sheet["kind"] == "cover" else "sheet"
-        halves = "".join(with_fit(render_book_half(*h), h[0]) for h in sheet["halves"])
+    for scan in book_scans(a.src):
+        cls = "scan single" if scan["kind"] == "cover" else "scan"
+        halves = "".join(with_fit(render_book_half(*h), h[0]) for h in scan["halves"])
         body.append(f"<div class='{cls}'>{halves}</div>")
     return (
         "<meta charset='utf-8'>"
@@ -113,7 +113,7 @@ def build(a, out: Path):
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("--src", type=Path, required=True, help="page files directory")
+    ap.add_argument("--src", type=Path, required=True, help="scan files directory")
     ap.add_argument("--dest", type=Path, required=True, help="PDF to write")
     ap.add_argument("--dump-html", type=Path, help="write the print HTML and stop")
     a = ap.parse_args()

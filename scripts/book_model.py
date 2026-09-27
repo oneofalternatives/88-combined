@@ -25,15 +25,16 @@ def _camel(x):
     return [_camel(v) for v in x] if isinstance(x, list) else x
 
 
-def load_pages(src: Path) -> dict[int, dict]:
-    """Pages of an OCR attempt by sheet number, taken from the file names: a
-    playground export (pages/page-N/), or ocr.py's page-NN.json."""
-    pages = {}
+def load_scans(src: Path) -> dict[int, dict]:
+    """Scans of an OCR attempt by scan number, taken from the file names: a
+    playground export (pages/page-N/, Mistral's name for a scan), or ocr.py's
+    scan-NN.json."""
+    scans = {}
     for f in src.glob("pages/page-*/page-metadata.json"):
-        pages[int(f.parent.name.removeprefix("page-"))] = json.loads(f.read_text())
-    for f in src.glob("page-*.json"):
-        pages[int(f.stem.removeprefix("page-"))] = _camel(json.loads(f.read_text())["pages"][0])
-    return dict(sorted(pages.items()))
+        scans[int(f.parent.name.removeprefix("page-"))] = json.loads(f.read_text())
+    for f in src.glob("scan-*.json"):
+        scans[int(f.stem.removeprefix("scan-"))] = _camel(json.loads(f.read_text())["pages"][0])
+    return dict(sorted(scans.items()))
 
 
 def is_noise(block) -> bool:
@@ -41,11 +42,11 @@ def is_noise(block) -> bool:
     return not c or FOLIO_RE.match(c) is not None or SIGNATURE_RE.match(c) is not None
 
 
-def split_halves(page):
-    """Return [blocks] for a portrait page, or [left, right] for a spread."""
-    w = page["dimensions"]["width"]
-    h = page["dimensions"]["height"]
-    blocks = [b for b in page["blocks"] if not is_noise(b)]
+def split_halves(scan):
+    """Return [blocks] for a portrait scan, or [left, right] for a spread."""
+    w = scan["dimensions"]["width"]
+    h = scan["dimensions"]["height"]
+    blocks = [b for b in scan["blocks"] if not is_noise(b)]
     if w < h:  # portrait cover
         return [repair(blocks)]
     mid = w / 2
@@ -65,7 +66,7 @@ TIME_RE = re.compile(r"\d[.,]\d")
 
 
 def header_width(blocks):
-    """Column count of this half page, from its train-number header."""
+    """Column count of this book page, from its train-number header."""
     for b in blocks:
         if b["type"] == "table" and "№ поездов" in b["content"]:
             parsed = parse_table(b["content"].strip())
@@ -113,7 +114,7 @@ def as_table(run, width):
 
 
 def repair(blocks):
-    """Restore the true column count across one half page."""
+    """Restore the true column count across one book page."""
     width = header_width(blocks)
     if not width:
         return blocks
@@ -199,13 +200,13 @@ def inline(text: str) -> str:
     return t
 
 
-# A half page holds roughly this many table rows at the nominal font size;
+# A book page holds roughly this many table rows at the nominal font size;
 # calibrated against the densest chapter-I timetable (46 rows, ~88% full).
 ROW_CAPACITY = 47.0
 
 
-# ------------------------------------------------------------- book pages as input
-# From here down the input is attempts/final-NN/page-NN.md, not the OCR: the hand-corrected
+# ------------------------------------------------------------- scan files as input
+# From here down the input is attempts/final-NN/scan-NN.md, not the OCR: the hand-corrected
 # source of truth. Its tables are markdown-LIKE (see extract.as_markdown) --
 # "=" rules the head, "-" rules the interior, a one-cell row is a full-width
 # band -- so they are read here rather than by parse_table, which speaks GFM.
@@ -245,8 +246,8 @@ def parse_book_table(md: str):
     return {"items": items, "width": width, "header_rows": header_rows}
 
 
-def parse_book_page(text: str):
-    """{sheet, kind, shapes, halves:[{folio, items}]} for one book page file."""
+def parse_scan_file(text: str):
+    """{scan, kind, shapes, halves:[{folio, items}]} for one scan file."""
     lines = text.splitlines()
     meta, i = {}, 0
     if lines and lines[0].strip() == "---":
@@ -267,7 +268,7 @@ def parse_book_page(text: str):
     for h in halves:
         h["items"] = book_items(h.pop("lines"))
     return {
-        "sheet": int(meta.get("sheet", 0) or 0),
+        "scan": int(meta.get("scan", 0) or 0),
         "kind": meta.get("kind", "spread"),
         "shapes": [s.strip() for s in meta.get("shapes", "").strip("[] ").split(",") if s.strip()],
         "halves": halves,
@@ -275,7 +276,7 @@ def parse_book_page(text: str):
 
 
 def book_items(lines):
-    """One half page as a list of blocks, blank-line separated."""
+    """One book page as a list of blocks, blank-line separated."""
     items, buf = [], []
 
     def flush():
@@ -370,7 +371,7 @@ def render_book_half(items, folio, side) -> str:
 
 
 def estimate_book_rows(items) -> float:
-    """Content height of a book half page, in table rows (cf. estimate_rows)."""
+    """Content height of a book page, in table rows (cf. estimate_rows)."""
     rows = 0.0
     for it in items:
         if it["kind"] == "table":
@@ -389,13 +390,13 @@ def book_fit_scale(items) -> float:
     return min(1.0, ROW_CAPACITY / needed) if needed > ROW_CAPACITY else 1.0
 
 
-def book_sheets(src: Path):
-    """Yield one dict per sheet, shaped like sheets() but read from book pages."""
+def book_scans(src: Path):
+    """Yield one dict per scan file, in scan order."""
     n = 1
-    while (src / f"page-{n:02d}.md").exists():
-        page = parse_book_page((src / f"page-{n:02d}.md").read_text())
-        halves = page["halves"]
-        if page["kind"] == "cover" or len(halves) < 2:
+    while (src / f"scan-{n:02d}.md").exists():
+        scan = parse_scan_file((src / f"scan-{n:02d}.md").read_text())
+        halves = scan["halves"]
+        if scan["kind"] == "cover" or len(halves) < 2:
             yield {"kind": "cover",
                    "halves": [(halves[0]["items"], halves[0]["folio"], "portrait")]}
         else:

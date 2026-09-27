@@ -1,4 +1,4 @@
-"""validate.py: each rule on small synthetic book pages, plus the helpers.
+"""validate.py: each rule on small synthetic scan files, plus the helpers.
 
 Pages are written with the extractor's own as_markdown, so these tests also
 hold the validator to the format extract.py actually produces.
@@ -113,7 +113,7 @@ def test_route_destination(caption, dest):
     assert v.route_destination([{"kind": "caption", "text": caption}]) == dest
 
 
-# -------------------------------------------------------- suburban sheets
+# -------------------------------------------------------- suburban pages
 def test_clean_page_has_no_findings(write_book):
     d = write_book(5, [("suburban", [suburban_table(
         STATIONS,
@@ -133,28 +133,28 @@ def test_midnight_wrap_is_not_a_finding(write_book):
 
 
 def test_wrap_after_24_00_is_not_a_finding(write_book):
-    # sheet 5, train 6501 Д: out at 24.00, in at the next stop after midnight
+    # scan 5, train 6501 Д: out at 24.00, in at the next stop after midnight
     d = write_book(5, [("suburban", [suburban_table(
         STATIONS, train("—", "23.50", "23.59,5", "24.00", "00.03,5", "00.04,5", "00.10", "—"))])])
     assert run(d)[1] == []
 
 
 def test_arrival_at_24_00_then_departure_after_is_not_a_finding(write_book):
-    # sheet 96, train 662 at Вецуми: in at 24.00, out at 00.01
+    # scan 96, train 662 at Вецуми: in at 24.00, out at 00.01
     d = write_book(5, [("suburban", [suburban_table(
         STATIONS, train("—", "23.50", "24.00", "00.01", "00.05", "00.06", "00.10", "—"))])])
     assert run(d)[1] == []
 
 
 def test_dwell_across_midnight_is_not_a_finding(write_book):
-    # sheet 51, train 6826 at Кегумс: in at 23.59, out at 00.01
+    # scan 51, train 6826 at Кегумс: in at 23.59, out at 00.01
     d = write_book(5, [("suburban", [suburban_table(
         STATIONS, train("—", "23.50", "23.55", "23.56", "23.59", "00.01", "00.05", "—"))])])
     assert run(d)[1] == []
 
 
 def test_long_dwell_across_midnight_is_impossible(write_book):
-    # sheet 44, train 6176 Д at Асари: 02.06,5 is a misread 20.06,5
+    # scan 44, train 6176 Д at Асари: 02.06,5 is a misread 20.06,5
     d = write_book(5, [("suburban", [suburban_table(
         STATIONS, train("—", "20.00", "20.06", "02.06,5", "20.08", "20.08,5", "20.10", "—"))])])
     f = [f for f in run(d)[1] if f.severity == 0]
@@ -182,7 +182,7 @@ def test_backwards_step_is_impossible(write_book):
     (f,) = run(d)[1]
     assert f.severity == 0 and f.rules == {1}
     assert f.message == "time steps backwards along the run: 10.11 then 10.05"
-    assert str(f.where) == "page-05.md folio 6 [suburban] п.№ 6001 — Золитуде  r2c1"
+    assert str(f.where) == "scan-05.md folio 6 [suburban] п.№ 6001 — Золитуде  r2c1"
 
 
 def test_departure_before_arrival(write_book):
@@ -222,7 +222,7 @@ def test_column_that_fits_neither_direction(write_book):
 
 
 def test_repeated_header_restarts_the_station_list(write_book):
-    """A header repeated inside the body (sheet 32) splits the column: the
+    """A header repeated inside the body (scan 32) splits the column: the
     runs either side are separate, named from the header over them."""
     rows = [["№ поездов", "6001", ""], ["", "приб.", "отпр."],
             ["Рига-пасс.", "—", "12.00"], ["Засулаукс", "12.10", "—"],
@@ -266,7 +266,7 @@ def test_leg_within_a_printed_tick_is_not_a_finding(write_book):
     assert run(d)[1] == []
 
 
-# --------------------------------------------------------- distance sheets
+# --------------------------------------------------------- distance pages
 DIST_HEAD = ["Раздельные пункты", "Расстояние км", "приб.", "отпр."]
 
 
@@ -305,9 +305,9 @@ def test_zone_outside_declared_reckoning_is_reported(write_book):
                          "«Лиепая» does not use — this zone is left out of rule 5")
 
 
-def test_milepost_names_agree_across_sheets(write_book):
-    for sheet in (90, 91, 92):
-        write_book(sheet, [distance_page("Рига—Себеж", [
+def test_milepost_names_agree_across_pages(write_book):
+    for scan in (90, 91, 92):
+        write_book(scan, [distance_page("Рига—Себеж", [
             ["Рига-пасс.", "922,8", "", ""], ["Яняварты", "917,9", "", ""]])])
     # a misspelling at the same milepost; and the same name at another one
     d = write_book(93, [distance_page("Рига—Себеж", [
@@ -315,8 +315,8 @@ def test_milepost_names_agree_across_sheets(write_book):
         ["Яняварты", "916,0", "", ""]])])
     found = sorted(messages(run(d)[1]))
     assert found == [
-        "milepost 917.9 км is Янявврты here but Яняварты on 3 other moscow sheet(s)",
-        "station Яняварты is 916.0 here but 917.9 on 3 other moscow sheet(s)",
+        "milepost 917.9 км is Янявврты here but Яняварты on 3 other moscow page(s)",
+        "station Яняварты is 916.0 here but 917.9 on 3 other moscow page(s)",
     ]
 
 
@@ -364,9 +364,9 @@ def test_main_exit_codes_and_json(write_book, monkeypatch, capsys):
     monkeypatch.setattr(sys, "argv", ["validate.py", "--src", str(d), "--json"])
     assert v.main() == 1
     (f,) = json.loads(capsys.readouterr().out)
-    assert f["rules"] == [2] and f["sheet"] == 5 and f["cells"] == [[1, 2]]
+    assert f["rules"] == [2] and f["scan"] == 5 and f["cells"] == [[1, 2]]
 
-    (d / "page-05.md").write_text((d / "page-05.md").read_text().replace("10.05", "10.12"))
+    (d / "scan-05.md").write_text((d / "scan-05.md").read_text().replace("10.05", "10.12"))
     monkeypatch.setattr(sys, "argv", ["validate.py", "--src", str(d)])
     assert v.main() == 0
     assert "1 train columns checked; 0 findings" in capsys.readouterr().out

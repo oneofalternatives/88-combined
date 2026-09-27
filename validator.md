@@ -26,7 +26,7 @@ OCR. Repairs are reported, never guessed, and the exit code carries them.
    long dwell is only suspicious — junctions really do hold ten minutes — so
    rank it against that station's other dwells. `,5` is half a minute and
    counts; parse to seconds.
-3. **Implied speed**, Δkm/Δt, on the `distance` sheets. Over `max_speed_kmh` the
+3. **Implied speed**, Δkm/Δt, on the `distance` pages. Over `max_speed_kmh` the
    data is impossible; far off the book-wide median speed it is a deviation
    (`speed_deviation_threshold`, quiet on this book). Never measured across a
    mileposting reset. Ties the times to the mileposts — the only rule that
@@ -45,8 +45,8 @@ OCR. Repairs are reported, never guessed, and the exit code carries them.
 5. **Distance -> station name** agrees within a reckoning. Each milepost has one
    name and each name one milepost. Cheapest rule, almost no false positives,
    and it doubles as a spell-check on the station column (`Январь` for
-   `Яняварты`) — but only on the six `distance` sheets, the only ones carrying
-   mileposts, so the two-way sheets are out of its reach. Lines reuse kilometre
+   `Яняварты`) — but only on the twelve `distance` pages, the only ones carrying
+   mileposts, so the two-way pages are out of its reach. Lines reuse kilometre
    numbers, so a shared milepost is a finding only where the two names are
    near-duplicates (`name_similarity`).
 

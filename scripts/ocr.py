@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""OCR pipeline, step 2: page PNGs -> Mistral OCR -> attempts/ocr-NN.
+"""OCR pipeline, step 2: scan PNGs -> Mistral OCR -> attempts/ocr-NN.
 
-One API call per page; each raw response is saved as page-NN.json. A page that
+One API call per scan; each raw response is saved as scan-NN.json. A scan that
 fails is reported and the dir stays unfinished (no manifest.json) -- run again
-with --resume to fetch only the missing pages. Needs MISTRAL_API_KEY, from the
+with --resume to fetch only the missing scans. Needs MISTRAL_API_KEY, from the
 environment or from .env in the repo root.
 """
 from __future__ import annotations
@@ -25,7 +25,7 @@ from attempts import add_attempt, finish, next_dir, require_finished  # noqa: E4
 URL = "https://api.mistral.ai/v1/ocr"
 ENV_FILE = Path(__file__).parent.parent / ".env"
 # Every optional request field, spelled out. The required two -- model
-# (--model) and document (the page PNG) -- are added in call().
+# (--model) and document (the scan PNG) -- are added in call().
 SETTINGS = {
     "include_blocks": True,                   # block boxes and types; split_halves needs them
     "confidence_scores_granularity": "word",  # "page" | "block" | "word"
@@ -74,7 +74,7 @@ def load_env(path):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--src", type=Path, help="a finished attempts/page-renders-NN")
+    ap.add_argument("--src", type=Path, help="a finished attempts/scans-NN")
     ap.add_argument("--resume", type=Path, help="an unfinished attempts/ocr-NN")
     ap.add_argument("--model", help="Mistral OCR model, e.g. mistral-ocr-latest")
     args = ap.parse_args()
@@ -100,7 +100,7 @@ def main():
         (out / "run.json").write_text(json.dumps(run, indent=2) + "\n")
 
     failed, models = [], set()
-    for png in sorted(renders.glob("page-*.png")):
+    for png in sorted(renders.glob("scan-*.png")):
         dest = out / png.with_suffix(".json").name
         if not dest.exists():
             print(f"{png} ...", flush=True)
@@ -114,7 +114,7 @@ def main():
         models.add(json.loads(dest.read_text()).get("model"))
 
     if failed:
-        print(f"\n{len(failed)} page(s) failed: {', '.join(failed)}")
+        print(f"\n{len(failed)} scan(s) failed: {', '.join(failed)}")
         print(f"not finished; run: python3 scripts/ocr.py --resume {out}")
         return 1
     models = sorted(m for m in models if m)

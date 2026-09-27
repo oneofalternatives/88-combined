@@ -1,5 +1,5 @@
 """Shared setup: scripts/ on the import path, paths to the frozen data, and
-builders for small hand-made OCR pages and book pages.
+builders for small hand-made OCR scans and scan files.
 
 The scripts take their dirs as arguments (attempts/...). Tests pass
 absolute paths, or chdir into a tmp dir that mimics the layout.
@@ -17,7 +17,7 @@ sys.path.insert(0, str(SCRIPTS))
 
 # Frozen reference data. final-NN is hand-corrected over time, so regression
 # tests compare against the extractor's untouched output from ocr-00: the latest
-# extracted-NN made from it. Move this when a change is meant to move a sheet.
+# extracted-NN made from it. Move this when a change is meant to move a scan.
 OCR_00 = REPO / "attempts" / "ocr-00"
 EXTRACTED = REPO / "attempts" / "extracted-03"
 
@@ -38,7 +38,7 @@ def block(type_, content, x0, y0, x1, y1):
             "bottomRightX": x1, "bottomRightY": y1}
 
 
-def page(blocks, dims=SPREAD):
+def scan(blocks, dims=SPREAD):
     return {"dimensions": dict(dims), "blocks": blocks}
 
 
@@ -54,7 +54,7 @@ SUBURBAN_TABLE = """\
 
 def suburban_spread():
     """A spread: a suburban timetable left, a notice right, plus noise."""
-    return page([
+    return scan([
         block("header", "п. № 6501", 40, 10, 150, 22),
         block("table", SUBURBAN_TABLE, 43, 30, 483, 400),
         block("footer", "6", 37, 749, 52, 764),            # folio: noise
@@ -64,7 +64,7 @@ def suburban_spread():
     ])
 
 
-# ------------------------------------------------------------- book pages
+# ------------------------------------------------------------- scan files
 def book_table(rows, header_count=1):
     """A book page table in the extractor's own format."""
     import extract
@@ -73,10 +73,10 @@ def book_table(rows, header_count=1):
     return extract.as_markdown(rows, header_count, width)
 
 
-def book_page(sheet, halves, folios=None):
-    """Text of a book page file, page-NN.md. halves: [(shape, [paragraph or table])]."""
-    folios = folios or [2 * sheet - 4, 2 * sheet - 3][:len(halves)]
-    out = ["---", f"sheet: {sheet}", f"kind: {'spread' if len(halves) == 2 else 'cover'}",
+def scan_file(scan, halves, folios=None):
+    """Text of a scan file, scan-NN.md. halves: [(shape, [paragraph or table])]."""
+    folios = folios or [2 * scan - 4, 2 * scan - 3][:len(halves)]
+    out = ["---", f"scan: {scan}", f"kind: {'spread' if len(halves) == 2 else 'cover'}",
            f"folios: [{', '.join(map(str, folios))}]",
            f"shapes: [{', '.join(s for s, _ in halves)}]", "---", ""]
     for (_, parts), folio in zip(halves, folios):
@@ -102,12 +102,12 @@ def suburban_table(stations, *trains):
 
 @pytest.fixture
 def write_book(tmp_path):
-    """Write book pages into tmp_path/book and return the dir."""
+    """Write scan files into tmp_path/book and return the dir."""
     d = tmp_path / "book"
     d.mkdir()
 
-    def write(sheet, halves, folios=None):
-        (d / f"page-{sheet:02d}.md").write_text(book_page(sheet, halves, folios))
+    def write(scan, halves, folios=None):
+        (d / f"scan-{scan:02d}.md").write_text(scan_file(scan, halves, folios))
         return d
     write.dir = d
     return write

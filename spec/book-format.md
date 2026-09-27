@@ -1,7 +1,8 @@
-# Spec: `attempts/final-NN` page files
+# Spec: `attempts/final-NN` scan files
 
-One file per scanned sheet, `attempts/final-NN/page-NN.md`. Frontmatter, then one `## page N`
-section per half sheet. Written by `scripts/extract.py`, read by
+One file per scan, `attempts/final-NN/scan-NN.md`. A scan is one image of the
+DjVu: a spread of two book pages, or a cover. Frontmatter, then one `## page N`
+section per book page. Written by `scripts/extract.py`, read by
 `scripts/build_book_pdf.py` and the validator. See the README for the table
 syntax.
 
@@ -9,14 +10,14 @@ syntax.
 
 | key      | meaning                                                 |
 | -------- | ------------------------------------------------------- |
-| `sheet`  | scan page number, 1-based                               |
+| `scan`   | scan number, 1-based                                    |
 | `kind`   | `cover` or `spread`                                     |
 | `folios` | printed page numbers, computed not read: `[2N-4, 2N-3]` |
-| `shapes` | one shape per half sheet, left then right               |
+| `shapes` | one shape per book page, left then right                |
 
 ## Shapes
 
-A shape is the layout of the half sheet. Each table names itself in its header
+A shape is the layout of the book page. Each table names itself in its header
 row, so the shape is **detected, never configured** — there is no page→shape
 map to keep in step with the pages. `SHAPES` in `scripts/extract.py` holds the
 header predicate, the station column and the columns that are never
@@ -40,10 +41,10 @@ unnormalized.
 
 ## Shapes and mileposts
 
-Only the `distance` sheets carry a `Расстояние км` column. The values are
+Only the `distance` pages carry a `Расстояние км` column. The values are
 **mileposts, not distance from the origin**, and a book may number its lines in
 more than one reckoning — counting down toward the origin, or up away from it.
-The numbering can also **reset mid-sheet**, where a through route passes from
+The numbering can also **reset mid-page**, where a through route passes from
 one reckoning into the next, so one station may honestly carry two mileposts. A
 leg is `abs(km[i] - km[i+1])` within a single reckoning only; across a reset the
 difference means nothing.
@@ -52,5 +53,5 @@ difference means nothing.
 
 No font emphasis in these files. A trailing `*` or `**` on a train number is
 the book's own footnote marker, defined on its contents page, so an asterisk
-added for emphasis cannot be told from the data. Page files only — the repo's
+added for emphasis cannot be told from the data. Scan files only — the repo's
 docs use emphasis freely.

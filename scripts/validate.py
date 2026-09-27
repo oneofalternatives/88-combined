@@ -2,7 +2,7 @@
 """Validate book pages (attempts/final-NN) against itself.
 
 The book over-determines itself: the same leg is timed by dozens of trains, the
-mileposts fix the distances, and arrival never follows departure. So the sheets
+mileposts fix the distances, and arrival never follows departure. So the pages
 can be checked without any outside source. See validator.md.
 
 Output is triage -- a ranked "look here", not a verdict. The data is unchecked
@@ -23,7 +23,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from book_model import parse_book_page  # noqa: E402
+from book_model import parse_scan_file  # noqa: E402
 from extract import SHAPES  # noqa: E402
 
 # Tuned by editing and re-running. Every threshold is a judgement about a
@@ -56,16 +56,16 @@ CONFIG = {
 # 0,0 again. So Рига-пасс. honestly has two mileposts (922,8 and 0,0), Плявиняс
 # has two (810,6 and 0,0), and neither is damage. A kilometre means nothing
 # across such a boundary: rule 3 does not measure a leg across one, and rule 5
-# compares a station only against the sheets on its own reckoning.
+# compares a station only against the pages on its own reckoning.
 #
-# A destination listed here declares which reckonings its sheets may be printed
-# in; a zone that lands outside them is reported. A sheet whose route the OCR
+# A destination listed here declares which reckonings its pages may be printed
+# in; a zone that lands outside them is reported. A page whose route the OCR
 # lost (folios 188/189 print the train number and nothing else) is still placed
 # by the band its kilometres fall in, and simply gets no such check.
 #
 # Every destination here is one of the eight in the chapter list on folio 181.
-# All but Вентспилс are borne out by a sheet; that one is listed from the
-# chapter and has no distance sheet in the book to check it against.
+# All but Вентспилс are borne out by a page; that one is listed from the
+# chapter and has no distance page in the book to check it against.
 MILEPOSTING = {
     "Себеж": ("moscow",),
     "Даугавпилс": ("moscow", "daugavpils"),
@@ -88,7 +88,7 @@ DAY = 24 * 3600
 # and a second copy of the station column is a second thing to keep in step.
 SHAPE_RULES = {name: (station, protected)
                for name, (_, station, protected) in SHAPES.items()}
-SPEED_SHAPES = {"distance"}     # the only sheets with a milepost column
+SPEED_SHAPES = {"distance"}     # the only pages with a milepost column
 SKIP_SHAPES = {"prose"}
 HEADER_WORDS = {"приб.", "отпр.", "прибытие", "отправление",
                 "разд. пункты", "раздельные пункты", "№ поездов",
@@ -201,15 +201,15 @@ class Finding:
 class Where:
     """A location in the book pages, down to the cells involved."""
 
-    def __init__(self, sheet, folio, shape, train, station=None, cells=()):
-        self.sheet, self.folio, self.shape = sheet, folio, shape
+    def __init__(self, scan, folio, shape, train, station=None, cells=()):
+        self.scan, self.folio, self.shape = scan, folio, shape
         self.train, self.station = train, station
         # A cell is identified book-wide: the same (row, col) exists on every
-        # sheet, and two findings are the same cell only on the same column.
-        self.cells = tuple((sheet, folio, train, r, c) for r, c in cells)
+        # page, and two findings are the same cell only on the same column.
+        self.cells = tuple((scan, folio, train, r, c) for r, c in cells)
 
     def __str__(self):
-        s = f"page-{self.sheet:02d}.md folio {self.folio} [{self.shape}] п.№ {self.train}"
+        s = f"scan-{self.scan:02d}.md folio {self.folio} [{self.shape}] п.№ {self.train}"
         if self.station:
             s += f" — {self.station}"
         if self.cells:
@@ -217,7 +217,7 @@ class Where:
         return s
 
     def as_dict(self):
-        return {"sheet": self.sheet, "folio": self.folio, "shape": self.shape,
+        return {"scan": self.scan, "folio": self.folio, "shape": self.shape,
                 "train": self.train, "station": self.station,
                 "cells": [[r, c] for *_, r, c in self.cells]}
 
@@ -278,15 +278,15 @@ class Stop:
 
 
 class Column:
-    """One train's column pair on one half sheet."""
+    """One train's column pair on one book page."""
 
-    def __init__(self, sheet, folio, shape, train, stops):
-        self.sheet, self.folio, self.shape = sheet, folio, shape
+    def __init__(self, scan, folio, shape, train, stops):
+        self.scan, self.folio, self.shape = scan, folio, shape
         self.train, self.stops = train, stops
         self.direction = None       # +1 down the page, -1 up it, None no fit
 
     def where(self, stop=None, cells=()):
-        return Where(self.sheet, self.folio, self.shape, self.train,
+        return Where(self.scan, self.folio, self.shape, self.train,
                      stop.station if stop else None, cells)
 
     def travel(self):
@@ -314,7 +314,7 @@ def pair_columns(width, protected):
 
 
 def is_header_row(cells, station_col):
-    """A header the OCR repeated inside the body (e.g. sheet 32, folio 61)."""
+    """A header the OCR repeated inside the body (e.g. scan 32, folio 61)."""
     low = [c.strip().lower() for c in cells]
     if station_col < len(low) and low[station_col] in HEADER_WORDS:
         return True
@@ -322,7 +322,7 @@ def is_header_row(cells, station_col):
 
 
 def train_names(items, pairs, shape, table_index, header_cells):
-    """Train numbers: from the header row on suburban sheets, else the caption.
+    """Train numbers: from the header row on suburban pages, else the caption.
 
     Only used to name a finding, so a positional fallback is good enough.
     """
@@ -337,8 +337,8 @@ def train_names(items, pairs, shape, table_index, header_cells):
     return [f"?{table_index}.{i + 1}" for i in range(len(pairs))]
 
 
-def read_half(sheet, folio, shape, items, report):
-    """One half sheet: its train columns, and its (milepost, station) pairs."""
+def read_half(scan, folio, shape, items, report):
+    """One book page: its train columns, and its (milepost, station) pairs."""
     station_col, protected = SHAPE_RULES[shape]
     destination = route_destination(items) if shape == "distance" else None
     declared = MILEPOSTING.get(destination)
@@ -362,7 +362,7 @@ def read_half(sheet, folio, shape, items, report):
         # A repeated header inside the body restarts the station list, so the
         # segments either side are separate runs and must not be compared. The
         # header rows carry the train numbers of the segment that follows them
-        # -- on a sheet the OCR left without a head rule they are the only
+        # -- on a page the OCR left without a head rule they are the only
         # place the numbers appear.
         segments, cur, cur_head = [], [], dict(head)
         for r in t["items"]:
@@ -386,7 +386,7 @@ def read_half(sheet, folio, shape, items, report):
             if shape == "distance":
                 kms = [parse_km(c[1]) if len(c) > 1 else None for c in seg]
                 zones = km_zones(kms)
-                mileposts += zone_mileposts(sheet, folio, shape, seg, kms, zones,
+                mileposts += zone_mileposts(scan, folio, shape, seg, kms, zones,
                                             destination, declared, report)
             for (a, b), name in zip(pairs, names):
                 stops = []
@@ -399,11 +399,11 @@ def read_half(sheet, folio, shape, items, report):
                                       zones[ri] if zones else 0))
                 if any(s.timed for s in stops):
                     label = name if len(segments) == 1 else f"{name} (part {seg_i + 1})"
-                    columns.append(Column(sheet, folio, shape, label, stops))
+                    columns.append(Column(scan, folio, shape, label, stops))
     return columns, mileposts
 
 
-def zone_mileposts(sheet, folio, shape, rows, kms, zones, destination, declared, report):
+def zone_mileposts(scan, folio, shape, rows, kms, zones, destination, declared, report):
     """The (reckoning, milepost, station) pairs of one table, zone by zone.
 
     A zone the route does not declare is reported rather than filed: it is
@@ -417,7 +417,7 @@ def zone_mileposts(sheet, folio, shape, rows, kms, zones, destination, declared,
         known = [kms[i] for i in rows_in if kms[i] is not None]
         if reckoning is None or (declared and reckoning not in declared):
             if known:
-                where = Where(sheet, folio, shape, "—", None,
+                where = Where(scan, folio, shape, "—", None,
                               [(rows_in[0], 1), (rows_in[-1], 1)])
                 route = f"route «{destination}»" if destination else "route not printed"
                 out_of = (f"{reckoning!r}, which {route} does not use"
@@ -431,13 +431,13 @@ def zone_mileposts(sheet, folio, shape, rows, kms, zones, destination, declared,
         for i in rows_in:
             name = rows[i][0].strip() if rows[i] else ""
             if kms[i] is not None and name:
-                where = Where(sheet, folio, shape, "—", name, [(i, 0), (i, 1)])
+                where = Where(scan, folio, shape, "—", name, [(i, 0), (i, 1)])
                 out.append((reckoning, kms[i], name, where))
     return out
 
 
 def km_zones(kms):
-    """A zone index per row: the mileposting resets at a junction, mid-sheet.
+    """A zone index per row: the mileposting resets at a junction, mid-page.
 
     A reset shows up either as a step no leg could be (`max_leg_km`) or as the
     kilometres turning round. The row that carries the new number opens the new
@@ -491,11 +491,11 @@ def route_destination(items):
 def read_book(src, report):
     """All columns in the book, plus the (milepost, station) pairs."""
     columns, mileposts = [], []
-    for path in sorted(src.glob("page-*.md"), key=lambda p: int(re.findall(r"\d+", p.name)[0])):
-        page = parse_book_page(path.read_text())
-        sheet = page["sheet"]
-        shapes = page["shapes"]
-        for i, half in enumerate(page["halves"]):
+    for path in sorted(src.glob("scan-*.md"), key=lambda p: int(re.findall(r"\d+", p.name)[0])):
+        parsed = parse_scan_file(path.read_text())
+        scan = parsed["scan"]
+        shapes = parsed["shapes"]
+        for i, half in enumerate(parsed["halves"]):
             shape = shapes[i] if i < len(shapes) else "UNKNOWN"
             folio = half["folio"]
             if shape in SKIP_SHAPES:
@@ -504,10 +504,10 @@ def read_book(src, report):
                 # Skipped **and reported**: a quiet fallback is what let a
                 # whole chapter sit unnormalized.
                 report.append(Finding(
-                    0, 1.0, 0, Where(sheet, folio, shape, "—"),
+                    0, 1.0, 0, Where(scan, folio, shape, "—"),
                     f"shape {shape!r} — not checked, no rules apply to it"))
                 continue
-            cols, mps = read_half(sheet, folio, shape, half["items"], report)
+            cols, mps = read_half(scan, folio, shape, half["items"], report)
             columns.extend(cols)
             mileposts.extend(mps)
     return columns, mileposts
@@ -629,7 +629,7 @@ def rule2_dwells(col, dwells):
 
 
 def rule3_speeds(col, speeds, out):
-    """Implied speed, dkm/dt, on the distance sheets.
+    """Implied speed, dkm/dt, on the distance pages.
 
     The only rule that crosses the two number systems on the page: it ties the
     printed times to the printed mileposts.
@@ -776,7 +776,7 @@ def rule5_mileposts(mileposts, out):
                         0, 8.0 + len(counts[best]) - len(wheres), 5, where,
                         f"{label} {fmt(key)} is {fmt(other)} here but "
                         f"{fmt(best)} on {len(counts[best])} other "
-                        f"{reckoning} sheet(s)",
+                        f"{reckoning} page(s)",
                         {"variants": ", ".join(f"{fmt(k)}×{len(v)}" for k, v in counts.items())}))
 
     report(by_km, "milepost", lambda k: f"{k:.1f} км" if isinstance(k, float) else str(k),
@@ -804,7 +804,7 @@ def collapse(findings):
     # column misaligned by a row, which is worse than a bad digit.
     by_col = defaultdict(list)
     for f in clusters:
-        owners = {(sheet, folio, train) for sheet, folio, train, _, _ in f.cells}
+        owners = {(scan, folio, train) for scan, folio, train, _, _ in f.cells}
         if len(owners) == 1:
             cols = frozenset(c for *_, c in f.cells)
             by_col[(owners.pop(), cols)].append(f)
@@ -819,8 +819,8 @@ def collapse(findings):
                 continue
             if len(run) >= CONFIG["misalign_run"]:
                 rows = sorted({r for g in run for *_, r, _ in g.cells})
-                (sheet, folio, train), cols = key
-                where = Where(sheet, folio, run[0].where.shape, train,
+                (scan, folio, train), cols = key
+                where = Where(scan, folio, run[0].where.shape, train,
                               f"rows {rows[0]}–{rows[-1]}",
                               [(r, c) for r in rows for c in sorted(cols)])
                 merged = Finding(
@@ -865,7 +865,7 @@ def validate(src):
 def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--src", type=Path, required=True, help="page files directory to read")
+    ap.add_argument("--src", type=Path, required=True, help="scan files directory to read")
     ap.add_argument("--limit", type=int, default=40, help="findings to print (0 = all)")
     ap.add_argument("--rule", type=int, action="append", help="only these rules")
     ap.add_argument("--impossible", action="store_true", help="only the impossible ones")

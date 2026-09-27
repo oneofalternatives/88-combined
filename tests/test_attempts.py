@@ -32,11 +32,11 @@ def test_finish_and_require_finished(root):
 
 
 def test_add_attempt_numbers_rows(root):
-    attempts.add_attempt("a.djvu", "page-renders-00", "ocr-00", note="API")
-    attempts.add_attempt("a.djvu", "page-renders-00", "ocr-01")
+    attempts.add_attempt("a.djvu", "scans-00", "ocr-00", note="API")
+    attempts.add_attempt("a.djvu", "scans-00", "ocr-01")
     rows = attempts._rows()[1]
-    assert rows == [["00", "a.djvu", "page-renders-00", "ocr-00", "–", "API"],
-                    ["01", "a.djvu", "page-renders-00", "ocr-01", "–", ""]]
+    assert rows == [["00", "a.djvu", "scans-00", "ocr-00", "–", "API"],
+                    ["01", "a.djvu", "scans-00", "ocr-01", "–", ""]]
 
 
 def test_set_extracted_fills_the_free_row(root):

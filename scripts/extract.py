@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Stage 1: Mistral OCR export -> one editable markdown file per book page.
+"""Stage 1: Mistral OCR export -> one editable markdown file per scan.
 
 The OCR chops a single printed timetable into several blocks and loses the
 column count wherever train times are blank. Both are repaired here, once, by
-reassembling each half sheet into ONE table whose width comes from the
+reassembling each book page into ONE table whose width comes from the
 "№ поездов" header. The result goes to attempts/extracted-NN. A copy of it in
 attempts/final-NN is the source of truth from then on: it is hand-corrected
 against the scans, and the builders read only it.
@@ -21,7 +21,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 
 import attempts
-from book_model import (header_width, is_station_block, load_pages,
+from book_model import (header_width, is_station_block, load_scans,
                         parse_table, split_halves, station_span)
 
 
@@ -104,7 +104,7 @@ def shape_of(blocks):
     return None
 
 
-def caption(blocks, page_h):
+def caption(blocks, scan_h):
     """Train numbers and route names printed above the table.
 
     The OCR types these inconsistently as header or footer even when they sit
@@ -116,7 +116,7 @@ def caption(blocks, page_h):
     then reads left to right.
     """
     top = [b for b in blocks
-           if b["type"] in ("header", "footer") and b["topLeftY"] < 0.12 * page_h]
+           if b["type"] in ("header", "footer") and b["topLeftY"] < 0.12 * scan_h]
     lines: list[list[dict]] = []
     for b in sorted(top, key=lambda b: b["topLeftY"]):
         mid = (b["topLeftY"] + b["bottomRightY"]) / 2
@@ -129,8 +129,8 @@ def caption(blocks, page_h):
             for ln in lines]
 
 
-def half_rows(blocks, page_h, sheet, report):
-    """Reassemble one half sheet into (rows, header_count, width, shape)."""
+def half_rows(blocks, scan_h, scan, report):
+    """Reassemble one book page into (rows, header_count, width, shape)."""
     shape = shape_of(blocks)
     if not shape:
         return None
@@ -172,12 +172,12 @@ def half_rows(blocks, page_h, sheet, report):
                 r = Divider(r)
             rows.append(r)
     if name == "distance" and rows:
-        rows = realign(rows, max(header_count, 1), st_col, 1, sheet, report)
+        rows = realign(rows, max(header_count, 1), st_col, 1, scan, report)
     return (rows, header_count, width, name) if rows else None
 
 
 
-def realign(rows, header_count, st_col, dist_col, sheet, report):
+def realign(rows, header_count, st_col, dist_col, scan, report):
     """Re-pair the station column with the columns of times beside it.
 
     The OCR reads the two as independent streams, and either can slip:
@@ -214,14 +214,14 @@ def realign(rows, header_count, st_col, dist_col, sheet, report):
         wrapped = (names and KM_RE.match(r[st_col]) and not KM_RE.match(names[-1]))
         if wrapped:
             names[-1] += f" {r[st_col]}"
-            report.append(f"sheet {sheet}: joined wrapped name {names[-1]!r}")
+            report.append(f"scan {scan}: joined wrapped name {names[-1]!r}")
             times = any(c not in BLANK for i, c in enumerate(r)
                         if i not in (st_col, dist_col))
             if r[dist_col] in BLANK or not times:
                 # A stop of its own would carry both a distance and times. With
                 # either missing this is a stray line, not a row: its cells stay
                 # with the stop above.
-                absorb(seg["data"], r, st_col, sheet, report)
+                absorb(seg["data"], r, st_col, scan, report)
                 continue
         elif r[st_col]:
             names.append(r[st_col])
@@ -231,12 +231,12 @@ def realign(rows, header_count, st_col, dist_col, sheet, report):
         if isinstance(seg, Divider):
             out.append(seg)
             continue
-        names, data = dedupe(seg["names"], seen, sheet, report), seg["data"]
+        names, data = dedupe(seg["names"], seen, scan, report), seg["data"]
         # A row with neither a name nor a time is the OCR running off the foot
         # of the column, not a stop: it is the padding, so it goes first.
         data = data[:len(data) - trailing_blanks(data)]
         if len(names) != len(data):
-            report.append(f"sheet {sheet}: {len(names)} station name(s) against "
+            report.append(f"scan {scan}: {len(names)} station name(s) against "
                           f"{len(data)} row(s) of times; the tail of the shorter "
                           "column is missing from the scan")
         for i, row in enumerate(data):
@@ -258,7 +258,7 @@ def trailing_blanks(data) -> int:
     return n
 
 
-def dedupe(names, seen, sheet, report):
+def dedupe(names, seen, scan, report):
     """Drop names the OCR read twice, keeping the first of each.
 
     Wraps are already rejoined by this point, which matters: the prefix of a
@@ -268,7 +268,7 @@ def dedupe(names, seen, sheet, report):
     out = []
     for name in names:
         if name in seen:
-            report.append(f"sheet {sheet}: dropped a second {name!r} -- the OCR "
+            report.append(f"scan {scan}: dropped a second {name!r} -- the OCR "
                           "read part of the station column twice")
             continue
         seen.add(name)
@@ -276,7 +276,7 @@ def dedupe(names, seen, sheet, report):
     return out
 
 
-def absorb(data, r, st_col, sheet, report):
+def absorb(data, r, st_col, scan, report):
     """Fold cells that carry no distance into the stop printed above them.
 
     With no distance of their own they cannot be placed, so they are only
@@ -284,14 +284,14 @@ def absorb(data, r, st_col, sheet, report):
     OCR smearing two rows together and is dropped.
     """
     if not data:
-        report.append(f"sheet {sheet}: DROPPED loose cells above the first stop: {r}")
+        report.append(f"scan {scan}: DROPPED loose cells above the first stop: {r}")
         return
     prev = data[-1]
     clash = [i for i, c in enumerate(r)
              if i != st_col and c not in BLANK
              and prev[i] not in BLANK and prev[i] != c]
     if clash:
-        report.append(f"sheet {sheet}: DROPPED cells with no distance, they "
+        report.append(f"scan {scan}: DROPPED cells with no distance, they "
                       "contradict the row above ("
                       + ", ".join(f"col {i}: {prev[i]} vs {r[i]}" for i in clash) + ")")
         return
@@ -300,7 +300,7 @@ def absorb(data, r, st_col, sheet, report):
     for i in filled:
         prev[i] = r[i]
     if filled:
-        report.append(f"sheet {sheet}: recovered "
+        report.append(f"scan {scan}: recovered "
                       + ", ".join(f"col {i}" for i in filled)
                       + " from cells with no distance of their own")
 
@@ -354,7 +354,7 @@ def prose(blocks) -> str:
     return "\n\n".join(p for p in parts if p)
 
 
-def stray_markup(cells, sheet, report):
+def stray_markup(cells, scan, report):
     """Report a * or _ left after cleaning that is not a footnote mark.
 
     It is either emphasis on part of a cell or a mark the book really prints;
@@ -362,12 +362,12 @@ def stray_markup(cells, sheet, report):
     """
     for c in cells:
         if re.search(r"[*_]", MARKER_RE.sub("", c)):
-            report.append(f"sheet {sheet}: markup left in {c!r} -- check the scan")
+            report.append(f"scan {scan}: markup left in {c!r} -- check the scan")
 
 
-def render_page(page, n, report) -> str:
-    halves = split_halves(page)
-    page_h = page["dimensions"]["height"]
+def render_scan(scan, n, report) -> str:
+    halves = split_halves(scan)
+    scan_h = scan["dimensions"]["height"]
     spread = len(halves) == 2
     folios = [2 * n - 4, 2 * n - 3] if spread else [None]
     if n == 2:
@@ -377,12 +377,12 @@ def render_page(page, n, report) -> str:
     for half, folio in zip(halves, folios):
         body.append(f"## page {folio}" if folio is not None else "## page")
         body.append("")
-        lines = caption(half, page_h)
+        lines = caption(half, scan_h)
         stray_markup(lines, n, report)
         for line in lines:
             body.append(line)
             body.append("")
-        built = half_rows(half, page_h, n, report)
+        built = half_rows(half, scan_h, n, report)
         if built:
             rows, hc, width, name = built
             stray_markup((c for r in rows for c in r), n, report)
@@ -390,7 +390,7 @@ def render_page(page, n, report) -> str:
             body.append(as_markdown(rows, hc, width))
         else:
             if any(b["type"] == "table" for b in half):
-                report.append(f"sheet {n}: unrecognized table shape")
+                report.append(f"scan {n}: unrecognized table shape")
                 shapes.append("UNKNOWN")
             else:
                 shapes.append("prose")
@@ -398,7 +398,7 @@ def render_page(page, n, report) -> str:
         body.append("")
     head = [
         "---",
-        f"sheet: {n}",
+        f"scan: {n}",
         f"kind: {'spread' if spread else 'cover'}",
         f"folios: [{', '.join(str(f) for f in folios if f is not None)}]",
         f"shapes: [{', '.join(shapes)}]",
@@ -410,10 +410,10 @@ def render_page(page, n, report) -> str:
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("pages", nargs="*", type=int, help="sheet numbers (default: all)")
+    ap.add_argument("scans", nargs="*", type=int, help="scan numbers (default: all)")
     ap.add_argument("--force", action="store_true", help="overwrite existing files")
     ap.add_argument("--src", type=Path, required=True, help="OCR output directory")
-    ap.add_argument("--dest", type=Path, required=True, help="page files directory")
+    ap.add_argument("--dest", type=Path, required=True, help="scan files directory")
     args = ap.parse_args()
     # Output into attempts/extracted-NN makes an extraction: a finished input, a fresh
     # dir, and a manifest plus index entry once done.
@@ -423,19 +423,19 @@ def main():
         if (args.dest / "manifest.json").exists():
             sys.exit(f"{args.dest}: already finished")
 
-    pages = load_pages(args.src)
-    if missing := [n for n in args.pages if n not in pages]:
-        sys.exit(f"{args.src}: no sheet {', '.join(map(str, missing))}")
+    scans = load_scans(args.src)
+    if missing := [n for n in args.scans if n not in scans]:
+        sys.exit(f"{args.src}: no scan {', '.join(map(str, missing))}")
     args.dest.mkdir(exist_ok=True)
-    wanted = args.pages or list(pages)
+    wanted = args.scans or list(scans)
     report: list[str] = []
     tally: dict[str, int] = {}
     for n in wanted:
-        dest = args.dest / f"page-{n:02d}.md"
+        dest = args.dest / f"scan-{n:02d}.md"
         if dest.exists() and not args.force:
             print(f"skip {dest} (exists; --force to overwrite)")
             continue
-        text = render_page(pages[n], n, report)
+        text = render_scan(scans[n], n, report)
         dest.write_text(text)
         for line in text.splitlines():
             if line.startswith("shapes:"):
@@ -445,7 +445,7 @@ def main():
     if extracted:
         # Index first: if it fails, the dir stays unfinished and can be rerun.
         attempts.set_extracted(args.src.name, args.dest.name)
-        attempts.finish(args.dest, {"ocr": str(args.src), "pages": len(wanted),
+        attempts.finish(args.dest, {"ocr": str(args.src), "scans": len(wanted),
                                    "problems": len(report)})
     if report:
         print(f"\n{len(report)} PROBLEM(S) -- not guessed at, fix these:")

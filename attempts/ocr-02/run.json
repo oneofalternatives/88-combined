@@ -1,5 +1,5 @@
 {
-  "renders": "attempts/page-renders-00",
+  "renders": "attempts/scans-00",
   "model": "mistral-ocr-3",
   "settings": {
     "include_blocks": true,
