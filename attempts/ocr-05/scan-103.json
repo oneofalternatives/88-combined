@@ -1,0 +1,46 @@
+{
+ "pages": [
+  {
+   "index": 0,
+   "markdown": "Бесплатно",
+   "images": [],
+   "tables": [],
+   "hyperlinks": [],
+   "header": null,
+   "footer": null,
+   "dimensions": {
+    "dpi": 200,
+    "height": 1922,
+    "width": 1287
+   },
+   "confidence_scores": {
+    "word_confidence_scores": [
+     {
+      "text": "Бесплатно",
+      "confidence": 0.9921816852798386,
+      "start_index": 0
+     }
+    ],
+    "average_page_confidence_score": 0.9921816852798386,
+    "minimum_page_confidence_score": 0.9921816852798386
+   },
+   "blocks": [
+    {
+     "top_left_x": 215,
+     "top_left_y": 152,
+     "bottom_right_x": 399,
+     "bottom_right_y": 200,
+     "content": "Бесплатно",
+     "confidence_scores": null,
+     "type": "text"
+    }
+   ]
+  }
+ ],
+ "model": "mistral-ocr-4-1",
+ "document_annotation": null,
+ "usage_info": {
+  "pages_processed": 1,
+  "doc_size_bytes": 574060
+ }
+}

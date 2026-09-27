@@ -1,0 +1,108 @@
+{
+ "pages": [
+  {
+   "index": 0,
+   "markdown": "# ГЛАВА III И IV\n\nЛИЕЛВАРДЕ—АЙЗКРАУКЛЕ\n\nАЙЗКРАУКЛЕ—ЛИЕЛВАРДЕ\n\n91",
+   "images": [],
+   "tables": [],
+   "hyperlinks": [],
+   "header": null,
+   "footer": null,
+   "dimensions": {
+    "dpi": 200,
+    "height": 1923,
+    "width": 2387
+   },
+   "confidence_scores": {
+    "word_confidence_scores": [
+     {
+      "text": "#",
+      "confidence": 0.9465964437684026,
+      "start_index": 0
+     },
+     {
+      "text": " ГЛАВА",
+      "confidence": 0.9833844145385516,
+      "start_index": 1
+     },
+     {
+      "text": " III",
+      "confidence": 0.9985356348310723,
+      "start_index": 7
+     },
+     {
+      "text": " И",
+      "confidence": 0.9937365254448969,
+      "start_index": 11
+     },
+     {
+      "text": " IV",
+      "confidence": 0.9995754376171235,
+      "start_index": 13
+     },
+     {
+      "text": "ЛИЕЛВАРДЕ—АЙЗКРАУКЛЕ",
+      "confidence": 0.9715433727850005,
+      "start_index": 18
+     },
+     {
+      "text": "АЙЗКРАУКЛЕ—ЛИЕЛВАРДЕ",
+      "confidence": 0.9995669923944694,
+      "start_index": 40
+     },
+     {
+      "text": "91",
+      "confidence": 0.9999104818395896,
+      "start_index": 62
+     }
+    ],
+    "average_page_confidence_score": 0.9866061629023883,
+    "minimum_page_confidence_score": 0.9465964437684026
+   },
+   "blocks": [
+    {
+     "top_left_x": 1634,
+     "top_left_y": 710,
+     "bottom_right_x": 1995,
+     "bottom_right_y": 764,
+     "content": "# ГЛАВА III И IV",
+     "confidence_scores": null,
+     "type": "title"
+    },
+    {
+     "top_left_x": 1532,
+     "top_left_y": 780,
+     "bottom_right_x": 2098,
+     "bottom_right_y": 833,
+     "content": "ЛИЕЛВАРДЕ—АЙЗКРАУКЛЕ",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 1532,
+     "top_left_y": 833,
+     "bottom_right_x": 2098,
+     "bottom_right_y": 887,
+     "content": "АЙЗКРАУКЛЕ—ЛИЕЛВАРДЕ",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 2279,
+     "top_left_y": 1765,
+     "bottom_right_x": 2344,
+     "bottom_right_y": 1815,
+     "content": "91",
+     "confidence_scores": null,
+     "type": "footer"
+    }
+   ]
+  }
+ ],
+ "model": "mistral-ocr-4-1",
+ "document_annotation": null,
+ "usage_info": {
+  "pages_processed": 1,
+  "doc_size_bytes": 172475
+ }
+}

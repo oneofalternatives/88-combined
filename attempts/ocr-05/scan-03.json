@@ -1,0 +1,1326 @@
+{
+ "pages": [
+  {
+   "index": 0,
+   "markdown": "# ОГЛАВЛЕНИЕ\n\n|  № п. п. | Сообщение | Стр.  |\n| --- | --- | --- |\n|  1 | Лиелварде—Рига—Тукумс. | 6  |\n|  2 | Тикумс—Рига—Лиелварде | 49  |\n|  3 | Лиелварде—Айзкраукле | 92  |\n|  4 | Айзкраукле—Лиелварде | 93  |\n|  5' | Рига—Крустпилс, Крустпилс—Рига | 98  |\n|  6 | Рига—Саулкрасты—Лимбажи— Алоя—Руиена | 104  |\n|  7 | Руиена—Алоя—Лимбажи— Саулкрасты—Рига | 124  |\n|  8 | Рига—Елгава, Елгава—Рига | 144  |\n|  9 | Рига—Добеле—Мейтене— Можейкяй—Елгава—Крустпилс, Лиепая—Вайнёде | 154  |\n|  10 | Рига—Эргли, Эргли—Рига | 162  |\n|  11 | Рига—Валмиера, Валмиера—Рига | 170  |\n|  12 | Рига—Себеж, Даугавпилс, Бигосово, Пыталово, Лиепая, Вентспилс, Валга | 182  |\n|  13 | Рига—Пярну | 194  |\n\nПоезда, обозначенные буквой «Д», имеют остановку депо—Засулаукс.\n\nПоезда, обозначенные одной *, в ходу. Отменяются при небольшом пассажиропотоке.\n\nПоезда, обозначенные **, не назначены в обращение для возможности производства ремонтных работ. Назначаются в исключительных случаях.\n\nОтветственный за выпуск\n\nА. В. АГЕЕВ\n\n# Тексты по технике безопасности пассажирам для чтения в поездах и на вокзалах\n\n# ГРАЖДАНЕ ПАССАЖИРЫ!\n\nПользуясь железнодорожным транспортом и находясь на территории железной дороги, будьте внимательны и осторожны.\n\nНе переходите через железнодорожные пути в неустановленных местах и не перебегайте их перед близко движущимся поездом — помните, что поезд сразу остановить нельзя.\n\nНе перевозите в поездах легковоспламеняющиеся и взрывчатые вещества (керосин, бензин, спирт и т. д.).\n\nНе стойте в тамбурах вагонов и проходах, проходите в вагоны и дайте возможность сесть в поезд другим пассажирам.\n\nНе разрешается нарушать спокойствие других пассажиров, сорить и курить, играть в азартные игры, задерживать открытие или закрытие автоматических дверей вагонов.\n\nДетские вагоны предназначаются для проезда пассажиров с детьми, инвалидов и граждан престарелого возраста. Провоз собак в детских вагонах запрещается.\n\nРижское отделение Приб. жел. дор.\n\n3",
+   "images": [],
+   "tables": [],
+   "hyperlinks": [],
+   "header": null,
+   "footer": null,
+   "dimensions": {
+    "dpi": 200,
+    "height": 1923,
+    "width": 2387
+   },
+   "confidence_scores": {
+    "word_confidence_scores": [
+     {
+      "text": "#",
+      "confidence": 0.8933094388302324,
+      "start_index": 0
+     },
+     {
+      "text": " ОГЛАВЛЕНИЕ",
+      "confidence": 0.9990576316781414,
+      "start_index": 1
+     },
+     {
+      "text": "№",
+      "confidence": 0.9719123924025506,
+      "start_index": 17
+     },
+     {
+      "text": "п.",
+      "confidence": 0.9719123924025506,
+      "start_index": 19
+     },
+     {
+      "text": " п.",
+      "confidence": 0.9935758860325234,
+      "start_index": 21
+     },
+     {
+      "text": "Сообщение",
+      "confidence": 0.9935758860325234,
+      "start_index": 27
+     },
+     {
+      "text": "Стр.",
+      "confidence": 0.9935758860325234,
+      "start_index": 39
+     },
+     {
+      "text": "1",
+      "confidence": 0.9935758860325234,
+      "start_index": 70
+     },
+     {
+      "text": "Лиелварде—Рига—Тукумс.",
+      "confidence": 0.9935758860325234,
+      "start_index": 74
+     },
+     {
+      "text": "6",
+      "confidence": 0.9935758860325234,
+      "start_index": 99
+     },
+     {
+      "text": "2",
+      "confidence": 0.9935758860325234,
+      "start_index": 107
+     },
+     {
+      "text": "Тикумс—Рига—Лиелварде",
+      "confidence": 0.9935758860325234,
+      "start_index": 111
+     },
+     {
+      "text": "49",
+      "confidence": 0.9935758860325234,
+      "start_index": 135
+     },
+     {
+      "text": "3",
+      "confidence": 0.9935758860325234,
+      "start_index": 144
+     },
+     {
+      "text": "Лиелварде—Айзкраукле",
+      "confidence": 0.9935758860325234,
+      "start_index": 148
+     },
+     {
+      "text": "92",
+      "confidence": 0.9935758860325234,
+      "start_index": 171
+     },
+     {
+      "text": "4",
+      "confidence": 0.9935758860325234,
+      "start_index": 180
+     },
+     {
+      "text": "Айзкраукле—Лиелварде",
+      "confidence": 0.9935758860325234,
+      "start_index": 184
+     },
+     {
+      "text": "93",
+      "confidence": 0.9935758860325234,
+      "start_index": 207
+     },
+     {
+      "text": "5'",
+      "confidence": 0.9935758860325234,
+      "start_index": 216
+     },
+     {
+      "text": "Рига—Крустпилс,",
+      "confidence": 0.9935758860325234,
+      "start_index": 221
+     },
+     {
+      "text": " Крустпилс—Рига",
+      "confidence": 0.9941143794942092,
+      "start_index": 236
+     },
+     {
+      "text": "98",
+      "confidence": 0.9941143794942092,
+      "start_index": 254
+     },
+     {
+      "text": "6",
+      "confidence": 0.9941143794942092,
+      "start_index": 263
+     },
+     {
+      "text": "Рига—Саулкрасты—Лимбажи—",
+      "confidence": 0.9941143794942092,
+      "start_index": 267
+     },
+     {
+      "text": "Алоя—Руиена",
+      "confidence": 0.9941143794942092,
+      "start_index": 292
+     },
+     {
+      "text": "104",
+      "confidence": 0.9941143794942092,
+      "start_index": 306
+     },
+     {
+      "text": "7",
+      "confidence": 0.9941143794942092,
+      "start_index": 316
+     },
+     {
+      "text": "Руиена—Алоя—Лимбажи—",
+      "confidence": 0.9941143794942092,
+      "start_index": 320
+     },
+     {
+      "text": "Саулкрасты—Рига",
+      "confidence": 0.9941143794942092,
+      "start_index": 341
+     },
+     {
+      "text": "124",
+      "confidence": 0.9941143794942092,
+      "start_index": 359
+     },
+     {
+      "text": "8",
+      "confidence": 0.9941143794942092,
+      "start_index": 369
+     },
+     {
+      "text": "Рига—Елгава,",
+      "confidence": 0.9941143794942092,
+      "start_index": 373
+     },
+     {
+      "text": " Елгава—Рига",
+      "confidence": 0.9988761193098232,
+      "start_index": 385
+     },
+     {
+      "text": "144",
+      "confidence": 0.9988761193098232,
+      "start_index": 400
+     },
+     {
+      "text": "9",
+      "confidence": 0.9988761193098232,
+      "start_index": 410
+     },
+     {
+      "text": "Рига—Добеле—Мейтене—",
+      "confidence": 0.9988761193098232,
+      "start_index": 414
+     },
+     {
+      "text": "Можейкяй—Елгава—Крустпилс,",
+      "confidence": 0.9988761193098232,
+      "start_index": 435
+     },
+     {
+      "text": "Лиепая—Вайнёде",
+      "confidence": 0.9988761193098232,
+      "start_index": 462
+     },
+     {
+      "text": "154",
+      "confidence": 0.9988761193098232,
+      "start_index": 479
+     },
+     {
+      "text": "10",
+      "confidence": 0.9988761193098232,
+      "start_index": 489
+     },
+     {
+      "text": "Рига—Эргли,",
+      "confidence": 0.9988761193098232,
+      "start_index": 494
+     },
+     {
+      "text": " Эргли—Рига",
+      "confidence": 0.9994748647226444,
+      "start_index": 505
+     },
+     {
+      "text": "162",
+      "confidence": 0.9994748647226444,
+      "start_index": 519
+     },
+     {
+      "text": "11",
+      "confidence": 0.9994748647226444,
+      "start_index": 529
+     },
+     {
+      "text": "Рига—Валмиера,",
+      "confidence": 0.9994748647226444,
+      "start_index": 534
+     },
+     {
+      "text": " Валмиера—Рига",
+      "confidence": 0.9995912146073498,
+      "start_index": 548
+     },
+     {
+      "text": "170",
+      "confidence": 0.9995912146073498,
+      "start_index": 565
+     },
+     {
+      "text": "12",
+      "confidence": 0.9995912146073498,
+      "start_index": 575
+     },
+     {
+      "text": "Рига—Себеж,",
+      "confidence": 0.9995912146073498,
+      "start_index": 580
+     },
+     {
+      "text": " Даугавпилс,",
+      "confidence": 0.9982516858269858,
+      "start_index": 591
+     },
+     {
+      "text": " Бигосово,",
+      "confidence": 0.99758393117784,
+      "start_index": 603
+     },
+     {
+      "text": "Пыталово,",
+      "confidence": 0.99758393117784,
+      "start_index": 614
+     },
+     {
+      "text": " Лиепая,",
+      "confidence": 0.9997736021295263,
+      "start_index": 623
+     },
+     {
+      "text": " Вентспилс,",
+      "confidence": 0.9996796041568413,
+      "start_index": 631
+     },
+     {
+      "text": "Валга",
+      "confidence": 0.9996796041568413,
+      "start_index": 643
+     },
+     {
+      "text": "182",
+      "confidence": 0.9996796041568413,
+      "start_index": 651
+     },
+     {
+      "text": "13",
+      "confidence": 0.9996796041568413,
+      "start_index": 661
+     },
+     {
+      "text": "Рига—Пярну",
+      "confidence": 0.9996796041568413,
+      "start_index": 666
+     },
+     {
+      "text": "194",
+      "confidence": 0.9996796041568413,
+      "start_index": 679
+     },
+     {
+      "text": "Поезда,",
+      "confidence": 0.9998423504427522,
+      "start_index": 687
+     },
+     {
+      "text": " обозначенные",
+      "confidence": 0.9999133245744224,
+      "start_index": 694
+     },
+     {
+      "text": " буквой",
+      "confidence": 0.999757411525166,
+      "start_index": 707
+     },
+     {
+      "text": " «Д»,",
+      "confidence": 0.999850855449438,
+      "start_index": 714
+     },
+     {
+      "text": " имеют",
+      "confidence": 0.9999345583805643,
+      "start_index": 719
+     },
+     {
+      "text": " остановку",
+      "confidence": 0.9999770170070363,
+      "start_index": 725
+     },
+     {
+      "text": " депо—Засулаукс.",
+      "confidence": 0.9971188762180414,
+      "start_index": 735
+     },
+     {
+      "text": "Поезда,",
+      "confidence": 0.999766784204026,
+      "start_index": 753
+     },
+     {
+      "text": " обозначенные",
+      "confidence": 0.9999394879826838,
+      "start_index": 760
+     },
+     {
+      "text": " одной",
+      "confidence": 0.9999655497017356,
+      "start_index": 773
+     },
+     {
+      "text": " *,",
+      "confidence": 0.9953547546319068,
+      "start_index": 779
+     },
+     {
+      "text": " в",
+      "confidence": 0.9999110777746556,
+      "start_index": 782
+     },
+     {
+      "text": " ходу.",
+      "confidence": 0.9998208085477378,
+      "start_index": 784
+     },
+     {
+      "text": " Отменяются",
+      "confidence": 0.9999648778635116,
+      "start_index": 790
+     },
+     {
+      "text": " при",
+      "confidence": 0.9999979734461775,
+      "start_index": 801
+     },
+     {
+      "text": " небольшом",
+      "confidence": 0.9999860052678488,
+      "start_index": 805
+     },
+     {
+      "text": " пассажиропотоке.",
+      "confidence": 0.9997926858446615,
+      "start_index": 815
+     },
+     {
+      "text": "Поезда,",
+      "confidence": 0.9988542109401254,
+      "start_index": 834
+     },
+     {
+      "text": " обозначенные",
+      "confidence": 0.9999338043541821,
+      "start_index": 841
+     },
+     {
+      "text": " **,",
+      "confidence": 0.9995199712643261,
+      "start_index": 854
+     },
+     {
+      "text": " не",
+      "confidence": 0.9999934435319415,
+      "start_index": 858
+     },
+     {
+      "text": " назначены",
+      "confidence": 0.9998419774913246,
+      "start_index": 861
+     },
+     {
+      "text": " в",
+      "confidence": 0.9998860489022633,
+      "start_index": 871
+     },
+     {
+      "text": " обращение",
+      "confidence": 0.9999216864189636,
+      "start_index": 873
+     },
+     {
+      "text": " для",
+      "confidence": 0.9999665033109116,
+      "start_index": 883
+     },
+     {
+      "text": " возможности",
+      "confidence": 0.9999970197767496,
+      "start_index": 887
+     },
+     {
+      "text": " производства",
+      "confidence": 0.9999771123402672,
+      "start_index": 899
+     },
+     {
+      "text": " ремонтных",
+      "confidence": 0.9999963641328964,
+      "start_index": 912
+     },
+     {
+      "text": " работ.",
+      "confidence": 0.9999986035503693,
+      "start_index": 922
+     },
+     {
+      "text": " Назначаются",
+      "confidence": 0.999856219859226,
+      "start_index": 929
+     },
+     {
+      "text": " в",
+      "confidence": 0.9999790196052284,
+      "start_index": 941
+     },
+     {
+      "text": " исключительных",
+      "confidence": 0.999989144143779,
+      "start_index": 943
+     },
+     {
+      "text": " случаях.",
+      "confidence": 0.9999919600602507,
+      "start_index": 958
+     },
+     {
+      "text": "Ответственный",
+      "confidence": 0.9999988720981101,
+      "start_index": 969
+     },
+     {
+      "text": " за",
+      "confidence": 0.9999717481958249,
+      "start_index": 982
+     },
+     {
+      "text": " выпуск",
+      "confidence": 0.9999984502816872,
+      "start_index": 985
+     },
+     {
+      "text": "А.",
+      "confidence": 0.9994462269032163,
+      "start_index": 994
+     },
+     {
+      "text": " В.",
+      "confidence": 0.9999821984719574,
+      "start_index": 996
+     },
+     {
+      "text": " АГЕЕВ",
+      "confidence": 0.9983795360740838,
+      "start_index": 999
+     },
+     {
+      "text": "#",
+      "confidence": 0.9890130589396958,
+      "start_index": 1007
+     },
+     {
+      "text": " Тексты",
+      "confidence": 0.9998312897821018,
+      "start_index": 1008
+     },
+     {
+      "text": " по",
+      "confidence": 0.9999772315450165,
+      "start_index": 1015
+     },
+     {
+      "text": " технике",
+      "confidence": 0.9999965578440976,
+      "start_index": 1018
+     },
+     {
+      "text": " безопасности",
+      "confidence": 0.9999985694905718,
+      "start_index": 1026
+     },
+     {
+      "text": " пассажирам",
+      "confidence": 0.9997442053477416,
+      "start_index": 1039
+     },
+     {
+      "text": " для",
+      "confidence": 0.979151696696109,
+      "start_index": 1050
+     },
+     {
+      "text": " чтения",
+      "confidence": 0.9999850990607846,
+      "start_index": 1054
+     },
+     {
+      "text": " в",
+      "confidence": 0.999997854237364,
+      "start_index": 1061
+     },
+     {
+      "text": " поездах",
+      "confidence": 0.999411910424116,
+      "start_index": 1063
+     },
+     {
+      "text": " и",
+      "confidence": 0.9999983310727032,
+      "start_index": 1071
+     },
+     {
+      "text": " на",
+      "confidence": 0.9999902249342363,
+      "start_index": 1073
+     },
+     {
+      "text": " вокзалах",
+      "confidence": 0.9990164976870471,
+      "start_index": 1076
+     },
+     {
+      "text": "#",
+      "confidence": 0.9579122415395819,
+      "start_index": 1087
+     },
+     {
+      "text": " ГРАЖДАНЕ",
+      "confidence": 0.9999469023312806,
+      "start_index": 1088
+     },
+     {
+      "text": " ПАССАЖИРЫ!",
+      "confidence": 0.9996584576546439,
+      "start_index": 1097
+     },
+     {
+      "text": "Пользуясь",
+      "confidence": 0.9998861001490797,
+      "start_index": 1110
+     },
+     {
+      "text": " железнодорожным",
+      "confidence": 0.9999949336315569,
+      "start_index": 1119
+     },
+     {
+      "text": " транспортом",
+      "confidence": 0.9999954899354626,
+      "start_index": 1135
+     },
+     {
+      "text": " и",
+      "confidence": 0.9999979734461775,
+      "start_index": 1147
+     },
+     {
+      "text": " находясь",
+      "confidence": 0.9999767945733252,
+      "start_index": 1149
+     },
+     {
+      "text": " на",
+      "confidence": 0.9999988079084972,
+      "start_index": 1158
+     },
+     {
+      "text": " территории",
+      "confidence": 0.9999988079084972,
+      "start_index": 1161
+     },
+     {
+      "text": " железной",
+      "confidence": 0.9999983708093707,
+      "start_index": 1172
+     },
+     {
+      "text": " дороги,",
+      "confidence": 0.9999980032485829,
+      "start_index": 1181
+     },
+     {
+      "text": " будьте",
+      "confidence": 0.9998908544465547,
+      "start_index": 1189
+     },
+     {
+      "text": " внимательны",
+      "confidence": 0.999973019959595,
+      "start_index": 1196
+     },
+     {
+      "text": " и",
+      "confidence": 0.9999897481064004,
+      "start_index": 1208
+     },
+     {
+      "text": " осторожны.",
+      "confidence": 0.9999903116566681,
+      "start_index": 1210
+     },
+     {
+      "text": "Не",
+      "confidence": 0.9998007217897762,
+      "start_index": 1223
+     },
+     {
+      "text": " переходите",
+      "confidence": 0.9999835277211764,
+      "start_index": 1225
+     },
+     {
+      "text": " через",
+      "confidence": 0.9999994039539004,
+      "start_index": 1236
+     },
+     {
+      "text": " железнодорожные",
+      "confidence": 0.9999971538892566,
+      "start_index": 1242
+     },
+     {
+      "text": " пути",
+      "confidence": 0.9999967813595916,
+      "start_index": 1258
+     },
+     {
+      "text": " в",
+      "confidence": 0.9999866487378297,
+      "start_index": 1263
+     },
+     {
+      "text": " неустановленных",
+      "confidence": 0.9999119435494986,
+      "start_index": 1265
+     },
+     {
+      "text": " местах",
+      "confidence": 0.9999754434898208,
+      "start_index": 1281
+     },
+     {
+      "text": " и",
+      "confidence": 0.9999995231630692,
+      "start_index": 1288
+     },
+     {
+      "text": " не",
+      "confidence": 0.9999963045256735,
+      "start_index": 1290
+     },
+     {
+      "text": " перебегайте",
+      "confidence": 0.999463118458461,
+      "start_index": 1293
+     },
+     {
+      "text": " их",
+      "confidence": 0.9999800924450729,
+      "start_index": 1305
+     },
+     {
+      "text": " перед",
+      "confidence": 0.9999818805158571,
+      "start_index": 1308
+     },
+     {
+      "text": " близко",
+      "confidence": 0.9998633384226864,
+      "start_index": 1314
+     },
+     {
+      "text": " движущимся",
+      "confidence": 0.9997697897361976,
+      "start_index": 1321
+     },
+     {
+      "text": " поездом",
+      "confidence": 0.9995806161356529,
+      "start_index": 1332
+     },
+     {
+      "text": " —",
+      "confidence": 0.999963523288439,
+      "start_index": 1340
+     },
+     {
+      "text": " помните,",
+      "confidence": 0.9999943839572303,
+      "start_index": 1342
+     },
+     {
+      "text": " что",
+      "confidence": 0.9999995231630692,
+      "start_index": 1351
+     },
+     {
+      "text": " поезд",
+      "confidence": 0.9999868871505255,
+      "start_index": 1355
+     },
+     {
+      "text": " сразу",
+      "confidence": 0.9999936819476216,
+      "start_index": 1361
+     },
+     {
+      "text": " остановить",
+      "confidence": 0.9998459698340845,
+      "start_index": 1367
+     },
+     {
+      "text": " нельзя.",
+      "confidence": 0.9999980926550478,
+      "start_index": 1378
+     },
+     {
+      "text": "Не",
+      "confidence": 0.9998152597371771,
+      "start_index": 1388
+     },
+     {
+      "text": " перевозите",
+      "confidence": 0.9992893462618183,
+      "start_index": 1390
+     },
+     {
+      "text": " в",
+      "confidence": 0.9999938011552557,
+      "start_index": 1401
+     },
+     {
+      "text": " поездах",
+      "confidence": 0.9997879261421786,
+      "start_index": 1403
+     },
+     {
+      "text": " легковоспламеняющиеся",
+      "confidence": 0.9996236289651198,
+      "start_index": 1411
+     },
+     {
+      "text": " и",
+      "confidence": 0.9999779467683537,
+      "start_index": 1433
+     },
+     {
+      "text": " взрывчатые",
+      "confidence": 0.9999898998496755,
+      "start_index": 1435
+     },
+     {
+      "text": " вещества",
+      "confidence": 0.9999903441405488,
+      "start_index": 1446
+     },
+     {
+      "text": " (керосин,",
+      "confidence": 0.9998584929744598,
+      "start_index": 1455
+     },
+     {
+      "text": " бензин,",
+      "confidence": 0.9999462248041172,
+      "start_index": 1465
+     },
+     {
+      "text": " спирт",
+      "confidence": 0.9999979337099616,
+      "start_index": 1473
+     },
+     {
+      "text": " и",
+      "confidence": 0.9999994039539004,
+      "start_index": 1479
+     },
+     {
+      "text": " т.",
+      "confidence": 0.999990820983827,
+      "start_index": 1481
+     },
+     {
+      "text": " д.).",
+      "confidence": 0.9999065988095469,
+      "start_index": 1484
+     },
+     {
+      "text": "Не",
+      "confidence": 0.9998982056286041,
+      "start_index": 1491
+     },
+     {
+      "text": " стойте",
+      "confidence": 0.9996539304475673,
+      "start_index": 1493
+     },
+     {
+      "text": " в",
+      "confidence": 0.9999965429424904,
+      "start_index": 1500
+     },
+     {
+      "text": " тамбурах",
+      "confidence": 0.9997344697146079,
+      "start_index": 1502
+     },
+     {
+      "text": " вагонов",
+      "confidence": 0.9999619140866901,
+      "start_index": 1511
+     },
+     {
+      "text": " и",
+      "confidence": 0.9999969005680498,
+      "start_index": 1519
+     },
+     {
+      "text": " проходах,",
+      "confidence": 0.9998256888368194,
+      "start_index": 1521
+     },
+     {
+      "text": " проходите",
+      "confidence": 0.9999317931121178,
+      "start_index": 1531
+     },
+     {
+      "text": " в",
+      "confidence": 0.9999924898711537,
+      "start_index": 1541
+     },
+     {
+      "text": " вагоны",
+      "confidence": 0.9998286100454472,
+      "start_index": 1543
+     },
+     {
+      "text": " и",
+      "confidence": 0.9999945164027223,
+      "start_index": 1550
+     },
+     {
+      "text": " дайте",
+      "confidence": 0.9999207379451116,
+      "start_index": 1552
+     },
+     {
+      "text": " возможность",
+      "confidence": 0.9999922514562126,
+      "start_index": 1558
+     },
+     {
+      "text": " сесть",
+      "confidence": 0.9999679342417446,
+      "start_index": 1570
+     },
+     {
+      "text": " в",
+      "confidence": 0.9999955892755635,
+      "start_index": 1576
+     },
+     {
+      "text": " поезд",
+      "confidence": 0.9998763952461884,
+      "start_index": 1578
+     },
+     {
+      "text": " другим",
+      "confidence": 0.9999994039539004,
+      "start_index": 1584
+     },
+     {
+      "text": " пассажирам.",
+      "confidence": 0.9999657784956155,
+      "start_index": 1591
+     },
+     {
+      "text": "Не",
+      "confidence": 0.9997264895188203,
+      "start_index": 1605
+     },
+     {
+      "text": " разрешается",
+      "confidence": 0.9999979138418637,
+      "start_index": 1607
+     },
+     {
+      "text": " нарушать",
+      "confidence": 0.9999905031447721,
+      "start_index": 1619
+     },
+     {
+      "text": " спокойствие",
+      "confidence": 0.9999679240588379,
+      "start_index": 1628
+     },
+     {
+      "text": " других",
+      "confidence": 0.9999973774024795,
+      "start_index": 1640
+     },
+     {
+      "text": " пассажиров,",
+      "confidence": 0.9999846919354015,
+      "start_index": 1647
+     },
+     {
+      "text": " сорить",
+      "confidence": 0.9993425857765525,
+      "start_index": 1659
+     },
+     {
+      "text": " и",
+      "confidence": 0.9999988079084972,
+      "start_index": 1666
+     },
+     {
+      "text": " курить,",
+      "confidence": 0.999981210049305,
+      "start_index": 1668
+     },
+     {
+      "text": " играть",
+      "confidence": 0.9999905825550351,
+      "start_index": 1676
+     },
+     {
+      "text": " в",
+      "confidence": 0.9999794964234012,
+      "start_index": 1683
+     },
+     {
+      "text": " азартные",
+      "confidence": 0.9999950329804702,
+      "start_index": 1685
+     },
+     {
+      "text": " игры,",
+      "confidence": 0.9999986688314144,
+      "start_index": 1694
+     },
+     {
+      "text": " задерживать",
+      "confidence": 0.9999102540846367,
+      "start_index": 1700
+     },
+     {
+      "text": " открытие",
+      "confidence": 0.9999636426736881,
+      "start_index": 1712
+     },
+     {
+      "text": " или",
+      "confidence": 0.9999747282700929,
+      "start_index": 1721
+     },
+     {
+      "text": " закрытие",
+      "confidence": 0.9996848253422094,
+      "start_index": 1725
+     },
+     {
+      "text": " автоматических",
+      "confidence": 0.999837677251803,
+      "start_index": 1734
+     },
+     {
+      "text": " дверей",
+      "confidence": 0.999984316003319,
+      "start_index": 1749
+     },
+     {
+      "text": " вагонов.",
+      "confidence": 0.9999921454997002,
+      "start_index": 1756
+     },
+     {
+      "text": "Детские",
+      "confidence": 0.9999768068846907,
+      "start_index": 1767
+     },
+     {
+      "text": " вагоны",
+      "confidence": 0.9999606633336171,
+      "start_index": 1774
+     },
+     {
+      "text": " предназначаются",
+      "confidence": 0.9982118578308073,
+      "start_index": 1781
+     },
+     {
+      "text": " для",
+      "confidence": 0.9999995231630692,
+      "start_index": 1797
+     },
+     {
+      "text": " проезда",
+      "confidence": 0.9999772912726765,
+      "start_index": 1801
+     },
+     {
+      "text": " пассажиров",
+      "confidence": 0.9999811222431597,
+      "start_index": 1809
+     },
+     {
+      "text": " с",
+      "confidence": 0.9999952316511552,
+      "start_index": 1820
+     },
+     {
+      "text": " детьми,",
+      "confidence": 0.9999920875504642,
+      "start_index": 1822
+     },
+     {
+      "text": " инвалидов",
+      "confidence": 0.9999747999868516,
+      "start_index": 1830
+     },
+     {
+      "text": " и",
+      "confidence": 1.0,
+      "start_index": 1840
+     },
+     {
+      "text": " граждан",
+      "confidence": 0.9999998807907247,
+      "start_index": 1842
+     },
+     {
+      "text": " престарелого",
+      "confidence": 0.9982706020486642,
+      "start_index": 1850
+     },
+     {
+      "text": " возраста.",
+      "confidence": 0.9999998688697993,
+      "start_index": 1863
+     },
+     {
+      "text": " Провоз",
+      "confidence": 0.9979048950158543,
+      "start_index": 1873
+     },
+     {
+      "text": " собак",
+      "confidence": 0.9999875229346663,
+      "start_index": 1880
+     },
+     {
+      "text": " в",
+      "confidence": 0.9999979734461775,
+      "start_index": 1886
+     },
+     {
+      "text": " детских",
+      "confidence": 0.9999954700712407,
+      "start_index": 1888
+     },
+     {
+      "text": " вагонах",
+      "confidence": 0.9997139236224303,
+      "start_index": 1896
+     },
+     {
+      "text": " запрещается.",
+      "confidence": 0.9999968180419513,
+      "start_index": 1904
+     },
+     {
+      "text": "Рижское",
+      "confidence": 0.9997229650412128,
+      "start_index": 1919
+     },
+     {
+      "text": " отделение",
+      "confidence": 0.9999984502826536,
+      "start_index": 1926
+     },
+     {
+      "text": " Приб.",
+      "confidence": 0.9996456293761301,
+      "start_index": 1936
+     },
+     {
+      "text": " жел.",
+      "confidence": 0.9999512222154966,
+      "start_index": 1942
+     },
+     {
+      "text": " дор.",
+      "confidence": 0.9999627844138268,
+      "start_index": 1947
+     },
+     {
+      "text": "3",
+      "confidence": 0.9999995231630692,
+      "start_index": 1954
+     }
+    ],
+    "average_page_confidence_score": 0.9979375150013781,
+    "minimum_page_confidence_score": 0.8933094388302324
+   },
+   "blocks": [
+    {
+     "top_left_x": 459,
+     "top_left_y": 283,
+     "bottom_right_x": 736,
+     "bottom_right_y": 325,
+     "content": "# ОГЛАВЛЕНИЕ",
+     "confidence_scores": null,
+     "type": "title"
+    },
+    {
+     "top_left_x": 86,
+     "top_left_y": 341,
+     "bottom_right_x": 1113,
+     "bottom_right_y": 1184,
+     "content": "|  № п. п. | Сообщение | Стр.  |\n| --- | --- | --- |\n|  1 | Лиелварде—Рига—Тукумс. | 6  |\n|  2 | Тикумс—Рига—Лиелварде | 49  |\n|  3 | Лиелварде—Айзкраукле | 92  |\n|  4 | Айзкраукле—Лиелварде | 93  |\n|  5' | Рига—Крустпилс, Крустпилс—Рига | 98  |\n|  6 | Рига—Саулкрасты—Лимбажи— Алоя—Руиена | 104  |\n|  7 | Руиена—Алоя—Лимбажи— Саулкрасты—Рига | 124  |\n|  8 | Рига—Елгава, Елгава—Рига | 144  |\n|  9 | Рига—Добеле—Мейтене— Можейкяй—Елгава—Крустпилс, Лиепая—Вайнёде | 154  |\n|  10 | Рига—Эргли, Эргли—Рига | 162  |\n|  11 | Рига—Валмиера, Валмиера—Рига | 170  |\n|  12 | Рига—Себеж, Даугавпилс, Бигосово, Пыталово, Лиепая, Вентспилс, Валга | 182  |\n|  13 | Рига—Пярну | 194  |",
+     "confidence_scores": null,
+     "type": "table",
+     "table_id": null
+    },
+    {
+     "top_left_x": 72,
+     "top_left_y": 1215,
+     "bottom_right_x": 1099,
+     "bottom_right_y": 1292,
+     "content": "Поезда, обозначенные буквой «Д», имеют остановку депо—Засулаукс.",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 72,
+     "top_left_y": 1292,
+     "bottom_right_x": 1097,
+     "bottom_right_y": 1365,
+     "content": "Поезда, обозначенные одной *, в ходу. Отменяются при небольшом пассажиропотоке.",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 72,
+     "top_left_y": 1365,
+     "bottom_right_x": 1099,
+     "bottom_right_y": 1474,
+     "content": "Поезда, обозначенные **, не назначены в обращение для возможности производства ремонтных работ. Назначаются в исключительных случаях.",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 356,
+     "top_left_y": 1609,
+     "bottom_right_x": 800,
+     "bottom_right_y": 1654,
+     "content": "Ответственный за выпуск",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 464,
+     "top_left_y": 1655,
+     "bottom_right_x": 700,
+     "bottom_right_y": 1694,
+     "content": "А. В. АГЕЕВ",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 1209,
+     "top_left_y": 314,
+     "bottom_right_x": 2236,
+     "bottom_right_y": 404,
+     "content": "# Тексты по технике безопасности пассажирам для чтения в поездах и на вокзалах",
+     "confidence_scores": null,
+     "type": "title"
+    },
+    {
+     "top_left_x": 1415,
+     "top_left_y": 452,
+     "bottom_right_x": 2038,
+     "bottom_right_y": 506,
+     "content": "# ГРАЖДАНЕ ПАССАЖИРЫ!",
+     "confidence_scores": null,
+     "type": "title"
+    },
+    {
+     "top_left_x": 1209,
+     "top_left_y": 556,
+     "bottom_right_x": 2241,
+     "bottom_right_y": 693,
+     "content": "Пользуясь железнодорожным транспортом и находясь на территории железной дороги, будьте внимательны и осторожны.",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 1211,
+     "top_left_y": 693,
+     "bottom_right_x": 2246,
+     "bottom_right_y": 874,
+     "content": "Не переходите через железнодорожные пути в неустановленных местах и не перебегайте их перед близко движущимся поездом — помните, что поезд сразу остановить нельзя.",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 1216,
+     "top_left_y": 874,
+     "bottom_right_x": 2248,
+     "bottom_right_y": 1009,
+     "content": "Не перевозите в поездах легковоспламеняющиеся и взрывчатые вещества (керосин, бензин, спирт и т. д.).",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 1219,
+     "top_left_y": 1005,
+     "bottom_right_x": 2248,
+     "bottom_right_y": 1141,
+     "content": "Не стойте в тамбурах вагонов и проходах, проходите в вагоны и дайте возможность сесть в поезд другим пассажирам.",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 1219,
+     "top_left_y": 1138,
+     "bottom_right_x": 2253,
+     "bottom_right_y": 1319,
+     "content": "Не разрешается нарушать спокойствие других пассажиров, сорить и курить, играть в азартные игры, задерживать открытие или закрытие автоматических дверей вагонов.",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 1223,
+     "top_left_y": 1317,
+     "bottom_right_x": 2258,
+     "bottom_right_y": 1501,
+     "content": "Детские вагоны предназначаются для проезда пассажиров с детьми, инвалидов и граждан престарелого возраста. Провоз собак в детских вагонах запрещается.",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 1517,
+     "top_left_y": 1523,
+     "bottom_right_x": 2263,
+     "bottom_right_y": 1573,
+     "content": "Рижское отделение Приб. жел. дор.",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 2236,
+     "top_left_y": 1784,
+     "bottom_right_x": 2265,
+     "bottom_right_y": 1821,
+     "content": "3",
+     "confidence_scores": null,
+     "type": "footer"
+    }
+   ]
+  }
+ ],
+ "model": "mistral-ocr-4-1",
+ "document_annotation": null,
+ "usage_info": {
+  "pages_processed": 1,
+  "doc_size_bytes": 345723
+ }
+}

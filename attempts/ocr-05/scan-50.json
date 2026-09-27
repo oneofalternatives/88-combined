@@ -1,0 +1,122 @@
+{
+ "pages": [
+  {
+   "index": 0,
+   "markdown": "# ГЛАВА V\n\nРИГА—КРУСТПИЛС\n\nКРУСТПИЛС—РИГА\n\n7 — 1055\n\n97",
+   "images": [],
+   "tables": [],
+   "hyperlinks": [],
+   "header": null,
+   "footer": null,
+   "dimensions": {
+    "dpi": 200,
+    "height": 1923,
+    "width": 2387
+   },
+   "confidence_scores": {
+    "word_confidence_scores": [
+     {
+      "text": "#",
+      "confidence": 0.9579121309160517,
+      "start_index": 0
+     },
+     {
+      "text": " ГЛАВА",
+      "confidence": 0.9955380315609144,
+      "start_index": 1
+     },
+     {
+      "text": " V",
+      "confidence": 0.9999362271009362,
+      "start_index": 7
+     },
+     {
+      "text": "РИГА—КРУСТПИЛС",
+      "confidence": 0.9981386957527006,
+      "start_index": 11
+     },
+     {
+      "text": "КРУСТПИЛС—РИГА",
+      "confidence": 0.9999139339416141,
+      "start_index": 27
+     },
+     {
+      "text": "7",
+      "confidence": 0.9999442131656885,
+      "start_index": 43
+     },
+     {
+      "text": " —",
+      "confidence": 0.9974622917727444,
+      "start_index": 44
+     },
+     {
+      "text": " 1055",
+      "confidence": 0.8274112602627895,
+      "start_index": 46
+     },
+     {
+      "text": "97",
+      "confidence": 0.9999958276922101,
+      "start_index": 53
+     }
+    ],
+    "average_page_confidence_score": 0.9751391791295165,
+    "minimum_page_confidence_score": 0.8274112602627895
+   },
+   "blocks": [
+    {
+     "top_left_x": 1713,
+     "top_left_y": 689,
+     "bottom_right_x": 1931,
+     "bottom_right_y": 730,
+     "content": "# ГЛАВА V",
+     "confidence_scores": null,
+     "type": "title"
+    },
+    {
+     "top_left_x": 1651,
+     "top_left_y": 760,
+     "bottom_right_x": 2031,
+     "bottom_right_y": 801,
+     "content": "РИГА—КРУСТПИЛС",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 1658,
+     "top_left_y": 814,
+     "bottom_right_x": 2036,
+     "bottom_right_y": 857,
+     "content": "КРУСТПИЛС—РИГА",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 1333,
+     "top_left_y": 1750,
+     "bottom_right_x": 1465,
+     "bottom_right_y": 1779,
+     "content": "7 — 1055",
+     "confidence_scores": null,
+     "type": "footer"
+    },
+    {
+     "top_left_x": 2315,
+     "top_left_y": 1731,
+     "bottom_right_x": 2358,
+     "bottom_right_y": 1767,
+     "content": "97",
+     "confidence_scores": null,
+     "type": "footer"
+    }
+   ]
+  }
+ ],
+ "model": "mistral-ocr-4-1",
+ "document_annotation": null,
+ "usage_info": {
+  "pages_processed": 1,
+  "doc_size_bytes": 145426
+ }
+}

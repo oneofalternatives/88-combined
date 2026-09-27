@@ -1,0 +1,168 @@
+{
+ "pages": [
+  {
+   "index": 0,
+   "markdown": "# ГЛАВА XII\n\nРИГА—СЕБЕЖ\n\nРИГА—ДАУГАВПИЛС\n\nРИГА—БИГОСОВО\n\nРИГА—ПЫТАЛОВО\n\nРИГА—ЛИЕПАЯ\n\nРИГА—ВЕНТСПИЛС\n\nРИГА—ВАЛГА\n\nРИГА—ПЯРНУ",
+   "images": [],
+   "tables": [],
+   "hyperlinks": [],
+   "header": null,
+   "footer": null,
+   "dimensions": {
+    "dpi": 200,
+    "height": 1923,
+    "width": 2387
+   },
+   "confidence_scores": {
+    "word_confidence_scores": [
+     {
+      "text": "#",
+      "confidence": 0.8933090594568965,
+      "start_index": 0
+     },
+     {
+      "text": " ГЛАВА",
+      "confidence": 0.9460903757723391,
+      "start_index": 1
+     },
+     {
+      "text": " XII",
+      "confidence": 0.9993888300898646,
+      "start_index": 7
+     },
+     {
+      "text": "РИГА—СЕБЕЖ",
+      "confidence": 0.9990729943568388,
+      "start_index": 13
+     },
+     {
+      "text": "РИГА—ДАУГАВПИЛС",
+      "confidence": 0.9996144294669305,
+      "start_index": 25
+     },
+     {
+      "text": "РИГА—БИГОСОВО",
+      "confidence": 0.9992549378230048,
+      "start_index": 42
+     },
+     {
+      "text": "РИГА—ПЫТАЛОВО",
+      "confidence": 0.9992198244632199,
+      "start_index": 57
+     },
+     {
+      "text": "РИГА—ЛИЕПАЯ",
+      "confidence": 0.9935580283387492,
+      "start_index": 72
+     },
+     {
+      "text": "РИГА—ВЕНТСПИЛС",
+      "confidence": 0.9980473802617966,
+      "start_index": 85
+     },
+     {
+      "text": "РИГА—ВАЛГА",
+      "confidence": 0.9996217895521868,
+      "start_index": 101
+     },
+     {
+      "text": "РИГА—ПЯРНУ",
+      "confidence": 0.9995386958318451,
+      "start_index": 113
+     }
+    ],
+    "average_page_confidence_score": 0.984246940492152,
+    "minimum_page_confidence_score": 0.8933090594568965
+   },
+   "blocks": [
+    {
+     "top_left_x": 1627,
+     "top_left_y": 612,
+     "bottom_right_x": 1892,
+     "bottom_right_y": 664,
+     "content": "# ГЛАВА XII",
+     "confidence_scores": null,
+     "type": "title"
+    },
+    {
+     "top_left_x": 1613,
+     "top_left_y": 683,
+     "bottom_right_x": 1914,
+     "bottom_right_y": 735,
+     "content": "РИГА—СЕБЕЖ",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 1548,
+     "top_left_y": 739,
+     "bottom_right_x": 1978,
+     "bottom_right_y": 789,
+     "content": "РИГА—ДАУГАВПИЛС",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 1577,
+     "top_left_y": 793,
+     "bottom_right_x": 1947,
+     "bottom_right_y": 843,
+     "content": "РИГА—БИГОСОВО",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 1572,
+     "top_left_y": 847,
+     "bottom_right_x": 1955,
+     "bottom_right_y": 897,
+     "content": "РИГА—ПЫТАЛОВО",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 1601,
+     "top_left_y": 901,
+     "bottom_right_x": 1926,
+     "bottom_right_y": 951,
+     "content": "РИГА—ЛИЕПАЯ",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 1563,
+     "top_left_y": 955,
+     "bottom_right_x": 1966,
+     "bottom_right_y": 1005,
+     "content": "РИГА—ВЕНТСПИЛС",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 1620,
+     "top_left_y": 1009,
+     "bottom_right_x": 1909,
+     "bottom_right_y": 1059,
+     "content": "РИГА—ВАЛГА",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 1615,
+     "top_left_y": 1063,
+     "bottom_right_x": 1914,
+     "bottom_right_y": 1113,
+     "content": "РИГА—ПЯРНУ",
+     "confidence_scores": null,
+     "type": "text"
+    }
+   ]
+  }
+ ],
+ "model": "mistral-ocr-4-1",
+ "document_annotation": null,
+ "usage_info": {
+  "pages_processed": 1,
+  "doc_size_bytes": 156518
+ }
+}
