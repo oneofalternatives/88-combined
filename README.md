@@ -8,6 +8,8 @@ rendered back to a PDF.
 
     attempts/ocr-NN/              Mistral OCR of the scans
       -> scripts/extract.py
+    attempts/extracted-NN/        one file per sheet, as extracted
+      -> copy
     attempts/final-NN/page-NN.md  one file per sheet, corrected by hand
       -> scripts/validate.py
     findings                      ranked "look here", judged against the scans
