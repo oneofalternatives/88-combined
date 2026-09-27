@@ -4,9 +4,9 @@
 The OCR chops a single printed timetable into several blocks and loses the
 column count wherever train times are blank. Both are repaired here, once, by
 reassembling each half sheet into ONE table whose width comes from the
-"№ поездов" header. The result, in attempts/final-NN, is the source of truth
-from then on: it is hand-corrected against the scans, and the builders read
-only it.
+"№ поездов" header. The result goes to attempts/extracted-NN. A copy of it in
+attempts/final-NN is the source of truth from then on: it is hand-corrected
+against the scans, and the builders read only it.
 
 This is a one-way door -- it refuses to overwrite an edited file unless asked.
 See spec/ocr-book-format.md.
