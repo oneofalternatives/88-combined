@@ -11,3 +11,4 @@ manifest.json; a dir without one is unfinished. Scripts fill rows; notes are you
 | 03 | 1988-1989_приг_раб.djvu | PDF, colour (not kept) | ocr-00 | extracted-03 |  |
 | 04 | 1988-1989_приг_раб.djvu | scans-01 | ocr-04 | extracted-04 | API, mistral-ocr-4-1 |
 | 05 | 1988-1989_приг_раб.djvu | scans-02 | ocr-05 | extracted-05 | API, mistral-ocr-4-1 |
+| 06 | 1988-1989_приг_раб.djvu | scans-03 | ocr-06 | extracted-06 | API, mistral-ocr-4-1 |

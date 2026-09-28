@@ -1,0 +1,103 @@
+{
+ "pages": [
+  {
+   "index": 0,
+   "markdown": "# ГЛАВАХ\n\nРИГА—ЭРГЛИ\n\nЭРГЛИ—РИГА\n\n11 — 1055",
+   "images": [],
+   "tables": [],
+   "hyperlinks": [],
+   "header": null,
+   "footer": null,
+   "dimensions": {
+    "dpi": 200,
+    "height": 1923,
+    "width": 2387
+   },
+   "confidence_scores": {
+    "word_confidence_scores": [
+     {
+      "text": "#",
+      "confidence": 0.8670345716563745,
+      "start_index": 0
+     },
+     {
+      "text": " ГЛАВАХ",
+      "confidence": 0.9649563820328328,
+      "start_index": 1
+     },
+     {
+      "text": "РИГА—ЭРГЛИ",
+      "confidence": 0.9986536831197597,
+      "start_index": 10
+     },
+     {
+      "text": "ЭРГЛИ—РИГА",
+      "confidence": 0.9999261935912086,
+      "start_index": 22
+     },
+     {
+      "text": "11",
+      "confidence": 0.7953546643854547,
+      "start_index": 34
+     },
+     {
+      "text": " —",
+      "confidence": 0.9797790956739821,
+      "start_index": 36
+     },
+     {
+      "text": " 1055",
+      "confidence": 0.9998080424890052,
+      "start_index": 38
+     }
+    ],
+    "average_page_confidence_score": 0.9436446618498026,
+    "minimum_page_confidence_score": 0.7953546643854547
+   },
+   "blocks": [
+    {
+     "top_left_x": 1603,
+     "top_left_y": 705,
+     "bottom_right_x": 1842,
+     "bottom_right_y": 758,
+     "content": "# ГЛАВАХ",
+     "confidence_scores": null,
+     "type": "title"
+    },
+    {
+     "top_left_x": 1572,
+     "top_left_y": 778,
+     "bottom_right_x": 1871,
+     "bottom_right_y": 832,
+     "content": "РИГА—ЭРГЛИ",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 1572,
+     "top_left_y": 833,
+     "bottom_right_x": 1871,
+     "bottom_right_y": 885,
+     "content": "ЭРГЛИ—РИГА",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 1207,
+     "top_left_y": 1750,
+     "bottom_right_x": 1372,
+     "bottom_right_y": 1796,
+     "content": "11 — 1055",
+     "confidence_scores": null,
+     "type": "footer"
+    }
+   ]
+  }
+ ],
+ "model": "mistral-ocr-4-1",
+ "document_annotation": null,
+ "usage_info": {
+  "pages_processed": 1,
+  "doc_size_bytes": 58445
+ }
+}

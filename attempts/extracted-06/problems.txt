@@ -1,0 +1,12 @@
+| scan | what                     | detail                                                                |
+|======|==========================|=======================================================================|
+| 3    | unrecognized table shape |                                                                       |
+| 6    | unrecognized table shape |                                                                       |
+| 79   | unrecognized table shape |                                                                       |
+| 79   | unrecognized table shape |                                                                       |
+| 81   | unrecognized table shape |                                                                       |
+| 94   | joined wrapped name      | ⟨Блок пост 867 км⟩                                                    |
+| 94   | DROPPED cells            | no distance, they contradict the row above: col 1: ⟨871,5⟩ vs ⟨866,4⟩ |
+| 94   | joined wrapped name      | ⟨Блок пост 856 км⟩                                                    |
+| 94   | joined wrapped name      | ⟨Блок пост 867 км⟩                                                    |
+| 94   | joined wrapped name      | ⟨Блок пост 856 км⟩                                                    |

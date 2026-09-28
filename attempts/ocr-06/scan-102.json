@@ -1,0 +1,455 @@
+{
+ "pages": [
+  {
+   "index": 0,
+   "markdown": "# СЛУЖЕБНОЕ РАСПИСАНИЕ  \nДВИЖЕНИЯ ПРИГОРОДНЫХ ПОЕЗДОВ  \n1988/1989 г.  \n(рабочие дни)\n\nСдано в набор 28. 03. 88. Подписано в печать 18. 04. 88. Формат 70×90/32. Бумага типографская. Гарнитура литературная. Высокая печать. 6,25 физ. печ. л.; 7,75 усл. печ. л. Тираж 3500 экз. Заказ № 1055. Бесплатно. Издательство «Транспорт» 226953, Рига, ул. Гоголя, 3. Отпечатано на производственном объединении «Полиграфистс» Государственного комитета ЛатвССР по делам издательств, полиграфии и книжной торговли, 226050 Рига, ул. Горького, 6.",
+   "images": [],
+   "tables": [],
+   "hyperlinks": [],
+   "header": null,
+   "footer": null,
+   "dimensions": {
+    "dpi": 200,
+    "height": 1923,
+    "width": 2387
+   },
+   "confidence_scores": {
+    "word_confidence_scores": [
+     {
+      "text": "#",
+      "confidence": 0.9964055742443954,
+      "start_index": 0
+     },
+     {
+      "text": " СЛУЖЕБНОЕ",
+      "confidence": 0.9957874201824292,
+      "start_index": 1
+     },
+     {
+      "text": " РАСПИСАНИЕ",
+      "confidence": 0.9999590702382202,
+      "start_index": 11
+     },
+     {
+      "text": " ",
+      "confidence": 0.8619508297349243,
+      "start_index": 22
+     },
+     {
+      "text": " ",
+      "confidence": 0.9999995231630692,
+      "start_index": 23
+     },
+     {
+      "text": "\n",
+      "confidence": 0.9999995231630692,
+      "start_index": 24
+     },
+     {
+      "text": "ДВИЖЕНИЯ",
+      "confidence": 0.9997841485654339,
+      "start_index": 25
+     },
+     {
+      "text": " ПРИГОРОДНЫХ",
+      "confidence": 0.9991061572616788,
+      "start_index": 33
+     },
+     {
+      "text": " ПОЕЗДОВ",
+      "confidence": 0.9981876175226128,
+      "start_index": 45
+     },
+     {
+      "text": " ",
+      "confidence": 0.9999821189265068,
+      "start_index": 53
+     },
+     {
+      "text": " ",
+      "confidence": 0.9999961853172863,
+      "start_index": 54
+     },
+     {
+      "text": "\n",
+      "confidence": 0.9999961853172863,
+      "start_index": 55
+     },
+     {
+      "text": "1988/1989",
+      "confidence": 0.9999434598854354,
+      "start_index": 56
+     },
+     {
+      "text": " г.",
+      "confidence": 0.9999359492086463,
+      "start_index": 65
+     },
+     {
+      "text": " ",
+      "confidence": 0.9997609233430543,
+      "start_index": 68
+     },
+     {
+      "text": " ",
+      "confidence": 1.0,
+      "start_index": 69
+     },
+     {
+      "text": "\n",
+      "confidence": 1.0,
+      "start_index": 70
+     },
+     {
+      "text": "(рабочие",
+      "confidence": 0.9941987115624568,
+      "start_index": 71
+     },
+     {
+      "text": " дни)",
+      "confidence": 0.9999693642093778,
+      "start_index": 79
+     },
+     {
+      "text": "Сдано",
+      "confidence": 0.9998855314010445,
+      "start_index": 86
+     },
+     {
+      "text": " в",
+      "confidence": 0.9992771609321472,
+      "start_index": 91
+     },
+     {
+      "text": " набор",
+      "confidence": 0.9989563401842891,
+      "start_index": 93
+     },
+     {
+      "text": " 28.",
+      "confidence": 0.9997814411513413,
+      "start_index": 99
+     },
+     {
+      "text": " 03.",
+      "confidence": 0.9964163964808874,
+      "start_index": 103
+     },
+     {
+      "text": " 88.",
+      "confidence": 0.9999639410615014,
+      "start_index": 107
+     },
+     {
+      "text": " Подписано",
+      "confidence": 0.9971116101613587,
+      "start_index": 111
+     },
+     {
+      "text": " в",
+      "confidence": 0.9999648344963598,
+      "start_index": 121
+     },
+     {
+      "text": " печать",
+      "confidence": 0.9999781343201026,
+      "start_index": 123
+     },
+     {
+      "text": " 18.",
+      "confidence": 0.9999738641627435,
+      "start_index": 130
+     },
+     {
+      "text": " 04.",
+      "confidence": 0.9999745794716637,
+      "start_index": 134
+     },
+     {
+      "text": " 88.",
+      "confidence": 0.9999969005739633,
+      "start_index": 138
+     },
+     {
+      "text": " Формат",
+      "confidence": 0.9999911104718594,
+      "start_index": 142
+     },
+     {
+      "text": " 70×90/32.",
+      "confidence": 0.9988347106154881,
+      "start_index": 149
+     },
+     {
+      "text": " Бумага",
+      "confidence": 0.9997961746893752,
+      "start_index": 159
+     },
+     {
+      "text": " типографская.",
+      "confidence": 0.9998566464858046,
+      "start_index": 166
+     },
+     {
+      "text": " Гарнитура",
+      "confidence": 0.9999298269497244,
+      "start_index": 180
+     },
+     {
+      "text": " литературная.",
+      "confidence": 0.9997350750632449,
+      "start_index": 190
+     },
+     {
+      "text": " Высокая",
+      "confidence": 0.9999241623565894,
+      "start_index": 204
+     },
+     {
+      "text": " печать.",
+      "confidence": 0.9922673608665431,
+      "start_index": 212
+     },
+     {
+      "text": " 6,25",
+      "confidence": 0.9996981578340774,
+      "start_index": 220
+     },
+     {
+      "text": " физ.",
+      "confidence": 0.9949467079762837,
+      "start_index": 225
+     },
+     {
+      "text": " печ.",
+      "confidence": 0.9998694842186145,
+      "start_index": 230
+     },
+     {
+      "text": " л.;",
+      "confidence": 0.9988114354965039,
+      "start_index": 235
+     },
+     {
+      "text": " 7,75",
+      "confidence": 0.9999949932547961,
+      "start_index": 239
+     },
+     {
+      "text": " усл.",
+      "confidence": 0.9857292668184463,
+      "start_index": 244
+     },
+     {
+      "text": " печ.",
+      "confidence": 0.9999633802854464,
+      "start_index": 249
+     },
+     {
+      "text": " л.",
+      "confidence": 0.999936943865847,
+      "start_index": 254
+     },
+     {
+      "text": " Тираж",
+      "confidence": 0.9990485375183198,
+      "start_index": 257
+     },
+     {
+      "text": " 3500",
+      "confidence": 0.9999338674361496,
+      "start_index": 263
+     },
+     {
+      "text": " экз.",
+      "confidence": 0.9994406529660184,
+      "start_index": 268
+     },
+     {
+      "text": " Заказ",
+      "confidence": 0.9993878101307186,
+      "start_index": 273
+     },
+     {
+      "text": " №",
+      "confidence": 0.9999982118638471,
+      "start_index": 279
+     },
+     {
+      "text": " 1055.",
+      "confidence": 0.9995653289258598,
+      "start_index": 281
+     },
+     {
+      "text": " Бесплатно.",
+      "confidence": 0.999849738983373,
+      "start_index": 287
+     },
+     {
+      "text": " Издательство",
+      "confidence": 0.9999867771450044,
+      "start_index": 298
+     },
+     {
+      "text": " «Транспорт»",
+      "confidence": 0.9998055679559281,
+      "start_index": 311
+     },
+     {
+      "text": " 226953,",
+      "confidence": 0.9985971388111138,
+      "start_index": 323
+     },
+     {
+      "text": " Рига,",
+      "confidence": 0.9977855204174237,
+      "start_index": 331
+     },
+     {
+      "text": " ул.",
+      "confidence": 0.999981612337936,
+      "start_index": 337
+     },
+     {
+      "text": " Гоголя,",
+      "confidence": 0.9983394555431556,
+      "start_index": 341
+     },
+     {
+      "text": " 3.",
+      "confidence": 0.9998320768092456,
+      "start_index": 349
+     },
+     {
+      "text": " Отпечатано",
+      "confidence": 0.997302991182964,
+      "start_index": 352
+     },
+     {
+      "text": " на",
+      "confidence": 0.9999850990607846,
+      "start_index": 363
+     },
+     {
+      "text": " производственном",
+      "confidence": 0.999940891480838,
+      "start_index": 366
+     },
+     {
+      "text": " объединении",
+      "confidence": 0.9998276300829145,
+      "start_index": 383
+     },
+     {
+      "text": " «Полиграфистс»",
+      "confidence": 0.965590375465589,
+      "start_index": 395
+     },
+     {
+      "text": " Государственного",
+      "confidence": 0.9999919429332241,
+      "start_index": 410
+     },
+     {
+      "text": " комитета",
+      "confidence": 0.9999335143297139,
+      "start_index": 427
+     },
+     {
+      "text": " ЛатвССР",
+      "confidence": 0.9948131210556198,
+      "start_index": 436
+     },
+     {
+      "text": " по",
+      "confidence": 0.9999896288992495,
+      "start_index": 444
+     },
+     {
+      "text": " делам",
+      "confidence": 0.9999807282300474,
+      "start_index": 447
+     },
+     {
+      "text": " издательств,",
+      "confidence": 0.9833714739545756,
+      "start_index": 453
+     },
+     {
+      "text": " полиграфии",
+      "confidence": 0.9990597475161905,
+      "start_index": 466
+     },
+     {
+      "text": " и",
+      "confidence": 0.9999914170043662,
+      "start_index": 477
+     },
+     {
+      "text": " книжной",
+      "confidence": 0.9999972581965224,
+      "start_index": 479
+     },
+     {
+      "text": " торговли,",
+      "confidence": 0.9998877021576688,
+      "start_index": 487
+     },
+     {
+      "text": " 226050",
+      "confidence": 0.9994520952848419,
+      "start_index": 497
+     },
+     {
+      "text": " Рига,",
+      "confidence": 0.9998053251242883,
+      "start_index": 504
+     },
+     {
+      "text": " ул.",
+      "confidence": 0.9999920428525222,
+      "start_index": 510
+     },
+     {
+      "text": " Горького,",
+      "confidence": 0.9833131998177536,
+      "start_index": 514
+     },
+     {
+      "text": " 6.",
+      "confidence": 0.9999708741558683,
+      "start_index": 524
+     }
+    ],
+    "average_page_confidence_score": 0.9965342998656983,
+    "minimum_page_confidence_score": 0.8619508297349243
+   },
+   "blocks": [
+    {
+     "top_left_x": 313,
+     "top_left_y": 1378,
+     "bottom_right_x": 970,
+     "bottom_right_y": 1523,
+     "content": "# СЛУЖЕБНОЕ РАСПИСАНИЕ  \nДВИЖЕНИЯ ПРИГОРОДНЫХ ПОЕЗДОВ  \n1988/1989 г.  \n(рабочие дни)",
+     "confidence_scores": null,
+     "type": "title"
+    },
+    {
+     "top_left_x": 112,
+     "top_left_y": 1528,
+     "bottom_right_x": 1156,
+     "bottom_right_y": 1754,
+     "content": "Сдано в набор 28. 03. 88. Подписано в печать 18. 04. 88. Формат 70×90/32. Бумага типографская. Гарнитура литературная. Высокая печать. 6,25 физ. печ. л.; 7,75 усл. печ. л. Тираж 3500 экз. Заказ № 1055. Бесплатно. Издательство «Транспорт» 226953, Рига, ул. Гоголя, 3. Отпечатано на производственном объединении «Полиграфистс» Государственного комитета ЛатвССР по делам издательств, полиграфии и книжной торговли, 226050 Рига, ул. Горького, 6.",
+     "confidence_scores": null,
+     "type": "text"
+    }
+   ]
+  }
+ ],
+ "model": "mistral-ocr-4-1",
+ "document_annotation": null,
+ "usage_info": {
+  "pages_processed": 1,
+  "doc_size_bytes": 81814
+ }
+}
