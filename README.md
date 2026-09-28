@@ -64,6 +64,16 @@ take the next free NN; for extract.py, name the extracted-NN dir in `--dest`. `o
 needs `MISTRAL_API_KEY`: set it in the shell, or copy `.env.example` to `.env`
 and fill it in. See `attempts/index.md`.
 
+Several extractions can be merged into one by vote:
+
+    scripts/merge.py --src attempts/extracted-A attempts/extracted-B … [--extra …] --dest attempts/extracted-NN
+
+Each `--src` run gets one vote. Where they disagree, the cell keeps every
+reading, most votes first: `⟨06.52,5 ¦ 06.52.5⟩` (`∅` is an empty cell).
+`--extra` runs don't vote; they're only shown where the votes differ. A page
+laid out differently by the runs is given whole, marked `⟨alternative …⟩`.
+Every mark is listed in `disputes.txt`. Remove all marks before the build.
+
 ## attempts/final-NN
 
 Medium for the book — converted from OCR output, one file per scan, split into
