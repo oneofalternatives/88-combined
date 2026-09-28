@@ -10,7 +10,10 @@ rendered back to a PDF.
       -> scripts/extract.py
     attempts/extracted-NN/        one file per scan, as extracted; problems.txt
                                   lists the spots extract.py flagged
-      -> scripts/validate.py      findings-<time>.txt, saved in extracted-NN
+      -> scripts/merge.py         (optional) several extracted-NN by vote
+    attempts/merged-NN/           the same, with disputed readings marked;
+                                  disputes.txt lists them
+      -> scripts/validate.py      findings-<time>.txt, saved in extracted-NN or merged-NN
       -> copy
     attempts/final-NN/scan-NN.md  one file per scan, corrected by hand
       -> scripts/validate.py
@@ -66,13 +69,14 @@ and fill it in. See `attempts/index.md`.
 
 Several extractions can be merged into one by vote:
 
-    scripts/merge.py --src attempts/extracted-A attempts/extracted-B … [--extra …] --dest attempts/extracted-NN
+    scripts/merge.py --src attempts/extracted-A attempts/extracted-B … [--extra …] --dest attempts/merged-NN
 
 Each `--src` run gets one vote. Where they disagree, the cell keeps every
 reading, most votes first: `⟨06.52,5 ¦ 06.52.5⟩` (`∅` is an empty cell).
 `--extra` runs don't vote; they're only shown where the votes differ. A page
 laid out differently by the runs is given whole, marked `⟨alternative …⟩`.
-Every mark is listed in `disputes.txt`. Remove all marks before the build.
+Every mark is listed in `disputes.txt`. A merged-NN is copied to final-NN
+like an extracted-NN. Remove all marks before the build.
 
 ## attempts/final-NN
 

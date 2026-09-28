@@ -1,7 +1,7 @@
 # validator — notes
 
 `scripts/validate.py`. The book over-determines itself, so it is checked
-against itself. Reads the `--src` dir only (`extracted-NN`, `final-NN` or any
+against itself. Reads the `--src` dir only (`extracted-NN`, `merged-NN`, `final-NN` or any
 other dir of scan files), like the builder. Shapes come from the frontmatter, station columns from `SHAPES` in
 extract.py, imported rather than restated — see `spec/book-format.md`. Shows all
 findings; `--limit N` for the top N, `--rule N` for one rule, `--json` for a

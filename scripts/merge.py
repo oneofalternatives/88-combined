@@ -275,9 +275,9 @@ def main():
         sys.exit("--src: give at least two dirs")
     if a.dest.exists() and any(a.dest.iterdir()):
         sys.exit(f"{a.dest}: not empty")
-    # Output into attempts/extracted-NN makes an attempt: finished inputs, a
+    # Output into attempts/merged-NN makes an attempt: finished inputs, a
     # manifest and an index row once done.
-    made = a.dest.parent == attempts.ROOT and a.dest.name.startswith("extracted-")
+    made = a.dest.parent == attempts.ROOT and a.dest.name.startswith("merged-")
     if made:
         for d in a.src + a.extra:
             attempts.require_finished(d)

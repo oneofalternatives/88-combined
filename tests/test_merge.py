@@ -202,9 +202,9 @@ def test_cli_into_attempts_adds_an_index_row(tmp_path):
         (d / "scan-05.md").write_text(scan_file(5, [("suburban", page(train))]))
         (d / "manifest.json").write_text("{}")
     r = _merge("--src", "attempts/extracted-01", "attempts/extracted-02",
-               "--dest", "attempts/extracted-03", cwd=tmp_path)
+               "--dest", "attempts/merged-00", cwd=tmp_path)
     assert r.returncode == 0, r.stderr
     assert (root / "index.md").read_text().endswith(
-        "| 02 | a.djvu | scans-01, scans-02 | ocr-01, ocr-02 | extracted-03 | merge of 01 02 |\n")
-    m = json.loads((root / "extracted-03" / "manifest.json").read_text())
+        "| 02 | a.djvu | scans-01, scans-02 | ocr-01, ocr-02 | merged-00 | merge of 01 02 |\n")
+    m = json.loads((root / "merged-00" / "manifest.json").read_text())
     assert (m["disputes"], m["alternatives"]) == (1, 0)
