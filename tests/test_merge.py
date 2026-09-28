@@ -202,3 +202,103 @@ def test_cli_writes_a_manifest(tmp_path):
     assert m["src"] == [str(files["r-01"].parent), str(files["r-02"].parent)]
     assert m["extra"] == [str(files["r-03"].parent)]
     assert (m["scans"], m["disputes"], m["alternatives"]) == (1, 1, 0)
+
+
+# ------------------------------------------------------------------ --prune
+def merged(tmp_path, runs, extra=()):
+    """Merge runs {name: halves} into tmp_path/out; returns the dir."""
+    files = write(tmp_path, runs)
+    names = list(runs)
+    args = ["--src", *[files[n].parent for n in names if n not in extra]]
+    if extra:
+        args += ["--extra", *[files[n].parent for n in extra]]
+    r = _merge(*args, "--dest", tmp_path / "out")
+    assert r.returncode == 0, r.stderr
+    return tmp_path / "out"
+
+
+def edit(d, old, new, scan=5):
+    f = d / f"scan-{scan:02d}.md"
+    text = f.read_text()
+    assert old in text
+    f.write_text(text.replace(old, new, 1))
+
+
+def two_disputes(tmp_path):
+    odd = with_cell(with_cell(TRAIN, 0, 1, "23.33"), 2, 0, "23.48")
+    return merged(tmp_path, {"r-01": [("suburban", page(TRAIN))],
+                             "r-02": [("suburban", page(odd))]})
+
+
+def test_prune_keeps_everything_on_an_untouched_merge(tmp_path):
+    out = two_disputes(tmp_path)
+    before = (out / "disputes.txt").read_text()
+    kept, dropped, stray = merge.prune(out)
+    assert (len(kept), dropped, stray) == (2, 0, 0)
+    assert (out / "disputes.txt").read_text() == before
+
+
+def test_prune_drops_a_resolved_mark_and_keeps_the_open_one(tmp_path):
+    out = two_disputes(tmp_path)
+    edit(out, "⟨23.32 ¦ 23.33⟩", "23.32")
+    kept, dropped, _ = merge.prune(out)
+    assert dropped == 1
+    assert [d.readings for d in kept] == ["23.49 (01); 23.48 (02)"]
+
+
+def test_prune_follows_marks_not_positions(tmp_path):
+    out = two_disputes(tmp_path)
+    edit(out, "| Лиелварде", "| Новая\n| Лиелварде")   # a row added above both marks
+    kept, dropped, _ = merge.prune(out)
+    assert (len(kept), dropped) == (2, 0)
+
+
+def test_prune_counts_identical_marks(tmp_path):
+    odd = [("—", "23.33"), ("23.37,5", "23.38"), ("23.49", "23.33")]
+    same = [("—", "23.32"), ("23.37,5", "23.38"), ("23.49", "23.32")]
+    out = merged(tmp_path, {"r-01": [("suburban", page(same))],
+                            "r-02": [("suburban", page(odd))]})
+    edit(out, "⟨23.32 ¦ 23.33⟩", "23.32")               # one of the two
+    kept, dropped, _ = merge.prune(out)
+    assert (len(kept), dropped) == (1, 1)
+
+
+def test_prune_handles_text_and_alternatives_and_keeps_layout_notes(tmp_path):
+    out = merged(tmp_path, {
+        "r-01": [("suburban", page(TRAIN, caption="п. № 6001 Рига")), ("suburban", page(TRAIN))],
+        "r-02": [("suburban", page(TRAIN, caption="п. № 6001\nРига")), ("suburban", page(TRAIN, TRAIN))],
+        "r-03": [("suburban", page(TRAIN, caption="п. № 6001 Рига")),
+                 ("suburban", page(TRAIN + [("23.55", "—")], stations=STATIONS + ["Икшкиле"]))]})
+    kinds = [d.where for d in merge.read_disputes(out / "disputes.txt")]
+    assert kinds == ["text block 1", "layout"]           # p.6 split lines; p.7 three layouts
+    kept, dropped, stray = merge.prune(out)
+    assert (len(kept), dropped, stray) == (2, 0, 0)
+    text = (out / "scan-05.md").read_text()
+    for run in ("01, 03", "02"):                          # keep r-01's caption
+        text = text.replace(f"⟨text from {run}⟩\n", "")
+    text = text.replace("п. № 6001\nРига\n\n", "", 1)
+    (out / "scan-05.md").write_text(text)
+    kept, dropped, _ = merge.prune(out)
+    assert [d.where for d in kept] == ["layout"] and dropped == 1
+    edit(out, "⟨alternative from 01 (suburban)⟩", "")    # chosen: drop the markers
+    edit(out, "⟨alternative from 02 (suburban)⟩", "")
+    edit(out, "⟨alternative from 03 (suburban)⟩", "")
+    kept, dropped, _ = merge.prune(out)
+    assert (kept, dropped) == ([], 1)
+
+
+def test_prune_reports_marks_it_does_not_list(tmp_path):
+    out = two_disputes(tmp_path)
+    edit(out, "| Лиелварде", "| ⟨Лиелварде ¦ ?⟩")
+    _, _, stray = merge.prune(out)
+    assert stray == 1
+
+
+def test_cli_prune(tmp_path):
+    out = two_disputes(tmp_path)
+    edit(out, "⟨23.49 ¦ 23.48⟩", "23.49")
+    r = _merge("--prune", out)
+    assert r.returncode == 0, r.stderr
+    assert "1 resolved, 1 open, 0 layout notes kept" in r.stdout
+    assert _merge("--prune", out, "--dest", tmp_path / "x").returncode != 0
+    assert "needed to merge" in _merge("--dest", tmp_path / "x").stderr

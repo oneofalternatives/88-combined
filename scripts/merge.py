@@ -18,6 +18,11 @@ after the other, marked ⟨alternative …⟩, for a person to choose.
 
 Every ⟨…⟩ is listed in disputes.txt. The output is not a valid scan file until
 they are resolved, on purpose: the validator and the PDF build reject it.
+
+--prune DIR rewrites DIR/disputes.txt as marks are resolved by hand: a row
+stays while its mark is still on its page. Rows are matched by the mark's text,
+not its position, so added or removed rows don't throw them off. Layout notes
+("outvoted") carry no mark and are always kept.
 """
 from __future__ import annotations
 
@@ -262,15 +267,90 @@ def dispute_table(disputes) -> str:
     return as_markdown(rows, 1, 4) + "\n" if disputes else ""
 
 
+# ------------------------------------------------------------------ pruning
+def read_disputes(path: Path) -> list[Dispute]:
+    text = path.read_text().strip() if path.exists() else ""
+    if not text:
+        return []
+    t = parse_book_table(text)
+    return [Dispute(int(it["cells"][0]), *it["cells"][1:4])
+            for it in t["items"] if it["kind"] == "row"]
+
+
+def marks_of(d: Dispute) -> list[str]:
+    """The marks a dispute row put in the scan file, rebuilt from its readings;
+    [] for a note that left none."""
+    groups = [part.rsplit(" (", 1) for part in d.readings.split("; ")]
+    if d.where == "layout":
+        if " alternatives: " in d.readings:
+            return [f"⟨alternative from {runs.strip()} ("
+                    for runs in d.readings.split(": ", 1)[1].split(" / ")]
+        return []
+    if " lines (" in d.readings:   # text split differently: one marked copy per reading
+        return [f"⟨text from {runs[:-1]}⟩" for _, runs in groups]
+    return ["⟨" + SEP.join(v for v, _ in groups) + "⟩"]
+
+
+def page_texts(path: Path) -> dict[str, str]:
+    pages, key = {}, None
+    for ln in path.read_text().split("\n"):
+        if ln.startswith("## page"):
+            key = ln[len("## page"):].strip()
+            pages[key] = ""
+        elif key is not None:
+            pages[key] += ln + "\n"
+    return pages
+
+
+def prune(d: Path):
+    """(kept, dropped, marks on the pages that no row accounts for)."""
+    disputes = read_disputes(d / "disputes.txt")
+    texts = {}
+    left = Counter()   # (scan, page, mark) -> occurrences not yet claimed by a row
+    for n in sorted({x.scan for x in disputes}):
+        f = d / f"scan-{n:02d}.md"
+        texts[n] = page_texts(f) if f.exists() else {}
+    kept = []
+    for x in disputes:
+        marks = marks_of(x)
+        if not marks:
+            kept.append(x)
+            continue
+        page = texts[x.scan].get(x.page, "")
+        for m in marks:
+            left.setdefault((x.scan, x.page, m), page.count(m))
+        if any(left[(x.scan, x.page, m)] > 0 for m in marks):
+            kept.append(x)
+            for m in marks:
+                left[(x.scan, x.page, m)] = max(left[(x.scan, x.page, m)] - 1, 0)
+    (d / "disputes.txt").write_text(dispute_table(kept))
+    all_marks = sum(f.read_text().count("⟨") for f in d.glob("scan-*.md"))
+    listed = sum(len(marks_of(x)) for x in kept)
+    return kept, len(disputes) - len(kept), all_marks - listed
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--src", type=Path, nargs="+", required=True,
+    ap.add_argument("--prune", type=Path, metavar="DIR",
+                    help="instead of merging: drop the rows of DIR/disputes.txt whose mark is gone")
+    ap.add_argument("--src", type=Path, nargs="+",
                     help="scan file dirs that vote, equally; on a tie the earlier one leads")
     ap.add_argument("--extra", type=Path, nargs="*", default=[],
                     help="scan file dirs shown only where the --src dirs disagree")
-    ap.add_argument("--dest", type=Path, required=True, help="dir to write the merge to")
+    ap.add_argument("--dest", type=Path, help="dir to write the merge to")
     a = ap.parse_args()
+    if a.prune:
+        if a.src or a.extra or a.dest:
+            sys.exit("--prune: give no --src, --extra or --dest")
+        kept, dropped, stray = prune(a.prune)
+        notes = sum(1 for x in kept if not marks_of(x))
+        print(f"{dropped} resolved, {len(kept) - notes} open, {notes} layout notes kept"
+              + (f"; {stray} marks on the pages are not in the list" if stray else "")
+              + f" -> {a.prune / 'disputes.txt'}")
+        return 0
+    if not a.src or not a.dest:
+        sys.exit("--src and --dest are needed to merge")
     if len(a.src) < 2:
         sys.exit("--src: give at least two dirs")
     if a.dest.exists() and any(a.dest.iterdir()):

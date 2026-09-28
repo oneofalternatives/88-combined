@@ -78,6 +78,13 @@ laid out differently by the runs is given whole, marked `⟨alternative …⟩`.
 Every mark is listed in `disputes.txt`, the sources in `manifest.json`. A merged-NN is copied to final-NN
 like an extracted-NN. Remove all marks before the build.
 
+As you resolve marks by hand, drop them from the list:
+
+    scripts/merge.py --prune attempts/final-NN
+
+A row stays while its mark is still on its page. Layout notes ("outvoted")
+have no mark and always stay.
+
 ## attempts/final-NN
 
 Medium for the book — converted from OCR output, one file per scan, split into
