@@ -55,7 +55,7 @@ report makes the script exit nonzero. New code must keep to this.
 
 ## OCR pipeline
 
-    sources/*.djvu -> scripts/render.py --src … [--mode bw|color] -> attempts/scans-NN
+    sources/*.djvu -> scripts/render.py --src … [--mode bw|gray|color] -> attempts/scans-NN
                    -> scripts/ocr.py --src … --model … -> attempts/ocr-NN
                    -> scripts/extract.py --src … --dest … -> attempts/extracted-NN
 
