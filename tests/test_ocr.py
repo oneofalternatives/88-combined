@@ -97,7 +97,7 @@ def api_response(png_name):
 
 @pytest.fixture
 def renders(tmp_path, monkeypatch):
-    """A finished scans dir and an index, in a tmp repo root."""
+    """A finished scans dir and a hand-kept index, in a tmp repo root."""
     monkeypatch.chdir(tmp_path)
     monkeypatch.setenv("MISTRAL_API_KEY", "KEY")
     monkeypatch.setattr(ocr, "ENV_FILE", tmp_path / ".env")
@@ -133,15 +133,13 @@ def test_main_failed_scan_then_resume(renders, monkeypatch, tmp_path):
     assert not (out / "manifest.json").exists()
     run = json.loads((out / "run.json").read_text())
     assert run["renders"] == "attempts/scans-00" and run["model"] == "mistral-ocr-latest"
-    assert "ocr-00" not in (tmp_path / "attempts" / "index.md").read_text()
 
     # resume: only the missing scan is fetched, then the dir is finished
     assert run_main(monkeypatch, "--resume", "attempts/ocr-00") == 0
     assert calls == ["scan-01.png", "scan-02.png", "scan-02.png"]
     manifest = json.loads((out / "manifest.json").read_text())
     assert manifest["models_reported"] == ["mistral-ocr-test"]
-    index = (tmp_path / "attempts" / "index.md").read_text()
-    assert "| 00 | book.djvu | scans-00 | ocr-00 | – | API, mistral-ocr-test |" in index
+    assert (tmp_path / "attempts" / "index.md").read_text() == INDEX_HEAD   # kept by hand
 
     with pytest.raises(SystemExit, match="already finished"):
         run_main(monkeypatch, "--resume", "attempts/ocr-00")
@@ -201,7 +199,7 @@ def test_api_output_extracts_to_an_extracted_dir(renders, monkeypatch, tmp_path,
     assert "п. № scan-02.png" in text and "| Кегумс       | 23.37,5 |" in text
     assert json.loads((extracted / "manifest.json").read_text())["problems"] == 0
     assert (extracted / "problems.txt").read_text() == ""
-    assert "| ocr-00 | extracted-00 |" in (tmp_path / "attempts" / "index.md").read_text()
+    assert (tmp_path / "attempts" / "index.md").read_text() == INDEX_HEAD
 
     # a finished extracted dir is a one-way door
     with pytest.raises(SystemExit, match="already finished"):

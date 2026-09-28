@@ -20,7 +20,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 
-from attempts import add_attempt, finish, next_dir, require_finished  # noqa: E402
+from attempts import finish, next_dir, require_finished  # noqa: E402
 
 URL = "https://api.mistral.ai/v1/ocr"
 ENV_FILE = Path(__file__).parent.parent / ".env"
@@ -119,8 +119,6 @@ def main():
         return 1
     models = sorted(m for m in models if m)
     finish(out, {**run, "models_reported": models})
-    add_attempt(Path(require_finished(renders)["source"]).name, renders.name, out.name,
-                note=f"API, {', '.join(models)}")
     print(f"{out}: done")
     return 0
 

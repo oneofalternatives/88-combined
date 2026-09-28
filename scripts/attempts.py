@@ -1,7 +1,7 @@
-"""Shared bits of the OCR pipeline: numbered attempt dirs, manifests, the index.
+"""Shared bits of the OCR pipeline: numbered attempt dirs and their manifests.
 
-A dir is finished once its manifest.json exists; it is written last. The index
-has one row per attempt: the pieces it combines. See attempts/index.md.
+A dir is finished once its manifest.json exists; it is written last.
+attempts/index.md is kept by hand; no script writes it.
 """
 from __future__ import annotations
 
@@ -11,8 +11,6 @@ from datetime import datetime
 from pathlib import Path
 
 ROOT = Path("attempts")
-INDEX = ROOT / "index.md"
-NONE = "–"
 
 
 def next_dir(kind: str) -> Path:
@@ -34,36 +32,3 @@ def require_finished(d: Path) -> dict:
 def finish(d: Path, manifest: dict) -> None:
     manifest = {"made": datetime.now().isoformat(timespec="seconds"), **manifest}
     (d / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n")
-
-
-def _rows() -> tuple[list[str], list[list[str]]]:
-    """Index lines, and the cells of each attempt row (header rows excluded)."""
-    lines = INDEX.read_text().splitlines()
-    rows = [[c.strip() for c in ln.strip().strip("|").split("|")]
-            for ln in lines if ln.startswith("| ") and ln[2:3].isdigit()]
-    return lines, rows
-
-
-def add_attempt(source: str, renders: str, ocr: str, extracted: str = NONE, note: str = "") -> None:
-    _, rows = _rows()
-    n = max((int(r[0]) for r in rows), default=-1) + 1
-    with INDEX.open("a") as f:
-        f.write(f"| {n:02d} | {source} | {renders} | {ocr} | {extracted} | {note} |\n")
-
-
-def set_extracted(ocr: str, extracted: str) -> None:
-    """Fill the extracted dir of the attempt that has this OCR, or add a new attempt
-    reusing its pieces if every such attempt already has one."""
-    lines, rows = _rows()
-    mine = [r for r in rows if r[3] == ocr]
-    if not mine:
-        sys.exit(f"{INDEX}: no attempt uses {ocr}")
-    free = next((r for r in mine if r[4] == NONE), None)
-    if free is None:
-        return add_attempt(*mine[-1][1:4], extracted)
-    free[4] = extracted
-    # Match the parsed number cell: the index may pad it ('| 01  |').
-    i = next(i for i, ln in enumerate(lines)
-             if ln.startswith("| ") and ln.strip().strip("|").split("|")[0].strip() == free[0])
-    lines[i] = "| " + " | ".join(free) + " |"
-    INDEX.write_text("\n".join(lines) + "\n")

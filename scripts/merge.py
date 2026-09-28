@@ -275,12 +275,6 @@ def main():
         sys.exit("--src: give at least two dirs")
     if a.dest.exists() and any(a.dest.iterdir()):
         sys.exit(f"{a.dest}: not empty")
-    # Output into attempts/merged-NN makes an attempt: finished inputs, a
-    # manifest and an index row once done.
-    made = a.dest.parent == attempts.ROOT and a.dest.name.startswith("merged-")
-    if made:
-        for d in a.src + a.extra:
-            attempts.require_finished(d)
     name = {d: d.name.rsplit("-", 1)[-1] for d in a.src + a.extra}
     if len(set(name.values())) != len(name):
         name = {d: str(d) for d in name}
@@ -304,18 +298,9 @@ def main():
     cells = sum(1 for d in disputes if d.where != "layout")
     print(f"{len(wanted)} scans; {cells} disputed cells or lines, "
           f"{alternatives} pages given as alternatives -> {a.dest / 'disputes.txt'}")
-    if made:
-        # The index row lists the pieces of every merged run, from their own rows.
-        _, rows = attempts._rows()
-        pieces = [next((r[1:4] for r in rows if r[4] == d.name), [attempts.NONE] * 3)
-                  for d in a.src + a.extra]
-        cols = [", ".join(dict.fromkeys(p[i] for p in pieces)) for i in range(3)]
-        note = "merge of " + " ".join(voters) + (f", extra {' '.join(extras)}" if extras else "")
-        # Index first: if it fails, the dir stays unfinished and can be rerun.
-        attempts.add_attempt(*cols, a.dest.name, note)
-        attempts.finish(a.dest, {"src": [str(d) for d in a.src], "extra": [str(d) for d in a.extra],
-                                 "scans": len(wanted), "disputes": cells,
-                                 "alternatives": alternatives})
+    attempts.finish(a.dest, {"src": [str(d) for d in a.src], "extra": [str(d) for d in a.extra],
+                             "scans": len(wanted), "disputes": cells,
+                             "alternatives": alternatives})
     return 0
 
 

@@ -439,7 +439,7 @@ def main():
     ap.add_argument("--dest", type=Path, required=True, help="scan files directory")
     args = ap.parse_args()
     # Output into attempts/extracted-NN makes an extraction: a finished input, a fresh
-    # dir, and a manifest plus index entry once done.
+    # dir, and a manifest once done. Not into final-NN, which holds no manifest.
     extracted = args.dest.parent == attempts.ROOT and args.dest.name.startswith("extracted-")
     if extracted:
         attempts.require_finished(args.src)
@@ -467,8 +467,6 @@ def main():
     print("halves by shape: " + ", ".join(f"{k}={v}" for k, v in sorted(tally.items())))
     if extracted:
         (args.dest / "problems.txt").write_text(problem_table(report))
-        # Index first: if it fails, the dir stays unfinished and can be rerun.
-        attempts.set_extracted(args.src.name, args.dest.name)
         attempts.finish(args.dest, {"ocr": str(args.src), "scans": len(wanted),
                                    "problems": len(report)})
     if report:

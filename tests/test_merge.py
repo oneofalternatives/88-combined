@@ -189,22 +189,16 @@ def test_cli_wants_two_voters(tmp_path):
     assert r.returncode != 0 and "at least two" in r.stderr
 
 
-def test_cli_into_attempts_adds_an_index_row(tmp_path):
+def test_cli_writes_a_manifest(tmp_path):
     import json
-    from conftest import INDEX_HEAD
-    root = tmp_path / "attempts"
-    root.mkdir()
-    (root / "index.md").write_text(INDEX_HEAD + "| 00 | a.djvu | scans-01 | ocr-01 | extracted-01 |  |\n"
-                                   "| 01 | a.djvu | scans-02 | ocr-02 | extracted-02 |  |\n")
-    for n, train in [("01", TRAIN), ("02", with_cell(TRAIN, 0, 1, "23.33"))]:
-        d = root / f"extracted-{n}"
-        d.mkdir()
-        (d / "scan-05.md").write_text(scan_file(5, [("suburban", page(train))]))
-        (d / "manifest.json").write_text("{}")
-    r = _merge("--src", "attempts/extracted-01", "attempts/extracted-02",
-               "--dest", "attempts/merged-00", cwd=tmp_path)
+    files = write(tmp_path, {"r-01": [("suburban", page(TRAIN))],
+                             "r-02": [("suburban", page(with_cell(TRAIN, 0, 1, "23.33")))],
+                             "r-03": [("suburban", page(TRAIN))]})
+    out = tmp_path / "out"
+    r = _merge("--src", files["r-01"].parent, files["r-02"].parent,
+               "--extra", files["r-03"].parent, "--dest", out)
     assert r.returncode == 0, r.stderr
-    assert (root / "index.md").read_text().endswith(
-        "| 02 | a.djvu | scans-01, scans-02 | ocr-01, ocr-02 | merged-00 | merge of 01 02 |\n")
-    m = json.loads((root / "merged-00" / "manifest.json").read_text())
-    assert (m["disputes"], m["alternatives"]) == (1, 0)
+    m = json.loads((out / "manifest.json").read_text())
+    assert m["src"] == [str(files["r-01"].parent), str(files["r-02"].parent)]
+    assert m["extra"] == [str(files["r-03"].parent)]
+    assert (m["scans"], m["disputes"], m["alternatives"]) == (1, 1, 0)

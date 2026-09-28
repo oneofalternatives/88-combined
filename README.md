@@ -29,7 +29,7 @@ Rendering sits outside it, a final production step once the scan files are good:
 Every script takes its dirs as arguments; none are built in.
 
     python3 scripts/extract.py --src attempts/ocr-00 --dest attempts/extracted-NN
-                                           # OCR -> scan files, recorded in attempts/index.md
+                                           # OCR -> scan files; add its row to attempts/index.md
     python3 scripts/validate.py --src attempts/extracted-NN --dest attempts/extracted-NN
                                            # findings of the new extract, saved next to it
     cp -r attempts/extracted-NN attempts/final-NN && rm attempts/final-NN/manifest.json
@@ -75,7 +75,7 @@ Each `--src` run gets one vote. Where they disagree, the cell keeps every
 reading, most votes first: `⟨06.52,5 ¦ 06.52.5⟩` (`∅` is an empty cell).
 `--extra` runs don't vote; they're only shown where the votes differ. A page
 laid out differently by the runs is given whole, marked `⟨alternative …⟩`.
-Every mark is listed in `disputes.txt`. A merged-NN is copied to final-NN
+Every mark is listed in `disputes.txt`, the sources in `manifest.json`. A merged-NN is copied to final-NN
 like an extracted-NN. Remove all marks before the build.
 
 ## attempts/final-NN
