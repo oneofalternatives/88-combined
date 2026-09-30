@@ -1,0 +1,88 @@
+# Stop-name findings: golden sample
+#
+# What a finding script should report when run on attempts/merged-00.
+# Built from the stop-name fixes in final-01 (commits 35476cc..a35ce7d),
+# re-tagged by the rule: fix mistakes, keep the book's own forms.
+#
+# One line per form: <tag> | <form as in the book or OCR> | <target>.
+# One step each; chain them (Блок- пост → Блок пост; Б. п. → Б/п. → Блок пост).
+# Readings inside ⟨a ¦ b⟩ markers count as forms.
+#
+# Tags:
+#   mistake   OCR misread or book typo; fix in the scan files
+#   artifact  line-break or layout leftover (hyphen + space, etc.); fix
+#   scatter   the book is inconsistent with no pattern; fix or map, by choice
+#   form      a consistent form tied to a context (e.g. distance tables spell
+#             in full, suburban ones abbreviate); keep, list in the mapping file
+#
+# count, scans and shapes are for review only, not for scoring.
+# Shapes are taken from final-01.
+
+tag      | form                 | target              | count | scans | shapes
+mistake  | Байвари              | Вайвари             |     2 | 40 | suburban 2
+mistake  | Бецаки               | Вецаки              |     1 | 73 | suburban 1
+mistake  | Внестури             | Виестури            |     2 | 79 | suburban 2
+mistake  | Даутмале             | Даугмале            |     2 | 32 | suburban 2
+mistake  | Дено                 | Депо                |     1 | 25 | suburban 1
+mistake  | Звейшекциемс         | Звейниекциемс       |     2 | 68 | suburban 2
+mistake  | Звейинекциемс        | Звейниекциемс       |     2 | 69 | suburban 2
+mistake  | Звейнекциемс         | Звейниекциемс       |     2 | 69 | suburban 2
+mistake  | Звейникциемс         | Звейниекциемс       |     2 | 69 | suburban 2
+mistake  | Зиедыни              | Зиедини             |    16 | 54–56,58–63 | suburban 16
+mistake  | Знедыни              | Зиедини             |     2 | 57 | suburban 2
+mistake  | Золитуда             | Золитуде            |     1 | 36 | suburban 1
+mistake  | Инчукалис            | Инчукалнс           |     1 | 97 | distance 1
+mistake  | Исталена             | Исталсна            |     2 | 93 | distance 2
+mistake  | Кайбаал              | Кайбала             |     1 | 49 | suburban 1
+mistake  | Қайбаал              | Кайбала             |     1 | 49 | suburban 1
+mistake  | Қайбала              | Кайбала             |     3 | 49 | suburban 3
+mistake  | Калигале             | Калнгале            |    34 | 54–57,59–62,64–73 | suburban 34
+mistake  | Қалигале             | Калнгале            |     1 | 63 | suburban 1
+mistake  | Лиелуне              | Лиелупе             |     7 | 5,9–10,25 | suburban 7
+mistake  | Майорн               | Майори              |     2 | 11 | suburban 2
+mistake  | Меллужн              | Меллужи             |     2 | 11 | suburban 2
+mistake  | Милзкалие            | Милзкалне           |     6 | 26,30,34 | suburban 6
+mistake  | Милэкалне            | Милзкалне           |     4 | 17,25,43 | suburban 4
+mistake  | Пониемс              | Поциемс             |     2 | 70 | suburban 2
+mistake  | Пиедайне             | Приедайне           |     1 | 23 | suburban 1
+mistake  | Рига-насс.           | Рига-пасс.          |     1 | 25 | suburban 1
+mistake  | Рунена               | Руиена              |    30 | 54,56,58–59,61,64–73,99 | suburban 29,distance 1
+mistake  | Руцена               | Руиена              |     8 | 60,62,66,70 | suburban 8
+mistake  | Саулкалие            | Саулкалне           |     4 | 26,34 | suburban 4
+mistake  | Скриверн             | Скривери            |     1 | 96 | distance 1
+mistake  | Скуате               | Скулте              |     2 | 67 | suburban 2
+mistake  | Скуля                | Скулте              |     2 | 67 | suburban 2
+mistake  | Тауркалие            | Тауркалне           |     1 | 81 | suburban 1
+mistake  | Ториякалнс           | Торнякалнс          |     4 | 29,32 | suburban 4
+mistake  | Ториякалис           | Торнякалнс          |     4 | 29,34 | suburban 4
+mistake  | Торнякалис           | Торнякалнс          |    64 | 5,9–10,14,19,22–24,26,30–31,33–34,36,38–39,43,45,74–80,97–98 | suburban 63,distance 1
+mistake  | Торнякалне           | Торнякалнс          |    10 | 5–6,10,20,25,78 | suburban 10
+mistake  | Торняканлс           | Торнякалнс          |     1 | 6 | suburban 1
+mistake  | Циемуне              | Циемупе             |     9 | 5,9–10,25,40 | suburban 9
+mistake  | Цнемупе              | Циемупе             |     6 | 12,15,17 | suburban 6
+mistake  | Цнемуне              | Циемупе             |     2 | 12 | suburban 2
+mistake  | Цикурфабрика         | Цукурфабрика        |     1 | 78 | suburban 1
+mistake  | Чиекуркалис          | Чиекуркалнс         |     1 | 97 | distance 1
+mistake  | Шкиротава'           | Шкиротава           |     1 | 16 | UNKNOWN 1
+mistake  | Шкпротава            | Шкиротава           |     2 | 45 | suburban 2
+mistake  | Январты              | Яняварты            |     2 | 54,96 | distance 1,suburban 1
+mistake  | Разъезз 98 км        | Разъезд 98 км       |     1 | 97 | distance 1
+artifact | Блок- пост 856 км    | Блок пост 856 км    |     1 | 95 | distance 1
+artifact | Блок- пост 867 км    | Блок пост 867 км    |     1 | 95 | distance 1
+artifact | Даугавпилс- пасс.    | Даугавпилс пасс.    |     1 | 95 | distance 1
+artifact | о. п. Килинги- Нымме | о. п. Килинги-Нымме |     1 | 99 | distance 1
+scatter  | Б. п. 845 км         | Б/п. 845 км         |     4 | 51–52 | suburban 4
+scatter  | Б. п. 856 км         | Б/п. 856 км         |     4 | 51–52 | suburban 4
+scatter  | Вентспилс-1          | Вентспилс-I         |     1 | 98 | suburban 1
+scatter  | Вентспилс-2          | Вентспилс-II        |     1 | 98 | suburban 1
+scatter  | Тукумс-2             | Тукумс-II           |     1 | 98 | suburban 1
+scatter  | Даугавпилс пасс.     | Даугавпилс-пасс.    |     2 | 94 | distance 2
+scatter  | О. п. 50 км          | О/п. 50 км          |     5 | 79–80 | suburban 5
+scatter  | О. п. Васкряма       | О/п. Васкряма       |     1 | 99 | distance 1
+scatter  | о. п. Сигасте        | О/п. Сигасте        |     1 | 99 | distance 1
+scatter  | о. п. Килинги-Нымме  | О/п. Килинги-Нымме  |     – | 99 | (after the artifact fix above)
+form     | Б/п. 856 км          | Блок пост 856 км    |    10 | 48–49 | suburban 10
+form     | Раз. 98 км           | Разъезд 98 км       |    10 | 87–91 | suburban 10
+form     | 78 км                | Пост 78 км          |    10 | 87–91 | suburban 10
+form     | Вайнеде              | Вайнёде             |     5 | 81 | suburban 5 (tables; headings use Вайнёде)
+form     | Мыйзакюла            | Мызакюла            |     1 | 99 | distance 1 (suburban tables use Мызакюла)
