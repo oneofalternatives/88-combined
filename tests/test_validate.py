@@ -381,20 +381,13 @@ def test_main_shows_all_findings_by_default(monkeypatch, capsys, tmp_path):
     assert "| 50 | IMPOSSIBLE |" in out
 
 
-class _At1416(v.datetime):
-    @classmethod
-    def now(cls, tz=None):
-        return v.datetime(2026, 9, 27, 14, 16, 59)
-
-
 @pytest.mark.parametrize("dest, json_, written", [
-    ("out", False, "out/findings-202609271416.txt"),
-    ("out", True, "out/findings-202609271416.json"),
-    ("new/report.txt", False, "new/report-202609271416.txt"),
+    ("out", False, "out/findings.txt"),
+    ("out", True, "out/findings.json"),
+    ("new/report.txt", False, "new/report.txt"),
 ])
-def test_main_dest_writes_a_stamped_file(dest, json_, written, monkeypatch, capsys, tmp_path):
+def test_main_dest_writes_the_named_file(dest, json_, written, monkeypatch, capsys, tmp_path):
     (tmp_path / "out").mkdir()
-    monkeypatch.setattr(v, "datetime", _At1416)
     monkeypatch.setattr(v, "validate", lambda src: ([], [_finding(1, [3])]))
     argv = ["validate.py", "--src", str(tmp_path)] + ["--json"] * json_
     monkeypatch.setattr(sys, "argv", argv)
@@ -402,13 +395,12 @@ def test_main_dest_writes_a_stamped_file(dest, json_, written, monkeypatch, caps
     printed = capsys.readouterr().out
 
     monkeypatch.setattr(sys, "argv", argv + ["--dest", str(tmp_path / dest)])
+    (tmp_path / written).parent.mkdir(parents=True, exist_ok=True)
+    (tmp_path / written).write_text("an earlier run\n")
     assert v.main() == 1
+    # an earlier file is overwritten: git keeps it
     assert (tmp_path / written).read_text() == printed
     assert capsys.readouterr().out == f"1 findings -> {tmp_path / written}\n"
-
-    # the same minute again: an earlier file is never overwritten
-    with pytest.raises(SystemExit, match="exists"):
-        v.main()
 
 
 def test_cell_ranges_join_runs_of_rows():
