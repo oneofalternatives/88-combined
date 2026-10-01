@@ -5,8 +5,8 @@ against itself. Reads the `--src` dir only (`extracted-NN`, `merged-NN`, `final-
 other dir of scan files), like the builder. Shapes come from the frontmatter, station columns from `SHAPES` in
 extract.py, imported rather than restated — see `spec/book-format.md`. Shows all
 findings; `--limit N` for the top N, `--rule N` for one rule, `--json` for a
-machine. `--dest` writes to a file instead: a dir gets `findings-<time>.txt`, a
-file gets `-<time>` added to its name, so an earlier one is never overwritten.
+machine. `--dest` writes to a file instead: a dir gets `findings.txt`, a file is
+written as named. An earlier one is overwritten; git keeps it.
 
 Output is triage — ranked "look here", not a verdict. The data is unchecked
 OCR. Repairs are reported, never guessed, and the exit code carries them.

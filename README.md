@@ -13,11 +13,11 @@ rendered back to a PDF.
       -> scripts/merge.py         (optional) several extracted-NN by vote
     attempts/merged-NN/           the same, with disputed readings marked;
                                   disputes.txt lists them
-      -> scripts/validate.py      findings-<time>.txt, saved in extracted-NN or merged-NN
+      -> scripts/validate.py      findings.txt, saved in extracted-NN or merged-NN
       -> copy
     attempts/final-NN/scan-NN.md  one file per scan, corrected by hand
       -> scripts/validate.py
-    findings-<time>.txt           ranked "look here", saved in final-NN
+    findings.txt                  ranked "look here", saved in final-NN
 
 Correcting `attempts/final-NN` and running the validator again is the loop.
 Rendering sits outside it, a final production step once the scan files are good:
@@ -34,12 +34,12 @@ Every script takes its dirs as arguments; none are built in.
                                            # findings of the new extract, saved next to it
     cp -r attempts/extracted-NN attempts/final-NN && rm attempts/final-NN/manifest.json
                                            # a copy to correct by hand; problems.txt and
-                                           # findings-<time>.txt say where to start
+                                           # findings.txt say where to start
     python3 scripts/extract.py --src attempts/ocr-00 --dest attempts/final-NN 93 --force
                                            # redo one scan in final-NN
     python3 scripts/validate.py --src attempts/final-NN --dest attempts/final-NN
                                            # check the scan files against themselves (any
-                                           # scan dir works); findings-<time>.txt, or no
+                                           # scan dir works); findings.txt, or no
                                            # --dest to print
     python3 scripts/build_book_pdf.py --src attempts/final-NN --dest build/1988-1989-prigorodnye-rabochie.pdf
                                            # final render; needs weasyprint

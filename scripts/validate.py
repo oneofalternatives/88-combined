@@ -19,7 +19,6 @@ import re
 import sys
 from difflib import SequenceMatcher
 from collections import defaultdict
-from datetime import datetime
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -895,7 +894,7 @@ def main():
     ap.add_argument("--json", action="store_true", help="findings as JSON")
     ap.add_argument("--dest", type=Path,
                     help="write to a file instead of printing: a dir gets "
-                         "findings-<time>.txt (.json), a file gets -<time> added to its name")
+                         "findings.txt (.json), a file is written as named")
     a = ap.parse_args()
 
     columns, findings = validate(a.src)
@@ -925,17 +924,12 @@ def main():
 
 
 def dest_path(dest: Path, suffix: str) -> Path:
-    """The file --dest names, stamped with the time so an earlier one -- maybe
-    edited by hand -- is never overwritten."""
+    """The file --dest names. An earlier one is overwritten: git keeps it, and
+    the diff shows what the last round of corrections changed."""
     if dest.is_dir():
         dest = dest / f"findings{suffix}"
-    stamp = datetime.now().strftime("%Y%m%d%H%M")
-    dest = dest.with_name(f"{dest.stem}-{stamp}{dest.suffix}")
-    if dest.exists():
-        sys.exit(f"{dest}: exists")
     dest.parent.mkdir(parents=True, exist_ok=True)
     return dest
-
 
 if __name__ == "__main__":
     sys.exit(main())
