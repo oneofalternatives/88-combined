@@ -5,7 +5,6 @@
 | 2    |      | layout                                                    | outvoted, not merged: 05, 03                                                                      |
 | 2    |      | text block 7, line 1                                      | ДВИЖЕНИЯ ПРИГОРОДНЫХ (04); # ДВИЖЕНИЯ ПРИГОРОДНЫХ (06)                                            |
 | 2    |      | text block 8, line 1                                      | ПОЕЗДОВ (04); # ПОЕЗДОВ (06)                                                                      |
-| 3    | 2    | layout                                                    | 2 alternatives: 04, 05, 06 / 03                                                                   |
 | 5    | 6    | layout                                                    | outvoted, not merged: 03                                                                          |
 | 5    | 6    | table 1, row 5 col 1 · Циемуне                            | Циемупе (05, 06); Циемуне (04)                                                                    |
 | 5    | 6    | table 1, row 7 col 7 · Огре · 6605                        | 0,52 (05, 06); 00.52 (04)                                                                         |
@@ -42,7 +41,6 @@
 | 12   | 21   | table 1, row 5 col 1 · Цнемуне                            | Цнемупе (05, 06); Цнемуне (04)                                                                    |
 | 14   | 24   | table 1, row 12 col 7 · Доле · 6441                       | 11.24,5 (05, 06, 03); 11.24 5 (04)                                                                |
 | 15   | 26   | table 1, row 32 col 6 · Дубулты · 6445                    | 13.39,5 (05, 06); 13.38,5 (04, 03)                                                                |
-| 16   | 28   | layout                                                    | 3 alternatives: 04 / 05, 03 / 06                                                                  |
 | 17   | 31   | layout                                                    | outvoted, not merged: 05                                                                          |
 | 18   | 33   | layout                                                    | outvoted, not merged: 06                                                                          |
 | 19   | 35   | table 1, row 21 col 1 · Торнякалис                        | Торнякалис (04, 05, 03); Торнякалнс (06)                                                          |
@@ -106,7 +104,6 @@
 | 58   | 113  | table 1, row 8 col 7 · Зиемельблазма · 6724               | 13.38 (04, 06); 13.33 (05); 13.39 (03)                                                            |
 | 60   | 116  | layout                                                    | outvoted, not merged: 03                                                                          |
 | 60   | 117  | layout                                                    | outvoted, not merged: 03                                                                          |
-| 60   | 117  | table 1, row 2 col 7                                      | отпр. (05, 06); отпр (04)                                                                         |
 | 63   | 122  | layout                                                    | outvoted, not merged: 03                                                                          |
 | 66   | 128  | layout                                                    | outvoted, not merged: 03                                                                          |
 | 66   | 128  | table 1, row 4 col 1 · Рунена                             | Руцена (05, 06); Рунена (04)                                                                      |
@@ -126,9 +123,7 @@
 | 72   | 141  | layout                                                    | outvoted, not merged: 05, 03                                                                      |
 | 72   | 141  | table 1, row 27 col 2 · Инчупе · 6743                     | 20.52,5 (04); 20.53,5 (06)                                                                        |
 | 73   | 142  | layout                                                    | outvoted, not merged: 05, 03                                                                      |
-| 73   | 142  | table 1, row 2 col 1                                      | Разл. пункты (04); Разд. пункты (06)                                                              |
 | 73   | 142  | table 1, row 34 col 1 · Бецаки                            | Бецаки (04); Вецаки (06)                                                                          |
-| 76   | 149  | table 1, row 2 col 7                                      | отпр. (05, 06, 03); отпр (04)                                                                     |
 | 78   | 152  | layout                                                    | outvoted, not merged: 03                                                                          |
 | 78   | 152  | table 1, row 13 col 1 · Торнякалис                        | Торнякалис (04, 05); Торнякалне (06)                                                              |
 | 78   | 152  | table 1, row 27 col 1 · Торнякалис                        | Торнякалис (04, 05); Торнякалне (06)                                                              |
@@ -154,12 +149,8 @@
 | 88   | 173  | layout                                                    | outvoted, not merged: 03                                                                          |
 | 88   | 173  | table 1, row 8 col 5 · Ропажи · 6856 ДР                   | 17.54 (04, 06); 71.54 (05)                                                                        |
 | 89   | 174  | layout                                                    | outvoted, not merged: 03                                                                          |
-| 89   | 174  | table 1, row 1 col 1                                      | № поездов Разд. пункты (04, 06); № поездов (05)                                                   |
-| 89   | 174  | table 1, row 2 col 1                                      | ∅ (04, 06); Разд. пункты (05)                                                                     |
 | 89   | 175  | layout                                                    | outvoted, not merged: 03                                                                          |
-| 89   | 175  | table 1, row 1 col 1                                      | № поездов Разд. пункты (04, 06); № поездов (05)                                                   |
 | 89   | 175  | table 1, row 1 col 6                                      | 6838 ДР (04, 05); 6839 ДР (06)                                                                    |
-| 89   | 175  | table 1, row 2 col 1                                      | ∅ (04, 06); Разд. пункты (05)                                                                     |
 | 91   | 178  | layout                                                    | outvoted, not merged: 03                                                                          |
 | 91   | 178  | table 1, row 4 col 5 · Ошкалны · По выходным дням 6855 ДР | ∅ (05, 06); — (04)                                                                                |
 | 91   | 179  | layout                                                    | outvoted, not merged: 03                                                                          |
