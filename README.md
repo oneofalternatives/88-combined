@@ -20,6 +20,8 @@ rendered back to a PDF.
     findings.txt                  ranked "look here", saved in final-NN
 
 Correcting `attempts/final-NN` and running the validator again is the loop.
+`findings.txt` and `disputes.txt` are generated. After each correction, run
+`validate.py` and `merge.py --prune` again; don't edit either file by hand.
 Rendering sits outside it, a final production step once the scan files are good:
 
     attempts/final-NN -> scripts/build_book_pdf.py -> build/   PDF
