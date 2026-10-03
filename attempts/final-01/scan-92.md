@@ -11,7 +11,7 @@ shapes: [prose, prose]
 
 ## page 181
 
-⟨ГЛАВА XII ¦ # ГЛАВА XII⟩
+# ГЛАВА XII
 
 РИГА—СЕБЕЖ
 
