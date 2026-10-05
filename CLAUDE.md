@@ -7,5 +7,6 @@
 
 ## Working with the codebase
 
-- Commit to `develop` branch unless specifically asked otherwise.
+- Commit to the currently active branch unless asked otherwise.
+- Never commit to `master` unless the user gave you an explicit permission.
 - Commit message must only contain title, no description or "co-authored by Claude".
