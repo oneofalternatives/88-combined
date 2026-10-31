@@ -52,6 +52,19 @@ OCR. Repairs are reported, never guessed, and the exit code carries them.
    numbers, so a shared milepost is a finding only where the two names are
    near-duplicates (`name_similarity`).
 
+## Header inside a table
+
+A header row below a table's body rows is a `structure` finding. Under such a
+header the rules check each part on its own. Three cases:
+
+- the station list starts again under it (either way round): two printed tables
+  were glued into one. Split them, each with its own head rule.
+- it names the same trains as the head: the OCR read the top of the table twice.
+  Delete the repeat.
+- neither: check the scan.
+
+Row numbers in this finding count the body rows of the whole table.
+
 ## Mileposting
 
 Chapter XII prints a through route in several reckonings and the numbering
@@ -74,12 +87,13 @@ which reckonings a route may use; a zone outside them is reported, not filed.
 
 ## Ranking
 
-Impossible first — non-time text in a time cell, negative dwell, backwards
-time, over `max_speed_kmh` — then deviations by size. Several rules on one cell
-collapse to one finding, ranked up: independent constraints rarely agree on an
-innocent cell. A run of outliers in one column is one finding, not eight — that
-is a column misaligned by a row, which is worse than a bad digit. Train numbers
-keep their footnote markers: those are the book's, not damage.
+Impossible first — non-time text in a time cell, a header inside a table,
+negative dwell, backwards time, over `max_speed_kmh` — then deviations by size.
+Several rules on one cell collapse to one finding, ranked up: independent
+constraints rarely agree on an innocent cell. A run of outliers in one column
+is one finding, not eight — that is a column misaligned by a row, which is
+worse than a bad digit. Train numbers keep their footnote markers: those are
+the book's, not damage.
 
 ## Config
 

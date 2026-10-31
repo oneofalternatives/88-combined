@@ -335,7 +335,8 @@ def pair_columns(width, protected):
 
 
 def is_header_row(cells, station_col):
-    """A header the OCR repeated inside the body (e.g. scan 32, folio 61)."""
+    """A header inside the body: repeated by the OCR (scan 32, folio 61), or
+    the head of a second table glued on (scans 48, 49, 74-78)."""
     low = [c.strip().lower() for c in cells]
     if station_col < len(low) and low[station_col] in HEADER_WORDS:
         return True
@@ -386,21 +387,31 @@ def read_half(scan, folio, shape, items, report):
         # -- on a page the OCR left without a head rule they are the only
         # place the numbers appear.
         segments, cur, cur_head = [], [], dict(head)
+        inner, ri = [], -1  # [first row, last row, segment after] per header in the body
         for r in t["items"]:
             if r["kind"] != "row":
                 continue
+            ri += 1
             cells = r["cells"]
             if is_header_row(cells, station_col):
                 if cur:
                     segments.append((cur, cur_head))
                     cur, cur_head = [], dict(head)
+                if inner and inner[-1][1] == ri - 1:
+                    inner[-1][1] = ri
+                elif segments:
+                    inner.append([ri, ri, len(segments), {}])
                 for i, c in enumerate(cells):
                     if c.strip() and c.strip().lower() not in HEADER_WORDS:
                         cur_head[i] = c.strip()
+                        if inner and inner[-1][1] == ri:
+                            inner[-1][3][i] = c.strip()
                 continue
             cur.append(cells)
         if cur:
             segments.append((cur, cur_head))
+        report.extend(inner_headers(scan, folio, shape, pairs, station_col, head,
+                                    segments, inner))
         for seg_i, (seg, seg_head) in enumerate(segments):
             names = train_names(items, pairs, shape, ti, seg_head)
             zones = []
@@ -422,6 +433,38 @@ def read_half(scan, folio, shape, items, report):
                     label = name if len(segments) == 1 else f"{name} (part {seg_i + 1})"
                     columns.append(Column(scan, folio, shape, label, stops))
     return columns, mileposts
+
+
+def inner_headers(scan, folio, shape, pairs, station_col, table_head, segments, inner):
+    """A header inside a table body, one finding per run of header rows.
+
+    The rule checks still run, segment by segment, but the page is wrong. When
+    the first station under the header is one the table already listed, either
+    way round, the station list starts again: two printed tables were glued into
+    one (scans 48, 49, 74-78) and need splitting, each with its own head rule --
+    unless it names the same trains as the head: then the OCR read the top of
+    the table twice (scan 32, folio 61). Row numbers count the body rows of the
+    whole table.
+    """
+    out = []
+    for a, b, k, head in inner:
+        seen = {c[station_col].strip() for seg, _ in segments[:k] for c in seg}
+        under = segments[k][0][0][station_col].strip() if k < len(segments) else ""
+        trains = ", ".join(n for n in (head.get(x) or head.get(y) for x, y in pairs) if n)
+        rows = f"row {a}" if a == b else f"rows {a}–{b}"
+        if head and head == table_head:
+            msg = ("header inside the table, naming the same trains as the head — "
+                   "the OCR read the top of the table twice; delete the repeat")
+        elif under and under in seen:
+            msg = ("header inside the table and the station list starts again "
+                   "under it — two tables glued into one; split them, each with "
+                   "its own head rule")
+        else:
+            msg = "header inside the table — repeated by the OCR, or a table glued on; check the scan"
+        out.append(Finding(0, 10.0, 0, Where(scan, folio, shape, trains or "—", rows,
+                                             [(r, station_col) for r in range(a, b + 1)]),
+                           msg))
+    return out
 
 
 def zone_mileposts(scan, folio, shape, rows, kms, zones, destination, declared, report):

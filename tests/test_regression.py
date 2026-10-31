@@ -113,10 +113,10 @@ def test_validator_snapshot():
     """Tuning CONFIG moves these on purpose; update them when it does."""
     columns, findings = validate.validate(EXTRACTED)
     assert len(columns) == 521
-    assert len(findings) == 269
-    assert sum(f.severity == 0 for f in findings) == 78
+    assert len(findings) == 288
+    assert sum(f.severity == 0 for f in findings) == 97
     by_rules = Counter(tuple(sorted(f.rules)) for f in findings)
-    assert by_rules == {(0,): 6, (1,): 32, (2,): 130, (2, 3, 4): 2, (2, 4): 12,
+    assert by_rules == {(0,): 25, (1,): 32, (2,): 130, (2, 3, 4): 2, (2, 4): 12,
                         (3,): 7, (3, 4): 3, (4,): 71, (5,): 6}
     assert str(findings[0].where) == ("scan-93.md folio 182 [distance] п.№ 606 — "
                                       "Стрелка № 2-а → Айзкраукле  r11c3,r12c2")

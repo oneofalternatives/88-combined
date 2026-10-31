@@ -221,17 +221,47 @@ def test_column_that_fits_neither_direction(write_book):
     assert any("fit neither direction" in m for m in messages(findings))
 
 
-def test_repeated_header_restarts_the_station_list(write_book):
-    """A header repeated inside the body (scan 32) splits the column: the
-    runs either side are separate, named from the header over them."""
+def _inner_header(second_number, second_stations):
     rows = [["№ поездов", "6001", ""], ["", "приб.", "отпр."],
             ["Рига-пасс.", "—", "12.00"], ["Засулаукс", "12.10", "—"],
-            ["№ поездов", "6007", ""], ["Разд. пункты", "приб.", "отпр."],
-            ["Рига-пасс.", "—", "10.00"], ["Засулаукс", "10.10", "—"]]
-    d = write_book(5, [("suburban", [book_table(rows, header_count=2)])])
+            ["№ поездов", second_number, ""], ["Разд. пункты", "приб.", "отпр."],
+            [second_stations[0], "—", "10.00"], [second_stations[1], "10.10", "—"]]
+    return [("suburban", [book_table(rows, header_count=2)])]
+
+
+def test_glued_table_is_reported_and_still_checked(write_book):
+    """A second table glued on (scans 74-78) splits the column: the runs
+    either side are separate, named from the header over them, and the
+    header itself is a finding."""
+    d = write_book(5, _inner_header("6007", ["Рига-пасс.", "Засулаукс"]))
     columns, findings = run(d)
-    assert findings == []
     assert [c.train for c in columns] == ["6001 (part 1)", "6007 (part 2)"]
+    (f,) = findings
+    assert f.severity == 0 and f.rules == {0}
+    assert "two tables glued into one" in f.message
+    assert (f.where.train, f.where.station) == ("6007", "rows 2–3")
+    assert v.cell_ranges(f.cells) == "r2–3c0"
+
+
+def test_glued_table_running_the_other_way(write_book):
+    """The list may start again from its far end (scan 76, folio 148)."""
+    d = write_book(5, _inner_header("6007", ["Засулаукс", "Рига-пасс."]))
+    (f,) = run(d)[1]
+    assert "two tables glued into one" in f.message
+
+
+def test_header_read_twice(write_book):
+    """The same trains as the head: the OCR read the top twice (scan 32)."""
+    d = write_book(5, _inner_header("6001", ["Рига-пасс.", "Засулаукс"]))
+    (f,) = run(d)[1]
+    assert "read the top of the table twice" in f.message
+
+
+def test_header_over_new_stations(write_book):
+    """Neither a restart nor a repeat: only the scan can tell."""
+    d = write_book(5, _inner_header("6007", ["Золитуде", "Иманта"]))
+    (f,) = run(d)[1]
+    assert f.message.endswith("check the scan")
 
 
 # ----------------------------------------------------- rule 4: same leg
