@@ -166,6 +166,7 @@ class Finding:
         # on the iteration order of a set of strings, or two runs over the same
         # book disagree.
         self.cells = tuple(dict.fromkeys(where.cells))
+        self.texts = dict(where.texts)
 
     def merge(self, other):
         """Several rules on one cell collapse to one finding, ranked up."""
@@ -173,6 +174,7 @@ class Finding:
         self.severity = min(self.severity, other.severity)
         self.score = max(self.score, other.score)
         self.cells = tuple(dict.fromkeys(self.cells + other.cells))
+        self.texts.update(other.texts)
         self.message += "; " + other.message
         self.evidence.update(other.evidence)
 
@@ -190,10 +192,16 @@ class Finding:
                 ", ".join("structure" if r == 0 else str(r) for r in sorted(self.rules)),
                 self.message, "  ".join(f"{k}={v}" for k, v in self.evidence.items())]
 
+    def values(self):
+        """The printed cells, top to bottom then left to right; ∅ for a blank."""
+        cells = sorted((c for c in self.cells if c in self.texts), key=lambda c: c[3:])
+        return [self.texts[c].strip() or "∅" for c in cells]
+
     def as_dict(self):
         return {"severity": self.severity, "score": round(self.score, 3),
                 "rules": sorted(self.rules), "message": self.message,
-                "evidence": self.evidence, **self.where.as_dict()}
+                "evidence": self.evidence, **self.where.as_dict(),
+                "values": self.values()}
 
 
 def cell_ranges(cells):
@@ -222,12 +230,15 @@ def findings_table(findings) -> str:
 class Where:
     """A location in the book pages, down to the cells involved."""
 
-    def __init__(self, scan, folio, shape, train, station=None, cells=()):
+    def __init__(self, scan, folio, shape, train, station=None, cells=(), texts=()):
         self.scan, self.folio, self.shape = scan, folio, shape
         self.train, self.station = train, station
         # A cell is identified book-wide: the same (row, col) exists on every
         # page, and two findings are the same cell only on the same column.
         self.cells = tuple((scan, folio, train, r, c) for r, c in cells)
+        # What the page prints in those cells, where known: an ignore.txt
+        # entry pins these, so it lapses when the cell is corrected.
+        self.texts = {cell: t for cell, t in zip(self.cells, texts)}
 
     def __str__(self):
         s = f"scan-{self.scan:02d}.md folio {self.folio} [{self.shape}] п.№ {self.train}"
@@ -307,8 +318,12 @@ class Column:
         self.direction = None       # +1 down the page, -1 up it, None no fit
 
     def where(self, stop=None, cells=()):
+        texts = []
+        for r, c in cells:
+            s = self.stops[r]
+            texts.append(s.arr.text if c == s.cols[0] else s.dep.text)
         return Where(self.scan, self.folio, self.shape, self.train,
-                     stop.station if stop else None, cells)
+                     stop.station if stop else None, cells, texts)
 
     def travel(self):
         order = self.stops if self.direction != -1 else list(reversed(self.stops))
@@ -482,7 +497,8 @@ def zone_mileposts(scan, folio, shape, rows, kms, zones, destination, declared, 
         if reckoning is None or (declared and reckoning not in declared):
             if known:
                 where = Where(scan, folio, shape, "—", None,
-                              [(rows_in[0], 1), (rows_in[-1], 1)])
+                              [(rows_in[0], 1), (rows_in[-1], 1)],
+                              [rows[rows_in[0]][1], rows[rows_in[-1]][1]])
                 route = f"route «{destination}»" if destination else "route not printed"
                 out_of = (f"{reckoning!r}, which {route} does not use"
                           if reckoning else "no one reckoning")
@@ -495,7 +511,8 @@ def zone_mileposts(scan, folio, shape, rows, kms, zones, destination, declared, 
         for i in rows_in:
             name = rows[i][0].strip() if rows[i] else ""
             if kms[i] is not None and name:
-                where = Where(scan, folio, shape, "—", name, [(i, 0), (i, 1)])
+                where = Where(scan, folio, shape, "—", name, [(i, 0), (i, 1)],
+                              rows[i][:2])
                 out.append((reckoning, kms[i], name, where))
     return out
 
@@ -893,11 +910,86 @@ def collapse(findings):
                     "read as a column misaligned by a row, not as bad digits",
                     {"first": run[0].message})
                 merged.rules = set().union(*(g.rules for g in run))
+                for g in run:
+                    merged.texts.update(g.texts)
                 out.append(merged)
                 absorbed.update(id(g) for g in run)
             run = [f] if f is not None else []
     out.extend(f for f in clusters if id(f) not in absorbed)
     return sorted(out, key=lambda f: f.rank)
+
+
+# ------------------------------------------------------------------- ignore
+
+IGNORE_FILE = "ignore.txt"
+IGNORE_HEAD = ["scan", "folio", "train", "where", "rules", "values", "note"]
+
+
+def read_ignores(path):
+    """The entries of an ignore.txt: findings checked against the scan and found
+    true to the book. One table row each, in the scan files' table format:
+
+        | scan | folio | train | where      | rules | values        | note       |
+        |======|=======|=======|============|=======|===============|============|
+        | 62   | 121   | 6742  | Рига-пасс. | 2     | 20.50 / 21.21 | as printed |
+
+    scan, folio, train, where and rules are copied from findings.txt; values
+    are the cells the finding points at, as the page prints them, top to
+    bottom then left to right, split by " / ", ∅ for a blank. No row numbers:
+    they drift. A line starting with # is a comment.
+    """
+    entries = []
+    for n, line in enumerate(path.read_text().splitlines(), 1):
+        t = line.strip()
+        if not t or t.startswith("#") or set(t) <= set("|=- "):
+            continue
+        cells = [c.strip() for c in t.strip("|").split("|")]
+        if cells == IGNORE_HEAD:
+            continue
+        if not t.startswith("|") or len(cells) != len(IGNORE_HEAD):
+            raise SystemExit(f"{path}:{n}: want a table row of {len(IGNORE_HEAD)} cells: "
+                             + " | ".join(IGNORE_HEAD))
+        scan, folio, train, where, rules, values, _note = cells
+        try:
+            entries.append({
+                "line": n, "scan": int(scan), "folio": int(folio) if folio else None,
+                "train": train, "where": where,
+                "rules": {0 if r.strip() == "structure" else int(r) for r in rules.split(",")},
+                "values": [v.strip() for v in values.split(" / ")] if values else []})
+        except ValueError:
+            raise SystemExit(f"{path}:{n}: scan and folio are numbers, rules like «2, 4» "
+                             "or «structure»")
+    return entries
+
+
+def ignored_by(entry, f):
+    w = f.where
+    return (w.scan == entry["scan"] and w.folio == entry["folio"]
+            and w.train == entry["train"] and (w.station or "") == entry["where"]
+            and f.rules <= entry["rules"] and f.values() == entry["values"])
+
+
+def apply_ignores(path, findings):
+    """Drop the findings ignore.txt names. An entry that matches none is itself
+    a finding: its cells were corrected, or the finding went, and the line is
+    either stale or now hides nothing."""
+    entries = read_ignores(path)
+    kept, ignored = [], 0
+    hit = set()
+    for f in findings:
+        match = [e["line"] for e in entries if ignored_by(e, f)]
+        if match:
+            ignored += 1
+            hit.update(match)
+        else:
+            kept.append(f)
+    for e in entries:
+        if e["line"] not in hit:
+            kept.append(Finding(
+                0, 100.0, 0, Where(e["scan"], e["folio"], "ignore", e["train"], e["where"]),
+                f"{path.name} line {e['line']} matches no finding — its cells changed or "
+                "the finding went; update the line or drop it"))
+    return sorted(kept, key=lambda f: f.rank), ignored
 
 
 # -------------------------------------------------------------------- driver
@@ -935,12 +1027,17 @@ def main():
     ap.add_argument("--rule", type=int, action="append", help="only these rules")
     ap.add_argument("--impossible", action="store_true", help="only the impossible ones")
     ap.add_argument("--json", action="store_true", help="findings as JSON")
+    ap.add_argument("--no-ignore", action="store_true",
+                    help=f"show the findings {IGNORE_FILE} in --src would drop")
     ap.add_argument("--dest", type=Path,
                     help="write to a file instead of printing: a dir gets "
                          "findings.txt (.json), a file is written as named")
     a = ap.parse_args()
 
     columns, findings = validate(a.src)
+    ignored = 0
+    if not a.no_ignore and (a.src / IGNORE_FILE).is_file():
+        findings, ignored = apply_ignores(a.src / IGNORE_FILE, findings)
     if a.rule:
         findings = [f for f in findings if f.rules & set(a.rule)]
     if a.impossible:
@@ -954,7 +1051,8 @@ def main():
         out = (findings_table(shown) + "\n\n" if shown else "") + (
             f"{len(columns)} train columns checked; {len(findings)} findings "
             f"({hard} impossible, {len(findings) - hard} deviations), "
-            f"{len(shown)} shown.\n"
+            f"{len(shown)} shown"
+            + (f", {ignored} ignored by {IGNORE_FILE}" if ignored else "") + ".\n"
             "Triage, not a verdict — check each against the scan. "
             "Nothing here has been repaired.\n")
     if a.dest:

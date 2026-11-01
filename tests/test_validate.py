@@ -449,3 +449,65 @@ def test_findings_table():
         "| 2 | deviation  | 5    | 6     | suburban | 6001  | X     | r4–5c1 | 4     "
         "| rule 4 at [4, 5] |          |"
     )
+
+
+# ------------------------------------------------------------------ ignore
+IGNORE = """\
+| scan | folio | train | where     | rules | values | note |
+|======|=======|=======|===========|=======|========|======|
+| 5    | 6     | 6001  | Засулаукс | 2     | {}     | ok   |
+"""
+
+
+def _dwell_book(write_book, dep="10.05"):
+    return write_book(5, [("suburban", [suburban_table(
+        STATIONS, train("—", "10.00", "10.10", dep, "10.15", "10.16", "10.20", "—"))])])
+
+
+def _main(d, monkeypatch, capsys, *args):
+    monkeypatch.setattr(sys, "argv", ["validate.py", "--src", str(d), *args])
+    code = v.main()
+    return code, capsys.readouterr().out
+
+
+def test_ignore_drops_a_finding_by_place_and_values(write_book, monkeypatch, capsys):
+    d = _dwell_book(write_book)
+    code, out = _main(d, monkeypatch, capsys, "--json")
+    (f,) = json.loads(out)
+    assert (f["train"], f["station"], f["values"]) == ("6001", "Засулаукс", ["10.05"])
+
+    (d / "ignore.txt").write_text(IGNORE.format("10.05"))
+    code, out = _main(d, monkeypatch, capsys)
+    assert code == 0 and "0 findings" in out and "1 ignored by ignore.txt" in out
+    code, out = _main(d, monkeypatch, capsys, "--no-ignore")
+    assert code == 1 and "1 findings" in out
+
+
+def test_ignore_lapses_when_its_cells_change(write_book, monkeypatch, capsys):
+    d = _dwell_book(write_book, dep="10.04")
+    (d / "ignore.txt").write_text(IGNORE.format("10.05"))
+    code, out = _main(d, monkeypatch, capsys, "--json")
+    fs = json.loads(out)
+    assert code == 1 and len(fs) == 2
+    assert fs[0]["message"].startswith("ignore.txt line 3 matches no finding")
+    assert fs[1]["values"] == ["10.04"]
+
+
+def test_ignore_does_not_hide_another_rule_on_the_same_cells():
+    f = _finding(2, [1])
+    f.texts = {f.cells[0]: "10.05"}
+    entry = {"scan": 5, "folio": 6, "train": "6001", "where": "X", "values": ["10.05"]}
+    assert v.ignored_by({**entry, "rules": {2}}, f)
+    f.rules.add(4)
+    assert not v.ignored_by({**entry, "rules": {2}}, f)
+    assert v.ignored_by({**entry, "rules": {2, 4}}, f)
+
+
+@pytest.mark.parametrize("row", ["| 5 | 6 | ?0.1 | Засулаукс | 2 | 10.10 |",
+                                 "| five | 6 | ?0.1 | Засулаукс | 2 | 10.10 | ok |",
+                                 "5 6 ?0.1 Засулаукс 2 10.10 ok"])
+def test_ignore_refuses_a_bad_row(row, tmp_path):
+    p = tmp_path / "ignore.txt"
+    p.write_text("# comment\n\n" + row + "\n")
+    with pytest.raises(SystemExit, match="ignore.txt:3"):
+        v.read_ignores(p)

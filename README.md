@@ -43,6 +43,8 @@ Every script takes its dirs as arguments; none are built in.
                                            # check the scan files against themselves (any
                                            # scan dir works); findings.txt, or no
                                            # --dest to print
+                                           # findings checked and true to the book go in
+                                           # final-NN/ignore.txt; see validator.md
     python3 scripts/build_book_pdf.py --src attempts/final-NN --dest build/1988-1989-prigorodnye-rabochie.pdf
                                            # final render; needs weasyprint
 

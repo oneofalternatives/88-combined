@@ -65,6 +65,27 @@ header the rules check each part on its own. Three cases:
 
 Row numbers in this finding count the body rows of the whole table.
 
+## Ignoring a finding
+
+A finding you checked against the scan and found true to the book goes in
+`ignore.txt` in the `--src` dir. The validator reads it by itself and drops
+that finding. `--no-ignore` shows everything again.
+
+    | scan | folio | train | where      | rules | values        | note       |
+    |======|=======|=======|============|=======|===============|============|
+    | 62   | 121   | 6742  | Рига-пасс. | 2     | 20.50 / 21.21 | as printed |
+
+- `scan`, `folio`, `train`, `where`, `rules`: copy from findings.txt.
+- `values`: the cells the finding points at, as printed, top to bottom then
+  left to right, split by ` / `; `∅` for a blank. `--json` lists them.
+- `note`: free text, not matched.
+- `#` starts a comment.
+
+No row or rank numbers, so an entry holds as findings come and go. It holds only
+while the cells still print those values and no other rule joins in. When you
+correct a cell, its entry no longer matches and becomes a finding itself:
+update the line or drop it.
+
 ## Mileposting
 
 Chapter XII prints a through route in several reckonings and the numbering
