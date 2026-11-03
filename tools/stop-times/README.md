@@ -3,10 +3,14 @@
 Lists every train's arrival and departure at one station, in book order. One
 md table, one row per printed train column. See `SPEC.md`.
 
-    python3 tools/stop-times/stop_times.py attempts/final-NN --dest riga.md
-    python3 tools/stop-times/stop_times.py attempts/final-NN --dest x.md --station "Огре"
+    python3 tools/stop-times/stop_times.py attempts/final-NN --dest tools/stop-times/output/final-NN.md
+    python3 tools/stop-times/stop_times.py attempts/final-NN --dest tools/stop-times/output/final-NN-ogre.md --station "Огре"
 
 The station name must match the cell exactly. `--station` defaults to `Рига-пасс.`.
+
+Output goes in `output/`, one file per input dir, named after it. For another
+station, add its name. Files there are generated: run the tool again after
+correcting the book, don't edit them by hand.
 
 ## Reject
 
