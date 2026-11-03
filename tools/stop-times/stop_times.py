@@ -31,6 +31,9 @@ PASS = {"—", "-", "–"}
 TIME_RE = re.compile(r"^(\d{1,2})\.(\d{2})(,5)?$")
 DIGIT_RE = re.compile(r"\d")
 MARK_RE = re.compile(r"⟨[^⟩]*⟩?")
+OPTIONAL = {"table": "add the table number on the page as a column",
+            "column": "add the train column's place in its table as a column",
+            "train": "add the raw train-number cell as a column"}
 MARKS = ["Д", "ДР", "*", "**", "weekends", "ДИЗЕЛЬНЫЙ", "Пригородный"]
 COLUMNS = ["scan", "page", "table", "column", "train", "number", "number2",
            "marks", "first on page", "last on page", "arrival", "departure",
@@ -311,17 +314,18 @@ def stop_times(src, station):
     return rows, errors
 
 
-def to_markdown(rows, station, src):
-    widths = [max([len(c)] + [len(r[c]) for r in rows]) for c in COLUMNS]
+def to_markdown(rows, station, src, extra=()):
+    cols = [c for c in COLUMNS if c not in OPTIONAL or c in extra]
+    widths = [max([len(c)] + [len(r[c]) for r in rows]) for c in cols]
 
     def line(cells):
         return "| " + " | ".join(c.ljust(w) for c, w in zip(cells, widths)) + " |"
 
     out = [f"# Stop times at {station}", "",
            f"From `{src}`, one row per train column, in book order.", "",
-           line(COLUMNS),
+           line(cols),
            "|" + "|".join("=" * (w + 2) for w in widths) + "|"]
-    out += [line([r[c] for c in COLUMNS]) for r in rows]
+    out += [line([r[c] for c in cols]) for r in rows]
     return "\n".join(out) + "\n"
 
 
@@ -330,6 +334,8 @@ def main(argv=None):
     ap.add_argument("src", type=Path, help="an attempts/final-NN dir")
     ap.add_argument("--dest", type=Path, required=True, help="the md file to write")
     ap.add_argument("--station", default="Рига-пасс.")
+    for name, text in OPTIONAL.items():
+        ap.add_argument(f"--{name}", action="store_true", help=text)
     args = ap.parse_args(argv)
     if not scan_files(args.src):
         print(f"{args.src}: no scan-*.md files", file=sys.stderr)
@@ -344,7 +350,8 @@ def main(argv=None):
     if not rows:
         print(f"no train column has a row for {args.station}", file=sys.stderr)
         return 1
-    args.dest.write_text(to_markdown(rows, args.station, args.src))
+    args.dest.write_text(to_markdown(rows, args.station, args.src,
+                                      [c for c in OPTIONAL if getattr(args, c)]))
     print(f"{len(rows)} rows -> {args.dest}")
     return 0
 

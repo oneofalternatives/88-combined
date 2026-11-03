@@ -280,7 +280,22 @@ def test_main_writes_an_aligned_table(write_book, tmp_path):
     table = [ln for ln in lines if ln.startswith("|")]
     assert len({len(ln) for ln in table}) == 1
     assert set(table[1]) <= set("|=")
-    assert table[2].split("|")[5].strip() == "6001"
+    assert table[0].split("|")[3].strip() == "number"
+    assert table[2].split("|")[3].strip() == "6001"
+
+
+@pytest.mark.parametrize("flags, head", [
+    (["--train"], ["scan", "page", "train", "number"]),
+    (["--table"], ["scan", "page", "table", "number"]),
+    (["--column", "--table"], ["scan", "page", "table", "column", "number"]),
+])
+def test_main_flags_add_columns(write_book, tmp_path, flags, head):
+    t = suburban_table(["Огре", RIGA], [("—", "10.00"), ("10.30", "—")])
+    d = write_book(3, [("suburban", [t])], folios=[2])
+    dest = tmp_path / "out.md"
+    assert st.main([str(d), "--dest", str(dest), *flags]) == 0
+    table = [ln for ln in dest.read_text().splitlines() if ln.startswith("|")]
+    assert [c.strip() for c in table[0].split("|")[1:len(head) + 1]] == head
 
 
 def test_main_on_reject_writes_nothing(write_book, tmp_path, capsys):
