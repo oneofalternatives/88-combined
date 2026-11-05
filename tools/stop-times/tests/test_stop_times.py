@@ -154,14 +154,21 @@ def test_suburban_rows_in_book_order(write_book):
     rows = rows_of(d)
     assert [(r["page"], r["column"], r["number"], r["status"]) for r in rows] == [
         ("2", "1", "6001", "stops"), ("2", "2", "6003", "passes"),
-        ("2", "4", "6007", "note"),
-        ("3", "1", "6001", "stops"), ("3", "2", "6003", "passes"),
-        ("3", "4", "6007", "note")]
+        ("3", "1", "6001", "stops"), ("3", "2", "6003", "passes")]
     first = rows[0]
     assert (first["arrival"], first["departure"]) == ("10.30", "10.35")
     assert (first["first on page"], first["last on page"]) == ("Огре", "Засулаукс")
-    assert rows[2]["arrival"] == "Вецаки"
-    assert (rows[2]["first on page"], rows[2]["last on page"]) == ("Огре", "Огре")
+
+
+@pytest.mark.parametrize("note", ["Вецаки", "До Саласпилс"])
+def test_note_at_the_station_gives_no_row(write_book, note):
+    # A route note in the station's time cell: the train goes round the
+    # station, it neither stops nor passes through.
+    t = suburban_table(["Огре", RIGA, "Ошкалны"],
+                       [("—", "11.00"), (note, ""), ("11.30", "—")],
+                       [("—", "12.00"), ("12.30", "—"), ("", "")])
+    d = write_book(3, [("suburban", [t])], folios=[2])
+    assert [r["number"] for r in rows_of(d)] == ["6003"]
 
 
 def test_station_never_matches_a_substring(write_book):
