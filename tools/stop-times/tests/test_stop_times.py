@@ -280,14 +280,14 @@ def test_main_writes_an_aligned_table(write_book, tmp_path):
     table = [ln for ln in lines if ln.startswith("|")]
     assert len({len(ln) for ln in table}) == 1
     assert set(table[1]) <= set("|=")
-    assert table[0].split("|")[3].strip() == "number"
+    assert table[0].split("|")[3].strip() == "no"
     assert table[2].split("|")[3].strip() == "6001"
 
 
 @pytest.mark.parametrize("flags, head", [
-    (["--train"], ["scan", "page", "train", "number"]),
-    (["--table"], ["scan", "page", "table", "number"]),
-    (["--column", "--table"], ["scan", "page", "table", "column", "number"]),
+    (["--train"], ["sc", "pg", "train", "no"]),
+    (["--table"], ["sc", "pg", "table", "no"]),
+    (["--column", "--table"], ["sc", "pg", "table", "column", "no"]),
 ])
 def test_main_flags_add_columns(write_book, tmp_path, flags, head):
     t = suburban_table(["Огре", RIGA], [("—", "10.00"), ("10.30", "—")])

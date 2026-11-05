@@ -38,6 +38,9 @@ MARKS = ["Д", "ДР", "*", "**", "weekends", "ДИЗЕЛЬНЫЙ", "Приго�
 COLUMNS = ["scan", "page", "table", "column", "train", "number", "number2",
            "marks", "first on page", "last on page", "arrival", "departure",
            "status"]
+# header titles kept short where the data is narrower than the column name
+TITLES = {"scan": "sc", "page": "pg", "number": "no", "number2": "no2",
+          "arrival": "arr", "departure": "dep"}
 
 
 class Reject(Exception):
@@ -316,14 +319,15 @@ def stop_times(src, station):
 
 def to_markdown(rows, station, src, extra=()):
     cols = [c for c in COLUMNS if c not in OPTIONAL or c in extra]
-    widths = [max([len(c)] + [len(r[c]) for r in rows]) for c in cols]
+    titles = [TITLES.get(c, c) for c in cols]
+    widths = [max([len(t)] + [len(r[c]) for r in rows]) for t, c in zip(titles, cols)]
 
     def line(cells):
         return "| " + " | ".join(c.ljust(w) for c, w in zip(cells, widths)) + " |"
 
     out = [f"# Stop times at {station}", "",
            f"From `{src}`, one row per train column, in book order.", "",
-           line(cols),
+           line(titles),
            "|" + "|".join("=" * (w + 2) for w in widths) + "|"]
     out += [line([r[c] for c in cols]) for r in rows]
     return "\n".join(out) + "\n"
