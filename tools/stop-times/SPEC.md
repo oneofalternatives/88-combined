@@ -57,7 +57,7 @@ stop_times.py <final-NN dir> --dest <file.md> [--station "Рига-пасс."]
 | train         | raw train-number cell, only with `--train`                    |
 | no            | first train number                                            |
 | no2           | second number of a renumbered train (`6633/6644`), else blank |
-| marks         | known marks, see below                                        |
+| marks         | known marks as short codes, see below                         |
 | first on page | first stop with a time in this column                         |
 | last on page  | last stop with a time in this column                          |
 | arr           | arrival, as printed                                           |
@@ -66,16 +66,18 @@ stop_times.py <final-NN dir> --dest <file.md> [--station "Рига-пасс."]
 
 ## Marks
 
-| mark          | form                               |
-| ------------- | ---------------------------------- |
-| `Д`           | `… Д`                              |
-| `ДР`          | `… ДР`                             |
-| `*`           | `…*`                               |
-| `**`          | `…**`, `… (По особому назначению)` |
-| weekends      | `По выходным дням …`               |
-| `ДИЗЕЛЬНЫЙ`   | caption                            |
-| `Пригородный` | caption, `Пригородный п. №`        |
+| mark          | code  | form                               |
+| ------------- | ----- | ---------------------------------- |
+| `Д`           | `Д`   | `… Д`                              |
+| `ДР`          | `ДР`  | `… ДР`                             |
+| `*`           | `*`   | `…*`                               |
+| `**`          | `**`  | `…**`, `… (По особому назначению)` |
+| weekends      | `вых` | `По выходным дням …`               |
+| `ДИЗЕЛЬНЫЙ`   | `ДИЗ` | caption                            |
+| `Пригородный` | `П`   | caption, `Пригородный п. №`        |
 
+- The marks column holds codes, in this order, joined by `, `.
+- The output ends with a legend of all seven codes, always the same.
 - `(По особому назначению)` replaces a printed `*`: `6805* ДР (По особому
   назначению)` gives `**` only.
 - A train name in `«…»` is dropped (`п. № 898 ДР «СНЕЖОК»`). Only one train

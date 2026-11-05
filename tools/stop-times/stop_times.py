@@ -34,7 +34,16 @@ MARK_RE = re.compile(r"⟨[^⟩]*⟩?")
 OPTIONAL = {"table": "add the table number on the page as a column",
             "column": "add the train column's place in its table as a column",
             "train": "add the raw train-number cell as a column"}
-MARKS = ["Д", "ДР", "*", "**", "weekends", "ДИЗЕЛЬНЫЙ", "Пригородный"]
+# (mark, code in the output, how the book prints it), in output order
+MARKS = [
+    ("Д", "Д", "`Д` after the train number"),
+    ("ДР", "ДР", "`ДР` after the train number"),
+    ("*", "*", "`*` after the train number"),
+    ("**", "**", "`**` after the train number, or `(По особому назначению)`"),
+    ("weekends", "вых", "`По выходным дням` before the train number"),
+    ("ДИЗЕЛЬНЫЙ", "ДИЗ", "`ДИЗЕЛЬНЫЙ` in the page caption"),
+    ("Пригородный", "П", "`Пригородный п. №` in the caption"),
+]
 COLUMNS = ["scan", "page", "table", "column", "train", "number", "number2",
            "marks", "first on page", "last on page", "arrival", "departure",
            "status"]
@@ -140,7 +149,7 @@ def caption_trains(items):
 
 
 def mark_list(marks):
-    return ", ".join(m for m in MARKS if m in marks)
+    return ", ".join(code for m, code, _ in MARKS if m in marks)
 
 
 # ---------------------------------------------------------------- tables
@@ -317,19 +326,26 @@ def stop_times(src, station):
     return rows, errors
 
 
-def to_markdown(rows, station, src, extra=()):
-    cols = [c for c in COLUMNS if c not in OPTIONAL or c in extra]
-    titles = [TITLES.get(c, c) for c in cols]
-    widths = [max([len(t)] + [len(r[c]) for r in rows]) for t, c in zip(titles, cols)]
+def md_table(titles, rows):
+    """Lines of an aligned table in the repo's style."""
+    widths = [max(len(c) for c in col) for col in zip(titles, *rows)]
 
     def line(cells):
         return "| " + " | ".join(c.ljust(w) for c, w in zip(cells, widths)) + " |"
 
+    return ([line(titles), "|" + "|".join("=" * (w + 2) for w in widths) + "|"]
+            + [line(r) for r in rows])
+
+
+def to_markdown(rows, station, src, extra=()):
+    cols = [c for c in COLUMNS if c not in OPTIONAL or c in extra]
     out = [f"# Stop times at {station}", "",
-           f"From `{src}`, one row per train column, in book order.", "",
-           line(titles),
-           "|" + "|".join("=" * (w + 2) for w in widths) + "|"]
-    out += [line([r[c] for c in cols]) for r in rows]
+           f"From `{src}`, one row per train column, in book order.", ""]
+    out += md_table([TITLES.get(c, c) for c in cols],
+                    [[r[c] for c in cols] for r in rows])
+    out += ["", "## Marks", ""]
+    out += md_table(["mark", "printed in the book"],
+                    [[code, form] for _, code, form in MARKS])
     return "\n".join(out) + "\n"
 
 
