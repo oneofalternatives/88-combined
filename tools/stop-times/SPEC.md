@@ -14,7 +14,7 @@ stop_times.py <final-NN dir> --dest <file.md> [--station "Рига-пасс."]
 - `--dest`: required. The md file to write.
 - `--station` defaults to `Рига-пасс.`.
 - `--table`, `--column`, `--train`: add that column. Off by default:
-  scan, page and number find a train, and number, number2 and marks hold
+  sc, pg and no find a train, and no, no2 and marks hold
   what `train` does, less a dropped `«…»` name.
 - Output: md only, in the repo's own table style.
 
@@ -51,17 +51,17 @@ stop_times.py <final-NN dir> --dest <file.md> [--station "Рига-пасс."]
 
 | column        | content                                                       |
 | ------------- | ------------------------------------------------------------- |
-| scan, page    | where the train column is                                     |
+| sc, pg        | scan and page, where the train column is                      |
 | table         | table on the page, only with `--table`                        |
 | column        | column in the table, only with `--column`                     |
 | train         | raw train-number cell, only with `--train`                    |
-| number        | first train number                                            |
-| number2       | second number of a renumbered train (`6633/6644`), else blank |
+| no            | first train number                                            |
+| no2           | second number of a renumbered train (`6633/6644`), else blank |
 | marks         | known marks, see below                                        |
 | first on page | first stop with a time in this column                         |
 | last on page  | last stop with a time in this column                          |
-| arrival       | as printed                                                    |
-| departure     | as printed                                                    |
+| arr           | arrival, as printed                                           |
+| dep           | departure, as printed                                         |
 | status        | `stops` / `passes` / `note`                                   |
 
 ## Marks
