@@ -178,7 +178,7 @@ def test_marks_and_renumbering_from_the_header(write_book):
     d = write_book(3, [("suburban", [book_table(rows, header_count=2)])], folios=[2])
     a, b = rows_of(d)
     assert (a["number"], a["number2"], a["marks"]) == ("6633", "6644", "")
-    assert (b["number"], b["number2"], b["marks"]) == ("6848", "", "ДР, weekends")
+    assert (b["number"], b["number2"], b["marks"]) == ("6848", "", "ДР, вых")
     assert b["train"] == "По выходным дням 6848 ДР"
 
 
@@ -203,7 +203,7 @@ def test_two_way_caption_and_bottom_up_train(write_book):
     ])
     d = write_book(3, [page], folios=[2])
     down, up = rows_of(d)
-    assert (down["number"], down["marks"]) == ("6802", "ДР, Пригородный")
+    assert (down["number"], down["marks"]) == ("6802", "ДР, П")
     assert (down["first on page"], down["last on page"]) == (RIGA, "Яняварты")
     assert (up["number"], up["marks"]) == ("6801", "ДР")
     assert (up["first on page"], up["last on page"]) == ("Яняварты", RIGA)
@@ -217,8 +217,8 @@ def test_distance_caption_marks_every_train_diesel(write_book):
     ])
     d = write_book(3, [page], folios=[2])
     a, b = rows_of(d)
-    assert (a["number"], a["number2"], a["marks"]) == ("698", "6314", "ДИЗЕЛЬНЫЙ")
-    assert (b["number"], b["number2"], b["marks"]) == ("6311", "697", "ДИЗЕЛЬНЫЙ")
+    assert (a["number"], a["number2"], a["marks"]) == ("698", "6314", "ДИЗ")
+    assert (b["number"], b["number2"], b["marks"]) == ("6311", "697", "ДИЗ")
     assert b["first on page"] == "Огре"
 
 
@@ -276,12 +276,24 @@ def test_main_writes_an_aligned_table(write_book, tmp_path):
     d = write_book(3, [("suburban", [t])], folios=[2])
     dest = tmp_path / "out.md"
     assert st.main([str(d), "--dest", str(dest)]) == 0
-    lines = dest.read_text().splitlines()
-    table = [ln for ln in lines if ln.startswith("|")]
+    text = dest.read_text()
+    table = [ln for ln in text.split("\n\n")[2].splitlines()]
     assert len({len(ln) for ln in table}) == 1
     assert set(table[1]) <= set("|=")
     assert table[0].split("|")[3].strip() == "no"
     assert table[2].split("|")[3].strip() == "6001"
+
+
+def test_main_ends_with_the_full_marks_legend(write_book, tmp_path):
+    t = suburban_table(["Огре", RIGA], [("—", "10.00"), ("10.30", "—")])
+    d = write_book(3, [("suburban", [t])], folios=[2])
+    dest = tmp_path / "out.md"
+    assert st.main([str(d), "--dest", str(dest)]) == 0
+    head, legend = dest.read_text().split("## Marks\n\n")
+    lines = legend.splitlines()
+    assert len({len(ln) for ln in lines}) == 1
+    assert [ln.split("|")[1].strip() for ln in lines[2:]] == \
+        ["Д", "ДР", "*", "**", "вых", "ДИЗ", "П"]
 
 
 @pytest.mark.parametrize("flags, head", [
