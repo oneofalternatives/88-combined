@@ -29,6 +29,9 @@ stop_times.py <final-NN dir> --dest <file.md> [--station "Рига-пасс."]
 ## Rows
 
 - One row per train column that has a station row, as printed.
+- A train with a text note in the station's time cell (`Вецаки`,
+  `До Саласпилс`) gives no row. The note is where the trip goes on: the train
+  goes round the station, not through it.
 - A train printed in two chapters gives two rows. Don't merge, don't link,
   don't report conflicts.
 - Order: scan, then page, then table, then column left to right.
@@ -39,11 +42,10 @@ stop_times.py <final-NN dir> --dest <file.md> [--station "Рига-пасс."]
   (`Рига Пречу` must not match `Рига-пасс.`).
 - Status:
 
-| status   | printed                                |
-| -------- | -------------------------------------- |
-| `stops`  | one or both times                      |
-| `passes` | `—/—`                                  |
-| `note`   | a text note (`Вецаки`, `До Саласпилс`) |
+| status   | printed           |
+| -------- | ----------------- |
+| `stops`  | one or both times |
+| `passes` | `—/—`             |
 
 - Keep times as printed (`,5`, `24.00`). Don't fix them.
 
@@ -62,7 +64,7 @@ stop_times.py <final-NN dir> --dest <file.md> [--station "Рига-пасс."]
 | last on page  | last stop with a time in this column                          |
 | arr           | arrival, as printed                                           |
 | dep           | departure, as printed                                         |
-| status        | `stops` / `passes` / `note`                                   |
+| status        | `stops` / `passes`                                            |
 
 ## Marks
 

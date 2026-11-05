@@ -242,6 +242,8 @@ def read_table(loc, table, shape, items, station, errors):
             err("times fit neither direction", n)
         if len(errors) > before:
             continue
+        if status == "note":   # a route note in the time cell: the train goes round
+            continue
         timed = [s for s in stops if "time" in (cell_kind(s[1]), cell_kind(s[2]))]
         if d == -1:
             timed.reverse()
