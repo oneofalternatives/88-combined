@@ -1,0 +1,87 @@
+# Stop-name findings: golden sample
+#
+# What stop_names.py should report when run on attempts/final-01 as of commit
+# 2d2a3f4. For work on stop_names.py only: later fixes to final-01 remove the
+# forms below, so do not score the current final-01. Score the old one:
+#
+#   mkdir -p /tmp/golden && git archive 2d2a3f4 attempts/final-01 | tar -x -C /tmp/golden
+#   python3 tools/stop-name-normalizer/check_golden.py /tmp/golden/attempts/final-01
+#
+# One line per form: <tag> | <form as printed> | <target> | count | scans | shapes | note.
+# The target is a spelling printed in final-01, so the pair can be found.
+# Where the right spelling is never printed, the target is the nearest
+# printing of the same stop and the note gives the fix.
+# Notation lines: … is any text, # a number. They cover every name printed
+# that way, also those with no twin (О. п. Васкряма).
+#
+# Tags:
+#   mistake   OCR misread or book typo; fix in the scan files
+#   artifact  line-break or layout leftover (hyphen + space, etc.); fix
+#   scatter   the book is inconsistent with no pattern; fix or map, by choice
+#   form      a consistent form tied to a context (e.g. distance tables spell
+#             in full, suburban ones abbreviate); keep, list in the mapping file
+#
+# count, scans, shapes and note are for review only, not for scoring.
+# Counts are cells as stop_names.py reads them; forms it does not read were
+# counted by hand.
+
+tag      | form                 | target              | count | scans                                    | shapes                 | note
+mistake  | Внестури             | Виестури            |     2 | 79                                       | suburban 2             |
+mistake  | Звейшекциемс         | Звейниекциемс       |     2 | 68                                       | suburban 2             |
+mistake  | Зиедыни              | Зиедини             |    17 | 54–56,58–63                              | suburban 17            |
+mistake  | Знедыни              | Зиедини             |     2 | 57                                       | suburban 2             |
+mistake  | Золитуда             | Золитуде            |     1 | 36                                       | suburban 1             |
+mistake  | Инчукалис            | Инчукалнс           |     1 | 97                                       | distance 1             |
+mistake  | Кайбаал              | Кайбала             |     1 | 49                                       | suburban 1             |
+mistake  | Калигале             | Калнгале            |    35 | 54–57,59–62,64–73                        | suburban 35            | the most common spelling, but wrong
+mistake  | Қалигале             | Калнгале            |     1 | 63                                       | suburban 1             | Қ for К
+mistake  | Қандава              | Кандава             |     2 | 98                                       | suburban 2             | Қ for К; Кандава is never printed, the letter check finds it
+mistake  | Лиелуне              | Лиелупе             |     1 | 25                                       | suburban 1             |
+mistake  | Меллужн              | Меллужи             |     2 | 11                                       | suburban 2             |
+mistake  | Милзкалие            | Милзкалне           |     4 | 26,34                                    | suburban 4             |
+mistake  | Милэкалне            | Милзкалне           |     3 | 25,43                                    | suburban 3             |
+mistake  | Можейкяй             | Мажейкяй            |     1 | 3                                        | prose 1                | contents page, which the finder does not read
+mistake  | Пиедайне             | Приедайне           |     1 | 23                                       | suburban 1             |
+mistake  | Пониемс              | Поциемс             |     2 | 70                                       | suburban 2             |
+mistake  | Разъезз 98 км        | Раз. 98 км          |     1 | 97                                       | distance 1             | fix is Разъезд 98 км, never printed; Раз. 98 км is the same stop
+mistake  | Рунена               | Руиена              |    26 | 54,56,58–59,61,64–65,67–69,71–73,99      | distance 1,suburban 25 |
+mistake  | Руцена               | Руиена              |     4 | 60,62                                    | suburban 4             |
+mistake  | Саулкалие            | Саулкалне           |     4 | 26,34                                    | suburban 4             |
+mistake  | Тикумс               | Тукумс              |     1 | 3                                        | prose 1                | contents page, which the finder does not read
+mistake  | Ториякалнс           | Торнякалнс          |     2 | 32                                       | suburban 2             |
+mistake  | Торнякалис           | Торнякалнс          |    41 | 9,14,22–24,26,30,39,45,74–77,79–80,97–98 | distance 1,suburban 40 |
+mistake  | Торнякалне           | Торнякалнс          |     3 | 6,20                                     | suburban 3             |
+mistake  | Торняканлс           | Торнякалнс          |     1 | 6                                        | suburban 1             |
+mistake  | Циемуне              | Циемупе             |     3 | 25,40                                    | suburban 3             |
+mistake  | Цикурфабрика         | Цукурфабрика        |     1 | 78                                       | suburban 1             |
+mistake  | Цнемупе              | Циемупе             |     4 | 15,17                                    | suburban 4             |
+mistake  | Чиекуркалис          | Чиекуркалнс         |     1 | 97                                       | distance 1             |
+mistake  | Январты              | Яняварты            |     2 | 54,96                                    | distance 1,suburban 1  |
+artifact | Блок- пост 856 км    | Блок пост 856 км    |     1 | 95                                       | distance 1             |
+artifact | Блок- пост 867 км    | Блок пост 867 км    |     1 | 95                                       | distance 1             |
+artifact | Даугавпилс- пасс.    | Даугавпилс пасс.    |     1 | 95                                       | distance 1             | the hyphen is the book's (Рига-пасс.), the space is the break: fix is Даугавпилс-пасс.
+artifact | о. п. Килинги- Нымме | о. п. Килинги-Нымме |     1 | 99                                       | distance 1             | the clean form is never printed, the «- » check finds it
+artifact | На Царни-каву        | На Царникаву        |     1 | 21                                       | suburban 1             | a note in a time cell, which the finder does not read
+scatter  | Б. п. 845 км         | Б/п. 845 км         |     4 | 51–52                                    | suburban 4             |
+scatter  | Б. п. 856 км         | Б/п. 856 км         |     4 | 51–52                                    | suburban 4             |
+scatter  | Вагон. парк          | Ваг. парк           |     1 | 83                                       | two-way 1              | the other two-way rows print Ваг. парк
+scatter  | Вентспилс-1          | Вентспилс-I         |     1 | 98                                       | suburban 1             |
+scatter  | Вентспилс-2          | Вентспилс-II        |     1 | 98                                       | suburban 1             |
+scatter  | Тукумс-2             | Тукумс-II           |     1 | 98                                       | suburban 1             |
+scatter  | Рига Пречу           | Рига Пречу 2        |     1 | 85                                       | two-way 1              | every OCR run reads it so: likely the book's slip
+form     | Б/п. 856 км          | Блок пост 856 км    |    10 | 48–49                                    | suburban 10            | suburban tables abbreviate, distance tables spell out
+form     | Ваг. парк            | Вагонный парк       |     6 | 83–86                                    | two-way 6              | two-way pages abbreviate
+form     | 78 км                | Пост 78 км          |    10 | 87–91                                    | suburban 10            | suburban tables drop «Пост»
+form     | Вайнеде              | Вайнёде             |     3 | 81                                       | suburban 3             | tables Вайнеде; titles and contents Вайнёде
+form     | Мыйзакюла            | Мызакюла            |     1 | 99                                       | distance 1             | the distance table spells Мыйзакюла, suburban tables Мызакюла
+
+# notation
+scatter  | О. п. …              | О/п. …              |     4 | 79–80,99                                 | distance 1,suburban 3  | printed: О. п. 50 км О. п. Васкряма
+scatter  | о. п. …              | О/п. …              |     2 | 99                                       | distance 2             | printed: о. п. Килинги- Нымме о. п. Сигасте
+scatter  | Б. п. …              | Б/п. …              |     8 | 51–52                                    | suburban 8             | printed: Б. п. 845 км Б. п. 856 км
+scatter  | … пасс.              | …-пасс.             |     3 | 94–95                                    | distance 3             | the second is the artifact above; printed: Даугавпилс пасс. Даугавпилс- пасс.
+scatter  | …-#                  | …-I…                |     3 | 98                                       | suburban 3             | Arabic for Roman; printed: Вентспилс-1 Вентспилс-2 Тукумс-2
+scatter  | … II                 | …-II                |     4 | 80–81,93                                 | distance 2,suburban 2  | different stops, style only; printed: Елгава II Резекне II
+form     | Б/п. …               | Блок пост …         |    20 | 48–49                                    | suburban 20            | suburban tables abbreviate, distance tables spell out; printed: Б/п. 845 км Б/п. 856 км
+form     | Ваг. …               | Вагонный …          |     6 | 83–86                                    | two-way 6              | two-way pages abbreviate; printed: Ваг. парк
+form     | # км                 | Пост # км           |    14 | 80–81,87–91                              | suburban 14            | 210 км and 256 км have no full form in the book; printed: 210 км 256 км 78 км
