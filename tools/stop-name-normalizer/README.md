@@ -10,6 +10,7 @@ is not decided yet.
     python3 tools/stop-name-normalizer/stop_names.py attempts/final-01 --dest tools/stop-name-normalizer/output/final-01.txt
     python3 tools/stop-name-normalizer/stop_names.py attempts/final-01 --max-dist 4 --ratio 0.6
     python3 tools/stop-name-normalizer/stop_names.py attempts/final-01 --dump
+    python3 tools/stop-name-normalizer/stop_names.py attempts/final-01 --no-ignore
     python3 tools/stop-name-normalizer/check_golden.py /tmp/golden/attempts/final-01
 
 Both scripts read `attempts/final-01` when no dir is given. For `check_golden.py`,
@@ -30,12 +31,23 @@ It splits merge marks `⟨a ¦ b⟩` into readings. Then it runs three checks:
 - **pairs**: edit distance, raised one step at a time; only the new pairs per
   step. A pair is kept when distance / length of the shorter name ≤ `--ratio`.
 
+## Ignore list
+
+`ignore.txt` holds pairs checked against the scan that are not one stop spelt
+two ways: different stops (`Ладе ~ Лоде`, `Пост 383 км ~ Пост 387 км`), or a
+town and its station (`Тукумс-I ~ Тукумс`). One pair per line, `a ~ b`, in
+either order; `#` starts a note. The finder leaves these pairs out and counts
+them (`7 ignored`). It covers the distance pairs only, not notations.
+`--ignore` reads another list, `--no-ignore` keeps every pair. The golden
+check does not use it.
+
 ## Files
 
 | file                            | what                                        |
 |---------------------------------|---------------------------------------------|
 | `stop_names.py`                 | the finder                                  |
 | `check_golden.py`               | scores the finder against the golden sample |
+| `ignore.txt`                    | pairs that are different stops              |
 | `golden/stop-name-findings.txt` | golden sample, built on `final-01`          |
 | `output/`                       | generated: run again, don't edit            |
 
@@ -57,9 +69,9 @@ name printed as the target.
 - The most common spelling is not always the right one: `Калигале` 35 vs `Калнгале` 2.
 - Different stops can differ by one letter: `Ладе`/`Лоде`, `Лачи`/`Личи`, `Пуре`/`Пузе`.
 - Past distance 2 most pairs are noise (122 at d2, 304 at d3 on `final-01`, ratio 0.6).
+  The ignore list covers distance 1 and 2 at ratio 0.5 only.
 - Prose (the safety texts on scan 03) is not read; only the contents table is.
 
 ## Next
 
-1. An ignore list for different stops.
-2. Tests in `tests/`, the golden check as one of them.
+1. Tests in `tests/`, the golden check as one of them.
