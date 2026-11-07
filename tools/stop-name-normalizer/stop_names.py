@@ -19,6 +19,7 @@ Then notations, the parts around the stop's own name (О/п., Б/п., -пасс.
 that differ only by an abbreviation (Б/п. / Блок пост), an Arabic or Roman
 number (-1 / -I) or a word before the same milepost (78 км / Пост 78 км). Each
 finding lists every name of either shape (a number as #).
+Pairs in ignore.txt (checked: different stops) are left out; --no-ignore keeps them.
 Nothing is repaired: which spelling is right is for a person to say.
 """
 import argparse
@@ -29,6 +30,7 @@ from collections import defaultdict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
+IGNORE = Path(__file__).resolve().parent / "ignore.txt"
 SKIP = re.compile(r"^[\d.,\s—\-]*$|^№|^Разд|^Прибытие$|^∅$")
 MARK = re.compile(r"⟨(.*)⟩")
 ROMAN = re.compile(r"(?<![A-Za-z])[IVX]+(?![A-Za-z])")
@@ -117,6 +119,20 @@ def pair_levels(names, max_dist, ratio):
             d = lev(kx, ky)
             if 0 < d <= max_dist and d / min(len(kx), len(ky)) <= ratio:
                 out[d].append((x, y))
+    return out
+
+
+def read_ignore(path):
+    """ignore.txt -> {frozenset((a, b))}: one pair per line, «a ~ b», # for notes."""
+    out = set()
+    for ln, line in enumerate(path.read_text().splitlines(), 1):
+        line = line.split("#")[0].strip()
+        if not line:
+            continue
+        a, sep, b = (p.strip() for p in line.partition("~"))
+        if not (sep and a and b):
+            sys.exit(f"{path}:{ln}: not «a ~ b»: {line}")
+        out.add(frozenset((a, b)))
     return out
 
 
@@ -341,6 +357,8 @@ def main():
     ap.add_argument("--ratio", type=float, default=0.5)
     ap.add_argument("--dump", action="store_true", help="list every name with its count")
     ap.add_argument("--dest", type=Path, help="write here instead of the terminal")
+    ap.add_argument("--ignore", type=Path, default=IGNORE, help="pairs to leave out (default ignore.txt)")
+    ap.add_argument("--no-ignore", action="store_true", help="keep the pairs in the ignore list")
     a = ap.parse_args()
 
     occ = collect(a.src)
@@ -348,7 +366,11 @@ def main():
     if a.dump:
         lines = [f"{len(occ[n])}\t{n}" for n in sorted(occ)]
     else:
-        lines.append(f"# {shown(a.src)}: {len(occ)} names, max distance {a.max_dist}, ratio {a.ratio}")
+        ignore = set() if a.no_ignore else read_ignore(a.ignore)
+        head = f"# {shown(a.src)}: {len(occ)} names, max distance {a.max_dist}, ratio {a.ratio}"
+        if not a.no_ignore:
+            head += f", {len(ignore)} pairs in {shown(a.ignore)}"
+        lines.append(head)
         lines.append("")
         lines.append("## checks")
         for n, why in checks(occ):
@@ -364,8 +386,11 @@ def main():
         levels = pair_levels(occ, a.max_dist, a.ratio)
         for d in range(1, a.max_dist + 1):
             lines.append("")
-            lines.append(f"## distance {d}: {len(levels[d])} new pairs")
-            for x, y in levels[d]:
+            kept = [p for p in levels[d] if frozenset(p) not in ignore]
+            left_out = len(levels[d]) - len(kept)
+            lines.append(f"## distance {d}: {len(kept)} new pairs"
+                         + (f", {left_out} ignored" if left_out else ""))
+            for x, y in kept:
                 if len(occ[x]) < len(occ[y]):
                     x, y = y, x
                 lines.append(f"  {x} ({len(occ[x])}) [{where(occ, x)}]  ~  "
