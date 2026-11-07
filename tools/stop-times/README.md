@@ -34,8 +34,9 @@ anywhere in the book rejects it.
 - A train name in `«…»` is dropped. `(По особому назначению)` gives `**`,
   in place of a printed `*`.
 - A column whose station cells are both blank gives no row.
-- A column with a text note at the station (`До Саласпилс`) gives no row:
-  the train goes round the station.
+- A train that goes round the station gives no row: a text note at the
+  station (`До Саласпилс`), no time on one side of it, or `—/—` between the
+  two ends of a bypass link (`BYPASSES`, for Riga `Яняварты` and `Ошкалны`).
 - `first on page` and `last on page` follow the train's direction, taken from
   its times. The printed `приб.`/`отпр.` order holds for bottom-up trains too.
 

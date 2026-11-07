@@ -28,6 +28,9 @@ HEADER_WORDS = {"приб.", "отпр.", "приб", "отпр", "прибыт�
                 "разд. пункты", "раздельные пункты", "№ поездов",
                 "расстояние км", "расстояния км", "расстояние"}
 PASS = {"—", "-", "–"}
+# station -> pairs of stops joined by a link that skips it. A train timed at
+# both ends of the pair, with only dashes at the station, goes round it.
+BYPASSES = {"Рига-пасс.": [{"Яняварты", "Ошкалны"}]}
 TIME_RE = re.compile(r"^(\d{1,2})\.(\d{2})(,5)?$")
 DIGIT_RE = re.compile(r"\d")
 MARK_RE = re.compile(r"⟨[^⟩]*⟩?")
@@ -182,6 +185,24 @@ def direction(stops):
     return 1 if down == 0 else None
 
 
+def goes_round(stops, i, status, station):
+    """True when the train in this column never reaches the station at row i:
+    a route note there, the station outside the train's timed run, or the
+    nearest timed stops on each side joined by a link that skips it."""
+    if status == "note":
+        return True
+    if status != "passes":
+        return False
+    timed = [k for k, s in enumerate(stops)
+             if "time" in (cell_kind(s[1]), cell_kind(s[2]))]
+    above = [k for k in timed if k < i]
+    below = [k for k in timed if k > i]
+    if not above or not below:
+        return True
+    ends = {stops[above[-1]][0], stops[below[0]][0]}
+    return any(ends == pair for pair in BYPASSES.get(station, []))
+
+
 def read_table(loc, table, shape, items, station, errors):
     """Output rows of one table, or none. loc: scan, page, table. Appends to
     errors."""
@@ -242,7 +263,7 @@ def read_table(loc, table, shape, items, station, errors):
             err("times fit neither direction", n)
         if len(errors) > before:
             continue
-        if status == "note":   # a route note in the time cell: the train goes round
+        if goes_round(stops, i, status, station):
             continue
         timed = [s for s in stops if "time" in (cell_kind(s[1]), cell_kind(s[2]))]
         if d == -1:

@@ -29,9 +29,16 @@ stop_times.py <final-NN dir> --dest <file.md> [--station "Рига-пасс."]
 ## Rows
 
 - One row per train column that has a station row, as printed.
-- A train with a text note in the station's time cell (`Вецаки`,
-  `До Саласпилс`) gives no row. The note is where the trip goes on: the train
-  goes round the station, not through it.
+- A train that goes round the station gives no row. The book prints `—`
+  both for "runs through without stopping" and for "not on this route", so
+  the station cell alone can't tell. It goes round when:
+  - the station cell holds a text note (`Вецаки`, `До Саласпилс`): where the
+    trip goes on
+  - the station cell is `—/—` and the train has no time on one side of it:
+    the station is outside its run (it starts or ends at `Ошкалны`)
+  - the station cell is `—/—` and the nearest timed stops on each side are
+    a bypass pair, a link that skips the station. For `Рига-пасс.`:
+    `Яняварты` and `Ошкалны`. Kept in `BYPASSES` in the tool.
 - A train printed in two chapters gives two rows. Don't merge, don't link,
   don't report conflicts.
 - Order: scan, then page, then table, then column left to right.
@@ -42,10 +49,10 @@ stop_times.py <final-NN dir> --dest <file.md> [--station "Рига-пасс."]
   (`Рига Пречу` must not match `Рига-пасс.`).
 - Status:
 
-| status   | printed           |
-| -------- | ----------------- |
-| `stops`  | one or both times |
-| `passes` | `—/—`             |
+| status   | printed                                    |
+| -------- | ------------------------------------------ |
+| `stops`  | one or both times                          |
+| `passes` | `—/—`, with times on both sides, no bypass |
 
 - Keep times as printed (`,5`, `24.00`). Don't fix them.
 

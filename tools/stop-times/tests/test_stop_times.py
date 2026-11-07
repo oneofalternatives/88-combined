@@ -147,7 +147,7 @@ def test_suburban_rows_in_book_order(write_book):
     stations = ["Огре", RIGA, "Засулаукс"]
     t = suburban_table(stations,
                        [("—", "10.00"), ("10.30", "10.35"), ("10.45", "—")],
-                       [("—", "—"), ("—", "—"), ("—", "—")],
+                       [("—", "10.10"), ("—", "—"), ("10.25", "—")],
                        [("", ""), ("", ""), ("", "")],
                        [("—", "11.00"), ("Вецаки", ""), ("", "")])
     d = write_book(3, [("suburban", [t]), ("suburban", [t])])
@@ -169,6 +169,28 @@ def test_note_at_the_station_gives_no_row(write_book, note):
                        [("—", "12.00"), ("12.30", "—"), ("", "")])
     d = write_book(3, [("suburban", [t])], folios=[2])
     assert [r["number"] for r in rows_of(d)] == ["6003"]
+
+
+def test_dashes_outside_the_timed_run_give_no_row(write_book):
+    # Riga printed first, the train timed only below it: it starts beyond
+    # Riga (Ошкалны) or comes in on a link that skips it.
+    t = suburban_table([RIGA, "Ошкалны", "Браса"],
+                       [("—", "—"), ("—", "09.10"), ("09.14", "—")],
+                       [("—", "—"), ("—", "—"), ("—", "—")],
+                       [("—", "10.00"), ("10.05", "10.06"), ("10.10", "—")])
+    d = write_book(3, [("suburban", [t])], folios=[2])
+    assert [r["number"] for r in rows_of(d)] == ["6005"]
+
+
+def test_dashes_between_bypass_ends_give_no_row(write_book):
+    # Яняварты is printed above Riga, Ошкалны below; the link between them
+    # skips Riga. Another pair of ends is a real run through Riga.
+    t = suburban_table(["Яняварты", RIGA, "Ошкалны"],
+                       [("—", "04.20"), ("—", "—"), ("04.28", "—")])
+    u = suburban_table(["Засулаукс", RIGA, "Ошкалны"],
+                       [("—", "04.20"), ("—", "—"), ("04.28", "—")])
+    d = write_book(3, [("suburban", [t]), ("suburban", [u])])
+    assert [(r["page"], r["status"]) for r in rows_of(d)] == [("3", "passes")]
 
 
 def test_station_never_matches_a_substring(write_book):
