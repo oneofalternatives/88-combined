@@ -203,11 +203,11 @@ def goes_round(stops, i, status, station):
     return any(ends == pair for pair in BYPASSES.get(station, []))
 
 
-def read_table(loc, table, shape, items, station, errors):
+def read_table(loc, table, shape, items, station, errors, seq=0):
     """Every train column of one table that holds any text, as dicts. A
     column whose train stops at or passes the station carries its output row
     in "row". Columns with a problem are left out, the problem goes in errors.
-    loc: scan, page, table."""
+    loc: scan, page, table. seq: the page's place in the book."""
     st_col, protected = SHAPES[shape]
     rows = [it["cells"] for it in table["items"] if it["kind"] == "row"]
     if table["width"] <= st_col or not rows:
@@ -271,7 +271,8 @@ def read_table(loc, table, shape, items, station, errors):
             timed.reverse()
         col = {"where": f"{where}, column {n}", "number": number,
                "number2": number2, "timed": timed, "row": None,
-               "has station": bool(hits)}
+               "has station": bool(hits), "seq": seq, "direction": d,
+               "caption": caption_text(items) if caption else None}
         if at_station and not goes_round(stops, i, status, station):
             col["row"] = {
                 **{k: str(v) for k, v in loc.items()},
@@ -289,6 +290,19 @@ def read_table(loc, table, shape, items, station, errors):
 
 
 # ---------------------------------------------------------------- whole runs
+def caption_text(items):
+    return tuple(it["text"] for it in items if it["kind"] == "caption")
+
+
+def turns_page(a, b):
+    """True when column a goes on in b on the next page, as a table split
+    over two pages (186, 187): the page in the train's own direction (the
+    one before for a bottom-up train) prints the same caption."""
+    return (a["caption"] is not None and a["caption"] == b["caption"]
+            and a["direction"] == b["direction"]
+            and b["seq"] == a["seq"] + a["direction"])
+
+
 def joins(end, start):
     """True when a column that ends at stop `end` goes on in one that starts
     at `start`: the same stop, and its arrival or departure printed the same."""
@@ -302,8 +316,9 @@ def link(columns, errors):
     stop, or past them in a table without the station, which the station's
     output would never show (Лиелварде—Айзкраукле on scans 48, 49). A column
     goes on in another when the train number is the same and the end stop of
-    one is the start stop of the other, with a time in common. Two tables
-    with the station are never linked: each is in the output as printed."""
+    one is the start stop of the other, with a time in common, or the table
+    goes on over the page. Two tables with the station are never linked:
+    each is in the output as printed."""
     by_number = {}
     for k, c in enumerate(columns):
         for num in {c["number"], c["number2"]} - {""}:
@@ -316,7 +331,8 @@ def link(columns, errors):
         nxt = sorted({o for num in nums for o in by_number[num]
                       if o != k and columns[o]["timed"]
                       and not (c["has station"] and columns[o]["has station"])
-                      and joins(c["timed"][-1], columns[o]["timed"][0])})
+                      and (joins(c["timed"][-1], columns[o]["timed"][0])
+                           or turns_page(c, columns[o]))})
         if len(nxt) > 1:
             errors.append(f"{c['where']}: train {c['number']} goes on in "
                           f"{len(nxt)} columns: "
@@ -395,11 +411,12 @@ def merge_marks(path, errors):
 
 def stop_times(src, station):
     """(rows, errors) for the whole book."""
-    columns, errors = [], []
+    columns, errors, seq = [], [], 0
     for path in scan_files(src):
         merge_marks(path, errors)
         parsed = parse_scan_file(path.read_text())
         for h, half in enumerate(parsed["halves"]):
+            seq += 1
             shapes = parsed["shapes"]
             shape = shapes[h] if h < len(shapes) else None
             if shape in SKIP_SHAPES:
@@ -411,7 +428,8 @@ def stop_times(src, station):
             tables = [it["table"] for it in half["items"] if it["kind"] == "table"]
             for t, table in enumerate(tables, 1):
                 loc = {"scan": parsed["scan"], "page": half["folio"], "table": t}
-                columns += read_table(loc, table, shape, half["items"], station, errors)
+                columns += read_table(loc, table, shape, half["items"], station,
+                                      errors, seq)
     link(columns, errors)
     return [c["row"] for c in columns if c["row"]], errors
 

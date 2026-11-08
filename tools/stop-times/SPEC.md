@@ -106,6 +106,13 @@ stop_times.py <final-NN dir> --dest <file.md> [--station "Рига-пасс."]
   - A's last stop is B's first stop
   - that stop's arrival or departure is printed the same in both
   - A or B is in a table without the station
+- Column A also goes on in column B when the table is split over two
+  pages (scans 95, 96, 99: to Бигосово, Пыталово, Пярну-груз.):
+  - they share a train number (first or second)
+  - both pages print the same caption
+  - B is on the next page, or the page before for a bottom-up train
+  - both run the same way
+  - A or B is in a table without the station
 - Follow these links both ways, through any number of such tables.
 - Two tables with the station are never linked (a train through Riga in two
   chapters): each row is as printed, the run can be pieced together from

@@ -263,6 +263,35 @@ def test_tables_with_the_station_are_never_linked(write_book):
         ("2", "Елгава", RIGA), ("3", RIGA, "Айзкраукле")]
 
 
+def test_table_split_over_two_pages(write_book):
+    # As scan 95: Рига—Бигосово on pages 186, 187, the caption printed on
+    # both, no stop shared. The bottom-up train goes on to the page before.
+    cap = "п. № 698/6314 · ДИЗЕЛЬНЫЙ · п. № 6311/697"
+    a = distance(cap, [
+        [RIGA, "922,8", "—", "16.55", "10.16", "—"],
+        ["Ниедрица", "451,1", "21.40", "21.43", "05.35", "05.36"],
+    ])
+    b = distance(cap, [
+        ["Индра", "459,3", "21.51", "21.54", "05.24", "05.27"],
+        ["Бигосово", "472,8", "22.10", "—", "—", "05.05"],
+    ])
+    d = write_book(3, [a, b], folios=[186, 187])
+    assert [(r["number"], r["from"], r["to"]) for r in rows_of(d)] == [
+        ("698", RIGA, "Бигосово"), ("6311", "Бигосово", RIGA)]
+
+
+def test_page_without_the_caption_is_not_linked(write_book):
+    a = distance("п. № 698 · п. № 697", [
+        [RIGA, "922,8", "—", "16.55", "10.16", "—"],
+        ["Ниедрица", "451,1", "21.40", "—", "—", "05.36"],
+    ])
+    b = distance("п. № 698 · п. № 697 · Рига—Бигосово", [
+        ["Индра", "459,3", "21.51", "—", "—", "05.27"],
+    ])
+    d = write_book(3, [a, b], folios=[186, 187])
+    assert [r["to"] for r in rows_of(d)] == ["Ниедрица", RIGA]
+
+
 def test_run_going_on_in_two_columns_rejects(write_book):
     a = suburban_table([RIGA, "Лиелварде"], [("—", "10.00"), ("11.00", "—")])
     b = suburban_table(["Лиелварде", "Айзкраукле"], [("11.00", "11.01"), ("11.30", "—")])

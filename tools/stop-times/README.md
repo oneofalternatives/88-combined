@@ -40,8 +40,10 @@ without the station. A merge mark `⟨…⟩` anywhere in the book rejects it.
 - `from` and `to` are the first and last stop with a time in the column.
   If the run goes on in a table without the station (same number, starts
   where the column ends, same time there), they take its far end: 6413 is
-  `Айзкраукле`—`Слока`, not `Лиелварде`—`Слока` (scans 48, 49). Two tables
-  with the station are never linked.
+  `Айзкраукле`—`Слока`, not `Лиелварде`—`Слока` (scans 48, 49). A table
+  split over two pages, with the caption on both, is followed the same way:
+  698 is `Рига-пасс.`—`Бигосово` (scan 95). Two tables with the station are
+  never linked.
 - Direction comes from the times. The printed `приб.`/`отпр.` order holds
   for bottom-up trains too.
 
