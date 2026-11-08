@@ -223,6 +223,13 @@ def test_times_kept_as_printed(write_book):
     assert (r["arrival"], r["departure"], r["last on page"]) == ("00.30", "00.40,5", RIGA)
 
 
+def test_blank_time_becomes_a_dash(write_book):
+    t = suburban_table(["Доле", RIGA], [("09.50", "09.51"), ("10.00", "")])
+    d = write_book(3, [("suburban", [t])], folios=[2])
+    r = rows_of(d)[0]
+    assert (r["arrival"], r["departure"], r["status"]) == ("10.00", "—", "stops")
+
+
 # ------------------------------------------------------------------ captions
 def test_two_way_caption_and_bottom_up_train(write_book):
     page = two_way("Пригородный п. № 6802 ДР · п. № 6801 ДР", [

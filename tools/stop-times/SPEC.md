@@ -69,8 +69,8 @@ stop_times.py <final-NN dir> --dest <file.md> [--station "Рига-пасс."]
 | marks         | known marks as short codes, see below                         |
 | first on page | first stop with a time in this column                         |
 | last on page  | last stop with a time in this column                          |
-| arr           | arrival, as printed                                           |
-| dep           | departure, as printed                                         |
+| arr           | arrival, as printed; `—` if blank                             |
+| dep           | departure, as printed; `—` if blank                           |
 | status        | `stops` / `passes`                                            |
 
 ## Marks

@@ -277,8 +277,8 @@ def read_table(loc, table, shape, items, station, errors):
             "marks": mark_list(marks | common),
             "first on page": timed[0][0] if timed else "",
             "last on page": timed[-1][0] if timed else "",
-            "arrival": rows[i][a].strip(),
-            "departure": rows[i][b].strip(),
+            "arrival": rows[i][a].strip() or "—",
+            "departure": rows[i][b].strip() or "—",
             "status": status,
         })
     return out
