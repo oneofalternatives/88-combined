@@ -46,6 +46,7 @@ MARKS = [
     ("weekends", "вых", "`По выходным дням` before the train number"),
     ("ДИЗЕЛЬНЫЙ", "ДИЗ", "`ДИЗЕЛЬНЫЙ` in the page caption"),
     ("Пригородный", "П", "`Пригородный п. №` in the caption"),
+    ("weekdays", "w…", "`(по вторникам, …)` in the caption: the days, 1 = Mon … 7 = Sun"),
 ]
 COLUMNS = ["scan", "page", "table", "column", "train", "number", "number2",
            "marks", "from", "to", "arrival", "departure",
@@ -100,6 +101,10 @@ WEEKEND = "По выходным дням"
 CAPTION_RE = re.compile(r"(Пригородный\s+)?п\.\s*№\s*")
 SPECIAL_RE = re.compile(r"\s*\(По особому назначению\)")  # means **, even over a printed *
 NAME_RE = re.compile(r"\s*«[^»]*»")                       # «СНЕЖОК»: dropped
+DAYS = ["понедельникам", "вторникам", "средам", "четвергам", "пятницам",
+        "субботам", "воскресеньям"]                        # 1 = Mon … 7 = Sun
+DAYS_RE = re.compile(r"\(по\s+([^)]*)\)")
+WEEKDAYS_RE = re.compile(r"w[1-7]+")
 
 
 def parse_train(text, caption=False):
@@ -143,16 +148,40 @@ def caption_trains(items):
     A segment is one « · »-separated part of a caption line. Train segments
     hold «№»; the rest are routes and notes (ЕЖЕДНЕВНО), skipped, except
     ДИЗЕЛЬНЫЙ, which marks every train on the page."""
-    segments = []
-    for it in items:
-        if it["kind"] == "caption":
-            segments += [s.strip() for s in re.split(r"[·\n]", it["text"]) if s.strip()]
+    segments = caption_segments(items)
     common = {"ДИЗЕЛЬНЫЙ"} if "ДИЗЕЛЬНЫЙ" in segments else set()
     return [s for s in segments if "№" in s], common
 
 
+def caption_segments(items):
+    return [s.strip() for it in items if it["kind"] == "caption"
+            for s in re.split(r"[·\n]", it["text"]) if s.strip()]
+
+
+def caption_days(items):
+    """Weekday code of the page caption (`(по вторникам, …)` gives "w2467"),
+    or "" when it names no days. It marks every train on the page. Raise
+    Reject on a «(по …)» note that is not all day names."""
+    notes = [s for s in caption_segments(items) if s.startswith("(по ")]
+    if len(notes) > 1:
+        raise Reject(f"{len(notes)} weekday notes in the caption: " + " / ".join(notes))
+    if not notes:
+        return ""
+    m = DAYS_RE.fullmatch(notes[0])
+    words = [w.strip() for w in m[1].split(",")] if m else []
+    if not words or any(w not in DAYS for w in words):
+        raise Reject(f"not a weekday note: {notes[0]}")
+    return "w" + "".join(str(n) for n in sorted({DAYS.index(w) + 1 for w in words}))
+
+
 def mark_list(marks):
-    return ", ".join(code for m, code, _ in MARKS if m in marks)
+    codes = []
+    for m, code, _ in MARKS:
+        if m == "weekdays":
+            codes += sorted(x for x in marks if WEEKDAYS_RE.fullmatch(x))
+        elif m in marks:
+            codes.append(code)
+    return ", ".join(codes)
 
 
 # ---------------------------------------------------------------- tables
@@ -232,6 +261,11 @@ def read_table(loc, table, shape, items, station, errors, seq=0):
     trains = train_cells(table, pairs, shape, items, rows, err)
     if trains is None:
         return []
+    try:
+        days = caption_days(items)
+    except Reject as e:
+        err(str(e))
+        return []
 
     out = []
     for n, (a, b) in enumerate(pairs, 1):
@@ -280,7 +314,7 @@ def read_table(loc, table, shape, items, station, errors, seq=0):
                 "train": raw,
                 "number": number,
                 "number2": number2,
-                "marks": mark_list(marks | common),
+                "marks": mark_list(marks | common | ({days} if days else set())),
                 "arrival": rows[i][a].strip() or "—",
                 "departure": rows[i][b].strip() or "—",
                 "status": status,

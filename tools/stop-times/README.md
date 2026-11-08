@@ -28,9 +28,9 @@ without the station. A merge mark `⟨…⟩` anywhere in the book rejects it.
 - Suburban pages: the train number comes from the header cell. Two-way and
   distance pages: from the caption.
 - Caption parts without `№` (routes, `ЕЖЕДНЕВНО`) are skipped. `ДИЗЕЛЬНЫЙ`
-  marks every train on the page.
-- Marks are short codes (`П`, `ДИЗ`, `вых`). The legend is at the end of
-  the output.
+  and a weekday note `(по вторникам, …)` mark every train on the page.
+- Marks are short codes (`П`, `ДИЗ`, `вых`, `w2467`). Weekdays are digits,
+  1 = Mon … 7 = Sun. The legend is at the end of the output.
 - A train name in `«…»` is dropped. `(По особому назначению)` gives `**`,
   in place of a printed `*`.
 - A column whose station cells are both blank gives no row.

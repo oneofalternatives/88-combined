@@ -447,8 +447,8 @@ From `attempts/final-01`, one row per train column, in book order.
 | 97 | 190 | 666  |      | ДИЗ       | Лиепая           | Рига-пасс.       | 22.10 | —     | stops  |
 | 97 | 191 | 654  |      | ДИЗ       | Рига-пасс.       | Валга            | —     | 08.28 | stops  |
 | 97 | 191 | 653  |      | ДИЗ       | Валга            | Рига-пасс.       | 22.05 | —     | stops  |
-| 98 | 192 | 611  |      |           | Рига-пасс.       | Вентспилс-I      | —     | 06.36 | stops  |
-| 98 | 192 | 612  |      |           | Вентспилс-I      | Рига-пасс.       | 21.47 | —     | stops  |
+| 98 | 192 | 611  |      | w2467     | Рига-пасс.       | Вентспилс-I      | —     | 06.36 | stops  |
+| 98 | 192 | 612  |      | w2467     | Вентспилс-I      | Рига-пасс.       | 21.47 | —     | stops  |
 | 98 | 193 | 657  |      |           | Рига-пасс.       | Вентспилс-I      | —     | 17.56 | stops  |
 | 98 | 193 | 658  |      |           | Вентспилс-I      | Рига-пасс.       | 10.39 | —     | stops  |
 | 99 | 194 | 6874 | 670  | ДИЗ       | Рига-пасс.       | Пярну-груз.      | —     | 17.45 | stops  |
@@ -456,12 +456,13 @@ From `attempts/final-01`, one row per train column, in book order.
 
 ## Marks
 
-| mark | printed in the book                                       |
-|======|===========================================================|
-| Д    | `Д` after the train number                                |
-| ДР   | `ДР` after the train number                               |
-| *    | `*` after the train number                                |
-| **   | `**` after the train number, or `(По особому назначению)` |
-| вых  | `По выходным дням` before the train number                |
-| ДИЗ  | `ДИЗЕЛЬНЫЙ` in the page caption                           |
-| П    | `Пригородный п. №` in the caption                         |
+| mark | printed in the book                                             |
+|======|=================================================================|
+| Д    | `Д` after the train number                                      |
+| ДР   | `ДР` after the train number                                     |
+| *    | `*` after the train number                                      |
+| **   | `**` after the train number, or `(По особому назначению)`       |
+| вых  | `По выходным дням` before the train number                      |
+| ДИЗ  | `ДИЗЕЛЬНЫЙ` in the page caption                                 |
+| П    | `Пригородный п. №` in the caption                               |
+| w…   | `(по вторникам, …)` in the caption: the days, 1 = Mon … 7 = Sun |

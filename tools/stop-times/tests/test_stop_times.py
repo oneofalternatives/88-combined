@@ -328,6 +328,36 @@ def test_distance_caption_marks_every_train_diesel(write_book):
     assert b["from"] == "Огре"
 
 
+def test_weekday_note_marks_every_train_on_the_page(write_book):
+    # As page 192: the days under the route name, the train numbers in the
+    # table head. The days come last in the marks, as digits.
+    t = suburban_table([RIGA, "Елгава"], [("—", "06.36"), ("07.13", "—")],
+                       [("21.47", "—"), ("—", "21.10")]).replace("6001 ", "6001 Д")
+    cap = "Рига—Вентспилс\n\n(через Елгаву, Тукумс)\n\n(по вторникам, четвергам, субботам, воскресеньям)"
+    d = write_book(3, [("suburban", [cap, t])], folios=[2])
+    assert [(r["number"], r["marks"]) for r in rows_of(d)] == [
+        ("6001", "Д, w2467"), ("6003", "w2467")]
+
+
+def test_route_note_is_not_a_weekday_note(write_book):
+    t = suburban_table([RIGA], [("—", "06.36")])
+    d = write_book(3, [("suburban", ["Рига—Вентспилс · (через Слоку, Тукумс)", t])], folios=[2])
+    assert [r["marks"] for r in rows_of(d)] == [""]
+
+
+@pytest.mark.parametrize("note", ["(по вторникам, праздникам)", "(по четвергам"])
+def test_weekday_note_with_a_word_not_a_day_rejects(write_book, note):
+    t = suburban_table([RIGA], [("—", "06.36")])
+    d = write_book(3, [("suburban", [note, t])], folios=[2])
+    assert errors_of(d) == [f"scan 3, page 2, table 1: not a weekday note: {note}"]
+
+
+def test_two_weekday_notes_reject(write_book):
+    t = suburban_table([RIGA], [("—", "06.36")])
+    d = write_book(3, [("suburban", ["(по средам) · (по пятницам)", t])], folios=[2])
+    assert "2 weekday notes in the caption" in errors_of(d)[0]
+
+
 def test_caption_skips_pairs_without_times(write_book):
     head = ["Раздельные пункты", "Расстояние км"] + ["приб.", "отпр."] * 3
     page = ("distance", ["п. № 606 · п. № 605", book_table([head] + [
@@ -399,7 +429,7 @@ def test_main_ends_with_the_full_marks_legend(write_book, tmp_path):
     lines = legend.splitlines()
     assert len({len(ln) for ln in lines}) == 1
     assert [ln.split("|")[1].strip() for ln in lines[2:]] == \
-        ["Д", "ДР", "*", "**", "вых", "ДИЗ", "П"]
+        ["Д", "ДР", "*", "**", "вых", "ДИЗ", "П", "w…"]
 
 
 @pytest.mark.parametrize("flags, head", [

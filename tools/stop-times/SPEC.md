@@ -84,9 +84,13 @@ stop_times.py <final-NN dir> --dest <file.md> [--station "Рига-пасс."]
 | weekends      | `вых` | `По выходным дням …`               |
 | `ДИЗЕЛЬНЫЙ`   | `ДИЗ` | caption                            |
 | `Пригородный` | `П`   | caption, `Пригородный п. №`        |
+| weekdays      | `w…`  | caption, `(по вторникам, …)`       |
 
 - The marks column holds codes, in this order, joined by `, `.
-- The output ends with a legend of all seven codes, always the same.
+- The output ends with a legend of all eight codes, always the same.
+- Weekdays: `w` and the days of a `(по …)` caption note as digits, 1 = Mon …
+  7 = Sun. Page 192, `(по вторникам, четвергам, субботам, воскресеньям)`,
+  gives `w2467`. It marks every train on the page, on any page shape.
 - `(По особому назначению)` replaces a printed `*`: `6805* ДР (По особому
   назначению)` gives `**` only.
 - A train name in `«…»` is dropped (`п. № 898 ДР «СНЕЖОК»`). Only one train
@@ -136,6 +140,7 @@ stop_times.py <final-NN dir> --dest <file.md> [--station "Рига-пасс."]
 - Reject the whole book on:
   - a `⟨…⟩` mark
   - a caption count mismatch
+  - a `(по …)` caption note that is not all day names, or two of them
   - text left in a train cell after number, number2 and marks
   - a column that goes on in two columns, or two that go on in one
   - links that run in a loop
