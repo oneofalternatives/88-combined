@@ -48,7 +48,7 @@ MARKS = [
     ("Пригородный", "П", "`Пригородный п. №` in the caption"),
 ]
 COLUMNS = ["scan", "page", "table", "column", "train", "number", "number2",
-           "marks", "first on page", "last on page", "arrival", "departure",
+           "marks", "from", "to", "arrival", "departure",
            "status"]
 # header titles kept short where the data is narrower than the column name
 TITLES = {"scan": "sc", "page": "pg", "number": "no", "number2": "no2",
@@ -204,13 +204,15 @@ def goes_round(stops, i, status, station):
 
 
 def read_table(loc, table, shape, items, station, errors):
-    """Output rows of one table, or none. loc: scan, page, table. Appends to
-    errors."""
+    """Every train column of one table that holds any text, as dicts. A
+    column whose train stops at or passes the station carries its output row
+    in "row". Columns with a problem are left out, the problem goes in errors.
+    loc: scan, page, table."""
     st_col, protected = SHAPES[shape]
     rows = [it["cells"] for it in table["items"] if it["kind"] == "row"]
-    hits = [i for i, r in enumerate(rows) if r[st_col].strip() == station]
-    if table["width"] <= st_col or not hits:
+    if table["width"] <= st_col or not rows:
         return []
+    hits = [i for i, r in enumerate(rows) if r[st_col].strip() == station]
     where = "scan {scan}, page {page}, table {table}".format(**loc)
 
     def err(msg, column=None, row=None, cell=None):
@@ -233,9 +235,9 @@ def read_table(loc, table, shape, items, station, errors):
 
     out = []
     for n, (a, b) in enumerate(pairs, 1):
-        at_station = [i for i in hits if (rows[i][a] + rows[i][b]).strip()]
-        if not at_station:
+        if not any((r[a] + r[b]).strip() for r in rows):
             continue
+        at_station = [i for i in hits if (rows[i][a] + rows[i][b]).strip()]
         before = len(errors)
         if len(at_station) > 1:
             err(f"{station} printed more than once", n, at_station[1])
@@ -251,37 +253,101 @@ def read_table(loc, table, shape, items, station, errors):
             for c in (a, b):
                 if cell_kind(r[c]) == "bad":
                     err(f"«{r[c]}» is not a time", n, i, c)
-        i = at_station[0]
-        try:
-            status = status_of(rows[i][a], rows[i][b])
-        except Reject as e:
-            if not any(cell_kind(rows[i][c]) == "bad" for c in (a, b)):
-                err(str(e), n, i)
+        if at_station:
+            i = at_station[0]
+            try:
+                status = status_of(rows[i][a], rows[i][b])
+            except Reject as e:
+                if not any(cell_kind(rows[i][c]) == "bad" for c in (a, b)):
+                    err(str(e), n, i)
         stops = [(r[st_col].strip(), r[a], r[b]) for r in rows]
         d = direction(stops)
         if d is None:
             err("times fit neither direction", n)
         if len(errors) > before:
             continue
-        if goes_round(stops, i, status, station):
-            continue
         timed = [s for s in stops if "time" in (cell_kind(s[1]), cell_kind(s[2]))]
         if d == -1:
             timed.reverse()
-        out.append({
-            **{k: str(v) for k, v in loc.items()},
-            "column": str(n),
-            "train": raw,
-            "number": number,
-            "number2": number2,
-            "marks": mark_list(marks | common),
-            "first on page": timed[0][0] if timed else "",
-            "last on page": timed[-1][0] if timed else "",
-            "arrival": rows[i][a].strip() or "—",
-            "departure": rows[i][b].strip() or "—",
-            "status": status,
-        })
+        col = {"where": f"{where}, column {n}", "number": number,
+               "number2": number2, "timed": timed, "row": None,
+               "has station": bool(hits)}
+        if at_station and not goes_round(stops, i, status, station):
+            col["row"] = {
+                **{k: str(v) for k, v in loc.items()},
+                "column": str(n),
+                "train": raw,
+                "number": number,
+                "number2": number2,
+                "marks": mark_list(marks | common),
+                "arrival": rows[i][a].strip() or "—",
+                "departure": rows[i][b].strip() or "—",
+                "status": status,
+            }
+        out.append(col)
     return out
+
+
+# ---------------------------------------------------------------- whole runs
+def joins(end, start):
+    """True when a column that ends at stop `end` goes on in one that starts
+    at `start`: the same stop, and its arrival or departure printed the same."""
+    return end[0] == start[0] and any(
+        x.strip() == y.strip() and cell_kind(x) == "time"
+        for x, y in zip(end[1:], start[1:]))
+
+
+def link(columns, errors):
+    """Fill "from" and "to" in the row of each column: its first and last
+    stop, or past them in a table without the station, which the station's
+    output would never show (Лиелварде—Айзкраукле on scans 48, 49). A column
+    goes on in another when the train number is the same and the end stop of
+    one is the start stop of the other, with a time in common. Two tables
+    with the station are never linked: each is in the output as printed."""
+    by_number = {}
+    for k, c in enumerate(columns):
+        for num in {c["number"], c["number2"]} - {""}:
+            by_number.setdefault(num, []).append(k)
+    after, before = {}, {}
+    for k, c in enumerate(columns):
+        if not c["timed"]:
+            continue
+        nums = {c["number"], c["number2"]} - {""}
+        nxt = sorted({o for num in nums for o in by_number[num]
+                      if o != k and columns[o]["timed"]
+                      and not (c["has station"] and columns[o]["has station"])
+                      and joins(c["timed"][-1], columns[o]["timed"][0])})
+        if len(nxt) > 1:
+            errors.append(f"{c['where']}: train {c['number']} goes on in "
+                          f"{len(nxt)} columns: "
+                          + "; ".join(columns[o]["where"] for o in nxt))
+        elif nxt:
+            o = nxt[0]
+            if o in before:
+                errors.append(f"{columns[o]['where']}: train {c['number']} "
+                              f"comes from 2 columns: {columns[before[o]]['where']}; "
+                              f"{c['where']}")
+            after[k], before[o] = o, k
+
+    def end_of(k, step):
+        seen = {k}
+        while k in step:
+            k = step[k]
+            if k in seen:
+                return None
+            seen.add(k)
+        return k
+
+    for k, c in enumerate(columns):
+        if c["row"] is None:
+            continue
+        first, last = end_of(k, before), end_of(k, after)
+        if first is None or last is None:
+            errors.append(f"{c['where']}: train {c['number']} runs in a loop "
+                          "from column to column")
+            continue
+        c["row"]["from"] = columns[first]["timed"][0][0]
+        c["row"]["to"] = columns[last]["timed"][-1][0]
 
 
 def train_cells(table, pairs, shape, items, rows, err):
@@ -329,7 +395,7 @@ def merge_marks(path, errors):
 
 def stop_times(src, station):
     """(rows, errors) for the whole book."""
-    rows, errors = [], []
+    columns, errors = [], []
     for path in scan_files(src):
         merge_marks(path, errors)
         parsed = parse_scan_file(path.read_text())
@@ -345,8 +411,9 @@ def stop_times(src, station):
             tables = [it["table"] for it in half["items"] if it["kind"] == "table"]
             for t, table in enumerate(tables, 1):
                 loc = {"scan": parsed["scan"], "page": half["folio"], "table": t}
-                rows += read_table(loc, table, shape, half["items"], station, errors)
-    return rows, errors
+                columns += read_table(loc, table, shape, half["items"], station, errors)
+    link(columns, errors)
+    return [c["row"] for c in columns if c["row"]], errors
 
 
 def md_table(titles, rows):

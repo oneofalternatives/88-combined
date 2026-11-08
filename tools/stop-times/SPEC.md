@@ -24,7 +24,7 @@ stop_times.py <final-NN dir> --dest <file.md> [--station "Рига-пасс."]
 - `tools/stop-times/README.md`, short.
 - Import only `book_model.parse_scan_file` (`scripts/book_model.py`). Write
   everything else in the tool: cells, column pairs, train names, direction,
-  the station row.
+  the station row, links to tables without the station.
 
 ## Rows
 
@@ -67,8 +67,8 @@ stop_times.py <final-NN dir> --dest <file.md> [--station "Рига-пасс."]
 | no            | first train number                                            |
 | no2           | second number of a renumbered train (`6633/6644`), else blank |
 | marks         | known marks as short codes, see below                         |
-| first on page | first stop with a time in this column                         |
-| last on page  | last stop with a time in this column                          |
+| from          | first stop with a time in this column, see below              |
+| to            | last stop with a time in this column, see below               |
 | arr           | arrival, as printed; `—` if blank                             |
 | dep           | departure, as printed; `—` if blank                           |
 | status        | `stops` / `passes`                                            |
@@ -92,6 +92,26 @@ stop_times.py <final-NN dir> --dest <file.md> [--station "Рига-пасс."]
 - A train name in `«…»` is dropped (`п. № 898 ДР «СНЕЖОК»`). Only one train
   has one.
 
+## Tables without the station
+
+- A train's run can go on in a table without the station, which the output
+  would never show: scans 48, 49 print Лиелварде—Айзкраукле apart from the
+  Riga tables. from and to then take the far end (`Айзкраукле`, not
+  `Лиелварде`).
+- Read every table in the book for this, not only the station's. Each train
+  column runs from its first to its last stop with a time, in the train's
+  direction.
+- Column A goes on in column B when:
+  - they share a train number (first or second)
+  - A's last stop is B's first stop
+  - that stop's arrival or departure is printed the same in both
+  - A or B is in a table without the station
+- Follow these links both ways, through any number of such tables.
+- Two tables with the station are never linked (a train through Riga in two
+  chapters): each row is as printed, the run can be pieced together from
+  the output by train number.
+- A shared number alone doesn't link: 6322 is also Елгава—Крустпилс.
+
 ## Distance and two-way pages
 
 - Train number comes from the caption above the table
@@ -110,5 +130,7 @@ stop_times.py <final-NN dir> --dest <file.md> [--station "Рига-пасс."]
   - a `⟨…⟩` mark
   - a caption count mismatch
   - text left in a train cell after number, number2 and marks
+  - a column that goes on in two columns, or two that go on in one
+  - links that run in a loop
   - anything else unparseable that this spec gives no rule for
 - Write no output. List every such cell.

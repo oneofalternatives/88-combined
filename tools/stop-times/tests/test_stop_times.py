@@ -157,7 +157,7 @@ def test_suburban_rows_in_book_order(write_book):
         ("3", "1", "6001", "stops"), ("3", "2", "6003", "passes")]
     first = rows[0]
     assert (first["arrival"], first["departure"]) == ("10.30", "10.35")
-    assert (first["first on page"], first["last on page"]) == ("Огре", "Засулаукс")
+    assert (first["from"], first["to"]) == ("Огре", "Засулаукс")
 
 
 @pytest.mark.parametrize("note", ["Вецаки", "До Саласпилс"])
@@ -220,7 +220,7 @@ def test_times_kept_as_printed(write_book):
                         ("00.30", "00.40,5")])
     d = write_book(3, [("suburban", [t])], folios=[2])
     r = rows_of(d)[0]
-    assert (r["arrival"], r["departure"], r["last on page"]) == ("00.30", "00.40,5", RIGA)
+    assert (r["arrival"], r["departure"], r["to"]) == ("00.30", "00.40,5", RIGA)
 
 
 def test_blank_time_becomes_a_dash(write_book):
@@ -228,6 +228,47 @@ def test_blank_time_becomes_a_dash(write_book):
     d = write_book(3, [("suburban", [t])], folios=[2])
     r = rows_of(d)[0]
     assert (r["arrival"], r["departure"], r["status"]) == ("10.00", "—", "stops")
+
+
+# ------------------------------------------------------------------ whole runs
+def test_run_goes_on_in_a_table_without_the_station(write_book):
+    # As scans 48, 49: Лиелварде—Айзкраукле printed apart from Riga. 6001
+    # goes on (same times at Лиелварде), 6003 is another train by that
+    # number (times don't match), 6005 comes in from Айзкраукле.
+    riga = suburban_table([RIGA, "Огре", "Лиелварде"],
+                          [("—", "10.00"), ("10.30", "10.31"), ("11.00", "—")],
+                          [("—", "12.00"), ("12.30", "12.31"), ("13.00", "—")],
+                          [("15.00", "—"), ("14.30", "14.31"), ("—", "14.00")])
+    far = suburban_table(["Лиелварде", "Скривери", "Айзкраукле"],
+                         [("11.00", "11.01"), ("11.20", "11.21"), ("11.30", "—")],
+                         [("17.00", "17.01"), ("17.20", "17.21"), ("17.30", "—")],
+                         [("13.59", "14.00"), ("13.40", "13.41"), ("—", "13.30")])
+    write_book(3, [("suburban", [riga])], folios=[2])
+    d = write_book(4, [("suburban", [far])], folios=[4])
+    assert [(r["number"], r["from"], r["to"]) for r in rows_of(d)] == [
+        ("6001", RIGA, "Айзкраукле"), ("6003", RIGA, "Лиелварде"),
+        ("6005", "Айзкраукле", RIGA)]
+
+
+def test_tables_with_the_station_are_never_linked(write_book):
+    # Елгава—Riga and Riga—Лиелварде in two chapters: each row as printed,
+    # only Лиелварде—Айзкраукле, without Riga, extends one. There only the
+    # departure agrees: still the same train.
+    a = suburban_table(["Елгава", RIGA], [("—", "09.00"), ("09.50", "10.00")])
+    b = suburban_table([RIGA, "Лиелварде"], [("09.50", "10.00"), ("11.00", "11.02")])
+    c = suburban_table(["Лиелварде", "Айзкраукле"], [("11.01", "11.02"), ("11.30", "—")])
+    write_book(3, [("suburban", [a]), ("suburban", [b])])
+    d = write_book(4, [("suburban", [c])], folios=[6])
+    assert [(r["page"], r["from"], r["to"]) for r in rows_of(d)] == [
+        ("2", "Елгава", RIGA), ("3", RIGA, "Айзкраукле")]
+
+
+def test_run_going_on_in_two_columns_rejects(write_book):
+    a = suburban_table([RIGA, "Лиелварде"], [("—", "10.00"), ("11.00", "—")])
+    b = suburban_table(["Лиелварде", "Айзкраукле"], [("11.00", "11.01"), ("11.30", "—")])
+    write_book(3, [("suburban", [a])], folios=[2])
+    d = write_book(4, [("suburban", [b]), ("suburban", [b])])
+    assert "train 6001 goes on in 2 columns" in errors_of(d)[0]
 
 
 # ------------------------------------------------------------------ captions
@@ -240,9 +281,9 @@ def test_two_way_caption_and_bottom_up_train(write_book):
     d = write_book(3, [page], folios=[2])
     down, up = rows_of(d)
     assert (down["number"], down["marks"]) == ("6802", "ДР, П")
-    assert (down["first on page"], down["last on page"]) == (RIGA, "Яняварты")
+    assert (down["from"], down["to"]) == (RIGA, "Яняварты")
     assert (up["number"], up["marks"]) == ("6801", "ДР")
-    assert (up["first on page"], up["last on page"]) == ("Яняварты", RIGA)
+    assert (up["from"], up["to"]) == ("Яняварты", RIGA)
     assert (up["arrival"], up["departure"]) == ("06.30", "—")
 
 
@@ -255,7 +296,7 @@ def test_distance_caption_marks_every_train_diesel(write_book):
     a, b = rows_of(d)
     assert (a["number"], a["number2"], a["marks"]) == ("698", "6314", "ДИЗ")
     assert (b["number"], b["number2"], b["marks"]) == ("6311", "697", "ДИЗ")
-    assert b["first on page"] == "Огре"
+    assert b["from"] == "Огре"
 
 
 def test_caption_skips_pairs_without_times(write_book):

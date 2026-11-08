@@ -20,8 +20,8 @@ If any cell can't be read, the tool writes nothing. It lists every such cell
 and exits 1. A cell is named the way `validate.py` names it: `Огре (r4c6)` is
 body row 4, cell 6, both counted from 0.
 
-The tool reads only the tables that have the station row. A merge mark `⟨…⟩`
-anywhere in the book rejects it.
+The tool reads every table in the book, to find runs that go on in a table
+without the station. A merge mark `⟨…⟩` anywhere in the book rejects it.
 
 ## Notes
 
@@ -37,7 +37,12 @@ anywhere in the book rejects it.
 - A train that goes round the station gives no row: a text note at the
   station (`До Саласпилс`), no time on one side of it, or `—/—` between the
   two ends of a bypass link (`BYPASSES`, for Riga `Яняварты` and `Ошкалны`).
-- `first on page` and `last on page` follow the train's direction, taken from
-  its times. The printed `приб.`/`отпр.` order holds for bottom-up trains too.
+- `from` and `to` are the first and last stop with a time in the column.
+  If the run goes on in a table without the station (same number, starts
+  where the column ends, same time there), they take its far end: 6413 is
+  `Айзкраукле`—`Слока`, not `Лиелварде`—`Слока` (scans 48, 49). Two tables
+  with the station are never linked.
+- Direction comes from the times. The printed `приб.`/`отпр.` order holds
+  for bottom-up trains too.
 
 Tests: `pytest tools/stop-times`.
