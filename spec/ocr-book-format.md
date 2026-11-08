@@ -130,6 +130,11 @@ Semantics:
 * OCR occasionally breaks one printed table into several `table` blocks separated
   by `text`/`list` blocks holding the station names (e.g. scan 6). These are
   rendered in document order; no attempt is made to re-join them.
+* OCR sometimes gives the rows of a table as `text` blocks, one line per row:
+  `Кудра 17.10,5 17.11` (scan 41). The text does not show which cells are blank.
+  So a row is placed only when its values fill every column. Otherwise the
+  station name is kept with blank times, and the values are reported. A line
+  of times with no name makes no row and is only reported.
 
 ## 5. Code map
 

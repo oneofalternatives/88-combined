@@ -209,6 +209,46 @@ def test_half_rows_railway_row_becomes_divider():
     assert not any(isinstance(r, Divider) and r[0] == "Кегумс" for r in rows)
 
 
+SUBURBAN_HEAD = ("|  № поездов | 6501 Д |   | 6601 |   |\n| --- | --- | --- | --- | --- |\n"
+                 "|  Разд. пункты | приб. | отпр. | приб. | отпр. |")
+
+
+def test_half_rows_suburban_text_rows():
+    """Scan 41: the OCR gave only the header as a table, each row as text.
+
+    A row whose values fill the table is placed; any other keeps its name and
+    its values are reported, since the text does not show which cells are blank.
+    """
+    report = []
+    rows, hc, width, _ = extract.half_rows([
+        block("table", SUBURBAN_HEAD, 43, 30, 483, 80),
+        block("text", "Тукумс-II", 43, 85, 110, 95),                 # name only
+        block("text", "Кудра 7.10,5 7.11 — 7.23", 43, 100, 483, 110),
+        block("text", "О/п. 56 км 17.26,5", 43, 115, 300, 125),
+        block("text", "— 15.00", 300, 130, 400, 140),                # no name
+        block("text", "15.50 16.05 До 16.27 16.36", 43, 145, 483, 155),
+    ], 1000, 41, report)
+    assert width == 5 and hc == 2
+    assert rows[2:] == [["Тукумс-II", "", "", "", ""],
+                        ["Кудра", "07.10,5", "07.11", "—", "07.23"],
+                        ["О/п. 56 км", "", "", "", ""]]
+    assert [(p.what, p.detail.split(" -- ")[0]) for p in report] == [
+        ("unplaced text row", "⟨О/п. 56 км 17.26,5⟩"),
+        ("unplaced times", "⟨— 15.00⟩"),
+        ("unplaced times", "⟨15.50 16.05 До 16.27 16.36⟩"),
+    ]
+
+
+def test_half_rows_text_with_times_in_other_shapes_is_reported():
+    md = ("| Раздельные пункты | Расстояние км | приб. | отпр. |\n"
+          "| --- | --- | --- | --- |\n"
+          "| Зилупе | 643,3 | 20.30 | 20.31 |")
+    report = []
+    extract.half_rows([_table(md), block("text", "Посинь 631,5 20.46 20.47", 43, 340, 483, 350),
+                       block("text", "Движение по графику.", 43, 360, 483, 370)], 1000, 93, report)
+    assert [p.what for p in report] == ["DROPPED text with times"]
+
+
 # ---------------------------------------------------- as_markdown round trip
 def test_as_markdown_round_trips_through_parse_book_table():
     rows = [["№ поездов", "6501 Д", "", "6601", ""],

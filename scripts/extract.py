@@ -22,7 +22,7 @@ from typing import NamedTuple
 sys.path.insert(0, str(Path(__file__).parent))
 
 import attempts
-from book_model import (header_width, is_station_block, load_scans,
+from book_model import (TIME_RE, header_width, is_station_block, load_scans,
                         parse_table, split_halves, station_span)
 
 
@@ -70,6 +70,9 @@ RAILWAY_RE = re.compile(r"ж\.\s*д\.$")
 
 # Blank in any data cell: the book prints an em dash where a train does not call.
 BLANK = ("", "—", "-")
+# One value cell of a row the OCR gave as plain text: a time, maybe with its
+# half minute, or the dash of a stop the train does not call at.
+VALUE_RE = re.compile(r"^(\d{1,2}\.\d{2}(,5)?|—|-)$")
 
 
 class Divider(list):
@@ -176,6 +179,17 @@ def half_rows(blocks, scan_h, scan, report):
                 rows.append(Divider(cells_at(text, st_col, width)))
             continue
         if b["type"] != "table":
+            if TIME_RE.search(b["content"]):
+                # Rows of the table the OCR gave as plain text. Skipping them
+                # silently once emptied a whole spread (scan 41).
+                if name == "suburban":
+                    for ln in b["content"].splitlines():
+                        if ln.strip() and (r := text_row(ln, st_col, width, scan, report)):
+                            rows.append(r)
+                else:
+                    report.append(Problem(scan, "DROPPED text with times",
+                                          f"{cite(b['content'].strip())} -- the OCR "
+                                          f"gave it outside the {name} table"))
             continue
         parsed = parse_table(b["content"].strip())
         if not parsed:
@@ -197,6 +211,35 @@ def half_rows(blocks, scan_h, scan, report):
         rows = realign(rows, max(header_count, 1), st_col, 1, scan, report)
     return (rows, header_count, width, name) if rows else None
 
+
+
+def text_row(line, st_col, width, scan, report):
+    """A table row the OCR gave as a line of text, "Кудра 17.10,5 17.11".
+
+    The values follow the name, but the text keeps no trace of the blank cells
+    between them. So they are placed only when they fill every column; else
+    the name is kept, its times blank, and the values are reported. A line of
+    times with no name belongs to a name printed beside it: it makes no row
+    and is only reported.
+    """
+    toks = clean_cell(line, pad_time=False).split()
+    i = len(toks)
+    while i > 0 and VALUE_RE.match(toks[i - 1]):
+        i -= 1
+    name, values = " ".join(toks[:i]), [clean_cell(v) for v in toks[i:]]
+    if not name or any(VALUE_RE.match(t) for t in toks[:i]):
+        # No name, or times inside it: the OCR ran two lines together.
+        report.append(Problem(scan, "unplaced times", f"{cite(line.strip())} -- no "
+                              "station name; place them from the scan"))
+        return None
+    row = cells_at(name, st_col, width)
+    if len(values) == width - 1:
+        row[st_col + 1:] = values
+    else:
+        report.append(Problem(scan, "unplaced text row",
+                              f"{cite(line.strip())} -- {len(values)} value(s) for "
+                              f"{width - 1} columns; place them from the scan"))
+    return row
 
 
 def realign(rows, header_count, st_col, dist_col, scan, report):

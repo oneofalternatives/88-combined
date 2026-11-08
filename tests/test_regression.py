@@ -48,6 +48,9 @@ EXPECTED_REPORT = [
     P(96, JOINED, "⟨Блок пост 867 км⟩"),
     P(96, JOINED, "⟨Блок пост 856 км⟩"),
 ]
+# Lines of times the OCR gave as text with no station name, counted rather than
+# listed. extracted-03 predates this report: its manifest counts only the above.
+EXPECTED_UNPLACED = {(38, "unplaced times"): 42, (69, "unplaced times"): 19}
 
 
 @pytest.fixture(scope="module")
@@ -67,7 +70,9 @@ def test_scan_matches_extracted(extracted, scan):
 
 def test_repair_report_matches(extracted):
     _, report = extracted
-    assert report == EXPECTED_REPORT
+    unplaced = [p for p in report if p.what.startswith("unplaced")]
+    assert [p for p in report if p not in unplaced] == EXPECTED_REPORT
+    assert Counter((p.scan, p.what) for p in unplaced) == EXPECTED_UNPLACED
     manifest = json.loads((EXTRACTED / "manifest.json").read_text())
     assert manifest["problems"] == len(EXPECTED_REPORT)
 
