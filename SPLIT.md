@@ -1,6 +1,6 @@
 # Split final-01 into final-01 and normalized-01
 
-Working notes for one job. Not committed; delete when done.
+Working notes for one job.
 
 ## Goal
 
