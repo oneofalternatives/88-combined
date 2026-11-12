@@ -7,7 +7,7 @@ and route, in book order.
 
 ```
 stop_times.py <final-NN dir> --dest <file.md> [--station "Рига-пасс."]
-              [--table] [--column] [--train]
+              [--table] [--column] [--train] [--no2]
 ```
 
 - Input: a `attempts/final-NN` dir.
@@ -16,6 +16,8 @@ stop_times.py <final-NN dir> --dest <file.md> [--station "Рига-пасс."]
 - `--table`, `--column`, `--train`: add that column. Off by default:
   sc, pg and no find a train, and no, no2 and marks hold
   what `train` does, less a dropped `«…»` name.
+- `--no2`: add the no2 column. Without it, a row with a no2 is an error:
+  list them, write nothing, exit 1.
 - Output: md only, in the repo's own table style.
 
 ## Files
@@ -64,14 +66,19 @@ stop_times.py <final-NN dir> --dest <file.md> [--station "Рига-пасс."]
 | table         | table on the page, only with `--table`                        |
 | column        | column in the table, only with `--column`                     |
 | train         | raw train-number cell, only with `--train`                    |
-| no            | first train number                                            |
-| no2           | second number of a renumbered train (`6633/6644`), else blank |
+| no            | first train number; of a 3+4-digit pair, the 3-digit one      |
+| no2           | 2nd number of a renumbered train (`6633/6644`), with `--no2`  |
 | marks         | known marks as short codes, see below                         |
 | from          | first stop with a time in this column, see below              |
 | to            | last stop with a time in this column, see below               |
 | arr           | arrival, as printed; `—` if blank                             |
 | dep           | departure, as printed; `—` if blank                           |
 | status        | `stops` / `passes`                                            |
+
+A 3-digit number (601–698) is a local train, up to 600 km. Only it is on
+the board and in the announcements. The 4-digit one of the pair is the
+suburban number for the part on suburban fares (6874/670: up to Алоя). So
+`6874/670` gives no `670` and a blank no2.
 
 ## Marks
 

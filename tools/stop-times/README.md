@@ -8,7 +8,8 @@ md table, one row per printed train column. See `SPEC.md`.
 
 The station name must match the cell exactly. `--station` defaults to `Рига-пасс.`.
 Add `--table`, `--column` or `--train` to get the table number, the column
-number or the raw train-number cell as a column.
+number or the raw train-number cell as a column. The no2 column (second
+number, `6633/6644`) is hidden; a row with one fails, unless `--no2`.
 
 Output goes in `output/`, one file per input dir, named after it. For another
 station, add its name. Files there are generated: run the tool again after
@@ -33,6 +34,8 @@ without the station. A merge mark `⟨…⟩` anywhere in the book rejects it.
   1 = Mon … 7 = Sun. The legend is at the end of the output.
 - A train name in `«…»` is dropped. `(По особому назначению)` gives `**`,
   in place of a printed `*`.
+- Of a 3+4-digit pair (`6874/670`) only the 3-digit local number is kept,
+  the one on the board.
 - A column whose station cells are both blank gives no row.
 - A train that goes round the station gives no row: a text note at the
   station (`До Саласпилс`), no time on one side of it, or `—/—` between the

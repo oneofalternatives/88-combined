@@ -125,6 +125,9 @@ def parse_train(text, caption=False):
     if not m:
         raise Reject(f"no train number in: {text}")
     number, number2 = m[1], m[2] or ""
+    if {len(number), len(number2)} == {3, 4}:
+        # a local 6xx with a suburban number: only the local one is on the board
+        number, number2 = min(number, number2, key=len), ""
     if m[3]:
         marks.add(m[3])
     rest = rest[m.end():]
@@ -479,8 +482,9 @@ def md_table(titles, rows):
             + [line(r) for r in rows])
 
 
-def to_markdown(rows, station, src, extra=()):
-    cols = [c for c in COLUMNS if c not in OPTIONAL or c in extra]
+def to_markdown(rows, station, src, extra=(), hide=()):
+    cols = [c for c in COLUMNS
+            if (c not in OPTIONAL or c in extra) and c not in hide]
     out = [f"# Stop times at {station}", "",
            f"From `{src}`, one row per train column, in book order.", ""]
     out += md_table([TITLES.get(c, c) for c in cols],
@@ -498,11 +502,17 @@ def main(argv=None):
     ap.add_argument("--station", default="Рига-пасс.")
     for name, text in OPTIONAL.items():
         ap.add_argument(f"--{name}", action="store_true", help=text)
+    ap.add_argument("--no2", action="store_true",
+                    help="add the no2 column; without it, a row with a no2 is an error")
     args = ap.parse_args(argv)
     if not scan_files(args.src):
         print(f"{args.src}: no scan-*.md files", file=sys.stderr)
         return 1
     rows, errors = stop_times(args.src, args.station)
+    if not args.no2:
+        errors += [f"scan {r['scan']}, page {r['page']}: train {r['number']} "
+                   f"has no2 {r['number2']}, add --no2 to show it"
+                   for r in rows if r["number2"]]
     if errors:
         for e in errors:
             print(e, file=sys.stderr)
@@ -513,7 +523,8 @@ def main(argv=None):
         print(f"no train column has a row for {args.station}", file=sys.stderr)
         return 1
     args.dest.write_text(to_markdown(rows, args.station, args.src,
-                                      [c for c in OPTIONAL if getattr(args, c)]))
+                                      [c for c in OPTIONAL if getattr(args, c)],
+                                      [] if args.no2 else ["number2"]))
     print(f"{len(rows)} rows -> {args.dest}")
     return 0
 

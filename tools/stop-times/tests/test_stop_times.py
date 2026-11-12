@@ -123,7 +123,8 @@ def test_status_without_a_rule(arr, dep):
     ("По выходным дням 6848 ДР", False, ("6848", "", {"weekends", "ДР"})),
     ("п. № 606", True, ("606", "", set())),
     ("Пригородный п. № 6805* ДР", True, ("6805", "", {"Пригородный", "*", "ДР"})),
-    ("п. № 698/6314", True, ("698", "6314", set())),
+    ("п. № 698/6314", True, ("698", "", set())),
+    ("п. № 6874/670", True, ("670", "", set())),
     ("п. № 898 ДР «СНЕЖОК»", True, ("898", "", {"ДР"})),
     ("Пригородный п. № 6805* ДР (По особому назначению)", True,
      ("6805", "", {"Пригородный", "**", "ДР"})),
@@ -277,7 +278,7 @@ def test_table_split_over_two_pages(write_book):
     ])
     d = write_book(3, [a, b], folios=[186, 187])
     assert [(r["number"], r["from"], r["to"]) for r in rows_of(d)] == [
-        ("698", RIGA, "Бигосово"), ("6311", "Бигосово", RIGA)]
+        ("698", RIGA, "Бигосово"), ("697", "Бигосово", RIGA)]
 
 
 def test_page_without_the_caption_is_not_linked(write_book):
@@ -323,8 +324,8 @@ def test_distance_caption_marks_every_train_diesel(write_book):
     ])
     d = write_book(3, [page], folios=[2])
     a, b = rows_of(d)
-    assert (a["number"], a["number2"], a["marks"]) == ("698", "6314", "ДИЗ")
-    assert (b["number"], b["number2"], b["marks"]) == ("6311", "697", "ДИЗ")
+    assert (a["number"], a["number2"], a["marks"]) == ("698", "", "ДИЗ")
+    assert (b["number"], b["number2"], b["marks"]) == ("697", "", "ДИЗ")
     assert b["from"] == "Огре"
 
 
@@ -444,6 +445,30 @@ def test_main_flags_add_columns(write_book, tmp_path, flags, head):
     assert st.main([str(d), "--dest", str(dest), *flags]) == 0
     table = [ln for ln in dest.read_text().splitlines() if ln.startswith("|")]
     assert [c.strip() for c in table[0].split("|")[1:len(head) + 1]] == head
+
+
+def test_main_hides_no2_unless_asked(write_book, tmp_path):
+    t = suburban_table(["Огре", RIGA], [("—", "10.00"), ("10.30", "—")])
+    d = write_book(3, [("suburban", [t])], folios=[2])
+    dest = tmp_path / "out.md"
+    for flags, head in [([], ["sc", "pg", "no", "marks"]),
+                        (["--no2"], ["sc", "pg", "no", "no2"])]:
+        assert st.main([str(d), "--dest", str(dest), *flags]) == 0
+        table = [ln for ln in dest.read_text().splitlines() if ln.startswith("|")]
+        assert [c.strip() for c in table[0].split("|")[1:5]] == head
+
+
+def test_main_no2_without_the_flag_writes_nothing(write_book, tmp_path, capsys):
+    rows = [["№ поездов", "6633/6644", ""],
+            ["Разд. пункты", "приб.", "отпр."],
+            [RIGA, "—", "10.00"]]
+    d = write_book(3, [("suburban", [book_table(rows, header_count=2)])], folios=[2])
+    dest = tmp_path / "out.md"
+    dest.write_text("old")
+    assert st.main([str(d), "--dest", str(dest)]) == 1
+    assert dest.read_text() == "old"
+    assert "train 6633 has no2 6644, add --no2 to show it" in capsys.readouterr().err
+    assert st.main([str(d), "--dest", str(dest), "--no2"]) == 0
 
 
 def test_main_on_reject_writes_nothing(write_book, tmp_path, capsys):
