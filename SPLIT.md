@@ -21,7 +21,7 @@ A hash in **commit** means the step is done and checked.
 | step                                        | title                                                                                         | commit    |
 | ------------------------------------------- | --------------------------------------------------------------------------------------------- | --------- |
 | 1. squash `book-normalized` onto `develop`  | final-01: fix stop names and misprinted times; stop-name-normalizer ignore list, output       | `e83740a` |
-| 2. squash `stop-times` onto 1               | stop-times: stop_times.py lists every train at one station; SPEC, README, tests, output       |           |
+| 2. squash `stop-times` onto 1               | stop-times: stop_times.py lists every train at one station; SPEC, README, tests, output       | `bbd9949` |
 | 3. copy commit on `split-versions`          | normalized-01: copy of final-01, to be normalized by hand                                     |           |
 | 4. replay 1 onto 3                          | normalized-01: fix stop names and misprinted times; stop-name-normalizer ignore list, output  |           |
 | 5. replay 2 onto 4                          | as 2                                                                                          |           |
