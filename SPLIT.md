@@ -16,29 +16,33 @@ really `normalized-01`.
 
 ## Steps
 
-1. Tag the old tips and push the tags, so the old commits stay on origin:
-   `old/book-normalized` at `fa207df`, `old/stop-times` at `42fd24b`.
-2. Squash each branch into one commit. No file changes.
-   - `book-normalized`: one commit on `develop`.
-   - `stop-times`: one commit on the squashed `book-normalized`.
-3. On `split-versions`, add the copy commit, then replay the two squashed
-   commits, changed so they work on `normalized-01`. Then add the rule commit.
-4. You review. Then point `book-normalized` and `stop-times` at their
-   replayed commits and force-push both. Merging into `develop` is a separate
-   decision.
+A hash in **commit** means the step is done and checked.
 
-## Commits
+| step                                        | title                                                                                         | commit    |
+| ------------------------------------------- | --------------------------------------------------------------------------------------------- | --------- |
+| 1. squash `book-normalized` onto `develop`  | final-01: fix stop names and misprinted times; stop-name-normalizer ignore list, output       | `e83740a` |
+| 2. squash `stop-times` onto 1               | stop-times: stop_times.py lists every train at one station; SPEC, README, tests, output       |           |
+| 3. copy commit on `split-versions`          | normalized-01: copy of final-01, to be normalized by hand                                     |           |
+| 4. replay 1 onto 3                          | normalized-01: fix stop names and misprinted times; stop-name-normalizer ignore list, output  |           |
+| 5. replay 2 onto 4                          | as 2                                                                                          |           |
 
-| commit            | title                                                                                        | squashed | replayed | checked |
-| ----------------- | -------------------------------------------------------------------------------------------- | -------- | -------- | ------- |
-| copy              | normalized-01: copy of final-01, to be normalized by hand                                    | –        |          |         |
-| `book-normalized` | normalized-01: fix stop names and misprinted times; stop-name-normalizer ignore list, output |          |          |         |
-| `stop-times`      | stop-times: stop_times.py lists every train at one station; SPEC, README, tests, output      |          |          |         |
-| rule              | stop-name-normalizer: fix every printing of a stop at once, in normalized-NN only            | –        |          |         |
+## Squash
 
-Fill in **squashed** and **replayed** with the new hashes.
+Tag the old tip as `old/<branch>` and push the tag (`book-normalized` at
+`fa207df`, `stop-times` at `42fd24b`). Make one commit with the old tip's
+files. Check, then reset the branch to it.
 
-## What changes when replaying
+- Same files as `old/<branch>`, byte for byte.
+- The scripts the branch changed give the committed outputs.
+
+## Copy
+
+Copies `attempts/final-01` to `attempts/normalized-01`, with its
+`findings.txt`, `ignore.txt` and `disputes.txt`.
+
+## Replay
+
+The squashed commit, changed to work on `normalized-01`:
 
 - Changes to `attempts/final-01/` go to `attempts/normalized-01/`. `final-01`
   stays as on `develop`.
@@ -46,20 +50,14 @@ Fill in **squashed** and **replayed** with the new hashes.
   its header too.
 - `attempts/final-01` in docs and defaults becomes `attempts/normalized-01`.
   Not the golden sample: that one is `final-01` as of `2d2a3f4`, and stays.
-- `final-01` in the commit title becomes `normalized-01`.
-- The copy commit copies `attempts/final-01` to `attempts/normalized-01`, with
-  its `findings.txt`, `ignore.txt` and `disputes.txt`.
-- The rule commit: the rule in `tools/stop-name-normalizer/CLAUDE.md` holds for
-  `normalized-NN` only.
+- `final-01` in the title becomes `normalized-01`.
 
-## Checks
+Checks:
 
-- Squashed `book-normalized` has the same files as `fa207df`, and squashed
-  `stop-times` the same as `42fd24b`, byte for byte.
-- After each replay: `normalized-01` = the squashed commit's `final-01`;
-  `final-01` = `develop`'s; every other file = the squashed commit's, apart
-  from the changes listed above.
-- Both test suites pass.
+- `normalized-01` = the squashed commit's `final-01`; `final-01` =
+  `develop`'s; every other file = the squashed commit's, apart from the
+  changes above.
+- The tests pass.
 - `stop_names.py` and `stop_times.py` on `normalized-01` give the committed
   outputs; `validate.py` on each dir gives that dir's `findings.txt`.
 - `git grep final-01`: every remaining mention looked at.
