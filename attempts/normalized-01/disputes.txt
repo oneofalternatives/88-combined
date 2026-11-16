@@ -1,0 +1,68 @@
+| scan | page | where  | readings                     |
+|======|======|========|==============================|
+| 2    |      | layout | outvoted, not merged: 05, 03 |
+| 5    | 6    | layout | outvoted, not merged: 03     |
+| 5    | 7    | layout | outvoted, not merged: 03     |
+| 6    | 8    | layout | outvoted, not merged: 06, 03 |
+| 6    | 9    | layout | outvoted, not merged: 06     |
+| 100  | 196  | layout | outvoted, not merged: 05     |
+| 100  | 197  | layout | outvoted, not merged: 05     |
+| 101  | 198  | layout | outvoted, not merged: 04     |
+| 101  | 199  | layout | outvoted, not merged: 04     |
+| 102  | 200  | layout | outvoted, not merged: 04, 03 |
+| 12   | 20   | layout | outvoted, not merged: 03     |
+| 12   | 21   | layout | outvoted, not merged: 03     |
+| 17   | 31   | layout | outvoted, not merged: 05     |
+| 18   | 33   | layout | outvoted, not merged: 06     |
+| 26   | 49   | layout | outvoted, not merged: 03     |
+| 31   | 59   | layout | outvoted, not merged: 03     |
+| 32   | 60   | layout | outvoted, not merged: 03     |
+| 32   | 61   | layout | outvoted, not merged: 03     |
+| 34   | 65   | layout | outvoted, not merged: 03     |
+| 41   | 78   | layout | outvoted, not merged: 04, 03 |
+| 41   | 79   | layout | outvoted, not merged: 04, 03 |
+| 42   | 81   | layout | outvoted, not merged: 03     |
+| 47   | 91   | layout | outvoted, not merged: 03     |
+| 49   | 94   | layout | outvoted, not merged: 03     |
+| 49   | 95   | layout | outvoted, not merged: 03     |
+| 50   | 97   | layout | outvoted, not merged: 03     |
+| 51   | 98   | layout | outvoted, not merged: 03     |
+| 51   | 99   | layout | outvoted, not merged: 03     |
+| 53   | 103  | layout | outvoted, not merged: 03     |
+| 55   | 106  | layout | outvoted, not merged: 03     |
+| 55   | 107  | layout | outvoted, not merged: 03     |
+| 56   | 108  | layout | outvoted, not merged: 03     |
+| 57   | 110  | layout | outvoted, not merged: 04     |
+| 57   | 111  | layout | outvoted, not merged: 04     |
+| 60   | 116  | layout | outvoted, not merged: 03     |
+| 60   | 117  | layout | outvoted, not merged: 03     |
+| 63   | 122  | layout | outvoted, not merged: 03     |
+| 66   | 128  | layout | outvoted, not merged: 03     |
+| 66   | 129  | layout | outvoted, not merged: 03     |
+| 67   | 130  | layout | outvoted, not merged: 04     |
+| 68   | 132  | layout | outvoted, not merged: 03     |
+| 68   | 133  | layout | outvoted, not merged: 03     |
+| 70   | 137  | layout | outvoted, not merged: 03     |
+| 72   | 140  | layout | outvoted, not merged: 03     |
+| 72   | 141  | layout | outvoted, not merged: 05, 03 |
+| 73   | 142  | layout | outvoted, not merged: 05, 03 |
+| 78   | 152  | layout | outvoted, not merged: 03     |
+| 78   | 153  | layout | outvoted, not merged: 03     |
+| 80   | 156  | layout | outvoted, not merged: 04, 03 |
+| 80   | 157  | layout | outvoted, not merged: 04, 03 |
+| 81   | 158  | layout | outvoted, not merged: 03     |
+| 82   | 161  | layout | outvoted, not merged: 03     |
+| 83   | 162  | layout | outvoted, not merged: 06, 03 |
+| 83   | 163  | layout | outvoted, not merged: 06, 03 |
+| 85   | 167  | layout | outvoted, not merged: 03     |
+| 87   | 170  | layout | outvoted, not merged: 03     |
+| 87   | 171  | layout | outvoted, not merged: 03     |
+| 88   | 172  | layout | outvoted, not merged: 03     |
+| 88   | 173  | layout | outvoted, not merged: 03     |
+| 89   | 174  | layout | outvoted, not merged: 03     |
+| 89   | 175  | layout | outvoted, not merged: 03     |
+| 91   | 178  | layout | outvoted, not merged: 03     |
+| 91   | 179  | layout | outvoted, not merged: 03     |
+| 93   | 183  | layout | outvoted, not merged: 03     |
+| 98   | 192  | layout | outvoted, not merged: 04, 03 |
+| 98   | 193  | layout | outvoted, not merged: 04, 03 |
