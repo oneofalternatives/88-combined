@@ -24,7 +24,8 @@ A hash in **commit** means the step is done and checked.
 | 2. squash `stop-times` onto 1               | stop-times: stop_times.py lists every train at one station; SPEC, README, tests, output       | `bbd9949` |
 | 3. copy commit on `split-versions`          | normalized-01: copy of final-01, to be normalized by hand                                     | `a0ce763` |
 | 4. replay 1 onto 3                          | normalized-01: fix stop names and misprinted times; stop-name-normalizer ignore list, output  | `86dfe4c` |
-| 5. replay 2 onto 4                          | as 2                                                                                          |           |
+| 5. docs for the split                       | docs: final-NN as printed, normalized-NN fixed by hand; README, CLAUDE.md, docstrings         |           |
+| 6. replay 2 onto 5                          | as 2                                                                                          |           |
 
 ## Squash
 
@@ -39,6 +40,19 @@ files. Check, then reset the branch to it.
 
 Copies `attempts/final-01` to `attempts/normalized-01`, with its
 `findings.txt`, `ignore.txt` and `disputes.txt`.
+
+## Docs
+
+Say what `final-NN` and `normalized-NN` are, and which fixes go where:
+
+- `README.md`: `normalized-NN` in the pipeline and the use; the PDF can be
+  built from either dir.
+- `tools/stop-name-normalizer/CLAUDE.md`: stop names are fixed in
+  `normalized-NN`; `final-NN` keeps the book's own spellings.
+- Docstrings that call `final-NN` the only hand-corrected dir.
+- Whatever the review of step 4 finds.
+
+Checks: the tests pass; `git grep 'final-NN'`: every mention looked at.
 
 ## Replay
 
