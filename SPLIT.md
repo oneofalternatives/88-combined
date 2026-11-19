@@ -24,7 +24,7 @@ A hash in **commit** means the step is done and checked.
 | 2. squash `stop-times` onto 1               | stop-times: stop_times.py lists every train at one station; SPEC, README, tests, output       | `bbd9949` |
 | 3. copy commit on `split-versions`          | normalized-01: copy of final-01, to be normalized by hand                                     | `a0ce763` |
 | 4. replay 1 onto 3                          | normalized-01: fix stop names and misprinted times; stop-name-normalizer ignore list, output  | `86dfe4c` |
-| 5. docs for the split                       | docs: final-NN as printed, normalized-NN fixed by hand; README, CLAUDE.md, docstrings         |           |
+| 5. docs for the split                       | docs: final-NN as printed, normalized-NN fixed by hand; README, CLAUDE.md, docstrings         | `2bf9061` |
 | 6. replay 2 onto 5                          | as 2                                                                                          |           |
 
 ## Squash
