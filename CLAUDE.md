@@ -1,6 +1,9 @@
 # Instructions for Claude
 
 - When writing docs, keep them short and concise, lean towards simpler English.
+- In md docs (README, SPEC and the like, not generated output such as
+  `tools/*/output/`), align table columns: pad every cell to the column's
+  width, and make the `---` separator span it too.
 - `attempts/final-NN/` and `attempts/normalized-NN/` may hold hand corrections. Never
   `--force` over them without checking first.
 - `final-NN` is the book as printed: fix only OCR misreads there. Misprinted
