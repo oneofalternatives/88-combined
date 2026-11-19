@@ -1,10 +1,10 @@
-# Spec: `attempts/final-NN` scan files
+# Spec: `attempts/final-NN` and `attempts/normalized-NN` scan files
 
-One file per scan, `attempts/final-NN/scan-NN.md`. A scan is one image of the
-DjVu: a spread of two book pages, or a cover. Frontmatter, then one `## page N`
-section per book page. Written by `scripts/extract.py`, read by
-`scripts/build_book_pdf.py` and the validator. See the README for the table
-syntax.
+One file per scan, `attempts/final-NN/scan-NN.md` (`normalized-NN` the same).
+A scan is one image of the DjVu: a spread of two book pages, or a cover.
+Frontmatter, then one `## page N` section per book page. Written by
+`scripts/extract.py`, read by `scripts/build_book_pdf.py` and the validator.
+See the README for the table syntax.
 
 ## Frontmatter
 

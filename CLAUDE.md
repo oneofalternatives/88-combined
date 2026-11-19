@@ -1,7 +1,11 @@
 # Instructions for Claude
 
 - When writing docs, keep them short and concise, lean towards simpler English.
-- `attempts/final-NN/` may hold hand corrections. Never `--force` over it without checking first.
+- `attempts/final-NN/` and `attempts/normalized-NN/` may hold hand corrections. Never
+  `--force` over them without checking first.
+- `final-NN` is the book as printed: fix only OCR misreads there. Misprinted
+  times and stops spelt two ways are fixed in `normalized-NN`. Fix an OCR
+  misread in both.
 - Changing extract.py: regenerate every scan to a scratch dir, diff against the
   previous run, confirm only the pages you meant to touch moved.
 

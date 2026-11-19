@@ -3,7 +3,8 @@
 Finds stop names spelt more than one way: OCR misreads (`Торнякалис`), line-break
 leftovers (`Блок- пост`), odd letters (`Қандава`), and the book's own
 inconsistencies. It repairs nothing. How to pick and apply the right spelling
-is not decided yet.
+is not decided yet. Fixes go in `attempts/normalized-NN`; `final-NN` keeps the
+book's own spellings. An OCR misread is fixed in both.
 
 ## Use
 
@@ -42,6 +43,10 @@ starts a note. The finder leaves these pairs out and counts them
 reads another list, `--no-ignore` keeps every pair. The golden check does not
 use it.
 
+The list is for `normalized-NN`, the finder's default dir, and its pairs are
+spelt as in it. On `final-NN` some pairs come back under their printed
+spellings.
+
 ## Files
 
 | file                            | what                                        |
@@ -55,8 +60,9 @@ use it.
 ## Golden check (`final-01` as of `2d2a3f4`)
 
 For work on `stop_names.py` only. The golden sample describes `final-01` as of
-commit `2d2a3f4`, before its stop names were fixed. Run it on that copy, not on
-the current `final-01`:
+commit `2d2a3f4`. Run it on that copy. Never on `normalized-01`: its stop names
+are fixed, so nearly all the forms are gone. The current `final-01` will lose
+some once its OCR misreads are fixed.
 
     mkdir -p /tmp/golden && git archive 2d2a3f4 attempts/final-01 | tar -x -C /tmp/golden
     python3 tools/stop-name-normalizer/check_golden.py /tmp/golden/attempts/final-01
@@ -67,9 +73,10 @@ name printed as the target.
 
 ## Known limits
 
-- The most common spelling is not always the right one: `Калигале` 35 vs `Калнгале` 2.
+- The most common spelling is not always the right one: `Калигале` 35 vs `Калнгале` 2
+  in `final-01`.
 - Different stops can differ by one letter: `Ладе`/`Лоде`, `Лачи`/`Личи`, `Пуре`/`Пузе`.
-- Past distance 2 most pairs are noise (122 at d2, 304 at d3 on `final-01`, ratio 0.6).
+- Past distance 2 most pairs are noise (89 at d2, 282 at d3 on `normalized-01`, ratio 0.6, after `ignore.txt`).
 - Prose (the safety texts on scan 03) is not read; only the contents table is.
 
 ## Next
