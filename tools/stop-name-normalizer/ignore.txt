@@ -1,0 +1,31 @@
+# Pairs stop_names.py should not report: checked, and not one stop spelt two
+# ways. One pair per line, «a ~ b», in either order; # starts a note.
+# Add a pair here only once it is checked against the scan.
+
+# The town in a route title or the contents, and its station
+Вентспилс ~ Вентспилс-I
+Тукумс-I ~ Тукумс
+
+# Different stops
+Ликсна ~ Виксна
+
+# Same shape, different number: one table or line lists both (scans 05-46,
+# 48, 49, 51, 52, 80, 81, 93-96, 98)
+Тукумс-I ~ Тукумс-II
+Вентспилс-I ~ Вентспилс-II
+Пост 383 км ~ Пост 387 км
+210 км ~ 256 км
+б.п. 845 км ~ б.п. 856 км
+б.п. 856 км ~ б.п. 867 км
+
+# Same shape, different number, never on one scan: different mileposts
+Пост 78 км ~ Пост 383 км
+Пост 78 км ~ Пост 387 км
+о.п. 56 км ~ о.п. 50 км
+о.п. 56 км ~ б.п. 856 км
+б.п. 845 км ~ б.п. 867 км
+
+# One letter apart, different lines or rows (scans 54, 79, 87, 98)
+Ладе ~ Лоде
+Лачи ~ Личи
+Пуре ~ Пузе

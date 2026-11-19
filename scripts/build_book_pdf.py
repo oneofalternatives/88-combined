@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Render the 1988/1989 suburban working timetable as a print-ready PDF.
 
-Reads attempts/final-NN — the hand-corrected source of truth — and nothing
-else: the OCR export reaches the page only through scripts/extract.py. Layout
-lives in book_model.py; this file adds the print stylesheet, one PDF page per
+Reads a hand-corrected dir — attempts/final-NN (as printed) or
+attempts/normalized-NN (the book's own mistakes fixed) — and nothing else: the
+OCR export reaches the page only through scripts/extract.py. Layout lives in
+book_model.py; this file adds the print stylesheet, one PDF page per
 scan. See spec/ocr-book-format.md.
 """
 from __future__ import annotations

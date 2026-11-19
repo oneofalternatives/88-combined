@@ -1,8 +1,9 @@
 # Stop-name findings: golden sample
 #
 # What stop_names.py should report when run on attempts/final-01 as of commit
-# 2d2a3f4. For work on stop_names.py only: later fixes to final-01 remove the
-# forms below, so do not score the current final-01. Score the old one:
+# 2d2a3f4. For work on stop_names.py only: later fixes remove the forms below
+# (nearly all in normalized-01; in final-01, the OCR misreads once fixed), so do
+# not score the current dirs. Score the old one:
 #
 #   mkdir -p /tmp/golden && git archive 2d2a3f4 attempts/final-01 | tar -x -C /tmp/golden
 #   python3 tools/stop-name-normalizer/check_golden.py /tmp/golden/attempts/final-01

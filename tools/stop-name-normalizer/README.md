@@ -3,17 +3,20 @@
 Finds stop names spelt more than one way: OCR misreads (`Торнякалис`), line-break
 leftovers (`Блок- пост`), odd letters (`Қандава`), and the book's own
 inconsistencies. It repairs nothing. How to pick and apply the right spelling
-is not decided yet.
+is not decided yet. Fixes go in `attempts/normalized-NN`; `final-NN` keeps the
+book's own spellings. An OCR misread is fixed in both.
 
 ## Use
 
-    python3 tools/stop-name-normalizer/stop_names.py attempts/final-01 --dest tools/stop-name-normalizer/output/final-01.txt
-    python3 tools/stop-name-normalizer/stop_names.py attempts/final-01 --max-dist 4 --ratio 0.6
-    python3 tools/stop-name-normalizer/stop_names.py attempts/final-01 --dump
+    python3 tools/stop-name-normalizer/stop_names.py attempts/normalized-01 --dest tools/stop-name-normalizer/output/normalized-01.txt
+    python3 tools/stop-name-normalizer/stop_names.py attempts/normalized-01 --max-dist 4 --ratio 0.6
+    python3 tools/stop-name-normalizer/stop_names.py attempts/normalized-01 --dump
+    python3 tools/stop-name-normalizer/stop_names.py attempts/normalized-01 --no-ignore
     python3 tools/stop-name-normalizer/check_golden.py /tmp/golden/attempts/final-01
 
-Both scripts read `attempts/final-01` when no dir is given. For `check_golden.py`,
-give it `final-01` as of `2d2a3f4` (see Golden check).
+`stop_names.py` reads `attempts/normalized-01` when no dir is given,
+`check_golden.py` reads `attempts/final-01`. For `check_golden.py`, give it
+`final-01` as of `2d2a3f4` (see Golden check).
 
 `stop_names.py` reads the stop-name column of every table, the route titles,
 the routes in the contents (scan 03) and notes in time cells (`На Царни-каву`).
@@ -30,20 +33,36 @@ It splits merge marks `⟨a ¦ b⟩` into readings. Then it runs three checks:
 - **pairs**: edit distance, raised one step at a time; only the new pairs per
   step. A pair is kept when distance / length of the shorter name ≤ `--ratio`.
 
+## Ignore list
+
+`ignore.txt` holds pairs checked against the scan that are not one stop spelt
+two ways: different stops (`Ликсна ~ Виксна`), or a town and its station
+(`Тукумс-I ~ Тукумс`). One pair per line, `a ~ b`, in either order; `#`
+starts a note. The finder leaves these pairs out and counts them
+(`2 ignored`). It covers the distance pairs only, not notations. `--ignore`
+reads another list, `--no-ignore` keeps every pair. The golden check does not
+use it.
+
+The list is for `normalized-NN`, the finder's default dir, and its pairs are
+spelt as in it. On `final-NN` some pairs come back under their printed
+spellings.
+
 ## Files
 
 | file                            | what                                        |
 |---------------------------------|---------------------------------------------|
 | `stop_names.py`                 | the finder                                  |
 | `check_golden.py`               | scores the finder against the golden sample |
+| `ignore.txt`                    | pairs that are different stops              |
 | `golden/stop-name-findings.txt` | golden sample, built on `final-01`          |
 | `output/`                       | generated: run again, don't edit            |
 
 ## Golden check (`final-01` as of `2d2a3f4`)
 
 For work on `stop_names.py` only. The golden sample describes `final-01` as of
-commit `2d2a3f4`, before its stop names were fixed. Run it on that copy, not on
-the current `final-01`:
+commit `2d2a3f4`. Run it on that copy. Never on `normalized-01`: its stop names
+are fixed, so nearly all the forms are gone. The current `final-01` will lose
+some once its OCR misreads are fixed.
 
     mkdir -p /tmp/golden && git archive 2d2a3f4 attempts/final-01 | tar -x -C /tmp/golden
     python3 tools/stop-name-normalizer/check_golden.py /tmp/golden/attempts/final-01
@@ -54,12 +73,12 @@ name printed as the target.
 
 ## Known limits
 
-- The most common spelling is not always the right one: `Калигале` 35 vs `Калнгале` 2.
+- The most common spelling is not always the right one: `Калигале` 35 vs `Калнгале` 2
+  in `final-01`.
 - Different stops can differ by one letter: `Ладе`/`Лоде`, `Лачи`/`Личи`, `Пуре`/`Пузе`.
-- Past distance 2 most pairs are noise (122 at d2, 304 at d3 on `final-01`, ratio 0.6).
+- Past distance 2 most pairs are noise (89 at d2, 282 at d3 on `normalized-01`, ratio 0.6, after `ignore.txt`).
 - Prose (the safety texts on scan 03) is not read; only the contents table is.
 
 ## Next
 
-1. An ignore list for different stops.
-2. Tests in `tests/`, the golden check as one of them.
+1. Tests in `tests/`, the golden check as one of them.

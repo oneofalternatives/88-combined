@@ -16,15 +16,23 @@ rendered back to a PDF.
       -> scripts/validate.py      findings.txt, saved in extracted-NN or merged-NN
       -> copy
     attempts/final-NN/scan-NN.md  one file per scan, corrected by hand
-      -> scripts/validate.py
-    findings.txt                  ranked "look here", saved in final-NN
+      -> scripts/validate.py      findings.txt, ranked "look here", saved in final-NN
+      -> copy
+    attempts/normalized-NN/       the same, with the book's own mistakes fixed
+      -> scripts/validate.py      findings.txt, saved in normalized-NN
 
-Correcting `attempts/final-NN` and running the validator again is the loop.
+Two dirs are corrected by hand:
+
+- `final-NN` is the book as printed. Only OCR misreads are fixed in it.
+- `normalized-NN` starts as a copy of `final-NN` and also fixes the book:
+  misprinted times, a stop spelt two ways. An OCR misread is fixed in both.
+
+Correcting either dir and running the validator again is the loop.
 `findings.txt` and `disputes.txt` are generated. After each correction, run
 `validate.py` and `merge.py --prune` again; don't edit either file by hand.
 Rendering sits outside it, a final production step once the scan files are good:
 
-    attempts/final-NN -> scripts/build_book_pdf.py -> build/   PDF
+    attempts/final-NN or normalized-NN -> scripts/build_book_pdf.py -> build/   PDF
 
 ## Use
 
@@ -37,6 +45,8 @@ Every script takes its dirs as arguments; none are built in.
     cp -r attempts/extracted-NN attempts/final-NN && rm attempts/final-NN/manifest.json
                                            # a copy to correct by hand; problems.txt and
                                            # findings.txt say where to start
+    cp -r attempts/final-NN attempts/normalized-NN
+                                           # a copy to fix the book's own mistakes in
     python3 scripts/extract.py --src attempts/ocr-00 --dest attempts/final-NN 93 --force
                                            # redo one scan in final-NN
     python3 scripts/validate.py --src attempts/final-NN --dest attempts/final-NN
@@ -44,7 +54,8 @@ Every script takes its dirs as arguments; none are built in.
                                            # scan dir works); findings.txt, or no
                                            # --dest to print
                                            # findings checked and true to the book go in
-                                           # final-NN/ignore.txt; see validator.md
+                                           # that dir's ignore.txt (in normalized-NN, fix
+                                           # a misprint instead); see validator.md
     python3 scripts/build_book_pdf.py --src attempts/final-NN --dest build/1988-1989-prigorodnye-rabochie.pdf
                                            # final render; needs weasyprint
 
@@ -52,7 +63,8 @@ extract.py prints every repair it made and exits nonzero if there were any.
 validate.py repairs nothing: it writes a ranked list of places to look (to
 `--dest`, or the terminal without it) and exits nonzero if it found any. See `validator.md`.
 
-The builder reads `attempts/final-NN` only. Nothing renders the OCR export directly.
+The builder reads a hand-corrected dir only, `final-NN` or `normalized-NN`.
+Nothing renders the OCR export directly.
 
 ## Rule for all scripts
 
@@ -89,7 +101,7 @@ As you resolve marks by hand, drop them from the list:
 A row stays while its mark is still on its page. Layout notes ("outvoted")
 have no mark and always stay.
 
-## attempts/final-NN
+## attempts/final-NN, attempts/normalized-NN
 
 Medium for the book — converted from OCR output, one file per scan, split into
 the book's pages, human-readable and editable, machine-readable, diffable.

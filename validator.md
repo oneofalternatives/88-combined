@@ -69,7 +69,8 @@ Row numbers in this finding count the body rows of the whole table.
 
 A finding you checked against the scan and found true to the book goes in
 `ignore.txt` in the `--src` dir. The validator reads it by itself and drops
-that finding. `--no-ignore` shows everything again.
+that finding. `--no-ignore` shows everything again. In `normalized-NN`, fix a
+misprint instead: its `ignore.txt` keeps only findings where the book is right.
 
     | scan | folio | train | where      | rules | values        | note       |
     |======|=======|=======|============|=======|===============|============|

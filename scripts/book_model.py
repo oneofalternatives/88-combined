@@ -2,9 +2,10 @@
 """Shared model for the 1988/1989 suburban working timetable.
 
 Two halves, one per stage of the pipeline: the OCR export is parsed and
-repaired for scripts/extract.py, and attempts/final-NN — the hand-corrected
-result — is parsed and rendered to HTML for scripts/build_book_pdf.py. Nothing
-renders the OCR directly; see spec/ocr-book-format.md.
+repaired for scripts/extract.py, and attempts/final-NN or normalized-NN — the
+hand-corrected result — is parsed and rendered to HTML for
+scripts/build_book_pdf.py. Nothing renders the OCR directly; see
+spec/ocr-book-format.md.
 """
 from __future__ import annotations
 
@@ -206,10 +207,11 @@ ROW_CAPACITY = 47.0
 
 
 # ------------------------------------------------------------- scan files as input
-# From here down the input is attempts/final-NN/scan-NN.md, not the OCR: the hand-corrected
-# source of truth. Its tables are markdown-LIKE (see extract.as_markdown) --
-# "=" rules the head, "-" rules the interior, a one-cell row is a full-width
-# band -- so they are read here rather than by parse_table, which speaks GFM.
+# From here down the input is attempts/final-NN/scan-NN.md (or normalized-NN), not
+# the OCR: the hand-corrected source of truth. Its tables are markdown-LIKE (see
+# extract.as_markdown) -- "=" rules the head, "-" rules the interior, a one-cell
+# row is a full-width band -- so they are read here rather than by parse_table,
+# which speaks GFM.
 RULE_CHARS = set("-=: ")
 
 

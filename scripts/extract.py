@@ -6,7 +6,8 @@ column count wherever train times are blank. Both are repaired here, once, by
 reassembling each book page into ONE table whose width comes from the
 "№ поездов" header. The result goes to attempts/extracted-NN. A copy of it in
 attempts/final-NN is the source of truth from then on: it is hand-corrected
-against the scans, and the builders read only it.
+against the scans. attempts/normalized-NN, a copy of final-NN, also fixes the
+book's own mistakes. The builders read only these.
 
 This is a one-way door -- it refuses to overwrite an edited file unless asked.
 See spec/ocr-book-format.md.
@@ -482,7 +483,7 @@ def main():
     ap.add_argument("--dest", type=Path, required=True, help="scan files directory")
     args = ap.parse_args()
     # Output into attempts/extracted-NN makes an extraction: a finished input, a fresh
-    # dir, and a manifest once done. Not into final-NN, which holds no manifest.
+    # dir, and a manifest once done. Not into final-NN or normalized-NN: no manifest.
     extracted = args.dest.parent == attempts.ROOT and args.dest.name.startswith("extracted-")
     if extracted:
         attempts.require_finished(args.src)
