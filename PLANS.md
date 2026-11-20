@@ -15,7 +15,7 @@ transfer, and a note may be missing. We have to work transfers out.
 
 A tool that lists possible transfers for a person (or AI) to judge. It
 decides nothing. Accepted ones go in a hand-kept list, each with a short
-reason. `stop-times` stays as printed.
+reason. `stop-times` output is not changed.
 
 Printed in the book, out of Riga (`Пересадка на X` past the last stop):
 

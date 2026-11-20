@@ -21,6 +21,9 @@ If any cell can't be read, the tool writes nothing. It lists every such cell
 and exits 1. A cell is named the way `validate.py` names it: `Огре (r4c6)` is
 body row 4, cell 6, both counted from 0.
 
+On `final-NN` the book's misprinted times are rejected. Run it on
+`normalized-NN`, where they are fixed.
+
 The tool reads every table in the book, to find runs that go on in a table
 without the station. A merge mark `⟨…⟩` anywhere in the book rejects it.
 
