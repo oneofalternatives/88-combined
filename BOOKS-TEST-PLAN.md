@@ -63,6 +63,23 @@ the new layout. Checked:
 
 Run 1 again and repeat a sample of 2. The commit message is a title only.
 
+## Notes
+
+- **PDF:** WeasyPrint writes the build time into the PDF. Old and new are
+  byte-identical only when built in the same second: run them in parallel.
+- **PNGs:** none are in git, `scan-93.png` included. Check them with
+  `python3 scripts/render.py --check $B/attempts/scans-NN`.
+- **Old tree:** `009d4ff` has no PNGs for `scans-01` to `scans-03`. Copy them
+  from the repo.
+- **The move commit alone fails the tests:** it only moves files; the paths
+  are fixed in the next commit.
+- **Not run here:** `pdfinfo` is not installed; `ocr.py --src` calls the paid
+  API (`--resume` of a finished copy, its manifest removed, runs offline).
+- **Known, left as is:** `build_book_pdf.py` builds a dir with merge marks,
+  though `merge.py`'s docstring says the build rejects them. The old
+  `extracted-NN` dirs differ from a fresh extract: they record older extractor
+  versions.
+
 ## Done when
 
 Every point passes. Every difference found is either fixed or listed with its
