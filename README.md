@@ -56,7 +56,7 @@ lives in `books/<book>/`; below, `B=books/1988-1989-workdays`.
     python3 scripts/extract.py --src $B/attempts/ocr-00 --dest $B/attempts/extracted-NN
                                            # OCR -> scan files; add its row to $B/attempts/index.md
     python3 scripts/validate.py --src $B/attempts/extracted-NN --dest $B/attempts/extracted-NN
-                                           # findings of the new extract, saved next to it
+                                           # findings of the new extract, saved in it
     cp -r $B/attempts/extracted-NN $B/attempts/final-NN && rm $B/attempts/final-NN/manifest.json
                                            # a copy to correct by hand; problems.txt and
                                            # findings.txt say where to start
@@ -125,7 +125,7 @@ have no mark and always stay.
 
 ## attempts/final-NN, attempts/normalized-NN
 
-Medium for the book — converted from OCR output, one file per scan, split into
+Medium for a book — converted from OCR output, one file per scan, split into
 the book's pages, human-readable and editable, machine-readable, diffable.
 
 Frontmatter, then one table per page. The tables are markdown-*like*: `=` rules

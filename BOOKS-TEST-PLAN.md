@@ -1,7 +1,6 @@
 # Test plan: one dir per book
 
-Goal: the tip of `books-layout` works and reads right. The branch is squashed
-after, so only that state counts.
+Goal: the tip of `books-layout` works and reads right.
 
 The reference is the commit before the move, `009d4ff`, checked out on its own
 in a scratch dir. Every comparison is old against new, both run from scratch.
@@ -59,15 +58,11 @@ the new layout. Checked:
 - tables aligned
 - short, simple English
 
-## 6. After the squash
-
-Run 1 again and repeat a sample of 2. The commit message is a title only.
-
 ## Notes
 
 - **PDF:** WeasyPrint writes the build time into the PDF. Old and new are
   byte-identical only when built in the same second: run them in parallel.
-- **PNGs:** none are in git, `scan-93.png` included. Check them with
+- **PNGs:** none are in git. Check them with
   `python3 scripts/render.py --check $B/attempts/scans-NN`.
 - **Old tree:** `009d4ff` has no PNGs for `scans-01` to `scans-03`. Copy them
   from the repo.

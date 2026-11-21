@@ -22,8 +22,8 @@ change.
 Then fix every path pointing at the old places:
 
 - `tests/conftest.py`: `OCR_00`, `EXTRACTED`.
-- `.gitignore`: `books/*/attempts/scans-*/*.png`,
-  `!books/1988-1989-workdays/attempts/scans-00/*.png`.
+- `.gitignore`: `books/*/attempts/scans-*/*.png` and `books/*/build/`. No
+  PNG stays in git; `render.py --check` checks them.
 - Paths in `manifest.json` / `run.json` (`"renders": "attempts/scans-01"`):
   fixed with `sed`, so `ocr.py --resume` keeps working.
 - README, `validator.md`, tool READMEs, CLAUDE.md: examples and rule paths.
