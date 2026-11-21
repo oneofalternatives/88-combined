@@ -497,7 +497,7 @@ def to_markdown(rows, station, src, extra=(), hide=()):
 
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    ap.add_argument("src", type=Path, help="an attempts/final-NN or normalized-NN dir")
+    ap.add_argument("src", type=Path, help="a books/<book>/attempts/final-NN or normalized-NN dir")
     ap.add_argument("--dest", type=Path, required=True, help="the md file to write")
     ap.add_argument("--station", default="Рига-пасс.")
     for name, text in OPTIONAL.items():

@@ -1,8 +1,9 @@
 {
   "made": "2026-09-21",
-  "source": "sources/1988-1989_приг_раб.djvu",
+  "source": "books/1988-1989-workdays/sources/1988-1989_приг_раб.djvu",
   "source_md5": "d5a46a69642d88048fe75f28d35ee882",
   "scans": [93],
   "command": "by hand; pixel-identical to ddjvu -page=93 (colour), saved as RGBA PNG",
-  "sizes": {"2387x1923": 1}
+  "sizes": {"2387x1923": 1},
+  "pixel_sha256": {"scan-93.png": "bd2f7b9cfe0f6dfc5e0c22c6eff5d7cf56d5c0a0f642717fdc1614646eeafcfc"}
 }

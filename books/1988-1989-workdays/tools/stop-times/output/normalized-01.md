@@ -1,6 +1,6 @@
 # Stop times at Рига-пасс.
 
-From `attempts/normalized-01`, one row per train column, in book order.
+From `books/1988-1989-workdays/attempts/normalized-01`, one row per train column, in book order.
 
 | sc | pg  | no   | marks     | from             | to               | arr   | dep   | status |
 |====|=====|======|===========|==================|==================|=======|=======|========|

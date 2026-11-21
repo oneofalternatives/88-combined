@@ -1,4 +1,4 @@
-# attempts/final-01 against stop-name-findings.txt: max distance 8, ratio 0.6
+# /tmp/golden/attempts/final-01 against 1988-1989-workdays.txt: max distance 8, ratio 0.6
 
 tag      | form                   | target               | count     | result
 mistake  | Внестури               | Виестури             | 2/2       | found at d1

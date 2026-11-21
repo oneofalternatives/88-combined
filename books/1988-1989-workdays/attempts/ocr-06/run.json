@@ -1,5 +1,5 @@
 {
-  "renders": "attempts/scans-03",
+  "renders": "books/1988-1989-workdays/attempts/scans-03",
   "model": "mistral-ocr-4-1",
   "settings": {
     "include_blocks": true,

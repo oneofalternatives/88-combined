@@ -1,6 +1,7 @@
 """Score stop_names.py against the golden sample.
 
-    python3 tools/stop-name-normalizer/check_golden.py [attempts/final-01] [--max-dist 8] [--ratio 0.6]
+    python3 tools/stop-name-normalizer/check_golden.py <scan dir> \
+        --golden tools/stop-name-normalizer/golden/<book>.txt [--max-dist 8] [--ratio 0.6]
 
 For each golden line (form -> target) says at which distance the script pairs
 them, that its checks flag the form, that a notation finding sets the two
@@ -9,14 +10,16 @@ the two are too far apart. A notation line (… for any text, # for a number) is
 found when every name printed as the form is set against a name printed as the
 target. Then lists the pairs the script found that no golden line explains
 (different stops, or forms the golden sample misses).
+
+Golden samples are test data for this tool, one per book: golden/<book>.txt.
 """
 import argparse
 import re
+import sys
 from pathlib import Path
 
-from stop_names import ROOT, checks, shown, collect, key, lev, notation_pairs, notations, pair_levels, where
+from stop_names import checks, shown, collect, key, lev, notation_pairs, notations, pair_levels, where
 
-HERE = Path(__file__).parent
 TAGS = ("mistake", "artifact", "scatter", "form")
 
 
@@ -38,12 +41,13 @@ def pattern(p):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    ap.add_argument("src", type=Path, nargs="?", default=ROOT / "attempts" / "final-01",
-                    help="scan dir (default attempts/final-01)")
-    ap.add_argument("--golden", type=Path, default=HERE / "golden" / "stop-name-findings.txt")
+    ap.add_argument("src", type=Path, help="scan dir the golden sample was built on")
+    ap.add_argument("--golden", type=Path, required=True, help="golden sample, golden/<book>.txt")
     ap.add_argument("--max-dist", type=int, default=8)
     ap.add_argument("--ratio", type=float, default=0.6)
     a = ap.parse_args()
+    if not a.golden.exists():
+        sys.exit(f"{a.golden}: no golden sample")
 
     occ = collect(a.src)
     levels = pair_levels(occ, a.max_dist, a.ratio)

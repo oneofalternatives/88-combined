@@ -482,9 +482,9 @@ def main():
     ap.add_argument("--src", type=Path, required=True, help="OCR output directory")
     ap.add_argument("--dest", type=Path, required=True, help="scan files directory")
     args = ap.parse_args()
-    # Output into attempts/extracted-NN makes an extraction: a finished input, a fresh
+    # Output into a book's attempts/extracted-NN makes an extraction: a finished input, a fresh
     # dir, and a manifest once done. Not into final-NN or normalized-NN: no manifest.
-    extracted = args.dest.parent == attempts.ROOT and args.dest.name.startswith("extracted-")
+    extracted = args.dest.resolve().parent.name == "attempts" and args.dest.name.startswith("extracted-")
     if extracted:
         attempts.require_finished(args.src)
         if (args.dest / "manifest.json").exists():

@@ -3,17 +3,19 @@
 Lists every train's arrival and departure at one station, in book order. One
 md table, one row per printed train column. See `SPEC.md`.
 
-    python3 tools/stop-times/stop_times.py attempts/normalized-NN --dest tools/stop-times/output/normalized-NN.md
-    python3 tools/stop-times/stop_times.py attempts/normalized-NN --dest tools/stop-times/output/normalized-NN-ogre.md --station "Огре"
+    B=books/1988-1989-workdays
+    python3 tools/stop-times/stop_times.py $B/attempts/normalized-NN --dest $B/tools/stop-times/output/normalized-NN.md
+    python3 tools/stop-times/stop_times.py $B/attempts/normalized-NN --dest $B/tools/stop-times/output/normalized-NN-ogre.md --station "Огре" --no2
 
 The station name must match the cell exactly. `--station` defaults to `Рига-пасс.`.
 Add `--table`, `--column` or `--train` to get the table number, the column
 number or the raw train-number cell as a column. The no2 column (second
 number, `6633/6644`) is hidden; a row with one fails, unless `--no2`.
 
-Output goes in `output/`, one file per input dir, named after it. For another
-station, add its name. Files there are generated: run the tool again after
-correcting the book, don't edit them by hand.
+Output goes in `books/<book>/tools/stop-times/output/`, one file per input
+dir, named after it. For another station, add its name. Files there are
+generated: run the tool again after correcting the book, don't edit them by
+hand.
 
 ## Reject
 

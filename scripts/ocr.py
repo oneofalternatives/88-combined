@@ -96,7 +96,7 @@ def main():
     renders = Path(run["renders"])
     require_finished(renders)
     if out is None:
-        out = next_dir("ocr")
+        out = next_dir(renders.parent, "ocr")
         (out / "run.json").write_text(json.dumps(run, indent=2) + "\n")
 
     failed, models = [], set()

@@ -10,7 +10,7 @@ stop_times.py <final-NN or normalized-NN dir> --dest <file.md> [--station "Ри�
               [--table] [--column] [--train] [--no2]
 ```
 
-- Input: an `attempts/final-NN` or `attempts/normalized-NN` dir.
+- Input: a `books/<book>/attempts/final-NN` or `normalized-NN` dir.
 - `--dest`: required. The md file to write.
 - `--station` defaults to `Рига-пасс.`.
 - `--table`, `--column`, `--train`: add that column. Off by default:

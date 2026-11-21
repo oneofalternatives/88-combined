@@ -4,9 +4,10 @@ Ideas not built yet. Short notes, enough to pick up later.
 
 ## Goal
 
-A departure board simulator for Riga, late 80s. `tools/stop-times` gives the
-book's trains at the station. The board may show a farther origin or
-destination than a train runs, if there is a sensible transfer.
+A departure board simulator for Riga, late 80s, from the book in
+`books/1988-1989-workdays`. `tools/stop-times` gives its trains at the
+station. The board may show a farther origin or destination than a train
+runs, if there is a sensible transfer.
 
 The book is a working timetable, with mistakes. It doesn't print every
 transfer, and a note may be missing. We have to work transfers out.

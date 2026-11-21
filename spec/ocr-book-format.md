@@ -1,6 +1,6 @@
 # Spec: OCR output of «Служебное расписание движения пригородных поездов (1988/1989 г.)»
 
-Source: `attempts/ocr-00/`
+Source: `books/1988-1989-workdays/attempts/ocr-00/`
 (Mistral OCR export of a scanned Soviet-era working timetable of suburban trains,
 Riga division of the Baltic Railway, published Riga «Транспорт», 1988.)
 
@@ -47,11 +47,11 @@ half (this ordering is not guaranteed and must not be relied on — sort by geom
 
 Two scan geometries occur:
 
-| scan N      | dimensions (w×h) | meaning                                   |
-| ----------- | ---------------- | ----------------------------------------- |
-| 1           | 683×1019 portrait| front cover (single page)                 |
-| 2 … 102     | 1019×821 landscape | **a spread: two facing book pages**     |
-| 103         | 683×1019 portrait| back cover (single page)                  |
+| scan N  | dimensions (w×h)   | meaning                             |
+| ------- | ------------------ | ----------------------------------- |
+| 1       | 683×1019 portrait  | front cover (single page)           |
+| 2 … 102 | 1019×821 landscape | **a spread: two facing book pages** |
+| 103     | 683×1019 portrait  | back cover (single page)            |
 
 So the book renders as: 1 single page, 101 two-page spreads, 1 single page.
 
@@ -74,14 +74,14 @@ must be suppressed. Covers (N=1, 103) carry no folio.
 
 ## 3. Block types and their semantics
 
-| `type`  | count | meaning / rendering                                                            |
-| ------- | ----: | ------------------------------------------------------------------------------ |
-| `title` |    37 | headings. Content carries markdown `#`/`##` prefixes (`# ГЛАВА I`, `## ОГЛАВЛЕНИЕ`). Centred. |
-| `header`|    81 | running heads above a timetable (train number `п. № 606`, traction `ДИЗЕЛЬНЫЙ`, direction `Рига—Себеж`), or occasionally a stray folio. |
-| `text`  |   512 | paragraphs (safety notices in Russian and Latvian), chapter sub-lists, single station names orphaned from a table. |
-| `list`  |     4 | a run of station names that OCR failed to attach to the adjacent table — newline-separated, belongs to the station column of the neighbouring table. |
-| `table` |   228 | a markdown pipe table — the timetables themselves. |
-| `footer`|   200 | bottom-of-page material: printed folio (digits only), printer signature marks (`5 — 1055`, `9*`, `13\*`, `10 — 1055`), imprint line, and — mis-typed by the OCR — some running heads sitting at `y ≈ 30`. |
+| `type`   | count | meaning / rendering                                                                                                                                                                                       |
+| -------- | ----: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `title`  |    37 | headings. Content carries markdown `#`/`##` prefixes (`# ГЛАВА I`, `## ОГЛАВЛЕНИЕ`). Centred.                                                                                                             |
+| `header` |    81 | running heads above a timetable (train number `п. № 606`, traction `ДИЗЕЛЬНЫЙ`, direction `Рига—Себеж`), or occasionally a stray folio.                                                                   |
+| `text`   |   512 | paragraphs (safety notices in Russian and Latvian), chapter sub-lists, single station names orphaned from a table.                                                                                        |
+| `list`   |     4 | a run of station names that OCR failed to attach to the adjacent table — newline-separated, belongs to the station column of the neighbouring table.                                                      |
+| `table`  |   228 | a markdown pipe table — the timetables themselves.                                                                                                                                                        |
+| `footer` |   200 | bottom-of-page material: printed folio (digits only), printer signature marks (`5 — 1055`, `9*`, `13\*`, `10 — 1055`), imprint line, and — mis-typed by the OCR — some running heads sitting at `y ≈ 30`. |
 
 `footer` is unreliable as a semantic label: it must be classified by content and
 position, not by the type field (see §5).
@@ -138,14 +138,13 @@ Semantics:
 
 ## 5. Code map
 
-| file | role |
-| ---- | ---- |
-| `scripts/book_model.py` | Everything in §§2–5: loading, gutter split, noise filter, row grouping, table parsing, time normalisation, `align_of`, `estimate_rows`/`fit_scale`, and block→HTML rendering. Both builders import it, so the two outputs cannot drift apart. |
-| `scripts/build_book_html.py` | Screen stylesheet only (container queries, `cqw` sizing, page shadows) + file assembly. |
-| `scripts/build_book_pdf.py` | Print stylesheet only (absolute mm/pt, named `@page` rules) + WeasyPrint call. `--dump-html` writes the print HTML without needing WeasyPrint installed. |
+| file                        | role                                                                                                                                                                          |
+| --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `scripts/book_model.py`     | Everything in §§2–5: loading, gutter split, noise filter, row grouping, table parsing, time normalisation, `align_of`, `estimate_rows`/`fit_scale`, and block→HTML rendering. |
+| `scripts/build_book_pdf.py` | Print stylesheet only (absolute mm/pt, named `@page` rules) + WeasyPrint call. `--dump-html` writes the print HTML without needing WeasyPrint installed.                      |
 
-A change to layout *semantics* belongs in `book_model.py` and reaches both
-outputs; a change to how a medium *looks* belongs in that medium's builder.
+A change to layout *semantics* belongs in `book_model.py`; a change to how
+the page *looks* belongs in `build_book_pdf.py`.
 
 ## 6. Reconstruction rules
 
@@ -168,38 +167,25 @@ outputs; a change to how a medium *looks* belongs in that medium's builder.
 
 ## 7. Output requirements
 
-### Shared
-
-* One self-contained HTML file, no external assets, no network fonts.
-* Every book page is a visually distinct card with a white ground, border and
-  shadow, in a fixed aspect ratio taken from the scans (a half of 1019×821 ⇒
-  ~509×821, i.e. `aspect-ratio: 509/821`).
-* Scans 1 and 103 are single pages, centred. Spreads 2…102 render as a pair
-  of facing pages side by side, glued at the gutter, and must stay side by side
-  (they are one flex row that does not wrap on wide screens; below ~900 px the
-  two halves stack so the content stays readable on a phone).
-### Screen (HTML)
-
+* Scans 1 and 103 are single pages. Spreads 2…102 are a pair of facing pages,
+  glued at the gutter.
 * **All tables use one and the same font** throughout the book — a monospace
   stack for every cell, station names included, so the columns align.
 * Inside a table, data cells (station names and times) are left-aligned; the
   header rows (`№ поездов`, train numbers, `приб.`/`отпр.`) stay centred.
-* Facing pages sit side by side with a small gap so their drop shadows do not overlap.
 * Content is scaled to the page with a page-local font size so the densest
   timetable — 46 rows, chapter I — fits one page without overflow. A book page
-  is measured in
-  "table rows" (`estimate_rows`); a half holding more than ~47 rows — which
-  happens where the OCR emitted a fragmented table *and* a duplicate station
-  list — gets a per-page shrink factor so nothing is clipped. 13 of the 202
-  book pages are scaled this way.
+  is measured in "table rows" (`estimate_rows`); a half holding more than ~47
+  rows — which happens where the OCR emitted a fragmented table *and* a
+  duplicate station list — gets a per-page shrink factor so nothing is
+  clipped. 13 of the 202 book pages are scaled this way.
 
 ## 8. PDF output
 
-`scripts/build_book_pdf.py` renders the same model through WeasyPrint. One PDF
+`scripts/build_book_pdf.py` renders the model through WeasyPrint. One PDF
 page per scan, sized from the scan geometry: spread
 202 × 162.9 mm, cover 109.1 × 162.9 mm, zero margins, via named `@page` rules.
-Base text 6.1 pt. It shares every layout decision with the HTML build through
-`book_model.py`, so the two cannot drift.
+Base text 6.1 pt. The PDF is built, not kept in git (`build/` is ignored).
 
 Install (no system package needed beyond pango/cairo, which are present):
 
@@ -208,12 +194,10 @@ python3 -m venv --without-pip .venv
 # bootstrap pip, then:
 .venv/bin/pip install weasyprint
 PYTHONPATH=scripts .venv/bin/python scripts/build_book_pdf.py \
-    --src attempts/final-NN --dest build/1988-1989-prigorodnye-rabochie.pdf
+    --src books/1988-1989-workdays/attempts/final-NN --dest books/1988-1989-workdays/build/1988-1989-prigorodnye-rabochie.pdf
 ```
 
 ### Verifying the PDF
-
-Unlike the HTML, the PDF can be checked mechanically and visually:
 
 * `pdfinfo -f 1 -l 103` — 103 pages, two distinct page sizes.
 * Text-loss sweep: for each scan compare `pdftotext` output against the text of

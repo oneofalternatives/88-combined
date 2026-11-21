@@ -6,7 +6,8 @@
 # not score the current dirs. Score the old one:
 #
 #   mkdir -p /tmp/golden && git archive 2d2a3f4 attempts/final-01 | tar -x -C /tmp/golden
-#   python3 tools/stop-name-normalizer/check_golden.py /tmp/golden/attempts/final-01
+#   python3 tools/stop-name-normalizer/check_golden.py /tmp/golden/attempts/final-01 \
+#       --golden tools/stop-name-normalizer/golden/1988-1989-workdays.txt
 #
 # One line per form: <tag> | <form as printed> | <target> | count | scans | shapes | note.
 # The target is a spelling printed in final-01, so the pair can be found.

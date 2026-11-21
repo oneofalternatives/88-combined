@@ -30,9 +30,9 @@ OCR. Repairs are reported, never guessed, and the exit code carries them.
    counts; parse to seconds.
 3. **Implied speed**, Δkm/Δt, on the `distance` pages. Over `max_speed_kmh` the
    data is impossible; far off the book-wide median speed it is a deviation
-   (`speed_deviation_threshold`, quiet on this book). Never measured across a
-   mileposting reset. Ties the times to the mileposts — the only rule that
-   crosses the two number systems on the page.
+   (`speed_deviation_threshold`, quiet on `1988-1989-workdays`). Never
+   measured across a mileposting reset. Ties the times to the mileposts — the
+   only rule that crosses the two number systems on the page.
 4. **Same leg across many trains.** Group adjacent (station A, station B) pairs
    by name, each direction its own sample — a leg can genuinely run slower one
    way, and pooling the two makes every train in the slower direction an
@@ -47,10 +47,10 @@ OCR. Repairs are reported, never guessed, and the exit code carries them.
 5. **Distance -> station name** agrees within a reckoning. Each milepost has one
    name and each name one milepost. Cheapest rule, almost no false positives,
    and it doubles as a spell-check on the station column (`Январь` for
-   `Яняварты`) — but only on the twelve `distance` pages, the only ones carrying
-   mileposts, so the two-way pages are out of its reach. Lines reuse kilometre
-   numbers, so a shared milepost is a finding only where the two names are
-   near-duplicates (`name_similarity`).
+   `Яняварты`) — but only on the `distance` pages, the only ones carrying
+   mileposts (twelve in `1988-1989-workdays`), so the two-way pages are out of
+   its reach. Lines reuse kilometre numbers, so a shared milepost is a finding
+   only where the two names are near-duplicates (`name_similarity`).
 
 ## Header inside a table
 
@@ -89,7 +89,8 @@ update the line or drop it.
 
 ## Mileposting
 
-Chapter XII prints a through route in several reckonings and the numbering
+Set for `1988-1989-workdays` (step 5 of `BOOKS-PLAN.md` moves it to the book).
+Its chapter XII prints a through route in several reckonings and the numbering
 resets where it changes: Рига—Пыталово counts down from 922,8 at Рига-пасс. to
 Плявиняс, then up from 0,0 again, so Рига-пасс. honestly has two mileposts and
 neither is damage. Each half is cut into zones at a step over `max_leg_km` or

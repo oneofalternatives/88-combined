@@ -1,7 +1,8 @@
 """Shared bits of the OCR pipeline: numbered attempt dirs and their manifests.
 
-A dir is finished once its manifest.json exists; it is written last.
-attempts/index.md is kept by hand; no script writes it.
+Each book keeps its attempts in books/<book>/attempts/. A dir is finished once
+its manifest.json exists; it is written last. attempts/index.md is kept by
+hand; no script writes it.
 """
 from __future__ import annotations
 
@@ -10,13 +11,12 @@ import sys
 from datetime import datetime
 from pathlib import Path
 
-ROOT = Path("attempts")
 
-
-def next_dir(kind: str) -> Path:
-    """attempts/<kind>-NN with the next free NN. Unfinished dirs keep their NN."""
-    taken = [int(p.name.rsplit("-", 1)[1]) for p in ROOT.glob(f"{kind}-[0-9][0-9]")]
-    d = ROOT / f"{kind}-{max(taken, default=-1) + 1:02d}"
+def next_dir(root: Path, kind: str) -> Path:
+    """<root>/<kind>-NN with the next free NN; root is a book's attempts/.
+    Unfinished dirs keep their NN."""
+    taken = [int(p.name.rsplit("-", 1)[1]) for p in root.glob(f"{kind}-[0-9][0-9]")]
+    d = root / f"{kind}-{max(taken, default=-1) + 1:02d}"
     d.mkdir(parents=True)
     return d
 

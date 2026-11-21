@@ -1,7 +1,7 @@
 """Find stop names spelt more than one way in a scan dir.
 
-    python3 tools/stop-name-normalizer/stop_names.py attempts/normalized-01 [--max-dist 2] [--ratio 0.5]
-    python3 tools/stop-name-normalizer/stop_names.py attempts/normalized-01 --dump
+    python3 tools/stop-name-normalizer/stop_names.py books/<book>/attempts/normalized-NN [--max-dist 2] [--ratio 0.5]
+    python3 tools/stop-name-normalizer/stop_names.py books/<book>/attempts/normalized-NN --dump
 
 Reads the stop-name column of every table (the «пункты» column on two-way pages,
 column 0 elsewhere), the route titles (Рига—Елгава · Елгава—Рига), routes in
@@ -19,7 +19,8 @@ Then notations, the parts around the stop's own name (О/п., Б/п., -пасс.
 that differ only by an abbreviation (Б/п. / Блок пост), an Arabic or Roman
 number (-1 / -I) or a word before the same milepost (78 км / Пост 78 км). Each
 finding lists every name of either shape (a number as #).
-Pairs in ignore.txt (checked: different stops) are left out; --no-ignore keeps them.
+Pairs in the book's ignore.txt (books/<book>/tools/stop-name-normalizer/;
+checked: different stops) are left out; --no-ignore keeps them.
 Nothing is repaired: which spelling is right is for a person to say.
 """
 import argparse
@@ -30,7 +31,6 @@ from collections import defaultdict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-IGNORE = Path(__file__).resolve().parent / "ignore.txt"
 SKIP = re.compile(r"^[\d.,\s—\-]*$|^№|^Разд|^Прибытие$|^∅$")
 MARK = re.compile(r"⟨(.*)⟩")
 ROMAN = re.compile(r"(?<![A-Za-z])[IVX]+(?![A-Za-z])")
@@ -337,6 +337,15 @@ def notation_pairs(found):
     return out
 
 
+def book_data(src):
+    """A book's scan dir -> that book's dir for this tool:
+    books/<book>/attempts/<dir> -> books/<book>/tools/stop-name-normalizer."""
+    parent = src.resolve().parent
+    if parent.name != "attempts":
+        sys.exit(f"{src}: not a scan dir in a book's attempts/ (books/<book>/attempts/<dir>)")
+    return parent.parent / "tools" / Path(__file__).resolve().parent.name
+
+
 def shown(path):
     """A dir as the README writes it: from the repo root if it is inside."""
     try:
@@ -351,24 +360,30 @@ def where(occ, n):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    ap.add_argument("src", type=Path, nargs="?", default=ROOT / "attempts" / "normalized-01",
-                    help="scan dir (default attempts/normalized-01)")
+    ap.add_argument("src", type=Path, help="scan dir, books/<book>/attempts/<dir>")
     ap.add_argument("--max-dist", type=int, default=2)
     ap.add_argument("--ratio", type=float, default=0.5)
     ap.add_argument("--dump", action="store_true", help="list every name with its count")
     ap.add_argument("--dest", type=Path, help="write here instead of the terminal")
-    ap.add_argument("--ignore", type=Path, default=IGNORE, help="pairs to leave out (default ignore.txt)")
+    ap.add_argument("--ignore", type=Path,
+                    help="pairs to leave out (default: the book's ignore.txt, none if it has none)")
     ap.add_argument("--no-ignore", action="store_true", help="keep the pairs in the ignore list")
     a = ap.parse_args()
+    book_ignore = a.ignore is None
+    if book_ignore:
+        a.ignore = book_data(a.src) / "ignore.txt"
 
     occ = collect(a.src)
     lines = []
     if a.dump:
         lines = [f"{len(occ[n])}\t{n}" for n in sorted(occ)]
     else:
-        ignore = set() if a.no_ignore else read_ignore(a.ignore)
+        no_file = book_ignore and not a.ignore.exists()
+        ignore = set() if a.no_ignore or no_file else read_ignore(a.ignore)
         head = f"# {shown(a.src)}: {len(occ)} names, max distance {a.max_dist}, ratio {a.ratio}"
-        if not a.no_ignore:
+        if no_file:
+            head += f", no {shown(a.ignore)}"
+        elif not a.no_ignore:
             head += f", {len(ignore)} pairs in {shown(a.ignore)}"
         lines.append(head)
         lines.append("")

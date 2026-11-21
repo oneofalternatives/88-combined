@@ -97,16 +97,16 @@ def api_response(png_name):
 
 @pytest.fixture
 def renders(tmp_path, monkeypatch):
-    """A finished scans dir and a hand-kept index, in a tmp repo root."""
+    """A finished scans dir and a hand-kept index, in a book of a tmp repo root."""
     monkeypatch.chdir(tmp_path)
     monkeypatch.setenv("MISTRAL_API_KEY", "KEY")
     monkeypatch.setattr(ocr, "ENV_FILE", tmp_path / ".env")
-    d = tmp_path / "attempts" / "scans-00"
+    d = tmp_path / "books" / "b" / "attempts" / "scans-00"
     d.mkdir(parents=True)
     for n in (1, 2):
         (d / f"scan-{n:02d}.png").write_bytes(b"png")
-    (d / "manifest.json").write_text(json.dumps({"source": "sources/book.djvu"}))
-    (tmp_path / "attempts" / "index.md").write_text(INDEX_HEAD)
+    (d / "manifest.json").write_text(json.dumps({"source": "books/b/sources/book.djvu"}))
+    (tmp_path / "books" / "b" / "attempts" / "index.md").write_text(INDEX_HEAD)
     return d
 
 
@@ -125,37 +125,37 @@ def test_main_failed_scan_then_resume(renders, monkeypatch, tmp_path):
         return api_response(png.name)
 
     monkeypatch.setattr(ocr, "call", flaky)
-    out = tmp_path / "attempts" / "ocr-00"
+    out = tmp_path / "books" / "b" / "attempts" / "ocr-00"
 
     # first run: one scan fails, the dir stays unfinished
-    assert run_main(monkeypatch, "--src", "attempts/scans-00", "--model", "mistral-ocr-latest") == 1
+    assert run_main(monkeypatch, "--src", "books/b/attempts/scans-00", "--model", "mistral-ocr-latest") == 1
     assert (out / "scan-01.json").exists() and not (out / "scan-02.json").exists()
     assert not (out / "manifest.json").exists()
     run = json.loads((out / "run.json").read_text())
-    assert run["renders"] == "attempts/scans-00" and run["model"] == "mistral-ocr-latest"
+    assert run["renders"] == "books/b/attempts/scans-00" and run["model"] == "mistral-ocr-latest"
 
     # resume: only the missing scan is fetched, then the dir is finished
-    assert run_main(monkeypatch, "--resume", "attempts/ocr-00") == 0
+    assert run_main(monkeypatch, "--resume", "books/b/attempts/ocr-00") == 0
     assert calls == ["scan-01.png", "scan-02.png", "scan-02.png"]
     manifest = json.loads((out / "manifest.json").read_text())
     assert manifest["models_reported"] == ["mistral-ocr-test"]
-    assert (tmp_path / "attempts" / "index.md").read_text() == INDEX_HEAD   # kept by hand
+    assert (tmp_path / "books" / "b" / "attempts" / "index.md").read_text() == INDEX_HEAD   # kept by hand
 
     with pytest.raises(SystemExit, match="already finished"):
-        run_main(monkeypatch, "--resume", "attempts/ocr-00")
+        run_main(monkeypatch, "--resume", "books/b/attempts/ocr-00")
 
 
 def test_main_refuses_unfinished_renders(renders, monkeypatch):
     (renders / "manifest.json").unlink()
     monkeypatch.setattr(ocr, "call", lambda *a: pytest.fail("no call expected"))
     with pytest.raises(SystemExit, match="no manifest.json"):
-        run_main(monkeypatch, "--src", "attempts/scans-00", "--model", "mistral-ocr-latest")
+        run_main(monkeypatch, "--src", "books/b/attempts/scans-00", "--model", "mistral-ocr-latest")
 
 
 def test_main_needs_the_key(renders, monkeypatch):
     monkeypatch.delenv("MISTRAL_API_KEY")
     with pytest.raises(SystemExit, match="MISTRAL_API_KEY"):
-        run_main(monkeypatch, "--src", "attempts/scans-00", "--model", "mistral-ocr-latest")
+        run_main(monkeypatch, "--src", "books/b/attempts/scans-00", "--model", "mistral-ocr-latest")
 
 
 def test_main_reads_key_from_env_file(renders, monkeypatch, tmp_path):
@@ -163,14 +163,14 @@ def test_main_reads_key_from_env_file(renders, monkeypatch, tmp_path):
     (tmp_path / ".env").write_text('# comment\n\nMISTRAL_API_KEY="FROMFILE"\n')
     keys = []
     monkeypatch.setattr(ocr, "call", lambda key, model, png: keys.append(key) or api_response(png.name))
-    assert run_main(monkeypatch, "--src", "attempts/scans-00", "--model", "mistral-ocr-latest") == 0
+    assert run_main(monkeypatch, "--src", "books/b/attempts/scans-00", "--model", "mistral-ocr-latest") == 0
     assert keys == ["FROMFILE", "FROMFILE"]
 
 
 @pytest.mark.parametrize("argv", [
-    ["--src", "attempts/scans-00"],
-    ["--resume", "attempts/ocr-00", "--model", "mistral-ocr-latest"],
-    ["--resume", "attempts/ocr-00", "--src", "attempts/scans-00"],
+    ["--src", "books/b/attempts/scans-00"],
+    ["--resume", "books/b/attempts/ocr-00", "--model", "mistral-ocr-latest"],
+    ["--resume", "books/b/attempts/ocr-00", "--src", "books/b/attempts/scans-00"],
 ])
 def test_main_wants_src_and_model_or_resume_alone(renders, monkeypatch, argv):
     monkeypatch.setattr(ocr, "call", lambda *a: pytest.fail("no call expected"))
@@ -182,24 +182,24 @@ def test_main_wants_src_and_model_or_resume_alone(renders, monkeypatch, argv):
 # ------------------------------------------- ocr.py -> extract.py, end to end
 def test_api_output_extracts_to_an_extracted_dir(renders, monkeypatch, tmp_path, capsys):
     monkeypatch.setattr(ocr, "call", lambda key, model, png: api_response(png.name))
-    assert run_main(monkeypatch, "--src", "attempts/scans-00", "--model", "mistral-ocr-latest") == 0
+    assert run_main(monkeypatch, "--src", "books/b/attempts/scans-00", "--model", "mistral-ocr-latest") == 0
 
-    scans = bm.load_scans(tmp_path / "attempts" / "ocr-00")
+    scans = bm.load_scans(tmp_path / "books" / "b" / "attempts" / "ocr-00")
     assert list(scans) == [1, 2] and "topLeftX" in scans[1]["blocks"][0]
 
-    monkeypatch.setattr(sys, "argv", ["extract.py", "--src", "attempts/ocr-00",
-                                      "--dest", "attempts/extracted-00"])
+    monkeypatch.setattr(sys, "argv", ["extract.py", "--src", "books/b/attempts/ocr-00",
+                                      "--dest", "books/b/attempts/extracted-00"])
     assert extract.main() == 0
     assert "halves by shape: prose=2, suburban=2" in capsys.readouterr().out
 
-    extracted = tmp_path / "attempts" / "extracted-00"
+    extracted = tmp_path / "books" / "b" / "attempts" / "extracted-00"
     text = (extracted / "scan-02.md").read_text()
     assert text.startswith("---\nscan: 2\nkind: spread\nfolios: []\n"
                            "shapes: [suburban, prose]\n---")
     assert "п. № scan-02.png" in text and "| Кегумс       | 23.37,5 |" in text
     assert json.loads((extracted / "manifest.json").read_text())["problems"] == 0
     assert (extracted / "problems.txt").read_text() == ""
-    assert (tmp_path / "attempts" / "index.md").read_text() == INDEX_HEAD
+    assert (tmp_path / "books" / "b" / "attempts" / "index.md").read_text() == INDEX_HEAD
 
     # a finished extracted dir is a one-way door
     with pytest.raises(SystemExit, match="already finished"):
@@ -211,18 +211,18 @@ def test_a_lone_scan_keeps_its_number_through_ocr_and_extract(renders, monkeypat
         png.unlink()
     (renders / "scan-93.png").write_bytes(b"png")
     monkeypatch.setattr(ocr, "call", lambda key, model, png: api_response(png.name))
-    assert run_main(monkeypatch, "--src", "attempts/scans-00", "--model", "mistral-ocr-latest") == 0
-    assert [p.name for p in (tmp_path / "attempts" / "ocr-00").glob("scan-*")] == ["scan-93.json"]
+    assert run_main(monkeypatch, "--src", "books/b/attempts/scans-00", "--model", "mistral-ocr-latest") == 0
+    assert [p.name for p in (tmp_path / "books" / "b" / "attempts" / "ocr-00").glob("scan-*")] == ["scan-93.json"]
 
-    monkeypatch.setattr(sys, "argv", ["extract.py", "--src", "attempts/ocr-00",
-                                      "--dest", "attempts/extracted-00", "92"])
+    monkeypatch.setattr(sys, "argv", ["extract.py", "--src", "books/b/attempts/ocr-00",
+                                      "--dest", "books/b/attempts/extracted-00", "92"])
     with pytest.raises(SystemExit, match="no scan 92"):
         extract.main()
-    assert not (tmp_path / "attempts" / "extracted-00").exists()
+    assert not (tmp_path / "books" / "b" / "attempts" / "extracted-00").exists()
 
-    monkeypatch.setattr(sys, "argv", ["extract.py", "--src", "attempts/ocr-00",
-                                      "--dest", "attempts/extracted-00", "93"])
+    monkeypatch.setattr(sys, "argv", ["extract.py", "--src", "books/b/attempts/ocr-00",
+                                      "--dest", "books/b/attempts/extracted-00", "93"])
     assert extract.main() == 0
-    out = tmp_path / "attempts" / "extracted-00"
+    out = tmp_path / "books" / "b" / "attempts" / "extracted-00"
     assert sorted(p.name for p in out.iterdir()) == ["manifest.json", "problems.txt", "scan-93.md"]
     assert (out / "scan-93.md").read_text().startswith("---\nscan: 93\nkind: spread\nfolios: [182, 183]\n")
