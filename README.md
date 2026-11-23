@@ -6,6 +6,7 @@ PDF. The scripts are shared; each book has its own dir in `books/`.
 | dir                        | book                                              |
 | -------------------------- | ------------------------------------------------- |
 | `books/1988-1989-workdays` | 1988/1989 приг. раб., suburban trains, Riga, 1988 |
+| `books/1988-1989-weekends` | 1988/1989 приг. вых., days off, summer part       |
 
 ## A book dir
 

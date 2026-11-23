@@ -1,0 +1,2040 @@
+{
+ "pages": [
+  {
+   "index": 0,
+   "markdown": "|  № поездов | 6701 |   | 6703 |   | 6705  |   |\n| --- | --- | --- | --- | --- | --- | --- |\n|  Разд. пункты | приб. | отпр. | приб. | отпр. | приб. | отпр.  |\n|  Рига-пасс. | 0.30 | 0.35 | — | 5.35 | 6.00 | 6.06  |\n|  Торнякалис | 0.39,5 | 0.40 | 5.39,5 | 5.40 | 6.10,5 | 6.12  |\n|  Атгазене | 0.42 | 0.42,5 | 5.42 | 5.42,5 | 6.14 | 6.14,5  |\n|  Тирайне | 0.45,5 | 0.46 | — | — | — | —  |\n|  Баложи | 0.49,5 | 0.50 | 5.48 | 5.48,5 | 6.20 | 6.21  |\n|  Яунолайне | 0.54,5 | 0.55 | 5.53 | 5.53,5 | 6.25,5 | 6.27  |\n|  Олайне | 0.58 | 0.59 | 5.56,5 | 5.58 | 6.30 | 6.32  |\n|  Далбе | 1.03,5 | 1.04 | 6.02,5 | 6.03 | 6.36,5 | 6.37  |\n|  Цена | 1.08 | 1.08,5 | 6.07,5 | 6.08 | 6.41 | 6.42  |\n|  Озолинец | 1.11 | 1.11,5 | 6.10,5 | 6.11 | 6.44,5 | 6.45  |\n|  Цукурфабрика | 1.15,5 | 1.16 | 6.15 | 6.16 | 6.49 | 6.52  |\n|  Елгава | 1.19 | — | 6.19 | — | 6.55 | —  |\n\n|  № поездов | 6707 |   | 5403ДР |   | 6709  |   |\n| --- | --- | --- | --- | --- | --- | --- |\n|  Разд. пункты | приб. | отпр. | приб. | отпр. | приб. | отпр.  |\n|  Рига-пасс. | — | 6.25 | — | 6.48 | 7.06 | 7.10  |\n|  Торнякалис | 6.29 | 6.29,5 | — | 6.53 | 7.14,5 | 7.15,5  |\n|  Атгазене | 6.31,5 | 6.32 | — | — | 7.17,5 | 7.18  |\n|  Тирайне | — | — | — | — | 7.21 | 7.21,5  |\n|  Баложи | 6.37,5 | 6.38 | — | 7.03 | 7.25 | 7.25,5  |\n|  Яунолайне | 6.42,5 | 6.43 | — | — | 7.30 | 7.30,5  |\n|  Олайне | 6.46 | 6.48 | — | 7.13 | 7.33,5 | 7.35  |\n|  Далбе | 6.52,5 | 6.53 | — | — | 7.39,5 | 7.40  |\n|  Цена | 6.57 | 6.57,5 | — | 7.20 | 7.44 | 7.44,5  |\n|  Озолинец | 7.00 | 7.00,5 | — | — | 7.47 | 7.47,5  |\n|  Цукурфабрика | 7.04,5 | 7.05 | — | 7.25 | 7.51,5 | 7.52  |\n|  Елгава | 7.08 | — | 7.30 | — | 7.55 | —  |\n\n|  № поездов | 6711 |   | — |   | —  |   |\n| --- | --- | --- | --- | --- | --- | --- |\n|  Разд. пункты | приб. | отпр. | приб. | отпр. | приб. | отпр.  |\n|  Рига-пасс. | — | 7.32 | 7.53 | 8.03 | 8.25 | 8.25  |\n|  Торнякалис | 7.36,5 | 7.37,5 | 8.07,5 | 8.08,5 | 8.25,5 | 8.25,5  |\n|  Атгазене | — | — | 8.10,5 | 8.11 | 8.25,5 | 8.25  |\n|  Тирайне | — | — | 8.14 | 8.14,5 | 9.01 | 9.01,5  |\n|  Баложи | — | 7.43,5 | 8.18 | 8.18,5 | 9.05 | 9.06  |\n|  Яунолайне | 7.47,5 | 7.48 | 8.23 | 8.23,5 | 9.10,5 | 9.11  |\n|  Олайне | 7.51 | 7.53 | 8.26,5 | 8.28 | 9.14 | 9.16  |\n|  Далбе | — | — | 8.32,5 | 8.33 | 9.20,5 | 9.21  |\n|  Цена | — | 8.00 | 8.37 | 8.37,5 | 9.25 | 9.26  |\n|  Озолинец | — | — | 8.40 | 8.40,5 | 9.28,5 | 9.29  |\n|  Цукурфабрика | 8.05,5 | 8.06 | 8.41,5 | 8.45 | 9.33 | 9.35  |\n|  Елгава | 8.09 | — | 8.48 | — | 9.38 | —  |\n\n|  № поездов | 6717 |   | 6719 |   | 6721**  |   |\n| --- | --- | --- | --- | --- | --- | --- |\n|  Разд. пункты | приб. | отпр. | приб. | отпр. | приб. | отпр.  |\n|  Рига-пасс. | — | 9.33 | 10.10 | 10.22 | 11.12 | 11.24  |\n|  Торнякалис | 9.37,5 | 9.38,5 | 10.26,5 | 10.28 | 11.28,5 | 11.30  |\n|  Атгазене | 9.40,5 | 9.41 | 10.30 | 10.31 | 11.32 | 11.32,5  |\n|  Тирайне | — | — | 10.34 | 10.34,5 | — | —  |\n|  Баложи | 9.46,5 | 9.47 | 10.38 | 10.39 | 11.38 | 11.39  |\n|  Яунолайне | 9.51,5 | 9.52 | 10.43,5 | 10.44 | 11.43,5 | 11.44  |\n|  Олайне | 9.55 | 9.57 | 10.47 | 10.49 | 11.47 | 11.49  |\n|  Далбе | 10.01,5 | 10.02 | 10.53,5 | 10.54 | 11.53 | 11.54  |\n|  Цена | 10.06 | 10.07 | 10.58 | 10.59 | 11.58 | 11.59  |\n|  Озолинец | 10.09,5 | 10.10 | 11.01,5 | 11.02 | 12.01,5 | 12.02  |\n|  Цукурфабрика | 10.14 | 10.15 | 11.06 | 11.07 | 12.06 | 12.07  |\n|  Елгава | 10.18 | — | 11.10 | — | 12.10 | —  |\n\n150\n\n151",
+   "images": [],
+   "tables": [],
+   "hyperlinks": [],
+   "header": null,
+   "footer": null,
+   "dimensions": {
+    "dpi": 200,
+    "height": 5808,
+    "width": 7446
+   },
+   "confidence_scores": {
+    "word_confidence_scores": [
+     {
+      "text": "№",
+      "confidence": 0.9823016813803086,
+      "start_index": 3
+     },
+     {
+      "text": " поездов",
+      "confidence": 0.9989951688209737,
+      "start_index": 4
+     },
+     {
+      "text": "6701",
+      "confidence": 0.9999580226195913,
+      "start_index": 15
+     },
+     {
+      "text": "6703",
+      "confidence": 0.9999943829664094,
+      "start_index": 26
+     },
+     {
+      "text": "6705",
+      "confidence": 0.9999658330857318,
+      "start_index": 37
+     },
+     {
+      "text": "Разд.",
+      "confidence": 0.9999658330857318,
+      "start_index": 96
+     },
+     {
+      "text": " пункты",
+      "confidence": 0.996186051237468,
+      "start_index": 101
+     },
+     {
+      "text": "приб.",
+      "confidence": 0.996186051237468,
+      "start_index": 111
+     },
+     {
+      "text": "отпр.",
+      "confidence": 0.996186051237468,
+      "start_index": 119
+     },
+     {
+      "text": "приб.",
+      "confidence": 0.996186051237468,
+      "start_index": 127
+     },
+     {
+      "text": "отпр.",
+      "confidence": 0.996186051237468,
+      "start_index": 135
+     },
+     {
+      "text": "приб.",
+      "confidence": 0.996186051237468,
+      "start_index": 143
+     },
+     {
+      "text": "отпр.",
+      "confidence": 0.996186051237468,
+      "start_index": 151
+     },
+     {
+      "text": "Рига-пасс.",
+      "confidence": 0.996186051237468,
+      "start_index": 163
+     },
+     {
+      "text": "0.30",
+      "confidence": 0.996186051237468,
+      "start_index": 176
+     },
+     {
+      "text": "0.35",
+      "confidence": 0.996186051237468,
+      "start_index": 183
+     },
+     {
+      "text": "—",
+      "confidence": 0.996186051237468,
+      "start_index": 190
+     },
+     {
+      "text": "5.35",
+      "confidence": 0.996186051237468,
+      "start_index": 194
+     },
+     {
+      "text": "6.00",
+      "confidence": 0.996186051237468,
+      "start_index": 201
+     },
+     {
+      "text": "6.06",
+      "confidence": 0.996186051237468,
+      "start_index": 208
+     },
+     {
+      "text": "Торнякалис",
+      "confidence": 0.996186051237468,
+      "start_index": 219
+     },
+     {
+      "text": "0.39,5",
+      "confidence": 0.996186051237468,
+      "start_index": 232
+     },
+     {
+      "text": "0.40",
+      "confidence": 0.996186051237468,
+      "start_index": 241
+     },
+     {
+      "text": "5.39,5",
+      "confidence": 0.996186051237468,
+      "start_index": 248
+     },
+     {
+      "text": "5.40",
+      "confidence": 0.996186051237468,
+      "start_index": 257
+     },
+     {
+      "text": "6.10,5",
+      "confidence": 0.996186051237468,
+      "start_index": 264
+     },
+     {
+      "text": "6.12",
+      "confidence": 0.996186051237468,
+      "start_index": 273
+     },
+     {
+      "text": "Атгазене",
+      "confidence": 0.996186051237468,
+      "start_index": 284
+     },
+     {
+      "text": "0.42",
+      "confidence": 0.996186051237468,
+      "start_index": 295
+     },
+     {
+      "text": "0.42,5",
+      "confidence": 0.996186051237468,
+      "start_index": 302
+     },
+     {
+      "text": "5.42",
+      "confidence": 0.996186051237468,
+      "start_index": 311
+     },
+     {
+      "text": "5.42,5",
+      "confidence": 0.996186051237468,
+      "start_index": 318
+     },
+     {
+      "text": "6.14",
+      "confidence": 0.996186051237468,
+      "start_index": 327
+     },
+     {
+      "text": "6.14,5",
+      "confidence": 0.996186051237468,
+      "start_index": 334
+     },
+     {
+      "text": "Тирайне",
+      "confidence": 0.996186051237468,
+      "start_index": 347
+     },
+     {
+      "text": "0.45,5",
+      "confidence": 0.996186051237468,
+      "start_index": 357
+     },
+     {
+      "text": "0.46",
+      "confidence": 0.996186051237468,
+      "start_index": 366
+     },
+     {
+      "text": "—",
+      "confidence": 0.996186051237468,
+      "start_index": 373
+     },
+     {
+      "text": "—",
+      "confidence": 0.996186051237468,
+      "start_index": 377
+     },
+     {
+      "text": "—",
+      "confidence": 0.996186051237468,
+      "start_index": 381
+     },
+     {
+      "text": "—",
+      "confidence": 0.996186051237468,
+      "start_index": 385
+     },
+     {
+      "text": "Баложи",
+      "confidence": 0.996186051237468,
+      "start_index": 393
+     },
+     {
+      "text": "0.49,5",
+      "confidence": 0.996186051237468,
+      "start_index": 402
+     },
+     {
+      "text": "0.50",
+      "confidence": 0.996186051237468,
+      "start_index": 411
+     },
+     {
+      "text": "5.48",
+      "confidence": 0.996186051237468,
+      "start_index": 418
+     },
+     {
+      "text": "5.48,5",
+      "confidence": 0.996186051237468,
+      "start_index": 425
+     },
+     {
+      "text": "6.20",
+      "confidence": 0.996186051237468,
+      "start_index": 434
+     },
+     {
+      "text": "6.21",
+      "confidence": 0.996186051237468,
+      "start_index": 441
+     },
+     {
+      "text": "Яунолайне",
+      "confidence": 0.996186051237468,
+      "start_index": 452
+     },
+     {
+      "text": "0.54,5",
+      "confidence": 0.996186051237468,
+      "start_index": 464
+     },
+     {
+      "text": "0.55",
+      "confidence": 0.996186051237468,
+      "start_index": 473
+     },
+     {
+      "text": "5.53",
+      "confidence": 0.996186051237468,
+      "start_index": 480
+     },
+     {
+      "text": "5.53,5",
+      "confidence": 0.996186051237468,
+      "start_index": 487
+     },
+     {
+      "text": "6.25,5",
+      "confidence": 0.996186051237468,
+      "start_index": 496
+     },
+     {
+      "text": "6.27",
+      "confidence": 0.996186051237468,
+      "start_index": 505
+     },
+     {
+      "text": "Олайне",
+      "confidence": 0.996186051237468,
+      "start_index": 516
+     },
+     {
+      "text": "0.58",
+      "confidence": 0.996186051237468,
+      "start_index": 525
+     },
+     {
+      "text": "0.59",
+      "confidence": 0.996186051237468,
+      "start_index": 532
+     },
+     {
+      "text": "5.56,5",
+      "confidence": 0.996186051237468,
+      "start_index": 539
+     },
+     {
+      "text": "5.58",
+      "confidence": 0.996186051237468,
+      "start_index": 548
+     },
+     {
+      "text": "6.30",
+      "confidence": 0.996186051237468,
+      "start_index": 555
+     },
+     {
+      "text": "6.32",
+      "confidence": 0.996186051237468,
+      "start_index": 562
+     },
+     {
+      "text": "Далбе",
+      "confidence": 0.996186051237468,
+      "start_index": 573
+     },
+     {
+      "text": "1.03,5",
+      "confidence": 0.996186051237468,
+      "start_index": 581
+     },
+     {
+      "text": "1.04",
+      "confidence": 0.996186051237468,
+      "start_index": 590
+     },
+     {
+      "text": "6.02,5",
+      "confidence": 0.996186051237468,
+      "start_index": 597
+     },
+     {
+      "text": "6.03",
+      "confidence": 0.996186051237468,
+      "start_index": 606
+     },
+     {
+      "text": "6.36,5",
+      "confidence": 0.996186051237468,
+      "start_index": 613
+     },
+     {
+      "text": "6.37",
+      "confidence": 0.996186051237468,
+      "start_index": 622
+     },
+     {
+      "text": "Цена",
+      "confidence": 0.996186051237468,
+      "start_index": 633
+     },
+     {
+      "text": "1.08",
+      "confidence": 0.996186051237468,
+      "start_index": 640
+     },
+     {
+      "text": "1.08,5",
+      "confidence": 0.996186051237468,
+      "start_index": 647
+     },
+     {
+      "text": "6.07,5",
+      "confidence": 0.996186051237468,
+      "start_index": 656
+     },
+     {
+      "text": "6.08",
+      "confidence": 0.996186051237468,
+      "start_index": 665
+     },
+     {
+      "text": "6.41",
+      "confidence": 0.996186051237468,
+      "start_index": 672
+     },
+     {
+      "text": "6.42",
+      "confidence": 0.996186051237468,
+      "start_index": 679
+     },
+     {
+      "text": "Озолинец",
+      "confidence": 0.996186051237468,
+      "start_index": 690
+     },
+     {
+      "text": "1.11",
+      "confidence": 0.996186051237468,
+      "start_index": 701
+     },
+     {
+      "text": "1.11,5",
+      "confidence": 0.996186051237468,
+      "start_index": 708
+     },
+     {
+      "text": "6.10,5",
+      "confidence": 0.996186051237468,
+      "start_index": 717
+     },
+     {
+      "text": "6.11",
+      "confidence": 0.996186051237468,
+      "start_index": 726
+     },
+     {
+      "text": "6.44,5",
+      "confidence": 0.996186051237468,
+      "start_index": 733
+     },
+     {
+      "text": "6.45",
+      "confidence": 0.996186051237468,
+      "start_index": 742
+     },
+     {
+      "text": "Цукурфабрика",
+      "confidence": 0.996186051237468,
+      "start_index": 753
+     },
+     {
+      "text": "1.15,5",
+      "confidence": 0.996186051237468,
+      "start_index": 768
+     },
+     {
+      "text": "1.16",
+      "confidence": 0.996186051237468,
+      "start_index": 777
+     },
+     {
+      "text": "6.15",
+      "confidence": 0.996186051237468,
+      "start_index": 784
+     },
+     {
+      "text": "6.16",
+      "confidence": 0.996186051237468,
+      "start_index": 791
+     },
+     {
+      "text": "6.49",
+      "confidence": 0.996186051237468,
+      "start_index": 798
+     },
+     {
+      "text": "6.52",
+      "confidence": 0.996186051237468,
+      "start_index": 805
+     },
+     {
+      "text": "Елгава",
+      "confidence": 0.996186051237468,
+      "start_index": 816
+     },
+     {
+      "text": "1.19",
+      "confidence": 0.996186051237468,
+      "start_index": 825
+     },
+     {
+      "text": "—",
+      "confidence": 0.996186051237468,
+      "start_index": 832
+     },
+     {
+      "text": "6.19",
+      "confidence": 0.996186051237468,
+      "start_index": 836
+     },
+     {
+      "text": "—",
+      "confidence": 0.996186051237468,
+      "start_index": 843
+     },
+     {
+      "text": "6.55",
+      "confidence": 0.996186051237468,
+      "start_index": 847
+     },
+     {
+      "text": "—",
+      "confidence": 0.996186051237468,
+      "start_index": 854
+     },
+     {
+      "text": "№",
+      "confidence": 0.9988478697533811,
+      "start_index": 863
+     },
+     {
+      "text": " поездов",
+      "confidence": 0.9999869617744996,
+      "start_index": 864
+     },
+     {
+      "text": "6707",
+      "confidence": 0.9999967432194817,
+      "start_index": 875
+     },
+     {
+      "text": "5403ДР",
+      "confidence": 0.994404811805375,
+      "start_index": 886
+     },
+     {
+      "text": "6709",
+      "confidence": 0.9999969751047356,
+      "start_index": 899
+     },
+     {
+      "text": "Разд.",
+      "confidence": 0.9999969751047356,
+      "start_index": 958
+     },
+     {
+      "text": " пункты",
+      "confidence": 0.9997832278633527,
+      "start_index": 963
+     },
+     {
+      "text": "приб.",
+      "confidence": 0.9997832278633527,
+      "start_index": 973
+     },
+     {
+      "text": "отпр.",
+      "confidence": 0.9997832278633527,
+      "start_index": 981
+     },
+     {
+      "text": "приб.",
+      "confidence": 0.9997832278633527,
+      "start_index": 989
+     },
+     {
+      "text": "отпр.",
+      "confidence": 0.9997832278633527,
+      "start_index": 997
+     },
+     {
+      "text": "приб.",
+      "confidence": 0.9997832278633527,
+      "start_index": 1005
+     },
+     {
+      "text": "отпр.",
+      "confidence": 0.9997832278633527,
+      "start_index": 1013
+     },
+     {
+      "text": "Рига-пасс.",
+      "confidence": 0.9997832278633527,
+      "start_index": 1025
+     },
+     {
+      "text": "—",
+      "confidence": 0.9997832278633527,
+      "start_index": 1038
+     },
+     {
+      "text": "6.25",
+      "confidence": 0.9997832278633527,
+      "start_index": 1042
+     },
+     {
+      "text": "—",
+      "confidence": 0.9997832278633527,
+      "start_index": 1049
+     },
+     {
+      "text": "6.48",
+      "confidence": 0.9997832278633527,
+      "start_index": 1053
+     },
+     {
+      "text": "7.06",
+      "confidence": 0.9997832278633527,
+      "start_index": 1060
+     },
+     {
+      "text": "7.10",
+      "confidence": 0.9997832278633527,
+      "start_index": 1067
+     },
+     {
+      "text": "Торнякалис",
+      "confidence": 0.9997832278633527,
+      "start_index": 1078
+     },
+     {
+      "text": "6.29",
+      "confidence": 0.9997832278633527,
+      "start_index": 1091
+     },
+     {
+      "text": "6.29,5",
+      "confidence": 0.9997832278633527,
+      "start_index": 1098
+     },
+     {
+      "text": "—",
+      "confidence": 0.9997832278633527,
+      "start_index": 1107
+     },
+     {
+      "text": "6.53",
+      "confidence": 0.9997832278633527,
+      "start_index": 1111
+     },
+     {
+      "text": "7.14,5",
+      "confidence": 0.9997832278633527,
+      "start_index": 1118
+     },
+     {
+      "text": "7.15,5",
+      "confidence": 0.9997832278633527,
+      "start_index": 1127
+     },
+     {
+      "text": "Атгазене",
+      "confidence": 0.9997832278633527,
+      "start_index": 1140
+     },
+     {
+      "text": "6.31,5",
+      "confidence": 0.9997832278633527,
+      "start_index": 1151
+     },
+     {
+      "text": "6.32",
+      "confidence": 0.9997832278633527,
+      "start_index": 1160
+     },
+     {
+      "text": "—",
+      "confidence": 0.9997832278633527,
+      "start_index": 1167
+     },
+     {
+      "text": "—",
+      "confidence": 0.9997832278633527,
+      "start_index": 1171
+     },
+     {
+      "text": "7.17,5",
+      "confidence": 0.9997832278633527,
+      "start_index": 1175
+     },
+     {
+      "text": "7.18",
+      "confidence": 0.9997832278633527,
+      "start_index": 1184
+     },
+     {
+      "text": "Тирайне",
+      "confidence": 0.9997832278633527,
+      "start_index": 1195
+     },
+     {
+      "text": "—",
+      "confidence": 0.9997832278633527,
+      "start_index": 1205
+     },
+     {
+      "text": "—",
+      "confidence": 0.9997832278633527,
+      "start_index": 1209
+     },
+     {
+      "text": "—",
+      "confidence": 0.9997832278633527,
+      "start_index": 1213
+     },
+     {
+      "text": "—",
+      "confidence": 0.9997832278633527,
+      "start_index": 1217
+     },
+     {
+      "text": "7.21",
+      "confidence": 0.9997832278633527,
+      "start_index": 1221
+     },
+     {
+      "text": "7.21,5",
+      "confidence": 0.9997832278633527,
+      "start_index": 1228
+     },
+     {
+      "text": "Баложи",
+      "confidence": 0.9997832278633527,
+      "start_index": 1241
+     },
+     {
+      "text": "6.37,5",
+      "confidence": 0.9997832278633527,
+      "start_index": 1250
+     },
+     {
+      "text": "6.38",
+      "confidence": 0.9997832278633527,
+      "start_index": 1259
+     },
+     {
+      "text": "—",
+      "confidence": 0.9997832278633527,
+      "start_index": 1266
+     },
+     {
+      "text": "7.03",
+      "confidence": 0.9997832278633527,
+      "start_index": 1270
+     },
+     {
+      "text": "7.25",
+      "confidence": 0.9997832278633527,
+      "start_index": 1277
+     },
+     {
+      "text": "7.25,5",
+      "confidence": 0.9997832278633527,
+      "start_index": 1284
+     },
+     {
+      "text": "Яунолайне",
+      "confidence": 0.9997832278633527,
+      "start_index": 1297
+     },
+     {
+      "text": "6.42,5",
+      "confidence": 0.9997832278633527,
+      "start_index": 1309
+     },
+     {
+      "text": "6.43",
+      "confidence": 0.9997832278633527,
+      "start_index": 1318
+     },
+     {
+      "text": "—",
+      "confidence": 0.9997832278633527,
+      "start_index": 1325
+     },
+     {
+      "text": "—",
+      "confidence": 0.9997832278633527,
+      "start_index": 1329
+     },
+     {
+      "text": "7.30",
+      "confidence": 0.9997832278633527,
+      "start_index": 1333
+     },
+     {
+      "text": "7.30,5",
+      "confidence": 0.9997832278633527,
+      "start_index": 1340
+     },
+     {
+      "text": "Олайне",
+      "confidence": 0.9997832278633527,
+      "start_index": 1353
+     },
+     {
+      "text": "6.46",
+      "confidence": 0.9997832278633527,
+      "start_index": 1362
+     },
+     {
+      "text": "6.48",
+      "confidence": 0.9997832278633527,
+      "start_index": 1369
+     },
+     {
+      "text": "—",
+      "confidence": 0.9997832278633527,
+      "start_index": 1376
+     },
+     {
+      "text": "7.13",
+      "confidence": 0.9997832278633527,
+      "start_index": 1380
+     },
+     {
+      "text": "7.33,5",
+      "confidence": 0.9997832278633527,
+      "start_index": 1387
+     },
+     {
+      "text": "7.35",
+      "confidence": 0.9997832278633527,
+      "start_index": 1396
+     },
+     {
+      "text": "Далбе",
+      "confidence": 0.9997832278633527,
+      "start_index": 1407
+     },
+     {
+      "text": "6.52,5",
+      "confidence": 0.9997832278633527,
+      "start_index": 1415
+     },
+     {
+      "text": "6.53",
+      "confidence": 0.9997832278633527,
+      "start_index": 1424
+     },
+     {
+      "text": "—",
+      "confidence": 0.9997832278633527,
+      "start_index": 1431
+     },
+     {
+      "text": "—",
+      "confidence": 0.9997832278633527,
+      "start_index": 1435
+     },
+     {
+      "text": "7.39,5",
+      "confidence": 0.9997832278633527,
+      "start_index": 1439
+     },
+     {
+      "text": "7.40",
+      "confidence": 0.9997832278633527,
+      "start_index": 1448
+     },
+     {
+      "text": "Цена",
+      "confidence": 0.9997832278633527,
+      "start_index": 1459
+     },
+     {
+      "text": "6.57",
+      "confidence": 0.9997832278633527,
+      "start_index": 1466
+     },
+     {
+      "text": "6.57,5",
+      "confidence": 0.9997832278633527,
+      "start_index": 1473
+     },
+     {
+      "text": "—",
+      "confidence": 0.9997832278633527,
+      "start_index": 1482
+     },
+     {
+      "text": "7.20",
+      "confidence": 0.9997832278633527,
+      "start_index": 1486
+     },
+     {
+      "text": "7.44",
+      "confidence": 0.9997832278633527,
+      "start_index": 1493
+     },
+     {
+      "text": "7.44,5",
+      "confidence": 0.9997832278633527,
+      "start_index": 1500
+     },
+     {
+      "text": "Озолинец",
+      "confidence": 0.9997832278633527,
+      "start_index": 1513
+     },
+     {
+      "text": "7.00",
+      "confidence": 0.9997832278633527,
+      "start_index": 1524
+     },
+     {
+      "text": "7.00,5",
+      "confidence": 0.9997832278633527,
+      "start_index": 1531
+     },
+     {
+      "text": "—",
+      "confidence": 0.9997832278633527,
+      "start_index": 1540
+     },
+     {
+      "text": "—",
+      "confidence": 0.9997832278633527,
+      "start_index": 1544
+     },
+     {
+      "text": "7.47",
+      "confidence": 0.9997832278633527,
+      "start_index": 1548
+     },
+     {
+      "text": "7.47,5",
+      "confidence": 0.9997832278633527,
+      "start_index": 1555
+     },
+     {
+      "text": "Цукурфабрика",
+      "confidence": 0.9997832278633527,
+      "start_index": 1568
+     },
+     {
+      "text": "7.04,5",
+      "confidence": 0.9997832278633527,
+      "start_index": 1583
+     },
+     {
+      "text": "7.05",
+      "confidence": 0.9997832278633527,
+      "start_index": 1592
+     },
+     {
+      "text": "—",
+      "confidence": 0.9997832278633527,
+      "start_index": 1599
+     },
+     {
+      "text": "7.25",
+      "confidence": 0.9997832278633527,
+      "start_index": 1603
+     },
+     {
+      "text": "7.51,5",
+      "confidence": 0.9997832278633527,
+      "start_index": 1610
+     },
+     {
+      "text": "7.52",
+      "confidence": 0.9997832278633527,
+      "start_index": 1619
+     },
+     {
+      "text": "Елгава",
+      "confidence": 0.9997832278633527,
+      "start_index": 1630
+     },
+     {
+      "text": "7.08",
+      "confidence": 0.9997832278633527,
+      "start_index": 1639
+     },
+     {
+      "text": "—",
+      "confidence": 0.9997832278633527,
+      "start_index": 1646
+     },
+     {
+      "text": "7.30",
+      "confidence": 0.9997832278633527,
+      "start_index": 1650
+     },
+     {
+      "text": "—",
+      "confidence": 0.9997832278633527,
+      "start_index": 1657
+     },
+     {
+      "text": "7.55",
+      "confidence": 0.9997832278633527,
+      "start_index": 1661
+     },
+     {
+      "text": "—",
+      "confidence": 0.9997832278633527,
+      "start_index": 1668
+     },
+     {
+      "text": "№",
+      "confidence": 0.9994577266554904,
+      "start_index": 1677
+     },
+     {
+      "text": " поездов",
+      "confidence": 0.9999893309627766,
+      "start_index": 1678
+     },
+     {
+      "text": "6711",
+      "confidence": 0.9976624330741154,
+      "start_index": 1689
+     },
+     {
+      "text": "—",
+      "confidence": 0.8795072298875498,
+      "start_index": 1700
+     },
+     {
+      "text": "—",
+      "confidence": 0.9964496732137886,
+      "start_index": 1708
+     },
+     {
+      "text": "Разд.",
+      "confidence": 0.9964496732137886,
+      "start_index": 1764
+     },
+     {
+      "text": " пункты",
+      "confidence": 0.9920249807910555,
+      "start_index": 1769
+     },
+     {
+      "text": "приб.",
+      "confidence": 0.9920249807910555,
+      "start_index": 1779
+     },
+     {
+      "text": "отпр.",
+      "confidence": 0.9920249807910555,
+      "start_index": 1787
+     },
+     {
+      "text": "приб.",
+      "confidence": 0.9920249807910555,
+      "start_index": 1795
+     },
+     {
+      "text": "отпр.",
+      "confidence": 0.9920249807910555,
+      "start_index": 1803
+     },
+     {
+      "text": "приб.",
+      "confidence": 0.9920249807910555,
+      "start_index": 1811
+     },
+     {
+      "text": "отпр.",
+      "confidence": 0.9920249807910555,
+      "start_index": 1819
+     },
+     {
+      "text": "Рига-пасс.",
+      "confidence": 0.9920249807910555,
+      "start_index": 1831
+     },
+     {
+      "text": "—",
+      "confidence": 0.9920249807910555,
+      "start_index": 1844
+     },
+     {
+      "text": "7.32",
+      "confidence": 0.9920249807910555,
+      "start_index": 1848
+     },
+     {
+      "text": "7.53",
+      "confidence": 0.9920249807910555,
+      "start_index": 1855
+     },
+     {
+      "text": "8.03",
+      "confidence": 0.9920249807910555,
+      "start_index": 1862
+     },
+     {
+      "text": "8.25",
+      "confidence": 0.9920249807910555,
+      "start_index": 1869
+     },
+     {
+      "text": "8.25",
+      "confidence": 0.9920249807910555,
+      "start_index": 1876
+     },
+     {
+      "text": "Торнякалис",
+      "confidence": 0.9920249807910555,
+      "start_index": 1887
+     },
+     {
+      "text": "7.36,5",
+      "confidence": 0.9920249807910555,
+      "start_index": 1900
+     },
+     {
+      "text": "7.37,5",
+      "confidence": 0.9920249807910555,
+      "start_index": 1909
+     },
+     {
+      "text": "8.07,5",
+      "confidence": 0.9920249807910555,
+      "start_index": 1918
+     },
+     {
+      "text": "8.08,5",
+      "confidence": 0.9920249807910555,
+      "start_index": 1927
+     },
+     {
+      "text": "8.25,5",
+      "confidence": 0.9920249807910555,
+      "start_index": 1936
+     },
+     {
+      "text": "8.25,5",
+      "confidence": 0.9920249807910555,
+      "start_index": 1945
+     },
+     {
+      "text": "Атгазене",
+      "confidence": 0.9920249807910555,
+      "start_index": 1958
+     },
+     {
+      "text": "—",
+      "confidence": 0.9920249807910555,
+      "start_index": 1969
+     },
+     {
+      "text": "—",
+      "confidence": 0.9920249807910555,
+      "start_index": 1973
+     },
+     {
+      "text": "8.10,5",
+      "confidence": 0.9920249807910555,
+      "start_index": 1977
+     },
+     {
+      "text": "8.11",
+      "confidence": 0.9920249807910555,
+      "start_index": 1986
+     },
+     {
+      "text": "8.25,5",
+      "confidence": 0.9920249807910555,
+      "start_index": 1993
+     },
+     {
+      "text": "8.25",
+      "confidence": 0.9920249807910555,
+      "start_index": 2002
+     },
+     {
+      "text": "Тирайне",
+      "confidence": 0.9920249807910555,
+      "start_index": 2013
+     },
+     {
+      "text": "—",
+      "confidence": 0.9920249807910555,
+      "start_index": 2023
+     },
+     {
+      "text": "—",
+      "confidence": 0.9920249807910555,
+      "start_index": 2027
+     },
+     {
+      "text": "8.14",
+      "confidence": 0.9920249807910555,
+      "start_index": 2031
+     },
+     {
+      "text": "8.14,5",
+      "confidence": 0.9920249807910555,
+      "start_index": 2038
+     },
+     {
+      "text": "9.01",
+      "confidence": 0.9920249807910555,
+      "start_index": 2047
+     },
+     {
+      "text": "9.01,5",
+      "confidence": 0.9920249807910555,
+      "start_index": 2054
+     },
+     {
+      "text": "Баложи",
+      "confidence": 0.9920249807910555,
+      "start_index": 2067
+     },
+     {
+      "text": "—",
+      "confidence": 0.9920249807910555,
+      "start_index": 2076
+     },
+     {
+      "text": "7.43,5",
+      "confidence": 0.9920249807910555,
+      "start_index": 2080
+     },
+     {
+      "text": "8.18",
+      "confidence": 0.9920249807910555,
+      "start_index": 2089
+     },
+     {
+      "text": "8.18,5",
+      "confidence": 0.9920249807910555,
+      "start_index": 2096
+     },
+     {
+      "text": "9.05",
+      "confidence": 0.9920249807910555,
+      "start_index": 2105
+     },
+     {
+      "text": "9.06",
+      "confidence": 0.9920249807910555,
+      "start_index": 2112
+     },
+     {
+      "text": "Яунолайне",
+      "confidence": 0.9920249807910555,
+      "start_index": 2123
+     },
+     {
+      "text": "7.47,5",
+      "confidence": 0.9920249807910555,
+      "start_index": 2135
+     },
+     {
+      "text": "7.48",
+      "confidence": 0.9920249807910555,
+      "start_index": 2144
+     },
+     {
+      "text": "8.23",
+      "confidence": 0.9920249807910555,
+      "start_index": 2151
+     },
+     {
+      "text": "8.23,5",
+      "confidence": 0.9920249807910555,
+      "start_index": 2158
+     },
+     {
+      "text": "9.10,5",
+      "confidence": 0.9920249807910555,
+      "start_index": 2167
+     },
+     {
+      "text": "9.11",
+      "confidence": 0.9920249807910555,
+      "start_index": 2176
+     },
+     {
+      "text": "Олайне",
+      "confidence": 0.9920249807910555,
+      "start_index": 2187
+     },
+     {
+      "text": "7.51",
+      "confidence": 0.9920249807910555,
+      "start_index": 2196
+     },
+     {
+      "text": "7.53",
+      "confidence": 0.9920249807910555,
+      "start_index": 2203
+     },
+     {
+      "text": "8.26,5",
+      "confidence": 0.9920249807910555,
+      "start_index": 2210
+     },
+     {
+      "text": "8.28",
+      "confidence": 0.9920249807910555,
+      "start_index": 2219
+     },
+     {
+      "text": "9.14",
+      "confidence": 0.9920249807910555,
+      "start_index": 2226
+     },
+     {
+      "text": "9.16",
+      "confidence": 0.9920249807910555,
+      "start_index": 2233
+     },
+     {
+      "text": "Далбе",
+      "confidence": 0.9920249807910555,
+      "start_index": 2244
+     },
+     {
+      "text": "—",
+      "confidence": 0.9920249807910555,
+      "start_index": 2252
+     },
+     {
+      "text": "—",
+      "confidence": 0.9920249807910555,
+      "start_index": 2256
+     },
+     {
+      "text": "8.32,5",
+      "confidence": 0.9920249807910555,
+      "start_index": 2260
+     },
+     {
+      "text": "8.33",
+      "confidence": 0.9920249807910555,
+      "start_index": 2269
+     },
+     {
+      "text": "9.20,5",
+      "confidence": 0.9920249807910555,
+      "start_index": 2276
+     },
+     {
+      "text": "9.21",
+      "confidence": 0.9920249807910555,
+      "start_index": 2285
+     },
+     {
+      "text": "Цена",
+      "confidence": 0.9920249807910555,
+      "start_index": 2296
+     },
+     {
+      "text": "—",
+      "confidence": 0.9920249807910555,
+      "start_index": 2303
+     },
+     {
+      "text": "8.00",
+      "confidence": 0.9920249807910555,
+      "start_index": 2307
+     },
+     {
+      "text": "8.37",
+      "confidence": 0.9920249807910555,
+      "start_index": 2314
+     },
+     {
+      "text": "8.37,5",
+      "confidence": 0.9920249807910555,
+      "start_index": 2321
+     },
+     {
+      "text": "9.25",
+      "confidence": 0.9920249807910555,
+      "start_index": 2330
+     },
+     {
+      "text": "9.26",
+      "confidence": 0.9920249807910555,
+      "start_index": 2337
+     },
+     {
+      "text": "Озолинец",
+      "confidence": 0.9920249807910555,
+      "start_index": 2348
+     },
+     {
+      "text": "—",
+      "confidence": 0.9920249807910555,
+      "start_index": 2359
+     },
+     {
+      "text": "—",
+      "confidence": 0.9920249807910555,
+      "start_index": 2363
+     },
+     {
+      "text": "8.40",
+      "confidence": 0.9920249807910555,
+      "start_index": 2367
+     },
+     {
+      "text": "8.40,5",
+      "confidence": 0.9920249807910555,
+      "start_index": 2374
+     },
+     {
+      "text": "9.28,5",
+      "confidence": 0.9920249807910555,
+      "start_index": 2383
+     },
+     {
+      "text": "9.29",
+      "confidence": 0.9920249807910555,
+      "start_index": 2392
+     },
+     {
+      "text": "Цукурфабрика",
+      "confidence": 0.9920249807910555,
+      "start_index": 2403
+     },
+     {
+      "text": "8.05,5",
+      "confidence": 0.9920249807910555,
+      "start_index": 2418
+     },
+     {
+      "text": "8.06",
+      "confidence": 0.9920249807910555,
+      "start_index": 2427
+     },
+     {
+      "text": "8.41,5",
+      "confidence": 0.9920249807910555,
+      "start_index": 2434
+     },
+     {
+      "text": "8.45",
+      "confidence": 0.9920249807910555,
+      "start_index": 2443
+     },
+     {
+      "text": "9.33",
+      "confidence": 0.9920249807910555,
+      "start_index": 2450
+     },
+     {
+      "text": "9.35",
+      "confidence": 0.9920249807910555,
+      "start_index": 2457
+     },
+     {
+      "text": "Елгава",
+      "confidence": 0.9920249807910555,
+      "start_index": 2468
+     },
+     {
+      "text": "8.09",
+      "confidence": 0.9920249807910555,
+      "start_index": 2477
+     },
+     {
+      "text": "—",
+      "confidence": 0.9920249807910555,
+      "start_index": 2484
+     },
+     {
+      "text": "8.48",
+      "confidence": 0.9920249807910555,
+      "start_index": 2488
+     },
+     {
+      "text": "—",
+      "confidence": 0.9920249807910555,
+      "start_index": 2495
+     },
+     {
+      "text": "9.38",
+      "confidence": 0.9920249807910555,
+      "start_index": 2499
+     },
+     {
+      "text": "—",
+      "confidence": 0.9920249807910555,
+      "start_index": 2506
+     },
+     {
+      "text": "№",
+      "confidence": 0.9996119890170704,
+      "start_index": 2515
+     },
+     {
+      "text": " поездов",
+      "confidence": 0.9999945462189503,
+      "start_index": 2516
+     },
+     {
+      "text": "6717",
+      "confidence": 0.9999966144727056,
+      "start_index": 2527
+     },
+     {
+      "text": "6719",
+      "confidence": 0.9999967480455405,
+      "start_index": 2538
+     },
+     {
+      "text": "6721**",
+      "confidence": 0.9999518239076616,
+      "start_index": 2549
+     },
+     {
+      "text": "Разд.",
+      "confidence": 0.9999518239076616,
+      "start_index": 2610
+     },
+     {
+      "text": " пункты",
+      "confidence": 0.9994626908863202,
+      "start_index": 2615
+     },
+     {
+      "text": "приб.",
+      "confidence": 0.9994626908863202,
+      "start_index": 2625
+     },
+     {
+      "text": "отпр.",
+      "confidence": 0.9994626908863202,
+      "start_index": 2633
+     },
+     {
+      "text": "приб.",
+      "confidence": 0.9994626908863202,
+      "start_index": 2641
+     },
+     {
+      "text": "отпр.",
+      "confidence": 0.9994626908863202,
+      "start_index": 2649
+     },
+     {
+      "text": "приб.",
+      "confidence": 0.9994626908863202,
+      "start_index": 2657
+     },
+     {
+      "text": "отпр.",
+      "confidence": 0.9994626908863202,
+      "start_index": 2665
+     },
+     {
+      "text": "Рига-пасс.",
+      "confidence": 0.9994626908863202,
+      "start_index": 2677
+     },
+     {
+      "text": "—",
+      "confidence": 0.9994626908863202,
+      "start_index": 2690
+     },
+     {
+      "text": "9.33",
+      "confidence": 0.9994626908863202,
+      "start_index": 2694
+     },
+     {
+      "text": "10.10",
+      "confidence": 0.9994626908863202,
+      "start_index": 2701
+     },
+     {
+      "text": "10.22",
+      "confidence": 0.9994626908863202,
+      "start_index": 2709
+     },
+     {
+      "text": "11.12",
+      "confidence": 0.9994626908863202,
+      "start_index": 2717
+     },
+     {
+      "text": "11.24",
+      "confidence": 0.9994626908863202,
+      "start_index": 2725
+     },
+     {
+      "text": "Торнякалис",
+      "confidence": 0.9994626908863202,
+      "start_index": 2737
+     },
+     {
+      "text": "9.37,5",
+      "confidence": 0.9994626908863202,
+      "start_index": 2750
+     },
+     {
+      "text": "9.38,5",
+      "confidence": 0.9994626908863202,
+      "start_index": 2759
+     },
+     {
+      "text": "10.26,5",
+      "confidence": 0.9994626908863202,
+      "start_index": 2768
+     },
+     {
+      "text": "10.28",
+      "confidence": 0.9994626908863202,
+      "start_index": 2778
+     },
+     {
+      "text": "11.28,5",
+      "confidence": 0.9994626908863202,
+      "start_index": 2786
+     },
+     {
+      "text": "11.30",
+      "confidence": 0.9994626908863202,
+      "start_index": 2796
+     },
+     {
+      "text": "Атгазене",
+      "confidence": 0.9994626908863202,
+      "start_index": 2808
+     },
+     {
+      "text": "9.40,5",
+      "confidence": 0.9994626908863202,
+      "start_index": 2819
+     },
+     {
+      "text": "9.41",
+      "confidence": 0.9994626908863202,
+      "start_index": 2828
+     },
+     {
+      "text": "10.30",
+      "confidence": 0.9994626908863202,
+      "start_index": 2835
+     },
+     {
+      "text": "10.31",
+      "confidence": 0.9994626908863202,
+      "start_index": 2843
+     },
+     {
+      "text": "11.32",
+      "confidence": 0.9994626908863202,
+      "start_index": 2851
+     },
+     {
+      "text": "11.32,5",
+      "confidence": 0.9994626908863202,
+      "start_index": 2859
+     },
+     {
+      "text": "Тирайне",
+      "confidence": 0.9994626908863202,
+      "start_index": 2873
+     },
+     {
+      "text": "—",
+      "confidence": 0.9994626908863202,
+      "start_index": 2883
+     },
+     {
+      "text": "—",
+      "confidence": 0.9994626908863202,
+      "start_index": 2887
+     },
+     {
+      "text": "10.34",
+      "confidence": 0.9994626908863202,
+      "start_index": 2891
+     },
+     {
+      "text": "10.34,5",
+      "confidence": 0.9994626908863202,
+      "start_index": 2899
+     },
+     {
+      "text": "—",
+      "confidence": 0.9994626908863202,
+      "start_index": 2909
+     },
+     {
+      "text": "—",
+      "confidence": 0.9994626908863202,
+      "start_index": 2913
+     },
+     {
+      "text": "Баложи",
+      "confidence": 0.9994626908863202,
+      "start_index": 2921
+     },
+     {
+      "text": "9.46,5",
+      "confidence": 0.9994626908863202,
+      "start_index": 2930
+     },
+     {
+      "text": "9.47",
+      "confidence": 0.9994626908863202,
+      "start_index": 2939
+     },
+     {
+      "text": "10.38",
+      "confidence": 0.9994626908863202,
+      "start_index": 2946
+     },
+     {
+      "text": "10.39",
+      "confidence": 0.9994626908863202,
+      "start_index": 2954
+     },
+     {
+      "text": "11.38",
+      "confidence": 0.9994626908863202,
+      "start_index": 2962
+     },
+     {
+      "text": "11.39",
+      "confidence": 0.9994626908863202,
+      "start_index": 2970
+     },
+     {
+      "text": "Яунолайне",
+      "confidence": 0.9994626908863202,
+      "start_index": 2982
+     },
+     {
+      "text": "9.51,5",
+      "confidence": 0.9994626908863202,
+      "start_index": 2994
+     },
+     {
+      "text": "9.52",
+      "confidence": 0.9994626908863202,
+      "start_index": 3003
+     },
+     {
+      "text": "10.43,5",
+      "confidence": 0.9994626908863202,
+      "start_index": 3010
+     },
+     {
+      "text": "10.44",
+      "confidence": 0.9994626908863202,
+      "start_index": 3020
+     },
+     {
+      "text": "11.43,5",
+      "confidence": 0.9994626908863202,
+      "start_index": 3028
+     },
+     {
+      "text": "11.44",
+      "confidence": 0.9994626908863202,
+      "start_index": 3038
+     },
+     {
+      "text": "Олайне",
+      "confidence": 0.9994626908863202,
+      "start_index": 3050
+     },
+     {
+      "text": "9.55",
+      "confidence": 0.9994626908863202,
+      "start_index": 3059
+     },
+     {
+      "text": "9.57",
+      "confidence": 0.9994626908863202,
+      "start_index": 3066
+     },
+     {
+      "text": "10.47",
+      "confidence": 0.9994626908863202,
+      "start_index": 3073
+     },
+     {
+      "text": "10.49",
+      "confidence": 0.9994626908863202,
+      "start_index": 3081
+     },
+     {
+      "text": "11.47",
+      "confidence": 0.9994626908863202,
+      "start_index": 3089
+     },
+     {
+      "text": "11.49",
+      "confidence": 0.9994626908863202,
+      "start_index": 3097
+     },
+     {
+      "text": "Далбе",
+      "confidence": 0.9994626908863202,
+      "start_index": 3109
+     },
+     {
+      "text": "10.01,5",
+      "confidence": 0.9994626908863202,
+      "start_index": 3117
+     },
+     {
+      "text": "10.02",
+      "confidence": 0.9994626908863202,
+      "start_index": 3127
+     },
+     {
+      "text": "10.53,5",
+      "confidence": 0.9994626908863202,
+      "start_index": 3135
+     },
+     {
+      "text": "10.54",
+      "confidence": 0.9994626908863202,
+      "start_index": 3145
+     },
+     {
+      "text": "11.53",
+      "confidence": 0.9994626908863202,
+      "start_index": 3153
+     },
+     {
+      "text": "11.54",
+      "confidence": 0.9994626908863202,
+      "start_index": 3161
+     },
+     {
+      "text": "Цена",
+      "confidence": 0.9994626908863202,
+      "start_index": 3173
+     },
+     {
+      "text": "10.06",
+      "confidence": 0.9994626908863202,
+      "start_index": 3180
+     },
+     {
+      "text": "10.07",
+      "confidence": 0.9994626908863202,
+      "start_index": 3188
+     },
+     {
+      "text": "10.58",
+      "confidence": 0.9994626908863202,
+      "start_index": 3196
+     },
+     {
+      "text": "10.59",
+      "confidence": 0.9994626908863202,
+      "start_index": 3204
+     },
+     {
+      "text": "11.58",
+      "confidence": 0.9994626908863202,
+      "start_index": 3212
+     },
+     {
+      "text": "11.59",
+      "confidence": 0.9994626908863202,
+      "start_index": 3220
+     },
+     {
+      "text": "Озолинец",
+      "confidence": 0.9994626908863202,
+      "start_index": 3232
+     },
+     {
+      "text": "10.09,5",
+      "confidence": 0.9994626908863202,
+      "start_index": 3243
+     },
+     {
+      "text": "10.10",
+      "confidence": 0.9994626908863202,
+      "start_index": 3253
+     },
+     {
+      "text": "11.01,5",
+      "confidence": 0.9994626908863202,
+      "start_index": 3261
+     },
+     {
+      "text": "11.02",
+      "confidence": 0.9994626908863202,
+      "start_index": 3271
+     },
+     {
+      "text": "12.01,5",
+      "confidence": 0.9994626908863202,
+      "start_index": 3279
+     },
+     {
+      "text": "12.02",
+      "confidence": 0.9994626908863202,
+      "start_index": 3289
+     },
+     {
+      "text": "Цукурфабрика",
+      "confidence": 0.9994626908863202,
+      "start_index": 3301
+     },
+     {
+      "text": "10.14",
+      "confidence": 0.9994626908863202,
+      "start_index": 3316
+     },
+     {
+      "text": "10.15",
+      "confidence": 0.9994626908863202,
+      "start_index": 3324
+     },
+     {
+      "text": "11.06",
+      "confidence": 0.9994626908863202,
+      "start_index": 3332
+     },
+     {
+      "text": "11.07",
+      "confidence": 0.9994626908863202,
+      "start_index": 3340
+     },
+     {
+      "text": "12.06",
+      "confidence": 0.9994626908863202,
+      "start_index": 3348
+     },
+     {
+      "text": "12.07",
+      "confidence": 0.9994626908863202,
+      "start_index": 3356
+     },
+     {
+      "text": "Елгава",
+      "confidence": 0.9994626908863202,
+      "start_index": 3368
+     },
+     {
+      "text": "10.18",
+      "confidence": 0.9994626908863202,
+      "start_index": 3377
+     },
+     {
+      "text": "—",
+      "confidence": 0.9994626908863202,
+      "start_index": 3385
+     },
+     {
+      "text": "11.10",
+      "confidence": 0.9994626908863202,
+      "start_index": 3389
+     },
+     {
+      "text": "—",
+      "confidence": 0.9994626908863202,
+      "start_index": 3397
+     },
+     {
+      "text": "12.10",
+      "confidence": 0.9994626908863202,
+      "start_index": 3401
+     },
+     {
+      "text": "—",
+      "confidence": 0.9994626908863202,
+      "start_index": 3409
+     },
+     {
+      "text": "150",
+      "confidence": 0.9852266645174962,
+      "start_index": 3415
+     },
+     {
+      "text": "151",
+      "confidence": 0.9999897481064004,
+      "start_index": 3420
+     }
+    ],
+    "average_page_confidence_score": 0.9966339225762507,
+    "minimum_page_confidence_score": 0.8795072298875498
+   },
+   "blocks": [
+    {
+     "top_left_x": 373,
+     "top_left_y": 93,
+     "bottom_right_x": 3600,
+     "bottom_right_y": 1837,
+     "content": "|  № поездов | 6701 |   | 6703 |   | 6705  |   |\n| --- | --- | --- | --- | --- | --- | --- |\n|  Разд. пункты | приб. | отпр. | приб. | отпр. | приб. | отпр.  |\n|  Рига-пасс. | 0.30 | 0.35 | — | 5.35 | 6.00 | 6.06  |\n|  Торнякалис | 0.39,5 | 0.40 | 5.39,5 | 5.40 | 6.10,5 | 6.12  |\n|  Атгазене | 0.42 | 0.42,5 | 5.42 | 5.42,5 | 6.14 | 6.14,5  |\n|  Тирайне | 0.45,5 | 0.46 | — | — | — | —  |\n|  Баложи | 0.49,5 | 0.50 | 5.48 | 5.48,5 | 6.20 | 6.21  |\n|  Яунолайне | 0.54,5 | 0.55 | 5.53 | 5.53,5 | 6.25,5 | 6.27  |\n|  Олайне | 0.58 | 0.59 | 5.56,5 | 5.58 | 6.30 | 6.32  |\n|  Далбе | 1.03,5 | 1.04 | 6.02,5 | 6.03 | 6.36,5 | 6.37  |\n|  Цена | 1.08 | 1.08,5 | 6.07,5 | 6.08 | 6.41 | 6.42  |\n|  Озолинец | 1.11 | 1.11,5 | 6.10,5 | 6.11 | 6.44,5 | 6.45  |\n|  Цукурфабрика | 1.15,5 | 1.16 | 6.15 | 6.16 | 6.49 | 6.52  |\n|  Елгава | 1.19 | — | 6.19 | — | 6.55 | —  |",
+     "confidence_scores": null,
+     "type": "table",
+     "table_id": null
+    },
+    {
+     "top_left_x": 395,
+     "top_left_y": 2093,
+     "bottom_right_x": 3652,
+     "bottom_right_y": 3831,
+     "content": "|  № поездов | 6707 |   | 5403ДР |   | 6709  |   |\n| --- | --- | --- | --- | --- | --- | --- |\n|  Разд. пункты | приб. | отпр. | приб. | отпр. | приб. | отпр.  |\n|  Рига-пасс. | — | 6.25 | — | 6.48 | 7.06 | 7.10  |\n|  Торнякалис | 6.29 | 6.29,5 | — | 6.53 | 7.14,5 | 7.15,5  |\n|  Атгазене | 6.31,5 | 6.32 | — | — | 7.17,5 | 7.18  |\n|  Тирайне | — | — | — | — | 7.21 | 7.21,5  |\n|  Баложи | 6.37,5 | 6.38 | — | 7.03 | 7.25 | 7.25,5  |\n|  Яунолайне | 6.42,5 | 6.43 | — | — | 7.30 | 7.30,5  |\n|  Олайне | 6.46 | 6.48 | — | 7.13 | 7.33,5 | 7.35  |\n|  Далбе | 6.52,5 | 6.53 | — | — | 7.39,5 | 7.40  |\n|  Цена | 6.57 | 6.57,5 | — | 7.20 | 7.44 | 7.44,5  |\n|  Озолинец | 7.00 | 7.00,5 | — | — | 7.47 | 7.47,5  |\n|  Цукурфабрика | 7.04,5 | 7.05 | — | 7.25 | 7.51,5 | 7.52  |\n|  Елгава | 7.08 | — | 7.30 | — | 7.55 | —  |",
+     "confidence_scores": null,
+     "type": "table",
+     "table_id": null
+    },
+    {
+     "top_left_x": 3958,
+     "top_left_y": 233,
+     "bottom_right_x": 7200,
+     "bottom_right_y": 1919,
+     "content": "|  № поездов | 6711 |   | — |   | —  |   |\n| --- | --- | --- | --- | --- | --- | --- |\n|  Разд. пункты | приб. | отпр. | приб. | отпр. | приб. | отпр.  |\n|  Рига-пасс. | — | 7.32 | 7.53 | 8.03 | 8.25 | 8.25  |\n|  Торнякалис | 7.36,5 | 7.37,5 | 8.07,5 | 8.08,5 | 8.25,5 | 8.25,5  |\n|  Атгазене | — | — | 8.10,5 | 8.11 | 8.25,5 | 8.25  |\n|  Тирайне | — | — | 8.14 | 8.14,5 | 9.01 | 9.01,5  |\n|  Баложи | — | 7.43,5 | 8.18 | 8.18,5 | 9.05 | 9.06  |\n|  Яунолайне | 7.47,5 | 7.48 | 8.23 | 8.23,5 | 9.10,5 | 9.11  |\n|  Олайне | 7.51 | 7.53 | 8.26,5 | 8.28 | 9.14 | 9.16  |\n|  Далбе | — | — | 8.32,5 | 8.33 | 9.20,5 | 9.21  |\n|  Цена | — | 8.00 | 8.37 | 8.37,5 | 9.25 | 9.26  |\n|  Озолинец | — | — | 8.40 | 8.40,5 | 9.28,5 | 9.29  |\n|  Цукурфабрика | 8.05,5 | 8.06 | 8.41,5 | 8.45 | 9.33 | 9.35  |\n|  Елгава | 8.09 | — | 8.48 | — | 9.38 | —  |",
+     "confidence_scores": null,
+     "type": "table",
+     "table_id": null
+    },
+    {
+     "top_left_x": 3958,
+     "top_left_y": 2227,
+     "bottom_right_x": 7200,
+     "bottom_right_y": 3913,
+     "content": "|  № поездов | 6717 |   | 6719 |   | 6721**  |   |\n| --- | --- | --- | --- | --- | --- | --- |\n|  Разд. пункты | приб. | отпр. | приб. | отпр. | приб. | отпр.  |\n|  Рига-пасс. | — | 9.33 | 10.10 | 10.22 | 11.12 | 11.24  |\n|  Торнякалис | 9.37,5 | 9.38,5 | 10.26,5 | 10.28 | 11.28,5 | 11.30  |\n|  Атгазене | 9.40,5 | 9.41 | 10.30 | 10.31 | 11.32 | 11.32,5  |\n|  Тирайне | — | — | 10.34 | 10.34,5 | — | —  |\n|  Баложи | 9.46,5 | 9.47 | 10.38 | 10.39 | 11.38 | 11.39  |\n|  Яунолайне | 9.51,5 | 9.52 | 10.43,5 | 10.44 | 11.43,5 | 11.44  |\n|  Олайне | 9.55 | 9.57 | 10.47 | 10.49 | 11.47 | 11.49  |\n|  Далбе | 10.01,5 | 10.02 | 10.53,5 | 10.54 | 11.53 | 11.54  |\n|  Цена | 10.06 | 10.07 | 10.58 | 10.59 | 11.58 | 11.59  |\n|  Озолинец | 10.09,5 | 10.10 | 11.01,5 | 11.02 | 12.01,5 | 12.02  |\n|  Цукурфабрика | 10.14 | 10.15 | 11.06 | 11.07 | 12.06 | 12.07  |\n|  Елгава | 10.18 | — | 11.10 | — | 12.10 | —  |",
+     "confidence_scores": null,
+     "type": "table",
+     "table_id": null
+    },
+    {
+     "top_left_x": 462,
+     "top_left_y": 5232,
+     "bottom_right_x": 641,
+     "bottom_right_y": 5360,
+     "content": "150",
+     "confidence_scores": null,
+     "type": "footer"
+    },
+    {
+     "top_left_x": 7014,
+     "top_left_y": 5250,
+     "bottom_right_x": 7185,
+     "bottom_right_y": 5360,
+     "content": "151",
+     "confidence_scores": null,
+     "type": "footer"
+    }
+   ]
+  }
+ ],
+ "model": "mistral-ocr-4-1",
+ "document_annotation": null,
+ "usage_info": {
+  "pages_processed": 1,
+  "doc_size_bytes": 248916
+ }
+}

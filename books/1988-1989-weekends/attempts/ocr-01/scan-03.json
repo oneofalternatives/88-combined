@@ -1,0 +1,1613 @@
+{
+ "pages": [
+  {
+   "index": 0,
+   "markdown": "# Drošības noteikumu teksti pasažieriem lasīšanai\nvilcienos un stacijās\n\n## PILSOŅI PASAŽIERI!\n\nIzmantojot dzelzceļa transportu un atrodoties\ndzelzceļa teritorijā esiet uzmanīgi. Ievērojiet brauk-\nšanas un personīgās drošības noteikumus, sargiet\nsevi un citus no nelaimes gadījumiem.\n\nNešķērsojiet sliedes neatļautās vietās, neskrieniet\npāri sliedēm, ja strauji tuvojas vilciens, neaizmir-\nstiet, ka vilcienu uzreiz nevar apturēt.\n\nNevediet vilcienā viegli uzliesmojošas vielas un\nsprāgstvielas (petroleju, benzīnu, spirtu u. c.). Ne-\nstāviet vagonu koridoros, dodiet iespēju vilcienā\niekāpt arī citiem pasažieriem.\n\nAizliegts traucēt citus pasažierus, piegružot va-\ngonu un smēķēt tajā, spēlēt azarta spēles, kavēt va-\ngonu automātisko durvju atvēršanu un aizvēršanu.\n\nBērnu vagoni paredzēti pasažieriem ar bērniem,\ninvalīdiem un gados veciem pilsoņiem.\n\nPārvadāt suņus bērnu vagonos aizliegts.\n\nBaltijas dzelzceļa Rīgas nodaļa.\n\n2\n\n# Тексты по технике безопасности пассажирам\nдля чтения в поездах и на вокзалах\n\n## ГРАЖДАНЕ ПАССАЖИРЫ!\n\nПользуясь железнодорожным транспортом и на-\nходясь на территории железной дороги будьте вни-\nмательны и осторожны.\n\nНе переходите через железнодорожные пути в\nнеустановленных местах и не перебегайте их перед\nблизко движущимся поездом — помните, что поезд\nсразу остановить нельзя.\n\nНе перевозите в поездах легко воспламеняющие-\nся и взрывчатые вещества (керосин, бензин, спирт\nи т. д.).\n\nНе стойте в тамбурах вагонов и проходах, про-\nходите в вагоны и дайте возможность сесть в поезд\nдругим пассажирам. Не разрешается нарушать\nспокойствие других пассажиров, сорить и курить,\nиграть в азартные игры, задерживать открытие или\nзакрытие автоматических дверей вагонов.\n\nДетские вагоны предназначаются для проезда\nпассажиров с детьми, инвалидов и граждан преста-\nрелого возраста. Провозить собак в детских ваго-\nнах запрещается.\n\nРижское отделение Приб. жел. дор.\n\n3",
+   "images": [],
+   "tables": [],
+   "hyperlinks": [],
+   "header": null,
+   "footer": null,
+   "dimensions": {
+    "dpi": 200,
+    "height": 5808,
+    "width": 7446
+   },
+   "confidence_scores": {
+    "word_confidence_scores": [
+     {
+      "text": "#",
+      "confidence": 0.9820137577607906,
+      "start_index": 0
+     },
+     {
+      "text": " Drošības",
+      "confidence": 0.9957048862782698,
+      "start_index": 1
+     },
+     {
+      "text": " noteikumu",
+      "confidence": 0.9872033347744228,
+      "start_index": 10
+     },
+     {
+      "text": " teksti",
+      "confidence": 0.9548974795658918,
+      "start_index": 20
+     },
+     {
+      "text": " pasažieriem",
+      "confidence": 0.9973745420014238,
+      "start_index": 27
+     },
+     {
+      "text": " lasīšanai",
+      "confidence": 0.8411654237058714,
+      "start_index": 39
+     },
+     {
+      "text": "\n",
+      "confidence": 0.6487748245818309,
+      "start_index": 49
+     },
+     {
+      "text": "vilcienos",
+      "confidence": 0.9033190051568591,
+      "start_index": 50
+     },
+     {
+      "text": " un",
+      "confidence": 0.999098994280071,
+      "start_index": 59
+     },
+     {
+      "text": " stacijās",
+      "confidence": 0.9583396736411355,
+      "start_index": 62
+     },
+     {
+      "text": "##",
+      "confidence": 0.9770174119807802,
+      "start_index": 73
+     },
+     {
+      "text": " PILSOŅI",
+      "confidence": 0.8194381981686271,
+      "start_index": 75
+     },
+     {
+      "text": " PASAŽIERI!",
+      "confidence": 0.9983333659735334,
+      "start_index": 83
+     },
+     {
+      "text": "Izmantojot",
+      "confidence": 0.9991700907875896,
+      "start_index": 96
+     },
+     {
+      "text": " dzelzceļa",
+      "confidence": 0.9976616665383357,
+      "start_index": 106
+     },
+     {
+      "text": " transportu",
+      "confidence": 0.9999566205933662,
+      "start_index": 116
+     },
+     {
+      "text": " un",
+      "confidence": 0.999995112442896,
+      "start_index": 127
+     },
+     {
+      "text": " atrodoties",
+      "confidence": 0.9899718567346973,
+      "start_index": 130
+     },
+     {
+      "text": "\n",
+      "confidence": 0.9481619713496595,
+      "start_index": 141
+     },
+     {
+      "text": "dzelzceļa",
+      "confidence": 0.9940303564089665,
+      "start_index": 142
+     },
+     {
+      "text": " teritorijā",
+      "confidence": 0.9983903131159718,
+      "start_index": 151
+     },
+     {
+      "text": " esiet",
+      "confidence": 0.9989397520256189,
+      "start_index": 162
+     },
+     {
+      "text": " uzmanīgi.",
+      "confidence": 0.9996410870489604,
+      "start_index": 168
+     },
+     {
+      "text": " Ievērojiet",
+      "confidence": 0.9989444970583982,
+      "start_index": 178
+     },
+     {
+      "text": " brauk-",
+      "confidence": 0.9794194941676077,
+      "start_index": 189
+     },
+     {
+      "text": "\n",
+      "confidence": 0.911953406940312,
+      "start_index": 196
+     },
+     {
+      "text": "šanas",
+      "confidence": 0.9996056920152503,
+      "start_index": 197
+     },
+     {
+      "text": " un",
+      "confidence": 0.9999918938339075,
+      "start_index": 202
+     },
+     {
+      "text": " personīgās",
+      "confidence": 0.9997914858030362,
+      "start_index": 205
+     },
+     {
+      "text": " drošības",
+      "confidence": 0.999981589213663,
+      "start_index": 216
+     },
+     {
+      "text": " noteikumus,",
+      "confidence": 0.9986128976644112,
+      "start_index": 225
+     },
+     {
+      "text": " sargiet",
+      "confidence": 0.9996057522873377,
+      "start_index": 237
+     },
+     {
+      "text": "\n",
+      "confidence": 0.9999879600069962,
+      "start_index": 245
+     },
+     {
+      "text": "sevi",
+      "confidence": 0.9994251022726818,
+      "start_index": 246
+     },
+     {
+      "text": " un",
+      "confidence": 0.9999537489348336,
+      "start_index": 250
+     },
+     {
+      "text": " citus",
+      "confidence": 0.9738083257728039,
+      "start_index": 253
+     },
+     {
+      "text": " no",
+      "confidence": 0.9999330088642737,
+      "start_index": 259
+     },
+     {
+      "text": " nelaimes",
+      "confidence": 0.9971768654133676,
+      "start_index": 262
+     },
+     {
+      "text": " gadījumiem.",
+      "confidence": 0.9999738443575363,
+      "start_index": 271
+     },
+     {
+      "text": "Nešķērsojiet",
+      "confidence": 0.9968911149523979,
+      "start_index": 285
+     },
+     {
+      "text": " sliedes",
+      "confidence": 0.9664242071020194,
+      "start_index": 297
+     },
+     {
+      "text": " neatļautās",
+      "confidence": 0.9987501871253206,
+      "start_index": 305
+     },
+     {
+      "text": " vietās,",
+      "confidence": 0.9998500312254697,
+      "start_index": 316
+     },
+     {
+      "text": " neskrieniet",
+      "confidence": 0.9843890440754477,
+      "start_index": 324
+     },
+     {
+      "text": "\n",
+      "confidence": 0.9999629272857378,
+      "start_index": 336
+     },
+     {
+      "text": "pāri",
+      "confidence": 0.9987523333893114,
+      "start_index": 337
+     },
+     {
+      "text": " sliedēm,",
+      "confidence": 0.9884139344013861,
+      "start_index": 341
+     },
+     {
+      "text": " ja",
+      "confidence": 0.9990612744144164,
+      "start_index": 350
+     },
+     {
+      "text": " strauji",
+      "confidence": 0.9977759925365639,
+      "start_index": 353
+     },
+     {
+      "text": " tuvojas",
+      "confidence": 0.9985118493407353,
+      "start_index": 361
+     },
+     {
+      "text": " vilciens,",
+      "confidence": 0.9972564203818293,
+      "start_index": 369
+     },
+     {
+      "text": " neaizmir-",
+      "confidence": 0.8914926441521737,
+      "start_index": 379
+     },
+     {
+      "text": "\n",
+      "confidence": 0.9998585185944591,
+      "start_index": 389
+     },
+     {
+      "text": "stiet,",
+      "confidence": 0.9999190061344928,
+      "start_index": 390
+     },
+     {
+      "text": " ka",
+      "confidence": 0.9995550705636237,
+      "start_index": 396
+     },
+     {
+      "text": " vilcienu",
+      "confidence": 0.9966580528434249,
+      "start_index": 399
+     },
+     {
+      "text": " uzreiz",
+      "confidence": 0.9999463079709755,
+      "start_index": 408
+     },
+     {
+      "text": " nevar",
+      "confidence": 0.9962723672914419,
+      "start_index": 415
+     },
+     {
+      "text": " apturēt.",
+      "confidence": 0.99856199230646,
+      "start_index": 421
+     },
+     {
+      "text": "Nevediet",
+      "confidence": 0.998127931216953,
+      "start_index": 432
+     },
+     {
+      "text": " vilcienā",
+      "confidence": 0.9961480988146424,
+      "start_index": 440
+     },
+     {
+      "text": " viegli",
+      "confidence": 0.9997448542359944,
+      "start_index": 449
+     },
+     {
+      "text": " uzliesmojošas",
+      "confidence": 0.9985384569540313,
+      "start_index": 456
+     },
+     {
+      "text": " vielas",
+      "confidence": 0.9997418122343685,
+      "start_index": 470
+     },
+     {
+      "text": " un",
+      "confidence": 0.9999980926550052,
+      "start_index": 477
+     },
+     {
+      "text": "\n",
+      "confidence": 0.9999818805158571,
+      "start_index": 480
+     },
+     {
+      "text": "sprāgstvielas",
+      "confidence": 0.9855911164823945,
+      "start_index": 481
+     },
+     {
+      "text": " (petroleju,",
+      "confidence": 0.9984951126027515,
+      "start_index": 494
+     },
+     {
+      "text": " benzīnu,",
+      "confidence": 0.9815896390951684,
+      "start_index": 506
+     },
+     {
+      "text": " spirtu",
+      "confidence": 0.989390225308417,
+      "start_index": 515
+     },
+     {
+      "text": " u.",
+      "confidence": 0.9999189855525519,
+      "start_index": 522
+     },
+     {
+      "text": " c.).",
+      "confidence": 0.999894657905902,
+      "start_index": 525
+     },
+     {
+      "text": " Ne-",
+      "confidence": 0.9999255934569943,
+      "start_index": 530
+     },
+     {
+      "text": "\n",
+      "confidence": 0.9997646170668943,
+      "start_index": 534
+     },
+     {
+      "text": "stāviet",
+      "confidence": 0.9989528367766892,
+      "start_index": 535
+     },
+     {
+      "text": " vagonu",
+      "confidence": 0.999245874161612,
+      "start_index": 542
+     },
+     {
+      "text": " koridoros,",
+      "confidence": 0.9985503741736043,
+      "start_index": 549
+     },
+     {
+      "text": " dodiet",
+      "confidence": 0.9999792239631219,
+      "start_index": 560
+     },
+     {
+      "text": " iespēju",
+      "confidence": 0.9998426555029185,
+      "start_index": 567
+     },
+     {
+      "text": " vilcienā",
+      "confidence": 0.9997050674217103,
+      "start_index": 575
+     },
+     {
+      "text": "\n",
+      "confidence": 0.9901059140679839,
+      "start_index": 584
+     },
+     {
+      "text": "iekāpt",
+      "confidence": 0.9952142195710924,
+      "start_index": 585
+     },
+     {
+      "text": " arī",
+      "confidence": 0.9997948828941432,
+      "start_index": 591
+     },
+     {
+      "text": " citiem",
+      "confidence": 0.9947327898487878,
+      "start_index": 595
+     },
+     {
+      "text": " pasažieriem.",
+      "confidence": 0.9998586683678765,
+      "start_index": 602
+     },
+     {
+      "text": "Aizliegts",
+      "confidence": 0.9991511721056583,
+      "start_index": 617
+     },
+     {
+      "text": " traucēt",
+      "confidence": 0.999655357088439,
+      "start_index": 626
+     },
+     {
+      "text": " citus",
+      "confidence": 0.9994466133926497,
+      "start_index": 634
+     },
+     {
+      "text": " pasažierus,",
+      "confidence": 0.9995900117603654,
+      "start_index": 640
+     },
+     {
+      "text": " piegružot",
+      "confidence": 0.8671568448570152,
+      "start_index": 652
+     },
+     {
+      "text": " va-",
+      "confidence": 0.9998550357973055,
+      "start_index": 662
+     },
+     {
+      "text": "\n",
+      "confidence": 0.9999908209686689,
+      "start_index": 666
+     },
+     {
+      "text": "gonu",
+      "confidence": 0.9997318225623845,
+      "start_index": 667
+     },
+     {
+      "text": " un",
+      "confidence": 0.9999977350285647,
+      "start_index": 671
+     },
+     {
+      "text": " smēķēt",
+      "confidence": 0.9981220886921025,
+      "start_index": 674
+     },
+     {
+      "text": " tajā,",
+      "confidence": 0.9995487186023733,
+      "start_index": 681
+     },
+     {
+      "text": " spēlēt",
+      "confidence": 0.9986120647782848,
+      "start_index": 687
+     },
+     {
+      "text": " azarta",
+      "confidence": 0.9986464601329974,
+      "start_index": 694
+     },
+     {
+      "text": " spēles,",
+      "confidence": 0.9999363330385375,
+      "start_index": 701
+     },
+     {
+      "text": " kavēt",
+      "confidence": 0.9746641540938948,
+      "start_index": 709
+     },
+     {
+      "text": " va-",
+      "confidence": 0.9998753249773594,
+      "start_index": 715
+     },
+     {
+      "text": "\n",
+      "confidence": 0.9999940395710211,
+      "start_index": 719
+     },
+     {
+      "text": "gonu",
+      "confidence": 0.99986215497848,
+      "start_index": 720
+     },
+     {
+      "text": " automātisko",
+      "confidence": 0.9964978066233615,
+      "start_index": 724
+     },
+     {
+      "text": " durvju",
+      "confidence": 0.9989644839001651,
+      "start_index": 736
+     },
+     {
+      "text": " atvēršanu",
+      "confidence": 0.9982604349181808,
+      "start_index": 743
+     },
+     {
+      "text": " un",
+      "confidence": 0.9999930859092101,
+      "start_index": 753
+     },
+     {
+      "text": " aizvēršanu.",
+      "confidence": 0.9997545458212991,
+      "start_index": 756
+     },
+     {
+      "text": "Bērnu",
+      "confidence": 0.9998784517290377,
+      "start_index": 770
+     },
+     {
+      "text": " vagoni",
+      "confidence": 0.9970400654673403,
+      "start_index": 775
+     },
+     {
+      "text": " paredzēti",
+      "confidence": 0.9997927659135323,
+      "start_index": 782
+     },
+     {
+      "text": " pasažieriem",
+      "confidence": 0.9998879666710981,
+      "start_index": 792
+     },
+     {
+      "text": " ar",
+      "confidence": 0.999921924012059,
+      "start_index": 804
+     },
+     {
+      "text": " bērniem,",
+      "confidence": 0.9994750924615746,
+      "start_index": 807
+     },
+     {
+      "text": "\n",
+      "confidence": 0.9999976158197796,
+      "start_index": 816
+     },
+     {
+      "text": "invalīdiem",
+      "confidence": 0.9373785165111326,
+      "start_index": 817
+     },
+     {
+      "text": " un",
+      "confidence": 0.9999861719135179,
+      "start_index": 827
+     },
+     {
+      "text": " gados",
+      "confidence": 0.9972415719693456,
+      "start_index": 830
+     },
+     {
+      "text": " veciem",
+      "confidence": 0.9756797930654014,
+      "start_index": 836
+     },
+     {
+      "text": " pilsoņiem.",
+      "confidence": 0.9995366964848471,
+      "start_index": 843
+     },
+     {
+      "text": "Pārvadāt",
+      "confidence": 0.9972943949410065,
+      "start_index": 856
+     },
+     {
+      "text": " suņus",
+      "confidence": 0.9888707114506146,
+      "start_index": 864
+     },
+     {
+      "text": " bērnu",
+      "confidence": 0.9998872096945542,
+      "start_index": 870
+     },
+     {
+      "text": " vagonos",
+      "confidence": 0.9975142752908557,
+      "start_index": 876
+     },
+     {
+      "text": " aizliegts.",
+      "confidence": 0.9998170212525969,
+      "start_index": 884
+     },
+     {
+      "text": "Baltijas",
+      "confidence": 0.9988745520475376,
+      "start_index": 897
+     },
+     {
+      "text": " dzelzceļa",
+      "confidence": 0.9999495930484045,
+      "start_index": 905
+     },
+     {
+      "text": " Rīgas",
+      "confidence": 0.9998407618066838,
+      "start_index": 915
+     },
+     {
+      "text": " nodaļa.",
+      "confidence": 0.9993238614052485,
+      "start_index": 921
+     },
+     {
+      "text": "2",
+      "confidence": 0.999991059383269,
+      "start_index": 931
+     },
+     {
+      "text": "#",
+      "confidence": 0.7549135048783797,
+      "start_index": 934
+     },
+     {
+      "text": " Тексты",
+      "confidence": 0.9981809926183137,
+      "start_index": 935
+     },
+     {
+      "text": " по",
+      "confidence": 0.9999876023871354,
+      "start_index": 942
+     },
+     {
+      "text": " технике",
+      "confidence": 0.9999714055390827,
+      "start_index": 945
+     },
+     {
+      "text": " безопасности",
+      "confidence": 0.9999995231630692,
+      "start_index": 953
+     },
+     {
+      "text": " пассажирам",
+      "confidence": 0.9982775044666853,
+      "start_index": 966
+     },
+     {
+      "text": "\n",
+      "confidence": 0.9985025927799329,
+      "start_index": 977
+     },
+     {
+      "text": "для",
+      "confidence": 0.999711120150843,
+      "start_index": 978
+     },
+     {
+      "text": " чтения",
+      "confidence": 0.9999889136593714,
+      "start_index": 981
+     },
+     {
+      "text": " в",
+      "confidence": 0.9999957084838798,
+      "start_index": 988
+     },
+     {
+      "text": " поездах",
+      "confidence": 0.9985369974256366,
+      "start_index": 990
+     },
+     {
+      "text": " и",
+      "confidence": 0.9999980926550052,
+      "start_index": 998
+     },
+     {
+      "text": " на",
+      "confidence": 0.9999426636198856,
+      "start_index": 1000
+     },
+     {
+      "text": " вокзалах",
+      "confidence": 0.9958058308527415,
+      "start_index": 1003
+     },
+     {
+      "text": "##",
+      "confidence": 0.9578938639347939,
+      "start_index": 1014
+     },
+     {
+      "text": " ГРАЖДАНЕ",
+      "confidence": 0.9998968122196481,
+      "start_index": 1016
+     },
+     {
+      "text": " ПАССАЖИРЫ!",
+      "confidence": 0.999476370802285,
+      "start_index": 1025
+     },
+     {
+      "text": "Пользуясь",
+      "confidence": 0.9999283511676473,
+      "start_index": 1038
+     },
+     {
+      "text": " железнодорожным",
+      "confidence": 0.9999806810766033,
+      "start_index": 1047
+     },
+     {
+      "text": " транспортом",
+      "confidence": 0.9999969403043573,
+      "start_index": 1063
+     },
+     {
+      "text": " и",
+      "confidence": 0.9999998807907247,
+      "start_index": 1075
+     },
+     {
+      "text": " на-",
+      "confidence": 0.9996712446215392,
+      "start_index": 1077
+     },
+     {
+      "text": "\n",
+      "confidence": 0.9990485431130441,
+      "start_index": 1081
+     },
+     {
+      "text": "ходясь",
+      "confidence": 0.9999273475495646,
+      "start_index": 1082
+     },
+     {
+      "text": " на",
+      "confidence": 0.999998927117538,
+      "start_index": 1088
+     },
+     {
+      "text": " территории",
+      "confidence": 0.9999822381318528,
+      "start_index": 1091
+     },
+     {
+      "text": " железной",
+      "confidence": 0.9999962647898459,
+      "start_index": 1102
+     },
+     {
+      "text": " дороги",
+      "confidence": 0.9999996423722521,
+      "start_index": 1111
+     },
+     {
+      "text": " будьте",
+      "confidence": 0.999876264165821,
+      "start_index": 1118
+     },
+     {
+      "text": " вни-",
+      "confidence": 0.9942987831964707,
+      "start_index": 1125
+     },
+     {
+      "text": "\n",
+      "confidence": 0.9999971389852362,
+      "start_index": 1130
+     },
+     {
+      "text": "мательны",
+      "confidence": 0.9908190612668887,
+      "start_index": 1131
+     },
+     {
+      "text": " и",
+      "confidence": 0.9999966621509202,
+      "start_index": 1139
+     },
+     {
+      "text": " осторожны.",
+      "confidence": 0.9999732008882213,
+      "start_index": 1141
+     },
+     {
+      "text": "Не",
+      "confidence": 0.9999122696604036,
+      "start_index": 1154
+     },
+     {
+      "text": " переходите",
+      "confidence": 0.9999751726459273,
+      "start_index": 1156
+     },
+     {
+      "text": " через",
+      "confidence": 0.9999979734461775,
+      "start_index": 1167
+     },
+     {
+      "text": " железнодорожные",
+      "confidence": 0.9999905378881399,
+      "start_index": 1173
+     },
+     {
+      "text": " пути",
+      "confidence": 0.9999954700677164,
+      "start_index": 1189
+     },
+     {
+      "text": " в",
+      "confidence": 0.9999977350285647,
+      "start_index": 1194
+     },
+     {
+      "text": "\n",
+      "confidence": 0.9999808076722754,
+      "start_index": 1196
+     },
+     {
+      "text": "неустановленных",
+      "confidence": 0.999723672635206,
+      "start_index": 1197
+     },
+     {
+      "text": " местах",
+      "confidence": 0.9999809268774651,
+      "start_index": 1212
+     },
+     {
+      "text": " и",
+      "confidence": 0.9999998807907247,
+      "start_index": 1219
+     },
+     {
+      "text": " не",
+      "confidence": 0.9999995231630692,
+      "start_index": 1221
+     },
+     {
+      "text": " перебегайте",
+      "confidence": 0.9993619855508821,
+      "start_index": 1224
+     },
+     {
+      "text": " их",
+      "confidence": 0.9999388493741573,
+      "start_index": 1236
+     },
+     {
+      "text": " перед",
+      "confidence": 0.999998927117538,
+      "start_index": 1239
+     },
+     {
+      "text": "\n",
+      "confidence": 0.999804177492423,
+      "start_index": 1245
+     },
+     {
+      "text": "близко",
+      "confidence": 0.9994691684260552,
+      "start_index": 1246
+     },
+     {
+      "text": " движущимся",
+      "confidence": 0.99995188584926,
+      "start_index": 1252
+     },
+     {
+      "text": " поездом",
+      "confidence": 0.999845174691235,
+      "start_index": 1263
+     },
+     {
+      "text": " —",
+      "confidence": 0.9999618544824983,
+      "start_index": 1271
+     },
+     {
+      "text": " помните,",
+      "confidence": 0.9999913640433289,
+      "start_index": 1273
+     },
+     {
+      "text": " что",
+      "confidence": 0.9999996423722521,
+      "start_index": 1282
+     },
+     {
+      "text": " поезд",
+      "confidence": 0.9999870063564401,
+      "start_index": 1286
+     },
+     {
+      "text": "\n",
+      "confidence": 0.9999167988406579,
+      "start_index": 1292
+     },
+     {
+      "text": "сразу",
+      "confidence": 0.9997835569920825,
+      "start_index": 1293
+     },
+     {
+      "text": " остановить",
+      "confidence": 0.9999318337737626,
+      "start_index": 1298
+     },
+     {
+      "text": " нельзя.",
+      "confidence": 0.9999988675130158,
+      "start_index": 1309
+     },
+     {
+      "text": "Не",
+      "confidence": 0.9998282489203051,
+      "start_index": 1319
+     },
+     {
+      "text": " перевозите",
+      "confidence": 0.999909268740213,
+      "start_index": 1321
+     },
+     {
+      "text": " в",
+      "confidence": 0.9999996423722521,
+      "start_index": 1332
+     },
+     {
+      "text": " поездах",
+      "confidence": 0.9998109563729364,
+      "start_index": 1334
+     },
+     {
+      "text": " легко",
+      "confidence": 0.9999007085246283,
+      "start_index": 1342
+     },
+     {
+      "text": " воспламеняющие-",
+      "confidence": 0.9180398329563391,
+      "start_index": 1348
+     },
+     {
+      "text": "\n",
+      "confidence": 0.9998785404885726,
+      "start_index": 1364
+     },
+     {
+      "text": "ся",
+      "confidence": 0.9999822381318528,
+      "start_index": 1365
+     },
+     {
+      "text": " и",
+      "confidence": 0.9999953508594287,
+      "start_index": 1367
+     },
+     {
+      "text": " взрывчатые",
+      "confidence": 0.9999867571733534,
+      "start_index": 1369
+     },
+     {
+      "text": " вещества",
+      "confidence": 0.9999924898711537,
+      "start_index": 1380
+     },
+     {
+      "text": " (керосин,",
+      "confidence": 0.9998873113431107,
+      "start_index": 1389
+     },
+     {
+      "text": " бензин,",
+      "confidence": 0.7664610766462626,
+      "start_index": 1399
+     },
+     {
+      "text": " спирт",
+      "confidence": 0.9999968409760213,
+      "start_index": 1407
+     },
+     {
+      "text": "\n",
+      "confidence": 0.9999536297383403,
+      "start_index": 1413
+     },
+     {
+      "text": "и",
+      "confidence": 0.9999918938339075,
+      "start_index": 1414
+     },
+     {
+      "text": " т.",
+      "confidence": 0.999992648824067,
+      "start_index": 1415
+     },
+     {
+      "text": " д.).",
+      "confidence": 0.9999257874621711,
+      "start_index": 1418
+     },
+     {
+      "text": "Не",
+      "confidence": 0.9999786619922026,
+      "start_index": 1425
+     },
+     {
+      "text": " стойте",
+      "confidence": 0.9997631367923908,
+      "start_index": 1427
+     },
+     {
+      "text": " в",
+      "confidence": 0.9999988079084972,
+      "start_index": 1434
+     },
+     {
+      "text": " тамбурах",
+      "confidence": 0.9995283191378668,
+      "start_index": 1436
+     },
+     {
+      "text": " вагонов",
+      "confidence": 0.9997443412057198,
+      "start_index": 1445
+     },
+     {
+      "text": " и",
+      "confidence": 0.9999972581939645,
+      "start_index": 1453
+     },
+     {
+      "text": " проходах,",
+      "confidence": 0.9999362886231373,
+      "start_index": 1455
+     },
+     {
+      "text": " про-",
+      "confidence": 0.9997631012666943,
+      "start_index": 1465
+     },
+     {
+      "text": "\n",
+      "confidence": 0.9994896871937023,
+      "start_index": 1470
+     },
+     {
+      "text": "ходите",
+      "confidence": 0.9999572057648239,
+      "start_index": 1471
+     },
+     {
+      "text": " в",
+      "confidence": 0.9999960661089133,
+      "start_index": 1477
+     },
+     {
+      "text": " вагоны",
+      "confidence": 0.999803974426588,
+      "start_index": 1479
+     },
+     {
+      "text": " и",
+      "confidence": 0.9999970197767496,
+      "start_index": 1486
+     },
+     {
+      "text": " дайте",
+      "confidence": 0.9999665837433256,
+      "start_index": 1488
+     },
+     {
+      "text": " возможность",
+      "confidence": 0.9999976158197796,
+      "start_index": 1494
+     },
+     {
+      "text": " сесть",
+      "confidence": 0.9999714308339369,
+      "start_index": 1506
+     },
+     {
+      "text": " в",
+      "confidence": 0.999997854237364,
+      "start_index": 1512
+     },
+     {
+      "text": " поезд",
+      "confidence": 0.9999545833252356,
+      "start_index": 1514
+     },
+     {
+      "text": "\n",
+      "confidence": 0.939874151949225,
+      "start_index": 1520
+     },
+     {
+      "text": "другим",
+      "confidence": 0.9999500966048763,
+      "start_index": 1521
+     },
+     {
+      "text": " пассажирам.",
+      "confidence": 0.999940967937867,
+      "start_index": 1527
+     },
+     {
+      "text": " Не",
+      "confidence": 0.9999899865198352,
+      "start_index": 1539
+     },
+     {
+      "text": " разрешается",
+      "confidence": 0.9999991158652151,
+      "start_index": 1542
+     },
+     {
+      "text": " нарушать",
+      "confidence": 0.9999818410858844,
+      "start_index": 1554
+     },
+     {
+      "text": "\n",
+      "confidence": 0.9999948740268748,
+      "start_index": 1563
+     },
+     {
+      "text": "спокойствие",
+      "confidence": 0.9999646180546735,
+      "start_index": 1564
+     },
+     {
+      "text": " других",
+      "confidence": 0.9999980926550052,
+      "start_index": 1575
+     },
+     {
+      "text": " пассажиров,",
+      "confidence": 0.9999983410090815,
+      "start_index": 1582
+     },
+     {
+      "text": " сорить",
+      "confidence": 0.9994028171308798,
+      "start_index": 1594
+     },
+     {
+      "text": " и",
+      "confidence": 0.9999997615814777,
+      "start_index": 1601
+     },
+     {
+      "text": " курить,",
+      "confidence": 0.9999746539846164,
+      "start_index": 1603
+     },
+     {
+      "text": "\n",
+      "confidence": 0.999993205116773,
+      "start_index": 1611
+     },
+     {
+      "text": "играть",
+      "confidence": 0.9998123563281344,
+      "start_index": 1612
+     },
+     {
+      "text": " в",
+      "confidence": 0.9999974966112362,
+      "start_index": 1618
+     },
+     {
+      "text": " азартные",
+      "confidence": 0.9999958276948627,
+      "start_index": 1620
+     },
+     {
+      "text": " игры,",
+      "confidence": 0.9999993840857176,
+      "start_index": 1629
+     },
+     {
+      "text": " задерживать",
+      "confidence": 0.9999545541037405,
+      "start_index": 1635
+     },
+     {
+      "text": " открытие",
+      "confidence": 0.9999729800568293,
+      "start_index": 1647
+     },
+     {
+      "text": " или",
+      "confidence": 0.9999750858798929,
+      "start_index": 1656
+     },
+     {
+      "text": "\n",
+      "confidence": 0.9999244270256572,
+      "start_index": 1660
+     },
+     {
+      "text": "закрытие",
+      "confidence": 0.9998354943687038,
+      "start_index": 1661
+     },
+     {
+      "text": " автоматических",
+      "confidence": 0.9998667162622058,
+      "start_index": 1669
+     },
+     {
+      "text": " дверей",
+      "confidence": 0.9999725665028922,
+      "start_index": 1684
+     },
+     {
+      "text": " вагонов.",
+      "confidence": 0.9999939601026299,
+      "start_index": 1691
+     },
+     {
+      "text": "Детские",
+      "confidence": 0.9999871429666415,
+      "start_index": 1702
+     },
+     {
+      "text": " вагоны",
+      "confidence": 0.999899729387387,
+      "start_index": 1709
+     },
+     {
+      "text": " предназначаются",
+      "confidence": 0.9965426260531496,
+      "start_index": 1716
+     },
+     {
+      "text": " для",
+      "confidence": 0.9999995231630692,
+      "start_index": 1732
+     },
+     {
+      "text": " проезда",
+      "confidence": 0.9999856354888264,
+      "start_index": 1736
+     },
+     {
+      "text": "\n",
+      "confidence": 0.9995580481652148,
+      "start_index": 1744
+     },
+     {
+      "text": "пассажиров",
+      "confidence": 0.9998326776618297,
+      "start_index": 1745
+     },
+     {
+      "text": " с",
+      "confidence": 0.9999965429424904,
+      "start_index": 1755
+     },
+     {
+      "text": " детьми,",
+      "confidence": 0.999997943643987,
+      "start_index": 1757
+     },
+     {
+      "text": " инвалидов",
+      "confidence": 0.9998969932916405,
+      "start_index": 1765
+     },
+     {
+      "text": " и",
+      "confidence": 1.0,
+      "start_index": 1775
+     },
+     {
+      "text": " граждан",
+      "confidence": 0.9999998807907247,
+      "start_index": 1777
+     },
+     {
+      "text": " преста-",
+      "confidence": 0.9882365815585566,
+      "start_index": 1785
+     },
+     {
+      "text": "\n",
+      "confidence": 0.9999892712787918,
+      "start_index": 1793
+     },
+     {
+      "text": "релого",
+      "confidence": 0.9998553941474145,
+      "start_index": 1794
+     },
+     {
+      "text": " возраста.",
+      "confidence": 0.9999997854233275,
+      "start_index": 1800
+     },
+     {
+      "text": " Провозить",
+      "confidence": 0.9990585185939447,
+      "start_index": 1810
+     },
+     {
+      "text": " собак",
+      "confidence": 0.9999897083715913,
+      "start_index": 1820
+     },
+     {
+      "text": " в",
+      "confidence": 0.9999995231630692,
+      "start_index": 1826
+     },
+     {
+      "text": " детских",
+      "confidence": 0.9999987483040957,
+      "start_index": 1828
+     },
+     {
+      "text": " ваго-",
+      "confidence": 0.9981971024969054,
+      "start_index": 1836
+     },
+     {
+      "text": "\n",
+      "confidence": 0.9999926090786457,
+      "start_index": 1842
+     },
+     {
+      "text": "нах",
+      "confidence": 0.9999110777746556,
+      "start_index": 1843
+     },
+     {
+      "text": " запрещается.",
+      "confidence": 0.9999979551072838,
+      "start_index": 1846
+     },
+     {
+      "text": "Рижское",
+      "confidence": 0.9995813657267124,
+      "start_index": 1861
+     },
+     {
+      "text": " отделение",
+      "confidence": 0.9999962806859047,
+      "start_index": 1868
+     },
+     {
+      "text": " Приб.",
+      "confidence": 0.9998649175854007,
+      "start_index": 1878
+     },
+     {
+      "text": " жел.",
+      "confidence": 0.9999652399291071,
+      "start_index": 1884
+     },
+     {
+      "text": " дор.",
+      "confidence": 0.9999582787045932,
+      "start_index": 1889
+     },
+     {
+      "text": "3",
+      "confidence": 0.9999821189265068,
+      "start_index": 1896
+     }
+    ],
+    "average_page_confidence_score": 0.9913988114007568,
+    "minimum_page_confidence_score": 0.6487748245818309
+   },
+   "blocks": [
+    {
+     "top_left_x": 425,
+     "top_left_y": 116,
+     "bottom_right_x": 3369,
+     "bottom_right_y": 546,
+     "content": "# Drošības noteikumu teksti pasažieriem lasīšanai\nvilcienos un stacijās",
+     "confidence_scores": null,
+     "type": "title"
+    },
+    {
+     "top_left_x": 1185,
+     "top_left_y": 779,
+     "bottom_right_x": 2609,
+     "bottom_right_y": 948,
+     "content": "## PILSOŅI PASAŽIERI!",
+     "confidence_scores": null,
+     "type": "title"
+    },
+    {
+     "top_left_x": 276,
+     "top_left_y": 1140,
+     "bottom_right_x": 3496,
+     "bottom_right_y": 1791,
+     "content": "Izmantojot dzelzceļa transportu un atrodoties\ndzelzceļa teritorijā esiet uzmanīgi. Ievērojiet brauk-\nšanas un personīgās drošības noteikumus, sargiet\nsevi un citus no nelaimes gadījumiem.",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 276,
+     "top_left_y": 1837,
+     "bottom_right_x": 3496,
+     "bottom_right_y": 2331,
+     "content": "Nešķērsojiet sliedes neatļautās vietās, neskrieniet\npāri sliedēm, ja strauji tuvojas vilciens, neaizmir-\nstiet, ka vilcienu uzreiz nevar apturēt.",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 276,
+     "top_left_y": 2378,
+     "bottom_right_x": 3488,
+     "bottom_right_y": 3017,
+     "content": "Nevediet vilcienā viegli uzliesmojošas vielas un\nsprāgstvielas (petroleju, benzīnu, spirtu u. c.). Ne-\nstāviet vagonu koridoros, dodiet iespēju vilcienā\niekāpt arī citiem pasažieriem.",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 276,
+     "top_left_y": 3076,
+     "bottom_right_x": 3488,
+     "bottom_right_y": 3564,
+     "content": "Aizliegts traucēt citus pasažierus, piegružot va-\ngonu un smēķēt tajā, spēlēt azarta spēles, kavēt va-\ngonu automātisko durvju atvēršanu un aizvēršanu.",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 276,
+     "top_left_y": 3616,
+     "bottom_right_x": 3473,
+     "bottom_right_y": 3942,
+     "content": "Bērnu vagoni paredzēti pasažieriem ar bērniem,\ninvalīdiem un gados veciem pilsoņiem.",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 410,
+     "top_left_y": 3994,
+     "bottom_right_x": 2862,
+     "bottom_right_y": 4163,
+     "content": "Pārvadāt suņus bērnu vagonos aizliegts.",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 1371,
+     "top_left_y": 4465,
+     "bottom_right_x": 3339,
+     "bottom_right_y": 4639,
+     "content": "Baltijas dzelzceļa Rīgas nodaļa.",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 276,
+     "top_left_y": 5232,
+     "bottom_right_x": 343,
+     "bottom_right_y": 5343,
+     "content": "2",
+     "confidence_scores": null,
+     "type": "header"
+    },
+    {
+     "top_left_x": 4025,
+     "top_left_y": 314,
+     "bottom_right_x": 6827,
+     "bottom_right_y": 663,
+     "content": "# Тексты по технике безопасности пассажирам\nдля чтения в поездах и на вокзалах",
+     "confidence_scores": null,
+     "type": "title"
+    },
+    {
+     "top_left_x": 4502,
+     "top_left_y": 860,
+     "bottom_right_x": 6373,
+     "bottom_right_y": 1017,
+     "content": "## ГРАЖДАНЕ ПАССАЖИРЫ!",
+     "confidence_scores": null,
+     "type": "title"
+    },
+    {
+     "top_left_x": 3831,
+     "top_left_y": 1163,
+     "bottom_right_x": 7044,
+     "bottom_right_y": 1622,
+     "content": "Пользуясь железнодорожным транспортом и на-\nходясь на территории железной дороги будьте вни-\nмательны и осторожны.",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 3831,
+     "top_left_y": 1663,
+     "bottom_right_x": 7051,
+     "bottom_right_y": 2291,
+     "content": "Не переходите через железнодорожные пути в\nнеустановленных местах и не перебегайте их перед\nблизко движущимся поездом — помните, что поезд\nсразу остановить нельзя.",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 3831,
+     "top_left_y": 2326,
+     "bottom_right_x": 7051,
+     "bottom_right_y": 2791,
+     "content": "Не перевозите в поездах легко воспламеняющие-\nся и взрывчатые вещества (керосин, бензин, спирт\nи т. д.).",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 3831,
+     "top_left_y": 2820,
+     "bottom_right_x": 7051,
+     "bottom_right_y": 3762,
+     "content": "Не стойте в тамбурах вагонов и проходах, про-\nходите в вагоны и дайте возможность сесть в поезд\nдругим пассажирам. Не разрешается нарушать\nспокойствие других пассажиров, сорить и курить,\nиграть в азартные игры, задерживать открытие или\nзакрытие автоматических дверей вагонов.",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 3853,
+     "top_left_y": 3802,
+     "bottom_right_x": 7066,
+     "bottom_right_y": 4436,
+     "content": "Детские вагоны предназначаются для проезда\nпассажиров с детьми, инвалидов и граждан преста-\nрелого возраста. Провозить собак в детских ваго-\nнах запрещается.",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 4785,
+     "top_left_y": 4616,
+     "bottom_right_x": 7073,
+     "bottom_right_y": 4762,
+     "content": "Рижское отделение Приб. жел. дор.",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 7006,
+     "top_left_y": 5331,
+     "bottom_right_x": 7081,
+     "bottom_right_y": 5436,
+     "content": "3",
+     "confidence_scores": null,
+     "type": "footer"
+    }
+   ]
+  }
+ ],
+ "model": "mistral-ocr-4-1",
+ "document_annotation": null,
+ "usage_info": {
+  "pages_processed": 1,
+  "doc_size_bytes": 538594
+ }
+}

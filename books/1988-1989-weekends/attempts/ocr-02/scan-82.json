@@ -1,0 +1,331 @@
+{
+ "pages": [
+  {
+   "index": 0,
+   "markdown": "Сдано в набор 07.05.88 г. Подписано к печати 20.05.88 г. Формат бумаги 70×90/32. Бумага типогр. № 2. Литературная гарнитура. Высокая печать. 5,00 физ. л. 5,85 усл. л. Тираж 2500 экз. Заказ № 1629. Отпечатано в П/о «Полиграфистс» цех № 3 Государственного комитета Латвийской ССР по делам издательств, полиграфии и книжной торговли. 226951, г. Рига. ул. Гоголя, 3. Бесплатно.",
+   "images": [],
+   "tables": [],
+   "hyperlinks": [],
+   "header": null,
+   "footer": null,
+   "dimensions": {
+    "dpi": 200,
+    "height": 5808,
+    "width": 7446
+   },
+   "confidence_scores": {
+    "word_confidence_scores": [
+     {
+      "text": "Сдано",
+      "confidence": 0.9998621284395367,
+      "start_index": 0
+     },
+     {
+      "text": " в",
+      "confidence": 0.9999185866873171,
+      "start_index": 5
+     },
+     {
+      "text": " набор",
+      "confidence": 0.9997366168532912,
+      "start_index": 7
+     },
+     {
+      "text": " 07.05.88",
+      "confidence": 0.9943390826697336,
+      "start_index": 13
+     },
+     {
+      "text": " г.",
+      "confidence": 0.9999974966111603,
+      "start_index": 22
+     },
+     {
+      "text": " Подписано",
+      "confidence": 0.9975556818369986,
+      "start_index": 25
+     },
+     {
+      "text": " к",
+      "confidence": 0.9998659075335375,
+      "start_index": 35
+     },
+     {
+      "text": " печати",
+      "confidence": 0.9999931710635095,
+      "start_index": 37
+     },
+     {
+      "text": " 20.05.88",
+      "confidence": 0.9999899601122171,
+      "start_index": 44
+     },
+     {
+      "text": " г.",
+      "confidence": 0.999998291336492,
+      "start_index": 53
+     },
+     {
+      "text": " Формат",
+      "confidence": 0.9998501429610519,
+      "start_index": 56
+     },
+     {
+      "text": " бумаги",
+      "confidence": 0.9324187563011553,
+      "start_index": 63
+     },
+     {
+      "text": " 70×90/32.",
+      "confidence": 0.9998217284957891,
+      "start_index": 70
+     },
+     {
+      "text": " Бумага",
+      "confidence": 0.9998986770618,
+      "start_index": 80
+     },
+     {
+      "text": " типогр.",
+      "confidence": 0.9984960871808852,
+      "start_index": 87
+     },
+     {
+      "text": " №",
+      "confidence": 0.9999979734461775,
+      "start_index": 95
+     },
+     {
+      "text": " 2.",
+      "confidence": 0.9999968608383472,
+      "start_index": 97
+     },
+     {
+      "text": " Литературная",
+      "confidence": 0.9999799183171887,
+      "start_index": 100
+     },
+     {
+      "text": " гарнитура.",
+      "confidence": 0.9994893603909835,
+      "start_index": 113
+     },
+     {
+      "text": " Высокая",
+      "confidence": 0.9996159362958325,
+      "start_index": 124
+     },
+     {
+      "text": " печать.",
+      "confidence": 0.9839945269637451,
+      "start_index": 132
+     },
+     {
+      "text": " 5,00",
+      "confidence": 0.9999702467803975,
+      "start_index": 140
+     },
+     {
+      "text": " физ.",
+      "confidence": 0.9919117099286735,
+      "start_index": 145
+     },
+     {
+      "text": " л.",
+      "confidence": 0.9998848996948267,
+      "start_index": 150
+     },
+     {
+      "text": " 5,85",
+      "confidence": 0.9999916554322505,
+      "start_index": 153
+     },
+     {
+      "text": " усл.",
+      "confidence": 0.9968893226603198,
+      "start_index": 158
+     },
+     {
+      "text": " л.",
+      "confidence": 0.9999612985843266,
+      "start_index": 163
+     },
+     {
+      "text": " Тираж",
+      "confidence": 0.9998804205440348,
+      "start_index": 166
+     },
+     {
+      "text": " 2500",
+      "confidence": 0.9999976873460039,
+      "start_index": 172
+     },
+     {
+      "text": " экз.",
+      "confidence": 0.9999327948381979,
+      "start_index": 177
+     },
+     {
+      "text": " Заказ",
+      "confidence": 0.9998856548235208,
+      "start_index": 182
+     },
+     {
+      "text": " №",
+      "confidence": 0.999998927117538,
+      "start_index": 188
+     },
+     {
+      "text": " 1629.",
+      "confidence": 0.9997363564864062,
+      "start_index": 190
+     },
+     {
+      "text": " Отпечатано",
+      "confidence": 0.9985071403931731,
+      "start_index": 196
+     },
+     {
+      "text": " в",
+      "confidence": 0.9999998807907247,
+      "start_index": 207
+     },
+     {
+      "text": " П/о",
+      "confidence": 0.9996548772681491,
+      "start_index": 209
+     },
+     {
+      "text": " «Полиграфистс»",
+      "confidence": 0.9963717951578317,
+      "start_index": 213
+     },
+     {
+      "text": " цех",
+      "confidence": 0.9999383725953737,
+      "start_index": 228
+     },
+     {
+      "text": " №",
+      "confidence": 0.999979258013377,
+      "start_index": 232
+     },
+     {
+      "text": " 3",
+      "confidence": 0.9999956488833578,
+      "start_index": 234
+     },
+     {
+      "text": " Государственного",
+      "confidence": 0.9999843067383477,
+      "start_index": 236
+     },
+     {
+      "text": " комитета",
+      "confidence": 0.9968988371395766,
+      "start_index": 253
+     },
+     {
+      "text": " Латвийской",
+      "confidence": 0.9999356974319139,
+      "start_index": 262
+     },
+     {
+      "text": " ССР",
+      "confidence": 0.9999877215940446,
+      "start_index": 273
+     },
+     {
+      "text": " по",
+      "confidence": 0.9999934435319415,
+      "start_index": 277
+     },
+     {
+      "text": " делам",
+      "confidence": 0.9999923706818659,
+      "start_index": 280
+     },
+     {
+      "text": " издательств,",
+      "confidence": 0.9996462964394556,
+      "start_index": 286
+     },
+     {
+      "text": " полиграфии",
+      "confidence": 0.9998864528661735,
+      "start_index": 299
+     },
+     {
+      "text": " и",
+      "confidence": 0.999998927117538,
+      "start_index": 310
+     },
+     {
+      "text": " книжной",
+      "confidence": 0.9999980032486246,
+      "start_index": 312
+     },
+     {
+      "text": " торговли.",
+      "confidence": 0.9999480654299555,
+      "start_index": 320
+     },
+     {
+      "text": " 226951,",
+      "confidence": 0.9999336202842967,
+      "start_index": 330
+     },
+     {
+      "text": " г.",
+      "confidence": 0.9999939998437745,
+      "start_index": 338
+     },
+     {
+      "text": " Рига.",
+      "confidence": 0.9972506102508258,
+      "start_index": 341
+     },
+     {
+      "text": " ул.",
+      "confidence": 0.9999527361179681,
+      "start_index": 347
+     },
+     {
+      "text": " Гоголя,",
+      "confidence": 0.9992967392253549,
+      "start_index": 351
+     },
+     {
+      "text": " 3.",
+      "confidence": 0.9995921849838721,
+      "start_index": 359
+     },
+     {
+      "text": " Бесплатно.",
+      "confidence": 0.9996241219212655,
+      "start_index": 362
+     }
+    ],
+    "average_page_confidence_score": 0.997917568510035,
+    "minimum_page_confidence_score": 0.9324187563011553
+   },
+   "blocks": [
+    {
+     "top_left_x": 276,
+     "top_left_y": 4116,
+     "bottom_right_x": 3518,
+     "bottom_right_y": 4948,
+     "content": "Сдано в набор 07.05.88 г. Подписано к печати 20.05.88 г. Формат бумаги 70×90/32. Бумага типогр. № 2. Литературная гарнитура. Высокая печать. 5,00 физ. л. 5,85 усл. л. Тираж 2500 экз. Заказ № 1629. Отпечатано в П/о «Полиграфистс» цех № 3 Государственного комитета Латвийской ССР по делам издательств, полиграфии и книжной торговли. 226951, г. Рига. ул. Гоголя, 3. Бесплатно.",
+     "confidence_scores": null,
+     "type": "text"
+    }
+   ]
+  }
+ ],
+ "model": "mistral-ocr-4-1",
+ "document_annotation": null,
+ "usage_info": {
+  "pages_processed": 1,
+  "doc_size_bytes": 490523
+ }
+}
