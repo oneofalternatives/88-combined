@@ -1,0 +1,1775 @@
+{
+ "pages": [
+  {
+   "index": 0,
+   "markdown": "|  № поездов | 6352 |   | 6548 |   | 6438  |   |\n| --- | --- | --- | --- | --- | --- | --- |\n|  Разл. пункты | приб. | отпр. | приб. | отпр. | приб. | отпр.  |\n|  Тукумс-II |  |  |  |  |  |   |\n|  Тукумс-I |  |  |  |  |  |   |\n|  Милзкалне |  |  |  |  |  |   |\n|  О. п. 56 км |  |  |  |  |  |   |\n|  Смарде |  |  |  |  |  |   |\n|  Кемерн |  |  | — | 15.44 |  |   |\n|  Кудра |  |  | 15.47,5 | 15.48 |  |   |\n|  Слока |  |  | 15.52,5 | 15.53,5 | — | 16.02  |\n|  Вайвари |  |  | 15.56,5 | 15.57 | 16.05 | 16.06  |\n|  Асари |  |  | 15.58,5 | 15.59,5 | 16.07,5 | 16.08  |\n|  Меллужи |  |  | 16.01 | 16.02 | 16.09,5 | 16.10  |\n|  Пумпури |  |  | 16.03,5 | 16.05 | 16.11,5 | 16.12  |\n|  Яундубулты |  |  | 16.06,5 | 16.07 | 16.13,5 | 16.14  |\n|  Дубулты | — | 16.06 | 16.09 | 16.11 | 16.16 | 16.17  |\n|  Майори | 16.09 | 16.10,5 | 16.13 | 16.15 | 16.19 | 16.22  |\n|  Дзинтари | — | — | 16.16,5 | 16.18 | 16.24 | 16.26  |\n|  Булдури | 16.14 | 16.15 | 16.20 | 16.22 | 16.28 | 16.29  |\n|  Лиелупе | — | — | 16.23,5 | 16.24 | 16.30,5 | 16.32  |\n|  Приедайне | 16.18 | 16.18,5 | 16.25,5 | 16.26 | 16.33,5 | 16.34,5  |\n|  Бабите | 16.22 | 16.22,5 | — | — | 16.38 | 16.38,5  |\n|  Иманта | 16.25 | 16.26 | 16.31 | 16.32 | 16.41 | 16.42  |\n|  Золитуде | 16.27,5 | 16.28,5 | 16.33,5 | 16.34,5 | — | —  |\n|  Депо | — | — | — | — | — | —  |\n|  Засулаукс | 16.31 | 16.33 | 16.39 | 16.40 | 16.47 | 16.48  |\n|  Торнякалнс | 16.36 | 16.37,5 | 16.43 | 16.45 | 16.51 | 16.52  |\n|  Рига-пасс. | 16.41 | — | 16.49 | 17.02 | 16.56 | —  |\n|  Вагонный парк |  |  | 17.06 | 17.07 |  |   |\n|  Яняварты |  |  | 17.10 | 17.11 |  |   |\n|  Даугмале |  |  | 17.12,5 | 17.13 |  |   |\n|  Шкиротава |  |  | 17.14,5 | 17.15,5 |  |   |\n|  Гайсма |  |  | 17.17,5 | 17.18 |  |   |\n|  Румбула |  |  | 17.20 | 17.20,5 |  |   |\n|  Дарзини |  |  | 17.22,5 | 17.24 |  |   |\n|  Доле |  |  | 17.27 | 17.27,5 |  |   |\n|  Саласпилс |  |  | 17.29 | 17.30 |  |   |\n|  Саулкалне |  |  | 17.33,5 | 17.34 |  |   |\n|  Икшкиле |  |  | 17.37,5 | 17.38 |  |   |\n|  Яуногре |  |  | 17.41,5 | 17.42,5 |  |   |\n|  Огре |  |  | 17.44,5 | 17.46 |  |   |\n|  Парогре |  |  | 17.47,5 | 17.48 |  |   |\n|  Циемупе |  |  | 17.51,5 | 17.52 |  |   |\n|  Кегумс |  |  | 17.57 | 17.57,5 |  |   |\n|  Лиелварде |  |  | 18.02 | 18.04 |  |   |\n\n86\n\n|  № поездов | 63525*** |   | 6440 |   | 6642/6631**  |   |\n| --- | --- | --- | --- | --- | --- | --- |\n|  Разл. пункты | приб. | отпр. | приб. | отпр. | приб. | отпр.  |\n|  Тукумс-II |  |  |  |  |  |   |\n|  Тукумс-I |  |  |  |  |  |   |\n|  Милзкалне |  |  |  |  |  |   |\n|  О. п. 56 км |  |  |  |  |  |   |\n|  Смарде |  |  |  |  |  |   |\n|  Кемерн |  |  |  |  |  |   |\n|  Кудра |  |  |  |  |  |   |\n|  Слока |  |  | — | 16.13 |  |   |\n|  Вайвари |  |  | 16.16 | 16.17 |  |   |\n|  Асари |  |  | 16.18,5 | 16.19 |  |   |\n|  Меллужи |  |  | 16.20,5 | 16.21 |  |   |\n|  Пумпури |  |  | 16.22,5 | 16.23 |  |   |\n|  Яундубулты |  |  | 16.24,5 | 16.25 |  |   |\n|  Дубулты | — | 16.24 | 16.27 | 16.29 |  |   |\n|  Майори | 16.26,5 | 16.28 | 16.31 | 16.32,5 |  |   |\n|  Дзинтари | 16.29,5 | 16.31 | 16.34 | 16.35,5 |  |   |\n|  Булдури | 16.33 | 16.34,5 | 16.37,5 | 16.39 |  |   |\n|  Лиелупе | 16.36 | 16.37,5 | 16.40,5 | 16.41,5 |  |   |\n|  Приедайне | 16.39 | 16.40 | 16.43 | 16.43,5 |  |   |\n|  Бабите | — | — | 16.47 | 16.47,5 |  |   |\n|  Иманта | — | — | 16.50 | 16.51 |  |   |\n|  Золитуде | 16.46,5 | 16.47,5 | — | — |  |   |\n|  Депо | — | — | — | — |  |   |\n|  Засулаукс | 16.51 | — | 16.56 | 16.57 |  |   |\n|  Торнякалнс |  |  | 17.00 | 17.01 |  |   |\n|  Рига пасс. |  |  | 17.05 | 17.09 |  |   |\n|  Вагонный парк |  |  | На Эвейннекциемс |   |  |   |\n|  Яняварты |  |  |  |  | 17.39 | 17.40  |\n|  Даугмале |  |  |  |  | 17.41,5 | 17.42  |\n|  Шкиротава |  |  |  |  | 17.43,5 | 17.44,5  |\n|  Гайсма |  |  |  |  | — | —  |\n|  Румбула |  |  |  |  | — | —  |\n|  Дарзини |  |  |  |  | 17.49 | 17.50,5  |\n|  Доле |  |  |  |  | 17.53,5 | 17.54  |\n|  Саласпилс |  |  |  |  | 17.56 | —  |\n|  Саулкалне |  |  |  |  |  |   |\n|  Икшкиле |  |  |  |  |  |   |\n|  Яуногре |  |  |  |  |  |   |\n|  Огре |  |  |  |  |  |   |\n|  Парогре |  |  |  |  |  |   |\n|  Циемупе |  |  |  |  |  |   |\n|  Кегумс |  |  |  |  |  |   |\n|  Лиелварде |  |  |  |  |  |   |\n\n87",
+   "images": [],
+   "tables": [],
+   "hyperlinks": [],
+   "header": null,
+   "footer": null,
+   "dimensions": {
+    "dpi": 200,
+    "height": 5808,
+    "width": 7446
+   },
+   "confidence_scores": {
+    "word_confidence_scores": [
+     {
+      "text": "№",
+      "confidence": 0.984101941381081,
+      "start_index": 3
+     },
+     {
+      "text": " поездов",
+      "confidence": 0.998327110169025,
+      "start_index": 4
+     },
+     {
+      "text": "6352",
+      "confidence": 0.992322893327971,
+      "start_index": 15
+     },
+     {
+      "text": "6548",
+      "confidence": 0.999973228713141,
+      "start_index": 26
+     },
+     {
+      "text": "6438",
+      "confidence": 0.9932638998576886,
+      "start_index": 37
+     },
+     {
+      "text": "Разл.",
+      "confidence": 0.9932638998576886,
+      "start_index": 96
+     },
+     {
+      "text": " пункты",
+      "confidence": 0.997969243538961,
+      "start_index": 101
+     },
+     {
+      "text": "приб.",
+      "confidence": 0.997969243538961,
+      "start_index": 111
+     },
+     {
+      "text": "отпр.",
+      "confidence": 0.997969243538961,
+      "start_index": 119
+     },
+     {
+      "text": "приб.",
+      "confidence": 0.997969243538961,
+      "start_index": 127
+     },
+     {
+      "text": "отпр.",
+      "confidence": 0.997969243538961,
+      "start_index": 135
+     },
+     {
+      "text": "приб.",
+      "confidence": 0.997969243538961,
+      "start_index": 143
+     },
+     {
+      "text": "отпр.",
+      "confidence": 0.997969243538961,
+      "start_index": 151
+     },
+     {
+      "text": "Тукумс-II",
+      "confidence": 0.997969243538961,
+      "start_index": 163
+     },
+     {
+      "text": "Тукумс-I",
+      "confidence": 0.997969243538961,
+      "start_index": 197
+     },
+     {
+      "text": "Милзкалне",
+      "confidence": 0.997969243538961,
+      "start_index": 230
+     },
+     {
+      "text": "О.",
+      "confidence": 0.997969243538961,
+      "start_index": 264
+     },
+     {
+      "text": " п.",
+      "confidence": 0.9998698841073625,
+      "start_index": 266
+     },
+     {
+      "text": " 56",
+      "confidence": 0.9999580801358502,
+      "start_index": 269
+     },
+     {
+      "text": " км",
+      "confidence": 0.995793619876556,
+      "start_index": 272
+     },
+     {
+      "text": "Смарде",
+      "confidence": 0.995793619876556,
+      "start_index": 300
+     },
+     {
+      "text": "Кемерн",
+      "confidence": 0.995793619876556,
+      "start_index": 331
+     },
+     {
+      "text": "—",
+      "confidence": 0.995793619876556,
+      "start_index": 346
+     },
+     {
+      "text": "15.44",
+      "confidence": 0.995793619876556,
+      "start_index": 350
+     },
+     {
+      "text": "Кудра",
+      "confidence": 0.995793619876556,
+      "start_index": 368
+     },
+     {
+      "text": "15.47,5",
+      "confidence": 0.995793619876556,
+      "start_index": 382
+     },
+     {
+      "text": "15.48",
+      "confidence": 0.995793619876556,
+      "start_index": 392
+     },
+     {
+      "text": "Слока",
+      "confidence": 0.995793619876556,
+      "start_index": 410
+     },
+     {
+      "text": "15.52,5",
+      "confidence": 0.995793619876556,
+      "start_index": 424
+     },
+     {
+      "text": "15.53,5",
+      "confidence": 0.995793619876556,
+      "start_index": 434
+     },
+     {
+      "text": "—",
+      "confidence": 0.995793619876556,
+      "start_index": 444
+     },
+     {
+      "text": "16.02",
+      "confidence": 0.995793619876556,
+      "start_index": 448
+     },
+     {
+      "text": "Вайвари",
+      "confidence": 0.995793619876556,
+      "start_index": 460
+     },
+     {
+      "text": "15.56,5",
+      "confidence": 0.995793619876556,
+      "start_index": 476
+     },
+     {
+      "text": "15.57",
+      "confidence": 0.995793619876556,
+      "start_index": 486
+     },
+     {
+      "text": "16.05",
+      "confidence": 0.995793619876556,
+      "start_index": 494
+     },
+     {
+      "text": "16.06",
+      "confidence": 0.995793619876556,
+      "start_index": 502
+     },
+     {
+      "text": "Асари",
+      "confidence": 0.995793619876556,
+      "start_index": 514
+     },
+     {
+      "text": "15.58,5",
+      "confidence": 0.995793619876556,
+      "start_index": 528
+     },
+     {
+      "text": "15.59,5",
+      "confidence": 0.995793619876556,
+      "start_index": 538
+     },
+     {
+      "text": "16.07,5",
+      "confidence": 0.995793619876556,
+      "start_index": 548
+     },
+     {
+      "text": "16.08",
+      "confidence": 0.995793619876556,
+      "start_index": 558
+     },
+     {
+      "text": "Меллужи",
+      "confidence": 0.995793619876556,
+      "start_index": 570
+     },
+     {
+      "text": "16.01",
+      "confidence": 0.995793619876556,
+      "start_index": 586
+     },
+     {
+      "text": "16.02",
+      "confidence": 0.995793619876556,
+      "start_index": 594
+     },
+     {
+      "text": "16.09,5",
+      "confidence": 0.995793619876556,
+      "start_index": 602
+     },
+     {
+      "text": "16.10",
+      "confidence": 0.995793619876556,
+      "start_index": 612
+     },
+     {
+      "text": "Пумпури",
+      "confidence": 0.995793619876556,
+      "start_index": 624
+     },
+     {
+      "text": "16.03,5",
+      "confidence": 0.995793619876556,
+      "start_index": 640
+     },
+     {
+      "text": "16.05",
+      "confidence": 0.995793619876556,
+      "start_index": 650
+     },
+     {
+      "text": "16.11,5",
+      "confidence": 0.995793619876556,
+      "start_index": 658
+     },
+     {
+      "text": "16.12",
+      "confidence": 0.995793619876556,
+      "start_index": 668
+     },
+     {
+      "text": "Яундубулты",
+      "confidence": 0.995793619876556,
+      "start_index": 680
+     },
+     {
+      "text": "16.06,5",
+      "confidence": 0.995793619876556,
+      "start_index": 699
+     },
+     {
+      "text": "16.07",
+      "confidence": 0.995793619876556,
+      "start_index": 709
+     },
+     {
+      "text": "16.13,5",
+      "confidence": 0.995793619876556,
+      "start_index": 717
+     },
+     {
+      "text": "16.14",
+      "confidence": 0.995793619876556,
+      "start_index": 727
+     },
+     {
+      "text": "Дубулты",
+      "confidence": 0.995793619876556,
+      "start_index": 739
+     },
+     {
+      "text": "—",
+      "confidence": 0.995793619876556,
+      "start_index": 749
+     },
+     {
+      "text": "16.06",
+      "confidence": 0.995793619876556,
+      "start_index": 753
+     },
+     {
+      "text": "16.09",
+      "confidence": 0.995793619876556,
+      "start_index": 761
+     },
+     {
+      "text": "16.11",
+      "confidence": 0.995793619876556,
+      "start_index": 769
+     },
+     {
+      "text": "16.16",
+      "confidence": 0.995793619876556,
+      "start_index": 777
+     },
+     {
+      "text": "16.17",
+      "confidence": 0.995793619876556,
+      "start_index": 785
+     },
+     {
+      "text": "Майори",
+      "confidence": 0.995793619876556,
+      "start_index": 797
+     },
+     {
+      "text": "16.09",
+      "confidence": 0.995793619876556,
+      "start_index": 806
+     },
+     {
+      "text": "16.10,5",
+      "confidence": 0.995793619876556,
+      "start_index": 814
+     },
+     {
+      "text": "16.13",
+      "confidence": 0.995793619876556,
+      "start_index": 824
+     },
+     {
+      "text": "16.15",
+      "confidence": 0.995793619876556,
+      "start_index": 832
+     },
+     {
+      "text": "16.19",
+      "confidence": 0.995793619876556,
+      "start_index": 840
+     },
+     {
+      "text": "16.22",
+      "confidence": 0.995793619876556,
+      "start_index": 848
+     },
+     {
+      "text": "Дзинтари",
+      "confidence": 0.995793619876556,
+      "start_index": 860
+     },
+     {
+      "text": "—",
+      "confidence": 0.995793619876556,
+      "start_index": 871
+     },
+     {
+      "text": "—",
+      "confidence": 0.995793619876556,
+      "start_index": 875
+     },
+     {
+      "text": "16.16,5",
+      "confidence": 0.995793619876556,
+      "start_index": 879
+     },
+     {
+      "text": "16.18",
+      "confidence": 0.995793619876556,
+      "start_index": 889
+     },
+     {
+      "text": "16.24",
+      "confidence": 0.995793619876556,
+      "start_index": 897
+     },
+     {
+      "text": "16.26",
+      "confidence": 0.995793619876556,
+      "start_index": 905
+     },
+     {
+      "text": "Булдури",
+      "confidence": 0.995793619876556,
+      "start_index": 917
+     },
+     {
+      "text": "16.14",
+      "confidence": 0.995793619876556,
+      "start_index": 927
+     },
+     {
+      "text": "16.15",
+      "confidence": 0.995793619876556,
+      "start_index": 935
+     },
+     {
+      "text": "16.20",
+      "confidence": 0.995793619876556,
+      "start_index": 943
+     },
+     {
+      "text": "16.22",
+      "confidence": 0.995793619876556,
+      "start_index": 951
+     },
+     {
+      "text": "16.28",
+      "confidence": 0.995793619876556,
+      "start_index": 959
+     },
+     {
+      "text": "16.29",
+      "confidence": 0.995793619876556,
+      "start_index": 967
+     },
+     {
+      "text": "Лиелупе",
+      "confidence": 0.995793619876556,
+      "start_index": 979
+     },
+     {
+      "text": "—",
+      "confidence": 0.995793619876556,
+      "start_index": 989
+     },
+     {
+      "text": "—",
+      "confidence": 0.995793619876556,
+      "start_index": 993
+     },
+     {
+      "text": "16.23,5",
+      "confidence": 0.995793619876556,
+      "start_index": 997
+     },
+     {
+      "text": "16.24",
+      "confidence": 0.995793619876556,
+      "start_index": 1007
+     },
+     {
+      "text": "16.30,5",
+      "confidence": 0.995793619876556,
+      "start_index": 1015
+     },
+     {
+      "text": "16.32",
+      "confidence": 0.995793619876556,
+      "start_index": 1025
+     },
+     {
+      "text": "Приедайне",
+      "confidence": 0.995793619876556,
+      "start_index": 1037
+     },
+     {
+      "text": "16.18",
+      "confidence": 0.995793619876556,
+      "start_index": 1049
+     },
+     {
+      "text": "16.18,5",
+      "confidence": 0.995793619876556,
+      "start_index": 1057
+     },
+     {
+      "text": "16.25,5",
+      "confidence": 0.995793619876556,
+      "start_index": 1067
+     },
+     {
+      "text": "16.26",
+      "confidence": 0.995793619876556,
+      "start_index": 1077
+     },
+     {
+      "text": "16.33,5",
+      "confidence": 0.995793619876556,
+      "start_index": 1085
+     },
+     {
+      "text": "16.34,5",
+      "confidence": 0.995793619876556,
+      "start_index": 1095
+     },
+     {
+      "text": "Бабите",
+      "confidence": 0.995793619876556,
+      "start_index": 1109
+     },
+     {
+      "text": "16.22",
+      "confidence": 0.995793619876556,
+      "start_index": 1118
+     },
+     {
+      "text": "16.22,5",
+      "confidence": 0.995793619876556,
+      "start_index": 1126
+     },
+     {
+      "text": "—",
+      "confidence": 0.995793619876556,
+      "start_index": 1136
+     },
+     {
+      "text": "—",
+      "confidence": 0.995793619876556,
+      "start_index": 1140
+     },
+     {
+      "text": "16.38",
+      "confidence": 0.995793619876556,
+      "start_index": 1144
+     },
+     {
+      "text": "16.38,5",
+      "confidence": 0.995793619876556,
+      "start_index": 1152
+     },
+     {
+      "text": "Иманта",
+      "confidence": 0.995793619876556,
+      "start_index": 1166
+     },
+     {
+      "text": "16.25",
+      "confidence": 0.995793619876556,
+      "start_index": 1175
+     },
+     {
+      "text": "16.26",
+      "confidence": 0.995793619876556,
+      "start_index": 1183
+     },
+     {
+      "text": "16.31",
+      "confidence": 0.995793619876556,
+      "start_index": 1191
+     },
+     {
+      "text": "16.32",
+      "confidence": 0.995793619876556,
+      "start_index": 1199
+     },
+     {
+      "text": "16.41",
+      "confidence": 0.995793619876556,
+      "start_index": 1207
+     },
+     {
+      "text": "16.42",
+      "confidence": 0.995793619876556,
+      "start_index": 1215
+     },
+     {
+      "text": "Золитуде",
+      "confidence": 0.995793619876556,
+      "start_index": 1227
+     },
+     {
+      "text": "16.27,5",
+      "confidence": 0.995793619876556,
+      "start_index": 1238
+     },
+     {
+      "text": "16.28,5",
+      "confidence": 0.995793619876556,
+      "start_index": 1248
+     },
+     {
+      "text": "16.33,5",
+      "confidence": 0.995793619876556,
+      "start_index": 1258
+     },
+     {
+      "text": "16.34,5",
+      "confidence": 0.995793619876556,
+      "start_index": 1268
+     },
+     {
+      "text": "—",
+      "confidence": 0.995793619876556,
+      "start_index": 1278
+     },
+     {
+      "text": "—",
+      "confidence": 0.995793619876556,
+      "start_index": 1282
+     },
+     {
+      "text": "Депо",
+      "confidence": 0.995793619876556,
+      "start_index": 1290
+     },
+     {
+      "text": "—",
+      "confidence": 0.995793619876556,
+      "start_index": 1297
+     },
+     {
+      "text": "—",
+      "confidence": 0.995793619876556,
+      "start_index": 1301
+     },
+     {
+      "text": "—",
+      "confidence": 0.995793619876556,
+      "start_index": 1305
+     },
+     {
+      "text": "—",
+      "confidence": 0.995793619876556,
+      "start_index": 1309
+     },
+     {
+      "text": "—",
+      "confidence": 0.995793619876556,
+      "start_index": 1313
+     },
+     {
+      "text": "—",
+      "confidence": 0.995793619876556,
+      "start_index": 1317
+     },
+     {
+      "text": "Засулаукс",
+      "confidence": 0.995793619876556,
+      "start_index": 1325
+     },
+     {
+      "text": "16.31",
+      "confidence": 0.995793619876556,
+      "start_index": 1337
+     },
+     {
+      "text": "16.33",
+      "confidence": 0.995793619876556,
+      "start_index": 1345
+     },
+     {
+      "text": "16.39",
+      "confidence": 0.995793619876556,
+      "start_index": 1353
+     },
+     {
+      "text": "16.40",
+      "confidence": 0.995793619876556,
+      "start_index": 1361
+     },
+     {
+      "text": "16.47",
+      "confidence": 0.995793619876556,
+      "start_index": 1369
+     },
+     {
+      "text": "16.48",
+      "confidence": 0.995793619876556,
+      "start_index": 1377
+     },
+     {
+      "text": "Торнякалнс",
+      "confidence": 0.995793619876556,
+      "start_index": 1389
+     },
+     {
+      "text": "16.36",
+      "confidence": 0.995793619876556,
+      "start_index": 1402
+     },
+     {
+      "text": "16.37,5",
+      "confidence": 0.995793619876556,
+      "start_index": 1410
+     },
+     {
+      "text": "16.43",
+      "confidence": 0.995793619876556,
+      "start_index": 1420
+     },
+     {
+      "text": "16.45",
+      "confidence": 0.995793619876556,
+      "start_index": 1428
+     },
+     {
+      "text": "16.51",
+      "confidence": 0.995793619876556,
+      "start_index": 1436
+     },
+     {
+      "text": "16.52",
+      "confidence": 0.995793619876556,
+      "start_index": 1444
+     },
+     {
+      "text": "Рига-пасс.",
+      "confidence": 0.995793619876556,
+      "start_index": 1456
+     },
+     {
+      "text": "16.41",
+      "confidence": 0.995793619876556,
+      "start_index": 1469
+     },
+     {
+      "text": "—",
+      "confidence": 0.995793619876556,
+      "start_index": 1477
+     },
+     {
+      "text": "16.49",
+      "confidence": 0.995793619876556,
+      "start_index": 1481
+     },
+     {
+      "text": "17.02",
+      "confidence": 0.995793619876556,
+      "start_index": 1489
+     },
+     {
+      "text": "16.56",
+      "confidence": 0.995793619876556,
+      "start_index": 1497
+     },
+     {
+      "text": "—",
+      "confidence": 0.995793619876556,
+      "start_index": 1505
+     },
+     {
+      "text": "Вагонный",
+      "confidence": 0.995793619876556,
+      "start_index": 1513
+     },
+     {
+      "text": " парк",
+      "confidence": 0.9990443195599863,
+      "start_index": 1521
+     },
+     {
+      "text": "17.06",
+      "confidence": 0.9990443195599863,
+      "start_index": 1535
+     },
+     {
+      "text": "17.07",
+      "confidence": 0.9990443195599863,
+      "start_index": 1543
+     },
+     {
+      "text": "Яняварты",
+      "confidence": 0.9990443195599863,
+      "start_index": 1561
+     },
+     {
+      "text": "17.10",
+      "confidence": 0.9990443195599863,
+      "start_index": 1578
+     },
+     {
+      "text": "17.11",
+      "confidence": 0.9990443195599863,
+      "start_index": 1586
+     },
+     {
+      "text": "Даугмале",
+      "confidence": 0.9990443195599863,
+      "start_index": 1604
+     },
+     {
+      "text": "17.12,5",
+      "confidence": 0.9990443195599863,
+      "start_index": 1621
+     },
+     {
+      "text": "17.13",
+      "confidence": 0.9990443195599863,
+      "start_index": 1631
+     },
+     {
+      "text": "Шкиротава",
+      "confidence": 0.9990443195599863,
+      "start_index": 1649
+     },
+     {
+      "text": "17.14,5",
+      "confidence": 0.9990443195599863,
+      "start_index": 1667
+     },
+     {
+      "text": "17.15,5",
+      "confidence": 0.9990443195599863,
+      "start_index": 1677
+     },
+     {
+      "text": "Гайсма",
+      "confidence": 0.9990443195599863,
+      "start_index": 1697
+     },
+     {
+      "text": "17.17,5",
+      "confidence": 0.9990443195599863,
+      "start_index": 1712
+     },
+     {
+      "text": "17.18",
+      "confidence": 0.9990443195599863,
+      "start_index": 1722
+     },
+     {
+      "text": "Румбула",
+      "confidence": 0.9990443195599863,
+      "start_index": 1740
+     },
+     {
+      "text": "17.20",
+      "confidence": 0.9990443195599863,
+      "start_index": 1756
+     },
+     {
+      "text": "17.20,5",
+      "confidence": 0.9990443195599863,
+      "start_index": 1764
+     },
+     {
+      "text": "Дарзини",
+      "confidence": 0.9990443195599863,
+      "start_index": 1784
+     },
+     {
+      "text": "17.22,5",
+      "confidence": 0.9990443195599863,
+      "start_index": 1800
+     },
+     {
+      "text": "17.24",
+      "confidence": 0.9990443195599863,
+      "start_index": 1810
+     },
+     {
+      "text": "Доле",
+      "confidence": 0.9990443195599863,
+      "start_index": 1828
+     },
+     {
+      "text": "17.27",
+      "confidence": 0.9990443195599863,
+      "start_index": 1841
+     },
+     {
+      "text": "17.27,5",
+      "confidence": 0.9990443195599863,
+      "start_index": 1849
+     },
+     {
+      "text": "Саласпилс",
+      "confidence": 0.9990443195599863,
+      "start_index": 1869
+     },
+     {
+      "text": "17.29",
+      "confidence": 0.9990443195599863,
+      "start_index": 1887
+     },
+     {
+      "text": "17.30",
+      "confidence": 0.9990443195599863,
+      "start_index": 1895
+     },
+     {
+      "text": "Саулкалне",
+      "confidence": 0.9990443195599863,
+      "start_index": 1913
+     },
+     {
+      "text": "17.33,5",
+      "confidence": 0.9990443195599863,
+      "start_index": 1931
+     },
+     {
+      "text": "17.34",
+      "confidence": 0.9990443195599863,
+      "start_index": 1941
+     },
+     {
+      "text": "Икшкиле",
+      "confidence": 0.9990443195599863,
+      "start_index": 1959
+     },
+     {
+      "text": "17.37,5",
+      "confidence": 0.9990443195599863,
+      "start_index": 1975
+     },
+     {
+      "text": "17.38",
+      "confidence": 0.9990443195599863,
+      "start_index": 1985
+     },
+     {
+      "text": "Яуногре",
+      "confidence": 0.9990443195599863,
+      "start_index": 2003
+     },
+     {
+      "text": "17.41,5",
+      "confidence": 0.9990443195599863,
+      "start_index": 2019
+     },
+     {
+      "text": "17.42,5",
+      "confidence": 0.9990443195599863,
+      "start_index": 2029
+     },
+     {
+      "text": "Огре",
+      "confidence": 0.9990443195599863,
+      "start_index": 2049
+     },
+     {
+      "text": "17.44,5",
+      "confidence": 0.9990443195599863,
+      "start_index": 2062
+     },
+     {
+      "text": "17.46",
+      "confidence": 0.9990443195599863,
+      "start_index": 2072
+     },
+     {
+      "text": "Парогре",
+      "confidence": 0.9990443195599863,
+      "start_index": 2090
+     },
+     {
+      "text": "17.47,5",
+      "confidence": 0.9990443195599863,
+      "start_index": 2106
+     },
+     {
+      "text": "17.48",
+      "confidence": 0.9990443195599863,
+      "start_index": 2116
+     },
+     {
+      "text": "Циемупе",
+      "confidence": 0.9990443195599863,
+      "start_index": 2134
+     },
+     {
+      "text": "17.51,5",
+      "confidence": 0.9990443195599863,
+      "start_index": 2150
+     },
+     {
+      "text": "17.52",
+      "confidence": 0.9990443195599863,
+      "start_index": 2160
+     },
+     {
+      "text": "Кегумс",
+      "confidence": 0.9990443195599863,
+      "start_index": 2178
+     },
+     {
+      "text": "17.57",
+      "confidence": 0.9990443195599863,
+      "start_index": 2193
+     },
+     {
+      "text": "17.57,5",
+      "confidence": 0.9990443195599863,
+      "start_index": 2201
+     },
+     {
+      "text": "Лиелварде",
+      "confidence": 0.9990443195599863,
+      "start_index": 2221
+     },
+     {
+      "text": "18.02",
+      "confidence": 0.9990443195599863,
+      "start_index": 2239
+     },
+     {
+      "text": "18.04",
+      "confidence": 0.9990443195599863,
+      "start_index": 2247
+     },
+     {
+      "text": "86",
+      "confidence": 0.9791931856540516,
+      "start_index": 2263
+     },
+     {
+      "text": "№",
+      "confidence": 0.99953842789962,
+      "start_index": 2270
+     },
+     {
+      "text": " поездов",
+      "confidence": 0.9999703035810074,
+      "start_index": 2271
+     },
+     {
+      "text": "63525***",
+      "confidence": 0.9720578919653408,
+      "start_index": 2282
+     },
+     {
+      "text": "6440",
+      "confidence": 0.9999863962781461,
+      "start_index": 2297
+     },
+     {
+      "text": "6642/6631**",
+      "confidence": 0.9956924133417456,
+      "start_index": 2308
+     },
+     {
+      "text": "Разл.",
+      "confidence": 0.9956924133417456,
+      "start_index": 2374
+     },
+     {
+      "text": " пункты",
+      "confidence": 0.9999343524729067,
+      "start_index": 2379
+     },
+     {
+      "text": "приб.",
+      "confidence": 0.9999343524729067,
+      "start_index": 2389
+     },
+     {
+      "text": "отпр.",
+      "confidence": 0.9999343524729067,
+      "start_index": 2397
+     },
+     {
+      "text": "приб.",
+      "confidence": 0.9999343524729067,
+      "start_index": 2405
+     },
+     {
+      "text": "отпр.",
+      "confidence": 0.9999343524729067,
+      "start_index": 2413
+     },
+     {
+      "text": "приб.",
+      "confidence": 0.9999343524729067,
+      "start_index": 2421
+     },
+     {
+      "text": "отпр.",
+      "confidence": 0.9999343524729067,
+      "start_index": 2429
+     },
+     {
+      "text": "Тукумс-II",
+      "confidence": 0.9999343524729067,
+      "start_index": 2441
+     },
+     {
+      "text": "Тукумс-I",
+      "confidence": 0.9999343524729067,
+      "start_index": 2475
+     },
+     {
+      "text": "Милзкалне",
+      "confidence": 0.9999343524729067,
+      "start_index": 2508
+     },
+     {
+      "text": "О.",
+      "confidence": 0.9999343524729067,
+      "start_index": 2542
+     },
+     {
+      "text": " п.",
+      "confidence": 0.9999912978104692,
+      "start_index": 2544
+     },
+     {
+      "text": " 56",
+      "confidence": 0.9999211308911641,
+      "start_index": 2547
+     },
+     {
+      "text": " км",
+      "confidence": 0.9995308158969354,
+      "start_index": 2550
+     },
+     {
+      "text": "Смарде",
+      "confidence": 0.9995308158969354,
+      "start_index": 2578
+     },
+     {
+      "text": "Кемерн",
+      "confidence": 0.9995308158969354,
+      "start_index": 2609
+     },
+     {
+      "text": "Кудра",
+      "confidence": 0.9995308158969354,
+      "start_index": 2640
+     },
+     {
+      "text": "Слока",
+      "confidence": 0.9995308158969354,
+      "start_index": 2670
+     },
+     {
+      "text": "—",
+      "confidence": 0.9995308158969354,
+      "start_index": 2684
+     },
+     {
+      "text": "16.13",
+      "confidence": 0.9995308158969354,
+      "start_index": 2688
+     },
+     {
+      "text": "Вайвари",
+      "confidence": 0.9995308158969354,
+      "start_index": 2706
+     },
+     {
+      "text": "16.16",
+      "confidence": 0.9995308158969354,
+      "start_index": 2722
+     },
+     {
+      "text": "16.17",
+      "confidence": 0.9995308158969354,
+      "start_index": 2730
+     },
+     {
+      "text": "Асари",
+      "confidence": 0.9995308158969354,
+      "start_index": 2748
+     },
+     {
+      "text": "16.18,5",
+      "confidence": 0.9995308158969354,
+      "start_index": 2762
+     },
+     {
+      "text": "16.19",
+      "confidence": 0.9995308158969354,
+      "start_index": 2772
+     },
+     {
+      "text": "Меллужи",
+      "confidence": 0.9995308158969354,
+      "start_index": 2790
+     },
+     {
+      "text": "16.20,5",
+      "confidence": 0.9995308158969354,
+      "start_index": 2806
+     },
+     {
+      "text": "16.21",
+      "confidence": 0.9995308158969354,
+      "start_index": 2816
+     },
+     {
+      "text": "Пумпури",
+      "confidence": 0.9995308158969354,
+      "start_index": 2834
+     },
+     {
+      "text": "16.22,5",
+      "confidence": 0.9995308158969354,
+      "start_index": 2850
+     },
+     {
+      "text": "16.23",
+      "confidence": 0.9995308158969354,
+      "start_index": 2860
+     },
+     {
+      "text": "Яундубулты",
+      "confidence": 0.9995308158969354,
+      "start_index": 2878
+     },
+     {
+      "text": "16.24,5",
+      "confidence": 0.9995308158969354,
+      "start_index": 2897
+     },
+     {
+      "text": "16.25",
+      "confidence": 0.9995308158969354,
+      "start_index": 2907
+     },
+     {
+      "text": "Дубулты",
+      "confidence": 0.9995308158969354,
+      "start_index": 2925
+     },
+     {
+      "text": "—",
+      "confidence": 0.9995308158969354,
+      "start_index": 2935
+     },
+     {
+      "text": "16.24",
+      "confidence": 0.9995308158969354,
+      "start_index": 2939
+     },
+     {
+      "text": "16.27",
+      "confidence": 0.9995308158969354,
+      "start_index": 2947
+     },
+     {
+      "text": "16.29",
+      "confidence": 0.9995308158969354,
+      "start_index": 2955
+     },
+     {
+      "text": "Майори",
+      "confidence": 0.9995308158969354,
+      "start_index": 2973
+     },
+     {
+      "text": "16.26,5",
+      "confidence": 0.9995308158969354,
+      "start_index": 2982
+     },
+     {
+      "text": "16.28",
+      "confidence": 0.9995308158969354,
+      "start_index": 2992
+     },
+     {
+      "text": "16.31",
+      "confidence": 0.9995308158969354,
+      "start_index": 3000
+     },
+     {
+      "text": "16.32,5",
+      "confidence": 0.9995308158969354,
+      "start_index": 3008
+     },
+     {
+      "text": "Дзинтари",
+      "confidence": 0.9995308158969354,
+      "start_index": 3028
+     },
+     {
+      "text": "16.29,5",
+      "confidence": 0.9995308158969354,
+      "start_index": 3039
+     },
+     {
+      "text": "16.31",
+      "confidence": 0.9995308158969354,
+      "start_index": 3049
+     },
+     {
+      "text": "16.34",
+      "confidence": 0.9995308158969354,
+      "start_index": 3057
+     },
+     {
+      "text": "16.35,5",
+      "confidence": 0.9995308158969354,
+      "start_index": 3065
+     },
+     {
+      "text": "Булдури",
+      "confidence": 0.9995308158969354,
+      "start_index": 3085
+     },
+     {
+      "text": "16.33",
+      "confidence": 0.9995308158969354,
+      "start_index": 3095
+     },
+     {
+      "text": "16.34,5",
+      "confidence": 0.9995308158969354,
+      "start_index": 3103
+     },
+     {
+      "text": "16.37,5",
+      "confidence": 0.9995308158969354,
+      "start_index": 3113
+     },
+     {
+      "text": "16.39",
+      "confidence": 0.9995308158969354,
+      "start_index": 3123
+     },
+     {
+      "text": "Лиелупе",
+      "confidence": 0.9995308158969354,
+      "start_index": 3141
+     },
+     {
+      "text": "16.36",
+      "confidence": 0.9995308158969354,
+      "start_index": 3151
+     },
+     {
+      "text": "16.37,5",
+      "confidence": 0.9995308158969354,
+      "start_index": 3159
+     },
+     {
+      "text": "16.40,5",
+      "confidence": 0.9995308158969354,
+      "start_index": 3169
+     },
+     {
+      "text": "16.41,5",
+      "confidence": 0.9995308158969354,
+      "start_index": 3179
+     },
+     {
+      "text": "Приедайне",
+      "confidence": 0.9995308158969354,
+      "start_index": 3199
+     },
+     {
+      "text": "16.39",
+      "confidence": 0.9995308158969354,
+      "start_index": 3211
+     },
+     {
+      "text": "16.40",
+      "confidence": 0.9995308158969354,
+      "start_index": 3219
+     },
+     {
+      "text": "16.43",
+      "confidence": 0.9995308158969354,
+      "start_index": 3227
+     },
+     {
+      "text": "16.43,5",
+      "confidence": 0.9995308158969354,
+      "start_index": 3235
+     },
+     {
+      "text": "Бабите",
+      "confidence": 0.9995308158969354,
+      "start_index": 3255
+     },
+     {
+      "text": "—",
+      "confidence": 0.9995308158969354,
+      "start_index": 3264
+     },
+     {
+      "text": "—",
+      "confidence": 0.9995308158969354,
+      "start_index": 3268
+     },
+     {
+      "text": "16.47",
+      "confidence": 0.9995308158969354,
+      "start_index": 3272
+     },
+     {
+      "text": "16.47,5",
+      "confidence": 0.9995308158969354,
+      "start_index": 3280
+     },
+     {
+      "text": "Иманта",
+      "confidence": 0.9995308158969354,
+      "start_index": 3300
+     },
+     {
+      "text": "—",
+      "confidence": 0.9995308158969354,
+      "start_index": 3309
+     },
+     {
+      "text": "—",
+      "confidence": 0.9995308158969354,
+      "start_index": 3313
+     },
+     {
+      "text": "16.50",
+      "confidence": 0.9995308158969354,
+      "start_index": 3317
+     },
+     {
+      "text": "16.51",
+      "confidence": 0.9995308158969354,
+      "start_index": 3325
+     },
+     {
+      "text": "Золитуде",
+      "confidence": 0.9995308158969354,
+      "start_index": 3343
+     },
+     {
+      "text": "16.46,5",
+      "confidence": 0.9995308158969354,
+      "start_index": 3354
+     },
+     {
+      "text": "16.47,5",
+      "confidence": 0.9995308158969354,
+      "start_index": 3364
+     },
+     {
+      "text": "—",
+      "confidence": 0.9995308158969354,
+      "start_index": 3374
+     },
+     {
+      "text": "—",
+      "confidence": 0.9995308158969354,
+      "start_index": 3378
+     },
+     {
+      "text": "Депо",
+      "confidence": 0.9995308158969354,
+      "start_index": 3392
+     },
+     {
+      "text": "—",
+      "confidence": 0.9995308158969354,
+      "start_index": 3399
+     },
+     {
+      "text": "—",
+      "confidence": 0.9995308158969354,
+      "start_index": 3403
+     },
+     {
+      "text": "—",
+      "confidence": 0.9995308158969354,
+      "start_index": 3407
+     },
+     {
+      "text": "—",
+      "confidence": 0.9995308158969354,
+      "start_index": 3411
+     },
+     {
+      "text": "Засулаукс",
+      "confidence": 0.9995308158969354,
+      "start_index": 3425
+     },
+     {
+      "text": "16.51",
+      "confidence": 0.9995308158969354,
+      "start_index": 3437
+     },
+     {
+      "text": "—",
+      "confidence": 0.9995308158969354,
+      "start_index": 3445
+     },
+     {
+      "text": "16.56",
+      "confidence": 0.9995308158969354,
+      "start_index": 3449
+     },
+     {
+      "text": "16.57",
+      "confidence": 0.9995308158969354,
+      "start_index": 3457
+     },
+     {
+      "text": "Торнякалнс",
+      "confidence": 0.9995308158969354,
+      "start_index": 3475
+     },
+     {
+      "text": "17.00",
+      "confidence": 0.9995308158969354,
+      "start_index": 3494
+     },
+     {
+      "text": "17.01",
+      "confidence": 0.9995308158969354,
+      "start_index": 3502
+     },
+     {
+      "text": "Рига",
+      "confidence": 0.9995308158969354,
+      "start_index": 3520
+     },
+     {
+      "text": " пасс.",
+      "confidence": 0.99598877131959,
+      "start_index": 3524
+     },
+     {
+      "text": "17.05",
+      "confidence": 0.99598877131959,
+      "start_index": 3539
+     },
+     {
+      "text": "17.09",
+      "confidence": 0.99598877131959,
+      "start_index": 3547
+     },
+     {
+      "text": "Вагонный",
+      "confidence": 0.99598877131959,
+      "start_index": 3565
+     },
+     {
+      "text": " парк",
+      "confidence": 0.9450687917359025,
+      "start_index": 3573
+     },
+     {
+      "text": "На",
+      "confidence": 0.9176371250370189,
+      "start_index": 3587
+     },
+     {
+      "text": " Эвейннекциемс",
+      "confidence": 0.9951251846802697,
+      "start_index": 3589
+     },
+     {
+      "text": "Яняварты",
+      "confidence": 0.9951251846802697,
+      "start_index": 3620
+     },
+     {
+      "text": "17.39",
+      "confidence": 0.9951251846802697,
+      "start_index": 3643
+     },
+     {
+      "text": "17.40",
+      "confidence": 0.9951251846802697,
+      "start_index": 3651
+     },
+     {
+      "text": "Даугмале",
+      "confidence": 0.9951251846802697,
+      "start_index": 3663
+     },
+     {
+      "text": "17.41,5",
+      "confidence": 0.9951251846802697,
+      "start_index": 3686
+     },
+     {
+      "text": "17.42",
+      "confidence": 0.9951251846802697,
+      "start_index": 3696
+     },
+     {
+      "text": "Шкиротава",
+      "confidence": 0.9951251846802697,
+      "start_index": 3708
+     },
+     {
+      "text": "17.43,5",
+      "confidence": 0.9951251846802697,
+      "start_index": 3732
+     },
+     {
+      "text": "17.44,5",
+      "confidence": 0.9951251846802697,
+      "start_index": 3742
+     },
+     {
+      "text": "Гайсма",
+      "confidence": 0.9951251846802697,
+      "start_index": 3756
+     },
+     {
+      "text": "—",
+      "confidence": 0.9951251846802697,
+      "start_index": 3777
+     },
+     {
+      "text": "—",
+      "confidence": 0.9951251846802697,
+      "start_index": 3781
+     },
+     {
+      "text": "Румбула",
+      "confidence": 0.9951251846802697,
+      "start_index": 3789
+     },
+     {
+      "text": "—",
+      "confidence": 0.9951251846802697,
+      "start_index": 3811
+     },
+     {
+      "text": "—",
+      "confidence": 0.9951251846802697,
+      "start_index": 3815
+     },
+     {
+      "text": "Дарзини",
+      "confidence": 0.9951251846802697,
+      "start_index": 3823
+     },
+     {
+      "text": "17.49",
+      "confidence": 0.9951251846802697,
+      "start_index": 3845
+     },
+     {
+      "text": "17.50,5",
+      "confidence": 0.9951251846802697,
+      "start_index": 3853
+     },
+     {
+      "text": "Доле",
+      "confidence": 0.9951251846802697,
+      "start_index": 3867
+     },
+     {
+      "text": "17.53,5",
+      "confidence": 0.9951251846802697,
+      "start_index": 3886
+     },
+     {
+      "text": "17.54",
+      "confidence": 0.9951251846802697,
+      "start_index": 3896
+     },
+     {
+      "text": "Саласпилс",
+      "confidence": 0.9951251846802697,
+      "start_index": 3908
+     },
+     {
+      "text": "17.56",
+      "confidence": 0.9951251846802697,
+      "start_index": 3932
+     },
+     {
+      "text": "—",
+      "confidence": 0.9951251846802697,
+      "start_index": 3940
+     },
+     {
+      "text": "Саулкалне",
+      "confidence": 0.9951251846802697,
+      "start_index": 3948
+     },
+     {
+      "text": "Икшкиле",
+      "confidence": 0.9951251846802697,
+      "start_index": 3982
+     },
+     {
+      "text": "Яуногре",
+      "confidence": 0.9951251846802697,
+      "start_index": 4014
+     },
+     {
+      "text": "Огре",
+      "confidence": 0.9951251846802697,
+      "start_index": 4046
+     },
+     {
+      "text": "Парогре",
+      "confidence": 0.9951251846802697,
+      "start_index": 4075
+     },
+     {
+      "text": "Циемупе",
+      "confidence": 0.9951251846802697,
+      "start_index": 4107
+     },
+     {
+      "text": "Кегумс",
+      "confidence": 0.9951251846802697,
+      "start_index": 4139
+     },
+     {
+      "text": "Лиелварде",
+      "confidence": 0.9951251846802697,
+      "start_index": 4170
+     },
+     {
+      "text": "87",
+      "confidence": 0.9999209704854103,
+      "start_index": 4202
+     }
+    ],
+    "average_page_confidence_score": 0.9968686334034974,
+    "minimum_page_confidence_score": 0.9176371250370189
+   },
+   "blocks": [
+    {
+     "top_left_x": 499,
+     "top_left_y": 203,
+     "bottom_right_x": 3727,
+     "bottom_right_y": 5203,
+     "content": "|  № поездов | 6352 |   | 6548 |   | 6438  |   |\n| --- | --- | --- | --- | --- | --- | --- |\n|  Разл. пункты | приб. | отпр. | приб. | отпр. | приб. | отпр.  |\n|  Тукумс-II |  |  |  |  |  |   |\n|  Тукумс-I |  |  |  |  |  |   |\n|  Милзкалне |  |  |  |  |  |   |\n|  О. п. 56 км |  |  |  |  |  |   |\n|  Смарде |  |  |  |  |  |   |\n|  Кемерн |  |  | — | 15.44 |  |   |\n|  Кудра |  |  | 15.47,5 | 15.48 |  |   |\n|  Слока |  |  | 15.52,5 | 15.53,5 | — | 16.02  |\n|  Вайвари |  |  | 15.56,5 | 15.57 | 16.05 | 16.06  |\n|  Асари |  |  | 15.58,5 | 15.59,5 | 16.07,5 | 16.08  |\n|  Меллужи |  |  | 16.01 | 16.02 | 16.09,5 | 16.10  |\n|  Пумпури |  |  | 16.03,5 | 16.05 | 16.11,5 | 16.12  |\n|  Яундубулты |  |  | 16.06,5 | 16.07 | 16.13,5 | 16.14  |\n|  Дубулты | — | 16.06 | 16.09 | 16.11 | 16.16 | 16.17  |\n|  Майори | 16.09 | 16.10,5 | 16.13 | 16.15 | 16.19 | 16.22  |\n|  Дзинтари | — | — | 16.16,5 | 16.18 | 16.24 | 16.26  |\n|  Булдури | 16.14 | 16.15 | 16.20 | 16.22 | 16.28 | 16.29  |\n|  Лиелупе | — | — | 16.23,5 | 16.24 | 16.30,5 | 16.32  |\n|  Приедайне | 16.18 | 16.18,5 | 16.25,5 | 16.26 | 16.33,5 | 16.34,5  |\n|  Бабите | 16.22 | 16.22,5 | — | — | 16.38 | 16.38,5  |\n|  Иманта | 16.25 | 16.26 | 16.31 | 16.32 | 16.41 | 16.42  |\n|  Золитуде | 16.27,5 | 16.28,5 | 16.33,5 | 16.34,5 | — | —  |\n|  Депо | — | — | — | — | — | —  |\n|  Засулаукс | 16.31 | 16.33 | 16.39 | 16.40 | 16.47 | 16.48  |\n|  Торнякалнс | 16.36 | 16.37,5 | 16.43 | 16.45 | 16.51 | 16.52  |\n|  Рига-пасс. | 16.41 | — | 16.49 | 17.02 | 16.56 | —  |\n|  Вагонный парк |  |  | 17.06 | 17.07 |  |   |\n|  Яняварты |  |  | 17.10 | 17.11 |  |   |\n|  Даугмале |  |  | 17.12,5 | 17.13 |  |   |\n|  Шкиротава |  |  | 17.14,5 | 17.15,5 |  |   |\n|  Гайсма |  |  | 17.17,5 | 17.18 |  |   |\n|  Румбула |  |  | 17.20 | 17.20,5 |  |   |\n|  Дарзини |  |  | 17.22,5 | 17.24 |  |   |\n|  Доле |  |  | 17.27 | 17.27,5 |  |   |\n|  Саласпилс |  |  | 17.29 | 17.30 |  |   |\n|  Саулкалне |  |  | 17.33,5 | 17.34 |  |   |\n|  Икшкиле |  |  | 17.37,5 | 17.38 |  |   |\n|  Яуногре |  |  | 17.41,5 | 17.42,5 |  |   |\n|  Огре |  |  | 17.44,5 | 17.46 |  |   |\n|  Парогре |  |  | 17.47,5 | 17.48 |  |   |\n|  Циемупе |  |  | 17.51,5 | 17.52 |  |   |\n|  Кегумс |  |  | 17.57 | 17.57,5 |  |   |\n|  Лиелварде |  |  | 18.02 | 18.04 |  |   |",
+     "confidence_scores": null,
+     "type": "table",
+     "table_id": null
+    },
+    {
+     "top_left_x": 552,
+     "top_left_y": 5244,
+     "bottom_right_x": 671,
+     "bottom_right_y": 5349,
+     "content": "86",
+     "confidence_scores": null,
+     "type": "header"
+    },
+    {
+     "top_left_x": 3853,
+     "top_left_y": 64,
+     "bottom_right_x": 7096,
+     "bottom_right_y": 5087,
+     "content": "|  № поездов | 63525*** |   | 6440 |   | 6642/6631**  |   |\n| --- | --- | --- | --- | --- | --- | --- |\n|  Разл. пункты | приб. | отпр. | приб. | отпр. | приб. | отпр.  |\n|  Тукумс-II |  |  |  |  |  |   |\n|  Тукумс-I |  |  |  |  |  |   |\n|  Милзкалне |  |  |  |  |  |   |\n|  О. п. 56 км |  |  |  |  |  |   |\n|  Смарде |  |  |  |  |  |   |\n|  Кемерн |  |  |  |  |  |   |\n|  Кудра |  |  |  |  |  |   |\n|  Слока |  |  | — | 16.13 |  |   |\n|  Вайвари |  |  | 16.16 | 16.17 |  |   |\n|  Асари |  |  | 16.18,5 | 16.19 |  |   |\n|  Меллужи |  |  | 16.20,5 | 16.21 |  |   |\n|  Пумпури |  |  | 16.22,5 | 16.23 |  |   |\n|  Яундубулты |  |  | 16.24,5 | 16.25 |  |   |\n|  Дубулты | — | 16.24 | 16.27 | 16.29 |  |   |\n|  Майори | 16.26,5 | 16.28 | 16.31 | 16.32,5 |  |   |\n|  Дзинтари | 16.29,5 | 16.31 | 16.34 | 16.35,5 |  |   |\n|  Булдури | 16.33 | 16.34,5 | 16.37,5 | 16.39 |  |   |\n|  Лиелупе | 16.36 | 16.37,5 | 16.40,5 | 16.41,5 |  |   |\n|  Приедайне | 16.39 | 16.40 | 16.43 | 16.43,5 |  |   |\n|  Бабите | — | — | 16.47 | 16.47,5 |  |   |\n|  Иманта | — | — | 16.50 | 16.51 |  |   |\n|  Золитуде | 16.46,5 | 16.47,5 | — | — |  |   |\n|  Депо | — | — | — | — |  |   |\n|  Засулаукс | 16.51 | — | 16.56 | 16.57 |  |   |\n|  Торнякалнс |  |  | 17.00 | 17.01 |  |   |\n|  Рига пасс. |  |  | 17.05 | 17.09 |  |   |\n|  Вагонный парк |  |  | На Эвейннекциемс |   |  |   |\n|  Яняварты |  |  |  |  | 17.39 | 17.40  |\n|  Даугмале |  |  |  |  | 17.41,5 | 17.42  |\n|  Шкиротава |  |  |  |  | 17.43,5 | 17.44,5  |\n|  Гайсма |  |  |  |  | — | —  |\n|  Румбула |  |  |  |  | — | —  |\n|  Дарзини |  |  |  |  | 17.49 | 17.50,5  |\n|  Доле |  |  |  |  | 17.53,5 | 17.54  |\n|  Саласпилс |  |  |  |  | 17.56 | —  |\n|  Саулкалне |  |  |  |  |  |   |\n|  Икшкиле |  |  |  |  |  |   |\n|  Яуногре |  |  |  |  |  |   |\n|  Огре |  |  |  |  |  |   |\n|  Парогре |  |  |  |  |  |   |\n|  Циемупе |  |  |  |  |  |   |\n|  Кегумс |  |  |  |  |  |   |\n|  Лиелварде |  |  |  |  |  |   |",
+     "confidence_scores": null,
+     "type": "table",
+     "table_id": null
+    },
+    {
+     "top_left_x": 6954,
+     "top_left_y": 5110,
+     "bottom_right_x": 7081,
+     "bottom_right_y": 5215,
+     "content": "87",
+     "confidence_scores": null,
+     "type": "footer"
+    }
+   ]
+  }
+ ],
+ "model": "mistral-ocr-4-1",
+ "document_annotation": null,
+ "usage_info": {
+  "pages_processed": 1,
+  "doc_size_bytes": 4345947
+ }
+}

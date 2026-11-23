@@ -17,32 +17,32 @@
     "word_confidence_scores": [
      {
       "text": "#",
-      "confidence": 0.754915012257653,
+      "confidence": 0.7310584259457913,
       "start_index": 0
      },
      {
       "text": " VII",
-      "confidence": 0.9999052375943134,
+      "confidence": 0.9998858105399812,
       "start_index": 1
      },
      {
       "text": "РИГА—ЕЛГАВА",
-      "confidence": 0.9976307168709397,
+      "confidence": 0.9970029828155076,
       "start_index": 7
      },
      {
       "text": "ЕЛГАВА—РИГА",
-      "confidence": 0.9998848245192218,
+      "confidence": 0.9998711874595513,
       "start_index": 20
      },
      {
       "text": "149",
-      "confidence": 0.9999535105382235,
+      "confidence": 0.999941829250343,
       "start_index": 33
      }
     ],
-    "average_page_confidence_score": 0.9504578603560703,
-    "minimum_page_confidence_score": 0.754915012257653
+    "average_page_confidence_score": 0.9455520472022348,
+    "minimum_page_confidence_score": 0.7310584259457913
    },
    "blocks": [
     {
@@ -88,6 +88,6 @@
  "document_annotation": null,
  "usage_info": {
   "pages_processed": 1,
-  "doc_size_bytes": 723998
+  "doc_size_bytes": 316327
  }
 }

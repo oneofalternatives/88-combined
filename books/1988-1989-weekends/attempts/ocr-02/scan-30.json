@@ -17,1637 +17,1637 @@
     "word_confidence_scores": [
      {
       "text": "№",
-      "confidence": 0.9600304508376843,
+      "confidence": 0.9554806590490054,
       "start_index": 3
      },
      {
       "text": " поездов",
-      "confidence": 0.9996157400877286,
+      "confidence": 0.9996910372968849,
       "start_index": 4
      },
      {
       "text": "6502",
-      "confidence": 0.9964456011736873,
+      "confidence": 0.9968569775704842,
       "start_index": 15
      },
      {
       "text": "5402",
-      "confidence": 0.9999981594136289,
+      "confidence": 0.9999977588728893,
       "start_index": 26
      },
      {
       "text": "6602",
-      "confidence": 0.9995093419949913,
+      "confidence": 0.9995103744296443,
       "start_index": 37
      },
      {
       "text": "Разд.",
-      "confidence": 0.9995093419949913,
+      "confidence": 0.9995103744296443,
       "start_index": 96
      },
      {
       "text": " пункты",
-      "confidence": 0.99845539323933,
+      "confidence": 0.9984438925249653,
       "start_index": 101
      },
      {
       "text": "приб.",
-      "confidence": 0.99845539323933,
+      "confidence": 0.9984438925249653,
       "start_index": 111
      },
      {
       "text": "отпр.",
-      "confidence": 0.99845539323933,
+      "confidence": 0.9984438925249653,
       "start_index": 119
      },
      {
       "text": "приб.",
-      "confidence": 0.99845539323933,
+      "confidence": 0.9984438925249653,
       "start_index": 127
      },
      {
       "text": "отпр.",
-      "confidence": 0.99845539323933,
+      "confidence": 0.9984438925249653,
       "start_index": 135
      },
      {
       "text": "приб.",
-      "confidence": 0.99845539323933,
+      "confidence": 0.9984438925249653,
       "start_index": 143
      },
      {
       "text": "отпр.",
-      "confidence": 0.99845539323933,
+      "confidence": 0.9984438925249653,
       "start_index": 151
      },
      {
       "text": "Тукумс-II",
-      "confidence": 0.99845539323933,
+      "confidence": 0.9984438925249653,
       "start_index": 163
      },
      {
       "text": "Тукумс-I",
-      "confidence": 0.99845539323933,
+      "confidence": 0.9984438925249653,
       "start_index": 197
      },
      {
       "text": "Милзкалне",
-      "confidence": 0.99845539323933,
+      "confidence": 0.9984438925249653,
       "start_index": 230
      },
      {
       "text": "О/п",
-      "confidence": 0.99845539323933,
+      "confidence": 0.9984438925249653,
       "start_index": 264
      },
      {
       "text": " 56",
-      "confidence": 0.9999053567850382,
+      "confidence": 0.9999156069955883,
       "start_index": 267
      },
      {
       "text": " км",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 270
      },
      {
       "text": "Смарде",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 298
      },
      {
       "text": "Кемери",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 329
      },
      {
       "text": "0.10",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 341
      },
      {
       "text": "Кудра",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 364
      },
      {
       "text": "0.13,5",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 372
      },
      {
       "text": "0.14",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 381
      },
      {
       "text": "Слока",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 404
      },
      {
       "text": "0.18,5",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 412
      },
      {
       "text": "0.20,5",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 421
      },
      {
       "text": "Вайвари",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 446
      },
      {
       "text": "0.23",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 456
      },
      {
       "text": "0.23,5",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 463
      },
      {
       "text": "Асари",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 488
      },
      {
       "text": "0.25",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 496
      },
      {
       "text": "0.25,5",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 503
      },
      {
       "text": "Меллужи",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 528
      },
      {
       "text": "0.27",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 538
      },
      {
       "text": "0.27,5",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 545
      },
      {
       "text": "Пумпури",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 570
      },
      {
       "text": "0.29",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 580
      },
      {
       "text": "0.29,5",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 587
      },
      {
       "text": "Яундубулты",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 612
      },
      {
       "text": "0.31",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 625
      },
      {
       "text": "0.31,5",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 632
      },
      {
       "text": "Дубулты",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 657
      },
      {
       "text": "0.33,5",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 667
      },
      {
       "text": "0.35,5",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 676
      },
      {
       "text": "Майори",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 701
      },
      {
       "text": "0.37",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 710
      },
      {
       "text": "0.38",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 717
      },
      {
       "text": "Дзинтари",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 740
      },
      {
       "text": "0.39,5",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 751
      },
      {
       "text": "0.40",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 760
      },
      {
       "text": "Булдури",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 783
      },
      {
       "text": "0.42,0",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 793
      },
      {
       "text": "0.42,5",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 802
      },
      {
       "text": "Лиелупе",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 827
      },
      {
       "text": "0.44",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 837
      },
      {
       "text": "0.44,5",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 844
      },
      {
       "text": "Приедайне",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 869
      },
      {
       "text": "0.46",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 881
      },
      {
       "text": "0.46,5",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 888
      },
      {
       "text": "Бабите",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 913
      },
      {
       "text": "0.50",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 922
      },
      {
       "text": "0.50,5",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 929
      },
      {
       "text": "Иманта",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 954
      },
      {
       "text": "0.53",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 963
      },
      {
       "text": "0.54",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 970
      },
      {
       "text": "Золитуде",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 993
      },
      {
       "text": "0.55",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 1004
      },
      {
       "text": "0.56,5",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 1011
      },
      {
       "text": "Депо",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 1036
      },
      {
       "text": "—",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 1043
      },
      {
       "text": "—",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 1047
      },
      {
       "text": "Засулаукс",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 1067
      },
      {
       "text": "1.01",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 1079
      },
      {
       "text": "1.02",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 1086
      },
      {
       "text": "Торнякалис",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 1109
      },
      {
       "text": "1.05",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 1122
      },
      {
       "text": "1.06",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 1129
      },
      {
       "text": "Руга-пасс.",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 1152
      },
      {
       "text": "1.10",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 1165
      },
      {
       "text": "—",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 1172
      },
      {
       "text": "4.52",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 1185
      },
      {
       "text": "Вагонный",
-      "confidence": 0.9993924107473787,
+      "confidence": 0.9993953678399222,
       "start_index": 1196
      },
      {
       "text": " парк",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1204
      },
      {
       "text": "4.56",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1224
      },
      {
       "text": "4.57",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1231
      },
      {
       "text": "Яняварты",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1242
      },
      {
       "text": "—",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1259
      },
      {
       "text": "4.05",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1263
      },
      {
       "text": "5.00",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1270
      },
      {
       "text": "5.01",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1277
      },
      {
       "text": "Даугмале",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1288
      },
      {
       "text": "—",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1305
      },
      {
       "text": "—",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1309
      },
      {
       "text": "5.02,5",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1313
      },
      {
       "text": "5.03,5",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1322
      },
      {
       "text": "Шкиротава",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1335
      },
      {
       "text": "—",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1353
      },
      {
       "text": "4.09",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1357
      },
      {
       "text": "5.05",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1364
      },
      {
       "text": "5.06",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1371
      },
      {
       "text": "Гайсма",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1382
      },
      {
       "text": "—",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1397
      },
      {
       "text": "—",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1401
      },
      {
       "text": "5.08",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1405
      },
      {
       "text": "5.08,5",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1412
      },
      {
       "text": "Румбула",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1425
      },
      {
       "text": "—",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1441
      },
      {
       "text": "—",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1445
      },
      {
       "text": "5.10,5",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1449
      },
      {
       "text": "5.11",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1458
      },
      {
       "text": "Дарзини",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1469
      },
      {
       "text": "—",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1485
      },
      {
       "text": "—",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1489
      },
      {
       "text": "5.13",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1493
      },
      {
       "text": "5.14,5",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1500
      },
      {
       "text": "Доле",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1513
      },
      {
       "text": "—",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1526
      },
      {
       "text": "—",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1530
      },
      {
       "text": "5.17,5",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1534
      },
      {
       "text": "5.18",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1543
      },
      {
       "text": "Саласпилс",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1554
      },
      {
       "text": "—",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1572
      },
      {
       "text": "4.17",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1576
      },
      {
       "text": "5.19,5",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1583
      },
      {
       "text": "5.21",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1592
      },
      {
       "text": "Саулкалне",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1603
      },
      {
       "text": "—",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1621
      },
      {
       "text": "—",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1625
      },
      {
       "text": "5.24,5",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1629
      },
      {
       "text": "5.25",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1638
      },
      {
       "text": "Икшкиле",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1649
      },
      {
       "text": "—",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1665
      },
      {
       "text": "—",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1669
      },
      {
       "text": "5.28,5",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1673
      },
      {
       "text": "5.29",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1682
      },
      {
       "text": "Яуногре",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1693
      },
      {
       "text": "—",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1709
      },
      {
       "text": "—",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1713
      },
      {
       "text": "5.32,5",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1717
      },
      {
       "text": "5.33",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1726
      },
      {
       "text": "Огре",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1737
      },
      {
       "text": "—",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1750
      },
      {
       "text": "4.28",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1754
      },
      {
       "text": "5.35",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1761
      },
      {
       "text": "5.36",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1768
      },
      {
       "text": "Парогре",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1779
      },
      {
       "text": "—",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1795
      },
      {
       "text": "—",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1799
      },
      {
       "text": "5.37,5",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1803
      },
      {
       "text": "5.38",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1812
      },
      {
       "text": "Циемупе",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1823
      },
      {
       "text": "—",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1839
      },
      {
       "text": "—",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1843
      },
      {
       "text": "5.42,5",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1847
      },
      {
       "text": "5.43",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1856
      },
      {
       "text": "Кегумс",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1867
      },
      {
       "text": "—",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1882
      },
      {
       "text": "—",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1886
      },
      {
       "text": "5.48",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1890
      },
      {
       "text": "5.49",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1897
      },
      {
       "text": "Лиелварде",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1908
      },
      {
       "text": "4.42",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1926
      },
      {
       "text": "5.54",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1936
      },
      {
       "text": "5.55",
-      "confidence": 0.9988706559678769,
+      "confidence": 0.9985754557116949,
       "start_index": 1943
      },
      {
       "text": "56",
-      "confidence": 0.9999945164027223,
+      "confidence": 0.9999946356109105,
       "start_index": 1952
      },
      {
       "text": "№",
-      "confidence": 0.9994396632763858,
+      "confidence": 0.999562151517808,
       "start_index": 1959
      },
      {
       "text": " поездов",
-      "confidence": 0.9999774107606346,
+      "confidence": 0.9999800778617437,
       "start_index": 1960
      },
      {
       "text": "6606",
-      "confidence": 0.9999718441367763,
+      "confidence": 0.9999587993272921,
       "start_index": 1971
      },
      {
       "text": "6610",
-      "confidence": 0.9999993085878103,
+      "confidence": 0.9999991035488818,
       "start_index": 1982
      },
      {
       "text": "6614",
-      "confidence": 0.9999958307170673,
+      "confidence": 0.9999957651538934,
       "start_index": 1993
      },
      {
       "text": "Разд.",
-      "confidence": 0.9999958307170673,
+      "confidence": 0.9999957651538934,
       "start_index": 2052
      },
      {
       "text": " пункты",
-      "confidence": 0.9998303039245335,
+      "confidence": 0.9998156495144453,
       "start_index": 2057
      },
      {
       "text": "приб.",
-      "confidence": 0.9998303039245335,
+      "confidence": 0.9998156495144453,
       "start_index": 2067
      },
      {
       "text": "отпр.",
-      "confidence": 0.9998303039245335,
+      "confidence": 0.9998156495144453,
       "start_index": 2075
      },
      {
       "text": "приб.",
-      "confidence": 0.9998303039245335,
+      "confidence": 0.9998156495144453,
       "start_index": 2083
      },
      {
       "text": "отпр.",
-      "confidence": 0.9998303039245335,
+      "confidence": 0.9998156495144453,
       "start_index": 2091
      },
      {
       "text": "приб.",
-      "confidence": 0.9998303039245335,
+      "confidence": 0.9998156495144453,
       "start_index": 2099
      },
      {
       "text": "отпр.",
-      "confidence": 0.9998303039245335,
+      "confidence": 0.9998156495144453,
       "start_index": 2107
      },
      {
       "text": "Тукумс-II",
-      "confidence": 0.9998303039245335,
+      "confidence": 0.9998156495144453,
       "start_index": 2119
      },
      {
       "text": "Тукумс-I",
-      "confidence": 0.9998303039245335,
+      "confidence": 0.9998156495144453,
       "start_index": 2153
      },
      {
       "text": "Милзкалне",
-      "confidence": 0.9998303039245335,
+      "confidence": 0.9998156495144453,
       "start_index": 2186
      },
      {
       "text": "О.",
-      "confidence": 0.9998303039245335,
+      "confidence": 0.9998156495144453,
       "start_index": 2220
      },
      {
       "text": " п.",
-      "confidence": 0.999474780885742,
+      "confidence": 0.9996080275994799,
       "start_index": 2222
      },
      {
       "text": " 56",
-      "confidence": 0.9999955495429478,
+      "confidence": 0.9999967416248821,
       "start_index": 2225
      },
      {
       "text": " км",
-      "confidence": 0.9999551041098068,
+      "confidence": 0.9999434890060427,
       "start_index": 2228
      },
      {
       "text": "Смарде",
-      "confidence": 0.9999551041098068,
+      "confidence": 0.9999434890060427,
       "start_index": 2256
      },
      {
       "text": "Кемери",
-      "confidence": 0.9999551041098068,
+      "confidence": 0.9999434890060427,
       "start_index": 2287
      },
      {
       "text": "Кудра",
-      "confidence": 0.9999551041098068,
+      "confidence": 0.9999434890060427,
       "start_index": 2318
      },
      {
       "text": "Слока",
-      "confidence": 0.9999551041098068,
+      "confidence": 0.9999434890060427,
       "start_index": 2348
      },
      {
       "text": "Вайвари",
-      "confidence": 0.9999551041098068,
+      "confidence": 0.9999434890060427,
       "start_index": 2378
      },
      {
       "text": "Асари",
-      "confidence": 0.9999551041098068,
+      "confidence": 0.9999434890060427,
       "start_index": 2410
      },
      {
       "text": "Меллужи",
-      "confidence": 0.9999551041098068,
+      "confidence": 0.9999434890060427,
       "start_index": 2440
      },
      {
       "text": "Пумпури",
-      "confidence": 0.9999551041098068,
+      "confidence": 0.9999434890060427,
       "start_index": 2472
      },
      {
       "text": "Яундубулты",
-      "confidence": 0.9999551041098068,
+      "confidence": 0.9999434890060427,
       "start_index": 2504
      },
      {
       "text": "Дубулты",
-      "confidence": 0.9999551041098068,
+      "confidence": 0.9999434890060427,
       "start_index": 2539
      },
      {
       "text": "Майори",
-      "confidence": 0.9999551041098068,
+      "confidence": 0.9999434890060427,
       "start_index": 2571
      },
      {
       "text": "Дзинтари",
-      "confidence": 0.9999551041098068,
+      "confidence": 0.9999434890060427,
       "start_index": 2602
      },
      {
       "text": "Булдури",
-      "confidence": 0.9999551041098068,
+      "confidence": 0.9999434890060427,
       "start_index": 2635
      },
      {
       "text": "Лиелупе",
-      "confidence": 0.9999551041098068,
+      "confidence": 0.9999434890060427,
       "start_index": 2667
      },
      {
       "text": "Приедайне",
-      "confidence": 0.9999551041098068,
+      "confidence": 0.9999434890060427,
       "start_index": 2699
      },
      {
       "text": "Бабите",
-      "confidence": 0.9999551041098068,
+      "confidence": 0.9999434890060427,
       "start_index": 2733
      },
      {
       "text": "Иманта",
-      "confidence": 0.9999551041098068,
+      "confidence": 0.9999434890060427,
       "start_index": 2764
      },
      {
       "text": "Золитуде",
-      "confidence": 0.9999551041098068,
+      "confidence": 0.9999434890060427,
       "start_index": 2795
      },
      {
       "text": "Депо",
-      "confidence": 0.9999551041098068,
+      "confidence": 0.9999434890060427,
       "start_index": 2828
      },
      {
       "text": "Засулаукс",
-      "confidence": 0.9999551041098068,
+      "confidence": 0.9999434890060427,
       "start_index": 2857
      },
      {
       "text": "Торнякалис",
-      "confidence": 0.9999551041098068,
+      "confidence": 0.9999434890060427,
       "start_index": 2891
      },
      {
       "text": "Рига-пасс.",
-      "confidence": 0.9999551041098068,
+      "confidence": 0.9999434890060427,
       "start_index": 2926
      },
      {
       "text": "—",
-      "confidence": 0.9999551041098068,
+      "confidence": 0.9999434890060427,
       "start_index": 2939
      },
      {
       "text": "5.14",
-      "confidence": 0.9999551041098068,
+      "confidence": 0.9999434890060427,
       "start_index": 2943
      },
      {
       "text": "—",
-      "confidence": 0.9999551041098068,
+      "confidence": 0.9999434890060427,
       "start_index": 2950
      },
      {
       "text": "5.24",
-      "confidence": 0.9999551041098068,
+      "confidence": 0.9999434890060427,
       "start_index": 2954
      },
      {
       "text": "—",
-      "confidence": 0.9999551041098068,
+      "confidence": 0.9999434890060427,
       "start_index": 2961
      },
      {
       "text": "5.56",
-      "confidence": 0.9999551041098068,
+      "confidence": 0.9999434890060427,
       "start_index": 2965
      },
      {
       "text": "Вагонный",
-      "confidence": 0.9999551041098068,
+      "confidence": 0.9999434890060427,
       "start_index": 2976
      },
      {
       "text": " парк",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 2984
      },
      {
       "text": "5.18",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 2992
      },
      {
       "text": "5.19",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 2999
      },
      {
       "text": "5.28",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3006
      },
      {
       "text": "5.29",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3013
      },
      {
       "text": "6.00",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3020
      },
      {
       "text": "6.01",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3027
      },
      {
       "text": "Яняварты",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3038
      },
      {
       "text": "5.22",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3049
      },
      {
       "text": "5.23",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3056
      },
      {
       "text": "5.32",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3063
      },
      {
       "text": "5.32,5",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3070
      },
      {
       "text": "6.04",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3079
      },
      {
       "text": "6.05",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3086
      },
      {
       "text": "Даугмале",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3097
      },
      {
       "text": "5.24,5",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3108
      },
      {
       "text": "5.25",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3117
      },
      {
       "text": "5.34",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3124
      },
      {
       "text": "5.34,5",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3131
      },
      {
       "text": "6.06,5",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3140
      },
      {
       "text": "6.07",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3149
      },
      {
       "text": "Шкиротава",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3160
      },
      {
       "text": "5.26,5",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3172
      },
      {
       "text": "5.27",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3181
      },
      {
       "text": "5.36",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3188
      },
      {
       "text": "5.36,5",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3195
      },
      {
       "text": "6.08,5",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3204
      },
      {
       "text": "6.09,5",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3213
      },
      {
       "text": "Гайсма",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3226
      },
      {
       "text": "5.29",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3235
      },
      {
       "text": "5.29,5",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3242
      },
      {
       "text": "—",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3251
      },
      {
       "text": "—",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3255
      },
      {
       "text": "6.11,5",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3259
      },
      {
       "text": "6.12",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3268
      },
      {
       "text": "Румбула",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3279
      },
      {
       "text": "5.31,5",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3289
      },
      {
       "text": "5.32",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3298
      },
      {
       "text": "5.39,5",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3305
      },
      {
       "text": "5.40",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3314
      },
      {
       "text": "6.14",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3321
      },
      {
       "text": "6.14,5",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3328
      },
      {
       "text": "Дарзини",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3341
      },
      {
       "text": "5.34",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3351
      },
      {
       "text": "5.35,5",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3358
      },
      {
       "text": "5.42",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3367
      },
      {
       "text": "5.43,5",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3374
      },
      {
       "text": "6.16,5",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3383
      },
      {
       "text": "6.18",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3392
      },
      {
       "text": "Доле",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3403
      },
      {
       "text": "5.38,5",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3410
      },
      {
       "text": "5.39",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3419
      },
      {
       "text": "5.46,5",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3426
      },
      {
       "text": "5.47",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3435
      },
      {
       "text": "6.21",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3442
      },
      {
       "text": "6.21,5",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3449
      },
      {
       "text": "Саласпилс",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3462
      },
      {
       "text": "5.40,5",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3474
      },
      {
       "text": "5.41,5",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3483
      },
      {
       "text": "5.48,5",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3492
      },
      {
       "text": "5.49,5",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3501
      },
      {
       "text": "6.23",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3510
      },
      {
       "text": "6.23,5",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3517
      },
      {
       "text": "Саулкалне",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3530
      },
      {
       "text": "5.45",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3542
      },
      {
       "text": "5.45,5",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3549
      },
      {
       "text": "5.53",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3558
      },
      {
       "text": "5.53,5",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3565
      },
      {
       "text": "6.27",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3574
      },
      {
       "text": "6.27,5",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3581
      },
      {
       "text": "Икшкиле",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3594
      },
      {
       "text": "5.49",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3604
      },
      {
       "text": "5.49,5",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3611
      },
      {
       "text": "5.57",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3620
      },
      {
       "text": "5.58",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3627
      },
      {
       "text": "6.31",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3634
      },
      {
       "text": "6.31,5",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3641
      },
      {
       "text": "Яуногре",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3654
      },
      {
       "text": "5.53",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3664
      },
      {
       "text": "5.54",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3671
      },
      {
       "text": "6.01,5",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3678
      },
      {
       "text": "6.03",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3687
      },
      {
       "text": "6.35",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3694
      },
      {
       "text": "6.35,5",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3701
      },
      {
       "text": "Огре",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3714
      },
      {
       "text": "5.55,5",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3721
      },
      {
       "text": "5.56,5",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3730
      },
      {
       "text": "6.05",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3739
      },
      {
       "text": "—",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3746
      },
      {
       "text": "6.37",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3750
      },
      {
       "text": "6.38",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3757
      },
      {
       "text": "Парогре",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3768
      },
      {
       "text": "5.58",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3778
      },
      {
       "text": "5.58,5",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3785
      },
      {
       "text": "6.39,5",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3800
      },
      {
       "text": "6.40",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3809
      },
      {
       "text": "Циемупе",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3820
      },
      {
       "text": "6.02",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3830
      },
      {
       "text": "6.02,5",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3837
      },
      {
       "text": "6.43,5",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3852
      },
      {
       "text": "6.44",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3861
      },
      {
       "text": "Кегумс",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3872
      },
      {
       "text": "6.07,5",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3881
      },
      {
       "text": "6.09",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3890
      },
      {
       "text": "6.49",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3903
      },
      {
       "text": "6.50",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3910
      },
      {
       "text": "Лиелварде",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3921
      },
      {
       "text": "6.14",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3933
      },
      {
       "text": "—",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3940
      },
      {
       "text": "6.54,5",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3950
      },
      {
       "text": "6.56",
-      "confidence": 0.9999843617708899,
+      "confidence": 0.9999834095446002,
       "start_index": 3959
      },
      {
@@ -1656,8 +1656,8 @@
       "start_index": 3968
      }
     ],
-    "average_page_confidence_score": 0.9993878354419359,
-    "minimum_page_confidence_score": 0.9600304508376843
+    "average_page_confidence_score": 0.9993007684273898,
+    "minimum_page_confidence_score": 0.9554806590490054
    },
    "blocks": [
     {
@@ -1705,6 +1705,6 @@
  "document_annotation": null,
  "usage_info": {
   "pages_processed": 1,
-  "doc_size_bytes": 3987663
+  "doc_size_bytes": 1810111
  }
 }

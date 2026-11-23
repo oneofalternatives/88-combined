@@ -2,7 +2,7 @@
  "pages": [
   {
    "index": 0,
-   "markdown": "# VII\n\nРИГА—ЕЛГАВА\n\nЕЛГАВА—РИГА\n\n149",
+   "markdown": "VII\n\nРИГА—ЕЛГАВА\n\nЕЛГАВА—РИГА\n\n149",
    "images": [],
    "tables": [],
    "hyperlinks": [],
@@ -16,33 +16,28 @@
    "confidence_scores": {
     "word_confidence_scores": [
      {
-      "text": "#",
-      "confidence": 0.7310584259457913,
+      "text": "VII",
+      "confidence": 0.9997126689886925,
       "start_index": 0
      },
      {
-      "text": " VII",
-      "confidence": 0.9998858105399812,
-      "start_index": 1
-     },
-     {
       "text": "РИГА—ЕЛГАВА",
-      "confidence": 0.9970029828155076,
-      "start_index": 7
+      "confidence": 0.9973892599090606,
+      "start_index": 5
      },
      {
       "text": "ЕЛГАВА—РИГА",
-      "confidence": 0.9998711874595513,
-      "start_index": 20
+      "confidence": 0.9998927761391707,
+      "start_index": 18
      },
      {
       "text": "149",
-      "confidence": 0.999941829250343,
-      "start_index": 33
+      "confidence": 0.9999413524701386,
+      "start_index": 31
      }
     ],
-    "average_page_confidence_score": 0.9455520472022348,
-    "minimum_page_confidence_score": 0.7310584259457913
+    "average_page_confidence_score": 0.9992340143767656,
+    "minimum_page_confidence_score": 0.9973892599090606
    },
    "blocks": [
     {
@@ -50,9 +45,9 @@
      "top_left_y": 1529,
      "bottom_right_x": 5672,
      "bottom_right_y": 1663,
-     "content": "# VII",
+     "content": "VII",
      "confidence_scores": null,
-     "type": "title"
+     "type": "text"
     },
     {
      "top_left_x": 5016,
@@ -74,7 +69,7 @@
     },
     {
      "top_left_x": 6954,
-     "top_left_y": 5203,
+     "top_left_y": 5209,
      "bottom_right_x": 7126,
      "bottom_right_y": 5320,
      "content": "149",
@@ -88,6 +83,6 @@
  "document_annotation": null,
  "usage_info": {
   "pages_processed": 1,
-  "doc_size_bytes": 316327
+  "doc_size_bytes": 19674
  }
 }

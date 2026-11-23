@@ -17,67 +17,67 @@
     "word_confidence_scores": [
      {
       "text": "#",
-      "confidence": 0.8933073489510498,
+      "confidence": 0.9770221927036008,
       "start_index": 0
      },
      {
       "text": " V",
-      "confidence": 0.8790112222596487,
+      "confidence": 0.9993143018614103,
       "start_index": 1
      },
      {
       "text": "#",
-      "confidence": 0.835477701846991,
+      "confidence": 0.8807969550090476,
       "start_index": 5
      },
      {
       "text": " ЗВЕЙНИЕКЦИЕМС—САУЛКРАСТЫ—РИГА",
-      "confidence": 0.9323354681012052,
+      "confidence": 0.9564190775475977,
       "start_index": 6
      },
      {
       "text": "\n",
-      "confidence": 0.794390271614955,
+      "confidence": 0.9519424198393055,
       "start_index": 36
      },
      {
       "text": "ВЕЦАКИ—ОШКАЛНЫ",
-      "confidence": 0.9707513472288091,
+      "confidence": 0.9842479552257101,
       "start_index": 37
      },
      {
       "text": "129",
-      "confidence": 0.9999734170346474,
+      "confidence": 0.9999725826157975,
       "start_index": 53
      }
     ],
-    "average_page_confidence_score": 0.900749539576758,
-    "minimum_page_confidence_score": 0.794390271614955
+    "average_page_confidence_score": 0.9642450692574956,
+    "minimum_page_confidence_score": 0.8807969550090476
    },
    "blocks": [
     {
-     "top_left_x": 5441,
-     "top_left_y": 1610,
-     "bottom_right_x": 5598,
-     "bottom_right_y": 1756,
+     "top_left_x": 5456,
+     "top_left_y": 1616,
+     "bottom_right_x": 5590,
+     "bottom_right_y": 1744,
      "content": "# V",
      "confidence_scores": null,
      "type": "title"
     },
     {
-     "top_left_x": 4032,
-     "top_left_y": 1889,
-     "bottom_right_x": 7014,
-     "bottom_right_y": 2302,
+     "top_left_x": 4047,
+     "top_left_y": 1895,
+     "bottom_right_x": 6984,
+     "bottom_right_y": 2291,
      "content": "# ЗВЕЙНИЕКЦИЕМС—САУЛКРАСТЫ—РИГА\nВЕЦАКИ—ОШКАЛНЫ",
      "confidence_scores": null,
      "type": "title"
     },
     {
-     "top_left_x": 6909,
-     "top_left_y": 5232,
-     "bottom_right_x": 7140,
-     "bottom_right_y": 5378,
+     "top_left_x": 6932,
+     "top_left_y": 5238,
+     "bottom_right_x": 7111,
+     "bottom_right_y": 5360,
      "content": "129",
      "confidence_scores": null,
      "type": "footer"
@@ -89,6 +89,6 @@
  "document_annotation": null,
  "usage_info": {
   "pages_processed": 1,
-  "doc_size_bytes": 745730
+  "doc_size_bytes": 28473
  }
 }

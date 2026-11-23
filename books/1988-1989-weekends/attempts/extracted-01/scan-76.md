@@ -11,7 +11,7 @@ shapes: [prose, prose]
 
 ## page 149
 
-# VII
+VII
 
 РИГА—ЕЛГАВА
 

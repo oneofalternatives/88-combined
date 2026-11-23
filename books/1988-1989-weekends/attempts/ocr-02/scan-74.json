@@ -17,46 +17,46 @@
     "word_confidence_scores": [
      {
       "text": "#",
-      "confidence": 0.8175738704638552,
+      "confidence": 0.7981860400822236,
       "start_index": 0
      },
      {
       "text": " VI",
-      "confidence": 0.9995448278040693,
+      "confidence": 0.9995543559463799,
       "start_index": 1
      },
      {
       "text": "САУЛКРАСТЫ—ЛИМБАЖИ—АЛОЯ",
-      "confidence": 0.9991131199416852,
+      "confidence": 0.9992747438263624,
       "start_index": 6
      },
      {
       "text": "АЛОЯ—ЛИМБАЖИ—САУЛКРАСТЫ",
-      "confidence": 0.9998950140796415,
+      "confidence": 0.9998930225007783,
       "start_index": 31
      },
      {
       "text": "145",
-      "confidence": 0.9999823573372132,
+      "confidence": 0.9999767547297425,
       "start_index": 56
      }
     ],
-    "average_page_confidence_score": 0.9632218379252929,
-    "minimum_page_confidence_score": 0.8175738704638552
+    "average_page_confidence_score": 0.9593769834170974,
+    "minimum_page_confidence_score": 0.7981860400822236
    },
    "blocks": [
     {
-     "top_left_x": 5493,
-     "top_left_y": 1616,
-     "bottom_right_x": 5657,
+     "top_left_x": 5478,
+     "top_left_y": 1610,
+     "bottom_right_x": 5665,
      "bottom_right_y": 1744,
      "content": "# VI",
      "confidence_scores": null,
      "type": "title"
     },
     {
-     "top_left_x": 4360,
-     "top_left_y": 1889,
+     "top_left_x": 4345,
+     "top_left_y": 1884,
      "bottom_right_x": 6775,
      "bottom_right_y": 2064,
      "content": "САУЛКРАСТЫ—ЛИМБАЖИ—АЛОЯ",
@@ -64,8 +64,8 @@
      "type": "text"
     },
     {
-     "top_left_x": 4360,
-     "top_left_y": 2134,
+     "top_left_x": 4345,
+     "top_left_y": 2122,
      "bottom_right_x": 6775,
      "bottom_right_y": 2296,
      "content": "АЛОЯ—ЛИМБАЖИ—САУЛКРАСТЫ",
@@ -73,7 +73,7 @@
      "type": "text"
     },
     {
-     "top_left_x": 6962,
+     "top_left_x": 6954,
      "top_left_y": 5250,
      "bottom_right_x": 7140,
      "bottom_right_y": 5372,
@@ -88,6 +88,6 @@
  "document_annotation": null,
  "usage_info": {
   "pages_processed": 1,
-  "doc_size_bytes": 1518860
+  "doc_size_bytes": 559874
  }
 }

@@ -1,0 +1,524 @@
+{
+ "pages": [
+  {
+   "index": 0,
+   "markdown": "# О Г Л А В Л Е Н И Е\n\nСтр.\n\n1.JHeJIbapJe—Pnra—TyKymc 5\n2. TyKymc—Pnra—JHeJIbapJe 55\n3.JHeJIbapJe-Ai3KpayKJIe, Ai3KpayKJIe-JHeJI-BapJe 105\n4. Pnra-3BeHHHeKIIeMc 113\n5. 3BeHHHeKIIeMc—Pnra 129\n6.CayIckpaCTbI-AJIOA AIOA-CayIckpaCTbI 145\n7. Pnra—EJIraBa, EJraBa—Pnra 149\n\n*) Πoe3a c oJHOH «3Be3IOUKO» B xOJy. OTMeHЯIOTcI IIpH He6OJIbIOM IaccKaJHpOIIOToke.\n\\*\\*) H \\*\\*\\*) Ioe3a c IByMa H TpeMa «3Be3IOuKaAMn» Ha3Ha-uaIOTcI IO Mepe HaIO6HocTH.\n\n4\n\n# I\n\nЛИЕЛВАРДЕ — КЕГУМС — ОГРЕ — РИГА —\nДУБУЛТЫ,\nСЛОКА,\nКЕМЕРИ,\nТУКУМС.\n\n3",
+   "images": [],
+   "tables": [],
+   "hyperlinks": [],
+   "header": null,
+   "footer": null,
+   "dimensions": {
+    "dpi": 200,
+    "height": 5808,
+    "width": 7446
+   },
+   "confidence_scores": {
+    "word_confidence_scores": [
+     {
+      "text": "#",
+      "confidence": 0.9933071486460123,
+      "start_index": 0
+     },
+     {
+      "text": " О",
+      "confidence": 0.9992194312778974,
+      "start_index": 1
+     },
+     {
+      "text": " Г",
+      "confidence": 0.5308354328701059,
+      "start_index": 3
+     },
+     {
+      "text": " Л",
+      "confidence": 0.9958067086028856,
+      "start_index": 5
+     },
+     {
+      "text": " А",
+      "confidence": 0.9999758010998766,
+      "start_index": 7
+     },
+     {
+      "text": " В",
+      "confidence": 0.9998843803602065,
+      "start_index": 9
+     },
+     {
+      "text": " Л",
+      "confidence": 0.9999448091463223,
+      "start_index": 11
+     },
+     {
+      "text": " Е",
+      "confidence": 0.9999146534361616,
+      "start_index": 13
+     },
+     {
+      "text": " Н",
+      "confidence": 0.9999390877636344,
+      "start_index": 15
+     },
+     {
+      "text": " И",
+      "confidence": 0.9998152597371771,
+      "start_index": 17
+     },
+     {
+      "text": " Е",
+      "confidence": 0.9998200263662578,
+      "start_index": 19
+     },
+     {
+      "text": "Стр.",
+      "confidence": 0.9999365255035321,
+      "start_index": 23
+     },
+     {
+      "text": "1.JHeJIbapJe—Pnra—TyKymc",
+      "confidence": 0.6559893059158755,
+      "start_index": 29
+     },
+     {
+      "text": " 5",
+      "confidence": 0.910292204732998,
+      "start_index": 53
+     },
+     {
+      "text": "\n",
+      "confidence": 0.9999468354816792,
+      "start_index": 55
+     },
+     {
+      "text": "2.",
+      "confidence": 0.9546544957766357,
+      "start_index": 56
+     },
+     {
+      "text": " TyKymc—Pnra—JHeJIbapJe",
+      "confidence": 0.8273388368171263,
+      "start_index": 58
+     },
+     {
+      "text": " 55",
+      "confidence": 0.9762276231662349,
+      "start_index": 81
+     },
+     {
+      "text": "\n",
+      "confidence": 0.9999225199684951,
+      "start_index": 84
+     },
+     {
+      "text": "3.JHeJIbapJe-Ai3KpayKJIe,",
+      "confidence": 0.7992646817848185,
+      "start_index": 85
+     },
+     {
+      "text": " Ai3KpayKJIe-JHeJI-BapJe",
+      "confidence": 0.7874214985117657,
+      "start_index": 110
+     },
+     {
+      "text": " 105",
+      "confidence": 0.9942161060258998,
+      "start_index": 134
+     },
+     {
+      "text": "\n",
+      "confidence": 0.9999532721416701,
+      "start_index": 138
+     },
+     {
+      "text": "4.",
+      "confidence": 0.7045803023561407,
+      "start_index": 139
+     },
+     {
+      "text": " Pnra-3BeHHHeKIIeMc",
+      "confidence": 0.7227396062421757,
+      "start_index": 141
+     },
+     {
+      "text": " 113",
+      "confidence": 0.9946387501269817,
+      "start_index": 160
+     },
+     {
+      "text": "\n",
+      "confidence": 0.9999923706636761,
+      "start_index": 164
+     },
+     {
+      "text": "5.",
+      "confidence": 0.9993156373138168,
+      "start_index": 165
+     },
+     {
+      "text": " 3BeHHHeKIIeMc—Pnra",
+      "confidence": 0.8015730595297303,
+      "start_index": 167
+     },
+     {
+      "text": " 129",
+      "confidence": 0.9899624853154944,
+      "start_index": 186
+     },
+     {
+      "text": "\n",
+      "confidence": 0.9999934435319415,
+      "start_index": 190
+     },
+     {
+      "text": "6.CayIckpaCTbI-AJIOA",
+      "confidence": 0.7043320421893896,
+      "start_index": 191
+     },
+     {
+      "text": " AIOA-CayIckpaCTbI",
+      "confidence": 0.8349524173499779,
+      "start_index": 211
+     },
+     {
+      "text": " 145",
+      "confidence": 0.9816599168475544,
+      "start_index": 229
+     },
+     {
+      "text": "\n",
+      "confidence": 0.9999973774024795,
+      "start_index": 233
+     },
+     {
+      "text": "7.",
+      "confidence": 0.8041776549484151,
+      "start_index": 234
+     },
+     {
+      "text": " Pnra—EJIraBa,",
+      "confidence": 0.9250813740691158,
+      "start_index": 236
+     },
+     {
+      "text": " EJraBa—Pnra",
+      "confidence": 0.8505036774710747,
+      "start_index": 250
+     },
+     {
+      "text": " 149",
+      "confidence": 0.9828680438100359,
+      "start_index": 262
+     },
+     {
+      "text": "*)",
+      "confidence": 0.9989538419634894,
+      "start_index": 268
+     },
+     {
+      "text": " Πoe3a",
+      "confidence": 0.5254492389565546,
+      "start_index": 270
+     },
+     {
+      "text": " c",
+      "confidence": 0.9927081239797803,
+      "start_index": 276
+     },
+     {
+      "text": " oJHOH",
+      "confidence": 0.5597340096707313,
+      "start_index": 278
+     },
+     {
+      "text": " «3Be3IOUKO»",
+      "confidence": 0.7798803198943653,
+      "start_index": 284
+     },
+     {
+      "text": " B",
+      "confidence": 0.9977533146484678,
+      "start_index": 296
+     },
+     {
+      "text": " xOJy.",
+      "confidence": 0.6886971957344789,
+      "start_index": 298
+     },
+     {
+      "text": " OTMeHЯIOTcI",
+      "confidence": 0.8159307375829762,
+      "start_index": 304
+     },
+     {
+      "text": " IIpH",
+      "confidence": 0.39634562237117404,
+      "start_index": 316
+     },
+     {
+      "text": " He6OJIbIOM",
+      "confidence": 0.8625106922101452,
+      "start_index": 321
+     },
+     {
+      "text": " IaccKaJHpOIIOToke.",
+      "confidence": 0.553001923158735,
+      "start_index": 332
+     },
+     {
+      "text": "\n",
+      "confidence": 0.9999567288990747,
+      "start_index": 351
+     },
+     {
+      "text": "\\*\\*)",
+      "confidence": 0.9018370198679995,
+      "start_index": 352
+     },
+     {
+      "text": " H",
+      "confidence": 0.8500501807917442,
+      "start_index": 357
+     },
+     {
+      "text": " \\*\\*\\*)",
+      "confidence": 0.9191083704025335,
+      "start_index": 359
+     },
+     {
+      "text": " Ioe3a",
+      "confidence": 0.770840019845443,
+      "start_index": 367
+     },
+     {
+      "text": " c",
+      "confidence": 0.8462903819870787,
+      "start_index": 373
+     },
+     {
+      "text": " IByMa",
+      "confidence": 0.50712633026496,
+      "start_index": 375
+     },
+     {
+      "text": " H",
+      "confidence": 0.88892129084741,
+      "start_index": 381
+     },
+     {
+      "text": " TpeMa",
+      "confidence": 0.9651301395831166,
+      "start_index": 383
+     },
+     {
+      "text": " «3Be3IOuKaAMn»",
+      "confidence": 0.732852359155199,
+      "start_index": 389
+     },
+     {
+      "text": " Ha3Ha-uaIOTcI",
+      "confidence": 0.6994329698677838,
+      "start_index": 404
+     },
+     {
+      "text": " IO",
+      "confidence": 0.7955262600710413,
+      "start_index": 418
+     },
+     {
+      "text": " Mepe",
+      "confidence": 0.977261472602734,
+      "start_index": 421
+     },
+     {
+      "text": " HaIO6HocTH.",
+      "confidence": 0.8065943917435298,
+      "start_index": 426
+     },
+     {
+      "text": "4",
+      "confidence": 0.9999901057270286,
+      "start_index": 440
+     },
+     {
+      "text": "#",
+      "confidence": 0.9994471746722718,
+      "start_index": 443
+     },
+     {
+      "text": " I",
+      "confidence": 0.9966409172388099,
+      "start_index": 444
+     },
+     {
+      "text": "ЛИЕЛВАРДЕ",
+      "confidence": 0.981846578932543,
+      "start_index": 448
+     },
+     {
+      "text": " —",
+      "confidence": 0.9993523979835893,
+      "start_index": 457
+     },
+     {
+      "text": " КЕГУМС",
+      "confidence": 0.9994667798587126,
+      "start_index": 459
+     },
+     {
+      "text": " —",
+      "confidence": 0.9998970137814459,
+      "start_index": 466
+     },
+     {
+      "text": " ОГРЕ",
+      "confidence": 0.9999056911899233,
+      "start_index": 468
+     },
+     {
+      "text": " —",
+      "confidence": 0.9999454051273113,
+      "start_index": 473
+     },
+     {
+      "text": " РИГА",
+      "confidence": 0.9990301041583711,
+      "start_index": 475
+     },
+     {
+      "text": " —",
+      "confidence": 0.9991593281832327,
+      "start_index": 480
+     },
+     {
+      "text": "\n",
+      "confidence": 0.795863324504391,
+      "start_index": 482
+     },
+     {
+      "text": "ДУБУЛТЫ,",
+      "confidence": 0.9987646416571647,
+      "start_index": 483
+     },
+     {
+      "text": "\n",
+      "confidence": 0.9998368291114251,
+      "start_index": 491
+     },
+     {
+      "text": "СЛОКА,",
+      "confidence": 0.999710325288526,
+      "start_index": 492
+     },
+     {
+      "text": "\n",
+      "confidence": 0.9999990463265931,
+      "start_index": 498
+     },
+     {
+      "text": "КЕМЕРИ,",
+      "confidence": 0.99997767439769,
+      "start_index": 499
+     },
+     {
+      "text": "\n",
+      "confidence": 0.9999971389852362,
+      "start_index": 506
+     },
+     {
+      "text": "ТУКУМС.",
+      "confidence": 0.9964318518555888,
+      "start_index": 507
+     },
+     {
+      "text": "3",
+      "confidence": 0.48249335156597123,
+      "start_index": 516
+     }
+    ],
+    "average_page_confidence_score": 0.890471945487472,
+    "minimum_page_confidence_score": 0.39634562237117404
+   },
+   "blocks": [
+    {
+     "top_left_x": 1446,
+     "top_left_y": 337,
+     "bottom_right_x": 2497,
+     "bottom_right_y": 459,
+     "content": "# О Г Л А В Л Е Н И Е",
+     "confidence_scores": null,
+     "type": "title"
+    },
+    {
+     "top_left_x": 3235,
+     "top_left_y": 703,
+     "bottom_right_x": 3458,
+     "bottom_right_y": 831,
+     "content": "Стр.",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 402,
+     "top_left_y": 878,
+     "bottom_right_x": 3362,
+     "bottom_right_y": 2401,
+     "content": "1.JHeJIbapJe—Pnra—TyKymc 5\n2. TyKymc—Pnra—JHeJIbapJe 55\n3.JHeJIbapJe-Ai3KpayKJIe, Ai3KpayKJIe-JHeJI-BapJe 105\n4. Pnra-3BeHHHeKIIeMc 113\n5. 3BeHHHeKIIeMc—Pnra 129\n6.CayIckpaCTbI-AJIOA AIOA-CayIckpaCTbI 145\n7. Pnra—EJIraBa, EJraBa—Pnra 149",
+     "confidence_scores": null,
+     "type": "list"
+    },
+    {
+     "top_left_x": 320,
+     "top_left_y": 4296,
+     "bottom_right_x": 3533,
+     "bottom_right_y": 4855,
+     "content": "*) Πoe3a c oJHOH «3Be3IOUKO» B xOJy. OTMeHЯIOTcI IIpH He6OJIbIOM IaccKaJHpOIIOToke.\n\\*\\*) H \\*\\*\\*) Ioe3a c IByMa H TpeMa «3Be3IOuKaAMn» Ha3Ha-uaIOTcI IO Mepe HaIO6HocTH.",
+     "confidence_scores": null,
+     "type": "list"
+    },
+    {
+     "top_left_x": 328,
+     "top_left_y": 5378,
+     "bottom_right_x": 402,
+     "bottom_right_y": 5488,
+     "content": "4",
+     "confidence_scores": null,
+     "type": "footer"
+    },
+    {
+     "top_left_x": 5441,
+     "top_left_y": 1483,
+     "bottom_right_x": 5530,
+     "bottom_right_y": 1610,
+     "content": "# I",
+     "confidence_scores": null,
+     "type": "title"
+    },
+    {
+     "top_left_x": 3868,
+     "top_left_y": 1756,
+     "bottom_right_x": 7081,
+     "bottom_right_y": 2645,
+     "content": "ЛИЕЛВАРДЕ — КЕГУМС — ОГРЕ — РИГА —\nДУБУЛТЫ,\nСЛОКА,\nКЕМЕРИ,\nТУКУМС.",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 7014,
+     "top_left_y": 5087,
+     "bottom_right_x": 7096,
+     "bottom_right_y": 5215,
+     "content": "3",
+     "confidence_scores": null,
+     "type": "footer"
+    }
+   ]
+  }
+ ],
+ "model": "mistral-ocr-4-1",
+ "document_annotation": null,
+ "usage_info": {
+  "pages_processed": 1,
+  "doc_size_bytes": 452086
+ }
+}

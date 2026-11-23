@@ -1,0 +1,94 @@
+{
+ "pages": [
+  {
+   "index": 0,
+   "markdown": "# V\n\n# ЗВЕЙНИЕКЦИЕМС—САУЛКРАСТЫ—РИГА\nВЕЦАКИ—ОШКАЛНЫ\n\n129",
+   "images": [],
+   "tables": [],
+   "hyperlinks": [],
+   "header": null,
+   "footer": null,
+   "dimensions": {
+    "dpi": 200,
+    "height": 5808,
+    "width": 7446
+   },
+   "confidence_scores": {
+    "word_confidence_scores": [
+     {
+      "text": "#",
+      "confidence": 0.8933077283236592,
+      "start_index": 0
+     },
+     {
+      "text": " V",
+      "confidence": 0.8914557030647545,
+      "start_index": 1
+     },
+     {
+      "text": "#",
+      "confidence": 0.8519474792053278,
+      "start_index": 5
+     },
+     {
+      "text": " ЗВЕЙНИЕКЦИЕМС—САУЛКРАСТЫ—РИГА",
+      "confidence": 0.9414109513978836,
+      "start_index": 6
+     },
+     {
+      "text": "\n",
+      "confidence": 0.7733556531685943,
+      "start_index": 36
+     },
+     {
+      "text": "ВЕЦАКИ—ОШКАЛНЫ",
+      "confidence": 0.982135807233624,
+      "start_index": 37
+     },
+     {
+      "text": "129",
+      "confidence": 0.9999755626925522,
+      "start_index": 53
+     }
+    ],
+    "average_page_confidence_score": 0.9047984121551994,
+    "minimum_page_confidence_score": 0.7733556531685943
+   },
+   "blocks": [
+    {
+     "top_left_x": 5441,
+     "top_left_y": 1610,
+     "bottom_right_x": 5598,
+     "bottom_right_y": 1756,
+     "content": "# V",
+     "confidence_scores": null,
+     "type": "title"
+    },
+    {
+     "top_left_x": 4032,
+     "top_left_y": 1889,
+     "bottom_right_x": 7014,
+     "bottom_right_y": 2302,
+     "content": "# ЗВЕЙНИЕКЦИЕМС—САУЛКРАСТЫ—РИГА\nВЕЦАКИ—ОШКАЛНЫ",
+     "confidence_scores": null,
+     "type": "title"
+    },
+    {
+     "top_left_x": 6909,
+     "top_left_y": 5232,
+     "bottom_right_x": 7140,
+     "bottom_right_y": 5378,
+     "content": "129",
+     "confidence_scores": null,
+     "type": "footer"
+    }
+   ]
+  }
+ ],
+ "model": "mistral-ocr-4-1",
+ "document_annotation": null,
+ "usage_info": {
+  "pages_processed": 1,
+  "doc_size_bytes": 2003428
+ }
+}

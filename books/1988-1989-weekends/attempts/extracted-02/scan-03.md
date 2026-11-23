@@ -10,7 +10,7 @@ shapes: [prose, prose]
 # Drošības noteikumu teksti pasažieriem lasīšanai
 vilcienos un stacijās
 
-# PILSOŅI PASAŽIERI!
+## PILSOŅI PASAŽIERI!
 
 Izmantojot dzelzceļa transportu un atrodoties
 dzelzceļa teritorijā esiet uzmanīgi. Ievērojiet brauk-
@@ -42,7 +42,7 @@ Baltijas dzelzceļa Rīgas nodaļa.
 # Тексты по технике безопасности пассажирам
 для чтения в поездах и на вокзалах
 
-# ГРАЖДАНЕ ПАССАЖИРЫ!
+## ГРАЖДАНЕ ПАССАЖИРЫ!
 
 Пользуясь железнодорожным транспортом и на-
 ходясь на территории железной дороги будьте вни-

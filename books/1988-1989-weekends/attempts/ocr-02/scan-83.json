@@ -17,12 +17,12 @@
     "word_confidence_scores": [
      {
       "text": "1",
-      "confidence": 0.3252791470451246,
+      "confidence": 0.3286161353849997,
       "start_index": 0
      }
     ],
-    "average_page_confidence_score": 0.3252791470451246,
-    "minimum_page_confidence_score": 0.3252791470451246
+    "average_page_confidence_score": 0.3286161353849997,
+    "minimum_page_confidence_score": 0.3286161353849997
    },
    "blocks": [
     {
@@ -41,6 +41,6 @@
  "document_annotation": null,
  "usage_info": {
   "pages_processed": 1,
-  "doc_size_bytes": 657114
+  "doc_size_bytes": 279058
  }
 }
