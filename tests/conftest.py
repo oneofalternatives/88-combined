@@ -20,7 +20,7 @@ sys.path.insert(0, str(SCRIPTS))
 # extracted-NN made from it. Move this when a change is meant to move a scan.
 BOOK = REPO / "books" / "1988-1989-workdays"
 OCR_00 = BOOK / "attempts" / "ocr-00"
-EXTRACTED = BOOK / "attempts" / "extracted-03"
+EXTRACTED = BOOK / "attempts" / "extracted-07"
 
 # Spread geometry of the real scans (spec/ocr-book-format.md §2).
 SPREAD = {"width": 1019, "height": 821}

@@ -195,7 +195,7 @@ def test_realign_divider_splits_segments():
     assert out[3][0] == "Кегумс" and report == []
 
 
-def test_half_rows_railway_row_becomes_divider():
+def test_page_tables_railway_row_becomes_divider():
     md = ("| Раздельные пункты | Расстояние км | приб. | отпр. |\n"
           "| --- | --- | --- | --- |\n"
           "| Зилупе | 643,3 | 20.30 | 20.31 |\n"
@@ -203,7 +203,7 @@ def test_half_rows_railway_row_becomes_divider():
           "| Кегумс |  |  |  |\n"
           "| Посинь | 631,5 | 20.46 | 20.47 |")
     report = []
-    rows, *_ = extract.half_rows([_table(md)], 1000, 93, report)
+    [(rows, *_)], _ = extract.page_tables([_table(md)], 1000, 93, report)
     assert isinstance(rows[2], Divider) and rows[2][0] == "Октябрьская ж. д."
     # any other name-only row is left to realign(), not made a divider
     assert not any(isinstance(r, Divider) and r[0] == "Кегумс" for r in rows)
@@ -213,14 +213,14 @@ SUBURBAN_HEAD = ("|  № поездов | 6501 Д |   | 6601 |   |\n| --- | --- 
                  "|  Разд. пункты | приб. | отпр. | приб. | отпр. |")
 
 
-def test_half_rows_suburban_text_rows():
+def test_page_tables_suburban_text_rows():
     """Scan 41: the OCR gave only the header as a table, each row as text.
 
     A row whose values fill the table is placed; any other keeps its name and
     its values are reported, since the text does not show which cells are blank.
     """
     report = []
-    rows, hc, width, _ = extract.half_rows([
+    [(rows, hc, width)], _ = extract.page_tables([
         block("table", SUBURBAN_HEAD, 43, 30, 483, 80),
         block("text", "Тукумс-II", 43, 85, 110, 95),                 # name only
         block("text", "Кудра 7.10,5 7.11 — 7.23", 43, 100, 483, 110),
@@ -239,14 +239,77 @@ def test_half_rows_suburban_text_rows():
     ]
 
 
-def test_half_rows_text_with_times_in_other_shapes_is_reported():
+def test_page_tables_text_with_times_in_other_shapes_is_reported():
     md = ("| Раздельные пункты | Расстояние км | приб. | отпр. |\n"
           "| --- | --- | --- | --- |\n"
           "| Зилупе | 643,3 | 20.30 | 20.31 |")
     report = []
-    extract.half_rows([_table(md), block("text", "Посинь 631,5 20.46 20.47", 43, 340, 483, 350),
-                       block("text", "Движение по графику.", 43, 360, 483, 370)], 1000, 93, report)
+    extract.page_tables([_table(md), block("text", "Посинь 631,5 20.46 20.47", 43, 340, 483, 350),
+                         block("text", "Движение по графику.", 43, 360, 483, 370)], 1000, 93, report)
     assert [p.what for p in report] == ["DROPPED text with times"]
+
+
+def _suburban(trains, *stops):
+    """A suburban table block: a head naming `trains`, then `stops`."""
+    head = "|  № поездов | " + " |   | ".join(trains) + " |   |\n"
+    head += "| --- |" + " --- | --- |" * len(trains) + "\n"
+    head += "|  Разд. пункты |" + " приб. | отпр. |" * len(trains)
+    return head + "".join(f"\n| {s} |" + " — | 7.10 |" * len(trains) for s in stops)
+
+
+def test_page_tables_splits_stacked_tables():
+    """Weekends scan 59: two printed tables on one page, each its own block
+    with its own head. Each becomes a table, with its own width."""
+    report = []
+    tables, name = extract.page_tables([
+        block("table", _suburban(["6468", "5404"], "Рига-пасс.", "Ошкалны"), 43, 30, 483, 200),
+        block("table", _suburban(["6608", "6612", "6506"], "Рига-пасс."), 43, 250, 483, 400),
+    ], 1000, 59, report)
+    assert name == "suburban" and report == []
+    assert [(len(rows), hc, width) for rows, hc, width in tables] == [(4, 2, 5), (3, 2, 7)]
+    assert tables[1][0][0][:2] == ["№ поездов", "6608"]
+    assert tables[1][0][2] == ["Рига-пасс.", "—", "07.10", "—", "07.10", "—", "07.10"]
+
+
+def test_page_tables_title_goes_with_the_table_below_it():
+    """Workdays scan 79: a route title over each table. The title over the
+    second table goes with it, not to the foot of the first."""
+    tables, _ = extract.page_tables([
+        block("title", "# Рига—Добеле", 43, 10, 300, 25),
+        block("table", _suburban(["6884 ДР", "6885 ДР"], "Рига-пасс."), 43, 30, 483, 200),
+        block("title", "# Рига—Добеле", 43, 210, 300, 225),
+        block("table", _suburban(["6307", "6309"], "Добеле"), 43, 230, 483, 400),
+    ], 1000, 79, [])
+    assert len(tables) == 2
+    first, second = tables[0][0], tables[1][0]
+    assert isinstance(first[0], Divider) and not isinstance(first[-1], Divider)
+    assert isinstance(second[0], Divider) and second[0][0] == "Рига—Добеле"
+    assert second[1][:2] == ["№ поездов", "6307"]
+
+
+def test_page_tables_keeps_a_reread_head_and_a_continuation_in_the_table():
+    """A head naming the same trains is the OCR reading the top twice, and a
+    block without a head is the rest of the table: neither starts a table."""
+    report = []
+    tables, _ = extract.page_tables([
+        block("table", _suburban(["6468", "5404"], "Рига-пасс."), 43, 30, 483, 100),
+        block("table", _suburban(["6468", "5404"], "Ошкалны"), 43, 110, 483, 200),
+        block("table", "| Браса | — | 7.10 | — | 7.10 |", 43, 210, 483, 250),
+    ], 1000, 59, report)
+    assert len(tables) == 1
+    assert [r[0] for r in tables[0][0]] == ["№ поездов", "Разд. пункты", "Рига-пасс.",
+                                            "№ поездов", "Разд. пункты", "Ошкалны", "Браса"]
+
+
+def test_render_scan_writes_stacked_tables_apart():
+    p = scan([
+        block("table", _suburban(["6468", "5404"], "Рига-пасс."), 43, 30, 483, 200),
+        block("table", _suburban(["6608", "6612"], "Рига-пасс."), 43, 250, 483, 400),
+    ])
+    text = extract.render_scan(p, 59, [])
+    items = bm.parse_scan_file(text)["halves"][0]["items"]
+    heads = [it["table"]["items"][0]["cells"][1] for it in items if it.get("table")]
+    assert heads == ["6468", "6608"]
 
 
 # ---------------------------------------------------- as_markdown round trip

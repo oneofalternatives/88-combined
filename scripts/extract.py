@@ -3,10 +3,10 @@
 
 The OCR chops a single printed timetable into several blocks and loses the
 column count wherever train times are blank. Both are repaired here, once, by
-reassembling each book page into ONE table whose width comes from the
-"№ поездов" header. The result goes to attempts/extracted-NN. A copy of it in
-attempts/final-NN is the source of truth from then on: it is hand-corrected
-against the scans. attempts/normalized-NN, a copy of final-NN, also fixes the
+reassembling each printed table into ONE table whose width comes from the
+"№ поездов" header. Most pages print one table; some stack two. The result
+goes to attempts/extracted-NN. A copy of it in attempts/final-NN is the source
+of truth from then on: it is hand-corrected against the scans. attempts/normalized-NN, a copy of final-NN, also fixes the
 book's own mistakes. The builders read only these.
 
 This is a one-way door -- it refuses to overwrite an edited file unless asked.
@@ -155,15 +155,35 @@ def caption(blocks, scan_h):
             for ln in lines]
 
 
-def half_rows(blocks, scan_h, scan, report):
-    """Reassemble one book page into (rows, header_count, width, shape)."""
+def new_table(parsed, test, head) -> bool:
+    """Is this table block a printed table of its own, not a piece of the last?
+
+    The book stacks two short tables on one page (the Saulkrasti line, the
+    Jelgava line), and the OCR gives each its own table block with its own
+    head. A continuation block has no head. A head naming the same trains as
+    the current one is the OCR reading the top of the table twice: that stays
+    in the table, for the validator to report.
+    """
+    body, hc, _ = parsed
+    return bool(head and hc and test(body[0]) and body[0] != head)
+
+
+def page_tables(blocks, scan_h, scan, report):
+    """Reassemble one book page into ([(rows, header_count, width), ...], shape).
+
+    One table per printed table: the blocks of a table are joined, and a block
+    with a head of its own starts the next table.
+    """
     shape = shape_of(blocks)
     if not shape:
         return None
     name, st_col, protected, width = shape
+    test = SHAPES[name][0]
     left, span = station_span(blocks)
+    tables = []
     rows: list[list[str]] = []
     header_count = 0
+    head = None  # the raw head row of the current table, as the OCR gave it
     for b in sorted(blocks, key=lambda b: (b["topLeftY"], b["topLeftX"])):
         if b["type"] in ("header", "footer"):
             continue
@@ -195,9 +215,19 @@ def half_rows(blocks, scan_h, scan, report):
         parsed = parse_table(b["content"].strip())
         if not parsed:
             continue
-        body, hc, _ = parsed
-        if not rows:  # only the first block carries the real header
+        body, hc, w = parsed
+        if rows and new_table(parsed, test, head):
+            # A title right above the new head is printed over the new table.
+            k = len(rows)
+            while k and isinstance(rows[k - 1], Divider):
+                k -= 1
+            tables.append(finish_table(rows[:k], header_count, width, name, st_col, scan, report))
+            rows = [Divider(cells_at(next(c for c in d if c), st_col, w)) for d in rows[k:]]
+            width, head = w, None
+        if not rows:  # only the first block of a table carries its header
             header_count = hc
+        if head is None and hc:
+            head = body[0]
         for r in body:
             r = [clean_cell(c, pad_time=i not in protected)
                  for i, c in enumerate(r[:width])]
@@ -208,10 +238,15 @@ def half_rows(blocks, scan_h, scan, report):
                     c for i, c in enumerate(r) if i != st_col):
                 r = Divider(r)
             rows.append(r)
-    if name == "distance" and rows:
-        rows = realign(rows, max(header_count, 1), st_col, 1, scan, report)
-    return (rows, header_count, width, name) if rows else None
+    if rows:
+        tables.append(finish_table(rows, header_count, width, name, st_col, scan, report))
+    return (tables, name) if tables else None
 
+
+def finish_table(rows, header_count, width, name, st_col, scan, report):
+    if name == "distance":
+        rows = realign(rows, max(header_count, 1), st_col, 1, scan, report)
+    return rows, header_count, width
 
 
 def text_row(line, st_col, width, scan, report):
@@ -449,12 +484,15 @@ def render_scan(scan, n, report) -> str:
         for line in lines:
             body.append(line)
             body.append("")
-        built = half_rows(half, scan_h, n, report)
+        built = page_tables(half, scan_h, n, report)
         if built:
-            rows, hc, width, name = built
-            stray_markup((c for r in rows for c in r), n, report)
+            tables, name = built
             shapes.append(name)
-            body.append(as_markdown(rows, hc, width))
+            for i, (rows, hc, width) in enumerate(tables):
+                stray_markup((c for r in rows for c in r), n, report)
+                if i:
+                    body.append("")
+                body.append(as_markdown(rows, hc, width))
         else:
             if any(b["type"] == "table" for b in half):
                 report.append(Problem(n, "unrecognized table shape"))

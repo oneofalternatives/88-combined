@@ -129,6 +129,7 @@ have no mark and always stay.
 Medium for a book — converted from OCR output, one file per scan, split into
 the book's pages, human-readable and editable, machine-readable, diffable.
 
-Frontmatter, then one table per page. The tables are markdown-*like*: `=` rules
-the head (which may be more than one row), `-` rules the interior, a one-cell
-row is a band across the table. Not GFM — don't normalise it.
+Frontmatter, then the tables of each page: one per printed table (a page may
+stack two). The tables are markdown-*like*: `=` rules the head (which may be
+more than one row), `-` rules the interior, a one-cell row is a band across
+the table. Not GFM — don't normalise it.

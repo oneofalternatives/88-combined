@@ -130,6 +130,11 @@ Semantics:
 * OCR occasionally breaks one printed table into several `table` blocks separated
   by `text`/`list` blocks holding the station names (e.g. scan 6). These are
   rendered in document order; no attempt is made to re-join them.
+* Some pages print two short tables, one above the other (the Saulkrasti line,
+  the Jelgava line). The OCR gives each its own `table` block with its own
+  head. A block whose head names other trains starts a new table; a title
+  right above it goes with it. A head naming the same trains is the OCR
+  reading the top twice: it stays, and the validator reports it.
 * OCR sometimes gives the rows of a table as `text` blocks, one line per row:
   `Кудра 17.10,5 17.11` (scan 41). The text does not show which cells are blank.
   So a row is placed only when its values fill every column. Otherwise the

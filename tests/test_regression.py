@@ -49,7 +49,7 @@ EXPECTED_REPORT = [
     P(96, JOINED, "⟨Блок пост 856 км⟩"),
 ]
 # Lines of times the OCR gave as text with no station name, counted rather than
-# listed. extracted-03 predates this report: its manifest counts only the above.
+# listed.
 EXPECTED_UNPLACED = {(38, "unplaced times"): 42, (69, "unplaced times"): 19}
 
 
@@ -74,7 +74,7 @@ def test_repair_report_matches(extracted):
     assert [p for p in report if p not in unplaced] == EXPECTED_REPORT
     assert Counter((p.scan, p.what) for p in unplaced) == EXPECTED_UNPLACED
     manifest = json.loads((EXTRACTED / "manifest.json").read_text())
-    assert manifest["problems"] == len(EXPECTED_REPORT)
+    assert manifest["problems"] == len(EXPECTED_REPORT) + sum(EXPECTED_UNPLACED.values())
 
 
 def test_shape_tally(extracted):
@@ -118,10 +118,10 @@ def test_validator_snapshot():
     """Tuning CONFIG moves these on purpose; update them when it does."""
     columns, findings = validate.validate(EXTRACTED)
     assert len(columns) == 521
-    assert len(findings) == 288
-    assert sum(f.severity == 0 for f in findings) == 97
+    assert len(findings) == 270
+    assert sum(f.severity == 0 for f in findings) == 79
     by_rules = Counter(tuple(sorted(f.rules)) for f in findings)
-    assert by_rules == {(0,): 25, (1,): 32, (2,): 130, (2, 3, 4): 2, (2, 4): 12,
+    assert by_rules == {(0,): 7, (1,): 32, (2,): 130, (2, 3, 4): 2, (2, 4): 12,
                         (3,): 7, (3, 4): 3, (4,): 71, (5,): 6}
     assert str(findings[0].where) == ("scan-93.md folio 182 [distance] п.№ 606 — "
                                       "Стрелка № 2-а → Айзкраукле  r11c3,r12c2")

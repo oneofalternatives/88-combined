@@ -1,0 +1,90 @@
+| scan | what                     | detail                                                                                         |
+|======|==========================|================================================================================================|
+| 3    | unrecognized table shape |                                                                                                |
+| 6    | unrecognized table shape |                                                                                                |
+| 16   | unplaced text row        | ⟨Яундубулты 14.32 14.32,5⟩ -- 2 value(s) for 6 columns; place them from the scan               |
+| 16   | unplaced text row        | ⟨Пумпури 14.34 14.34,5⟩ -- 2 value(s) for 6 columns; place them from the scan                  |
+| 16   | unplaced text row        | ⟨Меллужи 14.36 14.36,5⟩ -- 2 value(s) for 6 columns; place them from the scan                  |
+| 16   | unplaced text row        | ⟨Асари 14.38 14.38,5⟩ -- 2 value(s) for 6 columns; place them from the scan                    |
+| 16   | unplaced text row        | ⟨Вайвари 14.40 14.41⟩ -- 2 value(s) for 6 columns; place them from the scan                    |
+| 16   | unplaced text row        | ⟨Слока 14.46 —⟩ -- 2 value(s) for 6 columns; place them from the scan                          |
+| 32   | unplaced times           | ⟨— 10.06⟩ -- no station name; place them from the scan                                         |
+| 32   | unplaced times           | ⟨10.09 10.10⟩ -- no station name; place them from the scan                                     |
+| 32   | unplaced times           | ⟨10.11,5 10.12⟩ -- no station name; place them from the scan                                   |
+| 32   | unplaced times           | ⟨10.13,5 10.14⟩ -- no station name; place them from the scan                                   |
+| 32   | unplaced times           | ⟨10.15,5 10.16⟩ -- no station name; place them from the scan                                   |
+| 32   | unplaced times           | ⟨10.17,5 10.18⟩ -- no station name; place them from the scan                                   |
+| 32   | unplaced times           | ⟨10.20 10.22⟩ -- no station name; place them from the scan                                     |
+| 32   | unplaced times           | ⟨10.24 10.25,5⟩ -- no station name; place them from the scan                                   |
+| 32   | unplaced times           | ⟨10.27 10.28⟩ -- no station name; place them from the scan                                     |
+| 32   | unplaced times           | ⟨10.30 10.31⟩ -- no station name; place them from the scan                                     |
+| 32   | unplaced times           | ⟨10.32,5 10.33⟩ -- no station name; place them from the scan                                   |
+| 32   | unplaced times           | ⟨10.34,5 10.35,5⟩ -- no station name; place them from the scan                                 |
+| 32   | unplaced times           | ⟨10.39 10.39,5⟩ -- no station name; place them from the scan                                   |
+| 32   | unplaced times           | ⟨10.42 10.43,5⟩ -- no station name; place them from the scan                                   |
+| 32   | unplaced times           | ⟨10.45 10.46⟩ -- no station name; place them from the scan                                     |
+| 32   | unplaced times           | ⟨10.50 10.51⟩ -- no station name; place them from the scan                                     |
+| 32   | unplaced times           | ⟨10.54 10.55⟩ -- no station name; place them from the scan                                     |
+| 32   | unplaced times           | ⟨10.59 11.07⟩ -- no station name; place them from the scan                                     |
+| 32   | unplaced times           | ⟨11.04 11.05⟩ -- no station name; place them from the scan                                     |
+| 32   | unplaced times           | ⟨11.08 11.09⟩ -- no station name; place them from the scan                                     |
+| 32   | unplaced times           | ⟨11.10,5 11.11,5⟩ -- no station name; place them from the scan                                 |
+| 32   | unplaced times           | ⟨11.16 11.16,5⟩ -- no station name; place them from the scan                                   |
+| 32   | unplaced times           | ⟨11.18,5 11.19⟩ -- no station name; place them from the scan                                   |
+| 32   | unplaced times           | ⟨11.21 11.22,5⟩ -- no station name; place them from the scan                                   |
+| 32   | unplaced times           | ⟨11.25,5 11.26⟩ -- no station name; place them from the scan                                   |
+| 32   | unplaced times           | ⟨11.32 11.32,5⟩ -- no station name; place them from the scan                                   |
+| 32   | unplaced times           | ⟨11.36 11.37⟩ -- no station name; place them from the scan                                     |
+| 32   | unplaced times           | ⟨11.40,5 11.41,5⟩ -- no station name; place them from the scan                                 |
+| 32   | unplaced times           | ⟨11.43 11.44⟩ -- no station name; place them from the scan                                     |
+| 41   | unplaced text row        | ⟨Кемери — 17.07⟩ -- 2 value(s) for 6 columns; place them from the scan                         |
+| 41   | unplaced text row        | ⟨Кудра 17.10,5 17.11⟩ -- 2 value(s) for 6 columns; place them from the scan                    |
+| 41   | unplaced text row        | ⟨Вагонный парк 18.28 18.29 18.36 18.37⟩ -- 4 value(s) for 6 columns; place them from the scan  |
+| 41   | unplaced text row        | ⟨Яняварты 18.32 18.33 18.40 18.41⟩ -- 4 value(s) for 6 columns; place them from the scan       |
+| 41   | unplaced text row        | ⟨Даугмале 18.34,5 18.35,5 18.42,5 18.43⟩ -- 4 value(s) for 6 columns; place them from the scan |
+| 41   | unplaced text row        | ⟨Шкиротава 18.37 18.38 18.44,5 18.45,5⟩ -- 4 value(s) for 6 columns; place them from the scan  |
+| 41   | unplaced text row        | ⟨Гайсма — — 18.47,5 18.48⟩ -- 4 value(s) for 6 columns; place them from the scan               |
+| 41   | unplaced text row        | ⟨Румбула — — 18.50 18.50,5⟩ -- 4 value(s) for 6 columns; place them from the scan              |
+| 41   | unplaced text row        | ⟨Дарзини — — 18.52,5 18.54⟩ -- 4 value(s) for 6 columns; place them from the scan              |
+| 41   | unplaced text row        | ⟨Доле — — 18.57 18.57,5⟩ -- 4 value(s) for 6 columns; place them from the scan                 |
+| 41   | unplaced text row        | ⟨Саласпилс 18.46 18.47 18.59 19.00⟩ -- 4 value(s) for 6 columns; place them from the scan      |
+| 41   | unplaced text row        | ⟨Саулкалне — — 19.03,5 19.04⟩ -- 4 value(s) for 6 columns; place them from the scan            |
+| 41   | unplaced text row        | ⟨Икшкиле — — 19.07,5 19.08⟩ -- 4 value(s) for 6 columns; place them from the scan              |
+| 41   | unplaced text row        | ⟨Яуногре — — 19.11,5 19.13⟩ -- 4 value(s) for 6 columns; place them from the scan              |
+| 41   | unplaced text row        | ⟨Огре 19.02 19.03 19.15 —⟩ -- 4 value(s) for 6 columns; place them from the scan               |
+| 41   | unplaced text row        | ⟨Лиелварде 19.17 19.18⟩ -- 2 value(s) for 6 columns; place them from the scan                  |
+| 41   | unplaced text row        | ⟨Тукумс-II — 17.14⟩ -- 2 value(s) for 6 columns; place them from the scan                      |
+| 41   | unplaced text row        | ⟨Тукумс-I 17.18 17.19,5⟩ -- 2 value(s) for 6 columns; place them from the scan                 |
+| 41   | unplaced text row        | ⟨Милзкалне 17.24 17.24,5⟩ -- 2 value(s) for 6 columns; place them from the scan                |
+| 41   | unplaced text row        | ⟨О/п. 56 км 17.26,5 17.27⟩ -- 2 value(s) for 6 columns; place them from the scan               |
+| 41   | unplaced text row        | ⟨Смарде 17.30,5 17.31⟩ -- 2 value(s) for 6 columns; place them from the scan                   |
+| 41   | unplaced text row        | ⟨Кемери 17.33 17.41⟩ -- 2 value(s) for 6 columns; place them from the scan                     |
+| 41   | unplaced text row        | ⟨Кудра 17.44 17.44,5⟩ -- 2 value(s) for 6 columns; place them from the scan                    |
+| 41   | unplaced text row        | ⟨Слока 17.49 17.51 — 18.14⟩ -- 4 value(s) for 6 columns; place them from the scan              |
+| 41   | unplaced text row        | ⟨Вайвари 17.53,5 17.54 18.17 18.17,5⟩ -- 4 value(s) for 6 columns; place them from the scan    |
+| 41   | unplaced text row        | ⟨Асари 17.55,5 17.56 18.19 18.19,5⟩ -- 4 value(s) for 6 columns; place them from the scan      |
+| 41   | unplaced text row        | ⟨Меллужи 17.57,5 17.58 18.21 18.21,5⟩ -- 4 value(s) for 6 columns; place them from the scan    |
+| 41   | unplaced text row        | ⟨Пумпури 17.59,5 18.00 18.23 18.23,5⟩ -- 4 value(s) for 6 columns; place them from the scan    |
+| 41   | unplaced text row        | ⟨Яундубулты 18.01 18.02 18.25 18.25,5⟩ -- 4 value(s) for 6 columns; place them from the scan   |
+| 41   | unplaced text row        | ⟨Вагонный парк 19.06 19.07⟩ -- 2 value(s) for 6 columns; place them from the scan              |
+| 41   | unplaced text row        | ⟨Яняварты 19.10 19.11⟩ -- 2 value(s) for 6 columns; place them from the scan                   |
+| 41   | unplaced text row        | ⟨Даугмале 19.12,5 19.13,5⟩ -- 2 value(s) for 6 columns; place them from the scan               |
+| 41   | unplaced text row        | ⟨Шкиротава 19.15 19.16⟩ -- 2 value(s) for 6 columns; place them from the scan                  |
+| 41   | unplaced text row        | ⟨Дарзини 19.20 19.21,5⟩ -- 2 value(s) for 6 columns; place them from the scan                  |
+| 41   | unplaced text row        | ⟨Доле 19.24,5 19.25⟩ -- 2 value(s) for 6 columns; place them from the scan                     |
+| 41   | unplaced text row        | ⟨Саласпилс 19.26,5 19.27,5⟩ -- 2 value(s) for 6 columns; place them from the scan              |
+| 41   | unplaced text row        | ⟨Саулкалне 19.31 19.31,5⟩ -- 2 value(s) for 6 columns; place them from the scan                |
+| 41   | unplaced text row        | ⟨Икшкиле 19.35 19.36⟩ -- 2 value(s) for 6 columns; place them from the scan                    |
+| 41   | unplaced text row        | ⟨Яуногре 19.39,5 19.40,5⟩ -- 2 value(s) for 6 columns; place them from the scan                |
+| 41   | unplaced text row        | ⟨Огре 19.42 19.43⟩ -- 2 value(s) for 6 columns; place them from the scan                       |
+| 41   | unplaced text row        | ⟨Парогре 18.44,5 19.45,5⟩ -- 2 value(s) for 6 columns; place them from the scan                |
+| 41   | unplaced text row        | ⟨Кегумс 19.53 19.54⟩ -- 2 value(s) for 6 columns; place them from the scan                     |
+| 41   | unplaced text row        | ⟨Лиелварде 19.58,5 19.59,5⟩ -- 2 value(s) for 6 columns; place them from the scan              |
+| 79   | unrecognized table shape |                                                                                                |
+| 79   | unrecognized table shape |                                                                                                |
+| 81   | unrecognized table shape |                                                                                                |
+| 94   | joined wrapped name      | ⟨Блок пост 867 км⟩                                                                             |
+| 94   | DROPPED cells            | no distance, they contradict the row above: col 1: ⟨871,5⟩ vs ⟨866,4⟩                          |
+| 94   | joined wrapped name      | ⟨Блок пост 856 км⟩                                                                             |
+| 94   | joined wrapped name      | ⟨Блок пост 867 км⟩                                                                             |
+| 94   | joined wrapped name      | ⟨Блок пост 856 км⟩                                                                             |
