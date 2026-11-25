@@ -1,0 +1,13 @@
+| scan | page | where                                   | readings                  |
+|======|======|=========================================|===========================|
+| 8    | 12   | layout                                  | outvoted, not merged: 01  |
+| 38   | 73   | layout                                  | outvoted, not merged: 01  |
+| 39   | 74   | layout                                  | outvoted, not merged: 01  |
+| 42   | 81   | layout                                  | outvoted, not merged: 01  |
+| 47   | 91   | layout                                  | outvoted, not merged: 01  |
+| 48   | 93   | layout                                  | outvoted, not merged: 01  |
+| 49   | 95   | layout                                  | outvoted, not merged: 01  |
+| 53   | 103  | layout                                  | outvoted, not merged: 01  |
+| 58   | 113  | layout                                  | outvoted, not merged: 01  |
+| 61   | 119  | layout                                  | outvoted, not merged: 01  |
+| 62   | 120  | table 1, row 4 col 7 · Ошкалны · 6872ДР | 13.57 (02, 03); 13.5 (01) |
