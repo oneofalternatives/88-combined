@@ -462,6 +462,7 @@ From `books/1988-1989-workdays/attempts/normalized-01`, one row per train column
 | ДР   | `ДР` after the train number                                     |
 | *    | `*` after the train number                                      |
 | **   | `**` after the train number, or `(По особому назначению)`       |
+| ***  | `***` after the train number                                    |
 | вых  | `По выходным дням` before the train number                      |
 | ДИЗ  | `ДИЗЕЛЬНЫЙ` in the page caption                                 |
 | П    | `Пригородный п. №` in the caption                               |

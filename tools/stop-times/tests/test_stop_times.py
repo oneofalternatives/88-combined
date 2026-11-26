@@ -120,6 +120,10 @@ def test_status_without_a_rule(arr, dep):
     ("6317* Д", False, ("6317", "", {"*", "Д"})),
     ("6431**", False, ("6431", "", {"**"})),
     ("6633/6644", False, ("6633", "6644", set())),
+    ("6305***", False, ("6305", "", {"***"})),
+    ("6311б", False, ("6311б", "", set())),
+    ("6602б*", False, ("6602б", "", {"*"})),
+    ("6325б***", False, ("6325б", "", {"***"})),
     ("По выходным дням 6848 ДР", False, ("6848", "", {"weekends", "ДР"})),
     ("п. № 606", True, ("606", "", set())),
     ("Пригородный п. № 6805* ДР", True, ("6805", "", {"Пригородный", "*", "ДР"})),
@@ -135,6 +139,7 @@ def test_parse_train(text, caption, want):
 
 @pytest.mark.parametrize("text,caption", [
     ("", False), ("Д", False), ("6501 Д x", False), ("6501Д", False),
+    ("6501****", False), ("6501бб", False),
     ("п. № 898 ДР (По заявкам)", True), ("п. № 898 «СНЕЖОК» ДР", True),
     ("Пригодный п. №", True), ("606", True),
 ])
@@ -430,7 +435,7 @@ def test_main_ends_with_the_full_marks_legend(write_book, tmp_path):
     lines = legend.splitlines()
     assert len({len(ln) for ln in lines}) == 1
     assert [ln.split("|")[1].strip() for ln in lines[2:]] == \
-        ["Д", "ДР", "*", "**", "вых", "ДИЗ", "П", "w…"]
+        ["Д", "ДР", "*", "**", "***", "вых", "ДИЗ", "П", "w…"]
 
 
 @pytest.mark.parametrize("flags, head", [

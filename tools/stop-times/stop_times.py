@@ -43,6 +43,7 @@ MARKS = [
     ("ДР", "ДР", "`ДР` after the train number"),
     ("*", "*", "`*` after the train number"),
     ("**", "**", "`**` after the train number, or `(По особому назначению)`"),
+    ("***", "***", "`***` after the train number"),
     ("weekends", "вых", "`По выходным дням` before the train number"),
     ("ДИЗЕЛЬНЫЙ", "ДИЗ", "`ДИЗЕЛЬНЫЙ` in the page caption"),
     ("Пригородный", "П", "`Пригородный п. №` in the caption"),
@@ -95,7 +96,7 @@ def status_of(arr, dep):
 
 
 # ---------------------------------------------------------------- trains
-NUMBER_RE = re.compile(r"(\d+)(?:/(\d+))?(\*\*|\*)?")
+NUMBER_RE = re.compile(r"(\d+б?)(?:/(\d+))?(\*{1,3})?")   # 6311б: a second train numbered 6311
 SUFFIX_RE = re.compile(r"\s+(ДР|Д)(?=\s|$)")
 WEEKEND = "По выходным дням"
 CAPTION_RE = re.compile(r"(Пригородный\s+)?п\.\s*№\s*")
@@ -125,7 +126,7 @@ def parse_train(text, caption=False):
     if not m:
         raise Reject(f"no train number in: {text}")
     number, number2 = m[1], m[2] or ""
-    if {len(number), len(number2)} == {3, 4}:
+    if {len(number.rstrip("б")), len(number2)} == {3, 4}:
         # a local 6xx with a suburban number: only the local one is on the board
         number, number2 = min(number, number2, key=len), ""
     if m[3]:

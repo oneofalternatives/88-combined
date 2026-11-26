@@ -80,6 +80,10 @@ the board and in the announcements. The 4-digit one of the pair is the
 suburban number for the part on suburban fares (6874/670: up to Алоя). So
 `6874/670` gives no `670` and a blank no2.
 
+A `б` after the number (бис, `6311б`) stays in no: it is a second train
+with the same number on the same day, not the train `6311`. The weekends
+book prints them; `6311б*` gives no `6311б`, marks `*`.
+
 ## Marks
 
 | mark          | code  | form                               |
@@ -88,13 +92,14 @@ suburban number for the part on suburban fares (6874/670: up to Алоя). So
 | `ДР`          | `ДР`  | `… ДР`                             |
 | `*`           | `*`   | `…*`                               |
 | `**`          | `**`  | `…**`, `… (По особому назначению)` |
+| `***`         | `***` | `…***`                             |
 | weekends      | `вых` | `По выходным дням …`               |
 | `ДИЗЕЛЬНЫЙ`   | `ДИЗ` | caption                            |
 | `Пригородный` | `П`   | caption, `Пригородный п. №`        |
 | weekdays      | `w…`  | caption, `(по вторникам, …)`       |
 
 - The marks column holds codes, in this order, joined by `, `.
-- The output ends with a legend of all eight codes, always the same.
+- The output ends with a legend of all nine codes, always the same.
 - Weekdays: `w` and the days of a `(по …)` caption note as digits, 1 = Mon …
   7 = Sun. Page 192, `(по вторникам, четвергам, субботам, воскресеньям)`,
   gives `w2467`. It marks every train on the page, on any page shape.

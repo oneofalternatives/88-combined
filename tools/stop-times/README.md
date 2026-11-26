@@ -37,6 +37,10 @@ without the station. A merge mark `⟨…⟩` anywhere in the book rejects it.
   and a weekday note `(по вторникам, …)` mark every train on the page.
 - Marks are short codes (`П`, `ДИЗ`, `вых`, `w2467`). Weekdays are digits,
   1 = Mon … 7 = Sun. The legend is at the end of the output.
+- A `б` after the number (бис, `6311б`) stays in `no`: a second train with
+  that number on the same day.
+- The marks mean what the book says they mean, and the books differ: the
+  legend only says how each is printed.
 - A train name in `«…»` is dropped. `(По особому назначению)` gives `**`,
   in place of a printed `*`.
 - Of a 3+4-digit pair (`6874/670`) only the 3-digit local number is kept,
