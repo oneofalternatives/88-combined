@@ -23,7 +23,8 @@ OCR. Repairs are reported, never guessed, and the exit code carries them.
    itself, so the times after it are on the next day. Any other backwards step is
    damage, so it does not advance the clock and the times around it stop being
    evidence for rules 3 and 4. `—` (passes without stopping) is skipped; blanks
-   should run contiguously to the ends of the column.
+   should run contiguously to the ends of the column. A row with only a note
+   («На Царникаву») is not a stop, so a blank next to it is fine.
 2. **отпр. >= приб.** at a stop. A departure before its arrival is impossible. A
    long dwell is only suspicious — junctions really do hold ten minutes — so
    rank it against that station's other dwells. `,5` is half a minute and

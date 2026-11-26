@@ -682,8 +682,13 @@ def rule1_monotone(col, out):
 
 
 def rule1_blanks(col, out):
-    """Blanks should run contiguously to the ends of the column."""
-    served = [i for i, s in enumerate(col.stops) if s.served]
+    """Blanks should run contiguously to the ends of the column. A row holding
+    only a note («На Царникаву») is where the train leaves the table, not a
+    stop: 6629/6640 bypasses Вагонный парк and Рига-пасс. by the branch to
+    Ошкалны, so its Вагонный парк is blank next to the note."""
+    def on(s):
+        return s.served and not {s.arr.kind, s.dep.kind} <= {"note", "blank"}
+    served = [i for i, s in enumerate(col.stops) if on(s)]
     if not served:
         return
     for i in range(served[0], served[-1] + 1):
@@ -691,7 +696,7 @@ def rule1_blanks(col, out):
         if s.served:
             continue
         prev_s, next_s = col.stops[i - 1], col.stops[i + 1]
-        if prev_s.served and next_s.served:
+        if on(prev_s) and on(next_s):
             out.append(Finding(
                 0, 5.0, 1, col.where(s, [(s.row, s.cols[0])]),
                 "blank between two served stations — the train cannot skip a "
